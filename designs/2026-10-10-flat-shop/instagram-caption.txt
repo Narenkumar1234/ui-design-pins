@@ -1,0 +1,37 @@
+Flat UI + a real shopping flow = the perfect first e-commerce project 🛍️ (swipe ➡️ for dark mode)
+
+Front-end project idea: build "Flat Shop", a flat-design shopping app with 3 screens:
+→ Home: search, category chips, featured product grid, and a "20% off" promo banner
+→ Product detail: size + color pickers, rating, and a sticky Add to Cart bar with a qty stepper
+→ Cart: free-shipping banner, qty steppers, FLAT20 coupon code, order summary, Checkout
+Bonus: add a light/dark toggle. Both themes are in this carousel. Screens designed with Google Stitch.
+
+🎨 Light palette
+#F5F1E8 background
+#FFFFFF cards
+#1C1B22 text + bold outlines
+#D9432C coral (primary)
+#2F5BEA blue
+#1E9E6A green
+#FFC83D yellow
+
+🌙 Dark palette
+#14151B background
+#1C1E26 cards
+#2A2D38 inputs / chips
+#F3F2EE text
+#FF6A4D coral (primary)
+#5B7FFF blue
+#2EBF84 green
+#FFD15C yellow
+
+🛠 Stack
+HTML + CSS + JavaScript (or React)
+Tailwind CSS (dark: variants for the theme toggle)
+Fake Store API (fetch) for products
+localStorage for the cart + totals
+Promo code logic (FLAT20 = 20% off)
+
+📌 Save this for your next project, and follow @code.in.30s for more UI you can build.
+
+#flatdesign #uidesign #uiux #frontenddevelopment #webdevelopment #ecommerce #tailwindcss #javascript #reactjs #darkmode #codingprojects #webdev #100daysofcode #studentdeveloper

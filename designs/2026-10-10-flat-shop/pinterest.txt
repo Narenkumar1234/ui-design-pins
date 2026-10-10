@@ -1,0 +1,17 @@
+TITLE (light pin):
+Flat UI Shopping App Design – Light Mode | E-commerce Front-End Project Idea
+
+TITLE (dark pin):
+Flat UI Shopping App Design – Dark Mode | E-commerce Front-End Project Idea
+
+DESCRIPTION (use for both pins):
+Here's a flat-design e-commerce app to build as a front-end project. It has a home screen with search, category chips and a featured product grid; a product detail page with size and color pickers and a sticky Add to Cart bar; and a cart with qty steppers, a free-shipping banner, a coupon field and checkout. Build it with HTML, CSS and JavaScript (or React) plus Tailwind, fetch products from the Fake Store API, and keep the cart and totals in localStorage. Follow @code.in.30s for more UI ideas you can build. #flatdesign #uidesign #frontenddevelopment #ecommercedesign #tailwindcss #codingprojects
+
+ALT TEXT – LIGHT:
+Flat-design shopping app called "Flat Shop" in light mode, shown on three phone screens with bold black outlines over a warm cream background. Left: a home screen reading "Hi, Maya – Find your style" with a search bar, category chips (All, Bags, Shoes, Tech) and a "Featured Goods" grid of products drawn as simple geometric icons on solid yellow, blue, green and red tiles, including Canvas Tote $34 and Orb Speaker $59. Center: a "Canvas Tote" product detail screen with a large yellow tote-bag tile, a $34 price, a 4.8 rating, size buttons S, M, L, XL, four color swatches and a red "Add to Cart" bar. Right: a "My Cart" screen with a green "Free Shipping unlocked" banner, three items with quantity steppers, a FLAT20 coupon field and a black "Checkout, 3 items, $120" button. The header reads "Flat Shop App UI — Light Mode, Front-end project idea," and a "Build it with" list shows HTML, CSS, JS or React, Tailwind CSS, Fake Store API, cart and totals in localStorage, promo codes, and dark mode. Credit: @code.in.30s.
+
+ALT TEXT – DARK:
+The same "Flat Shop" app in dark mode on three phone screens: charcoal backgrounds and cards, light text, and coral, blue, green and yellow accents. Left: the home screen with search, a coral "All" chip and a featured product grid. Center: the "Canvas Tote" detail screen with a yellow tote-bag tile, a coral $34 price, a coral-selected size M, yellow, blue, green and coral color swatches and a coral "Add to Cart" bar. Right: the cart with a "Free Shipping Unlocked" banner, three items with steppers, a discount code field and a light "Checkout $120.00" button. The header reads "Flat Shop App UI — Dark Mode, Front-end project idea," with the same "Build it with" list and the @code.in.30s credit.
+
+SUGGESTED BOARD:
+Front-End Project Ideas (optional second board: Flat UI Design)
