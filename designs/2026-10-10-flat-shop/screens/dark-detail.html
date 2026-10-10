@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Canvas Tote - Product Details</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800;900&amp;family=Public+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary-fixed-dim": "#b7c4ff",
+            "inverse-primary": "#ae3019",
+            "on-surface": "#e3e1ea",
+            "primary-fixed": "#ffdad3",
+            "inverse-on-surface": "#2f3037",
+            "error": "#ffb4ab",
+            "tertiary-fixed": "#ffdf97",
+            "surface-dim": "#121319",
+            "surface": "#121319",
+            "surface-bright": "#38393f",
+            "on-primary-fixed-variant": "#8c1703",
+            "on-error": "#690005",
+            "surface-container": "#1e1f25",
+            "on-tertiary-container": "#402f00",
+            "on-secondary-fixed": "#001551",
+            "inverse-surface": "#e3e1ea",
+            "outline-variant": "#59413c",
+            "tertiary": "#edc14e",
+            "on-tertiary-fixed-variant": "#5a4400",
+            "error-container": "#93000a",
+            "surface-tint": "#ffb4a5",
+            "primary-container": "#ff6a4d",
+            "primary-fixed-dim": "#ffb4a5",
+            "on-primary-fixed": "#3e0400",
+            "tertiary-fixed-dim": "#edc14e",
+            "primary": "#ffb4a5",
+            "background": "#121319",
+            "surface-container-lowest": "#0d0e14",
+            "secondary": "#b7c4ff",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed": "#251a00",
+            "on-secondary": "#002681",
+            "on-tertiary": "#3e2e00",
+            "surface-container-low": "#1a1b21",
+            "outline": "#a88a84",
+            "tertiary-container": "#bc9423",
+            "surface-variant": "#34343b",
+            "on-surface-variant": "#e1bfb8",
+            "on-secondary-container": "#a8b9ff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "secondary-fixed": "#dce1ff",
+            "surface-container-highest": "#34343b",
+            "on-primary": "#650b00",
+            "surface-container-high": "#292a30",
+            "secondary-container": "#023dbf",
+            "on-primary-container": "#670c00",
+            "on-background": "#e3e1ea"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Plus Jakarta Sans"],
+            display: ["Plus Jakarta Sans"],
+            body: ["Inter"],
+            label: ["Public Sans"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Strict Flat Design overrides: strictly no shadows or blurs anywhere */
+    * {
+      box-shadow: none !important;
+      text-shadow: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-surface min-h-screen">
+<!-- Mobile/Screen Shell Container -->
+<main class="w-full max-w-md mx-auto min-h-screen bg-surface-container-low flex flex-col pb-36">
+<!-- Top Bar: Task Focused Navigation (Close/Back) -->
+<header class="w-full px-4 h-16 flex items-center justify-between bg-surface-container-low">
+<button aria-label="Go back" class="w-11 h-11 rounded-xl bg-surface-variant border-2 border-surface-variant flex items-center justify-center text-on-surface hover:bg-surface-container-high active:translate-y-0.5 transition-transform duration-100" type="button">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="font-headline font-black text-lg tracking-tight text-on-surface">Details</h1>
+<button aria-label="Save product" class="w-11 h-11 rounded-xl bg-surface-variant border-2 border-surface-variant flex items-center justify-center text-on-surface hover:text-primary-container hover:bg-surface-container-high active:translate-y-0.5 transition-transform duration-100" type="button">
+<span class="material-symbols-outlined text-2xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<div class="px-4 flex flex-col gap-5 pt-1">
+<!-- Product Hero Flat Geometric Tile -->
+<section aria-label="Product Media" class="flex flex-col gap-3">
+<div style="background:#FFD15C" class="w-full h-56 rounded-xl border-2 border-surface-variant flex flex-col justify-between p-4 relative overflow-hidden">
+<!-- Top Badges inside Hero -->
+<div class="flex items-center justify-between w-full z-10">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label font-bold text-xs tracking-wider">
+              ACCESSORIES
+            </span>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-variant text-on-surface font-label font-bold text-xs border border-surface-container-highest">
+<span class="w-2 h-2 rounded-full bg-tertiary-container inline-block"></span>
+<span>In Stock</span>
+</div>
+</div>
+<!-- Bold Flat Tote Silhouette Vector Graphic -->
+<div class="my-auto flex items-center justify-center z-10 py-2">
+<svg class="w-24 h-28 fill-surface-container-lowest" viewbox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+<!-- Handles -->
+<path d="M 32 38 V 16 C 32 7, 68 7, 68 16 V 38 H 60 V 16 C 60 12, 40 12, 40 16 V 38 Z"></path>
+<!-- Tote Body -->
+<path d="M 18 38 L 22 112 H 78 L 82 38 Z"></path>
+<!-- Geometric Accent Line on Tote -->
+<rect fill="#38393f" height="4" width="40" x="30" y="54"></rect>
+<rect fill="#38393f" height="4" width="16" x="42" y="66"></rect>
+</svg>
+</div>
+<!-- Bottom Metric Badge inside Hero -->
+<div class="flex items-center justify-start z-10">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest text-on-surface font-headline font-bold text-xs tracking-wide">
+              16oz HEAVYWEIGHT
+            </span>
+</div>
+</div>
+<!-- Carousel Pagination Dots -->
+<div aria-label="Image Carousel Indicators" class="flex items-center justify-center gap-2 pt-1">
+<span class="w-6 h-2 rounded-full bg-primary-container inline-block"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant inline-block"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant inline-block"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant inline-block"></span>
+</div>
+</section>
+<!-- Product Info Card -->
+<section class="bg-surface-container rounded-xl border-2 border-surface-variant p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-label font-bold text-outline uppercase tracking-wider">UTILITY BASICS</span>
+<div class="flex items-center gap-1 bg-surface-variant px-2.5 py-1 rounded-full text-xs font-label font-bold text-tertiary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface">4.8</span>
+<span class="text-outline font-normal">· 214 reviews</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between gap-2">
+<h2 class="font-headline font-black text-2xl tracking-tight text-on-surface">Canvas Tote</h2>
+<span class="font-headline font-black text-2xl text-primary-container">$34</span>
+</div>
+<p class="hidden text-sm font-body text-on-surface leading-relaxed pt-1">
+          Durable 16oz organic cotton canvas, reinforced box-stitched handles, and interior zip pocket. Built for daily geometric utility.
+        </p>
+</section>
+<!-- Size Selector Card -->
+<section class="bg-surface-container rounded-xl border-2 border-surface-variant p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<label class="font-headline font-bold text-sm text-on-surface">Select Size</label>
+<button class="text-xs font-label font-bold text-secondary hover:underline" type="button">Size Guide</button>
+</div>
+<div class="grid grid-cols-4 gap-2.5">
+<!-- Size S -->
+<button class="h-11 rounded-xl bg-surface-variant border-2 border-surface-variant font-headline font-bold text-sm text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">
+            S
+          </button>
+<!-- Size M (Active Selected) -->
+<button class="h-11 rounded-xl bg-primary-container border-2 border-primary-container font-headline font-black text-sm text-surface-container-lowest flex items-center justify-center" type="button">
+            M
+          </button>
+<!-- Size L -->
+<button class="h-11 rounded-xl bg-surface-variant border-2 border-surface-variant font-headline font-bold text-sm text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">
+            L
+          </button>
+<!-- Size XL -->
+<button class="h-11 rounded-xl bg-surface-variant border-2 border-surface-variant font-headline font-bold text-sm text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">
+            XL
+          </button>
+</div>
+</section>
+<!-- Color Picker Card -->
+<section class="bg-surface-container rounded-xl border-2 border-surface-variant p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<label class="font-headline font-bold text-sm text-on-surface">Color — Mustard Yellow</label>
+<span class="font-label font-bold text-xs text-outline">#FFD15C</span>
+</div>
+<div class="flex items-center gap-3 pt-1">
+<!-- Yellow swatch (Selected with solid outer border container) -->
+<button aria-label="Select Mustard Yellow" class="w-10 h-10 rounded-full border-2 border-on-surface p-0.5 flex items-center justify-center bg-transparent" type="button">
+<span class="w-full h-full rounded-full block" style="background:#FFD15C"></span>
+</button>
+<!-- Blue swatch -->
+<button aria-label="Select Blue" class="w-10 h-10 rounded-full border-2 border-surface-variant p-0.5 flex items-center justify-center bg-transparent hover:border-secondary transition-colors" type="button">
+<span class="w-full h-full rounded-full block" style="background:#5B7FFF"></span>
+</button>
+<!-- Green swatch -->
+<button aria-label="Select Green" class="w-10 h-10 rounded-full border-2 border-surface-variant p-0.5 flex items-center justify-center bg-transparent hover:border-surface-variant transition-colors" type="button">
+<span class="w-full h-full rounded-full block" style="background:#2EBF84"></span>
+</button>
+<!-- Coral swatch -->
+<button aria-label="Select Coral" class="w-10 h-10 rounded-full border-2 border-surface-variant p-0.5 flex items-center justify-center bg-transparent hover:border-primary-container transition-colors" type="button">
+<span class="w-full h-full rounded-full block" style="background:#FF6A4D"></span>
+</button>
+</div>
+</section>
+<!-- Specifications Grid (2 Columns) -->
+<section aria-label="Product Specifications" class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container rounded-xl border-2 border-surface-variant p-3.5 flex flex-col justify-between">
+<span class="text-xs font-label font-bold text-outline">DIMENSIONS</span>
+<p class="font-headline font-bold text-sm text-on-surface pt-2 leading-tight">15" × 14" × 4"</p>
+</div>
+<div class="bg-surface-container rounded-xl border-2 border-surface-variant p-3.5 flex flex-col justify-between">
+<span class="text-xs font-label font-bold text-outline">MATERIAL</span>
+<p class="font-headline font-bold text-sm text-on-surface pt-2 leading-tight">100% Organic Cotton</p>
+</div>
+</section>
+<!-- Delivery Tile -->
+<section class="bg-surface-container rounded-xl border-2 border-surface-variant p-3.5 flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-variant border-2 border-surface-variant flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-xl">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-xs text-on-surface">Free 2-day delivery</span>
+<span class="text-xs text-outline font-body">Orders over $25 qualify for free returns</span>
+</div>
+</section>
+</div>
+<!-- Fixed Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest border-t-2 border-surface-variant py-3 px-4">
+<div class="max-w-md mx-auto flex items-center gap-3">
+<!-- Quantity Stepper Container -->
+<div class="h-13 rounded-xl bg-surface-container border-2 border-surface-variant flex items-center justify-between px-2 w-32 shrink-0">
+<button aria-label="Decrease quantity" class="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center text-on-surface hover:bg-surface-container-highest active:scale-95 transition-transform duration-100" type="button">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<span class="font-headline font-black text-sm text-on-surface px-1">1</span>
+<button aria-label="Increase quantity" class="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center text-on-surface hover:bg-surface-container-highest active:scale-95 transition-transform duration-100" type="button">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+<!-- Add to Cart Primary Button -->
+<button class="flex-1 h-13 py-3.5 px-4 rounded-xl bg-primary-container border-2 border-primary-container text-surface-container-lowest font-headline font-black text-sm flex items-center justify-between active:translate-y-0.5 transition-transform duration-100 hover:brightness-105" type="button">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xl">shopping_bag</span>
+            Add to Cart
+          </span>
+<span class="bg-surface-container-lowest text-primary-container px-2 py-0.5 rounded font-label font-bold text-xs">
+            $34
+          </span>
+</button>
+</div>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Flat Shop - My Cart</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;family=Public+Sans:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#001551",
+            "on-tertiary": "#3e2e00",
+            "error-container": "#93000a",
+            "inverse-surface": "#e3e1ea",
+            "on-secondary-container": "#a8b9ff",
+            "outline-variant": "#59413c",
+            "surface-container": "#1e1f25",
+            "outline": "#a88a84",
+            "surface-container-high": "#292a30",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-surface": "#e3e1ea",
+            "surface-container-highest": "#34343b",
+            "on-tertiary-container": "#402f00",
+            "on-primary-fixed": "#3e0400",
+            "error": "#ffb4ab",
+            "primary-fixed": "#ffdad3",
+            "on-error": "#690005",
+            "on-primary-fixed-variant": "#8c1703",
+            "inverse-on-surface": "#2f3037",
+            "secondary": "#b7c4ff",
+            "primary": "#ffb4a5",
+            "tertiary": "#edc14e",
+            "inverse-primary": "#ae3019",
+            "surface-dim": "#121319",
+            "on-primary-container": "#670c00",
+            "surface-container-low": "#1a1b21",
+            "background": "#121319",
+            "on-background": "#e3e1ea",
+            "surface": "#121319",
+            "surface-variant": "#34343b",
+            "tertiary-fixed": "#ffdf97",
+            "on-tertiary-fixed-variant": "#5a4400",
+            "on-secondary": "#002681",
+            "tertiary-container": "#bc9423",
+            "secondary-fixed": "#dce1ff",
+            "on-surface-variant": "#e1bfb8",
+            "surface-bright": "#38393f",
+            "on-tertiary-fixed": "#251a00",
+            "surface-container-lowest": "#0d0e14",
+            "on-primary": "#650b00",
+            "tertiary-fixed-dim": "#edc14e",
+            "secondary-container": "#023dbf",
+            "on-error-container": "#ffdad6",
+            "primary-fixed-dim": "#ffb4a5",
+            "on-secondary-fixed-variant": "#0039b5",
+            "primary-container": "#ff6a4d",
+            "surface-tint": "#ffb4a5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {},
+          "fontFamily": {
+            "headline": [
+              "Plus Jakarta Sans"
+            ],
+            "display": [
+              "Plus Jakarta Sans"
+            ],
+            "body": [
+              "Inter"
+            ],
+            "label": [
+              "Public Sans"
+            ]
+          },
+          "fontSize": {}
+        },
+      },
+    }
+  </script>
+<style>
+    /* Strict FLAT styling overrides: NO blur, NO drop shadow, NO gradients */
+    * {
+      box-shadow: none !important;
+      text-shadow: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body antialiased min-h-screen selection:bg-primary-container selection:text-background flex justify-center">
+<!-- Mobile Viewport Container -->
+<main class="w-full max-w-md bg-surface-dim min-h-screen flex flex-col relative pb-40">
+<!-- Top Bar Component -->
+<header class="bg-surface border-b-2 border-surface-variant flex justify-between items-center w-full px-4 h-16 sticky top-0 z-40">
+<div class="flex items-center gap-3">
+<button aria-label="Go Back" class="w-10 h-10 rounded-xl bg-surface-container border-2 border-surface-variant flex items-center justify-center text-on-surface active:translate-y-0.5 transition-transform">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<h1 class="font-headline font-black text-xl text-on-surface tracking-tight">My Cart</h1>
+<span class="bg-surface-container-highest text-primary-container font-headline font-black text-xs px-2 py-0.5 rounded-full border border-surface-variant">3</span>
+</div>
+</div>
+<button aria-label="Clear Cart" class="w-10 h-10 rounded-xl bg-surface-container border-2 border-surface-variant flex items-center justify-center text-on-surface-variant hover:text-primary-container active:translate-y-0.5 transition-transform">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="px-4 py-4 space-y-4">
+<!-- Free Shipping Flat Banner -->
+<section class="bg-surface-container rounded-xl border-2 border-surface-variant p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-[#2EBF84] flex items-center justify-center text-background font-black shrink-0">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+</div>
+<div>
+<p class="font-headline font-bold text-sm text-on-surface leading-tight">Free Shipping Unlocked</p>
+<p class="font-body text-xs text-on-surface-variant mt-0.5">Applied on orders over $50.00</p>
+</div>
+</div>
+<span class="font-headline font-extrabold text-[10px] tracking-wider bg-[#2EBF84] text-background px-2 py-1 rounded">QUALIFIED</span>
+</section>
+<!-- Cart Items Section -->
+<section class="space-y-3">
+<!-- Cart Item 1: Canvas Tote -->
+<article class="bg-surface-container rounded-xl border-2 border-surface-variant p-3 flex gap-3.5 items-center">
+<!-- Geometric Graphic Thumbnail: Yellow Solid Tile -->
+<div class="w-20 h-20 bg-[#FFD15C] rounded-xl border-2 border-[#FFD15C] flex items-center justify-center shrink-0">
+<!-- Flat Silhouette SVG of Tote Bag -->
+<svg class="w-10 h-10 text-[#14151B]" fill="currentColor" viewbox="0 0 24 24">
+<path d="M16 8V6a4 4 0 0 0-8 0v2H4v14h16V8h-4zm-6-2a2 2 0 0 1 4 0v2h-4V6zm8 14H6V10h12v10z"></path>
+</svg>
+</div>
+<!-- Product Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between">
+<h2 class="font-headline font-bold text-base text-on-surface truncate">Canvas Tote</h2>
+<button aria-label="Remove item" class="text-on-surface-variant hover:text-primary-container p-0.5">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<p class="font-body text-xs text-on-surface-variant mt-0.5">Ecru • Medium (14L)</p>
+<div class="flex items-center justify-between mt-2.5">
+<span class="font-headline font-black text-lg text-primary-container">$34</span>
+<!-- Stepper -->
+<div class="flex items-center border-2 border-surface-variant bg-surface-container-high rounded-xl overflow-hidden">
+<button aria-label="Decrease quantity" class="w-7 h-7 flex items-center justify-center text-on-surface font-bold hover:bg-surface-variant active:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="w-7 text-center font-headline font-bold text-xs text-on-surface">1</span>
+<button aria-label="Increase quantity" class="w-7 h-7 flex items-center justify-center text-on-surface font-bold hover:bg-surface-variant active:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Cart Item 2: Orb Speaker -->
+<article class="bg-surface-container rounded-xl border-2 border-surface-variant p-3 flex gap-3.5 items-center">
+<!-- Geometric Graphic Thumbnail: Blue Solid Tile -->
+<div class="w-20 h-20 bg-[#5B7FFF] rounded-xl border-2 border-[#5B7FFF] flex items-center justify-center shrink-0">
+<!-- Flat Silhouette SVG of Concentric Speaker Orb -->
+<svg class="w-10 h-10 text-[#14151B]" fill="currentColor" viewbox="0 0 24 24">
+<circle cx="12" cy="12" fill="none" r="10" stroke="#14151B" stroke-width="2"></circle>
+<circle cx="12" cy="12" r="6"></circle>
+<circle cx="12" cy="12" fill="#5B7FFF" r="2"></circle>
+</svg>
+</div>
+<!-- Product Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between">
+<h2 class="font-headline font-bold text-base text-on-surface truncate">Orb Speaker</h2>
+<button aria-label="Remove item" class="text-on-surface-variant hover:text-primary-container p-0.5">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<p class="font-body text-xs text-on-surface-variant mt-0.5">Matte Cobalt • 360 Audio</p>
+<div class="flex items-center justify-between mt-2.5">
+<span class="font-headline font-black text-lg text-primary-container">$59</span>
+<!-- Stepper -->
+<div class="flex items-center border-2 border-surface-variant bg-surface-container-high rounded-xl overflow-hidden">
+<button aria-label="Decrease quantity" class="w-7 h-7 flex items-center justify-center text-on-surface font-bold hover:bg-surface-variant active:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="w-7 text-center font-headline font-bold text-xs text-on-surface">1</span>
+<button aria-label="Increase quantity" class="w-7 h-7 flex items-center justify-center text-on-surface font-bold hover:bg-surface-variant active:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Cart Item 3: Cube Clock -->
+<article class="bg-surface-container rounded-xl border-2 border-surface-variant p-3 flex gap-3.5 items-center">
+<!-- Geometric Graphic Thumbnail: Coral Solid Tile -->
+<div class="w-20 h-20 bg-[#FF6A4D] rounded-xl border-2 border-[#FF6A4D] flex items-center justify-center shrink-0">
+<!-- Flat Silhouette SVG of Rotated Diamond Clock Face -->
+<svg class="w-9 h-9 text-[#14151B]" fill="currentColor" viewbox="0 0 24 24">
+<rect height="18" rx="2" transform="rotate(45 12 12)" width="18" x="3" y="3"></rect>
+<circle cx="12" cy="12" fill="#FF6A4D" r="2.5"></circle>
+<path d="M12 9v3l2 2" stroke="#FF6A4D" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<!-- Product Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between">
+<h2 class="font-headline font-bold text-base text-on-surface truncate">Cube Clock</h2>
+<button aria-label="Remove item" class="text-on-surface-variant hover:text-primary-container p-0.5">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<p class="font-body text-xs text-on-surface-variant mt-0.5">Terracotta • Silent Sweep</p>
+<div class="flex items-center justify-between mt-2.5">
+<span class="font-headline font-black text-lg text-primary-container">$27</span>
+<!-- Stepper -->
+<div class="flex items-center border-2 border-surface-variant bg-surface-container-high rounded-xl overflow-hidden">
+<button aria-label="Decrease quantity" class="w-7 h-7 flex items-center justify-center text-on-surface font-bold hover:bg-surface-variant active:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="w-7 text-center font-headline font-bold text-xs text-on-surface">1</span>
+<button aria-label="Increase quantity" class="w-7 h-7 flex items-center justify-center text-on-surface font-bold hover:bg-surface-variant active:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</section>
+<!-- Promo Code Section -->
+<section class="bg-surface-container rounded-xl border-2 border-dashed border-surface-variant p-3.5">
+<label class="block font-headline font-bold text-xs uppercase tracking-wider text-on-surface mb-2" for="promo-input">Discount Code</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-high text-on-surface placeholder:text-on-surface-variant/70 text-sm font-body px-3.5 py-2.5 rounded-xl border-2 border-surface-variant focus:border-primary-container focus:ring-0 outline-none" id="promo-input" placeholder="Enter promo code" type="text"/>
+<button class="bg-surface-container-highest text-on-surface font-headline font-bold text-xs px-4 py-2.5 rounded-xl border-2 border-surface-variant hover:bg-primary-container hover:text-background transition-colors active:translate-y-0.5">
+            Apply
+          </button>
+</div>
+</section>
+<!-- Order Summary Card -->
+<section class="bg-surface-container rounded-xl border-2 border-surface-variant p-4 space-y-3">
+<h3 class="font-headline font-bold text-sm text-on-surface tracking-wide">Order Summary</h3>
+<div class="space-y-2 text-sm pt-1">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Subtotal (3 items)</span>
+<span class="font-headline font-bold text-on-surface">$120.00</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Shipping</span>
+<span class="font-headline font-bold text-[#2EBF84] flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#2EBF84] inline-block"></span> FREE
+            </span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Estimated Tax</span>
+<span class="font-headline font-bold text-on-surface">$0.00</span>
+</div>
+</div>
+<div class="border-t-2 border-surface-variant pt-3 flex justify-between items-center">
+<div>
+<span class="font-headline font-black text-base text-on-surface">Total</span>
+<span class="block text-[11px] text-on-surface-variant">VAT Included</span>
+</div>
+<span class="font-headline font-black text-2xl text-primary-container">$120.00</span>
+</div>
+</section>
+</div>
+<!-- Sticky Checkout Action Section (Fixed above Bottom Nav) -->
+<div class="fixed bottom-16 left-0 w-full z-40 bg-surface-dim/95 border-t-2 border-surface-variant px-4 py-3">
+<div class="max-w-md mx-auto">
+<button class="w-full h-13 py-3.5 bg-[#F3F2EE] text-[#14151B] font-headline font-black text-base rounded-xl border-2 border-[#F3F2EE] flex items-center justify-between px-5 active:translate-y-0.5 transition-transform">
+<span class="tracking-tight">Checkout</span>
+<div class="flex items-center gap-2">
+<span class="font-black">$120.00</span>
+<span class="material-symbols-outlined text-lg font-bold">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Docked BottomNavBar Component verbatim from Shared Components -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 max-w-md mx-auto bg-surface-container-lowest border-t-2 border-surface-variant shadow-none">
+<!-- Nav Item 1: Shop (Active context fallback for Cart/Store) -->
+<a class="flex flex-col items-center justify-center text-primary-container font-bold gap-1 active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-label font-bold text-xs">Shop</span>
+</a>
+<!-- Nav Item 2: Search -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-medium gap-1 hover:text-primary active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-xl">search</span>
+<span class="font-label font-bold text-xs">Search</span>
+</a>
+<!-- Nav Item 3: Saved -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-medium gap-1 hover:text-primary active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-xl">favorite</span>
+<span class="font-label font-bold text-xs">Saved</span>
+</a>
+<!-- Nav Item 4: Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-medium gap-1 hover:text-primary active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-xl">person</span>
+<span class="font-label font-bold text-xs">Profile</span>
+</a>
+</nav>
+</main>
+<script>
+    // Flat micro-interaction: Stepper updates without reload
+    document.querySelectorAll('article').forEach(item => {
+      const decBtn = item.querySelectorAll('button')[1];
+      const incBtn = item.querySelectorAll('button')[2];
+      const countEl = item.querySelector('.border-2 span.font-headline');
+
+      if(decBtn && incBtn && countEl) {
+        decBtn.addEventListener('click', () => {
+          let val = parseInt(countEl.innerText);
+          if (val > 1) {
+            countEl.innerText = val - 1;
+          }
+        });
+        incBtn.addEventListener('click', () => {
+          let val = parseInt(countEl.innerText);
+          countEl.innerText = val + 1;
+        });
+      }
+    });
+  </script>
+</body></html>
