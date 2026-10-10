@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLAT SHOP - Cart</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Public+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-container": "#fffbff",
+            "on-surface": "#1c1c16",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#f5bf34",
+            "on-secondary-fixed-variant": "#0038b7",
+            "error": "#ba1a1a",
+            "surface-container-high": "#ece8df",
+            "outline": "#8e706a",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#ffdad4",
+            "on-tertiary-fixed": "#251a00",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#3f0300",
+            "secondary-fixed": "#dde1ff",
+            "secondary-container": "#3f68f6",
+            "secondary": "#1a4cdd",
+            "primary-container": "#d33f28",
+            "tertiary-fixed": "#ffdf9c",
+            "surface-bright": "#fdf9f0",
+            "surface": "#fdf9f0",
+            "surface-variant": "#e6e2d9",
+            "on-error-container": "#93000a",
+            "on-background": "#1c1c16",
+            "on-primary-container": "#fffbff",
+            "surface-container-low": "#f7f3ea",
+            "surface-container": "#f1eee5",
+            "outline-variant": "#e3beb8",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#f4f0e7",
+            "on-tertiary-fixed-variant": "#5b4300",
+            "inverse-primary": "#ffb4a6",
+            "on-secondary-container": "#fffbff",
+            "on-secondary-fixed": "#001452",
+            "surface-dim": "#dddad1",
+            "tertiary": "#755700",
+            "background": "#fdf9f0",
+            "on-surface-variant": "#5a413c",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#900d00",
+            "secondary-fixed-dim": "#b7c4ff",
+            "inverse-surface": "#31302b",
+            "tertiary-container": "#936f00",
+            "primary-fixed-dim": "#ffb4a6",
+            "primary": "#b02612",
+            "surface-container-highest": "#e6e2d9",
+            "surface-tint": "#b42814"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {},
+          "fontFamily": {
+            "headline": ["Plus Jakarta Sans", "sans-serif"],
+            "display": ["Plus Jakarta Sans", "sans-serif"],
+            "body": ["Inter", "sans-serif"],
+            "label": ["Public Sans", "sans-serif"]
+          },
+          "fontSize": {}
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F5F1E8] text-[#1C1B22] font-body antialiased min-h-screen flex justify-center selection:bg-[#FFC83D] selection:text-[#1C1B22]">
+<!-- Mobile Frame Container -->
+<div class="w-full max-w-md bg-[#F5F1E8] min-h-screen flex flex-col relative pb-36">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 bg-[#F5F1E8] px-4 h-16 flex items-center justify-between border-b-2 border-[#1C1B22]">
+<div class="flex items-center gap-3">
+<button aria-label="Go back" class="w-10 h-10 rounded-xl bg-white border-2 border-[#1C1B22] flex items-center justify-center active:translate-y-0.5 transition-transform" type="button">
+<span class="material-symbols-outlined text-[#1C1B22] text-xl" data-icon="arrow_back">arrow_back</span>
+</button>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="font-headline font-extrabold text-xl leading-none text-[#1C1B22]">My Cart</h1>
+<span class="bg-[#FFC83D] text-[#1C1B22] border-2 border-[#1C1B22] text-[11px] font-headline font-bold px-1.5 py-0.5 rounded-md leading-none">3</span>
+</div>
+<p class="font-label text-xs text-[#6B6A75] font-medium leading-tight mt-0.5">3 items in bag</p>
+</div>
+</div>
+<button aria-label="Clear cart" class="w-10 h-10 rounded-xl bg-white border-2 border-[#1C1B22] flex items-center justify-center hover:bg-[#F5F1E8] active:translate-y-0.5 transition-transform text-[#1C1B22]" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="delete_sweep">delete_sweep</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-4 py-4 space-y-4">
+<!-- Free Shipping Alert / Flat Pill -->
+<div class="bg-[#1E9E6A] text-white border-2 border-[#1C1B22] rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-white border-2 border-[#1C1B22] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-base text-[#1E9E6A]" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<p class="font-headline font-bold text-xs tracking-tight">Free Shipping unlocked!</p>
+<p class="text-[11px] font-medium opacity-90">Orders over $50 qualify for standard delivery</p>
+</div>
+</div>
+<span class="font-headline font-extrabold text-[10px] bg-[#1C1B22] text-white px-2 py-1 rounded-md tracking-wider">SAVED $8</span>
+</div>
+<!-- Cart Items Section -->
+<section aria-label="Cart Items" class="space-y-3">
+<!-- Item 1: Canvas Tote -->
+<article class="bg-white border-2 border-[#1C1B22] rounded-xl p-3.5 flex gap-3.5 items-center">
+<!-- Geometric Solid Shape Thumbnail -->
+<div class="w-20 h-20 bg-[#FFC83D] border-2 border-[#1C1B22] rounded-xl shrink-0 flex items-center justify-center relative overflow-hidden">
+<!-- Tote Bag Graphic (Strict Geometric Vectors) -->
+<svg class="text-[#1C1B22]" fill="none" height="44" viewbox="0 0 40 44" width="40">
+<path d="M13 14V9C13 5.13401 16.134 2 20 2C23.866 2 27 5.13401 27 9V14" stroke="#1C1B22" stroke-linecap="round" stroke-width="3"></path>
+<rect fill="#1C1B22" height="26" rx="2" width="30" x="5" y="14"></rect>
+<rect fill="#FFC83D" height="3" width="18" x="11" y="20"></rect>
+</svg>
+</div>
+<!-- Item Details -->
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h2 class="font-headline font-bold text-base text-[#1C1B22] truncate">Canvas Tote</h2>
+<button aria-label="Remove Canvas Tote" class="text-[#6B6A75] hover:text-[#D9432C] transition-colors p-0.5" type="button">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="close">close</span>
+</button>
+</div>
+<p class="text-xs text-[#6B6A75] font-medium mt-0.5">Size M • Mustard Gold</p>
+<div class="flex items-center justify-between mt-3">
+<span class="font-headline font-black text-lg text-[#D9432C]">$34</span>
+<!-- Stepper -->
+<div class="flex items-center border-2 border-[#1C1B22] rounded-lg bg-[#F5F1E8] overflow-hidden">
+<button aria-label="Decrease quantity" class="w-7 h-7 flex items-center justify-center font-bold text-sm bg-white hover:bg-[#F5F1E8] border-r-2 border-[#1C1B22] active:bg-[#FFC83D] transition-colors" type="button">
+                  −
+                </button>
+<span class="w-8 text-center font-headline font-bold text-xs text-[#1C1B22]">1</span>
+<button aria-label="Increase quantity" class="w-7 h-7 flex items-center justify-center font-bold text-sm bg-white hover:bg-[#F5F1E8] border-l-2 border-[#1C1B22] active:bg-[#FFC83D] transition-colors" type="button">
+                  +
+                </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 2: Orb Speaker -->
+<article class="bg-white border-2 border-[#1C1B22] rounded-xl p-3.5 flex gap-3.5 items-center">
+<!-- Geometric Solid Shape Thumbnail -->
+<div class="w-20 h-20 bg-[#2F5BEA] border-2 border-[#1C1B22] rounded-xl shrink-0 flex items-center justify-center relative overflow-hidden">
+<!-- Concentric Circle Geometric Shape -->
+<svg fill="none" height="46" viewbox="0 0 46 46" width="46">
+<circle cx="23" cy="23" fill="white" r="20" stroke="#1C1B22" stroke-width="2.5"></circle>
+<circle cx="23" cy="23" fill="#2F5BEA" r="13" stroke="#1C1B22" stroke-width="2"></circle>
+<circle cx="23" cy="23" fill="#1C1B22" r="6"></circle>
+</svg>
+</div>
+<!-- Item Details -->
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h2 class="font-headline font-bold text-base text-[#1C1B22] truncate">Orb Speaker</h2>
+<button aria-label="Remove Orb Speaker" class="text-[#6B6A75] hover:text-[#D9432C] transition-colors p-0.5" type="button">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="close">close</span>
+</button>
+</div>
+<p class="text-xs text-[#6B6A75] font-medium mt-0.5">Matte Cobalt • 360° Sound</p>
+<div class="flex items-center justify-between mt-3">
+<span class="font-headline font-black text-lg text-[#D9432C]">$59</span>
+<!-- Stepper -->
+<div class="flex items-center border-2 border-[#1C1B22] rounded-lg bg-[#F5F1E8] overflow-hidden">
+<button aria-label="Decrease quantity" class="w-7 h-7 flex items-center justify-center font-bold text-sm bg-white hover:bg-[#F5F1E8] border-r-2 border-[#1C1B22] active:bg-[#FFC83D] transition-colors" type="button">
+                  −
+                </button>
+<span class="w-8 text-center font-headline font-bold text-xs text-[#1C1B22]">1</span>
+<button aria-label="Increase quantity" class="w-7 h-7 flex items-center justify-center font-bold text-sm bg-white hover:bg-[#F5F1E8] border-l-2 border-[#1C1B22] active:bg-[#FFC83D] transition-colors" type="button">
+                  +
+                </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 3: Cube Clock -->
+<article class="bg-white border-2 border-[#1C1B22] rounded-xl p-3.5 flex gap-3.5 items-center">
+<!-- Geometric Solid Shape Thumbnail -->
+<div class="w-20 h-20 bg-[#D9432C] border-2 border-[#1C1B22] rounded-xl shrink-0 flex items-center justify-center relative overflow-hidden">
+<!-- Rotated Diamond / Minimal Clock Graphic -->
+<div class="w-10 h-10 bg-white border-2 border-[#1C1B22] rotate-45 flex items-center justify-center relative">
+<div class="w-1.5 h-1.5 bg-[#1C1B22] rounded-full"></div>
+<div class="absolute w-3 h-0.5 bg-[#1C1B22] top-[18px] left-[18px] origin-left -rotate-45"></div>
+<div class="absolute w-2 h-0.5 bg-[#D9432C] top-[18px] left-[18px] origin-left rotate-45"></div>
+</div>
+</div>
+<!-- Item Details -->
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h2 class="font-headline font-bold text-base text-[#1C1B22] truncate">Cube Clock</h2>
+<button aria-label="Remove Cube Clock" class="text-[#6B6A75] hover:text-[#D9432C] transition-colors p-0.5" type="button">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="close">close</span>
+</button>
+</div>
+<p class="text-xs text-[#6B6A75] font-medium mt-0.5">Minimal White face • Silent</p>
+<div class="flex items-center justify-between mt-3">
+<span class="font-headline font-black text-lg text-[#D9432C]">$27</span>
+<!-- Stepper -->
+<div class="flex items-center border-2 border-[#1C1B22] rounded-lg bg-[#F5F1E8] overflow-hidden">
+<button aria-label="Decrease quantity" class="w-7 h-7 flex items-center justify-center font-bold text-sm bg-white hover:bg-[#F5F1E8] border-r-2 border-[#1C1B22] active:bg-[#FFC83D] transition-colors" type="button">
+                  −
+                </button>
+<span class="w-8 text-center font-headline font-bold text-xs text-[#1C1B22]">1</span>
+<button aria-label="Increase quantity" class="w-7 h-7 flex items-center justify-center font-bold text-sm bg-white hover:bg-[#F5F1E8] border-l-2 border-[#1C1B22] active:bg-[#FFC83D] transition-colors" type="button">
+                  +
+                </button>
+</div>
+</div>
+</div>
+</article>
+</section>
+<!-- Promo Code Section -->
+<section class="border-2 border-dashed border-[#1C1B22] rounded-xl bg-white p-3 space-y-2.5">
+<div class="flex items-center justify-between">
+<label class="font-headline font-bold text-xs uppercase tracking-wider text-[#1C1B22]" for="promo-input">
+            Coupon or Voucher
+          </label>
+<span class="inline-flex items-center gap-1 text-[11px] font-headline font-extrabold text-[#1E9E6A] bg-[#1E9E6A]/10 border border-[#1E9E6A] px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-xs" data-icon="sell">sell</span>
+            FLAT20 available
+          </span>
+</div>
+<form class="flex gap-2" onsubmit="event.preventDefault();">
+<input class="flex-1 bg-[#F5F1E8] border-2 border-[#1C1B22] rounded-lg px-3 py-2 text-xs font-headline font-bold text-[#1C1B22] placeholder:text-[#6B6A75] focus:outline-none focus:bg-white" id="promo-input" placeholder="Enter promo code" type="text" value="FLAT20"/>
+<button class="bg-[#1C1B22] text-white border-2 border-[#1C1B22] font-headline font-bold text-xs px-4 py-2 rounded-lg hover:bg-black active:translate-y-0.5 transition-transform" type="submit">
+            Apply
+          </button>
+</form>
+</section>
+<!-- Order Summary Card -->
+<section class="bg-white border-2 border-[#1C1B22] rounded-xl p-4 space-y-3">
+<h3 class="font-headline font-extrabold text-sm text-[#1C1B22] uppercase tracking-wider">
+          Order Summary
+        </h3>
+<div class="space-y-2 text-sm">
+<div class="flex justify-between items-center text-[#6B6A75] font-medium">
+<span>Subtotal (3 items)</span>
+<span class="font-headline font-bold text-[#1C1B22]">$120.00</span>
+</div>
+<div class="flex justify-between items-center text-[#6B6A75] font-medium">
+<span class="flex items-center gap-1.5">
+              Standard Shipping
+              <span class="material-symbols-outlined text-base text-[#1E9E6A]" data-icon="verified">verified</span>
+</span>
+<span class="font-headline font-bold text-[#1E9E6A] bg-[#1E9E6A]/10 border border-[#1E9E6A] px-2 py-0.5 rounded text-xs">
+              FREE
+            </span>
+</div>
+<div class="flex justify-between items-center text-[#6B6A75] font-medium">
+<span>Estimated Sales Tax</span>
+<span class="font-headline font-bold text-[#1C1B22]">$0.00</span>
+</div>
+</div>
+<div class="border-t-2 border-[#1C1B22] pt-3 flex justify-between items-end">
+<div>
+<span class="text-xs text-[#6B6A75] font-semibold uppercase tracking-wider block">Total Amount</span>
+<span class="font-headline font-black text-2xl text-[#1C1B22]">$120.00</span>
+</div>
+<span class="text-[11px] font-bold text-[#6B6A75] bg-[#F5F1E8] border border-[#1C1B22] px-2 py-1 rounded">
+            All taxes included
+          </span>
+</div>
+</section>
+</main>
+<!-- Docked Sticky Checkout Action & Bottom Navigation Wrapper -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-[#F5F1E8] border-t-2 border-[#1C1B22]">
+<div class="max-w-md mx-auto px-4 pt-3 pb-2 bg-[#F5F1E8]">
+<!-- Primary Action: Checkout Button -->
+<button class="w-full bg-[#1C1B22] text-white border-2 border-[#1C1B22] py-3.5 px-4 rounded-xl font-headline font-extrabold text-base flex items-center justify-between active:translate-y-0.5 transition-transform group" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xl" data-icon="shopping_cart_checkout">shopping_cart_checkout</span>
+<span>Checkout</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm font-body font-normal text-white/80">3 items • $120</span>
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</button>
+</div>
+<!-- Shared Component: BottomNavBar (docked full-width bottom-0) -->
+<nav aria-label="Main Navigation" class="w-full max-w-md mx-auto flex justify-around items-center h-14 px-4 bg-surface-container-lowest border-t-2 border-surface-variant">
+<!-- Shop (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant font-medium gap-1 hover:text-primary active:scale-95 transition-transform duration-100" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="storefront">storefront</span>
+<span class="font-label font-bold text-xs">Shop</span>
+</button>
+<!-- Search (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant font-medium gap-1 hover:text-primary active:scale-95 transition-transform duration-100" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="search">search</span>
+<span class="font-label font-bold text-xs">Search</span>
+</button>
+<!-- Saved (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant font-medium gap-1 hover:text-primary active:scale-95 transition-transform duration-100" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="favorite">favorite</span>
+<span class="font-label font-bold text-xs">Saved</span>
+</button>
+<!-- Profile (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant font-medium gap-1 hover:text-primary active:scale-95 transition-transform duration-100" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="person">person</span>
+<span class="font-label font-bold text-xs">Profile</span>
+</button>
+</nav>
+</div>
+</div>
+</body></html>
