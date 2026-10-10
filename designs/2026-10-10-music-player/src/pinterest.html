@@ -1,0 +1,127 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1000px;height:1500px;overflow:hidden;font-family:Inter,sans-serif;color:#fff;
+background:radial-gradient(900px 600px at 85% 0%,rgba(168,85,247,.35),transparent 60%),radial-gradient(800px 600px at 0% 60%,rgba(236,72,153,.22),transparent 60%),#0b0a14;position:relative}
+.grad{background:linear-gradient(90deg,#a855f7,#ec4899 55%,#f97316);-webkit-background-clip:text;background-clip:text;color:transparent}
+header{padding:70px 70px 0;text-align:center}
+.tag{display:inline-block;font:600 20px Inter;letter-spacing:3px;text-transform:uppercase;padding:10px 22px;border-radius:40px;border:1.5px solid rgba(236,72,153,.6);color:#f9a8d4;background:rgba(236,72,153,.08)}
+h1{font:800 84px/1.02 Poppins;letter-spacing:-2px;margin-top:26px}
+.sub{font:500 26px Inter;color:#c4c0d8;margin-top:18px}
+.phones{position:absolute;top:385px;left:0;width:1000px;display:flex;justify-content:center;align-items:flex-start;gap:28px}
+.phone{background:#000;border-radius:44px;padding:10px;box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 0 1.5px #2a2838;}
+.side{width:282px;height:590px;margin-top:60px}
+.main{width:326px;height:672px}
+.scr{width:100%;height:100%;border-radius:35px;background:#13121d;overflow:hidden;position:relative;padding:44px 18px 18px}
+.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:84px;height:22px;background:#000;border-radius:20px}
+.sb{position:absolute;top:14px;left:24px;right:24px;display:flex;justify-content:space-between;font:600 12px Inter;color:#ddd}
+.h{font:700 21px Poppins;margin-bottom:4px}
+.m{font:500 12px Inter;color:#8e8aa6}
+.chips{display:flex;gap:6px;margin:12px 0}
+.chip{font:600 11px Inter;padding:6px 11px;border-radius:20px;background:#22202f;color:#bbb}
+.chip.on{background:linear-gradient(90deg,#a855f7,#ec4899);color:#fff}
+.art{border-radius:14px}
+.a1{background:linear-gradient(135deg,#a855f7,#ec4899)}
+.a2{background:radial-gradient(circle at 30% 30%,#fde68a,#f97316 45%,#7c2d12)}
+.a3{background:linear-gradient(160deg,#06b6d4,#3b82f6 50%,#1e1b4b)}
+.a4{background:conic-gradient(from 45deg,#ec4899,#8b5cf6,#22d3ee,#ec4899)}
+.a5{background:linear-gradient(135deg,#10b981,#065f46)}
+.a6{background:radial-gradient(circle at 70% 70%,#f472b6,#4c1d95 70%)}
+.feat{display:flex;gap:10px;margin-bottom:14px}
+.feat .art{width:118px;height:118px;position:relative}
+.feat .art span{position:absolute;left:10px;bottom:9px;font:700 12px Inter}
+.sec{font:700 14px Inter;margin:6px 0 10px}
+.row{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+.row .art{width:44px;height:44px;border-radius:10px;flex:none}
+.row .t{font:600 13px Inter}.row .s{font:500 11px Inter;color:#8e8aa6;margin-top:2px}
+.row .d{margin-left:auto;font:500 11px Inter;color:#8e8aa6}
+.nav{position:absolute;left:0;right:0;bottom:0;height:56px;background:#0e0d16;border-top:1px solid #222;display:flex;justify-content:space-around;align-items:center}
+.nav i{width:20px;height:20px;border-radius:6px;background:#3a3750;display:block}.nav i.on{background:linear-gradient(135deg,#a855f7,#ec4899)}
+/* now playing */
+.np{background:linear-gradient(180deg,#3b1a5c 0%,#13121d 55%)}
+.top{display:flex;justify-content:space-between;align-items:center;font:600 12px Inter;color:#cfc8e6;margin-bottom:22px}
+.dot{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:14px}
+.big{width:270px;height:270px;margin:0 auto;border-radius:22px;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(168,85,247,.45)}
+.big:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 25%,rgba(255,255,255,.45),transparent 35%),repeating-radial-gradient(circle at 30% 80%,rgba(255,255,255,.08) 0 2px,transparent 2px 14px)}
+.title{margin-top:24px;display:flex;justify-content:space-between;align-items:center}
+.title .t{font:700 22px Poppins}.title .s{font:500 14px Inter;color:#a9a3c4;margin-top:2px}
+.heart{font-size:22px;color:#ec4899}
+.bar{height:5px;background:#2e2b40;border-radius:4px;margin-top:22px;position:relative}
+.bar b{position:absolute;left:0;top:0;bottom:0;width:42%;border-radius:4px;background:linear-gradient(90deg,#a855f7,#ec4899)}
+.bar b:after{content:"";position:absolute;right:-7px;top:-4.5px;width:14px;height:14px;border-radius:50%;background:#fff}
+.time{display:flex;justify-content:space-between;font:500 11px Inter;color:#8e8aa6;margin-top:9px}
+.ctrl{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding:0 6px}
+.ctrl span{font-size:20px;color:#d6d1ea}
+.play{width:66px;height:66px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#ec4899);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(236,72,153,.5)}
+.play:before{content:"";width:0;height:0;border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.wave{display:flex;gap:3px;align-items:flex-end;height:26px;justify-content:center;margin-top:18px}
+.wave i{width:4px;border-radius:2px;background:linear-gradient(#ec4899,#a855f7)}
+/* playlist */
+.phead{height:150px;margin:-44px -18px 14px;padding:44px 18px 14px;display:flex;flex-direction:column;justify-content:flex-end}
+.pbtn{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.pbtn .play{width:44px;height:44px}.pbtn .play:before{border-left-width:14px;border-top-width:9px;border-bottom-width:9px;margin-left:4px}
+.shuffle{font:600 11px Inter;color:#f9a8d4;padding:6px 12px;border:1px solid rgba(236,72,153,.5);border-radius:20px}
+.row.on .t{color:#f472b6}
+/* features */
+.strip{position:absolute;left:60px;right:60px;top:1135px}
+.strip h3{font:700 20px Inter;letter-spacing:3px;text-transform:uppercase;color:#a9a3c4;text-align:center;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.f{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:16px 18px;display:flex;align-items:center;gap:12px}
+.f .ic{width:40px;height:40px;border-radius:12px;flex:none;background:linear-gradient(135deg,#a855f7,#ec4899);display:flex;align-items:center;justify-content:center;font:700 16px Inter}
+.f .ft{font:700 18px Inter}.f .fs{font:500 14px Inter;color:#a9a3c4;margin-top:2px}
+footer{position:absolute;bottom:44px;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center}
+.handle{font:700 26px Poppins}
+.save{font:600 18px Inter;color:#c4c0d8}
+</style></head><body>
+<header>
+<div class="tag">Front-end project idea</div>
+<h1>Music Player<br><span class="grad">App UI</span></h1>
+<div class="sub">Dark-theme mobile concept · 3 screens to build</div>
+</header>
+
+<div class="phones">
+ <!-- Home -->
+ <div class="phone side"><div class="scr"><div class="notch"></div><div class="sb"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="m">Good evening</div><div class="h">Your Library</div>
+  <div class="chips"><span class="chip on">Playlists</span><span class="chip">Albums</span><span class="chip">Artists</span></div>
+  <div class="feat"><div class="art a2"><span>Sunset Drive</span></div><div class="art a3"><span>Deep Focus</span></div></div>
+  <div class="sec">Recently played</div>
+  <div class="row"><div class="art a4"></div><div><div class="t">Neon Rivers</div><div class="s">Lumen Vale</div></div><div class="d">3:42</div></div>
+  <div class="row"><div class="art a5"></div><div><div class="t">Paper Moons</div><div class="s">The Quiet Arcs</div></div><div class="d">4:05</div></div>
+  <div class="row"><div class="art a6"></div><div><div class="t">Velvet Static</div><div class="s">Nova Kade</div></div><div class="d">2:58</div></div>
+  <div class="nav"><i class="on"></i><i></i><i></i><i></i></div>
+ </div></div>
+ <!-- Now playing -->
+ <div class="phone main"><div class="scr np"><div class="notch"></div><div class="sb"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="top"><div class="dot">⌄</div><span>NOW PLAYING</span><div class="dot">⋯</div></div>
+  <div class="big a1"></div>
+  <div class="title"><div><div class="t">Midnight Echoes</div><div class="s">Aurora Lane</div></div><div class="heart">♥</div></div>
+  <div class="bar"><b></b></div>
+  <div class="time"><span>1:34</span><span>3:48</span></div>
+  <div class="ctrl"><span>⇄</span><svg width="22" height="22" viewBox="0 0 24 24" fill="#d6d1ea"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg><div class="play"></div><svg width="22" height="22" viewBox="0 0 24 24" fill="#d6d1ea"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg><span>↻</span></div>
+  <div class="wave" id="w"></div>
+ </div></div>
+ <!-- Playlist -->
+ <div class="phone side"><div class="scr"><div class="notch"></div><div class="sb"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="phead a3"><div class="m" style="color:#dbeafe">PLAYLIST</div><div class="h">Late Night Code</div><div class="m" style="color:#dbeafe">24 songs · 1h 32m</div></div>
+  <div class="pbtn"><span class="shuffle">⇄ Shuffle</span><div class="play"></div></div>
+  <div class="row on"><div class="art a1"></div><div><div class="t">Midnight Echoes</div><div class="s">Aurora Lane</div></div><div class="d">3:48</div></div>
+  <div class="row"><div class="art a2"></div><div><div class="t">Golden Hour</div><div class="s">Sol Theory</div></div><div class="d">3:21</div></div>
+  <div class="row"><div class="art a4"></div><div><div class="t">Neon Rivers</div><div class="s">Lumen Vale</div></div><div class="d">3:42</div></div>
+  <div class="row"><div class="art a6"></div><div><div class="t">Velvet Static</div><div class="s">Nova Kade</div></div><div class="d">2:58</div></div>
+  <div class="nav"><i></i><i></i><i class="on"></i><i></i></div>
+ </div></div>
+</div>
+
+<div class="strip"><h3>Build it with</h3>
+<div class="grid">
+ <div class="f"><div class="ic">&lt;/&gt;</div><div><div class="ft">HTML · CSS · JS</div><div class="fs">or React</div></div></div>
+ <div class="f"><div class="ic">♪</div><div><div class="ft">Web Audio API</div><div class="fs">play · seek · volume</div></div></div>
+ <div class="f"><div class="ic">≡</div><div><div class="ft">Playlists</div><div class="fs">localStorage</div></div></div>
+ <div class="f"><div class="ic">⇄</div><div><div class="ft">Shuffle · Repeat</div><div class="fs">queue logic</div></div></div>
+ <div class="f"><div class="ic">◐</div><div><div class="ft">Seek Bar</div><div class="fs">range input + CSS</div></div></div>
+ <div class="f"><div class="ic">▭</div><div><div class="ft">Responsive</div><div class="fs">Flexbox · Grid</div></div></div>
+</div></div>
+
+<footer><span class="handle grad">@code.in.30s</span><span class="save">Save for your next project ↗</span></footer>
+<script>const w=document.getElementById('w');[8,14,22,12,18,26,10,20,15,24,9,17,23,11,19,13,7,16].forEach(h=>{const i=document.createElement('i');i.style.height=h+'px';w.appendChild(i)})</script>
+</body></html>
