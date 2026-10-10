@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Tailwind via CDN: zero setup. For production, see README ("Going to production"). -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2720%27 fill=%27%23D9432C%27/%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2722%27 fill=%27%23FFC83D%27/%3E%3C/svg%3E">
+  <title>Flat Shop · Home</title>
+</head>
+<body data-page="home" class="bg-bg text-ink min-h-screen pb-24 md:pb-10">
+
+  <header id="site-header"></header>
+
+  <main class="max-w-6xl mx-auto px-4">
+    <!-- Greeting -->
+    <section class="pt-6 flex items-end justify-between gap-4">
+      <div>
+        <p class="text-xs font-bold tracking-widest text-muted uppercase">Hi, Maya</p>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl leading-tight">Find your style</h2>
+      </div>
+      <span class="shrink-0 inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full border-2 border-ink dark:border-line bg-card">
+        <span class="w-2 h-2 rounded-full bg-green"></span>Drops live
+      </span>
+    </section>
+
+    <!-- Search -->
+    <label id="search" class="mt-5 flex items-center gap-3 h-12 px-4 rounded-xl border-2 border-ink dark:border-line bg-card focus-within:border-coral">
+      <svg viewBox="0 0 24 24" class="w-5 h-5 text-muted" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4-4"/></svg>
+      <input id="search-input" type="search" placeholder="Search products" autocomplete="off"
+             class="flex-1 bg-transparent outline-none text-sm placeholder:text-muted">
+    </label>
+
+    <!-- Category chips (filled in by home.js) -->
+    <nav id="chips" aria-label="Categories" class="mt-4 flex gap-2 overflow-x-auto no-scrollbar"></nav>
+
+    <!-- Product grid -->
+    <section class="mt-6">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-display font-bold text-xl">Featured Goods</h3>
+        <span id="result-count" class="text-xs font-bold text-coral"></span>
+      </div>
+      <div id="grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"></div>
+      <p id="empty" class="hidden py-12 text-center text-muted font-semibold">No products match your search.</p>
+    </section>
+
+    <!-- Promo banner -->
+    <section class="mt-6 rounded-xl border-2 border-ink dark:border-line bg-blue text-white dark:text-[#14151B] p-5 flex items-center justify-between gap-4">
+      <div>
+        <span class="inline-block text-[11px] font-extrabold px-2 py-0.5 rounded bg-yellow text-[#1C1B22] border-2 border-[#1C1B22]">NEW SEASON</span>
+        <p class="font-display font-extrabold text-xl mt-2">20% off all geometry</p>
+        <p class="text-sm opacity-90">Use code <b>FLAT20</b> at checkout</p>
+      </div>
+      <button id="claim" type="button" class="shrink-0 font-bold text-sm px-4 py-2.5 rounded-xl bg-white text-[#1C1B22] border-2 border-[#1C1B22]">Claim</button>
+    </section>
+  </main>
+
+  <nav id="bottom-nav"></nav>
+
+  <script src="data/products.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/home.js"></script>
+</body>
+</html>
