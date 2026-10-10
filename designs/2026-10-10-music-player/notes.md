@@ -34,8 +34,18 @@ Accent gradient: `#A855F7` → `#EC4899` → `#F97316`
 - `src/instagram.html` — 1080×1350 Instagram layout
 - Self-contained HTML/CSS (no local image assets)
 
-## Outputs
-- `pinterest.png` (1000×1500)
-- `instagram.png` (1080×1350)
-- `pinterest.txt` — title, description, alt text, board
-- `instagram-caption.txt` — caption + hashtags
+## Outputs (not committed — regenerate locally)
+PNG renders are **not** stored in this repo. Re-render with headless Chrome:
+
+```bash
+cd designs/2026-10-10-music-player
+google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
+  --window-size=1000,1500 --virtual-time-budget=3000 \
+  --screenshot=pinterest.png src/pinterest.html
+
+google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
+  --window-size=1080,1350 --virtual-time-budget=3000 \
+  --screenshot=instagram.png src/instagram.html
+```
+
+Also kept: `pinterest.txt`, `instagram-caption.txt`.
