@@ -1,0 +1,11 @@
+TITLE:
+Music Player App UI Design – Dark Theme Front-End Project Idea for Students
+
+DESCRIPTION:
+Build this dark-theme music player app as your next front-end project: a library home screen, a now-playing view with seek bar and controls, and a playlist page. Recreate it with HTML, CSS and JavaScript (or React), use the Web Audio API for playback, and store playlists in localStorage. Follow @code.in.30s for more UI ideas you can build. #frontenddevelopment #uidesign #webdevelopment #codingprojects #darkmode #reactjs
+
+ALT TEXT:
+Dark-theme music player app UI concept shown on three phone screens: a library home screen with playlist cards and recently played songs, a now-playing screen with large purple-pink gradient album art, a progress bar and play controls, and a "Late Night Code" playlist screen. A header reads "Music Player App UI – Front-end project idea," and below it a "Build it with" list shows HTML, CSS, JS or React, Web Audio API, playlists, shuffle and repeat, seek bar, and responsive layout. Credit: @code.in.30s.
+
+SUGGESTED BOARD:
+Front-End Project Ideas

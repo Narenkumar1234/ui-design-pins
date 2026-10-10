@@ -1,0 +1,26 @@
+Your next portfolio project? A music player that actually looks premium 🎧
+
+Front-end project idea: build a dark-theme music player app with 3 screens:
+→ Library: playlist cards + recently played
+→ Now Playing: album art, seek bar, play/pause, shuffle & repeat
+→ Playlist: track list with the current song highlighted
+
+🎨 Color palette
+#0B0A14 background
+#13121D surface / cards
+#A855F7 purple accent
+#EC4899 pink accent
+#F97316 orange highlight
+#A9A3C4 muted text
+(Accent gradient: #A855F7 → #EC4899 → #F97316)
+
+🛠 Stack
+HTML + CSS + JavaScript (or React)
+Web Audio API / <audio> for play, seek, volume
+localStorage for saving playlists
+Flexbox + Grid for a responsive layout
+Fonts: Poppins (headings) + Inter (UI)
+
+📌 Save this for your next project, and follow @code.in.30s for more UI you can build.
+
+#frontenddevelopment #webdevelopment #uidesign #uiux #javascript #reactjs #css #htmlcss #codingprojects #darkmode #musicapp #webdev #100daysofcode #studentdeveloper
