@@ -1,71 +1,93 @@
 # UI Design Pins
 
-Free front-end UI design concepts and project ideas for students, from [@code.in.30s](https://www.instagram.com/code.in.30s/) on Instagram.
+Private reference repo for [@code.in.30s](https://www.instagram.com/code.in.30s/) — free front-end UI design concepts and project ideas for students.
 
-Each pin is a finished mobile UI concept (often light + dark) with a short "build it with" stack so students can turn the screens into a portfolio project.
-
-**Flat Shop UI Kit (code pack):** [narenkumar1.gumroad.com/l/flat-shop-ui-kit](https://narenkumar1.gumroad.com/l/flat-shop-ui-kit)
+**Code only.** Source HTML/CSS/JS, Stitch exports, and Gumroad kit code live here. Rendered PNGs for Instagram/Pinterest are regenerated locally (see below) and are not committed. Cloud copies of posts live on Instagram; sellable kits live on Gumroad.
 
 ## Folder layout
 
 ```
 designs/<YYYY-MM-DD>-<slug>/
-  src/                 # HTML/CSS (and build helpers) for the pin layouts
-  screens/             # optional: per-screen HTML + PNG used inside phone frames
-  pinterest*.png       # 1000×1500 Pinterest-ready pin(s)
-  instagram*.png       # 1080×1350 Instagram 4:5 image(s)
+  src/                 # pin/carousel HTML (and build helpers)
+  screens/             # per-screen HTML used inside phone frames (no PNGs)
+  stitch/              # optional: raw Google Stitch HTML + screens.json
+  kit/                 # optional: sellable pack (code/ + README + LICENSE + listing)
   notes.md             # palette, fonts, screens, stack, project idea
   pinterest.txt        # title, description, alt text, suggested board
   instagram-caption.txt
+
+tools/stitch/          # Stitch MCP helper scripts (API key from env)
 ```
 
-## How to re-render
+## How to run a kit
 
-Pins are plain HTML/CSS screenshots. With Google Chrome installed:
+Flat Shop example:
 
 ```bash
-# Single self-contained pin (music player example)
+cd designs/2026-10-10-flat-shop/kit/code
+python3 -m http.server 5500   # open http://localhost:5500
+# or open index.html directly in a browser
+```
+
+See `kit/README.md` for features (cart, FLAT20 promo, light/dark toggle).
+
+## How to regenerate pin images
+
+PNGs are gitignored. Rebuild them when you need to post.
+
+**Self-contained pin (music player):**
+
+```bash
+cd designs/2026-10-10-music-player
 google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
   --window-size=1000,1500 --virtual-time-budget=3000 \
   --screenshot=pinterest.png src/pinterest.html
-
 google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
   --window-size=1080,1350 --virtual-time-budget=3000 \
   --screenshot=instagram.png src/instagram.html
 ```
 
-For Flat Shop (framed multi-screen pins that reference `screens/*.png`):
+**Framed multi-screen pin (Flat Shop):**
 
 ```bash
 cd designs/2026-10-10-flat-shop
-# Optional: re-render each screens/*.html to screens/*.png first (same Chrome flags, phone size)
-python3 src/build.py   # regenerates src/_*.html from template.html and screenshots pins
+python3 src/build.py
 ```
 
-`build.py` expects to be run with the design folder as the working directory so paths like `src/template.html` and `../screens/` resolve correctly.
+`build.py` screenshots each `screens/*.html` to local `screens/*.png` (needed by the framed templates), regenerates `src/_*.html` from `template.html`, then screenshots the Pinterest (1000×1500) and Instagram (1080×1350) layouts. Run it with the design folder as the working directory.
+
+## tools/stitch
+
+Minimal Google Stitch MCP client. Reads the API key from the environment — never commit keys.
+
+```bash
+export STITCH_API_KEY='your-key'   # from Stitch → profile → API settings
+cd tools/stitch
+python3 stitch.py list
+python3 stitch.py call list_projects '{}'
+# python3 mk_ds.py                  # create design systems (project id in script)
+# python3 gen.py LIGHT home         # generate a screen
+# python3 download.py PROJECT_ID OUTDIR
+```
+
+Scripts: `stitch.py` (RPC client), `mk_ds.py`, `gen.py`, `download.py`.
 
 ## Gallery
 
 ### Music Player App UI (dark theme)
 
-[designs/2026-10-10-music-player/](designs/2026-10-10-music-player/)
-
-Instagram: *not posted* (sample style pin)
-
-![Music Player — Instagram](designs/2026-10-10-music-player/instagram.png)
+- Folder: [designs/2026-10-10-music-player/](designs/2026-10-10-music-player/)
+- Instagram: *not posted* (sample style pin)
+- Gumroad: —
 
 ### Flat Shop App UI (flat design, light + dark)
 
-[designs/2026-10-10-flat-shop/](designs/2026-10-10-flat-shop/)
-
-Instagram: [https://www.instagram.com/p/DeUPQmJG3Ek/](https://www.instagram.com/p/DeUPQmJG3Ek/)
-
-Gumroad kit: [Flat Shop UI Kit](https://narenkumar1.gumroad.com/l/flat-shop-ui-kit)
-
-![Flat Shop — Light](designs/2026-10-10-flat-shop/instagram-light.png)
-
-![Flat Shop — Dark](designs/2026-10-10-flat-shop/instagram-dark.png)
+- Folder: [designs/2026-10-10-flat-shop/](designs/2026-10-10-flat-shop/)
+- Instagram: https://www.instagram.com/p/DeUPQmJG3Ek/
+- Gumroad: https://narenkumar1.gumroad.com/l/flat-shop-ui-kit
+- Kit source: [designs/2026-10-10-flat-shop/kit/](designs/2026-10-10-flat-shop/kit/)
+- Stitch HTML: [designs/2026-10-10-flat-shop/stitch/](designs/2026-10-10-flat-shop/stitch/)
 
 ## License / use
 
-Design concepts here are shared so students can practice and learn. Recreate them in your own code for portfolio projects. Do not reclaim the Instagram posts or Gumroad product as your own listing without permission.
+Design concepts here are private reference material for @code.in.30s. Recreate them in your own code for portfolio practice. Do not reclaim the Instagram posts or Gumroad product as your own listing without permission.
