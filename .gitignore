@@ -1,0 +1,24 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Secrets / env
+.env
+.env.*
+*.pem
+*.key
+
+# Scratch / local renders
+tmp/
+*.log
+__pycache__/
+*.pyc
+
+# Archives (keep source + PNGs only)
+*.zip
+*.tar
+*.tar.gz
