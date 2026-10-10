@@ -18,7 +18,14 @@ tmp/
 __pycache__/
 *.pyc
 
-# Archives (keep source + PNGs only)
+# Generated pin / screen images (regenerate with build.py or Chrome)
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+
+# Archives
 *.zip
 *.tar
 *.tar.gz
