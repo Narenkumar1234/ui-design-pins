@@ -46,13 +46,21 @@ Sellable pack: [Flat Shop UI Kit on Gumroad](https://narenkumar1.gumroad.com/l/f
 - `src/template.html` + `src/build.py` — generate framed pin/IG HTML for light & dark
 - `src/_pinterest-*.html`, `src/_instagram-*.html` — generated framed layouts
 - `screens/*.html` — per-screen Stitch-derived HTML (light/dark × home/detail/cart)
-- `screens/*.png` — rendered phone screen captures referenced by the framed HTML (`../screens/…`)
+- `stitch/` — raw Stitch HTML exports + `screens.json` (no PNGs)
+- `kit/` — sellable Gumroad pack source (`code/` app + README + LICENSE + listing)
 
-## Outputs
-- `pinterest-light.png`, `pinterest-dark.png` (1000×1500)
-- `instagram-light.png`, `instagram-dark.png` (1080×1350)
-- `pinterest.txt` — titles, description, alt text, board
-- `instagram-caption.txt` — carousel caption + hashtags
+## Outputs (not committed — regenerate locally)
+PNG renders are **not** stored in this repo. The framed HTML still references
+`../screens/*.png`; run `build.py` to recreate them from the HTML screens, then
+screenshot the framed layouts:
 
-## Re-render notes
-Run `build.py` from the design folder (paths assume cwd = this folder). It regenerates `src/_*.html` from `template.html` and screenshots them with headless Chrome. Screen PNGs in `screens/` must already exist (or re-render each `screens/*.html` first).
+```bash
+cd designs/2026-10-10-flat-shop
+python3 src/build.py
+```
+
+That writes local `screens/*.png` plus `pinterest-*.png` / `instagram-*.png`.
+Also kept: `pinterest.txt`, `instagram-caption.txt`.
+
+## Caption / keyword
+Instagram post keyword for the free kit DM: **SHOP**
