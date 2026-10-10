@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Canvas Tote — FLAT SHOP</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800;900&amp;family=Public+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "error-container": "#ffdad6",
+            "primary-container": "#d33f28",
+            "on-primary": "#ffffff",
+            "on-surface": "#1c1c16",
+            "on-surface-variant": "#5a413c",
+            "surface-dim": "#dddad1",
+            "tertiary-fixed": "#ffdf9c",
+            "surface-variant": "#e6e2d9",
+            "tertiary": "#755700",
+            "surface-container-high": "#ece8df",
+            "primary-fixed-dim": "#ffb4a6",
+            "inverse-primary": "#ffb4a6",
+            "tertiary-fixed-dim": "#f5bf34",
+            "inverse-surface": "#31302b",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#0038b7",
+            "on-tertiary-container": "#fffbff",
+            "inverse-on-surface": "#f4f0e7",
+            "on-tertiary-fixed": "#251a00",
+            "outline": "#8e706a",
+            "primary-fixed": "#ffdad4",
+            "on-secondary-container": "#fffbff",
+            "background": "#fdf9f0",
+            "surface-tint": "#b42814",
+            "surface": "#fdf9f0",
+            "secondary-container": "#3f68f6",
+            "tertiary-container": "#936f00",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#e6e2d9",
+            "on-secondary-fixed": "#001452",
+            "on-primary-fixed-variant": "#900d00",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#fffbff",
+            "primary": "#d9432c",
+            "secondary": "#2f5bea",
+            "surface-bright": "#fdf9f0",
+            "outline-variant": "#e3beb8",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "on-primary-fixed": "#3f0300",
+            "surface-container-low": "#f7f3ea",
+            "on-tertiary-fixed-variant": "#5b4300",
+            "surface-container": "#f1eee5",
+            "on-background": "#1c1c16",
+            "secondary-fixed": "#dde1ff",
+            "secondary-fixed-dim": "#b7c4ff",
+            /* Flat UI strict anchor colors */
+            "flat-bg": "#F5F1E8",
+            "flat-dark": "#1C1B22",
+            "flat-coral": "#D9432C",
+            "flat-blue": "#2F5BEA",
+            "flat-green": "#1E9E6A",
+            "flat-yellow": "#FFC83D",
+            "flat-card": "#FFFFFF",
+            "flat-border": "#1C1B22",
+            "flat-muted": "#6B6A75"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Plus Jakarta Sans", "sans-serif"],
+            display: ["Plus Jakarta Sans", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Strict FLAT UI enforcement: eliminate gradients, glows, blurs, shadows */
+    * {
+      box-shadow: none !important;
+      text-shadow: none !important;
+      filter: none !important;
+      backdrop-filter: none !important;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .icon-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F5F1E8] text-[#1C1B22] font-body min-h-screen antialiased selection:bg-[#FFC83D] selection:text-[#1C1B22] pb-32">
+<!-- Mobile Screen Container -->
+<main class="max-w-md mx-auto min-h-screen bg-[#F5F1E8] flex flex-col relative">
+<!-- Top App Bar / Header -->
+<header class="sticky top-0 z-40 bg-[#F5F1E8] px-4 h-16 flex items-center justify-between border-b-2 border-[#1C1B22]">
+<!-- Back Action Button -->
+<a aria-label="Go back" class="w-11 h-11 bg-white border-2 border-[#1C1B22] rounded-xl flex items-center justify-center text-[#1C1B22] hover:bg-[#F5F1E8] active:translate-y-0.5 transition-transform" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="arrow_back">arrow_back</span>
+</a>
+<!-- Screen Title -->
+<h2 class="font-headline font-black text-xl tracking-tight text-[#1C1B22]">Details</h2>
+<!-- Favorite Action Button -->
+<button aria-label="Save to favorites" class="w-11 h-11 bg-white border-2 border-[#1C1B22] rounded-xl flex items-center justify-center text-[#1C1B22] hover:bg-[#F5F1E8] active:translate-y-0.5 transition-transform" id="fav-btn" type="button">
+<span class="material-symbols-outlined text-xl text-[#D9432C] icon-fill" data-icon="favorite" data-weight="fill" id="fav-icon" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</header>
+<!-- Content Canvas -->
+<div class="px-4 pt-4 flex flex-col gap-5">
+<!-- Product Hero Gallery Section -->
+<section class="flex flex-col gap-3">
+<!-- Solid Accent Hero Tile -->
+<div class="relative w-full aspect-[16/10] bg-[#FFC83D] border-2 border-[#1C1B22] rounded-xl flex flex-col items-center justify-center overflow-hidden p-6 select-none">
+<!-- Top Left Badge -->
+<div class="absolute top-3 left-3 bg-[#1C1B22] text-white font-headline font-bold text-xs px-2.5 py-1 rounded-xl uppercase tracking-wider border-2 border-[#1C1B22]">
+            Accessories
+          </div>
+<!-- Top Right Stock Pill -->
+<div class="absolute top-3 right-3 bg-white text-[#1C1B22] font-label font-bold text-xs px-2.5 py-1 rounded-xl border-2 border-[#1C1B22] flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#1E9E6A]"></span>
+<span>In Stock</span>
+</div>
+<!-- Geometric Flat Vector Silhouette: Canvas Tote Bag -->
+<div class="w-48 h-56 flex items-center justify-center">
+<svg class="w-full h-full drop-shadow-none" fill="none" viewbox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
+<!-- Tote Straps / Handles -->
+<path d="M50 82 V42 C50 24 64 12 80 12 C96 12 110 24 110 42 V82" stroke="#1C1B22" stroke-linecap="square" stroke-linejoin="miter" stroke-width="12"></path>
+<!-- Tote Body -->
+<polygon fill="#1C1B22" points="22,76 138,76 130,178 30,178" stroke="#1C1B22" stroke-linejoin="round" stroke-width="4"></polygon>
+<!-- Subtle Flat Contrast Pocket -->
+<rect fill="#FFC83D" height="50" rx="4" stroke="#1C1B22" stroke-width="4" width="56" x="52" y="104"></rect>
+<!-- Pocket Reinforcement Stitching Marker -->
+<line stroke="#1C1B22" stroke-dasharray="4 3" stroke-width="3" x1="56" x2="104" y1="112" y2="112"></line>
+</svg>
+</div>
+<!-- Bottom Geometric Indicator Corner Tag -->
+<div class="absolute bottom-3 left-3 bg-white text-[#1C1B22] font-mono text-[11px] font-bold px-2 py-0.5 rounded-lg border-2 border-[#1C1B22]">
+            16oz HEAVYWEIGHT
+          </div>
+</div>
+<!-- Carousel Indicators (Solid Flat Dots) -->
+<div aria-label="Image gallery pager" class="flex items-center justify-center gap-2 pt-1">
+<button aria-label="View photo 1" class="w-6 h-2.5 bg-[#1C1B22] rounded-full border-2 border-[#1C1B22]"></button>
+<button aria-label="View photo 2" class="w-2.5 h-2.5 bg-white rounded-full border-2 border-[#1C1B22]"></button>
+<button aria-label="View photo 3" class="w-2.5 h-2.5 bg-white rounded-full border-2 border-[#1C1B22]"></button>
+<button aria-label="View photo 4" class="w-2.5 h-2.5 bg-white rounded-full border-2 border-[#1C1B22]"></button>
+</div>
+</section>
+<!-- Product Information Card -->
+<section class="bg-white border-2 border-[#1C1B22] rounded-xl p-4 flex flex-col gap-3">
+<!-- Title & Price Block -->
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col">
+<span class="text-xs font-label font-bold text-[#6B6A75] uppercase tracking-wider">Utility Basics</span>
+<h1 class="font-headline font-black text-3xl tracking-tight text-[#1C1B22]">Canvas Tote</h1>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline font-black text-3xl text-[#D9432C] leading-none">$34</span>
+<span class="text-[11px] font-body text-[#6B6A75] font-semibold mt-1">Tax incl.</span>
+</div>
+</div>
+<!-- Rating Row -->
+<div class="flex items-center gap-2 pt-1 border-t-2 border-[#F5F1E8]">
+<div class="flex items-center gap-1 bg-[#F5F1E8] border-2 border-[#1C1B22] px-2 py-0.5 rounded-lg">
+<span class="material-symbols-outlined text-base text-[#FFC83D] icon-fill" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline font-bold text-xs text-[#1C1B22]">4.8</span>
+</div>
+<span class="text-xs font-body font-semibold text-[#6B6A75]">· 214 verified reviews</span>
+</div>
+<!-- Description Paragraph -->
+<p class="hidden font-body text-sm text-[#1C1B22] leading-relaxed pt-1">
+          Durable 16oz organic cotton canvas, reinforced box-stitched handles, and interior zip pocket. Built for daily geometric utility.
+        </p>
+</section>
+<!-- Picker Section: Size & Color -->
+<section class="bg-white border-2 border-[#1C1B22] rounded-xl p-4 flex flex-col gap-4">
+<!-- Size Picker -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-headline font-bold text-sm text-[#1C1B22]">Select Size</span>
+<span class="text-xs font-label font-bold text-[#2F5BEA] underline cursor-pointer">Size Guide</span>
+</div>
+<div aria-label="Available Sizes" class="grid grid-cols-4 gap-2" role="radiogroup">
+<!-- Small -->
+<button class="h-11 bg-white border-2 border-[#1C1B22] rounded-xl font-headline font-bold text-sm text-[#1C1B22] hover:bg-[#F5F1E8] active:translate-y-0.5" type="button">
+              S
+            </button>
+<!-- Medium (Selected) -->
+<button aria-checked="true" class="h-11 bg-[#1C1B22] border-2 border-[#1C1B22] rounded-xl font-headline font-black text-sm text-white active:translate-y-0.5" type="button">
+              M
+            </button>
+<!-- Large -->
+<button class="h-11 bg-white border-2 border-[#1C1B22] rounded-xl font-headline font-bold text-sm text-[#1C1B22] hover:bg-[#F5F1E8] active:translate-y-0.5" type="button">
+              L
+            </button>
+<!-- Extra Large -->
+<button class="h-11 bg-white border-2 border-[#1C1B22] rounded-xl font-headline font-bold text-sm text-[#1C1B22] hover:bg-[#F5F1E8] active:translate-y-0.5" type="button">
+              XL
+            </button>
+</div>
+</div>
+<div class="w-full h-0.5 bg-[#F5F1E8]"></div>
+<!-- Color Picker -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-headline font-bold text-sm text-[#1C1B22]" id="color-label">Color — Mustard Yellow</span>
+<span class="text-xs font-mono font-bold text-[#6B6A75]">#FFC83D</span>
+</div>
+<div aria-label="Select Color Swatch" class="flex items-center gap-3 pt-1" role="radiogroup">
+<!-- Swatch 1: Yellow (Selected with outer border ring) -->
+<button aria-checked="true" aria-label="Mustard Yellow" class="relative w-10 h-10 rounded-full border-2 border-[#1C1B22] bg-[#FFC83D] ring-2 ring-[#1C1B22] ring-offset-2 ring-offset-white active:scale-95 transition-transform" type="button">
+<span class="absolute inset-0 m-auto w-2.5 h-2.5 bg-[#1C1B22] rounded-full"></span>
+</button>
+<!-- Swatch 2: Blue -->
+<button aria-label="Cobalt Blue" class="w-10 h-10 rounded-full border-2 border-[#1C1B22] bg-[#2F5BEA] hover:opacity-90 active:scale-95 transition-transform" type="button">
+</button>
+<!-- Swatch 3: Green -->
+<button aria-label="Forest Green" class="w-10 h-10 rounded-full border-2 border-[#1C1B22] bg-[#1E9E6A] hover:opacity-90 active:scale-95 transition-transform" type="button">
+</button>
+<!-- Swatch 4: Coral -->
+<button aria-label="Primary Coral" class="w-10 h-10 rounded-full border-2 border-[#1C1B22] bg-[#D9432C] hover:opacity-90 active:scale-95 transition-transform" type="button">
+</button>
+</div>
+</div>
+</section>
+<!-- Specifications & Shipping Cards (Bento Style Layout) -->
+<section class="grid grid-cols-2 gap-3">
+<!-- Specs Tile -->
+<div class="bg-white border-2 border-[#1C1B22] rounded-xl p-3.5 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-7 h-7 bg-[#2F5BEA] text-white rounded-lg border-2 border-[#1C1B22] flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="straighten">straighten</span>
+</div>
+<span class="font-headline font-bold text-xs uppercase text-[#1C1B22]">Dimensions</span>
+</div>
+<div>
+<div class="font-headline font-bold text-sm text-[#1C1B22]">15" × 14" × 4"</div>
+<div class="text-[11px] font-body text-[#6B6A75] mt-0.5">Handle drop: 10"</div>
+</div>
+</div>
+<!-- Material Tile -->
+<div class="bg-white border-2 border-[#1C1B22] rounded-xl p-3.5 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-7 h-7 bg-[#1E9E6A] text-white rounded-lg border-2 border-[#1C1B22] flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="eco">eco</span>
+</div>
+<span class="font-headline font-bold text-xs uppercase text-[#1C1B22]">Material</span>
+</div>
+<div>
+<div class="font-headline font-bold text-sm text-[#1C1B22]">100% Cotton</div>
+<div class="text-[11px] font-body text-[#6B6A75] mt-0.5">Heavyweight 16oz</div>
+</div>
+</div>
+<!-- Shipping & Returns Banner -->
+<div class="col-span-2 bg-white border-2 border-[#1C1B22] rounded-xl p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 bg-[#FFC83D] text-[#1C1B22] rounded-lg border-2 border-[#1C1B22] flex items-center justify-center">
+<span class="material-symbols-outlined text-lg" data-icon="local_shipping">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-sm text-[#1C1B22]">Free 2-day delivery</span>
+<span class="font-body text-xs text-[#6B6A75]">Free 30-day returns &amp; exchanges</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-base text-[#1C1B22]" data-icon="check_circle">check_circle</span>
+</div>
+</section>
+</div>
+<!-- Fixed Bottom Sticky Action Bar -->
+<aside class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-[#1C1B22] py-3 px-4">
+<div class="max-w-md mx-auto flex items-center gap-3">
+<!-- Quantity Stepper Pill -->
+<div class="h-13 bg-[#F5F1E8] border-2 border-[#1C1B22] rounded-xl flex items-center p-1 select-none">
+<button aria-label="Decrease quantity" class="w-9 h-9 bg-white border-2 border-[#1C1B22] rounded-lg flex items-center justify-center font-headline font-black text-base text-[#1C1B22] hover:bg-[#F5F1E8] active:scale-95 transition-transform" id="qty-minus" type="button">
+            −
+          </button>
+<span class="w-9 text-center font-headline font-black text-sm text-[#1C1B22]" id="qty-val">1</span>
+<button aria-label="Increase quantity" class="w-9 h-9 bg-white border-2 border-[#1C1B22] rounded-lg flex items-center justify-center font-headline font-black text-base text-[#1C1B22] hover:bg-[#F5F1E8] active:scale-95 transition-transform" id="qty-plus" type="button">
+            +
+          </button>
+</div>
+<!-- Add To Cart Primary Coral Button -->
+<button class="flex-1 h-13 py-3 px-4 bg-[#D9432C] border-2 border-[#1C1B22] rounded-xl flex items-center justify-between text-white font-headline font-black tracking-tight text-base hover:opacity-95 active:translate-y-0.5 transition-transform" id="add-to-cart-btn" type="button">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xl" data-icon="shopping_bag">shopping_bag</span>
+<span>Add to Cart</span>
+</span>
+<span class="bg-[#1C1B22] text-white text-xs px-2.5 py-1 rounded-lg border-2 border-[#1C1B22] font-mono font-bold" id="cart-price">
+            $34
+          </span>
+</button>
+</div>
+</aside>
+</main>
+<!-- Interactive micro-interactions script for steppers & buttons -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const qtyVal = document.getElementById('qty-val');
+      const cartPrice = document.getElementById('cart-price');
+      const minusBtn = document.getElementById('qty-minus');
+      const plusBtn = document.getElementById('qty-plus');
+      const favBtn = document.getElementById('fav-btn');
+      const favIcon = document.getElementById('fav-icon');
+      const addBtn = document.getElementById('add-to-cart-btn');
+
+      let count = 1;
+      const unitPrice = 34;
+
+      function updateQty() {
+        qtyVal.textContent = count;
+        cartPrice.textContent = `$${count * unitPrice}`;
+      }
+
+      minusBtn.addEventListener('click', () => {
+        if (count > 1) {
+          count--;
+          updateQty();
+        }
+      });
+
+      plusBtn.addEventListener('click', () => {
+        if (count < 99) {
+          count++;
+          updateQty();
+        }
+      });
+
+      let isFav = true;
+      favBtn.addEventListener('click', () => {
+        isFav = !isFav;
+        if (isFav) {
+          favIcon.style.fontVariationSettings = "'FILL' 1";
+          favIcon.classList.add('text-[#D9432C]');
+          favIcon.classList.remove('text-[#1C1B22]');
+        } else {
+          favIcon.style.fontVariationSettings = "'FILL' 0";
+          favIcon.classList.remove('text-[#D9432C]');
+          favIcon.classList.add('text-[#1C1B22]');
+        }
+      });
+
+      addBtn.addEventListener('click', () => {
+        const originalText = addBtn.innerHTML;
+        addBtn.innerHTML = `
+          <span class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-xl">check</span>
+            <span>Added!</span>
+          </span>
+          <span class="bg-[#1C1B22] text-white text-xs px-2.5 py-1 rounded-lg border-2 border-[#1C1B22] font-mono font-bold">✓</span>
+        `;
+        setTimeout(() => {
+          addBtn.innerHTML = originalText;
+          updateQty();
+        }, 1200);
+      });
+    });
+  </script>
+</body></html>
