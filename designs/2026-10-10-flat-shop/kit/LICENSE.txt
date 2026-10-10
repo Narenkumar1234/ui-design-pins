@@ -1,0 +1,37 @@
+FLAT SHOP UI KIT: LICENSE
+Copyright (c) 2026 @code.in.30s (Narenkumar). All rights reserved except as granted below.
+
+By purchasing or downloading the Flat Shop UI Kit ("the Kit") you receive a
+non-exclusive, non-transferable, worldwide licence to use it as follows.
+
+YOU MAY
+  1. Use the Kit in unlimited personal projects.
+  2. Use the Kit in unlimited commercial projects, including websites, apps and
+     client work, as long as the Kit is part of a larger end product.
+  3. Modify, adapt and combine the code and designs in any way.
+  4. Show your finished project (screenshots, demos, portfolio, GitHub repo of your
+     project) publicly.
+
+YOU MAY NOT
+  1. Resell, sublicense, share or give away the Kit itself, in whole or in part,
+     whether modified or not, as a UI kit, template, theme, starter or similar
+     product, including on marketplaces or free download sites.
+  2. Upload the original Kit files to a public repository or file-sharing site in a
+     way that lets others download the Kit itself. (A public repo of your own
+     finished project that uses the Kit is fine.)
+  3. Claim the Kit's original design or code as your own product.
+
+TEAMS
+  One licence covers one person. Teams should buy one licence per developer.
+
+NO WARRANTY
+  The Kit is provided "as is", without warranty of any kind. The author is not
+  liable for any damages arising from its use. The checkout is a demo and does not
+  process payments.
+
+THIRD-PARTY
+  Tailwind CSS (MIT), Google Fonts Inter and Plus Jakarta Sans (SIL Open Font
+  License) are loaded from their CDNs and remain under their own licences. Product
+  names in the demo data are fictional.
+
+Questions about licensing: DM @code.in.30s on Instagram.
