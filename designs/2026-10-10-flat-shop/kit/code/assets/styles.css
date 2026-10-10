@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Flat Shop UI Kit · styles.css
+   PALETTE: edit the hex values here to re-skin the kit.
+   Values are written as "R G B" so Tailwind opacity modifiers work.
+   Light = :root, Dark = .dark (Tailwind adds .dark to <html>).
+   ========================================================================== */
+:root {
+  --bg:       245 241 232;  /* #F5F1E8 warm cream */
+  --card:     255 255 255;  /* #FFFFFF */
+  --chip:     240 236 227;  /* #F0ECE3 */
+  --ink:       28  27  34;  /* #1C1B22 text + bold outlines */
+  --muted:     94  93 104;  /* #5E5D68 */
+  --line:      28  27  34;  /* #1C1B22 (light mode uses bold ink outlines) */
+  --coral:    217  67  44;  /* #D9432C primary */
+  --on-coral: 255 255 255;  /* text on primary */
+  --blue:      47  91 234;  /* #2F5BEA */
+  --green:     30 158 106;  /* #1E9E6A */
+  --yellow:   255 200  61;  /* #FFC83D */
+  --shape:    255 255 255;  /* product shape on blue/green/coral tiles */
+}
+.dark {
+  --bg:        20  21  27;  /* #14151B */
+  --card:      28  30  38;  /* #1C1E26 */
+  --chip:      42  45  56;  /* #2A2D38 */
+  --ink:      243 242 238;  /* #F3F2EE */
+  --muted:    156 158 173;  /* #9C9EAD */
+  --line:      48  51  63;  /* #30333F subtle borders */
+  --coral:    255 106  77;  /* #FF6A4D */
+  --on-coral:  20  21  27;  /* dark text on bright coral = better contrast */
+  --blue:      91 127 255;  /* #5B7FFF */
+  --green:     46 191 132;  /* #2EBF84 */
+  --yellow:   255 209  92;  /* #FFD15C */
+  --shape:     20  21  27;  /* dark shapes on bright tiles */
+}
+
+/* Flat UI rule: no shadows, no gradients. */
+* { box-shadow: none !important; }
+html { -webkit-tap-highlight-color: transparent; }
+body { font-family: Inter, system-ui, sans-serif; }
+
+/* Product tile backgrounds + shape colors (used by app.js) */
+.tile-yellow { background: rgb(var(--yellow)); color: rgb(var(--yellow)); --fg: #1C1B22; }  /* yellow always gets a dark shape */
+.tile-blue   { background: rgb(var(--blue));   color: rgb(var(--blue)); --fg: rgb(var(--shape)); }
+.tile-green  { background: rgb(var(--green));  color: rgb(var(--green)); --fg: rgb(var(--shape)); }
+.tile-coral  { background: rgb(var(--coral));  color: rgb(var(--coral)); --fg: rgb(var(--shape)); }
+.tile svg .fg { fill: var(--fg); }
+.tile svg .fg-stroke { stroke: var(--fg); fill: none; }
+.tile svg .cut { fill: currentColor; }   /* "cut-out" details take the tile color */
+
+/* Hide number input spinners (qty) and horizontal scrollbar on chip rows */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* Small toast animation */
+.toast { transition: opacity .2s, transform .2s; }
+.toast.hide { opacity: 0; transform: translate(-50%, 12px); pointer-events: none; }
