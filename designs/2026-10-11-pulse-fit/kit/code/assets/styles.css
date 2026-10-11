@@ -1,0 +1,79 @@
+/* Pulse Fit UI Kit · neo-brutalist palette */
+:root {
+  --bg:       255 248 231;  /* #FFF8E7 */
+  --card:     255 255 255;  /* #FFFFFF */
+  --ink:       17  17  17;  /* #111111 */
+  --muted:     90  90  90;  /* #5A5A5A */
+  --lime:     200 245  66;  /* #C8F542 */
+  --on-lime:   17  17  17;
+  --pink:     255  92 138;  /* #FF5C8A */
+  --blue:      77 124 254;  /* #4D7CFE */
+  --yellow:   255 229 102;  /* #FFE566 */
+  --outline:   17  17  17;
+  --shadow:    17  17  17;
+}
+.dark {
+  --bg:        14  15  18;  /* #0E0F12 */
+  --card:      26  28  36;  /* #1A1C24 */
+  --ink:      245 245 240;  /* #F5F5F0 */
+  --muted:    160 163 176;  /* #A0A3B0 */
+  --lime:     212 255  94;  /* #D4FF5E */
+  --on-lime:   14  15  18;
+  --pink:     255 122 162;  /* #FF7AA2 */
+  --blue:     107 143 255;  /* #6B8FFF */
+  --yellow:   255 229 102;  /* #FFE566 */
+  --outline:  245 245 240;
+  --shadow:     0   0   0;  /* hard black shadows in dark */
+}
+
+html { -webkit-tap-highlight-color: transparent; }
+body { font-family: Inter, system-ui, sans-serif; }
+.font-display { font-family: "Space Grotesk", system-ui, sans-serif; }
+
+/* Neo-brutal card utility */
+.brut {
+  border: 3px solid rgb(var(--outline));
+  box-shadow: 4px 4px 0 rgb(var(--shadow));
+  border-radius: 8px;
+  background: rgb(var(--card));
+}
+.brut-sm {
+  border: 3px solid rgb(var(--outline));
+  box-shadow: 3px 3px 0 rgb(var(--shadow));
+  border-radius: 8px;
+}
+.brut-btn {
+  border: 3px solid rgb(var(--outline));
+  box-shadow: 4px 4px 0 rgb(var(--shadow));
+  border-radius: 8px;
+  font-weight: 800;
+  transition: transform .08s, box-shadow .08s;
+}
+.brut-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 rgb(var(--shadow));
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+.toast { transition: opacity .2s, transform .2s; }
+.toast.hide { opacity: 0; transform: translate(-50%, 12px); pointer-events: none; }
+
+/* Weekly bars */
+.bar-col { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; }
+.bar-fill {
+  width: 100%;
+  max-width: 36px;
+  border: 3px solid rgb(var(--outline));
+  box-shadow: 3px 3px 0 rgb(var(--shadow));
+  border-radius: 6px 6px 2px 2px;
+  min-height: 8px;
+}
+
+/* Calendar dots */
+.cal-dot {
+  width: 14px; height: 14px; border-radius: 999px;
+  border: 2.5px solid rgb(var(--outline));
+}
+.cal-dot.done { background: rgb(var(--lime)); }
