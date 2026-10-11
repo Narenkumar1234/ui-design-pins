@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pulse Fit - Progress</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;family=Public+Sans:wght@700;900&amp;family=Space+Grotesk:wght@700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {},
+          fontFamily: {
+            headline: ["Space Grotesk", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          },
+          fontSize: {}
+        },
+      },
+    }
+  </script>
+<style>
+    /* Strictly Neo-Brutalist resets and solid hard shadows */
+    * {
+      box-shadow: none;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0E0F12] text-[#F5F5F0] font-body selection:bg-[#D4FF5E] selection:text-[#0E0F12] min-h-screen pb-28 antialiased">
+<!-- TOP APP BAR (from Shared Components JSON) -->
+<header class="flex justify-between items-center w-full px-4 py-3 bg-[#0E0F12] border-b-4 border-[#F5F5F0] shadow-[0_4px_0_0_#000000] sticky top-0 z-40">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 bg-[#D4FF5E] text-[#0E0F12] border-2 border-[#F5F5F0] shadow-[2px_2px_0_0_#000000] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl font-black">bolt</span>
+</div>
+<span class="font-display font-black text-2xl tracking-tighter text-[#F5F5F0]">PULSE FIT</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="bg-[#1A1C24] border-2 border-[#F5F5F0] shadow-[2px_2px_0_0_#000000] px-3 py-1 rounded-lg text-sm font-headline font-black text-[#FFE566] flex items-center gap-1.5 active:translate-x-[1px] active:translate-y-[1px] active:shadow-none">
+<span>🔥 7D</span>
+</div>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="w-full max-w-md mx-auto px-4 pt-5 space-y-5">
+<!-- Screen Headline & Status Badges -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="bg-[#FFE566] text-[#0E0F12] font-headline font-black text-xs px-2.5 py-1 border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] tracking-wider uppercase">
+          OCTOBER OVERVIEW
+        </span>
+<span class="bg-[#6B8FFF] text-[#0E0F12] font-headline font-black text-xs px-2.5 py-1 border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] tracking-wider uppercase">
+          LEVEL 14
+        </span>
+</div>
+<h1 class="font-headline font-black text-4xl uppercase tracking-tight text-[#F5F5F0] leading-none">
+        YOUR PROGRESS
+      </h1>
+</div>
+<!-- WEEKLY WORKOUT VOLUME BAR CHART CARD -->
+<section class="bg-[#1A1C24] border-4 border-[#F5F5F0] rounded-lg shadow-[4px_4px_0_0_#000000] p-4 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[#A0A3B0] font-label font-bold text-xs uppercase tracking-wider block">ACTIVITY SPECS</span>
+<h2 class="font-headline font-black text-xl text-[#F5F5F0] uppercase tracking-tight">THIS WEEK · 4 WORKOUTS</h2>
+</div>
+<span class="bg-[#D4FF5E] text-[#0E0F12] font-headline font-black text-xs px-2 py-1 rounded border-2 border-[#F5F5F0] shadow-[2px_2px_0_0_#000000]">
+          +18% VS LAST WK
+        </span>
+</div>
+<!-- Neo-brutalist Chunky Bar Chart -->
+<div class="bg-[#0E0F12] border-3 border-[#F5F5F0] p-3 rounded-lg border-2 relative">
+<!-- Target / Grid line marks -->
+<div class="absolute inset-x-3 top-4 border-b-2 border-dashed border-[#2F3342] flex justify-between">
+<span class="text-[10px] font-mono text-[#A0A3B0] -mt-2 bg-[#0E0F12] px-1 font-bold">90m</span>
+</div>
+<div class="absolute inset-x-3 top-16 border-b-2 border-dashed border-[#2F3342] flex justify-between">
+<span class="text-[10px] font-mono text-[#A0A3B0] -mt-2 bg-[#0E0F12] px-1 font-bold">60m</span>
+</div>
+<div class="absolute inset-x-3 top-28 border-b-2 border-dashed border-[#2F3342] flex justify-between">
+<span class="text-[10px] font-mono text-[#A0A3B0] -mt-2 bg-[#0E0F12] px-1 font-bold">30m</span>
+</div>
+<!-- Bars Area -->
+<div class="h-44 flex items-end justify-between pt-6 px-1 z-10 relative">
+<!-- Mon: 55% Blue -->
+<div class="flex flex-col items-center gap-1.5 w-8">
+<div class="w-full bg-[#6B8FFF] border-2 border-[#F5F5F0] shadow-[2px_2px_0_0_#000000] rounded-sm flex items-center justify-center" style="height: 55%;">
+<span class="text-[9px] font-black text-[#0E0F12] -rotate-90">50m</span>
+</div>
+<span class="font-headline font-black text-xs text-[#F5F5F0]">M</span>
+</div>
+<!-- Tue: 75% Lime -->
+<div class="flex flex-col items-center gap-1.5 w-8">
+<div class="w-full bg-[#D4FF5E] border-2 border-[#F5F5F0] shadow-[2px_2px_0_0_#000000] rounded-sm flex items-center justify-center" style="height: 75%;">
+<span class="text-[9px] font-black text-[#0E0F12] -rotate-90">70m</span>
+</div>
+<span class="font-headline font-black text-xs text-[#F5F5F0]">T</span>
+</div>
+<!-- Wed: 40% Pink -->
+<div class="flex flex-col items-center gap-1.5 w-8">
+<div class="w-full bg-[#FF7AA2] border-2 border-[#F5F5F0] shadow-[2px_2px_0_0_#000000] rounded-sm flex items-center justify-center" style="height: 40%;">
+<span class="text-[9px] font-black text-[#0E0F12] -rotate-90">35m</span>
+</div>
+<span class="font-headline font-black text-xs text-[#F5F5F0]">W</span>
+</div>
+<!-- Thu: Rest dot -->
+<div class="flex flex-col items-center gap-1.5 w-8 h-full justify-end">
+<div class="w-3 h-3 bg-[#1A1C24] border-2 border-[#A0A3B0] rounded-full mb-2"></div>
+<span class="font-headline font-black text-xs text-[#A0A3B0]">T</span>
+</div>
+<!-- Fri: 80% Yellow -->
+<div class="flex flex-col items-center gap-1.5 w-8">
+<div class="w-full bg-[#FFE566] border-2 border-[#F5F5F0] shadow-[2px_2px_0_0_#000000] rounded-sm flex items-center justify-center" style="height: 80%;">
+<span class="text-[9px] font-black text-[#0E0F12] -rotate-90">75m</span>
+</div>
+<span class="font-headline font-black text-xs text-[#F5F5F0]">F</span>
+</div>
+<!-- Sat: Rest dot -->
+<div class="flex flex-col items-center gap-1.5 w-8 h-full justify-end">
+<div class="w-3 h-3 bg-[#1A1C24] border-2 border-[#A0A3B0] rounded-full mb-2"></div>
+<span class="font-headline font-black text-xs text-[#A0A3B0]">S</span>
+</div>
+<!-- Sun: 100% Lime peak -->
+<div class="flex flex-col items-center gap-1.5 w-8">
+<div class="w-full bg-[#D4FF5E] border-2 border-[#F5F5F0] shadow-[2px_2px_0_0_#000000] rounded-sm flex items-center justify-center" style="height: 100%;">
+<span class="text-[9px] font-black text-[#0E0F12] -rotate-90">95m</span>
+</div>
+<span class="font-headline font-black text-xs text-[#D4FF5E]">S</span>
+</div>
+</div>
+</div>
+<!-- Quick stats footer row inside chart card -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#D4FF5E] text-base">timer</span>
+<span class="font-label font-black text-sm text-[#F5F5F0] uppercase">TOTAL: 4H 15M</span>
+</div>
+<div class="bg-[#2F3342] text-[#F5F5F0] px-2.5 py-1 rounded text-xs font-headline font-black border border-[#F5F5F0]">
+          AVG 64 MIN/SESSION
+        </div>
+</div>
+</section>
+<!-- SIDE-BY-SIDE PERSONAL RECORDS (PRs) -->
+<div class="grid grid-cols-2 gap-3">
+<!-- PR Card 1: Bench Press -->
+<div class="bg-[#1A1C24] border-4 border-[#F5F5F0] rounded-lg shadow-[4px_4px_0_0_#000000] p-3 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="material-symbols-outlined text-[#D4FF5E] text-lg">fitness_center</span>
+<span class="bg-[#D4FF5E] text-[#0E0F12] font-headline font-black text-[10px] px-1.5 py-0.5 rounded border border-[#0E0F12] shadow-[1px_1px_0_0_#000000]">
+            +5 KG
+          </span>
+</div>
+<div class="my-1">
+<span class="text-[11px] font-label font-black text-[#A0A3B0] uppercase block tracking-wider">BENCH PRESS PR</span>
+<div class="text-[#D4FF5E] font-headline font-black text-3xl tracking-tight leading-none mt-1">
+            80<span class="text-sm text-[#F5F5F0] ml-1">KG</span>
+</div>
+</div>
+<div class="mt-2 pt-2 border-t-2 border-[#2F3342] text-[10px] font-body text-[#A0A3B0] font-bold">
+          SET ON TUE · 3 REPS
+        </div>
+</div>
+<!-- PR Card 2: 5K Run -->
+<div class="bg-[#1A1C24] border-4 border-[#F5F5F0] rounded-lg shadow-[4px_4px_0_0_#000000] p-3 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="material-symbols-outlined text-[#FF7AA2] text-lg">directions_run</span>
+<span class="bg-[#FF7AA2] text-[#0E0F12] font-headline font-black text-[10px] px-1.5 py-0.5 rounded border border-[#0E0F12] shadow-[1px_1px_0_0_#000000]">
+            -45 SEC
+          </span>
+</div>
+<div class="my-1">
+<span class="text-[11px] font-label font-black text-[#A0A3B0] uppercase block tracking-wider">5K RUN PR</span>
+<div class="text-[#FF7AA2] font-headline font-black text-3xl tracking-tight leading-none mt-1">
+            24:10
+          </div>
+</div>
+<div class="mt-2 pt-2 border-t-2 border-[#2F3342] text-[10px] font-body text-[#A0A3B0] font-bold">
+          PACE 4'50" /KM
+        </div>
+</div>
+</div>
+<!-- CONSISTENCY CALENDAR CARD (7x4 Grid) -->
+<section class="bg-[#1A1C24] border-4 border-[#F5F5F0] rounded-lg shadow-[4px_4px_0_0_#000000] p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-[#A0A3B0] font-label font-bold text-xs uppercase tracking-wider block">MONTHLY DISCIPLINE</span>
+<h3 class="font-headline font-black text-xl text-[#F5F5F0] uppercase tracking-tight">CONSISTENCY · OCT</h3>
+</div>
+<span class="bg-[#6B8FFF] text-[#0E0F12] font-headline font-black text-xs px-2.5 py-1 rounded border-2 border-[#F5F5F0] shadow-[2px_2px_0_0_#000000]">
+          18 / 28 DAYS
+        </span>
+</div>
+<!-- 7x4 Calendar Days Matrix -->
+<div class="grid grid-cols-7 gap-2 pt-2">
+<!-- Row 1 -->
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">01</div>
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">02</div>
+<div class="aspect-square bg-[#FFE566] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">03</div>
+<div class="aspect-square bg-[#0E0F12] border-2 border-[#A0A3B0] rounded flex items-center justify-center font-headline font-bold text-xs text-[#A0A3B0]">04</div>
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">05</div>
+<div class="aspect-square bg-[#0E0F12] border-2 border-[#A0A3B0] rounded flex items-center justify-center font-headline font-bold text-xs text-[#A0A3B0]">06</div>
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">07</div>
+<!-- Row 2 -->
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">08</div>
+<div class="aspect-square bg-[#FF7AA2] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">09</div>
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">10</div>
+<div class="aspect-square bg-[#0E0F12] border-2 border-[#A0A3B0] rounded flex items-center justify-center font-headline font-bold text-xs text-[#A0A3B0]">11</div>
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">12</div>
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">13</div>
+<div class="aspect-square bg-[#0E0F12] border-2 border-[#A0A3B0] rounded flex items-center justify-center font-headline font-bold text-xs text-[#A0A3B0]">14</div>
+<!-- Row 3 -->
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">15</div>
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">16</div>
+<div class="aspect-square bg-[#0E0F12] border-2 border-[#A0A3B0] rounded flex items-center justify-center font-headline font-bold text-xs text-[#A0A3B0]">17</div>
+<div class="aspect-square bg-[#FFE566] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">18</div>
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">19</div>
+<div class="aspect-square bg-[#0E0F12] border-2 border-[#A0A3B0] rounded flex items-center justify-center font-headline font-bold text-xs text-[#A0A3B0]">20</div>
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">21</div>
+<!-- Row 4 -->
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">22</div>
+<div class="aspect-square bg-[#FF7AA2] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">23</div>
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">24</div>
+<div class="aspect-square bg-[#0E0F12] border-2 border-[#A0A3B0] rounded flex items-center justify-center font-headline font-bold text-xs text-[#A0A3B0]">25</div>
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">26</div>
+<div class="aspect-square bg-[#0E0F12] border-2 border-[#A0A3B0] rounded flex items-center justify-center font-headline font-bold text-xs text-[#A0A3B0]">27</div>
+<div class="aspect-square bg-[#D4FF5E] border-2 border-[#F5F5F0] rounded shadow-[2px_2px_0_0_#000000] flex items-center justify-center font-headline font-black text-xs text-[#0E0F12]">28</div>
+</div>
+<!-- Legend -->
+<div class="flex items-center justify-between pt-2 border-t-2 border-[#2F3342] text-xs font-label font-bold text-[#A0A3B0]">
+<div class="flex items-center gap-1.5">
+<div class="w-3 h-3 bg-[#D4FF5E] border border-[#F5F5F0]"></div>
+<span class="text-[#F5F5F0]">WORKOUT</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-3 h-3 bg-[#FFE566] border border-[#F5F5F0]"></div>
+<span class="text-[#F5F5F0]">MILESTONE</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-3 h-3 bg-[#FF7AA2] border border-[#F5F5F0]"></div>
+<span class="text-[#F5F5F0]">PR DAY</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-3 h-3 bg-[#0E0F12] border border-[#A0A3B0]"></div>
+<span>REST</span>
+</div>
+</div>
+</section>
+<!-- LIFETIME VOLUME & MILESTONE BANNER -->
+<div class="bg-[#FFE566] text-[#0E0F12] border-4 border-[#F5F5F0] rounded-lg shadow-[4px_4px_0_0_#000000] p-4 flex items-center justify-between">
+<div>
+<span class="font-label font-black text-xs tracking-wider uppercase block">LIFETIME VOLUME</span>
+<div class="font-headline font-black text-2xl tracking-tight leading-none mt-0.5">
+          42,850 KG
+        </div>
+<span class="text-xs font-body font-bold mt-1 inline-block">12 WEEKS UNBROKEN STREAK</span>
+</div>
+<div class="bg-[#0E0F12] text-[#FFE566] border-2 border-[#F5F5F0] p-2.5 rounded-lg shadow-[2px_2px_0_0_#000000] flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl font-black">trophy</span>
+</div>
+</div>
+<!-- QUICK SHARE / EXPORT CTA BUTTON -->
+<button class="w-full bg-[#D4FF5E] text-[#0E0F12] font-headline font-black text-lg py-3 px-4 rounded-lg border-4 border-[#F5F5F0] shadow-[4px_4px_0_0_#000000] flex items-center justify-center gap-2 uppercase tracking-tight active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-none">
+<span class="material-symbols-outlined font-black">share</span>
+<span>EXPORT PROGRESS REPORT</span>
+</button>
+</main>
+<!-- DOCKED BOTTOM NAVIGATION BAR (from Shared Components JSON) -->
+<!-- Contextual Active: 'PROGRESS' tab is strictly mapped and highlighted -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-2 bg-[#1A1C24] border-t-4 border-[#F5F5F0] shadow-[0_-4px_0_0_#000000]">
+<!-- Item 1: HOME (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#A0A3B0] px-3 py-1 hover:text-[#F5F5F0] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-none" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="font-label font-black text-[10px] uppercase tracking-wider mt-0.5">HOME</span>
+</a>
+<!-- Item 2: WORKOUT (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#A0A3B0] px-3 py-1 hover:text-[#F5F5F0] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-none" href="#">
+<span class="material-symbols-outlined text-2xl">fitness_center</span>
+<span class="font-label font-black text-[10px] uppercase tracking-wider mt-0.5">WORKOUT</span>
+</a>
+<!-- Item 3: PROGRESS (Active Destination) -->
+<a aria-current="page" class="flex flex-col items-center justify-center bg-[#D4FF5E] text-[#0E0F12] border-2 border-[#F5F5F0] shadow-[2px_2px_0_0_#000000] px-3 py-1 rounded-lg active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-none" href="#">
+<span class="material-symbols-outlined text-2xl">monitoring</span>
+<span class="font-label font-black text-[10px] uppercase tracking-wider mt-0.5">PROGRESS</span>
+</a>
+<!-- Item 4: PROFILE (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#A0A3B0] px-3 py-1 hover:text-[#F5F5F0] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-none" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="font-label font-black text-[10px] uppercase tracking-wider mt-0.5">PROFILE</span>
+</a>
+</nav>
+</body></html>
