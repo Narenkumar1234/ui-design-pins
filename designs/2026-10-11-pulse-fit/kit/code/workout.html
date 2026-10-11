@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <title>Pulse Fit · Workout</title>
+</head>
+<body class="bg-bg text-ink min-h-screen pb-44 font-sans">
+  <main class="max-w-lg mx-auto px-4 pt-5">
+    <header class="flex items-center gap-3">
+      <a href="index.html" class="brut-sm w-10 h-10 flex items-center justify-center bg-card font-bold text-lg" aria-label="Back">←</a>
+      <div class="flex-1 min-w-0">
+        <p class="text-[11px] font-extrabold tracking-widest uppercase text-muted">Workout</p>
+        <h1 class="font-display font-bold text-xl truncate" id="w-title">Upper Body Power</h1>
+      </div>
+    </header>
+
+    <!-- Rest timer -->
+    <section class="mt-5 brut-sm bg-yellow p-4">
+      <div class="flex items-center justify-between gap-3">
+        <div>
+          <p class="text-[11px] font-extrabold tracking-widest uppercase">Rest between sets</p>
+          <p class="font-display font-bold text-4xl tabular-nums leading-none mt-1" id="timer">01:30</p>
+        </div>
+        <div class="flex gap-2">
+          <button type="button" id="timer-toggle" class="brut-btn bg-card px-3 h-11 text-sm">Pause</button>
+          <button type="button" id="timer-reset" class="brut-btn bg-ink text-bg dark:text-bg px-3 h-11 text-sm">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-5">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-display font-bold text-lg">Exercises</h2>
+        <span class="text-xs font-bold text-muted" id="ex-progress">0 / 0 done</span>
+      </div>
+      <ul id="ex-list" class="space-y-3"></ul>
+    </section>
+  </main>
+
+  <div class="fixed bottom-[4.5rem] inset-x-0 z-30 px-4 pointer-events-none">
+    <div class="max-w-lg mx-auto pointer-events-auto">
+      <button type="button" id="cta" class="brut-btn w-full h-14 bg-lime text-on-lime text-base">
+        Start Workout
+      </button>
+    </div>
+  </div>
+
+  <nav id="bottom-nav"></nav>
+  <script src="data/workout.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/workout.js"></script>
+</body>
+</html>
