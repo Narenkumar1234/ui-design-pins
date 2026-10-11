@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <title>Pulse Fit · Progress</title>
+</head>
+<body class="bg-bg text-ink min-h-screen pb-28 font-sans">
+  <main class="max-w-lg mx-auto px-4 pt-6">
+    <header>
+      <p class="text-[11px] font-extrabold tracking-widest uppercase text-muted">Stats</p>
+      <h1 class="font-display font-bold text-3xl">Your Progress</h1>
+    </header>
+
+    <section class="mt-5 brut p-4">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-display font-bold text-lg">This week</h2>
+        <span class="brut-sm bg-lime px-2.5 py-1 text-xs font-extrabold" id="week-total">4 workouts</span>
+      </div>
+      <div id="bars" class="flex items-end gap-2 h-40"></div>
+    </section>
+
+    <section class="mt-5 grid grid-cols-2 gap-3" id="prs"></section>
+
+    <section class="mt-5 brut p-4">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-display font-bold text-lg">Consistency</h2>
+        <span class="text-xs font-bold text-muted">Oct</span>
+      </div>
+      <div class="grid grid-cols-7 gap-2 mb-2 text-[10px] font-extrabold text-muted text-center uppercase">
+        <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+      </div>
+      <div id="cal" class="grid grid-cols-7 gap-2 place-items-center"></div>
+      <p class="mt-3 text-xs text-muted font-semibold"><span class="inline-block w-3 h-3 rounded-full bg-lime border-2 border-outline align-middle mr-1"></span> Workout day</p>
+    </section>
+  </main>
+
+  <nav id="bottom-nav"></nav>
+  <script src="data/workout.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/progress.js"></script>
+</body>
+</html>

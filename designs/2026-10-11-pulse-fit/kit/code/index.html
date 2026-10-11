@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23C8F542' stroke='%23111' stroke-width='8'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='48' font-weight='800' fill='%23111'%3EP%3C/text%3E%3C/svg%3E">
+  <title>Pulse Fit · Today</title>
+</head>
+<body class="bg-bg text-ink min-h-screen pb-28 font-sans">
+  <main class="max-w-lg mx-auto px-4 pt-6">
+    <header class="flex items-start justify-between gap-3">
+      <div>
+        <p class="text-xs font-bold tracking-widest text-muted uppercase">Good morning</p>
+        <h1 class="font-display font-bold text-3xl leading-tight" id="greeting">Alex</h1>
+        <p class="text-sm text-muted mt-1">Let's crush it today</p>
+      </div>
+      <div id="streak-badge" class="brut-sm bg-pink text-ink px-3 py-2 text-sm font-extrabold whitespace-nowrap">
+        🔥 <span id="streak-n">12</span> day streak
+      </div>
+    </header>
+
+    <section class="mt-6 brut p-4 relative overflow-hidden">
+      <div class="absolute left-0 top-0 bottom-0 w-2 bg-lime"></div>
+      <p class="text-[11px] font-extrabold tracking-widest uppercase text-muted pl-2">Today's Workout</p>
+      <h2 class="font-display font-bold text-2xl mt-1 pl-2" id="w-title">Upper Body Power</h2>
+      <div class="flex flex-wrap gap-2 mt-3 pl-2">
+        <span class="brut-sm bg-yellow px-2.5 py-1 text-xs font-bold" id="w-dur">45 min</span>
+        <span class="brut-sm bg-pink px-2.5 py-1 text-xs font-bold" id="w-diff">Hard</span>
+        <span class="brut-sm bg-card px-2.5 py-1 text-xs font-bold" id="w-ex">6 exercises</span>
+      </div>
+      <ul id="preview" class="mt-4 pl-2 space-y-1.5 text-sm text-muted"></ul>
+      <a href="workout.html" class="brut-btn mt-4 ml-2 inline-flex items-center justify-center w-[calc(100%-0.5rem)] h-12 bg-lime text-on-lime text-base">
+        Start Workout →
+      </a>
+    </section>
+
+    <section class="mt-5 grid grid-cols-3 gap-3">
+      <div class="brut-sm bg-yellow p-3 text-center">
+        <p class="font-display font-bold text-xl" id="stat-kcal">420</p>
+        <p class="text-[11px] font-bold uppercase text-ink/70">kcal</p>
+      </div>
+      <div class="brut-sm bg-blue text-white dark:text-ink p-3 text-center">
+        <p class="font-display font-bold text-xl" id="stat-min">45</p>
+        <p class="text-[11px] font-bold uppercase opacity-80">minutes</p>
+      </div>
+      <div class="brut-sm bg-lime p-3 text-center">
+        <p class="font-display font-bold text-xl" id="stat-wo">1</p>
+        <p class="text-[11px] font-bold uppercase text-ink/70">workouts</p>
+      </div>
+    </section>
+
+    <p id="done-banner" class="hidden mt-5 brut-sm bg-lime p-3 text-center font-bold text-sm">
+      ✅ Today's workout complete — streak updated!
+    </p>
+  </main>
+
+  <nav id="bottom-nav"></nav>
+  <script src="data/workout.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/home.js"></script>
+</body>
+</html>
