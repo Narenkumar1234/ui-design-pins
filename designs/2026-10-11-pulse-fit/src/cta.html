@@ -1,0 +1,35 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1350px;background:#FFF8E7;font-family:Inter,system-ui,sans-serif;color:#111;position:relative;overflow:hidden}
+.blob{position:absolute;border:4px solid #111;box-shadow:8px 8px 0 #111;border-radius:16px}
+.b1{width:220px;height:220px;background:#C8F542;top:80px;left:70px;transform:rotate(-8deg)}
+.b2{width:160px;height:160px;background:#FF5C8A;top:120px;right:90px;transform:rotate(12deg)}
+.b3{width:120px;height:120px;background:#4D7CFE;bottom:180px;left:100px;transform:rotate(6deg)}
+.b4{width:140px;height:140px;background:#FFE566;bottom:200px;right:80px;transform:rotate(-10deg)}
+.card{position:absolute;left:90px;right:90px;top:340px;background:#fff;border:5px solid #111;box-shadow:12px 12px 0 #111;border-radius:16px;padding:56px 48px;text-align:center}
+.kicker{display:inline-block;font:800 18px Inter;letter-spacing:3px;text-transform:uppercase;background:#C8F542;border:3px solid #111;box-shadow:4px 4px 0 #111;padding:10px 18px;border-radius:8px;margin-bottom:28px}
+h1{font:800 64px/1.05 "Space Grotesk",sans-serif;letter-spacing:-1.5px}
+h1 em{font-style:normal;background:#FF5C8A;padding:0 12px;border:3px solid #111;box-shadow:4px 4px 0 #111;border-radius:8px;display:inline-block;margin:8px 0}
+.teaser{margin-top:28px;font:600 26px/1.4 Inter;color:#5A5A5A}
+.bits{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.bit{font:800 16px Inter;padding:10px 16px;border:3px solid #111;box-shadow:3px 3px 0 #111;border-radius:8px;background:#FFE566}
+.bit:nth-child(2){background:#C8F542}
+.bit:nth-child(3){background:#4D7CFE;color:#fff}
+.bit:nth-child(4){background:#FF5C8A}
+.handle{position:absolute;bottom:70px;left:0;right:0;text-align:center;font:800 32px "Space Grotesk",sans-serif}
+.handle span{background:#111;color:#C8F542;padding:12px 28px;border-radius:8px;border:4px solid #111;box-shadow:6px 6px 0 #FF5C8A}
+</style></head><body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
+<div class="card">
+  <div class="kicker">UI kit</div>
+  <h1>Comment <em>PULSE</em><br>to get the HTML/CSS</h1>
+  <p class="teaser">Pulse Fit · neo-brutal fitness tracker<br>3 screens · light &amp; dark · working streak &amp; timer</p>
+  <div class="bits">
+    <span class="bit">HTML + Tailwind</span>
+    <span class="bit">Rest timer</span>
+    <span class="bit">localStorage</span>
+    <span class="bit">Dark mode</span>
+  </div>
+</div>
+<div class="handle"><span>@code.in.30s</span></div>
+</body></html>
