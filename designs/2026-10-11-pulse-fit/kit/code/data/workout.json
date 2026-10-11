@@ -1,0 +1,36 @@
+{
+  "user": { "name": "Alex", "streak": 12 },
+  "today": {
+    "title": "Upper Body Power",
+    "durationMin": 45,
+    "difficulty": "Hard",
+    "kcal": 420,
+    "exercises": [
+      { "id": "bench", "name": "Bench Press", "sets": 4, "reps": 8, "restSec": 90 },
+      { "id": "ohp", "name": "Overhead Press", "sets": 3, "reps": 10, "restSec": 75 },
+      { "id": "row", "name": "Bent Over Row", "sets": 4, "reps": 8, "restSec": 90 },
+      { "id": "push", "name": "Push-ups", "sets": 3, "reps": 15, "restSec": 60 },
+      { "id": "curl", "name": "Bicep Curls", "sets": 3, "reps": 12, "restSec": 60 },
+      { "id": "tricep", "name": "Tricep Dips", "sets": 3, "reps": 12, "restSec": 60 }
+    ]
+  },
+  "week": [
+    { "day": "Mon", "workouts": 1 },
+    { "day": "Tue", "workouts": 0 },
+    { "day": "Wed", "workouts": 1 },
+    { "day": "Thu", "workouts": 1 },
+    { "day": "Fri", "workouts": 0 },
+    { "day": "Sat", "workouts": 1 },
+    { "day": "Sun", "workouts": 2 }
+  ],
+  "prs": [
+    { "name": "Bench Press PR", "value": "80 kg", "accent": "lime" },
+    { "name": "5K Run PR", "value": "24:10", "accent": "pink" }
+  ],
+  "calendar": [
+    1,0,1,1,0,1,1,
+    1,0,1,0,1,1,0,
+    1,1,0,1,0,1,1,
+    1,0,1,1,0,0,1
+  ]
+}
