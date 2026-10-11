@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pulse Fit - Progress</title>
+<!-- Google Fonts: Space Grotesk, Inter, Public Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Public+Sans:wght@700;900&amp;family=Space+Grotesk:wght@600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: "#FFF8E7",
+              white: "#FFFFFF",
+              ink: "#111111",
+              muted: "#5A5A5A",
+              lime: "#C8F542",
+              pink: "#FF5C8A",
+              blue: "#4D7CFE",
+              yellow: "#FFE566"
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Space Grotesk", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          },
+          boxShadow: {
+            'brutal-sm': '2px 2px 0px #111111',
+            'brutal': '4px 4px 0px #111111',
+            'brutal-lg': '6px 6px 0px #111111',
+            'brutal-top': '0px -4px 0px #111111'
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Neo-brutalist interaction helpers */
+    .brutal-btn {
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .brutal-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px #111111 !important;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#FFF8E7] text-[#111111] font-body min-h-screen antialiased flex flex-col items-center selection:bg-[#C8F542] selection:text-[#111111]">
+<!-- Mobile Wrapper / Viewport Container -->
+<div class="w-full max-w-md min-h-screen flex flex-col bg-[#FFF8E7] pb-24 relative shadow-none md:border-x-4 md:border-[#111111]">
+<!-- ==================== TOP APP BAR ==================== -->
+<header class="sticky top-0 z-40 bg-[#FFF8E7] border-b-4 border-[#111111] shadow-[0_4px_0_0_#111111]">
+<div class="flex justify-between items-center w-full px-4 py-3 max-w-md mx-auto">
+<!-- Brand Leading -->
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-[#C8F542] border-2 border-[#111111] shadow-[2px_2px_0_0_#111111] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#111111] text-xl" data-icon="bolt">bolt</span>
+</div>
+<span class="font-headline font-black text-2xl tracking-tighter uppercase text-[#111111]">PULSE FIT</span>
+</div>
+<!-- Trailing Streak Badge Action -->
+<div class="flex items-center bg-[#FFE566] text-[#111111] font-headline font-extrabold text-xs uppercase px-3 py-1.5 rounded-lg border-2 border-[#111111] shadow-[2px_2px_0_0_#111111]">
+<span class="mr-1 text-sm">🔥</span> 12D STREAK
+        </div>
+</div>
+</header>
+<!-- ==================== MAIN CONTENT AREA ==================== -->
+<main class="flex-1 px-4 py-5 flex flex-col gap-5">
+<!-- Screen Headline Banner -->
+<section class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 bg-[#111111] text-[#FFF8E7] px-2.5 py-0.5 rounded text-xs font-label font-black uppercase tracking-wider">
+<span>METRICS DASHBOARD</span>
+</div>
+<span class="font-headline font-black text-xs uppercase tracking-tight bg-[#FFFFFF] px-2 py-1 rounded-lg border-2 border-[#111111] shadow-[2px_2px_0_0_#111111]">
+            OCTOBER 2024
+          </span>
+</div>
+<h1 class="font-headline font-black text-3xl tracking-tight uppercase text-[#111111] mt-1 leading-none">
+          YOUR PROGRESS
+        </h1>
+<p class="text-xs font-bold text-[#5A5A5A] uppercase tracking-normal">
+          Aggregated load, max velocity, and consistency logs
+        </p>
+</section>
+<!-- SECTION 1: WEEKLY WORKOUT VOLUME (BAR CHART) -->
+<section class="bg-[#FFFFFF] border-4 border-[#111111] rounded-lg p-4 shadow-[4px_4px_0_0_#111111]">
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-2 mb-4 pb-3 border-b-2 border-[#111111]">
+<div>
+<span class="text-[10px] font-black uppercase font-label tracking-widest text-[#5A5A5A]">LOAD ANALYTICS</span>
+<h2 class="font-headline font-black text-lg uppercase leading-tight text-[#111111]">
+              THIS WEEK · 4 WORKOUTS
+            </h2>
+</div>
+<div class="bg-[#FFE566] border-2 border-[#111111] px-2.5 py-1 rounded-lg shadow-[2px_2px_0_0_#111111] text-right">
+<span class="text-[9px] block font-black text-[#111111] leading-none uppercase">TOTAL TONNAGE</span>
+<span class="font-headline font-black text-xs text-[#111111]">14,250 KG</span>
+</div>
+</div>
+<!-- Geometric Bar Chart Visualization -->
+<div class="relative pt-2 pb-1">
+<!-- Background Target Reference Line -->
+<div class="absolute inset-x-0 top-6 border-b-2 border-dashed border-[#111111]/30 flex justify-end">
+<span class="bg-[#FFFFFF] px-1 text-[9px] font-headline font-black text-[#5A5A5A] -mt-2">PEAK TARGET 3.5T</span>
+</div>
+<!-- The Bars Grid (7 Days) -->
+<div class="h-44 flex items-end justify-between gap-2 px-1 relative z-10 pt-4">
+<!-- MON: 60% White/Border -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="text-[9px] font-headline font-black text-[#111111] mb-1 opacity-90">2.1T</span>
+<div class="w-full bg-[#FFFFFF] border-3 border-[#111111] rounded-t-lg shadow-[2px_2px_0_0_#111111] transition-transform group-hover:-translate-y-1" style="height: 60%; border-width: 3px;">
+<div class="w-full h-1.5 bg-[#111111] border-b border-[#111111]"></div>
+</div>
+<span class="font-headline font-black text-xs mt-2 text-[#111111]">M</span>
+</div>
+<!-- TUE: Rest Day (0%) -->
+<div class="flex-1 flex flex-col items-center h-full justify-end">
+<span class="text-[8px] font-bold text-[#5A5A5A] mb-1">REST</span>
+<div class="w-full h-2 border-2 border-dashed border-[#111111] rounded bg-[#FFF8E7] mb-0.5"></div>
+<span class="font-headline font-black text-xs mt-2 text-[#5A5A5A]">T</span>
+</div>
+<!-- WED: 75% Pink Accent -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="text-[9px] font-headline font-black text-[#111111] mb-1">3.1T</span>
+<div class="w-full bg-[#FF5C8A] border-3 border-[#111111] rounded-t-lg shadow-[2px_2px_0_0_#111111] transition-transform group-hover:-translate-y-1 flex flex-col justify-between" style="height: 75%; border-width: 3px;">
+<div class="w-full h-1.5 bg-[#111111]"></div>
+<div class="w-full text-center pb-1">
+<span class="text-[8px] font-black uppercase text-white bg-[#111111] px-0.5 rounded">HIIT</span>
+</div>
+</div>
+<span class="font-headline font-black text-xs mt-2 text-[#111111]">W</span>
+</div>
+<!-- THU: 40% White/Border -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="text-[9px] font-headline font-black text-[#111111] mb-1 opacity-90">1.4T</span>
+<div class="w-full bg-[#FFFFFF] border-3 border-[#111111] rounded-t-lg shadow-[2px_2px_0_0_#111111] transition-transform group-hover:-translate-y-1" style="height: 40%; border-width: 3px;">
+<div class="w-full h-1.5 bg-[#111111]"></div>
+</div>
+<span class="font-headline font-black text-xs mt-2 text-[#111111]">T</span>
+</div>
+<!-- FRI: 85% Lime Primary -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="text-[9px] font-headline font-black text-[#111111] mb-1">3.8T</span>
+<div class="w-full bg-[#C8F542] border-3 border-[#111111] rounded-t-lg shadow-[2px_2px_0_0_#111111] transition-transform group-hover:-translate-y-1" style="height: 85%; border-width: 3px;">
+<div class="w-full h-1.5 bg-[#111111]"></div>
+</div>
+<span class="font-headline font-black text-xs mt-2 text-[#111111]">F</span>
+</div>
+<!-- SAT: Rest Day (0%) -->
+<div class="flex-1 flex flex-col items-center h-full justify-end">
+<span class="text-[8px] font-bold text-[#5A5A5A] mb-1">REST</span>
+<div class="w-full h-2 border-2 border-dashed border-[#111111] rounded bg-[#FFF8E7] mb-0.5"></div>
+<span class="font-headline font-black text-xs mt-2 text-[#5A5A5A]">S</span>
+</div>
+<!-- SUN: 100% Lime Tallest / Max PR -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<div class="bg-[#FFE566] text-[#111111] border border-[#111111] text-[8px] font-black px-1 rounded mb-0.5">MAX</div>
+<div class="w-full bg-[#C8F542] border-3 border-[#111111] rounded-t-lg shadow-[2px_2px_0_0_#111111] transition-transform group-hover:-translate-y-1 flex flex-col justify-between" style="height: 100%; border-width: 3px;">
+<div class="w-full h-1.5 bg-[#111111]"></div>
+<div class="w-full text-center pb-1">
+<span class="material-symbols-outlined text-xs text-[#111111]" data-icon="star">star</span>
+</div>
+</div>
+<span class="font-headline font-black text-xs mt-2 text-[#111111]">S</span>
+</div>
+</div>
+</div>
+<!-- Legend / Footer -->
+<div class="mt-4 pt-3 border-t-2 border-[#111111] flex items-center justify-between text-[11px] font-bold">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 bg-[#C8F542] border-2 border-[#111111] inline-block"></span>
+<span>Hypertrophy</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 bg-[#FF5C8A] border-2 border-[#111111] inline-block"></span>
+<span>Cardio Load</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 bg-[#FFFFFF] border-2 border-[#111111] inline-block"></span>
+<span>Auxiliary</span>
+</div>
+</div>
+</section>
+<!-- SECTION 2: PERSONAL RECORDS (PRs) SIDE-BY-SIDE -->
+<section class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<h2 class="font-headline font-black text-base uppercase tracking-tight text-[#111111] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg text-[#111111]" data-icon="emoji_events">emoji_events</span>
+            PERSONAL RECORDS (PRs)
+          </h2>
+<span class="text-[10px] font-headline font-black bg-[#C8F542] px-2 py-0.5 rounded border border-[#111111]">UPDATED</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- PR CARD 1: Bench Press -->
+<article class="bg-[#FFFFFF] border-4 border-[#111111] rounded-lg p-3.5 shadow-[4px_4px_0_0_#111111] flex flex-col justify-between relative overflow-hidden">
+<!-- Header Accent Pill -->
+<div class="flex justify-between items-start mb-2">
+<span class="bg-[#C8F542] text-[#111111] border-2 border-[#111111] shadow-[2px_2px_0_0_#111111] px-2 py-0.5 rounded text-[10px] font-headline font-black uppercase tracking-tight">
+                CHEST
+              </span>
+<span class="material-symbols-outlined text-[#111111] text-base" data-icon="fitness_center">fitness_center</span>
+</div>
+<!-- Title & Main PR Value -->
+<div class="my-1">
+<span class="text-[11px] font-headline font-bold text-[#5A5A5A] uppercase block">BENCH PRESS</span>
+<div class="font-headline font-black text-3xl tracking-tighter text-[#111111] leading-none my-1">
+                80 <span class="text-base tracking-normal">KG</span>
+</div>
+</div>
+<!-- Subtext Pill -->
+<div class="mt-2 pt-2 border-t-2 border-[#111111]">
+<span class="inline-flex items-center gap-0.5 bg-[#FFF8E7] border border-[#111111] px-1.5 py-0.5 rounded text-[10px] font-headline font-black text-[#111111]">
+<span class="material-symbols-outlined text-xs text-[#111111]" data-icon="arrow_upward">arrow_upward</span>
+                +5KG VS LAST MO
+              </span>
+</div>
+</article>
+<!-- PR CARD 2: 5K Run -->
+<article class="bg-[#FFFFFF] border-4 border-[#111111] rounded-lg p-3.5 shadow-[4px_4px_0_0_#111111] flex flex-col justify-between relative overflow-hidden">
+<!-- Header Accent Pill -->
+<div class="flex justify-between items-start mb-2">
+<span class="bg-[#FF5C8A] text-[#111111] border-2 border-[#111111] shadow-[2px_2px_0_0_#111111] px-2 py-0.5 rounded text-[10px] font-headline font-black uppercase tracking-tight">
+                CARDIO
+              </span>
+<span class="material-symbols-outlined text-[#111111] text-base" data-icon="timer">timer</span>
+</div>
+<!-- Title & Main PR Value -->
+<div class="my-1">
+<span class="text-[11px] font-headline font-bold text-[#5A5A5A] uppercase block">5K RUN SPEED</span>
+<div class="font-headline font-black text-3xl tracking-tighter text-[#111111] leading-none my-1">
+                24:10
+              </div>
+</div>
+<!-- Subtext Pill -->
+<div class="mt-2 pt-2 border-t-2 border-[#111111]">
+<span class="inline-flex items-center gap-0.5 bg-[#C8F542] border border-[#111111] px-1.5 py-0.5 rounded text-[10px] font-headline font-black text-[#111111]">
+<span class="material-symbols-outlined text-xs text-[#111111]" data-icon="bolt">bolt</span>
+                -45S PACE PR
+              </span>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION 3: CONSISTENCY CALENDAR CARD -->
+<section class="bg-[#FFFFFF] border-4 border-[#111111] rounded-lg p-4 shadow-[4px_4px_0_0_#111111]">
+<!-- Calendar Card Header -->
+<div class="flex items-center justify-between mb-3 pb-2 border-b-2 border-[#111111]">
+<div>
+<span class="text-[10px] font-black uppercase font-label tracking-widest text-[#5A5A5A]">HABIT FREQUENCY</span>
+<h2 class="font-headline font-black text-lg uppercase leading-tight text-[#111111]">
+              CONSISTENCY · OCT
+            </h2>
+</div>
+<div class="bg-[#C8F542] border-2 border-[#111111] px-2 py-1 rounded-lg shadow-[2px_2px_0_0_#111111]">
+<span class="font-headline font-black text-xs text-[#111111]">18/28 DAYS (64%)</span>
+</div>
+</div>
+<!-- 7x4 Brutalist Dot/Square Grid -->
+<div class="flex flex-col gap-2">
+<!-- Day of Week Headers -->
+<div class="grid grid-cols-7 gap-2 text-center">
+<span class="font-headline font-black text-xs text-[#111111]">M</span>
+<span class="font-headline font-black text-xs text-[#111111]">T</span>
+<span class="font-headline font-black text-xs text-[#111111]">W</span>
+<span class="font-headline font-black text-xs text-[#111111]">T</span>
+<span class="font-headline font-black text-xs text-[#111111]">F</span>
+<span class="font-headline font-black text-xs text-[#111111]">S</span>
+<span class="font-headline font-black text-xs text-[#111111]">S</span>
+</div>
+<!-- Week 1 -->
+<div class="grid grid-cols-7 gap-2">
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">1</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">2</div>
+<div class="h-8 bg-[#FFFFFF] border-2 border-dashed border-[#111111] rounded-md flex items-center justify-center font-headline font-bold text-xs text-[#5A5A5A]">3</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">4</div>
+<div class="h-8 bg-[#FF5C8A] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs" title="PR Day">5</div>
+<div class="h-8 bg-[#FFFFFF] border-2 border-dashed border-[#111111] rounded-md flex items-center justify-center font-headline font-bold text-xs text-[#5A5A5A]">6</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">7</div>
+</div>
+<!-- Week 2 -->
+<div class="grid grid-cols-7 gap-2">
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">8</div>
+<div class="h-8 bg-[#FFFFFF] border-2 border-dashed border-[#111111] rounded-md flex items-center justify-center font-headline font-bold text-xs text-[#5A5A5A]">9</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">10</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">11</div>
+<div class="h-8 bg-[#FFFFFF] border-2 border-dashed border-[#111111] rounded-md flex items-center justify-center font-headline font-bold text-xs text-[#5A5A5A]">12</div>
+<div class="h-8 bg-[#FFE566] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs" title="PR Day">13</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">14</div>
+</div>
+<!-- Week 3 -->
+<div class="grid grid-cols-7 gap-2">
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">15</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">16</div>
+<div class="h-8 bg-[#FFFFFF] border-2 border-dashed border-[#111111] rounded-md flex items-center justify-center font-headline font-bold text-xs text-[#5A5A5A]">17</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">18</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">19</div>
+<div class="h-8 bg-[#FFFFFF] border-2 border-dashed border-[#111111] rounded-md flex items-center justify-center font-headline font-bold text-xs text-[#5A5A5A]">20</div>
+<div class="h-8 bg-[#FF5C8A] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">21</div>
+</div>
+<!-- Week 4 -->
+<div class="grid grid-cols-7 gap-2">
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">22</div>
+<div class="h-8 bg-[#FFFFFF] border-2 border-dashed border-[#111111] rounded-md flex items-center justify-center font-headline font-bold text-xs text-[#5A5A5A]">23</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">24</div>
+<div class="h-8 bg-[#FFFFFF] border-2 border-dashed border-[#111111] rounded-md flex items-center justify-center font-headline font-bold text-xs text-[#5A5A5A]">25</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">26</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">27</div>
+<div class="h-8 bg-[#C8F542] border-2 border-[#111111] rounded-md shadow-[1px_1px_0_0_#111111] flex items-center justify-center font-headline font-black text-xs">28</div>
+</div>
+</div>
+<!-- Calendar Legend -->
+<div class="mt-4 pt-3 border-t-2 border-[#111111] flex flex-wrap items-center justify-between gap-2 text-[10px] font-bold">
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 bg-[#C8F542] border border-[#111111]"></span>
+<span>Workout Hit</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 bg-[#FF5C8A] border border-[#111111]"></span>
+<span>PR Day</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 bg-[#FFE566] border border-[#111111]"></span>
+<span>Milestone</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 bg-[#FFFFFF] border border-dashed border-[#111111]"></span>
+<span>Recovery</span>
+</div>
+</div>
+</section>
+<!-- Action Button / Share Summary Banner -->
+<button class="w-full bg-[#C8F542] text-[#111111] border-4 border-[#111111] rounded-lg p-3 font-headline font-black uppercase text-sm tracking-wider shadow-[4px_4px_0_0_#111111] brutal-btn flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl" data-icon="share">share</span>
+        EXPORT PROGRESS REPORT
+      </button>
+</main>
+<!-- ==================== BOTTOM NAVIGATION BAR ==================== -->
+<!-- Adheres strictly to Shared Components JSON: "Today", "Workout", "Stats", "Profile" with "Stats" ACTIVE -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 border-t-4 border-[#111111] bg-[#FFF8E7] shadow-[0_-4px_0_0_#111111] max-w-md mx-auto md:left-1/2 md:-translate-x-1/2">
+<!-- Tab 1: Today (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#5A5A5A] font-bold px-2 py-1.5 hover:bg-[#FFE566] hover:text-[#111111] transition-colors rounded-lg active:translate-x-[2px] active:translate-y-[2px]" href="#today">
+<span class="material-symbols-outlined text-2xl" data-icon="fitness_center">fitness_center</span>
+<span class="font-headline font-bold text-xs uppercase tracking-tight mt-0.5">Today</span>
+</a>
+<!-- Tab 2: Workout (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#5A5A5A] font-bold px-2 py-1.5 hover:bg-[#FFE566] hover:text-[#111111] transition-colors rounded-lg active:translate-x-[2px] active:translate-y-[2px]" href="#workout">
+<span class="material-symbols-outlined text-2xl" data-icon="timer">timer</span>
+<span class="font-headline font-bold text-xs uppercase tracking-tight mt-0.5">Workout</span>
+</a>
+<!-- Tab 3: Stats (ACTIVE MATCH for Progress page) -->
+<a class="flex flex-col items-center justify-center bg-[#C8F542] text-[#111111] border-2 border-[#111111] shadow-[2px_2px_0_0_#111111] rounded-lg px-3 py-1.5 font-black active:translate-x-[2px] active:translate-y-[2px]" href="#stats">
+<span class="material-symbols-outlined text-2xl" data-icon="monitoring">monitoring</span>
+<span class="font-headline font-bold text-xs uppercase tracking-tight mt-0.5">Stats</span>
+</a>
+<!-- Tab 4: Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#5A5A5A] font-bold px-2 py-1.5 hover:bg-[#FFE566] hover:text-[#111111] transition-colors rounded-lg active:translate-x-[2px] active:translate-y-[2px]" href="#profile">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="font-headline font-bold text-xs uppercase tracking-tight mt-0.5">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>
