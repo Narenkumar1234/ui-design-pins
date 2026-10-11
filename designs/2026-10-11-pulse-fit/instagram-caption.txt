@@ -1,0 +1,18 @@
+Stop building another todo list 💪
+
+Build this instead → Pulse Fit
+A neo-brutalist fitness tracker with thick outlines, hard shadows & punchy lime/pink fills.
+
+📱 3 screens to ship:
+1️⃣ Today — streak badge + today's workout + quick stats
+2️⃣ Workout — sets×reps list + rest timer + Start/Complete
+3️⃣ Progress — weekly bars, PR cards, consistency dots
+
+☀️ Light cream (#FFF8E7) + 🌙 dark charcoal (#0E0F12)
+Stack: HTML · Tailwind · vanilla JS · localStorage
+
+Comment PULSE to get the HTML/CSS 💬
+
+Save this for your next project 📌
+
+#frontend #uidesign #webdevelopment #neobrutalism #tailwindcss #javascript #codingproject #studentdeveloper #fitnessapp #darkmode #htmlcss #100daysofcode #learninpublic #codein30s

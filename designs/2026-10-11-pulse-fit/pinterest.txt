@@ -1,0 +1,13 @@
+## Titles
+Light: Pulse Fit App UI — Neo-Brutalist Fitness Tracker (Light Mode)
+Dark: Pulse Fit App UI — Neo-Brutalist Fitness Tracker (Dark Mode)
+
+## Description
+Front-end project idea: Pulse Fit — a neo-brutalist workout tracker with Today, Workout and Progress screens. Thick 3–4px outlines, hard offset shadows, lime + pink accents. Build it with HTML, Tailwind CSS and vanilla JS. Streaks, rest timer and dark mode included. From @code.in.30s — comment PULSE on Instagram for the kit.
+
+## Alt texts
+Light: Three neo-brutalist mobile screens of Pulse Fit fitness app in light cream mode — Today home, Workout list with rest timer, Progress weekly bars.
+Dark: Three neo-brutalist mobile screens of Pulse Fit fitness app in dark mode — Today home, Workout list with rest timer, Progress weekly bars.
+
+## Board suggestion
+UI Design / Front-end Project Ideas / Neo-Brutalism / Mobile App UI
