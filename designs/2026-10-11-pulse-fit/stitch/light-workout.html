@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pulse Fit - Workout</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Public+Sans:wght@700;900&amp;family=Space+Grotesk:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {},
+          fontFamily: {
+            headline: ["Space Grotesk", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          },
+          fontSize: {}
+        },
+      },
+    }
+  </script>
+<style>
+    /* Neo-brutalist utility styles enforcing strictly 0 blur hard shadows */
+    .nb-shadow {
+      box-shadow: 4px 4px 0px 0px #111111;
+    }
+    .nb-shadow-sm {
+      box-shadow: 2px 2px 0px 0px #111111;
+    }
+    .nb-shadow-lg {
+      box-shadow: 6px 6px 0px 0px #111111;
+    }
+    .nb-shadow-active:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px 0px #111111;
+    }
+    .nb-shadow-pressed:active {
+      transform: translate(4px, 4px);
+      box-shadow: 0px 0px 0px 0px #111111;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#FFF8E7] text-[#111111] font-body min-h-screen antialiased selection:bg-[#FFE566] pb-40">
+<!-- TOP APP BAR -->
+<header class="bg-[#FFF8E7] border-b-4 border-[#111111] sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-4 py-3 max-w-md mx-auto">
+<!-- Back Button -->
+<button aria-label="Go Back" class="w-10 h-10 flex items-center justify-center bg-[#FFFFFF] border-[3px] border-[#111111] rounded-lg nb-shadow active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0_0_#111111] transition-transform" type="button">
+<span class="material-symbols-outlined text-2xl text-[#111111]" data-icon="arrow_back">arrow_back</span>
+</button>
+<!-- Center Title -->
+<div class="text-center">
+<span class="block font-headline font-black uppercase tracking-tight text-lg text-[#111111] leading-none">
+          Upper Body Power
+        </span>
+<span class="font-label font-bold text-[10px] tracking-widest uppercase text-[#5A5A5A]">Hypertrophy Day</span>
+</div>
+<!-- Workout Elapsed Timer Badge -->
+<div class="flex items-center gap-1.5 bg-[#FFFFFF] border-[3px] border-[#111111] rounded-lg px-2.5 py-1 nb-shadow">
+<span class="material-symbols-outlined text-lg text-[#111111]" data-icon="timer">timer</span>
+<span class="font-headline font-black text-sm tracking-tight text-[#111111]">14:20</span>
+</div>
+</div>
+</header>
+<!-- MAIN WORKOUT CANVAS -->
+<main class="max-w-md mx-auto px-4 pt-4 space-y-4">
+<!-- REST TIMER BANNER CARD -->
+<section aria-label="Rest Timer" class="bg-[#FFE566] border-[4px] border-[#111111] rounded-lg p-4 nb-shadow relative overflow-hidden">
+<div class="flex items-start justify-between mb-2">
+<div>
+<span class="inline-block bg-[#111111] text-[#FFE566] font-headline font-black text-[11px] px-2 py-0.5 rounded tracking-wider uppercase mb-1">
+            REST BETWEEN SETS
+          </span>
+<div class="font-headline font-black text-5xl tracking-tighter text-[#111111] leading-none my-1" id="timer-display">
+            00:45
+          </div>
+</div>
+<!-- Skip / Pause Actions -->
+<div class="flex flex-col gap-2">
+<button class="bg-[#FFFFFF] text-[#111111] border-[3px] border-[#111111] rounded-lg font-headline font-black text-xs uppercase px-3 py-1.5 nb-shadow-sm active:translate-x-[2px] active:translate-y-[2px] active:shadow-none flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-base" data-icon="pause">pause</span>
+            PAUSE
+          </button>
+<button class="bg-[#FF5C8A] text-[#111111] border-[3px] border-[#111111] rounded-lg font-headline font-black text-xs uppercase px-3 py-1.5 nb-shadow-sm active:translate-x-[2px] active:translate-y-[2px] active:shadow-none flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-base" data-icon="fast_forward">fast_forward</span>
+            SKIP
+          </button>
+</div>
+</div>
+<!-- Segmented Rest Countdown Bar & Next Set Indicator -->
+<div class="mt-3 pt-3 border-t-[3px] border-[#111111] flex items-center justify-between text-xs">
+<div class="flex items-center gap-1.5 font-label font-black uppercase text-[#111111]">
+<span class="material-symbols-outlined text-sm" data-icon="upcoming">upcoming</span>
+<span>Next: Set 2 of 4</span>
+</div>
+<div class="w-36 h-3 bg-[#FFFFFF] border-[2px] border-[#111111] rounded-full overflow-hidden flex p-0.5">
+<div class="h-full bg-[#111111] rounded-full w-3/4"></div>
+</div>
+</div>
+</section>
+<!-- SECTION TITLE & STATUS -->
+<div class="flex items-center justify-between pt-1">
+<h2 class="font-headline font-black uppercase tracking-tight text-xl text-[#111111] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xl" data-icon="fitness_center">fitness_center</span>
+        EXERCISE LIST
+      </h2>
+<span class="font-headline font-bold text-xs bg-[#C8F542] border-[2px] border-[#111111] px-2 py-0.5 rounded-lg nb-shadow-sm uppercase">
+        1/4 COMPLETED
+      </span>
+</div>
+<!-- EXERCISE 1: BARBELL BENCH PRESS -->
+<article class="bg-[#FFFFFF] border-[3.5px] border-[#111111] rounded-lg p-4 nb-shadow transition-transform">
+<div class="flex items-start justify-between gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline font-black text-lg text-[#111111] leading-tight">
+              Barbell Bench Press
+            </h3>
+<span class="bg-[#FF5C8A] text-[#111111] border-[2px] border-[#111111] font-headline font-black text-[11px] px-2 py-0.5 rounded-lg nb-shadow-sm uppercase">
+              4 × 8
+            </span>
+</div>
+<p class="font-label font-bold text-xs text-[#5A5A5A] uppercase tracking-wide">
+            Target Weight: <span class="text-[#111111] font-headline font-black text-sm">80 kg</span>
+</p>
+</div>
+<!-- Custom Checkbox Indicator (Active/Done) -->
+<button aria-label="Toggle Complete" class="w-8 h-8 rounded-lg border-[3px] border-[#111111] bg-[#C8F542] flex items-center justify-center nb-shadow-sm active:translate-x-[1px] active:translate-y-[1px]" type="button">
+<span class="material-symbols-outlined text-xl font-black text-[#111111]" data-icon="check">check</span>
+</button>
+</div>
+<!-- Segmented Sets Status & Stepper -->
+<div class="mt-4 pt-3 border-t-[2.5px] border-[#111111]">
+<div class="flex items-center justify-between text-xs font-label font-bold uppercase mb-2">
+<span>Progress: <strong class="font-headline font-black text-sm text-[#111111]">SET 1/4 COMPLETED</strong></span>
+<span class="text-[#5A5A5A]">25%</span>
+</div>
+<!-- Segmented 4-Block Bar -->
+<div class="grid grid-cols-4 gap-1.5 h-3.5">
+<div class="bg-[#111111] border-[2px] border-[#111111] rounded"></div>
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+</div>
+</div>
+</article>
+<!-- EXERCISE 2: OVERHEAD PRESS -->
+<article class="bg-[#FFFFFF] border-[3.5px] border-[#111111] rounded-lg p-4 nb-shadow transition-transform">
+<div class="flex items-start justify-between gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline font-black text-lg text-[#111111] leading-tight">
+              Overhead Press
+            </h3>
+<span class="bg-[#4D7CFE] text-[#111111] border-[2px] border-[#111111] font-headline font-black text-[11px] px-2 py-0.5 rounded-lg nb-shadow-sm uppercase">
+              3 × 10
+            </span>
+</div>
+<p class="font-label font-bold text-xs text-[#5A5A5A] uppercase tracking-wide">
+            Target Weight: <span class="text-[#111111] font-headline font-black text-sm">45 kg</span>
+</p>
+</div>
+<!-- Custom Checkbox Indicator (Pending) -->
+<button aria-label="Toggle Complete" class="w-8 h-8 rounded-lg border-[3px] border-[#111111] bg-[#FFFFFF] flex items-center justify-center nb-shadow-sm active:translate-x-[1px] active:translate-y-[1px]" type="button">
+<span class="w-3 h-3 rounded-sm border-2 border-[#111111] bg-[#FFF8E7]"></span>
+</button>
+</div>
+<div class="mt-4 pt-3 border-t-[2.5px] border-[#111111]">
+<div class="flex items-center justify-between text-xs font-label font-bold uppercase mb-2">
+<span>Progress: <strong class="font-headline font-black text-sm text-[#111111]">SET 0/3</strong></span>
+<span class="text-[#5A5A5A]">0%</span>
+</div>
+<!-- Segmented 3-Block Bar -->
+<div class="grid grid-cols-3 gap-1.5 h-3.5">
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+</div>
+</div>
+</article>
+<!-- EXERCISE 3: BENT OVER ROW -->
+<article class="bg-[#FFFFFF] border-[3.5px] border-[#111111] rounded-lg p-4 nb-shadow transition-transform">
+<div class="flex items-start justify-between gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline font-black text-lg text-[#111111] leading-tight">
+              Bent Over Row
+            </h3>
+<span class="bg-[#FFE566] text-[#111111] border-[2px] border-[#111111] font-headline font-black text-[11px] px-2 py-0.5 rounded-lg nb-shadow-sm uppercase">
+              4 × 8
+            </span>
+</div>
+<p class="font-label font-bold text-xs text-[#5A5A5A] uppercase tracking-wide">
+            Target Weight: <span class="text-[#111111] font-headline font-black text-sm">60 kg</span>
+</p>
+</div>
+<!-- Custom Checkbox Indicator (Pending) -->
+<button aria-label="Toggle Complete" class="w-8 h-8 rounded-lg border-[3px] border-[#111111] bg-[#FFFFFF] flex items-center justify-center nb-shadow-sm active:translate-x-[1px] active:translate-y-[1px]" type="button">
+<span class="w-3 h-3 rounded-sm border-2 border-[#111111] bg-[#FFF8E7]"></span>
+</button>
+</div>
+<div class="mt-4 pt-3 border-t-[2.5px] border-[#111111]">
+<div class="flex items-center justify-between text-xs font-label font-bold uppercase mb-2">
+<span>Progress: <strong class="font-headline font-black text-sm text-[#111111]">SET 0/4</strong></span>
+<span class="text-[#5A5A5A]">0%</span>
+</div>
+<!-- Segmented 4-Block Bar -->
+<div class="grid grid-cols-4 gap-1.5 h-3.5">
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+</div>
+</div>
+</article>
+<!-- EXERCISE 4: PUSH-UPS -->
+<article class="bg-[#FFFFFF] border-[3.5px] border-[#111111] rounded-lg p-4 nb-shadow transition-transform">
+<div class="flex items-start justify-between gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline font-black text-lg text-[#111111] leading-tight">
+              Push-ups
+            </h3>
+<span class="bg-[#C8F542] text-[#111111] border-[2px] border-[#111111] font-headline font-black text-[11px] px-2 py-0.5 rounded-lg nb-shadow-sm uppercase">
+              3 × 15
+            </span>
+</div>
+<p class="font-label font-bold text-xs text-[#5A5A5A] uppercase tracking-wide">
+            Target: <span class="text-[#111111] font-headline font-black text-sm">Bodyweight</span>
+</p>
+</div>
+<!-- Custom Checkbox Indicator (Pending) -->
+<button aria-label="Toggle Complete" class="w-8 h-8 rounded-lg border-[3px] border-[#111111] bg-[#FFFFFF] flex items-center justify-center nb-shadow-sm active:translate-x-[1px] active:translate-y-[1px]" type="button">
+<span class="w-3 h-3 rounded-sm border-2 border-[#111111] bg-[#FFF8E7]"></span>
+</button>
+</div>
+<div class="mt-4 pt-3 border-t-[2.5px] border-[#111111]">
+<div class="flex items-center justify-between text-xs font-label font-bold uppercase mb-2">
+<span>Progress: <strong class="font-headline font-black text-sm text-[#111111]">SET 0/3</strong></span>
+<span class="text-[#5A5A5A]">0%</span>
+</div>
+<!-- Segmented 3-Block Bar -->
+<div class="grid grid-cols-3 gap-1.5 h-3.5">
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+<div class="bg-[#FFF8E7] border-[2px] border-[#111111] rounded"></div>
+</div>
+</div>
+</article>
+</main>
+<!-- STICKY BOTTOM DOCKED CTA BAR (Above BottomNavBar) -->
+<aside class="fixed bottom-[65px] left-0 w-full z-40 px-4 py-2 pointer-events-none">
+<div class="max-w-md mx-auto pointer-events-auto">
+<button class="w-full bg-[#C8F542] text-[#111111] font-headline font-black text-lg uppercase tracking-tight py-3.5 px-6 rounded-lg border-[4px] border-[#111111] nb-shadow nb-shadow-pressed transition-all flex items-center justify-center gap-2" type="button">
+<span>LOG ACTIVE SET</span>
+<span class="material-symbols-outlined text-2xl font-black" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</aside>
+<!-- SHARED COMPONENT: BottomNavBar -->
+<!-- Contextual Lock: 'Workout' is active (destination 2 of 4) -->
+<nav aria-label="Bottom Navigation" class="bg-[#FFF8E7] dark:bg-[#111111] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 border-t-4 border-[#111111] dark:border-[#FFF8E7] shadow-[0_-4px_0_0_#111111] dark:shadow-[0_-4px_0_0_#FFF8E7]">
+<div class="w-full max-w-md mx-auto flex justify-around items-center">
+<!-- Tab 1: Today (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#5A5A5A] dark:text-[#5A5A5A] font-bold px-2 py-1.5 hover:bg-[#FFE566] hover:text-[#111111] transition-colors active:translate-x-[2px] active:translate-y-[2px] font-headline text-xs uppercase tracking-tight" href="#">
+<span class="material-symbols-outlined text-2xl mb-0.5" data-icon="fitness_center">fitness_center</span>
+<span>Today</span>
+</a>
+<!-- Tab 2: Workout (ACTIVE - Strict Semantic Mapping) -->
+<a aria-current="page" class="flex flex-col items-center justify-center bg-[#C8F542] text-[#111111] border-2 border-[#111111] shadow-[2px_2px_0_0_#111111] rounded-lg px-3 py-1.5 font-black hover:bg-[#FFE566] hover:text-[#111111] transition-colors active:translate-x-[2px] active:translate-y-[2px] font-headline text-xs uppercase tracking-tight" href="#">
+<span class="material-symbols-outlined text-2xl mb-0.5" data-icon="timer">timer</span>
+<span>Workout</span>
+</a>
+<!-- Tab 3: Stats (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#5A5A5A] dark:text-[#5A5A5A] font-bold px-2 py-1.5 hover:bg-[#FFE566] hover:text-[#111111] transition-colors active:translate-x-[2px] active:translate-y-[2px] font-headline text-xs uppercase tracking-tight" href="#">
+<span class="material-symbols-outlined text-2xl mb-0.5" data-icon="monitoring">monitoring</span>
+<span>Stats</span>
+</a>
+<!-- Tab 4: Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#5A5A5A] dark:text-[#5A5A5A] font-bold px-2 py-1.5 hover:bg-[#FFE566] hover:text-[#111111] transition-colors active:translate-x-[2px] active:translate-y-[2px] font-headline text-xs uppercase tracking-tight" href="#">
+<span class="material-symbols-outlined text-2xl mb-0.5" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</div>
+</nav>
+<!-- Interactive Demo Logic for Micro-Interactions -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Functional countdown visual timer for neo-brutalist flair
+      let seconds = 45;
+      const display = document.getElementById('timer-display');
+      
+      setInterval(() => {
+        if (seconds > 0) {
+          seconds--;
+          const formatted = seconds < 10 ? `00:0${seconds}` : `00:${seconds}`;
+          if (display) display.textContent = formatted;
+        }
+      }, 1000);
+    });
+  </script>
+</body></html>

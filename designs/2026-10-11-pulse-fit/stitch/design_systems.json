@@ -1,0 +1,42 @@
+{
+ "LIGHT": {
+  "designSystem": {
+   "displayName": "Pulse Fit Light",
+   "theme": {
+    "bodyFont": "INTER",
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#C8F542",
+    "designMd": "# Pulse Fit (code.in.30s)\nStrictly NEO-BRUTALISM: thick 3\u20134px solid black (or near-black) outlines on every card, button and chip.\nHard offset drop shadows only (e.g. 4px 4px 0 #111) \u2014 NO soft shadows, NO gradients, NO glows, NO blur, NO photos.\nBold chunky typography. Punchy solid color fills. Geometric icons only (no illustrations/photos).\nCorners ~8px. High contrast. Fitness / workout tracker app.\n## Light palette\nbackground #FFF8E7, cards #FFFFFF, ink #111111, muted #5A5A5A,\nprimary lime #C8F542, accent pink #FF5C8A, blue #4D7CFE, yellow #FFE566,\noutlines #111111, offset shadow #111111.\nPrimary CTA buttons: lime fill, black text, thick black border, hard black offset shadow.\nActive nav / badges use pink or lime accents.\n",
+    "headlineFont": "SPACE_GROTESK",
+    "overrideNeutralColor": "#FFF8E7",
+    "overridePrimaryColor": "#C8F542",
+    "overrideSecondaryColor": "#FF5C8A",
+    "overrideTertiaryColor": "#FFE566",
+    "roundness": "ROUND_EIGHT"
+   }
+  },
+  "name": "assets/4093475856806052727",
+  "version": "1"
+ },
+ "DARK": {
+  "designSystem": {
+   "displayName": "Pulse Fit Dark",
+   "theme": {
+    "bodyFont": "INTER",
+    "colorMode": "DARK",
+    "colorVariant": "FIDELITY",
+    "customColor": "#D4FF5E",
+    "designMd": "# Pulse Fit (code.in.30s)\nStrictly NEO-BRUTALISM: thick 3\u20134px solid black (or near-black) outlines on every card, button and chip.\nHard offset drop shadows only (e.g. 4px 4px 0 #111) \u2014 NO soft shadows, NO gradients, NO glows, NO blur, NO photos.\nBold chunky typography. Punchy solid color fills. Geometric icons only (no illustrations/photos).\nCorners ~8px. High contrast. Fitness / workout tracker app.\n## Dark palette (proper dark theme)\nbackground #0E0F12, cards #1A1C24, ink #F5F5F0, muted #A0A3B0,\nprimary lime #D4FF5E, accent pink #FF7AA2, blue #6B8FFF, yellow #FFE566,\noutlines #F5F5F0, hard offset shadows still pure black #000000.\nPrimary CTA: lime fill with dark text, thick light outline, hard black offset shadow.\n",
+    "headlineFont": "SPACE_GROTESK",
+    "overrideNeutralColor": "#0E0F12",
+    "overridePrimaryColor": "#D4FF5E",
+    "overrideSecondaryColor": "#FF7AA2",
+    "overrideTertiaryColor": "#FFE566",
+    "roundness": "ROUND_EIGHT"
+   }
+  },
+  "name": "assets/17974384365403196857",
+  "version": "1"
+ }
+}
