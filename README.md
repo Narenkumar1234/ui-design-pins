@@ -52,6 +52,8 @@ google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
 ```bash
 cd designs/2026-10-10-flat-shop
 python3 src/build.py
+# Pulse Fit (runs from any directory, also renders the CTA slide):
+python3 designs/2026-10-11-pulse-fit/src/build.py
 ```
 
 `build.py` screenshots each `screens/*.html` to local `screens/*.png` (needed by the framed templates), regenerates `src/_*.html` from `template.html`, then screenshots the Pinterest (1000×1500) and Instagram (1080×1350) layouts. Run it with the design folder as the working directory.
@@ -87,6 +89,15 @@ Scripts: `stitch.py` (RPC client), `mk_ds.py`, `gen.py`, `download.py`.
 - Gumroad: https://narenkumar1.gumroad.com/l/flat-shop-ui-kit
 - Kit source: [designs/2026-10-10-flat-shop/kit/](designs/2026-10-10-flat-shop/kit/)
 - Stitch HTML: [designs/2026-10-10-flat-shop/stitch/](designs/2026-10-10-flat-shop/stitch/)
+
+### Pulse Fit App UI (neo-brutalism, light + dark)
+
+- Folder: [designs/2026-10-11-pulse-fit/](designs/2026-10-11-pulse-fit/)
+- Instagram: https://www.instagram.com/p/DeWG_vjFKn7/
+- Gumroad: https://narenkumar1.gumroad.com/l/pulse-fit-ui-kit
+- Kit source: [designs/2026-10-11-pulse-fit/kit/](designs/2026-10-11-pulse-fit/kit/)
+- Stitch HTML: [designs/2026-10-11-pulse-fit/stitch/](designs/2026-10-11-pulse-fit/stitch/)
+- Comment keyword: PULSE
 
 ## License / use
 
