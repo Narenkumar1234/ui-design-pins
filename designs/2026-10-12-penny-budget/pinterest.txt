@@ -1,0 +1,14 @@
+## Titles
+Light: Penny Budget App UI: Minimalist Expense Tracker (Light Mode) · Front-End Project Idea
+Dark: Penny Budget App UI: Minimalist Expense Tracker (Dark Mode) · Front-End Project Idea
+
+## Description
+Front-end project idea: Penny, a minimalist personal finance app with Overview, Add Expense and Insights screens. Lots of whitespace, 1px hairline borders, large light numerals and only two accents (green #1F7A5A for income, terracotta #C2553A for expenses). Build it with HTML, Tailwind CSS and vanilla JavaScript: save transactions and a monthly budget in localStorage, format ₹ with Intl.NumberFormat, and draw a CSS-only bar chart. Light and dark mode included. From @code.in.30s, comment PENNY on Instagram for the HTML/CSS kit.
+#minimalism #uidesign #frontenddevelopment #webdevelopment #tailwindcss #javascript #expensetracker #darkmode #studentprojects
+
+## Alt texts
+Light: Three minimalist mobile screens of the Penny expense tracker app in light mode: overview with ₹42,860 balance and budget progress, add expense with a ₹320 amount and keypad, and insights with a monthly bar chart and spending by category.
+Dark: Three minimalist mobile screens of the Penny expense tracker app in dark mode: overview with balance and recent transactions, add expense with keypad and category chips, and insights with a green-highlighted bar chart and category breakdown.
+
+## Board suggestion
+UI Design / Front-end Project Ideas / Minimalist UI / Mobile App UI

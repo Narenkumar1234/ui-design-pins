@@ -54,6 +54,8 @@ cd designs/2026-10-10-flat-shop
 python3 src/build.py
 # Pulse Fit (runs from any directory, also renders the CTA slide):
 python3 designs/2026-10-11-pulse-fit/src/build.py
+# Penny Budget (patch raw Stitch HTML, render screens, then build all 5 slides):
+cd designs/2026-10-12-penny-budget && cp stitch/*.html screens/ && (cd screens && python3 patch.py && ./render.sh) && python3 src/build.py
 ```
 
 `build.py` screenshots each `screens/*.html` to local `screens/*.png` (needed by the framed templates), regenerates `src/_*.html` from `template.html`, then screenshots the Pinterest (1000×1500) and Instagram (1080×1350) layouts. Run it with the design folder as the working directory.
@@ -98,6 +100,15 @@ Scripts: `stitch.py` (RPC client), `mk_ds.py`, `gen.py`, `download.py`.
 - Kit source: [designs/2026-10-11-pulse-fit/kit/](designs/2026-10-11-pulse-fit/kit/)
 - Stitch HTML: [designs/2026-10-11-pulse-fit/stitch/](designs/2026-10-11-pulse-fit/stitch/)
 - Comment keyword: PULSE
+
+### Penny Budget App UI (minimalism, light + dark)
+
+- Folder: [designs/2026-10-12-penny-budget/](designs/2026-10-12-penny-budget/)
+- Instagram: https://www.instagram.com/p/DeYXyORERr7/
+- Gumroad: https://narenkumar1.gumroad.com/l/penny-budget-ui-kit
+- Kit source: [designs/2026-10-12-penny-budget/kit/](designs/2026-10-12-penny-budget/kit/)
+- Stitch HTML: [designs/2026-10-12-penny-budget/stitch/](designs/2026-10-12-penny-budget/stitch/)
+- Comment keyword: PENNY
 
 ## License / use
 

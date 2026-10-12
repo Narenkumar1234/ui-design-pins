@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Penny — Minimalist Finance</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Public+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#0F1012',
+              card: '#17181B',
+              border: '#26282D',
+              ink: '#EDEDEA',
+              muted: '#8E9097',
+              income: '#4FC59A',
+              expense: '#E07A5F'
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Manrope", "sans-serif"],
+            display: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Thin line icon override */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+    }
+    .material-symbols-outlined.icon-filled {
+      font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Safe padding for bottom docked navigation on modern devices */
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 12px);
+    }
+    /* Remove tap highlight */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0F1012] text-[#EDEDEA] font-body antialiased min-h-screen flex justify-center selection:bg-[#4FC59A] selection:text-[#0F1012]">
+<!-- Mobile Viewport Shell (Max width restricted for precise mobile device fidelity) -->
+<div class="w-full max-w-md min-h-screen flex flex-col bg-[#0F1012] relative pb-28">
+<!-- 1. Top Bar / Header -->
+<header class="flex justify-between items-center w-full px-5 py-3.5 sticky top-0 bg-[#0F1012] z-40">
+<!-- Wordmark -->
+<div class="flex items-center gap-2">
+<h1 class="font-headline text-lg font-semibold tracking-tight text-[#EDEDEA]">Penny</h1>
+</div>
+<!-- Action items: Month Selector & Avatar -->
+<div class="flex items-center gap-2.5">
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#26282D] bg-[#17181B] text-xs font-label text-[#EDEDEA] hover:text-[#EDEDEA] transition-colors duration-150 active:opacity-70">
+<span>October</span>
+<span class="material-symbols-outlined text-[15px] text-[#8E9097] leading-none">expand_more</span>
+</button>
+<!-- User avatar with letter 'A' -->
+<div class="w-7 h-7 rounded-full border border-[#26282D] bg-[#17181B] flex items-center justify-center text-xs font-headline font-medium text-[#EDEDEA]">
+          A
+        </div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-5 pt-3 space-y-7">
+<!-- 2. Balance Section -->
+<section class="space-y-4">
+<div>
+<span class="font-label text-[11px] font-medium tracking-wider uppercase text-[#8E9097] block mb-1.5">Total balance</span>
+<div class="font-headline text-[38px] font-light tracking-tight text-[#EDEDEA] leading-none">
+            ₹42,860
+          </div>
+</div>
+<!-- Income vs Expense Quiet Dual Column Grid -->
+<div class="grid grid-cols-2 py-3 px-4 rounded-xl bg-[#17181B] border border-[#26282D] relative">
+<!-- Left Column: Income -->
+<div class="pr-3">
+<span class="font-label text-xs text-[#8E9097] block mb-1">Income</span>
+<div class="font-headline text-base font-light tracking-tight text-[#4FC59A]">
+              ₹65,000
+            </div>
+</div>
+<!-- Subtle hairline vertical divider -->
+<div class="absolute inset-y-3 left-1/2 w-px bg-[#26282D]"></div>
+<!-- Right Column: Spent -->
+<div class="pl-4">
+<span class="font-label text-xs text-[#8E9097] block mb-1">Spent</span>
+<div class="font-headline text-base font-light tracking-tight text-[#E07A5F]">
+              ₹22,140
+            </div>
+</div>
+</div>
+</section>
+<!-- 3. Monthly Budget Card -->
+<section class="p-4 rounded-xl bg-[#17181B] border border-[#26282D] space-y-3">
+<div class="flex justify-between items-baseline">
+<h2 class="font-headline text-sm font-medium text-[#EDEDEA]">Monthly budget</h2>
+<span class="font-headline text-xs font-light text-[#EDEDEA]">
+            ₹22,140 <span class="text-[#8E9097]">of ₹30,000</span>
+</span>
+</div>
+<!-- 4px Clean Progress Bar -->
+<div class="w-full h-1 bg-[#26282D] rounded-full overflow-hidden">
+<div class="h-full bg-[#4FC59A] rounded-full" style="width: 73.8%;"></div>
+</div>
+<div class="flex justify-between items-center text-xs font-body text-[#8E9097] pt-0.5">
+<span>₹7,860 left</span>
+<span class="text-[10px] opacity-40">●</span>
+<span>20 days to go</span>
+</div>
+</section>
+<!-- 4. Recent Transactions Section -->
+<section class="space-y-3 pt-1">
+<div class="flex justify-between items-center px-0.5">
+<h2 class="font-headline text-sm font-medium text-[#EDEDEA]">Recent</h2>
+<button class="font-label text-xs text-[#8E9097] hover:text-[#EDEDEA] transition-colors duration-150">
+            See all
+          </button>
+</div>
+<!-- Transactions Container -->
+<div class="rounded-xl border border-[#26282D] bg-[#17181B] overflow-hidden divide-y divide-[#26282D]">
+<!-- Item 1: Blue Tokai Coffee -->
+<div class="flex items-center justify-between p-3.5 hover:bg-[#1c1e22] transition-colors duration-150">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full border border-[#26282D] bg-[#0F1012] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[17px] text-[#EDEDEA]">local_cafe</span>
+</div>
+<div class="space-y-0.5">
+<p class="font-headline text-xs font-medium text-[#EDEDEA] leading-snug">Blue Tokai Coffee</p>
+<p class="font-body text-[11px] text-[#8E9097]">Food</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline text-xs font-light tracking-tight text-[#EDEDEA]">−₹320</span>
+</div>
+</div>
+<!-- Item 2: Metro card recharge -->
+<div class="flex items-center justify-between p-3.5 hover:bg-[#1c1e22] transition-colors duration-150">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full border border-[#26282D] bg-[#0F1012] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[17px] text-[#EDEDEA]">subway</span>
+</div>
+<div class="space-y-0.5">
+<p class="font-headline text-xs font-medium text-[#EDEDEA] leading-snug">Metro card recharge</p>
+<p class="font-body text-[11px] text-[#8E9097]">Transport</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline text-xs font-light tracking-tight text-[#EDEDEA]">−₹500</span>
+</div>
+</div>
+<!-- Item 3: Freelance payment (Income) -->
+<div class="flex items-center justify-between p-3.5 hover:bg-[#1c1e22] transition-colors duration-150">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full border border-[#26282D] bg-[#0F1012] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[17px] text-[#4FC59A]">payments</span>
+</div>
+<div class="space-y-0.5">
+<p class="font-headline text-xs font-medium text-[#EDEDEA] leading-snug">Freelance payment</p>
+<p class="font-body text-[11px] text-[#8E9097]">Income</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline text-xs font-light tracking-tight text-[#4FC59A]">+₹12,000</span>
+</div>
+</div>
+<!-- Item 4: Amazon -->
+<div class="flex items-center justify-between p-3.5 hover:bg-[#1c1e22] transition-colors duration-150">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full border border-[#26282D] bg-[#0F1012] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[17px] text-[#EDEDEA]">shopping_bag</span>
+</div>
+<div class="space-y-0.5">
+<p class="font-headline text-xs font-medium text-[#EDEDEA] leading-snug">Amazon</p>
+<p class="font-body text-[11px] text-[#8E9097]">Shopping</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline text-xs font-light tracking-tight text-[#EDEDEA]">−₹1,299</span>
+</div>
+</div>
+<!-- Item 5: Electricity bill -->
+<div class="flex items-center justify-between p-3.5 hover:bg-[#1c1e22] transition-colors duration-150">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full border border-[#26282D] bg-[#0F1012] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[17px] text-[#EDEDEA]">bolt</span>
+</div>
+<div class="space-y-0.5">
+<p class="font-headline text-xs font-medium text-[#EDEDEA] leading-snug">Electricity bill</p>
+<p class="font-body text-[11px] text-[#8E9097]">Bills</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline text-xs font-light tracking-tight text-[#EDEDEA]">−₹1,840</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- 5. Minimal Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto w-full z-50 bg-[#0F1012] border-t border-[#26282D] px-6 py-2 pb-safe">
+<div class="flex justify-between items-center h-14">
+<!-- Tab: Home (Active) -->
+<button aria-label="Home" class="flex flex-col items-center justify-center gap-1 text-[#4FC59A] active:scale-95 transition-transform duration-150 w-12">
+<span class="material-symbols-outlined text-[21px]">account_balance_wallet</span>
+<span class="font-label text-[10px] font-medium leading-none">Home</span>
+</button>
+<!-- Tab: Insights (Inactive) -->
+<button aria-label="Analytics" class="flex flex-col items-center justify-center gap-1 text-[#8E9097] hover:text-[#EDEDEA] active:scale-95 transition-transform duration-150 w-12">
+<span class="material-symbols-outlined text-[21px]">analytics</span>
+<span class="font-label text-[10px] font-normal leading-none">Insights</span>
+</button>
+<!-- Center Action Button: Add Expense / Income -->
+<div class="relative -top-2 flex items-center justify-center">
+<button aria-label="Add transaction" class="w-11 h-11 rounded-full bg-[#4FC59A] text-[#0F1012] flex items-center justify-center hover:opacity-95 active:scale-90 transition-transform duration-150 focus:outline-none">
+<span class="material-symbols-outlined text-[22px] font-medium leading-none">add</span>
+</button>
+</div>
+<!-- Tab: Budgets (Inactive) -->
+<button aria-label="Budgets" class="flex flex-col items-center justify-center gap-1 text-[#8E9097] hover:text-[#EDEDEA] active:scale-95 transition-transform duration-150 w-12">
+<span class="material-symbols-outlined text-[21px]">pie_chart</span>
+<span class="font-label text-[10px] font-normal leading-none">Budgets</span>
+</button>
+<!-- Tab: Settings (Inactive) -->
+<button aria-label="Settings" class="flex flex-col items-center justify-center gap-1 text-[#8E9097] hover:text-[#EDEDEA] active:scale-95 transition-transform duration-150 w-12">
+<span class="material-symbols-outlined text-[21px]">settings</span>
+<span class="font-label text-[10px] font-normal leading-none">Settings</span>
+</button>
+</div>
+</nav>
+</div>
+</body></html>

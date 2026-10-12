@@ -1,0 +1,26 @@
+{
+  "budget": 30000,
+  "currency": "INR",
+  "user": "Aarav",
+  "note": "Day numbers are placed in the current month (clamped to today). History = total spent per previous month, split with the same category shares.",
+  "thisMonth": [
+    { "day": 1,  "type": "income",  "cat": "Salary",    "name": "Salary · Acme Labs",      "amount": 53000, "account": "Bank · HDFC" },
+    { "day": 2,  "type": "expense", "cat": "Bills",     "name": "Rent share",              "amount": 2400,  "account": "UPI · HDFC" },
+    { "day": 3,  "type": "expense", "cat": "Food",      "name": "Weekly groceries",        "amount": 2860,  "account": "UPI · HDFC" },
+    { "day": 4,  "type": "expense", "cat": "Fun",       "name": "Movie night",             "amount": 980,   "account": "Card · ICICI" },
+    { "day": 5,  "type": "expense", "cat": "Transport", "name": "Cab to airport",          "amount": 1350,  "account": "UPI · HDFC" },
+    { "day": 5,  "type": "expense", "cat": "Shopping",  "name": "Running shoes",           "amount": 2686,  "account": "Card · ICICI" },
+    { "day": 6,  "type": "expense", "cat": "Food",      "name": "Swiggy dinner",           "amount": 640,   "account": "UPI · HDFC" },
+    { "day": 7,  "type": "expense", "cat": "Fun",       "name": "Spotify + Netflix",       "amount": 1675,  "account": "Card · ICICI" },
+    { "day": 8,  "type": "expense", "cat": "Food",      "name": "Lunch with team",         "amount": 1180,  "account": "UPI · HDFC" },
+    { "day": 9,  "type": "expense", "cat": "Bills",     "name": "Phone + Wi-Fi",           "amount": 630,   "account": "UPI · HDFC" },
+    { "day": 9,  "type": "expense", "cat": "Transport", "name": "Fuel",                    "amount": 1250,  "account": "Card · ICICI" },
+    { "day": 10, "type": "expense", "cat": "Food",      "name": "Groceries top-up",        "amount": 2530,  "account": "UPI · HDFC" },
+    { "day": 10, "type": "expense", "cat": "Bills",     "name": "Electricity bill",        "amount": 1840,  "account": "UPI · HDFC" },
+    { "day": 11, "type": "expense", "cat": "Shopping",  "name": "Amazon",                  "amount": 1299,  "account": "Card · ICICI" },
+    { "day": 11, "type": "income",  "cat": "Freelance", "name": "Freelance payment",       "amount": 12000, "account": "Bank · HDFC" },
+    { "day": 12, "type": "expense", "cat": "Transport", "name": "Metro card recharge",     "amount": 500,   "account": "UPI · HDFC" },
+    { "day": 12, "type": "expense", "cat": "Food",      "name": "Blue Tokai Coffee",       "amount": 320,   "account": "UPI · HDFC" }
+  ],
+  "history": [26800, 24100, 27900, 23650, 25160]
+}

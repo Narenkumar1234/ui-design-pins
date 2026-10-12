@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Expense - Penny</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Public+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          spacing: {},
+          fontFamily: {
+            headline: ["Manrope", "sans-serif"],
+            display: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          },
+          fontSize: {}
+        },
+      },
+    }
+  </script>
+<style>
+    /* Thin icon styling consistent with Penny design guidelines */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 250, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor-blink {
+      animation: blink 1s step-start infinite;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0F1012] text-[#EDEDEA] font-body min-h-screen antialiased flex flex-col justify-between selection:bg-[#4FC59A]/20 selection:text-[#4FC59A]">
+<div class="w-full max-w-md mx-auto flex flex-col min-h-screen px-4 pb-6 pt-2">
+<!-- Top Bar (Modal Context: Closes view, hence suppression of global navigation shell) -->
+<header class="flex items-center justify-between py-3">
+<button aria-label="Close" class="w-9 h-9 flex items-center justify-center text-[#EDEDEA]/70 hover:text-[#EDEDEA] rounded-full transition-colors active:opacity-70" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<h1 class="font-headline font-medium text-base text-[#EDEDEA] tracking-tight">Add expense</h1>
+<div aria-hidden="true" class="w-9 h-9"></div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col justify-between pt-2 pb-2">
+<div>
+<!-- Segmented Control (Expense | Income) -->
+<div class="border border-[#26282D] rounded-xl bg-[#17181B] p-1 flex max-w-xs mx-auto mb-5">
+<button class="bg-[#26282D] text-[#EDEDEA] font-headline font-medium py-1.5 px-6 rounded-lg text-sm text-center flex-1 transition-all" type="button">
+            Expense
+          </button>
+<button class="text-[#8E9097] font-headline py-1.5 px-6 text-sm text-center flex-1 hover:text-[#EDEDEA] transition-colors" type="button">
+            Income
+          </button>
+</div>
+<!-- Amount Input Display -->
+<div class="text-center my-3">
+<div class="inline-flex items-center justify-center">
+<span class="font-headline text-5xl sm:text-6xl font-light tracking-tight text-[#EDEDEA]">
+              ₹ 320
+            </span>
+<span class="inline-block w-[1.5px] h-10 sm:h-12 bg-[#4FC59A] ml-1.5 rounded-full cursor-blink"></span>
+</div>
+<div class="text-[11px] font-mono uppercase tracking-widest text-[#8E9097] mt-1.5">
+            INR
+          </div>
+</div>
+<!-- Category Pill Selection -->
+<div class="mt-5 mb-5">
+<div class="text-[11px] font-headline font-medium uppercase tracking-wider text-[#8E9097] mb-2 px-1">
+            Category
+          </div>
+<div class="flex flex-wrap gap-2">
+<!-- Selected Food -->
+<button class="border border-[#4FC59A]/40 bg-[#4FC59A]/10 text-[#4FC59A] text-xs font-headline font-medium py-1.5 px-3.5 rounded-full flex items-center gap-1.5 transition-colors" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-[#4FC59A]"></span>
+              Food
+            </button>
+<button class="border border-[#26282D] bg-[#17181B] text-[#8E9097] hover:text-[#EDEDEA] hover:border-[#8E9097]/40 text-xs font-headline font-medium py-1.5 px-3.5 rounded-full transition-colors" type="button">
+              Transport
+            </button>
+<button class="border border-[#26282D] bg-[#17181B] text-[#8E9097] hover:text-[#EDEDEA] hover:border-[#8E9097]/40 text-xs font-headline font-medium py-1.5 px-3.5 rounded-full transition-colors" type="button">
+              Shopping
+            </button>
+<button class="border border-[#26282D] bg-[#17181B] text-[#8E9097] hover:text-[#EDEDEA] hover:border-[#8E9097]/40 text-xs font-headline font-medium py-1.5 px-3.5 rounded-full transition-colors" type="button">
+              Bills
+            </button>
+<button class="border border-[#26282D] bg-[#17181B] text-[#8E9097] hover:text-[#EDEDEA] hover:border-[#8E9097]/40 text-xs font-headline font-medium py-1.5 px-3.5 rounded-full transition-colors" type="button">
+              Health
+            </button>
+<button class="border border-[#26282D] bg-[#17181B] text-[#8E9097] hover:text-[#EDEDEA] hover:border-[#8E9097]/40 text-xs font-headline font-medium py-1.5 px-3.5 rounded-full transition-colors" type="button">
+              Fun
+            </button>
+</div>
+</div>
+<!-- Form Rows (Subtle 1px Hairline Partitioned Card) -->
+<div class="bg-[#17181B] border border-[#26282D] rounded-xl overflow-hidden divide-y divide-[#26282D] mb-4">
+<!-- Row 1: Note -->
+<div class="px-4 py-3 flex items-center justify-between group cursor-pointer hover:bg-[#26282D]/20 transition-colors">
+<span class="text-xs text-[#8E9097]">Note</span>
+<div class="flex items-center gap-2">
+<span class="text-xs text-[#EDEDEA] font-medium">Coffee with Riya</span>
+<span class="material-symbols-outlined text-[#8E9097] text-[16px]">edit</span>
+</div>
+</div>
+<!-- Row 2: Date -->
+<div class="px-4 py-3 flex items-center justify-between group cursor-pointer hover:bg-[#26282D]/20 transition-colors">
+<span class="text-xs text-[#8E9097]">Date</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#8E9097] text-[16px]">calendar_today</span>
+<span class="text-xs text-[#EDEDEA] font-medium">Today, 12 Oct</span>
+</div>
+</div>
+<!-- Row 3: Account -->
+<div class="px-4 py-3 flex items-center justify-between group cursor-pointer hover:bg-[#26282D]/20 transition-colors">
+<span class="text-xs text-[#8E9097]">Account</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#8E9097] text-[16px]">account_balance_wallet</span>
+<span class="text-xs text-[#EDEDEA] font-medium">UPI · HDFC</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Minimal Numeric Keypad -->
+<div class="my-auto pt-1 pb-2">
+<div class="grid grid-cols-3 gap-x-2 gap-y-1 max-w-xs mx-auto">
+<button class="py-2.5 text-center font-headline text-2xl font-light text-[#EDEDEA] active:bg-[#26282D]/40 rounded-xl transition-colors" type="button">1</button>
+<button class="py-2.5 text-center font-headline text-2xl font-light text-[#EDEDEA] active:bg-[#26282D]/40 rounded-xl transition-colors" type="button">2</button>
+<button class="py-2.5 text-center font-headline text-2xl font-light text-[#EDEDEA] active:bg-[#26282D]/40 rounded-xl transition-colors" type="button">3</button>
+<button class="py-2.5 text-center font-headline text-2xl font-light text-[#EDEDEA] active:bg-[#26282D]/40 rounded-xl transition-colors" type="button">4</button>
+<button class="py-2.5 text-center font-headline text-2xl font-light text-[#EDEDEA] active:bg-[#26282D]/40 rounded-xl transition-colors" type="button">5</button>
+<button class="py-2.5 text-center font-headline text-2xl font-light text-[#EDEDEA] active:bg-[#26282D]/40 rounded-xl transition-colors" type="button">6</button>
+<button class="py-2.5 text-center font-headline text-2xl font-light text-[#EDEDEA] active:bg-[#26282D]/40 rounded-xl transition-colors" type="button">7</button>
+<button class="py-2.5 text-center font-headline text-2xl font-light text-[#EDEDEA] active:bg-[#26282D]/40 rounded-xl transition-colors" type="button">8</button>
+<button class="py-2.5 text-center font-headline text-2xl font-light text-[#EDEDEA] active:bg-[#26282D]/40 rounded-xl transition-colors" type="button">9</button>
+<button class="py-2.5 text-center font-headline text-2xl font-light text-[#EDEDEA] active:bg-[#26282D]/40 rounded-xl transition-colors" type="button">.</button>
+<button class="py-2.5 text-center font-headline text-2xl font-light text-[#EDEDEA] active:bg-[#26282D]/40 rounded-xl transition-colors" type="button">0</button>
+<button aria-label="Delete digit" class="py-2.5 flex items-center justify-center text-[#8E9097] hover:text-[#EDEDEA] active:bg-[#26282D]/40 rounded-xl transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">backspace</span>
+</button>
+</div>
+</div>
+<!-- Action Button -->
+<div class="mt-2">
+<button class="w-full bg-[#4FC59A] hover:bg-[#45b28b] text-[#0F1012] font-headline font-semibold text-base py-3.5 rounded-xl shadow-none active:scale-[0.99] transition-all flex items-center justify-center" type="submit">
+          Save expense
+        </button>
+</div>
+</main>
+</div>
+</body></html>

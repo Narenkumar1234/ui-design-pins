@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Penny — Add expense</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined (1.5px thin line aesthetic) -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#FAFAF7',
+              card: '#FFFFFF',
+              border: '#ECEAE4',
+              ink: '#17181C',
+              muted: '#6E6F76',
+              green: '#1F7A5A',
+              terracotta: '#C2553A'
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Manrope", "sans-serif"],
+            display: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Strictly minimal cursor and icon styling */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 20;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    .cursor-caret {
+      animation: blink 1.1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Prevent text selection during keypad entry */
+    .touch-manipulate {
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+  </head>
+<body class="bg-[#FAFAF7] text-[#17181C] font-body min-h-full flex flex-col justify-between antialiased selection:bg-[#1F7A5A]/10">
+<!-- Main Mobile Container (Centered, max-w-md, clean full-height canvas) -->
+<main class="w-full max-w-md mx-auto flex flex-col min-h-screen bg-[#FAFAF7] relative px-5 pt-3 pb-6">
+<!-- 1. Header (Linear task modal: Suppress persistent BottomNavBar per Semantic Shell Mandate) -->
+<header class="flex items-center justify-between h-12 w-full mb-3">
+<button aria-label="Close" class="w-9 h-9 -ml-2 rounded-full flex items-center justify-center text-[#17181C] hover:bg-[#ECEAE4]/60 active:scale-95 transition-all duration-150" onclick="window.history.back?.()" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+<h1 class="font-headline font-medium text-base tracking-tight text-[#17181C]">
+        Add expense
+      </h1>
+<button class="font-label text-xs font-normal text-[#6E6F76] hover:text-[#17181C] active:opacity-60 transition-colors duration-150 px-2 py-1" id="clear-btn" type="button">
+        Clear
+      </button>
+</header>
+<!-- 2. Type Toggle / Segmented Control -->
+<section class="flex justify-center mb-6">
+<div class="inline-flex p-1 bg-[#FFFFFF] border border-[#ECEAE4] rounded-full">
+<!-- Expense (Active) -->
+<button class="flex items-center gap-1.5 px-4 py-1 rounded-full text-xs font-medium bg-[#17181C] text-white transition-all duration-150" id="type-expense" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-white/90"></span>
+<span>Expense</span>
+</button>
+<!-- Income (Inactive) -->
+<button class="flex items-center gap-1.5 px-4 py-1 rounded-full text-xs font-medium text-[#6E6F76] hover:text-[#17181C] transition-all duration-150" id="type-income" type="button">
+<span>Income</span>
+</button>
+</div>
+</section>
+<!-- 3. Hero Amount Entry -->
+<section class="flex flex-col items-center justify-center pt-2 pb-6 text-center">
+<div class="flex items-baseline justify-center">
+<span class="font-headline font-light text-3xl sm:text-4xl text-[#6E6F76] mr-2 select-none tracking-normal">₹</span>
+<div class="flex items-center">
+<span class="font-headline font-light text-6xl tracking-tight text-[#17181C]" id="amount-val">320</span>
+<span aria-hidden="true" class="cursor-caret inline-block w-[1.5px] h-12 bg-[#17181C] ml-1 rounded-full"></span>
+</div>
+</div>
+<span class="font-body text-[11px] font-medium text-[#6E6F76] tracking-widest mt-2 uppercase">INR</span>
+</section>
+<!-- 4. Category Selection -->
+<section class="mb-5">
+<div class="flex items-center justify-between mb-2.5 px-0.5">
+<label class="font-label text-[11px] font-medium tracking-wider text-[#6E6F76] uppercase">CATEGORY</label>
+</div>
+<!-- Horizontal Flow Pill Chips -->
+<div aria-label="Expense Categories" class="flex flex-wrap gap-2" role="radiogroup">
+<!-- Food (Selected) -->
+<button aria-checked="true" class="category-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#1F7A5A] bg-[#1F7A5A]/10 text-[#1F7A5A] text-xs font-medium active:scale-95 transition-transform duration-100" role="radio" type="button">
+<span class="material-symbols-outlined text-[17px]">restaurant</span>
+<span>Food</span>
+</button>
+<!-- Transport -->
+<button aria-checked="false" class="category-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#ECEAE4] bg-[#FFFFFF] text-[#17181C] text-xs font-normal hover:border-neutral-300 active:scale-95 transition-all duration-100" role="radio" type="button">
+<span class="material-symbols-outlined text-[17px] text-[#6E6F76]">directions_subway</span>
+<span>Transport</span>
+</button>
+<!-- Shopping -->
+<button aria-checked="false" class="category-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#ECEAE4] bg-[#FFFFFF] text-[#17181C] text-xs font-normal hover:border-neutral-300 active:scale-95 transition-all duration-100" role="radio" type="button">
+<span class="material-symbols-outlined text-[17px] text-[#6E6F76]">shopping_bag</span>
+<span>Shopping</span>
+</button>
+<!-- Bills -->
+<button aria-checked="false" class="category-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#ECEAE4] bg-[#FFFFFF] text-[#17181C] text-xs font-normal hover:border-neutral-300 active:scale-95 transition-all duration-100" role="radio" type="button">
+<span class="material-symbols-outlined text-[17px] text-[#6E6F76]">receipt_long</span>
+<span>Bills</span>
+</button>
+<!-- Health -->
+<button aria-checked="false" class="category-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#ECEAE4] bg-[#FFFFFF] text-[#17181C] text-xs font-normal hover:border-neutral-300 active:scale-95 transition-all duration-100" role="radio" type="button">
+<span class="material-symbols-outlined text-[17px] text-[#6E6F76]">favorite</span>
+<span>Health</span>
+</button>
+<!-- Fun -->
+<button aria-checked="false" class="category-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#ECEAE4] bg-[#FFFFFF] text-[#17181C] text-xs font-normal hover:border-neutral-300 active:scale-95 transition-all duration-100" role="radio" type="button">
+<span class="material-symbols-outlined text-[17px] text-[#6E6F76]">movie</span>
+<span>Fun</span>
+</button>
+</div>
+</section>
+<!-- 5. Form Details (Hairline Row List) -->
+<section class="mb-5 bg-[#FFFFFF] rounded-2xl border border-[#ECEAE4] overflow-hidden">
+<!-- Row 1: Note -->
+<div class="flex items-center justify-between px-4 py-3 border-b border-[#ECEAE4]">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-[#6E6F76]">edit_note</span>
+<span class="text-xs text-[#6E6F76] font-normal">Note</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-normal text-[#17181C]">Coffee with Riya</span>
+</div>
+</div>
+<!-- Row 2: Date -->
+<div class="flex items-center justify-between px-4 py-3 border-b border-[#ECEAE4]">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-[#6E6F76]">calendar_today</span>
+<span class="text-xs text-[#6E6F76] font-normal">Date</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-normal text-[#17181C]">Today, 12 Oct</span>
+</div>
+</div>
+<!-- Row 3: Account -->
+<div class="flex items-center justify-between px-4 py-3">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-[#6E6F76]">account_balance_wallet</span>
+<span class="text-xs text-[#6E6F76] font-normal">Account</span>
+</div>
+<div class="flex items-center gap-1 text-xs font-normal text-[#17181C]">
+<span>UPI · HDFC</span>
+<span class="material-symbols-outlined text-[16px] text-[#6E6F76]">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- 6. Minimal Numeric Keypad -->
+<section aria-label="Numeric keypad" class="w-full mb-5 px-3 touch-manipulate">
+<div class="grid grid-cols-3 gap-y-0 gap-x-6 text-center">
+<!-- 1, 2, 3 -->
+<button class="num-key py-2 font-headline font-light text-2xl text-[#17181C] hover:opacity-70 active:scale-95 transition-all" type="button">1</button>
+<button class="num-key py-2 font-headline font-light text-2xl text-[#17181C] hover:opacity-70 active:scale-95 transition-all" type="button">2</button>
+<button class="num-key py-2 font-headline font-light text-2xl text-[#17181C] hover:opacity-70 active:scale-95 transition-all" type="button">3</button>
+<!-- 4, 5, 6 -->
+<button class="num-key py-2 font-headline font-light text-2xl text-[#17181C] hover:opacity-70 active:scale-95 transition-all" type="button">4</button>
+<button class="num-key py-2 font-headline font-light text-2xl text-[#17181C] hover:opacity-70 active:scale-95 transition-all" type="button">5</button>
+<button class="num-key py-2 font-headline font-light text-2xl text-[#17181C] hover:opacity-70 active:scale-95 transition-all" type="button">6</button>
+<!-- 7, 8, 9 -->
+<button class="num-key py-2 font-headline font-light text-2xl text-[#17181C] hover:opacity-70 active:scale-95 transition-all" type="button">7</button>
+<button class="num-key py-2 font-headline font-light text-2xl text-[#17181C] hover:opacity-70 active:scale-95 transition-all" type="button">8</button>
+<button class="num-key py-2 font-headline font-light text-2xl text-[#17181C] hover:opacity-70 active:scale-95 transition-all" type="button">9</button>
+<!-- ., 0, Backspace -->
+<button class="num-key py-2 font-headline font-light text-2xl text-[#17181C] hover:opacity-70 active:scale-95 transition-all" type="button">.</button>
+<button class="num-key py-2 font-headline font-light text-2xl text-[#17181C] hover:opacity-70 active:scale-95 transition-all" type="button">0</button>
+<button aria-label="Delete" class="py-2 flex items-center justify-center text-[#17181C] hover:opacity-70 active:scale-95 transition-all" id="key-backspace" type="button">
+<span class="material-symbols-outlined text-[24px]">backspace</span>
+</button>
+</div>
+</section>
+<!-- 7. Bottom Action CTA (Safe area docked) -->
+<footer class="mt-auto pt-2">
+<button class="w-full bg-[#1F7A5A] hover:bg-[#1F7A5A] active:scale-[0.99] text-white font-headline font-medium text-base py-4 rounded-xl transition-all duration-150 flex items-center justify-center gap-2" id="save-button" type="button">
+<span>Save expense</span>
+</button>
+</footer>
+</main>
+<!-- Interactive Logic for Keypad and Toggles -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const amountEl = document.getElementById('amount-val');
+      const clearBtn = document.getElementById('clear-btn');
+      const backspaceBtn = document.getElementById('key-backspace');
+      const numKeys = document.querySelectorAll('.num-key');
+      const saveBtn = document.getElementById('save-button');
+      
+      let currentVal = '320';
+
+      function updateDisplay() {
+        amountEl.textContent = currentVal || '0';
+      }
+
+      numKeys.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const char = btn.textContent.trim();
+          if (char === '.') {
+            if (!currentVal.includes('.')) {
+              currentVal = currentVal ? currentVal + '.' : '0.';
+            }
+          } else {
+            if (currentVal === '0') {
+              currentVal = char;
+            } else if (currentVal.length < 8) {
+              currentVal += char;
+            }
+          }
+          updateDisplay();
+        });
+      });
+
+      backspaceBtn.addEventListener('click', () => {
+        if (currentVal.length > 1) {
+          currentVal = currentVal.slice(0, -1);
+        } else {
+          currentVal = '0';
+        }
+        updateDisplay();
+      });
+
+      clearBtn.addEventListener('click', () => {
+        currentVal = '0';
+        updateDisplay();
+      });
+
+      // Category Chip Selection
+      const chips = document.querySelectorAll('.category-chip');
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => {
+            c.setAttribute('aria-checked', 'false');
+            c.className = 'category-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#ECEAE4] bg-[#FFFFFF] text-[#17181C] text-xs font-normal hover:border-neutral-300 active:scale-95 transition-all duration-100';
+            const icon = c.querySelector('.material-symbols-outlined');
+            if (icon) icon.className = 'material-symbols-outlined text-[17px] text-[#6E6F76]';
+          });
+          
+          chip.setAttribute('aria-checked', 'true');
+          chip.className = 'category-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#1F7A5A] bg-[#1F7A5A]/10 text-[#1F7A5A] text-xs font-medium active:scale-95 transition-transform duration-100';
+          const activeIcon = chip.querySelector('.material-symbols-outlined');
+          if (activeIcon) activeIcon.className = 'material-symbols-outlined text-[17px] text-[#1F7A5A]';
+        });
+      });
+
+      // Type Toggle (Expense vs Income)
+      const expenseToggle = document.getElementById('type-expense');
+      const incomeToggle = document.getElementById('type-income');
+
+      expenseToggle.addEventListener('click', () => {
+        expenseToggle.className = 'flex items-center gap-1.5 px-4 py-1 rounded-full text-xs font-medium bg-[#C2553A] text-white transition-all duration-150';
+        incomeToggle.className = 'flex items-center gap-1.5 px-4 py-1 rounded-full text-xs font-medium text-[#6E6F76] hover:text-[#17181C] transition-all duration-150';
+        saveBtn.querySelector('span').textContent = 'Save expense';
+      });
+
+      incomeToggle.addEventListener('click', () => {
+        incomeToggle.className = 'flex items-center gap-1.5 px-4 py-1 rounded-full text-xs font-medium bg-[#1F7A5A] text-white transition-all duration-150';
+        expenseToggle.className = 'flex items-center gap-1.5 px-4 py-1 rounded-full text-xs font-medium text-[#6E6F76] hover:text-[#17181C] transition-all duration-150';
+        saveBtn.querySelector('span').textContent = 'Save income';
+      });
+
+      // Subtle feedback on save
+      saveBtn.addEventListener('click', () => {
+        saveBtn.classList.add('opacity-80', 'scale-[0.98]');
+        setTimeout(() => {
+          saveBtn.classList.remove('opacity-80', 'scale-[0.98]');
+        }, 150);
+      });
+    });
+  </script>
+</body></html>

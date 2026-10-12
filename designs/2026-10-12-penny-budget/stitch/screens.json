@@ -1,0 +1,44 @@
+[
+ {
+  "file": "light-home",
+  "name": "projects/2990222630464253513/screens/f4f6accc97fd484cbe474ba0e644ad45",
+  "title": "Penny - Overview",
+  "width": "780",
+  "height": "1798"
+ },
+ {
+  "file": "light-add",
+  "name": "projects/2990222630464253513/screens/edd29959aef94da384cfb5e850966e53",
+  "title": "Penny - Add Expense",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "light-insights",
+  "name": "projects/2990222630464253513/screens/3fcc376ad6554c96a329534f6c20f203",
+  "title": "Penny - Insights",
+  "width": "780",
+  "height": "2404"
+ },
+ {
+  "file": "dark-home",
+  "name": "projects/2990222630464253513/screens/561a5908f0cf447588603b25a970e6fe",
+  "title": "Penny - Overview",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "dark-add",
+  "name": "projects/2990222630464253513/screens/7c36395c01534c06973699f0df740992",
+  "title": "Penny - Add Expense",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "dark-insights",
+  "name": "projects/2990222630464253513/screens/3082c97b74634b53b1ac2e171e532d1f",
+  "title": "Penny - Insights",
+  "width": "780",
+  "height": "1998"
+ }
+]
