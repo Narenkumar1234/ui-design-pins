@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2746%27 fill=%27%231F7A5A%27/%3E%3Ctext x=%2750%27 y=%2766%27 text-anchor=%27middle%27 font-size=%2746%27 font-family=%27sans-serif%27 fill=%27white%27%3Ep%3C/text%3E%3C/svg%3E">
+  <title>Penny · Insights</title>
+</head>
+<body class="bg-bg text-ink min-h-screen pb-28">
+  <main class="max-w-md mx-auto px-6 pt-7">
+    <header class="flex items-center justify-between">
+      <h1 class="font-display font-semibold text-2xl tracking-tight">Insights</h1>
+      <div class="seg w-[210px]" role="group" aria-label="Range">
+        <button data-range="week" aria-pressed="false">Week</button>
+        <button data-range="month" aria-pressed="true">Month</button>
+        <button data-range="year" aria-pressed="false">Year</button>
+      </div>
+    </header>
+
+    <section class="mt-10">
+      <p class="num font-light text-[48px] leading-none" id="total">₹0</p>
+      <p class="text-sm text-muted mt-2" id="total-label">Spent</p>
+      <p class="text-xs mt-2" id="compare"></p>
+    </section>
+
+    <section class="panel mt-8 p-5">
+      <div class="bars" id="bars"></div>
+      <div class="flex gap-3 mt-2" id="bar-labels"></div>
+    </section>
+
+    <section class="mt-9">
+      <h2 class="font-display font-semibold text-base">By category</h2>
+      <ul id="cats" class="hair mt-2"></ul>
+      <p id="empty" class="hidden text-sm text-muted py-8 text-center">No spending in this period.</p>
+    </section>
+  </main>
+  <nav id="bottom-nav"></nav>
+  <script src="data/seed.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/insights.js"></script>
+</body>
+</html>

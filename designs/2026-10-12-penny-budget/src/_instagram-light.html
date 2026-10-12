@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+:root{--bg:#FAFAF7;--card:#FFFFFF;--line:#ECEAE4;--line2:#D9D6CE;--ink:#17181C;--muted:#6E6F76;--primary:#1F7A5A;--onp:#FFFFFF;--frame:#17181C;--frameb:#17181C}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;color:var(--ink);background:var(--bg);position:relative;overflow:hidden;-webkit-font-smoothing:antialiased}
+body.pin{width:1000px;height:1500px}body.ig{width:1080px;height:1350px}
+header{text-align:center}
+.tag{display:inline-flex;align-items:center;gap:10px;font:500 17px Inter;letter-spacing:4px;text-transform:uppercase;color:var(--muted)}
+.tag i{width:28px;height:1px;background:var(--line2);display:block}
+h1{font:700 76px/1.06 Manrope,sans-serif;letter-spacing:-2.5px;margin-top:26px;color:var(--ink)}
+h1 .mode{display:inline-block;font:600 0.42em/1 Inter;letter-spacing:0;vertical-align:middle;color:var(--onp);background:var(--primary);border-radius:999px;padding:12px 22px;margin-left:14px;position:relative;top:-6px}
+.sub{font:400 24px Inter;color:var(--muted);margin-top:18px}
+.phones{position:absolute;left:0;display:flex;justify-content:center;align-items:flex-start;gap:34px}
+.phone{background:var(--frame);border-radius:46px;padding:9px;border:1px solid var(--frameb);position:relative}
+.scr{width:100%;height:100%;border-radius:37px;overflow:hidden;display:flex;flex-direction:column;background:var(--bg)}
+.scr img{display:block;width:100%;flex:1;min-height:0;object-fit:cover;object-position:top}
+.sbar{aspect-ratio:390/44;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 8% 0 9%;position:relative;font:600 13px Inter}
+.main .sbar{font-size:14px}
+.sbar .notch{position:absolute;left:50%;top:22%;transform:translateX(-50%);width:28%;height:62%;background:#000;border-radius:20px}
+.sbar .bat{width:22px;height:11px;border-radius:3px;display:block;opacity:.9}
+.side{width:282px;height:587px;margin-top:60px}
+.main{width:326px;height:682px}
+.strip{position:absolute}
+.strip h3{font:500 16px Inter;letter-spacing:4px;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:20px}
+.g{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.f{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;display:flex;align-items:center;gap:14px}
+.f .ic{width:38px;height:38px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font:600 14px Inter;border:1px solid var(--line2);color:var(--ink)}
+.f .ic.a{border-color:var(--primary);color:var(--primary)}
+.f .ft{font:600 17px Inter;color:var(--ink)}.f .fs{font:400 14px Inter;color:var(--muted);margin-top:2px}
+footer{position:absolute;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:22px}
+.handle{font:700 24px Manrope,sans-serif;color:var(--ink);letter-spacing:-.3px}
+.handle b{color:var(--primary);font-weight:700}
+.save{font:400 18px Inter;color:var(--muted)}
+.pin header{padding:70px 70px 0}.pin .phones{top:388px;width:1000px}.pin .strip{left:60px;right:60px;top:1132px}.pin footer{left:60px;right:60px;bottom:44px}
+.ig header{padding:52px 70px 0}.ig h1{font-size:60px;margin-top:20px;letter-spacing:-2px}.ig .sub{margin-top:12px;font-size:22px}.ig .phones{top:262px;width:1080px}.ig .strip{left:80px;right:80px;top:1000px}.ig .strip h3{margin-bottom:14px;font-size:15px}.ig .f{padding:12px 16px}.ig footer{left:80px;right:80px;bottom:44px;padding-top:18px}
+</style></head><body class="ig">
+<header><div class="tag"><i></i>Front-end project idea<i></i></div><h1>Penny Budget App UI<span class="mode">Light</span></h1><div class="sub">Expense tracker · minimalism · 3 screens to build</div></header>
+<div class="phones">
+ <div class="phone side"><div class="scr"><div class="sbar" style="background:#FAFAF7;color:#17181C"><span>9:41</span><span class="notch"></span><span class="bat" style="background:#17181C"></span></div><img src="../screens/light-home.png"></div></div>
+ <div class="phone main"><div class="scr"><div class="sbar" style="background:#FAFAF7;color:#17181C"><span>9:41</span><span class="notch"></span><span class="bat" style="background:#17181C"></span></div><img src="../screens/light-add.png"></div></div>
+ <div class="phone side"><div class="scr"><div class="sbar" style="background:#FAFAF7;color:#17181C"><span>9:41</span><span class="notch"></span><span class="bat" style="background:#17181C"></span></div><img src="../screens/light-insights.png"></div></div>
+</div>
+<div class="strip"><h3>Build it with</h3><div class="g">
+ <div class="f"><div class="ic a">&lt;/&gt;</div><div><div class="ft">HTML · CSS · JS</div><div class="fs">or React</div></div></div>
+ <div class="f"><div class="ic">tw</div><div><div class="ft">Tailwind CSS</div><div class="fs">utility classes</div></div></div>
+ <div class="f"><div class="ic">₹</div><div><div class="ft">Intl.NumberFormat</div><div class="fs">₹ en-IN money</div></div></div>
+ <div class="f"><div class="ic">↺</div><div><div class="ft">Transactions</div><div class="fs">localStorage</div></div></div>
+ <div class="f"><div class="ic"><svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor"><rect x="2" y="9" width="3" height="7" rx="1"/><rect x="7.5" y="5" width="3" height="11" rx="1"/><rect x="13" y="2" width="3" height="14" rx="1"/></svg></div><div><div class="ft">CSS Bar Chart</div><div class="fs">monthly spend</div></div></div>
+ <div class="f"><div class="ic a">◐</div><div><div class="ft">Dark Mode</div><div class="fs">Tailwind dark:</div></div></div>
+</div></div>
+<footer><span class="handle">@code.in.30s</span><span class="save">Save for your next project ↗</span></footer>
+</body></html>

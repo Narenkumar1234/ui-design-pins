@@ -1,0 +1,21 @@
+Your first portfolio project doesn't need to be loud. It needs to be useful 🪙
+
+Build this → Penny, a minimalist expense tracker
+Lots of whitespace, 1px hairlines, big light numerals and just two accent colors.
+
+📱 3 screens to ship:
+1️⃣ Overview: monthly balance, income vs spent, budget progress line, recent transactions
+2️⃣ Add expense: big amount display, custom keypad, category chips, note/date/account
+3️⃣ Insights: Week / Month / Year toggle, slim bar chart, spending by category
+
+☀️ Light: #FAFAF7 bg · #FFFFFF cards · #ECEAE4 hairlines · #17181C ink · #6E6F76 muted · #1F7A5A green · #C2553A terracotta
+🌙 Dark: #0F1012 bg · #17181B cards · #26282D hairlines · #EDEDEA ink · #8E9097 muted · #4FC59A green · #E07A5F terracotta
+
+🛠 Stack: HTML · Tailwind CSS (dark: variants) · vanilla JS · localStorage for transactions + budget · Intl.NumberFormat for ₹ · CSS-only bar chart
+Fonts: Manrope + Inter · Screens designed with Google Stitch
+
+💬 Comment PENNY to get the HTML/CSS
+
+📌 Save this for your next project, and follow @code.in.30s for more UI you can build.
+
+#minimalism #minimaldesign #uidesign #uiux #frontenddevelopment #webdevelopment #tailwindcss #javascript #fintech #expensetracker #darkmode #codingprojects #studentdeveloper #100daysofcode #codein30s

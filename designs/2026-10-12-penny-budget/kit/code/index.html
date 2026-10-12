@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2746%27 fill=%27%231F7A5A%27/%3E%3Ctext x=%2750%27 y=%2766%27 text-anchor=%27middle%27 font-size=%2746%27 font-family=%27sans-serif%27 fill=%27white%27%3Ep%3C/text%3E%3C/svg%3E">
+  <title>Penny · Overview</title>
+</head>
+<body class="bg-bg text-ink min-h-screen pb-28">
+  <main class="max-w-md mx-auto px-6 pt-7">
+    <header class="flex items-center justify-between">
+      <span class="font-display font-semibold text-lg tracking-tight">penny<span class="text-accent">.</span></span>
+      <div class="flex items-center gap-1 text-sm text-muted">
+        <button id="prev-month" class="p-1.5 rounded-full hover:bg-soft" aria-label="Previous month"></button>
+        <span id="month-label" class="min-w-[84px] text-center text-ink font-medium">October</span>
+        <button id="next-month" class="p-1.5 rounded-full hover:bg-soft" aria-label="Next month"></button>
+      </div>
+    </header>
+
+    <section class="mt-10">
+      <p class="text-sm text-muted" id="balance-label">Balance this month</p>
+      <p class="num font-light text-[52px] leading-none mt-2" id="balance">₹0</p>
+      <div class="grid grid-cols-2 mt-8 border-t border-line">
+        <div class="pt-4 pr-4"><p class="text-xs text-muted">Income</p><p class="num text-xl font-medium text-accent mt-1" id="income">₹0</p></div>
+        <div class="pt-4 pl-5 border-l border-line"><p class="text-xs text-muted">Spent</p><p class="num text-xl font-medium text-spend mt-1" id="spent">₹0</p></div>
+      </div>
+    </section>
+
+    <section class="panel mt-8 p-5" id="budget-card">
+      <div class="flex items-baseline justify-between">
+        <p class="text-sm font-medium">Monthly budget</p>
+        <button id="edit-budget" class="text-xs text-accent font-medium">Edit</button>
+      </div>
+      <p class="num text-sm text-muted mt-2"><span class="text-ink font-medium" id="b-spent">₹0</span> of <span id="b-total">₹0</span></p>
+      <div class="track mt-3" id="b-track"><i id="b-bar" style="width:0%"></i></div>
+      <p class="text-xs text-muted mt-3" id="b-note"></p>
+    </section>
+
+    <section class="mt-9">
+      <div class="flex items-baseline justify-between">
+        <h2 class="font-display font-semibold text-base">Recent</h2>
+        <button id="see-all" class="text-xs text-accent font-medium">See all</button>
+      </div>
+      <ul id="recent" class="hair mt-2"></ul>
+      <p id="empty" class="hidden text-sm text-muted py-10 text-center">No transactions this month yet. Tap + to add one.</p>
+    </section>
+  </main>
+
+  <dialog id="budget-dialog" class="rounded-2xl bg-card text-ink border border-line p-6 w-[min(92vw,360px)]">
+    <form method="dialog" id="budget-form">
+      <h3 class="font-display font-semibold text-lg">Monthly budget</h3>
+      <p class="text-sm text-muted mt-1">How much do you want to spend each month?</p>
+      <label class="mt-5 flex items-center gap-2 border-b border-line pb-2"><span class="num text-2xl text-muted">₹</span>
+        <input id="budget-input" type="number" min="1" step="1" inputmode="numeric" class="num text-2xl bg-transparent outline-none w-full" required></label>
+      <div class="flex justify-end gap-2 mt-6">
+        <button value="cancel" formnovalidate class="px-4 py-2 text-sm text-muted">Cancel</button>
+        <button value="save" class="px-5 py-2 text-sm rounded-xl bg-accent text-on-accent font-medium">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="tx-dialog" class="rounded-2xl bg-card text-ink border border-line p-6 w-[min(92vw,360px)]">
+    <form method="dialog">
+      <p class="text-xs text-muted" id="tx-meta"></p>
+      <h3 class="font-display font-semibold text-lg mt-1" id="tx-name"></h3>
+      <p class="num text-3xl font-light mt-3" id="tx-amount"></p>
+      <p class="text-sm text-muted mt-2" id="tx-account"></p>
+      <div class="flex justify-between items-center mt-6">
+        <button value="delete" class="inline-flex items-center gap-1.5 text-sm text-spend"><span id="tx-trash"></span>Delete</button>
+        <button value="close" class="px-5 py-2 text-sm rounded-xl border border-line">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <nav id="bottom-nav"></nav>
+  <script src="data/seed.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/home.js"></script>
+</body>
+</html>

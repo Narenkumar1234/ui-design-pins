@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Penny — Minimalist Finance</title>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            canvas: "#FAFAF7",
+            surface: "#FFFFFF",
+            hairline: "#ECEAE4",
+            ink: "#17181C",
+            muted: "#6E6F76",
+            accentGreen: "#1F7A5A",
+            accentTerracotta: "#C2553A"
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.25rem",
+            "2xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Manrope", "sans-serif"],
+            display: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+    }
+    body {
+      background-color: #FAFAF7;
+      color: #17181C;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .numeral {
+      font-feature-settings: "tnum" on, "lnum" on;
+      letter-spacing: -0.02em;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen bg-canvas text-ink flex flex-col justify-between selection:bg-[#ECEAE4]">
+<!-- Main Container constrained to Mobile Viewport -->
+<div class="w-full max-w-md mx-auto min-h-screen flex flex-col bg-canvas pb-28">
+<!-- Top Navigation / Shared TopAppBar Component -->
+<header class="flex justify-between items-center w-full px-5 py-4 max-w-md mx-auto sticky top-0 bg-canvas/95 backdrop-blur-none z-40">
+<!-- Wordmark -->
+<div class="flex items-center space-x-2">
+<span class="font-headline font-semibold text-xl tracking-tight text-ink">Penny</span>
+</div>
+<!-- Controls Right: Month Pill & Profile Avatar -->
+<div class="flex items-center space-x-2.5">
+<button class="flex items-center space-x-1 px-3 py-1.5 rounded-full border border-hairline bg-surface text-ink font-body text-xs font-medium hover:opacity-80 transition-opacity duration-150 active:scale-95" type="button">
+<span>October</span>
+<span class="material-symbols-outlined text-[16px] text-muted leading-none">expand_more</span>
+</button>
+<div class="w-8 h-8 rounded-full border border-hairline bg-surface flex items-center justify-center font-headline text-xs font-medium text-ink tracking-tight select-none">
+          A
+        </div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-5 pt-2 space-y-6">
+<!-- Total Balance Hero Section -->
+<section class="pt-3 pb-1">
+<div class="text-center">
+<p class="font-body text-xs font-medium text-muted uppercase tracking-wider mb-2">Total balance</p>
+<h1 class="font-headline font-light text-[44px] leading-tight tracking-tight text-ink numeral">₹42,860</h1>
+</div>
+<!-- Quiet Two-Column Summary -->
+<div class="mt-6 border-t border-b border-hairline py-3.5 flex items-center divide-x divide-hairline">
+<!-- Income -->
+<div class="flex-1 text-center pr-3">
+<span class="block font-body text-xs text-muted mb-0.5">Income</span>
+<span class="font-headline font-medium text-sm text-accentGreen numeral">+₹65,000</span>
+</div>
+<!-- Spent -->
+<div class="flex-1 text-center pl-3">
+<span class="block font-body text-xs text-muted mb-0.5">Spent</span>
+<span class="font-headline font-medium text-sm text-accentTerracotta numeral">−₹22,140</span>
+</div>
+</div>
+</section>
+<!-- Monthly Budget Bento / Card -->
+<section class="bg-surface rounded-2xl border border-hairline p-5">
+<div class="flex justify-between items-baseline mb-3">
+<h2 class="font-headline font-medium text-sm text-ink tracking-tight">Monthly budget</h2>
+<div class="text-right">
+<span class="font-headline font-semibold text-xs text-ink numeral">₹22,140</span>
+<span class="font-headline font-normal text-xs text-muted numeral"> of ₹30,000</span>
+</div>
+</div>
+<!-- Thin 4px progress track (74% filled, crisp non-gradient) -->
+<div class="w-full bg-[#ECEAE4] h-1 rounded-full overflow-hidden mb-3">
+<div class="bg-accentGreen h-full rounded-full transition-all duration-300" style="width: 73.8%;"></div>
+</div>
+<div class="flex justify-between items-center text-xs text-muted font-body">
+<span>₹7,860 left</span>
+<span class="w-1 h-1 rounded-full bg-hairline inline-block"></span>
+<span>19 days to go</span>
+</div>
+</section>
+<!-- Recent Transactions Section -->
+<section class="space-y-3 pt-1">
+<div class="flex justify-between items-center px-0.5">
+<h2 class="font-headline font-semibold text-base text-ink tracking-tight">Recent</h2>
+<button class="font-body text-xs font-medium text-ink flex items-center space-x-0.5 hover:opacity-75 transition-opacity" type="button">
+<span>See all</span>
+<span class="material-symbols-outlined text-sm leading-none">arrow_forward</span>
+</button>
+</div>
+<!-- Flat Transaction Card with Hairline Dividers -->
+<div class="bg-surface rounded-2xl border border-hairline overflow-hidden divide-y divide-hairline">
+<!-- 1. Blue Tokai Coffee -->
+<div class="p-3.5 flex items-center justify-between hover:bg-canvas/50 transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full border border-hairline bg-surface flex items-center justify-center text-ink flex-shrink-0">
+<span class="material-symbols-outlined text-[17px]">coffee</span>
+</div>
+<div>
+<p class="font-headline font-medium text-xs text-ink leading-snug">Blue Tokai Coffee</p>
+<p class="font-body text-[11px] text-muted">Food</p>
+</div>
+</div>
+<span class="font-headline font-medium text-xs text-accentTerracotta numeral">−₹320</span>
+</div>
+<!-- 2. Metro card recharge -->
+<div class="p-3.5 flex items-center justify-between hover:bg-canvas/50 transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full border border-hairline bg-surface flex items-center justify-center text-ink flex-shrink-0">
+<span class="material-symbols-outlined text-[17px]">train</span>
+</div>
+<div>
+<p class="font-headline font-medium text-xs text-ink leading-snug">Metro card recharge</p>
+<p class="font-body text-[11px] text-muted">Transport</p>
+</div>
+</div>
+<span class="font-headline font-medium text-xs text-accentTerracotta numeral">−₹500</span>
+</div>
+<!-- 3. Freelance payment -->
+<div class="p-3.5 flex items-center justify-between hover:bg-canvas/50 transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full border border-hairline bg-surface flex items-center justify-center text-accentGreen flex-shrink-0">
+<span class="material-symbols-outlined text-[17px]">account_balance_wallet</span>
+</div>
+<div>
+<p class="font-headline font-medium text-xs text-ink leading-snug">Freelance payment</p>
+<p class="font-body text-[11px] text-muted">Income</p>
+</div>
+</div>
+<span class="font-headline font-medium text-xs text-accentGreen numeral">+₹12,000</span>
+</div>
+<!-- 4. Amazon -->
+<div class="p-3.5 flex items-center justify-between hover:bg-canvas/50 transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full border border-hairline bg-surface flex items-center justify-center text-ink flex-shrink-0">
+<span class="material-symbols-outlined text-[17px]">shopping_bag</span>
+</div>
+<div>
+<p class="font-headline font-medium text-xs text-ink leading-snug">Amazon</p>
+<p class="font-body text-[11px] text-muted">Shopping</p>
+</div>
+</div>
+<span class="font-headline font-medium text-xs text-accentTerracotta numeral">−₹1,299</span>
+</div>
+<!-- 5. Electricity bill -->
+<div class="p-3.5 flex items-center justify-between hover:bg-canvas/50 transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full border border-hairline bg-surface flex items-center justify-center text-ink flex-shrink-0">
+<span class="material-symbols-outlined text-[17px]">bolt</span>
+</div>
+<div>
+<p class="font-headline font-medium text-xs text-ink leading-snug">Electricity bill</p>
+<p class="font-body text-[11px] text-muted">Bills</p>
+</div>
+</div>
+<span class="font-headline font-medium text-xs text-accentTerracotta numeral">−₹1,840</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar conforming strictly to Minimalist specs & Shared Components JSON guidelines -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 bg-surface/98 border-t border-hairline">
+<div class="max-w-md mx-auto px-4 py-2 flex items-center justify-between">
+<!-- Tab: Overview (Active) -->
+<button class="flex-1 flex flex-col items-center justify-center text-accentGreen py-1 hover:opacity-100 transition-opacity duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="font-body text-[10px] font-medium tracking-normal mt-0.5">Home</span>
+</button>
+<!-- Tab: Activity -->
+<button class="flex-1 flex flex-col items-center justify-center text-muted opacity-60 hover:opacity-100 transition-opacity duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span class="font-body text-[10px] font-normal tracking-normal mt-0.5">Insights</span>
+</button>
+<!-- Center Add Action Pill Button -->
+<div class="flex-shrink-0 px-2 flex justify-center items-center">
+<button aria-label="Add transaction" class="w-10 h-10 rounded-full bg-accentGreen text-white flex items-center justify-center active:scale-90 transition-transform duration-150 border-0 focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[22px] leading-none text-white font-light">add</span>
+</button>
+</div>
+<!-- Tab: Budgets -->
+<button class="flex-1 flex flex-col items-center justify-center text-muted opacity-60 hover:opacity-100 transition-opacity duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">pie_chart</span>
+<span class="font-body text-[10px] font-normal tracking-normal mt-0.5">Budgets</span>
+</button>
+<!-- Tab: Settings -->
+<button class="flex-1 flex flex-col items-center justify-center text-muted opacity-60 hover:opacity-100 transition-opacity duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="font-body text-[10px] font-normal tracking-normal mt-0.5">Settings</span>
+</button>
+</div>
+</nav>
+</div>
+</body></html>

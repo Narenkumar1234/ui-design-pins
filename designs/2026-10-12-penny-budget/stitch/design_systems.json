@@ -1,0 +1,42 @@
+{
+ "LIGHT": {
+  "designSystem": {
+   "displayName": "Penny Light",
+   "theme": {
+    "bodyFont": "INTER",
+    "colorMode": "LIGHT",
+    "colorVariant": "NEUTRAL",
+    "customColor": "#1F7A5A",
+    "designMd": "# Penny (code.in.30s)\nStrictly MINIMALISM: generous whitespace, calm layout, clear hierarchy, refined typography.\nSubtle 1px hairline borders (no heavy outlines), NO hard/offset shadows, NO gradients, NO glows, NO blur, NO photos, NO illustrations.\nRestrained palette: neutrals plus only TWO accents (green for income / primary, terracotta for expenses). Thin line icons (1.5px stroke).\nCorners 12-16px on cards, pill chips. Large light-weight numerals for money. Manrope headlines, Inter body. Personal finance / expense tracker app.\n## Light palette\nbackground #FAFAF7, cards #FFFFFF, hairline borders #ECEAE4, ink #17181C, muted text #6E6F76,\nprimary green #1F7A5A (primary buttons with white text, income amounts, active nav), expense terracotta #C2553A (expense amounts only).",
+    "headlineFont": "MANROPE",
+    "overrideNeutralColor": "#FAFAF7",
+    "overridePrimaryColor": "#1F7A5A",
+    "overrideSecondaryColor": "#C2553A",
+    "overrideTertiaryColor": "#C2553A",
+    "roundness": "ROUND_TWELVE"
+   }
+  },
+  "name": "assets/9857375793551244201",
+  "version": "1"
+ },
+ "DARK": {
+  "designSystem": {
+   "displayName": "Penny Dark",
+   "theme": {
+    "bodyFont": "INTER",
+    "colorMode": "DARK",
+    "colorVariant": "NEUTRAL",
+    "customColor": "#4FC59A",
+    "designMd": "# Penny (code.in.30s)\nStrictly MINIMALISM: generous whitespace, calm layout, clear hierarchy, refined typography.\nSubtle 1px hairline borders (no heavy outlines), NO hard/offset shadows, NO gradients, NO glows, NO blur, NO photos, NO illustrations.\nRestrained palette: neutrals plus only TWO accents (green for income / primary, terracotta for expenses). Thin line icons (1.5px stroke).\nCorners 12-16px on cards, pill chips. Large light-weight numerals for money. Manrope headlines, Inter body. Personal finance / expense tracker app.\n## Dark palette (proper dark theme, not inverted)\nbackground #0F1012, cards #17181B, hairline borders #26282D, ink #EDEDEA, muted text #8E9097,\nprimary green #4FC59A (primary buttons with #0F1012 text, income, active nav), expense terracotta #E07A5F (expense amounts only).",
+    "headlineFont": "MANROPE",
+    "overrideNeutralColor": "#0F1012",
+    "overridePrimaryColor": "#4FC59A",
+    "overrideSecondaryColor": "#E07A5F",
+    "overrideTertiaryColor": "#E07A5F",
+    "roundness": "ROUND_TWELVE"
+   }
+  },
+  "name": "assets/11045464020524828475",
+  "version": "1"
+ }
+}
