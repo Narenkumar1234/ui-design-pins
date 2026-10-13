@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bg: 'var(--bg)',
+            card: 'var(--card)',
+            line: 'var(--line)',
+            ink: 'var(--ink)',
+            muted: 'var(--muted)',
+            accent: 'var(--accent)',
+            'accent-soft': 'var(--accent-soft)',
+          },
+          fontFamily: { sans: ['Inter','system-ui','sans-serif'], display: ['Manrope','Inter','system-ui','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <script src="assets/theme.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234F46E5'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='56' font-family='system-ui' font-weight='700' fill='white'%3EK%3C/text%3E%3C/svg%3E">
+  <title>Klar · Sales analytics that stay clear</title>
+</head>
+<body class="bg-bg text-ink min-h-screen antialiased">
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-40 border-b border-line bg-bg/90 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-display font-extrabold text-lg tracking-tight">
+        <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white text-sm flex items-center justify-center font-bold">K</span>
+        Klar
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+        <a href="#features" class="hover:text-ink">Features</a>
+        <a href="#pricing" class="hover:text-ink">Pricing</a>
+        <a href="#faq" class="hover:text-ink">FAQ</a>
+        <button onclick="toggleTheme()" class="hover:text-ink" type="button" aria-label="Toggle theme">Theme</button>
+        <a href="#pricing" class="btn-primary px-4 py-2 text-sm bg-indigo-600 hover:bg-indigo-500 text-white">Start free</a>
+      </nav>
+      <div class="flex md:hidden items-center gap-2">
+        <button onclick="toggleTheme()" class="w-9 h-9 rounded-lg border border-line text-sm" type="button" aria-label="Toggle theme">◐</button>
+        <button id="nav-toggle" class="w-9 h-9 rounded-lg border border-line text-lg leading-none" type="button" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+      </div>
+    </div>
+    <div id="mobile-nav" class="hidden md:hidden border-t border-line bg-bg px-4 py-3 space-y-2 text-sm font-medium">
+      <a href="#features" class="block py-2">Features</a>
+      <a href="#pricing" class="block py-2">Pricing</a>
+      <a href="#faq" class="block py-2">FAQ</a>
+      <a href="#pricing" class="btn-primary block text-center py-2.5 mt-2 bg-indigo-600 text-white">Start free trial</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-4 pt-12 md:pt-20 pb-16 md:pb-24">
+      <div class="max-w-2xl mx-auto text-center">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full border border-line bg-card text-muted mb-5">
+          <span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span> New · Sales analytics
+        </span>
+        <h1 class="font-display font-extrabold text-4xl md:text-6xl tracking-tight leading-[1.08]">
+          Master your metrics.<br class="hidden sm:block"> Maximize revenue.
+        </h1>
+        <p class="mt-5 text-muted text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+          Klar turns messy sales data into clear dashboards your whole team can trust — pipelines, MRR, and alerts in one place.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="#pricing" class="btn-primary px-6 py-3 text-sm w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white">Start free trial</a>
+          <a href="#features" class="btn-ghost px-6 py-3 text-sm w-full sm:w-auto">See demo</a>
+        </div>
+      </div>
+
+      <!-- Floating dashboard cluster -->
+      <div class="relative mt-14 md:mt-16 max-w-3xl mx-auto">
+        <div class="card p-4 md:p-6 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <p class="text-xs text-muted font-medium">Monthly recurring revenue</p>
+              <p class="font-display font-extrabold text-2xl md:text-3xl mt-0.5">$48,240</p>
+            </div>
+            <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950 px-2.5 py-1 rounded-full">+12.4%</span>
+          </div>
+          <svg viewBox="0 0 400 80" class="w-full h-16 md:h-20" preserveAspectRatio="none" aria-hidden="true">
+            <path class="spark" d="M0,60 C40,55 60,40 100,42 C140,44 160,20 200,28 C240,36 260,10 300,18 C340,26 360,8 400,12"/>
+          </svg>
+          <div class="mt-4 grid grid-cols-3 gap-3">
+            <div class="rounded-xl border border-line p-3">
+              <p class="text-[11px] text-muted">Open deals</p>
+              <p class="font-display font-bold text-lg mt-0.5">128</p>
+            </div>
+            <div class="rounded-xl border border-line p-3">
+              <p class="text-[11px] text-muted">Win rate</p>
+              <p class="font-display font-bold text-lg mt-0.5">34%</p>
+            </div>
+            <div class="rounded-xl border border-line p-3">
+              <p class="text-[11px] text-muted">Avg. cycle</p>
+              <p class="font-display font-bold text-lg mt-0.5">18d</p>
+            </div>
+          </div>
+        </div>
+        <!-- Floating overlapping card (warmth from ref-1) -->
+        <div class="card absolute -right-2 md:-right-6 -bottom-6 md:-bottom-4 w-44 md:w-52 p-3.5 shadow-md rotate-2">
+          <p class="text-[11px] text-muted">Pipeline health</p>
+          <p class="font-display font-bold text-base mt-1">On track</p>
+          <div class="mt-2 h-1.5 rounded-full bg-line overflow-hidden">
+            <div class="h-full w-3/4 rounded-full bg-indigo-600"></div>
+          </div>
+          <p class="text-[11px] text-muted mt-1.5">$312k weighted</p>
+        </div>
+      </div>
+
+      <!-- Logo strip -->
+      <div class="mt-20 text-center">
+        <p class="text-xs font-medium text-muted tracking-wide uppercase mb-5">Trusted by teams at</p>
+        <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm font-semibold text-muted/70">
+          <span>Acme</span><span>Nova</span><span>Orbit</span><span>Pulse</span><span>Ledger</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features bento -->
+    <section id="features" class="max-w-6xl mx-auto px-4 py-16 md:py-24">
+      <div class="max-w-xl mb-10">
+        <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 tracking-wide uppercase mb-2">Product</p>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl tracking-tight">Keep everything in one place</h2>
+        <p class="mt-3 text-muted">Pipelines, revenue, and the alerts that matter — without switching ten tabs.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="card p-5">
+          <div class="w-9 h-9 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16M8 15v4M12 11v8M16 7v12"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg">Live pipelines</h3>
+          <p class="text-sm text-muted mt-1.5 leading-relaxed">Stage-by-stage deal views that update the moment your CRM does.</p>
+          <div class="mt-5 flex items-end gap-1.5 h-16">
+            <div class="bar w-full h-8"></div><div class="bar w-full h-12"></div><div class="bar w-full h-10"></div>
+            <div class="bar w-full h-16"></div><div class="bar w-full h-7 opacity-50"></div>
+          </div>
+        </div>
+        <div class="card p-5">
+          <div class="w-9 h-9 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19c0-3 2.5-5 6-5s6 2 6 5M14 19c0-2 1.5-3.5 4-3.5s3 .8 3 2.5"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg">Team insights</h3>
+          <p class="text-sm text-muted mt-1.5 leading-relaxed">See who closes, who stalls, and where coaching actually helps.</p>
+          <div class="mt-5 flex -space-x-2">
+            <span class="w-8 h-8 rounded-full bg-indigo-600 text-white text-xs font-bold flex items-center justify-center border-2 border-card">A</span>
+            <span class="w-8 h-8 rounded-full bg-zinc-400 text-white text-xs font-bold flex items-center justify-center border-2 border-card">M</span>
+            <span class="w-8 h-8 rounded-full bg-zinc-500 text-white text-xs font-bold flex items-center justify-center border-2 border-card">R</span>
+            <span class="w-8 h-8 rounded-full border border-line bg-bg text-xs font-semibold flex items-center justify-center text-muted">+9</span>
+          </div>
+          <p class="text-xs text-muted mt-2">12 members · 4 teams</p>
+        </div>
+        <div class="card p-5 md:row-span-2 flex flex-col">
+          <div class="w-9 h-9 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg">Revenue at a glance</h3>
+          <p class="text-sm text-muted mt-1.5 leading-relaxed">One chart for MRR, churn, and expansion — updated every hour.</p>
+          <div class="mt-auto pt-6">
+            <div class="flex items-baseline justify-between mb-2">
+              <span class="font-display font-extrabold text-2xl">+18%</span>
+              <span class="text-xs text-muted">MoM</span>
+            </div>
+            <svg viewBox="0 0 280 90" class="w-full h-24" preserveAspectRatio="none" aria-hidden="true">
+              <path class="spark" d="M0,70 C30,65 50,50 80,52 C110,54 130,30 160,35 C190,40 210,18 240,22 C255,24 270,14 280,16"/>
+              <path d="M0,70 C30,65 50,50 80,52 C110,54 130,30 160,35 C190,40 210,18 240,22 C255,24 270,14 280,16 L280,90 L0,90 Z" fill="var(--accent)" opacity="0.12"/>
+            </svg>
+          </div>
+        </div>
+        <div class="card p-5 md:col-span-2">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
+            <div>
+              <h3 class="font-display font-bold text-lg">Alerts that matter</h3>
+              <p class="text-sm text-muted mt-1.5 max-w-md">Get pinged when a deal goes quiet, a quota slips, or churn spikes — not for every tiny blip.</p>
+            </div>
+            <div class="space-y-2.5 min-w-[200px]">
+              <label class="flex items-center justify-between text-sm gap-4">
+                <span>Deal going cold</span>
+                <span class="w-10 h-6 rounded-full bg-indigo-600 relative"><span class="absolute right-1 top-1 w-4 h-4 rounded-full bg-white"></span></span>
+              </label>
+              <label class="flex items-center justify-between text-sm gap-4">
+                <span>Quota risk</span>
+                <span class="w-10 h-6 rounded-full bg-indigo-600 relative"><span class="absolute right-1 top-1 w-4 h-4 rounded-full bg-white"></span></span>
+              </label>
+              <label class="flex items-center justify-between text-sm gap-4 text-muted">
+                <span>Daily digest</span>
+                <span class="w-10 h-6 rounded-full bg-line relative"><span class="absolute left-1 top-1 w-4 h-4 rounded-full bg-white"></span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="max-w-6xl mx-auto px-4 py-8 md:py-12">
+      <div class="card max-w-2xl mx-auto p-8 text-center">
+        <p class="font-display text-xl md:text-2xl font-semibold leading-snug tracking-tight">
+          “We finally stopped arguing about which number is right. Klar became the single source of truth for our sales team.”
+        </p>
+        <div class="mt-6 flex items-center justify-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center">S</span>
+          <div class="text-left">
+            <p class="font-semibold text-sm">Sara Nguyen</p>
+            <p class="text-xs text-muted">VP Sales · Orbit Labs</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="max-w-6xl mx-auto px-4 py-16 md:py-24">
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl tracking-tight">Simple pricing</h2>
+        <p class="mt-3 text-muted">Start free. Upgrade when you grow.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        <div class="card p-6 flex flex-col">
+          <p class="text-sm font-semibold text-muted">Free</p>
+          <p class="font-display font-extrabold text-3xl mt-2">$0<span class="text-base font-medium text-muted">/mo</span></p>
+          <ul class="mt-5 space-y-2.5 text-sm text-muted flex-1">
+            <li>✓ 1 workspace</li>
+            <li>✓ 2 seats</li>
+            <li>✓ Basic dashboards</li>
+          </ul>
+          <a href="#" class="btn-ghost mt-6 block text-center py-2.5 text-sm">Get started</a>
+        </div>
+        <div class="card p-6 flex flex-col">
+          <p class="text-sm font-semibold text-muted">Pro</p>
+          <p class="font-display font-extrabold text-3xl mt-2">$29<span class="text-base font-medium text-muted">/mo</span></p>
+          <ul class="mt-5 space-y-2.5 text-sm text-muted flex-1">
+            <li>✓ Unlimited dashboards</li>
+            <li>✓ 10 seats</li>
+            <li>✓ CRM sync</li>
+          </ul>
+          <a href="#" class="btn-ghost mt-6 block text-center py-2.5 text-sm">Choose Pro</a>
+        </div>
+        <div class="rounded-xl p-6 flex flex-col bg-indigo-600 dark:bg-indigo-500 text-white relative shadow-lg">
+          <span class="absolute -top-2.5 right-4 text-[10px] font-bold uppercase tracking-wider bg-white text-accent px-2 py-0.5 rounded-full">Most popular</span>
+          <p class="text-sm font-semibold text-white/80">Growth</p>
+          <p class="font-display font-extrabold text-3xl mt-2">$79<span class="text-base font-medium text-white/70">/mo</span></p>
+          <ul class="mt-5 space-y-2.5 text-sm text-white/90 flex-1">
+            <li>✓ Everything in Pro</li>
+            <li>✓ Alerts &amp; forecasts</li>
+            <li>✓ SSO · Priority support</li>
+          </ul>
+          <a href="#" class="mt-6 block text-center py-2.5 text-sm font-semibold rounded-[10px] bg-white text-accent">Get Growth</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="max-w-2xl mx-auto px-4 py-16 md:py-20">
+      <h2 class="font-display font-extrabold text-3xl tracking-tight text-center mb-8">Frequently asked</h2>
+      <div class="divide-y divide-line border-y border-line">
+        <details class="faq-item group py-4" open>
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-base gap-4">
+            Is there a free trial?
+            <span class="plus shrink-0 w-7 h-7 rounded-full border border-line flex items-center justify-center text-lg leading-none transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-sm text-muted leading-relaxed pr-10">Yes — 14 days on Growth, no card required. You can downgrade to Free anytime.</p>
+        </details>
+        <details class="faq-item py-4">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-base gap-4">
+            Can I connect my CRM?
+            <span class="plus shrink-0 w-7 h-7 rounded-full border border-line flex items-center justify-center text-lg leading-none transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-sm text-muted leading-relaxed pr-10">Pro and Growth sync with HubSpot, Salesforce, and Pipedrive. CSV import works on Free.</p>
+        </details>
+        <details class="faq-item py-4">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-base gap-4">
+            Do you offer student discounts?
+            <span class="plus shrink-0 w-7 h-7 rounded-full border border-line flex items-center justify-center text-lg leading-none transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-sm text-muted leading-relaxed pr-10">Yes — 50% off Pro with a valid .edu email. Perfect for portfolio builds and hackathons.</p>
+        </details>
+        <details class="faq-item py-4">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-base gap-4">
+            Is my data encrypted?
+            <span class="plus shrink-0 w-7 h-7 rounded-full border border-line flex items-center justify-center text-lg leading-none transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-sm text-muted leading-relaxed pr-10">In transit (TLS 1.3) and at rest. Growth includes SSO and audit logs.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line">
+    <div class="max-w-6xl mx-auto px-4 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div class="flex items-center gap-2 font-display font-extrabold">
+        <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white text-sm flex items-center justify-center font-bold">K</span>
+        Klar
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+        <a href="#features" class="hover:text-ink">Features</a>
+        <a href="#pricing" class="hover:text-ink">Pricing</a>
+        <a href="#faq" class="hover:text-ink">FAQ</a>
+        <a href="#" class="hover:text-ink">Privacy</a>
+        <a href="#" class="hover:text-ink">Terms</a>
+      </div>
+      <p class="text-xs text-muted">© 2026 Klar · Built for @code.in.30s students</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

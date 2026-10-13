@@ -1,0 +1,94 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{background:#F3F2EF;font-family:Inter,system-ui,sans-serif;color:#141414;position:relative;overflow:hidden;
+ background-image:radial-gradient(ellipse at 50% 70%,#FBFAF8 0,#F3F2EF 60%)}
+header,footer{position:absolute;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center;z-index:50}
+header{top:52px;font-size:28px} header b{font-weight:700;letter-spacing:-.3px} header span{font-weight:500;color:#333;font-size:26px}
+footer{bottom:48px} footer b{font-size:28px;font-weight:700} footer span{font-size:17px;letter-spacing:3px;color:#555;font-weight:500}
+h1{position:absolute;left:60px;right:60px;top:140px;font-weight:400;font-size:92px;line-height:1.02;letter-spacing:-3.5px}
+h1 b{font-weight:800;letter-spacing:-3.5px}
+h1.m{font-size:76px;letter-spacing:-2.8px} h1.pin{font-size:84px}
+.sub{position:absolute;left:60px;right:120px;font-size:30px;line-height:1.35;color:#6B6B6B;top:470px}
+body:not(.cover) .sub{top:330px} .cta .sub{top:330px}
+.fan{position:absolute;left:50%;top:575px;height:640px}
+.stage .fan{top:500px}
+.phone{position:absolute;aspect-ratio:9/19.3;border-radius:46px;background:#EDEDED;padding:9px;
+ box-shadow:0 0 0 2px #CFCFCF,0 2px 0 3px #fff inset,0 40px 60px -20px rgba(0,0,0,.28),0 12px 24px rgba(0,0,0,.10);transform-origin:50% 100%}
+.phone.dk{background:#1d1d1f;box-shadow:0 0 0 2px #3a3a3c,0 40px 60px -20px rgba(0,0,0,.5),0 12px 24px rgba(0,0,0,.25)}
+.scr{position:relative;width:100%;height:100%;border-radius:38px;overflow:hidden;background:#FAFAF7}
+.dk .scr{background:#0F1012}
+.scr img{position:absolute;top:34px;left:0;width:100%}
+.sb{position:absolute;top:0;left:0;right:0;height:34px;display:flex;justify-content:space-between;align-items:center;padding:0 22px;font-size:12px;font-weight:600;z-index:2}
+.dk .sb{color:#EDEDEA} .sb .ic{font-size:8px;letter-spacing:1px}
+.notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:30%;height:20px;border-radius:12px;background:#000;z-index:3}
+.home{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:34%;height:4px;border-radius:3px;background:rgba(0,0,0,.6);z-index:3}
+.dk .home{background:rgba(255,255,255,.7)}
+.co{position:absolute;display:flex;align-items:center;gap:0;z-index:40}
+.co.r{flex-direction:row-reverse}
+.co .lb{background:#141414;color:#fff;font-size:17px;font-weight:600;padding:7px 12px;border-radius:999px}
+.co i{height:2px;background:#141414} .co em{width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid #141414}
+.night .co .lb{background:#141414}
+.steps{position:absolute;left:60px;right:60px;top:440px;display:flex;align-items:center;justify-content:space-between}
+.st{background:#fff;border:1.5px solid #E2E0DA;border-radius:18px;padding:16px 14px;font-size:22px;font-weight:600;text-align:center;min-width:150px}
+.st span{display:block;font-size:15px;color:#999;font-weight:500;margin-bottom:4px}
+.ar{font-style:normal;color:#999;font-size:24px}
+.ben{position:absolute;left:60px;top:620px;list-style:none;width:520px}
+.ben li{font-size:29px;line-height:1.3;margin-bottom:26px;display:flex;gap:16px;color:#2a2a2a}
+.ben li b{flex:none;width:38px;height:38px;border-radius:50%;background:#141414;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}
+.kw{font-weight:800;background:#141414;color:#F3F2EF;padding:0 18px;border-radius:16px}
+.mini{position:absolute;right:330px;top:640px;height:520px}
+.mini .phone:nth-child(1){left:-120px}.mini .phone:nth-child(2){left:40px;top:30px}
+.pinb .sub{top:500px}.pinst .fan{top:560px}
+.pinfoot{position:absolute;bottom:120px;left:0;right:0;text-align:center;font-size:26px;font-weight:600;color:#444}
+
+/* ---- Klar SaaS landing variant: light grey/white + indigo (ref: @uxjubayer) ---- */
+body{background:#F4F4F6;color:#111827;background-image:radial-gradient(ellipse at 50% 70%,#FAFAFB 0,#F4F4F6 60%)}
+header span,footer span{color:#6B7280}
+.sub{color:#6B7280}
+h1 b{color:#111827}
+.kw{background:#4F46E5;color:#fff}
+.ben li b{background:#4F46E5}
+.co .lb{background:#111827}
+.night{background:#18181B;color:#FAFAFA;background-image:radial-gradient(ellipse at 50% 70%,#27272A 0,#18181B 65%)}
+.night header span,.night footer span,.night .sub{color:#A1A1AA}
+.night h1 b{color:#FAFAFA}
+.night .co .lb{background:#27272A;border:1.5px solid #6366F1;color:#fff}
+.night .co i{background:#6366F1}
+.night .co em{border-color:#6366F1;background:#18181B}
+.st{border-color:#E5E7EB}
+.night .st{background:#27272A;border-color:#3F3F46;color:#FAFAFA}
+.night .st span{color:#A1A1AA}
+.night .ben li{color:#E4E4E7}
+.night .ben li b{background:#6366F1}
+.night .kw{background:#6366F1}
+.night .pinfoot{color:#A1A1AA}
+.phone{background:#ECECEE;box-shadow:0 0 0 2px #D4D4D8,0 2px 0 3px #fff inset,0 40px 60px -20px rgba(0,0,0,.22),0 12px 24px rgba(0,0,0,.08)}
+.scr{background:#F5F5F7}
+.dk .scr{background:#18181B}
+/* floating browser-frame mockup on cover — sits in gap above phones, clear of headline */
+.cover h1{font-size:58px;line-height:1.12;letter-spacing:-2.2px;right:330px}
+.cover h1 b{letter-spacing:-2.2px}
+.cover .sub{right:420px;top:345px}
+.cover .fan{top:640px}
+.browser{position:absolute;z-index:30;width:280px;right:36px;top:420px;background:#fff;border:1px solid #E5E7EB;border-radius:14px;box-shadow:0 24px 50px -18px rgba(0,0,0,.25);overflow:hidden;transform:rotate(3deg)}
+.browser .bar{display:flex;gap:6px;padding:10px 12px;background:#F5F5F7;border-bottom:1px solid #E5E7EB}
+.browser .bar i{width:8px;height:8px;border-radius:50%;background:#D4D4D8;display:block}
+.browser .bar i:nth-child(1){background:#FCA5A5}.browser .bar i:nth-child(2){background:#FCD34D}.browser .bar i:nth-child(3){background:#86EFAC}
+.browser .body{padding:12px}
+.browser .stat{font-family:Inter,sans-serif}
+.browser .stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.5px;color:#111827}
+.browser .stat span{font-size:11px;color:#6B7280;font-weight:500}
+.browser .pill{display:inline-block;margin-top:6px;font-size:11px;font-weight:700;color:#4F46E5;background:#EEF2FF;padding:3px 8px;border-radius:999px}
+.floatcard{position:absolute;z-index:35;right:24px;top:575px;width:156px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:12px;box-shadow:0 16px 40px -12px rgba(79,70,229,.25);transform:rotate(-4deg);font-family:Inter,sans-serif}
+.floatcard b{display:block;font-size:15px;font-weight:700;color:#111827}
+.floatcard span{font-size:11px;color:#6B7280}
+.floatcard .meter{margin-top:10px;height:6px;border-radius:999px;background:#E5E7EB;overflow:hidden}
+.floatcard .meter i{display:block;height:100%;width:75%;background:#4F46E5;border-radius:999px}
+</style></head><body class="" style="width:1080px;height:1350px">
+<header><b>code.in.30s</b><span>2 / 4 &nbsp;→</span></header><h1 class="m">Near-white,<br><b>one indigo accent</b></h1><p class="sub">Hairline cards, generous space, a hero that sells the product.</p>
+<div class="stage"><div class="fan"><div class="phone" style="width:310px;transform:translate(-445.0px,30.0px) rotate(-5.0deg);z-index:8">
+  <div class="scr"><div class="sb"><span>9:41</span><span class="ic">▂▄▆ ◔ ▮</span></div><img src="file:///workspace/pins/2026-10-13-saas-landing/final/screens/light-hero.png"><div class="notch"></div><div class="home"></div></div></div><div class="phone" style="width:310px;transform:translate(-155.0px,0.0px) rotate(0.0deg);z-index:10">
+  <div class="scr"><div class="sb"><span>9:41</span><span class="ic">▂▄▆ ◔ ▮</span></div><img src="file:///workspace/pins/2026-10-13-saas-landing/final/screens/light-features.png"><div class="notch"></div><div class="home"></div></div></div><div class="phone" style="width:310px;transform:translate(135.0px,30.0px) rotate(5.0deg);z-index:8">
+  <div class="scr"><div class="sb"><span>9:41</span><span class="ic">▂▄▆ ◔ ▮</span></div><img src="file:///workspace/pins/2026-10-13-saas-landing/final/screens/light-pricing.png"><div class="notch"></div><div class="home"></div></div></div></div><div class="co l" style="top:792px;left:10px"><span class="lb">Hero CTA</span><i style="width:50px"></i><em></em></div><div class="co l" style="top:992px;left:12px"><span class="lb">MRR card</span><i style="width:40px"></i><em></em></div><div class="co r" style="top:1057px;right:12px"><span class="lb">Bento</span><i style="width:300px"></i><em></em></div><div class="co r" style="top:990px;right:10px"><span class="lb">Growth plan</span><i style="width:28px"></i><em></em></div></div>
+<footer><b>code.in.30s</b><span>HTML / CSS / TAILWIND / UI</span></footer></body></html>

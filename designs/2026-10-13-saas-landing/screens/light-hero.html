@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#F5F5F7] text-zinc-900 antialiased selection:bg-indigo-100 selection:text-indigo-900" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Klar — Sales Analytics &amp; Revenue Intelligence</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;family=Public+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#4F46E5',
+              violet: '#818CF8',
+              surface: '#F5F5F7',
+              border: '#E5E7EB',
+              ink: '#111827',
+              muted: '#6B7280'
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "card": "12px",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Manrope", "sans-serif"],
+            display: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          },
+          boxShadow: {
+            'subtle': '0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.03)',
+            'float': '0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.02)'
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 20;
+      font-size: 1.15rem;
+      line-height: 1;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-full bg-[#F5F5F7] text-zinc-900 flex flex-col justify-between overflow-x-hidden">
+<!-- Mobile View Container Max-W matching 390-420px mobile viewport expectation -->
+<div class="w-full max-w-[430px] mx-auto min-h-screen flex flex-col bg-[#F5F5F7] shadow-xl relative border-x border-[#E5E7EB]/70">
+<!-- 1. Top Sticky Navigation (Shared Component Specification: Klar) -->
+<header class="sticky top-0 z-50 w-full bg-[#F5F5F7]/90 backdrop-blur-md border-b border-[#E5E7EB] transition-colors">
+<div class="px-5 h-14 flex items-center justify-between">
+<!-- Brand / Identity -->
+<a class="flex items-center gap-2 group active:scale-[0.98] transition-transform" href="#">
+<div class="w-7 h-7 rounded-[8px] bg-indigo-600 flex items-center justify-center text-white shadow-xs">
+<span class="material-symbols-outlined text-white text-[17px]" data-icon="analytics">analytics</span>
+</div>
+<span class="font-headline text-[17px] font-extrabold tracking-tight text-zinc-900">Klar</span>
+</a>
+<!-- Right Side Nav Actions -->
+<div class="flex items-center gap-2.5">
+<a class="text-xs font-semibold text-indigo-600 hover:text-indigo-700 px-3 py-1.5 rounded-[8px] bg-indigo-50/80 transition-colors" href="#trial">
+            Get Started
+          </a>
+<button aria-label="Open Navigation Menu" class="w-9 h-9 rounded-[8px] border border-[#E5E7EB] bg-white flex items-center justify-center text-zinc-700 active:bg-zinc-100 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Marketing Canvas -->
+<main class="flex-1 px-5 pt-8 pb-10 flex flex-col justify-start">
+<!-- 2. Hero Section -->
+<section class="flex flex-col items-center text-center">
+<!-- Status Pill Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] shadow-subtle mb-6">
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-600 animate-pulse"></span>
+<span class="font-label text-[11px] font-semibold text-zinc-600 tracking-normal">New · Sales analytics</span>
+</div>
+<!-- Headline -->
+<h1 class="font-headline text-[32px] sm:text-[36px] font-extrabold text-zinc-900 leading-[1.15] tracking-tight mb-3.5 max-w-[340px]">
+          Master your metrics. Maximize revenue.
+        </h1>
+<!-- Subcopy -->
+<p class="font-body text-[14px] text-zinc-500 leading-relaxed max-w-[310px] mb-7">
+          Klar turns messy sales data into clear dashboards your whole team can trust.
+        </p>
+<!-- CTA Buttons -->
+<div class="w-full flex flex-col gap-2.5 max-w-[320px] mb-10">
+<a class="w-full inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 active:scale-[0.98] transition-all text-white font-medium text-[14px] py-3 px-5 rounded-[12px] shadow-sm tracking-tight" href="#trial">
+            Start free trial
+          </a>
+<a class="w-full inline-flex items-center justify-center bg-white hover:bg-zinc-50 active:scale-[0.98] transition-all text-zinc-800 border border-[#E5E7EB] font-medium text-[14px] py-3 px-5 rounded-[12px] shadow-subtle gap-1.5 tracking-tight" href="#demo">
+<span>See demo</span>
+<span class="material-symbols-outlined text-[16px] text-zinc-400 group-hover:text-zinc-600 transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- 3. Dashboard Preview Cluster (Asymmetric Layered Cards) -->
+<section class="relative w-full max-w-[350px] mx-auto pt-2 pb-6">
+<!-- Ambient Backdrop Frame with Clean Outline -->
+<div class="relative bg-gradient-to-b from-white/40 to-transparent p-1.5 rounded-[16px]">
+<!-- Floating Status Badge (Top-right pill) -->
+<div class="absolute -top-2.5 right-2 z-20 inline-flex items-center gap-1.5 bg-white border border-[#E5E7EB] px-2.5 py-1 rounded-full shadow-subtle">
+<span class="material-symbols-outlined text-[13px] text-indigo-600" data-icon="sync">sync</span>
+<span class="text-[10px] font-semibold text-zinc-700 font-label">Real-time sync</span>
+</div>
+<!-- Main Analytics Card (MRR Trend) -->
+<div class="bg-white rounded-[12px] border border-[#E5E7EB] p-4 shadow-subtle relative z-10">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-[12px] font-medium text-zinc-500 font-body">Monthly Recurring Revenue</span>
+<span class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full font-label">
+                +12.4%
+              </span>
+</div>
+<div class="flex items-baseline gap-2 mb-3">
+<span class="font-headline text-[26px] font-extrabold text-zinc-900 tracking-tight">$48,250</span>
+<span class="text-[11px] text-zinc-400 font-normal">vs last month</span>
+</div>
+<!-- Crisp SVG Sparkline Chart -->
+<div class="w-full h-12 pt-1">
+<svg class="w-full h-full overflow-visible" fill="none" viewbox="0 0 280 48">
+<defs>
+<lineargradient id="sparkline-grad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4F46E5" stop-opacity="0.12"></stop>
+<stop offset="100%" stop-color="#4F46E5" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,40 Q35,32 70,35 T140,24 T210,18 T280,6" fill="none" stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M0,40 Q35,32 70,35 T140,24 T210,18 T280,6 L280,48 L0,48 Z" fill="url(#sparkline-grad)"></path>
+<circle cx="280" cy="6" fill="#4F46E5" r="3" stroke="#FFFFFF" stroke-width="1.5"></circle>
+</svg>
+</div>
+</div>
+<!-- Overlapping Card 2: Net Revenue Bar Breakdown -->
+<div class="mt-2.5 bg-white rounded-[12px] border border-[#E5E7EB] p-3.5 shadow-subtle flex items-center justify-between">
+<div class="space-y-0.5">
+<div class="text-[11px] font-medium text-zinc-500 font-body">Net Target Pace</div>
+<div class="font-headline text-[17px] font-bold text-zinc-900 tracking-tight">$12.8k <span class="text-[11px] font-normal text-zinc-400">today</span></div>
+</div>
+<!-- Mini 6-bar histogram (Single Indigo highlight) -->
+<div class="flex items-end gap-1.5 h-8 px-2 py-1 bg-zinc-50/70 border border-[#E5E7EB]/60 rounded-[8px]">
+<div class="w-1.5 h-3 bg-zinc-200 rounded-xs"></div>
+<div class="w-1.5 h-4 bg-zinc-200 rounded-xs"></div>
+<div class="w-1.5 h-3.5 bg-zinc-200 rounded-xs"></div>
+<div class="w-1.5 h-5 bg-zinc-200 rounded-xs"></div>
+<div class="w-1.5 h-7 bg-indigo-600 rounded-xs shadow-xs"></div>
+<div class="w-1.5 h-4.5 bg-zinc-300 rounded-xs"></div>
+</div>
+</div>
+<!-- Mini Feature Meta Strip below cards -->
+<div class="mt-2 px-1 flex items-center justify-between text-[11px] text-zinc-500 font-label">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-zinc-400" data-icon="schedule">schedule</span>
+<span>Deal velocity: <strong>18.4d</strong></span>
+</div>
+<div class="flex items-center gap-1 text-emerald-600 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>99.98% pipeline uptime</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Social Proof Logo Strip -->
+<section class="mt-6 pt-6 border-t border-[#E5E7EB] flex flex-col items-center">
+<span class="text-[11px] font-semibold text-zinc-400 tracking-wider font-label uppercase mb-4">
+          TRUSTED BY TEAMS AT
+        </span>
+<!-- Typographic Geometric Minimal Logos -->
+<div class="w-full flex items-center justify-between px-2 text-zinc-400">
+<div class="flex items-center gap-1 font-headline font-bold text-[13px] tracking-tighter text-zinc-500">
+<span class="w-2.5 h-2.5 rounded-xs bg-zinc-300"></span>
+<span>ACME</span>
+</div>
+<div class="flex items-center gap-1 font-headline font-bold text-[13px] tracking-tight text-zinc-500">
+<span class="w-2.5 h-2.5 rounded-full border border-zinc-400"></span>
+<span>NOVA</span>
+</div>
+<div class="flex items-center gap-1 font-headline font-semibold text-[13px] tracking-tight text-zinc-500">
+<span class="text-[10px] font-mono leading-none">•</span>
+<span>ORBIT</span>
+</div>
+<div class="flex items-center gap-1 font-headline font-bold text-[13px] tracking-tighter text-zinc-500">
+<span class="w-2.5 h-0.5 bg-zinc-400"></span>
+<span>PULSE</span>
+</div>
+</div>
+</section>
+</main>
+<!-- 5. Footer (Strictly Adheres to Shared Components JSON) -->
+<footer class="w-full bg-zinc-50 border-t border-zinc-200 mt-auto">
+<div class="w-full px-5 py-6 flex flex-col gap-4">
+<!-- Logo & Brand In Footer -->
+<div class="flex items-center justify-between">
+<div class="font-headline text-[15px] font-bold text-zinc-900 flex items-center gap-2">
+<div class="w-5 h-5 rounded-[6px] bg-indigo-600 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[13px]" data-icon="analytics">analytics</span>
+</div>
+<span>Klar</span>
+</div>
+<div class="text-[11px] text-zinc-400 font-body">
+            Code in 30s
+          </div>
+</div>
+<!-- Links as configured in Shared Component JSON -->
+<nav class="flex flex-wrap gap-x-4 gap-y-2 text-xs font-body text-zinc-500">
+<a class="hover:text-zinc-900 transition-colors" href="#">Product</a>
+<a class="hover:text-zinc-900 transition-colors" href="#">Features</a>
+<a class="hover:text-zinc-900 transition-colors" href="#">Pricing</a>
+<a class="hover:text-zinc-900 transition-colors" href="#">Security</a>
+<a class="hover:text-zinc-900 transition-colors" href="#">Privacy Policy</a>
+</nav>
+<!-- Copyright -->
+<p class="font-body text-[11px] text-zinc-400">
+          © 2026 Klar Analytics Inc. All rights reserved.
+        </p>
+</div>
+</footer>
+</div>
+</body></html>

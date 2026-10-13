@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Klar — Sales Analytics</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;family=Public+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "0.75rem", /* 12px design token */
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "display": ["Manrope", "sans-serif"],
+            "body": ["Inter", "sans-serif"],
+            "label": ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-zinc-900 text-zinc-50 font-body antialiased selection:bg-indigo-500/20 selection:text-indigo-300 min-h-screen flex flex-col justify-between">
+<!-- Top Sticky Nav (TopAppBar from Shared Components) -->
+<header class="sticky top-0 z-50 w-full bg-zinc-900/90 backdrop-blur-md border-b border-zinc-800">
+<div class="flex justify-between items-center w-full px-5 py-3.5 max-w-7xl mx-auto">
+<!-- Brand Anchor -->
+<a class="flex items-center gap-2.5 active:opacity-80 transition-opacity" href="#">
+<div class="w-7 h-7 rounded-lg bg-zinc-800 border border-zinc-700/80 flex items-center justify-center">
+<span class="material-symbols-outlined text-indigo-400 text-base leading-none" data-icon="insights">insights</span>
+</div>
+<span class="font-headline text-lg font-bold tracking-tight text-zinc-100">Klar</span>
+</a>
+<!-- Right Action -->
+<button aria-label="Open menu" class="p-1 rounded-md text-zinc-400 hover:text-zinc-100 active:opacity-80 transition-colors" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas (Mobile Viewport Optimized: 390px base) -->
+<main class="w-full max-w-[390px] mx-auto px-5 pt-8 pb-12 flex flex-col gap-9 overflow-hidden">
+<!-- Hero Section -->
+<section class="flex flex-col items-start gap-4">
+<!-- Announcement Pill -->
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-zinc-800/80 border border-zinc-700/70 text-xs font-label text-zinc-300">
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
+<span>New · Sales analytics</span>
+</div>
+<!-- Headline -->
+<h1 class="font-headline text-[32px] leading-[1.18] font-extrabold tracking-tight text-zinc-50">
+        Master your metrics. Maximize revenue.
+      </h1>
+<!-- Subcopy -->
+<p class="font-body text-sm leading-relaxed text-zinc-400">
+        Klar turns messy sales data into clear dashboards your whole team can trust.
+      </p>
+<!-- CTA Buttons Row -->
+<div class="flex items-center gap-3 w-full pt-1.5">
+<button class="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-zinc-50 font-medium text-sm transition-colors shadow-sm active:opacity-90" type="button">
+<span>Start free trial</span>
+<span class="material-symbols-outlined text-sm leading-none" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-300 font-medium text-sm transition-colors active:opacity-90" type="button">
+<span>See demo</span>
+</button>
+</div>
+</section>
+<!-- Bento / Compact Cluster of Floating Dashboard Preview Cards -->
+<section class="relative pt-1">
+<div class="flex flex-col gap-3">
+<!-- Top Row: Card 1 (Main MRR Card) -->
+<div class="w-full bg-zinc-800/90 border border-zinc-700 rounded-xl p-4 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label text-xs font-medium text-zinc-400">Monthly Recurring Revenue</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-indigo-400 bg-indigo-950/60 border border-indigo-800/60 px-1.5 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[13px] leading-none" data-icon="trending_up">trending_up</span>
+              +12.4%
+            </span>
+</div>
+<div class="flex items-baseline justify-between mb-3">
+<div class="font-headline text-2xl font-bold tracking-tight text-zinc-50">$48.2k</div>
+<span class="font-body text-[11px] text-zinc-500">vs last month</span>
+</div>
+<!-- Minimalist Sparkline (Indigo #6366F1 Accent) -->
+<div class="w-full h-11 pt-1">
+<svg class="w-full h-full overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 310 44">
+<!-- Gradient fill under sparkline -->
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="indigoFade" x1="0" x2="0" y1="0" y2="44">
+<stop stop-color="#6366F1" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#6366F1" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M 0,34 Q 30,30 60,33 T 120,24 T 180,27 T 240,14 T 310,6 L 310,44 L 0,44 Z" fill="url(#indigoFade)"></path>
+<path d="M 0,34 Q 30,30 60,33 T 120,24 T 180,27 T 240,14 T 310,6" stroke="#6366F1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<!-- Highlight dot on current peak -->
+<circle class="stroke-zinc-900 stroke-2" cx="310" cy="6" fill="#6366F1" r="3"></circle>
+</svg>
+</div>
+</div>
+<!-- Bottom Grid: Card 2 & Card 3 -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Card 2: Pipeline Velocity / Mini Bar Chart -->
+<div class="bg-zinc-800/90 border border-zinc-700 rounded-xl p-3.5 flex flex-col justify-between">
+<div>
+<div class="font-label text-[11px] font-medium text-zinc-400 leading-tight">Pipeline velocity</div>
+<div class="font-headline text-lg font-bold text-zinc-100 mt-1">$184k <span class="text-xs font-normal text-zinc-400">Won</span></div>
+</div>
+<!-- 5 Minimalist Bar indicators -->
+<div class="flex items-end gap-1.5 h-10 mt-3 pt-1">
+<div class="flex-1 bg-zinc-700/80 rounded-t h-[35%]"></div>
+<div class="flex-1 bg-zinc-700/80 rounded-t h-[55%]"></div>
+<div class="flex-1 bg-zinc-700/80 rounded-t h-[40%]"></div>
+<div class="flex-1 bg-zinc-700/80 rounded-t h-[75%]"></div>
+<!-- Active Highlight Bar in Indigo -->
+<div class="flex-1 bg-indigo-500 rounded-t h-[95%]"></div>
+</div>
+</div>
+<!-- Card 3: Status & Integration Health -->
+<div class="bg-zinc-800/90 border border-zinc-700 rounded-xl p-3.5 flex flex-col justify-between">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="font-label text-[11px] font-medium text-zinc-300">Sync active</span>
+</div>
+<div class="mt-4">
+<div class="font-headline text-lg font-bold text-zinc-100">12 sources</div>
+<div class="flex items-center gap-1.5 mt-1 text-[11px] text-zinc-400">
+<span class="material-symbols-outlined text-xs text-indigo-400" data-icon="bolt">bolt</span>
+<span>Latency 42ms</span>
+</div>
+</div>
+<div class="w-full bg-zinc-700/40 rounded-full h-1 mt-3 overflow-hidden">
+<div class="bg-indigo-500 h-full rounded-full w-[94%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Logo Trust Strip -->
+<section class="pt-2">
+<div class="text-center font-label text-[10px] tracking-wider uppercase text-zinc-500 mb-3.5">
+        Trusted by teams at
+      </div>
+<div class="grid grid-cols-4 gap-2 items-center justify-items-center py-2 border-y border-zinc-800/60">
+<!-- Acme -->
+<div class="flex items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined text-sm" data-icon="change_history">change_history</span>
+<span class="font-headline text-xs font-semibold tracking-tight text-zinc-400">Acme</span>
+</div>
+<!-- Nova -->
+<div class="flex items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined text-sm" data-icon="wb_sunny">wb_sunny</span>
+<span class="font-headline text-xs font-semibold tracking-tight text-zinc-400">Nova</span>
+</div>
+<!-- Orbit -->
+<div class="flex items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined text-sm" data-icon="adjust">adjust</span>
+<span class="font-headline text-xs font-semibold tracking-tight text-zinc-400">Orbit</span>
+</div>
+<!-- Pulse -->
+<div class="flex items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined text-sm" data-icon="timeline">timeline</span>
+<span class="font-headline text-xs font-semibold tracking-tight text-zinc-400">Pulse</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Footer from Shared Components) -->
+<footer class="w-full bg-zinc-900 border-t border-zinc-800">
+<div class="flex flex-col gap-6 items-center px-6 py-10 w-full max-w-7xl mx-auto">
+<!-- Navigation Links -->
+<nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs font-body text-zinc-400">
+<a class="hover:text-zinc-200 transition-colors duration-150" href="#">Product</a>
+<a class="hover:text-zinc-200 transition-colors duration-150" href="#">Pricing</a>
+<a class="hover:text-zinc-200 transition-colors duration-150" href="#">Documentation</a>
+<a class="hover:text-zinc-200 transition-colors duration-150" href="#">Privacy</a>
+<a class="hover:text-zinc-200 transition-colors duration-150" href="#">Terms</a>
+</nav>
+<!-- Copyright Text -->
+<p class="font-body text-xs text-zinc-400 text-center">
+        © 2026 Klar, Inc. All rights reserved.
+      </p>
+</div>
+</footer>
+</body></html>

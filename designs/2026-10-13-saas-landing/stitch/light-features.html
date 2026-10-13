@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Klar — Sales Analytics &amp; Pipeline Intelligence</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;family=Public+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#4F46E5',
+              soft: '#818CF8',
+              surface: '#F5F5F7',
+              hairline: '#E5E7EB',
+              ink: '#111827',
+              muted: '#6B7280'
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "card": "0.75rem", // 12px
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Manrope", "sans-serif"],
+            display: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          },
+          boxShadow: {
+            'card-soft': '0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.02)',
+            'card-lift': '0 4px 12px -2px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.02)',
+            'xs': '0 1px 2px 0 rgba(0, 0, 0, 0.04)'
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #F5F5F7;
+      color: #111827;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+      font-size: 18px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen bg-[#F5F5F7] flex justify-center selection:bg-indigo-100 selection:text-indigo-900">
+<!-- Mobile Viewport Container (optimized for 390px, responsive on wider screens) -->
+<div class="w-full max-w-[390px] min-h-screen flex flex-col bg-[#F5F5F7] shadow-xl md:my-6 md:rounded-[32px] md:overflow-hidden md:border md:border-zinc-200/80">
+<!-- Shared Component: TopAppBar -->
+<header class="bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md font-headline text-base font-semibold tracking-tight docked full-width top-0 sticky z-50 shadow-xs border-b border-zinc-200 dark:border-zinc-800">
+<div class="flex justify-between items-center w-full px-4 py-3 max-w-7xl mx-auto">
+<!-- Brand Logo & Icon -->
+<a class="font-headline text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50 flex items-center gap-2 active:scale-[0.98] transition-transform duration-150" href="#">
+<div class="w-7 h-7 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
+<span class="material-symbols-outlined text-indigo-600" data-icon="analytics">analytics</span>
+</div>
+<span>Klar</span>
+</a>
+<!-- Action Target -->
+<div class="flex items-center gap-2.5">
+<button class="px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-headline text-xs font-semibold tracking-tight transition-all active:scale-[0.98] shadow-xs" type="button">
+            Get Started
+          </button>
+<button aria-label="Toggle navigation" class="w-8 h-8 flex items-center justify-center rounded-lg text-zinc-500 hover:text-zinc-900 active:scale-[0.98] transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-4 pt-6 pb-12 flex flex-col gap-6">
+<!-- Section Header -->
+<section class="space-y-3">
+<!-- Eyebrow Pill -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-zinc-200 shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span>
+<span class="font-label text-[11px] font-semibold text-zinc-600 uppercase tracking-wider">Product</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-headline text-[26px] leading-[1.2] font-extrabold tracking-tight text-zinc-900">
+          Keep everything in one place
+        </h1>
+<!-- Subheading -->
+<p class="font-body text-[13px] leading-relaxed text-zinc-500">
+          Real-time visibility into your sales velocity, pipeline hygiene, and team performance without spreadsheet chaos.
+        </p>
+</section>
+<!-- Bento Grid Section -->
+<section class="grid grid-cols-2 gap-3.5">
+<!-- Card 1: Live pipelines (col-span-1) -->
+<div class="col-span-1 bg-white p-3.5 rounded-[12px] border border-[#E5E7EB] shadow-card-soft flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">Velocity</span>
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+</div>
+<h3 class="font-headline text-[13px] font-bold text-zinc-900 tracking-tight">Live pipelines</h3>
+<p class="text-[11px] text-zinc-500 mt-0.5 font-normal">Active deal stages</p>
+</div>
+<!-- Minimal Indigo Bar Chart Visualization -->
+<div class="mt-4 pt-3 border-t border-zinc-100 space-y-2">
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-medium">
+<span class="text-zinc-500">Qualified</span>
+<span class="text-zinc-800 font-semibold">$94k</span>
+</div>
+<div class="w-full bg-zinc-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-indigo-600 h-1.5 rounded-full w-[82%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-medium">
+<span class="text-zinc-500">Proposal</span>
+<span class="text-zinc-800 font-semibold">$52k</span>
+</div>
+<div class="w-full bg-zinc-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-indigo-400 h-1.5 rounded-full w-[54%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-medium">
+<span class="text-zinc-500">Closing</span>
+<span class="text-zinc-800 font-semibold">$38k</span>
+</div>
+<div class="w-full bg-zinc-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-indigo-300 h-1.5 rounded-full w-[36%]"></div>
+</div>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between text-[10px] text-zinc-400">
+<span>Avg 18 days</span>
+<span class="text-indigo-600 font-semibold flex items-center">
+<span class="material-symbols-outlined !text-[12px] mr-0.5" data-icon="trending_up">trending_up</span>
+              +12%
+            </span>
+</div>
+</div>
+<!-- Card 2: Team insights (col-span-1) -->
+<div class="col-span-1 bg-white p-3.5 rounded-[12px] border border-[#E5E7EB] shadow-card-soft flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">Quota</span>
+<span class="material-symbols-outlined text-zinc-400 !text-[14px]" data-icon="group">group</span>
+</div>
+<h3 class="font-headline text-[13px] font-bold text-zinc-900 tracking-tight">Team insights</h3>
+<p class="text-[11px] text-zinc-500 mt-0.5 font-normal">Rep attainment</p>
+</div>
+<!-- Team Initials Cluster & Badge -->
+<div class="my-3 py-2 border-y border-zinc-100 flex flex-col gap-2">
+<div class="flex items-center -space-x-1.5 overflow-hidden">
+<div class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-zinc-900 text-white font-label text-[9px] font-semibold ring-2 ring-white">
+                AK
+              </div>
+<div class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-indigo-600 text-white font-label text-[9px] font-semibold ring-2 ring-white">
+                MR
+              </div>
+<div class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-zinc-200 text-zinc-700 font-label text-[9px] font-semibold ring-2 ring-white">
+                EL
+              </div>
+<div class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-zinc-100 text-zinc-500 font-label text-[8px] font-medium ring-2 ring-white">
+                +9
+              </div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-medium text-zinc-600">12 members</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-indigo-50 text-indigo-700 border border-indigo-100">
+                94% target
+              </span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[10px] text-zinc-400 pt-1">
+<span>Top closer</span>
+<span class="font-medium text-zinc-700">AK (128%)</span>
+</div>
+</div>
+<!-- Card 3: Revenue at a glance (col-span-2, Wide Feature Card) -->
+<div class="col-span-2 bg-white p-4 rounded-[12px] border border-[#E5E7EB] shadow-card-soft">
+<!-- Card Header & Metric -->
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">ARR Metrics</span>
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span>
+</div>
+<h3 class="font-headline text-[15px] font-bold text-zinc-900 tracking-tight mt-0.5">Revenue at a glance</h3>
+</div>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-[11px] font-semibold">
+<span class="material-symbols-outlined !text-[13px]" data-icon="north_east">north_east</span>
+              +18% MoM
+            </div>
+</div>
+<!-- Metric Display -->
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline text-2xl font-extrabold tracking-tight text-zinc-900">$184,240</span>
+<span class="text-[11px] text-zinc-400 font-medium">net recurring</span>
+</div>
+<!-- Line Chart Visualization (Clean SVG with Violet/Indigo Gradient) -->
+<div class="mt-4 pt-2">
+<div class="w-full h-24 relative">
+<svg class="w-full h-full overflow-visible" fill="none" viewbox="0 0 320 90" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="revenueGradient" x1="0" x2="0" y1="0" y2="90">
+<stop offset="0%" stop-color="#4F46E5" stop-opacity="0.22"></stop>
+<stop offset="100%" stop-color="#818CF8" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Hairline Horizontal Grid Guides -->
+<line stroke="#F1F1F4" stroke-dasharray="2 3" stroke-width="1" x1="0" x2="320" y1="20" y2="20"></line>
+<line stroke="#F1F1F4" stroke-dasharray="2 3" stroke-width="1" x1="0" x2="320" y1="50" y2="50"></line>
+<line stroke="#F1F1F4" stroke-width="1" x1="0" x2="320" y1="80" y2="80"></line>
+<!-- Filled Curve Area -->
+<path d="M 0 68 C 40 65, 70 54, 110 50 C 150 46, 180 58, 220 38 C 260 18, 290 22, 320 12 L 320 85 L 0 85 Z" fill="url(#revenueGradient)"></path>
+<!-- Chart Stroke Line -->
+<path d="M 0 68 C 40 65, 70 54, 110 50 C 150 46, 180 58, 220 38 C 260 18, 290 22, 320 12" stroke="#4F46E5" stroke-linecap="round" stroke-width="2"></path>
+<!-- Active Indicator Dot -->
+<circle cx="320" cy="12" fill="#4F46E5" r="3.5" stroke="#FFFFFF" stroke-width="2"></circle>
+</svg>
+</div>
+<div class="flex justify-between items-center text-[10px] text-zinc-400 mt-2 font-medium">
+<span>Oct 1</span>
+<span>Oct 10</span>
+<span>Oct 20</span>
+<span class="text-indigo-600 font-semibold">Today</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Alerts that matter (col-span-2) -->
+<div class="col-span-2 bg-white p-4 rounded-[12px] border border-[#E5E7EB] shadow-card-soft">
+<div class="flex items-center justify-between mb-3">
+<div>
+<span class="font-label text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">Automations</span>
+<h3 class="font-headline text-[14px] font-bold text-zinc-900 tracking-tight">Alerts that matter</h3>
+</div>
+<span class="material-symbols-outlined text-zinc-400 !text-[16px]" data-icon="notifications_active">notifications_active</span>
+</div>
+<!-- Alert Rows with Toggles -->
+<div class="space-y-2.5">
+<!-- Row 1: Active Toggled ON -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-zinc-50 border border-zinc-100">
+<div class="flex items-center gap-2.5">
+<div class="w-6 h-6 rounded-md bg-white border border-zinc-200 flex items-center justify-center text-indigo-600 shadow-2xs">
+<span class="material-symbols-outlined !text-[14px]" data-icon="priority_high">priority_high</span>
+</div>
+<div>
+<div class="text-[11px] font-medium text-zinc-800">Anomalous churn risk</div>
+<div class="text-[9px] text-zinc-400">Trigger on 14d inactivity</div>
+</div>
+</div>
+<!-- Indigo Toggle Switch (ON) -->
+<div class="w-8 h-4.5 bg-indigo-600 rounded-full p-0.5 flex items-center justify-end cursor-pointer transition-colors shadow-2xs">
+<div class="w-3.5 h-3.5 bg-white rounded-full shadow-xs"></div>
+</div>
+</div>
+<!-- Row 2: Active Toggled ON -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-zinc-50 border border-zinc-100">
+<div class="flex items-center gap-2.5">
+<div class="w-6 h-6 rounded-md bg-white border border-zinc-200 flex items-center justify-center text-zinc-500 shadow-2xs">
+<span class="material-symbols-outlined !text-[14px]" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+<div>
+<div class="text-[11px] font-medium text-zinc-800">Pipeline stalled alert</div>
+<div class="text-[9px] text-zinc-400">Deals stagnant &gt; 21 days</div>
+</div>
+</div>
+<!-- Indigo Toggle Switch (ON) -->
+<div class="w-8 h-4.5 bg-indigo-600 rounded-full p-0.5 flex items-center justify-end cursor-pointer transition-colors shadow-2xs">
+<div class="w-3.5 h-3.5 bg-white rounded-full shadow-xs"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sub-feature / Trust Hint -->
+<section class="bg-white p-3.5 rounded-[12px] border border-[#E5E7EB] shadow-card-soft flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-indigo-600 !text-[16px]" data-icon="sync">sync</span>
+</div>
+<div class="flex-1">
+<div class="text-[11px] font-semibold text-zinc-900 tracking-tight">Two-way CRM synchronization</div>
+<div class="text-[10px] text-zinc-500">Live connectors for Salesforce, HubSpot &amp; Stripe.</div>
+</div>
+</section>
+<!-- Mobile CTA Banner -->
+<div class="p-4 rounded-[12px] bg-zinc-900 text-white flex flex-col gap-3">
+<div>
+<div class="text-[10px] font-semibold text-indigo-400 uppercase tracking-wider font-label">Start free trial</div>
+<h4 class="font-headline text-sm font-bold mt-0.5 text-zinc-100">Ready to tame your sales data?</h4>
+<p class="text-[11px] text-zinc-400 mt-0.5 font-normal">No credit card required. Setup takes under 2 minutes.</p>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-headline text-xs font-semibold tracking-tight transition-all active:scale-[0.98] text-center shadow-xs" type="button">
+          Claim 14-day free access
+        </button>
+</div>
+</main>
+<!-- Shared Component: Footer -->
+<footer class="bg-zinc-50 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 w-full mt-auto">
+<div class="w-full px-6 py-8 max-w-7xl mx-auto flex flex-col justify-between items-center gap-4">
+<!-- Brand identity in footer -->
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded bg-indigo-600 flex items-center justify-center text-white">
+<span class="material-symbols-outlined !text-[12px]" data-icon="analytics">analytics</span>
+</div>
+<span class="font-headline text-sm font-bold text-zinc-900 dark:text-zinc-50">Klar</span>
+</div>
+<!-- Links exactly matching JSON specification -->
+<div class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-center">
+<a class="font-body text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors" href="#">Product</a>
+<a class="font-body text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors" href="#">Features</a>
+<a class="font-body text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors" href="#">Pricing</a>
+<a class="font-body text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors" href="#">Security</a>
+<a class="font-body text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors" href="#">Privacy Policy</a>
+</div>
+<!-- Immutable Copyright String from JSON -->
+<p class="font-body text-[11px] text-zinc-400 text-center">
+          © 2026 Klar Analytics Inc. All rights reserved.
+        </p>
+</div>
+</footer>
+</div>
+</body></html>

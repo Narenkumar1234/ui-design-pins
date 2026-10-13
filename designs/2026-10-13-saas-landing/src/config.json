@@ -1,0 +1,74 @@
+{
+ "app": "Klar",
+ "keyword": "KLAR",
+ "out": "../final",
+ "browser_mock": true,
+ "light": [
+  "../final/screens/light-hero.png",
+  "../final/screens/light-features.png",
+  "../final/screens/light-pricing.png"
+ ],
+ "dark": [
+  "../final/screens/dark-hero.png",
+  "../final/screens/dark-features.png",
+  "../final/screens/dark-pricing.png"
+ ],
+ "hook": "If I were designing your<br><b>SaaS landing page</b>",
+ "hook_sub": "Minimal sales analytics. One indigo accent. Light + dark ready.",
+ "light_title": "Near-white,<br><b>one indigo accent</b>",
+ "light_sub": "Hairline cards, generous space, a hero that sells the product.",
+ "callouts": [
+  {
+   "label": "Hero CTA",
+   "y": 792,
+   "x": 10,
+   "len": 50
+  },
+  {
+   "label": "MRR card",
+   "y": 992,
+   "x": 12,
+   "len": 40
+  },
+  {
+   "label": "Bento",
+   "y": 1057,
+   "x": 12,
+   "len": 300,
+   "side": "r"
+  },
+  {
+   "label": "Growth plan",
+   "y": 990,
+   "x": 10,
+   "len": 28,
+   "side": "r"
+  }
+ ],
+ "dark_title": "Deep zinc,<br><b>same indigo</b>",
+ "dark_sub": "No neon glow. Soft surfaces. Charts still pop.",
+ "dark_callouts": [
+  {
+   "label": "CTA",
+   "y": 790,
+   "x": 10,
+   "len": 45
+  },
+  {
+   "label": "Growth plan",
+   "y": 970,
+   "x": 10,
+   "len": 28,
+   "side": "r"
+  }
+ ],
+ "cta_sub": "Klar SaaS landing UI \u00b7 light + dark \u00b7 ready to drop into your project.",
+ "benefits": [
+  "Hero, bento, pricing + FAQ",
+  "Clean HTML + Tailwind",
+  "Working dark toggle + accordion",
+  "$3 kit \u00b7 link in DM"
+ ],
+ "pin_title": "Minimal <b>SaaS Landing</b><br>Page UI",
+ "pin_sub": "Light + dark screens for your next front-end project."
+}

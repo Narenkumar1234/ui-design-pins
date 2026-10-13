@@ -1,0 +1,48 @@
+:root {
+  --bg: #F5F5F7;
+  --card: #FFFFFF;
+  --line: #E5E7EB;
+  --ink: #111827;
+  --muted: #6B7280;
+  --accent: #4F46E5;
+  --accent-soft: #EEF2FF;
+}
+.dark {
+  --bg: #18181B;
+  --card: #27272A;
+  --line: #3F3F46;
+  --ink: #FAFAFA;
+  --muted: #A1A1AA;
+  --accent: #6366F1;
+  --accent-soft: #312E81;
+}
+html { scroll-behavior: smooth; }
+body { font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+.font-d { font-family: Manrope, Inter, system-ui, sans-serif; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: opacity .15s, transform .15s;
+}
+.btn-primary:hover { opacity: .92; }
+.btn-primary:active { transform: scale(.98); }
+.btn-ghost {
+  border: 1px solid var(--line);
+  background: transparent;
+  border-radius: 10px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.hairline { border-color: var(--line); }
+.faq-item[open] summary .plus { transform: rotate(45deg); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary { list-style: none; }
+.bar { background: var(--accent); border-radius: 4px 4px 0 0; }
+.spark { stroke: var(--accent); fill: none; stroke-width: 2; }

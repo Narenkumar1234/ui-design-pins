@@ -1,0 +1,20 @@
+If I were designing your SaaS landing page…
+
+Build this → Klar, a minimal sales-analytics landing page
+
+1️⃣ Hero: badge, dual CTAs, floating MRR dashboard + overlapping pipeline card, logo strip
+2️⃣ Features bento: live pipelines, team insights, revenue chart, alerts that matter
+3️⃣ Pricing: Free / Pro / Growth (indigo highlighted) + FAQ accordion
+4️⃣ Light (#F5F5F7) + dark zinc (#18181B) — one indigo accent (#4F46E5 / #6366F1)
+
+🎨 Palette
+Light: bg #F5F5F7 · card #FFFFFF · line #E5E7EB · ink #111827 · muted #6B7280 · accent #4F46E5
+Dark: bg #18181B · card #27272A · line #3F3F46 · ink #FAFAFA · muted #A1A1AA · accent #6366F1
+
+🛠 Stack: HTML · Tailwind CSS · vanilla JS · Manrope + Inter · dark toggle in localStorage · FAQ with <details>
+
+💬 Comment KLAR to get the HTML/CSS
+
+Save this for your next project ✨
+
+#saaslandingpage #uidesign #uiux #landingpage #darkmode #frontenddevelopment #webdevelopment #tailwindcss #javascript #minimaldesign #codingprojects #studentdeveloper #100daysofcode #codein30s #webdesign

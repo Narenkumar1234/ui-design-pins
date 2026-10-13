@@ -1,0 +1,66 @@
+{
+ "app": "Penny",
+ "keyword": "PENNY",
+ "light": [
+  "../../2026-10-12-penny-budget/final/screens/light-home.png",
+  "../../2026-10-12-penny-budget/final/screens/light-insights.png",
+  "../../2026-10-12-penny-budget/final/screens/light-add.png"
+ ],
+ "dark": [
+  "../../2026-10-12-penny-budget/final/screens/dark-home.png",
+  "../../2026-10-12-penny-budget/final/screens/dark-insights.png",
+  "../../2026-10-12-penny-budget/final/screens/dark-add.png"
+ ],
+ "hook": "If I were building<br>your <b>budget app</b><br>from scratch",
+ "hook_sub": "Here's how I'd design it so people actually open it every day.",
+ "light_title": "Calm by default,<br><b>clear at a glance</b>",
+ "light_sub": "One number up top. Everything else waits its turn.",
+ "callouts": [
+  {
+   "label": "Hierarchy",
+   "y": 620,
+   "x": 30,
+   "len": 60
+  },
+  {
+   "label": "Spacing",
+   "y": 1010,
+   "x": 30,
+   "len": 70
+  },
+  {
+   "label": "Focus",
+   "y": 700,
+   "x": 30,
+   "len": 60,
+   "side": "r"
+  },
+  {
+   "label": "CTA",
+   "y": 1135,
+   "x": 30,
+   "len": 60,
+   "side": "r"
+  }
+ ],
+ "dark_title": "Same layout,<br><b>dark mode</b> done right",
+ "dark_sub": "Softer surfaces, brighter accent, no pure black text blocks.",
+ "dark_callouts": [
+  {
+   "label": "Accent",
+   "y": 1125,
+   "x": 30,
+   "len": 60,
+   "side": "r"
+  }
+ ],
+ "cta_sub": "Penny budget UI \u00b7 light + dark \u00b7 ready to drop into your project.",
+ "benefits": [
+  "3 screens, light + dark",
+  "Clean HTML + Tailwind",
+  "Responsive, easy to tweak",
+  "$3 kit \u00b7 link in DM"
+ ],
+ "pin_title": "Minimal <b>Budget App</b><br>UI Design",
+ "pin_sub": "Light + dark screens for your next front-end project."
+}

@@ -1,0 +1,37 @@
+[
+ {
+  "file": "light-hero",
+  "name": "projects/5773273180715924199/screens/a3053bf9ba58412daf96d96e9c09ec15",
+  "title": "Klar - Mobile Hero & Logo Strip",
+  "width": "780",
+  "height": "2068"
+ },
+ {
+  "file": "light-features",
+  "name": "projects/5773273180715924199/screens/b0543959d05b412485ff0ba8552a1013",
+  "title": "Klar - Features Bento (Mobile)",
+  "width": "780",
+  "height": "2852"
+ },
+ {
+  "file": "light-pricing",
+  "name": "projects/5773273180715924199/screens/fadda90722ac4bd6b9e9fd82b0b67bd7",
+  "title": "Klar - Mobile Pricing & FAQ (Light)",
+  "width": "780",
+  "height": "3840"
+ },
+ {
+  "file": "dark-features",
+  "name": "projects/5773273180715924199/screens/8ba6ce6250db4276b749c52de977bddb",
+  "title": "Klar - Mobile Features Bento",
+  "width": "780",
+  "height": "2170"
+ },
+ {
+  "file": "dark-pricing",
+  "name": "projects/5773273180715924199/screens/f6eae80edce94b499dd44f9e69153f21",
+  "title": "Klar - Mobile Pricing & FAQ",
+  "width": "780",
+  "height": "4036"
+ }
+]

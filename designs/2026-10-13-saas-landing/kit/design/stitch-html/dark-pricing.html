@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Klar — Sales Analytics Pricing</title>
+<!-- Google Fonts: Manrope (Headlines) & Inter (Body) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;family=Public+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "0.75rem", /* strictly 12px for soft radius spec */
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Manrope", "sans-serif"],
+            display: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+    }
+    body {
+      background-color: #18181B;
+      color: #FAFAFA;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-zinc-900 text-zinc-50 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+<!-- Shared Component Anchor: TopAppBar (Sticky docked full-width, clean mobile shell) -->
+<header class="bg-zinc-900/90 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-800">
+<div class="flex justify-between items-center w-full px-5 py-3.5 max-w-md mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-indigo-400 text-xl font-light" data-icon="insights">insights</span>
+<span class="font-headline text-lg font-bold tracking-tight text-zinc-100">Klar</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="text-xs font-medium text-zinc-400 hover:text-zinc-100 transition-colors" href="#signin">Sign in</a>
+<button aria-label="Open navigation menu" class="text-zinc-400 hover:text-zinc-100 transition-colors p-1 flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Mobile Canvas Container (Optimized for ~390px viewport rhythm) -->
+<main class="w-full max-w-md mx-auto px-5 pt-8 pb-16 space-y-10 flex-1">
+<!-- Section Header -->
+<section class="text-center space-y-3 pt-2">
+<div class="inline-flex items-center px-2.5 py-0.5 rounded-full border border-zinc-800 bg-zinc-900 text-[11px] font-medium tracking-wide text-zinc-400">
+        Pricing
+      </div>
+<h1 class="font-headline text-3xl font-extrabold tracking-tight text-zinc-50">
+        Simple pricing
+      </h1>
+<p class="font-body text-sm text-zinc-400 max-w-xs mx-auto leading-relaxed">
+        Start free. Upgrade when you grow.
+      </p>
+</section>
+<!-- Pricing Cards Stack (All 12px / rounded-xl) -->
+<section aria-label="Pricing tiers" class="space-y-4">
+<!-- Plan 3: Growth (Highlighted / Most Popular) -->
+<article class="bg-indigo-600 rounded-xl p-5 flex flex-col justify-between text-white relative shadow-sm">
+<div class="space-y-4">
+<div class="flex items-start justify-between">
+<div>
+<h2 class="font-headline text-lg font-bold text-white">Growth</h2>
+<p class="text-xs text-indigo-100 mt-1">Advanced revenue analytics &amp; forecasting.</p>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-white/20 border border-white/20 text-[10px] uppercase font-semibold tracking-wider text-white">
+              Most popular
+            </span>
+</div>
+<div class="flex items-baseline gap-1.5 pt-1">
+<span class="font-headline text-3xl font-bold tracking-tight text-white">$79</span>
+<span class="text-xs text-indigo-100 font-normal">per month</span>
+</div>
+<a class="w-full text-center block py-2.5 px-4 rounded-lg bg-white text-indigo-600 hover:bg-zinc-100 text-xs font-semibold tracking-tight transition-colors" href="#growth">
+            Get Growth
+          </a>
+<div class="h-px w-full bg-white/20 my-3"></div>
+<!-- Features -->
+<ul class="space-y-2.5 text-xs text-indigo-50 font-normal">
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-white text-base" data-icon="check">check</span>
+<span class="font-medium">Everything in Pro</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-white text-base" data-icon="check">check</span>
+<span>Unlimited team seats</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-white text-base" data-icon="check">check</span>
+<span>Predictive revenue AI models</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-white text-base" data-icon="check">check</span>
+<span>Custom webhooks &amp; API</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-white text-base" data-icon="check">check</span>
+<span>Dedicated support channel</span>
+</li>
+</ul>
+</div>
+</article>
+</section>
+<!-- Plan 1: Free -->
+<article class="bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex flex-col justify-between transition-colors">
+<div class="space-y-4">
+<div>
+<h2 class="font-headline text-lg font-bold text-zinc-100">Free</h2>
+<p class="text-xs text-zinc-400 mt-1">For solo founders and exploration.</p>
+</div>
+<div class="flex items-baseline gap-1.5 pt-1">
+<span class="font-headline text-3xl font-bold tracking-tight text-zinc-50">$0</span>
+<span class="text-xs text-zinc-400 font-normal">forever</span>
+</div>
+<a class="w-full text-center block py-2.5 px-4 rounded-lg bg-zinc-800 hover:bg-zinc-700/80 text-zinc-200 text-xs font-semibold tracking-tight transition-colors" href="#get-started">
+            Get started
+          </a>
+<div class="h-px w-full bg-zinc-800/80 my-3"></div>
+<!-- Features -->
+<ul class="space-y-2.5 text-xs text-zinc-300 font-normal">
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-zinc-400 text-base" data-icon="check">check</span>
+<span>Up to 3 data sources</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-zinc-400 text-base" data-icon="check">check</span>
+<span>7-day retention</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-zinc-400 text-base" data-icon="check">check</span>
+<span>Standard metrics dashboard</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-zinc-400 text-base" data-icon="check">check</span>
+<span>Community support</span>
+</li>
+</ul>
+</div>
+</article>
+<!-- Plan 2: Pro -->
+<article class="bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex flex-col justify-between transition-colors">
+<div class="space-y-4">
+<div>
+<h2 class="font-headline text-lg font-bold text-zinc-100">Pro</h2>
+<p class="text-xs text-zinc-400 mt-1">For growing teams tracking key revenue.</p>
+</div>
+<div class="flex items-baseline gap-1.5 pt-1">
+<span class="font-headline text-3xl font-bold tracking-tight text-zinc-50">$29</span>
+<span class="text-xs text-zinc-400 font-normal">per month</span>
+</div>
+<a class="w-full text-center block py-2.5 px-4 rounded-lg border border-zinc-700 bg-transparent hover:bg-zinc-800 text-zinc-100 text-xs font-semibold tracking-tight transition-colors" href="#trial">
+            Start free trial
+          </a>
+<div class="h-px w-full bg-zinc-800/80 my-3"></div>
+<!-- Features -->
+<ul class="space-y-2.5 text-xs text-zinc-300 font-normal">
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-zinc-400 text-base" data-icon="check">check</span>
+<span>Unlimited data sources</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-zinc-400 text-base" data-icon="check">check</span>
+<span>1-year retention</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-zinc-400 text-base" data-icon="check">check</span>
+<span>Real-time pipeline alerts</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-zinc-400 text-base" data-icon="check">check</span>
+<span>Team collaboration (5 seats)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-zinc-400 text-base" data-icon="check">check</span>
+<span>Priority email support</span>
+</li>
+</ul>
+</div>
+</article>
+<!-- FAQ Section -->
+<section aria-label="Frequently asked questions" class="pt-6 space-y-4">
+<div class="space-y-1">
+<h2 class="font-headline text-xl font-bold tracking-tight text-zinc-100">
+          Frequently asked
+        </h2>
+<p class="text-xs text-zinc-400">
+          Got questions? We've got answers.
+        </p>
+</div>
+<div class="space-y-2">
+<!-- Item 1: Expanded -->
+<div class="bg-zinc-900 border border-zinc-800 rounded-xl p-4 transition-all">
+<button aria-expanded="true" class="w-full flex items-center justify-between text-left gap-3 focus:outline-none" type="button">
+<span class="text-xs font-semibold text-zinc-100 font-headline">How does the 14-day free trial work?</span>
+<span class="material-symbols-outlined text-zinc-400 text-base shrink-0" data-icon="expand_less">expand_less</span>
+</button>
+<div class="mt-2.5 pt-2.5 border-t border-zinc-800/80">
+<p class="text-xs text-zinc-400 leading-relaxed font-body">
+              You get full access to all Growth features for 14 days without entering a credit card. At the end of the trial, you can choose a paid plan or automatically continue on our free tier.
+            </p>
+</div>
+</div>
+<!-- Item 2: Collapsed -->
+<div class="bg-zinc-900 border border-zinc-800 rounded-xl p-4 transition-all">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left gap-3 focus:outline-none" type="button">
+<span class="text-xs font-semibold text-zinc-100 font-headline">Can I switch plans or cancel anytime?</span>
+<span class="material-symbols-outlined text-zinc-400 text-base shrink-0" data-icon="add">add</span>
+</button>
+</div>
+<!-- Item 3: Collapsed -->
+<div class="bg-zinc-900 border border-zinc-800 rounded-xl p-4 transition-all">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left gap-3 focus:outline-none" type="button">
+<span class="text-xs font-semibold text-zinc-100 font-headline">What data integrations are supported?</span>
+<span class="material-symbols-outlined text-zinc-400 text-base shrink-0" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Shared Component Anchor: Compact Footer Strip -->
+<footer class="bg-zinc-900 border-t border-zinc-800 w-full py-6">
+<div class="w-full max-w-md mx-auto px-5 flex flex-col items-center justify-center gap-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-indigo-400 text-base" data-icon="insights">insights</span>
+<span class="font-headline text-sm font-bold tracking-tight text-zinc-100">Klar</span>
+</div>
+<p class="font-body text-xs text-zinc-400 tracking-tight text-center">
+        © 2026 Klar, Inc. · <a class="hover:text-zinc-200 transition-colors" href="#privacy">Privacy</a> · <a class="hover:text-zinc-200 transition-colors" href="#terms">Terms</a>
+</p>
+</div>
+</footer>
+</body></html>

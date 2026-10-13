@@ -1,0 +1,9 @@
+Minimal SaaS Landing Page UI: Klar Light + Dark · Front-End Project Idea
+
+Front-end project idea: Klar, a minimal sales-analytics SaaS landing page with a hero dashboard mockup, bento feature grid, highlighted Growth pricing plan and FAQ accordion. Near-white light mode (#F5F5F7) and deep zinc dark mode (#18181B) with a single indigo accent (#4F46E5). Build it with HTML, Tailwind CSS and vanilla JavaScript: sticky nav, mobile hamburger, theme toggle in localStorage, and native <details> FAQ. From @code.in.30s, comment KLAR on Instagram for the HTML/CSS kit.
+
+#saaslandingpage #uidesign #darkmode #landingpagedesign #frontenddevelopment #tailwindcss #javascript #studentprojects
+
+Four mobile screens of the Klar SaaS landing page on a soft light-grey background: light-mode hero with indigo CTA and MRR card, features bento, pricing with Growth plan highlighted, and matching deep-zinc dark-mode screens.
+
+Board: UI Design / Frontend Projects

@@ -1,0 +1,7 @@
+START LIGHT hero
+LIGHT hero 68 s {"outputComponents": [{"design": {"screens": [{"designSystem": {"designSystem": {"displayName": "Klar Light", "theme": {"bodyFont": "INTER", "colorMode": "LIGHT", "colorVariant": "NEUTRAL", "customColor": "#4F46E5", "designMd": "# Klar SaaS landing page (code.in.30s)\nMinimal sales-analytics SaaS ma
+START LIGHT features
+LIGHT features 74 s {"outputComponents": [{"design": {"screens": [{"designSystem": {"designSystem": {"displayName": "Klar Light", "theme": {"bodyFont": "INTER", "colorMode": "LIGHT", "colorVariant": "NEUTRAL", "customColor": "#4F46E5", "designMd": "# Klar SaaS landing page (code.in.30s)\nMinimal sales-analytics SaaS ma
+START LIGHT pricing
+LIGHT pricing 69 s {"outputComponents": [{"design": {"screens": [{"designSystem": {"designSystem": {"displayName": "Klar Light", "theme": {"bodyFont": "INTER", "colorMode": "LIGHT", "colorVariant": "NEUTRAL", "customColor": "#4F46E5", "designMd": "# Klar SaaS landing page (code.in.30s)\nMinimal sales-analytics SaaS ma
+LIGHT_DONE:0
