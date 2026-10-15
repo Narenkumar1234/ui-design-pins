@@ -1,0 +1,9 @@
+Travel Booking App UI: Roam Soft Glass Light + Dark · Front-End Project Idea
+
+Front-end project idea: Roam, a travel booking and destination explorer app in a soft glassmorphism style. Home with search, category chips and tall photo cards with frosted rating pills, Explore with a big feature card, and a destination detail page with facilities and a Book Now sheet. Pale-sky light mode (#F4F9FF) and deep teal-navy dark mode (#0F1E2E) with one azure accent (#3B8CF5). Build it with HTML, Tailwind CSS and vanilla JavaScript: live search, chip filters, favourites and a dark toggle saved in localStorage. From @code.in.30s, comment ROAM on Instagram for the HTML/CSS kit.
+
+#travelapp #uidesign #glassmorphism #mobileui #darkmode #frontenddevelopment #tailwindcss #studentprojects
+
+Three mobile screens of the Roam travel booking app on a blurred deep-teal mountain-lake background: light-mode Explore screen with a Maldives feature card, light Home screen with Kyoto and Santorini photo cards, and the dark-mode Home screen, with a large faded ROAM wordmark behind the phones.
+
+Board: UI Design / Frontend Projects
