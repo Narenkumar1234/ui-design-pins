@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2728%27 fill=%27%233B8CF5%27/%3E%3Cpath d=%27M24 52 76 28 54 80 48 58Z%27 fill=%27white%27/%3E%3C/svg%3E">
+  <title>Roam · Explore</title>
+</head>
+<body class="bg-bg text-ink antialiased min-h-screen">
+  <div class="wash" aria-hidden="true"></div>
+  <main class="relative z-10 max-w-md md:max-w-3xl mx-auto px-5 pt-6 pb-32">
+    <header class="flex items-center justify-between">
+      <div>
+        <p class="text-xs font-semibold text-accent flex items-center gap-1"><svg class="icon fill text-[12px]"><use href="#i-nav"/></svg>Roam</p>
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-0.5">Explore</h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <button type="button" data-theme-toggle class="surface w-11 h-11 rounded-full grid place-items-center shadow-soft" aria-label="Toggle dark mode"></button>
+        <button id="bell" type="button" class="relative surface w-11 h-11 rounded-full grid place-items-center shadow-soft" aria-label="Notifications">
+          <svg class="icon text-[19px]"><use href="#i-bell"/></svg><span class="absolute top-2.5 right-3 w-2 h-2 rounded-full bg-coral"></span></button>
+      </div>
+    </header>
+
+    <div class="mt-5 flex items-center gap-2.5">
+      <form id="search-form" role="search" class="flex-1 flex items-center gap-2.5 surface rounded-full px-4 py-1.5 shadow-soft focus-within:ring-2 focus-within:ring-accent/40">
+        <svg class="icon text-muted text-[18px]"><use href="#i-search"/></svg>
+        <input id="search" type="search" placeholder="Search places, hotels…" aria-label="Search places" class="flex-1 bg-transparent outline-none text-sm font-medium placeholder:text-muted py-2.5">
+      </form>
+      <button id="filters" type="button" class="grad w-12 h-12 rounded-full grid place-items-center" aria-label="Filters"><svg class="icon text-[19px]"><use href="#i-sliders"/></svg></button>
+    </div>
+
+    <div id="chips" class="mt-5 -mx-5 px-5 flex gap-2.5 overflow-x-auto no-scrollbar py-1" role="toolbar" aria-label="Trip type">
+      <button type="button" class="chip" data-type="beaches" aria-pressed="true"><svg class="icon text-[15px]"><use href="#i-umbrella"/></svg>Beaches</button>
+      <button type="button" class="chip" data-type="mountains" aria-pressed="false"><svg class="icon text-[15px]"><use href="#i-mountain"/></svg>Mountains</button>
+      <button type="button" class="chip" data-type="cities" aria-pressed="false"><svg class="icon text-[15px]"><use href="#i-building"/></svg>Cities</button>
+      <button type="button" class="chip" data-type="lakes" aria-pressed="false"><svg class="icon text-[15px]"><use href="#i-waves"/></svg>Lakes</button>
+    </div>
+
+    <section id="feature" class="mt-5" aria-label="Featured destination"></section>
+    <p id="empty" hidden class="text-sm text-muted text-center py-10">Nothing found. Try another search.</p>
+
+    <section id="nearby" class="mt-6" aria-labelledby="nearby-h">
+      <div class="flex items-center justify-between mb-3">
+        <h2 id="nearby-h" class="text-lg font-bold tracking-tight">Nearby escapes</h2>
+        <a href="index.html" class="text-xs font-semibold text-accent hover:underline">See all</a>
+      </div>
+      <div id="grid" class="grid grid-cols-2 md:grid-cols-3 gap-3.5"></div>
+    </section>
+  </main>
+
+  <nav id="tabbar" data-active="explore"></nav>
+  <script src="assets/icons.js"></script>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/explore.js"></script>
+</body>
+</html>
