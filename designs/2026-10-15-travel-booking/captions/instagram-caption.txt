@@ -1,0 +1,21 @@
+If I were designing your travel app…
+
+Build this → Roam, a soft-glass travel booking app
+
+1️⃣ Home: greeting + location pill, search, category chips, tall photo cards with frosted rating + heart pills
+2️⃣ Explore: Beaches / Mountains / Cities / Lakes chips + a big feature card with a glass info panel
+3️⃣ Detail: hero photo gallery, Top Facilities, sticky price bar + Book Now sheet (dates, guests, live total)
+4️⃣ Light (pale sky #F4F9FF) + dark (deep teal-navy #0F1E2E), one azure accent
+
+🎨 Palette
+Light: bg #FFFFFF · wash #E6F2FD · ink #101C2C · muted #8A94A6 · accent #3B8CF5 → #5AA7FF
+Dark: bg #0F1E2E · card #1A2B3E · ink #F2F6FB · muted #8A9BB0 · same azure accent
+Pops: coral #E8573A (hearts) · gold #F5B223 (stars)
+
+🛠 Stack: HTML · Tailwind CSS · vanilla JS · Plus Jakarta Sans · backdrop-filter glass · favourites + dark toggle in localStorage
+
+💬 Comment ROAM to get the HTML/CSS
+
+Save this for your next project ✨
+
+#travelapp #uidesign #glassmorphism #uiux #mobileui #darkmode #frontenddevelopment #webdevelopment #tailwindcss #javascript #codingprojects #studentdeveloper #100daysofcode #codein30s
