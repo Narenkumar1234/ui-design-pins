@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Roam - Destination Explorer</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            roam: {
+              bg: '#0F1E2E',
+              wash: '#17324A',
+              card: '#1A2B3E',
+              ink: '#F2F6FB',
+              secondary: '#8A9BB0',
+              accentStart: '#3B8CF5',
+              accentEnd: '#5AA7FF',
+              coral: '#E8573A',
+              gold: '#F5B223'
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Plus Jakarta Sans"],
+            display: ["Plus Jakarta Sans"],
+            body: ["Plus Jakarta Sans"],
+            label: ["Public Sans"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0F1E2E;
+      color: #F2F6FB;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0F1E2E] min-h-screen flex justify-center text-[#F2F6FB] selection:bg-[#3B8CF5]/30">
+<!-- Mobile Viewport Container (390px fixed simulation) -->
+<div class="relative w-full max-w-[390px] min-h-screen bg-gradient-to-b from-[#17324A] via-[#0F1E2E] to-[#0F1E2E] flex flex-col pb-28 overflow-x-hidden shadow-2xl">
+<!-- Top App Bar / Status & Profile Header (Reflecting Shared Component Archetype) -->
+<header class="flex justify-between items-center w-full px-5 pt-6 pb-3 z-40">
+<!-- Traveler Profile Block -->
+<div class="flex items-center gap-3">
+<div class="relative w-11 h-11 rounded-full p-[1.5px] bg-gradient-to-tr from-[#3B8CF5] to-[#5AA7FF]">
+<img alt="Aria profile" class="w-full h-full object-cover rounded-full border border-[#0F1E2E]" data-alt="A candid, warm lifestyle portrait of a young female traveler named Aria with natural hair, softly glowing under golden hour sunlight with lush outdoor foliage blurred in the background. The aesthetic is clean, cinematic, and modern with soft color grading matching dark teal and natural tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZwEP2whpmojuNLrEdsO6jRorNsLfuhYBBfhJuFPmYNIXCr1db-LS8e2qQ1zufsnoCm-sBgH-0TArNXCMsD_hCwZn4FU9YinLXz0ftCLohTVSBqoSjqG0XmYDyn4cQ3WltpvswnN2VI8EPvW1Xo10jI29dSb0YyzbScdZcZ2s_7PTZzd4-gc7W6DlFbYhadbzQgTYmL9HIzzmDWgGNT9NjISAGi2NSR4vV_Z22RXKA-28DG97NGv-DBlrLYz5DEHqJ36T6v8bCeqrc"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-[#F2F6FB] text-base leading-tight">Hi, Aria</span>
+<span class="text-xs text-[#8A9BB0] font-normal">Where to next?</span>
+</div>
+</div>
+<!-- Location Frosted Pill -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#F2F6FB] shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[#3B8CF5] text-base" data-icon="location_on">location_on</span>
+<span class="text-xs font-medium tracking-tight">Bali, Indonesia</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-5 space-y-6">
+<!-- Display Headline -->
+<section class="pt-2">
+<h1 class="text-3xl font-extrabold text-[#F2F6FB] tracking-tight leading-[1.15] font-headline">
+          Explore the<br/>world
+        </h1>
+</section>
+<!-- Search Bar -->
+<section>
+<div class="flex items-center gap-3 bg-[#1A2B3E] border border-white/[0.08] rounded-full px-4 py-2.5 shadow-sm focus-within:border-[#3B8CF5]/50 transition-colors">
+<span class="material-symbols-outlined text-[#8A9BB0] text-xl" data-icon="search">search</span>
+<input class="w-full bg-transparent border-0 p-0 text-sm text-[#F2F6FB] placeholder-[#8A9BB0] focus:ring-0 font-body" placeholder="Search destinations" type="text"/>
+<button aria-label="Filters" class="w-8 h-8 rounded-full flex items-center justify-center bg-white/[0.06] border border-white/10 text-[#8A9BB0] hover:text-white active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="tune">tune</span>
+</button>
+</div>
+</section>
+<!-- Category Filter Chips -->
+<section>
+<div class="flex items-center gap-2 overflow-x-auto hide-scrollbar -mx-5 px-5 pb-1">
+<!-- Active "All" Chip -->
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-gradient-to-r from-[#3B8CF5] to-[#5AA7FF] text-white font-medium text-sm shadow-md active:scale-95 transition-transform duration-150" type="button">
+            All
+          </button>
+<!-- Inactive Chips -->
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-[#1A2B3E] text-[#8A9BB0] border border-white/10 text-sm hover:text-white active:scale-95 transition-all" type="button">
+            Popular
+          </button>
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-[#1A2B3E] text-[#8A9BB0] border border-white/10 text-sm hover:text-white active:scale-95 transition-all" type="button">
+            Recommended
+          </button>
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-[#1A2B3E] text-[#8A9BB0] border border-white/10 text-sm hover:text-white active:scale-95 transition-all" type="button">
+            Most visited
+          </button>
+</div>
+</section>
+<!-- Featured Destinations Carousel (Bento-style tall vertical cards) -->
+<section>
+<div class="flex items-center justify-between mb-3.5">
+<h2 class="text-lg font-bold text-[#F2F6FB] font-headline tracking-tight">Featured places</h2>
+<button class="text-xs font-semibold text-[#3B8CF5] hover:opacity-80 transition-opacity" type="button">View map</button>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar -mx-5 px-5">
+<!-- Card 1: Kyoto, Japan -->
+<div class="relative flex-shrink-0 w-[210px] h-[290px] rounded-[22px] overflow-hidden shadow-lg border border-white/[0.08] group">
+<img alt="Kyoto Japan" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Stunning cinematic photograph of a serene Japanese temple pagoda nestled amidst a lush green bamboo grove in Kyoto during soft atmospheric morning mist. Pristine natural light catches wooden architecture and tranquil moss ground, portraying an authentic peaceful Japanese cultural heritage site." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2Lyy2Y9bkWQshBnCfnmDMvda-A8RrtCHJpFB9rp_k5bgYkx8A_z5ya0Xf-uCF1sezlq-ZYUJScra0u27OAwX_G6e4KOPeM1vjgYGPh0r04Y-9Jw-vlTjvAWv7yvVh0ct5Q2q36ALshJug10Evvt60l9wPsEKUB5bDsZ5r4ZWxa9oWVZD_SHjb3GYHgU6TTMhqa5utOqcZnB65ZqXUPs4fiws2_BhfOp0EF-r7wu9dONCme-wlG6sm-8dM-Yh7dQkTTtlAXgkXwFTn"/>
+<!-- Vignette & Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#0F1E2E]/95 via-[#0F1E2E]/20 to-black/20 pointer-events-none"></div>
+<!-- Top Overlays -->
+<div class="absolute top-3 left-3 right-3 flex justify-between items-center z-10">
+<!-- Rating Pill -->
+<div class="bg-white/20 backdrop-blur-md border border-white/30 text-white rounded-full px-2.5 py-1 flex items-center gap-1 text-xs font-semibold shadow-sm">
+<span class="material-symbols-outlined text-[#F5B223] text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.8</span>
+</div>
+<!-- Heart Favorite Button -->
+<button aria-label="Favorite Kyoto" class="bg-white/20 backdrop-blur-md border border-white/30 rounded-full w-8 h-8 flex items-center justify-center text-[#E8573A] hover:bg-white/30 active:scale-90 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-base" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<!-- Bottom Information Panel -->
+<div class="absolute bottom-3.5 left-3.5 right-3.5 z-10">
+<div class="p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/15">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-bold text-base text-white font-headline leading-snug">Kyoto</h3>
+<div class="flex items-center gap-0.5 text-xs text-white/80 mt-0.5">
+<span class="material-symbols-outlined text-xs text-white/80" data-icon="location_on">location_on</span>
+<span>Japan</span>
+</div>
+</div>
+</div>
+<div class="mt-2 pt-2 border-t border-white/10 flex items-baseline justify-between">
+<span class="text-sm font-bold text-white">$420 <span class="text-[11px] font-normal text-white/70">/ person</span></span>
+<span class="material-symbols-outlined text-xs text-white/70" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Santorini, Greece -->
+<div class="relative flex-shrink-0 w-[210px] h-[290px] rounded-[22px] overflow-hidden shadow-lg border border-white/[0.08] group">
+<img alt="Santorini Greece" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Breathtaking view of white cliffside cave houses and vibrant blue church domes of Santorini Greece overlooking the azure Aegean sea during golden sunset hour. Sparkling sea surface, warm soft light casting deep shadows, crisp modern luxury Mediterranean travel photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHdUsG3nw0C3punuBc6MjrJUI6ouCJ481J76HML2vMJ6DAjmughq6_OC54o48euGGbWH6feCwdzNXCtaaALpx-nYoxBcCCubMVDr1PkbFSQnm01dj35EzVRG1xwu2mN7d3Kra9hL7NozbI_2KgqnrW1pxollh7-KewFGzZKKO0YmBn_dXfiXYfSPhq4P1dt7mihAoz4sWTalbahpHuBmjeVA2vh0cNRon3fwQM_4YNB0a31Tx-GRKN9jgqtYtLh7zSWWzoZsHQOECC"/>
+<!-- Vignette & Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#0F1E2E]/95 via-[#0F1E2E]/20 to-black/20 pointer-events-none"></div>
+<!-- Top Overlays -->
+<div class="absolute top-3 left-3 right-3 flex justify-between items-center z-10">
+<!-- Rating Pill -->
+<div class="bg-white/20 backdrop-blur-md border border-white/30 text-white rounded-full px-2.5 py-1 flex items-center gap-1 text-xs font-semibold shadow-sm">
+<span class="material-symbols-outlined text-[#F5B223] text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+</div>
+<!-- Heart Favorite Button -->
+<button aria-label="Favorite Santorini" class="bg-white/20 backdrop-blur-md border border-white/30 rounded-full w-8 h-8 flex items-center justify-center text-white/80 hover:text-[#E8573A] hover:bg-white/30 active:scale-90 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-base" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Bottom Information Panel -->
+<div class="absolute bottom-3.5 left-3.5 right-3.5 z-10">
+<div class="p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/15">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-bold text-base text-white font-headline leading-snug">Santorini</h3>
+<div class="flex items-center gap-0.5 text-xs text-white/80 mt-0.5">
+<span class="material-symbols-outlined text-xs text-white/80" data-icon="location_on">location_on</span>
+<span>Greece</span>
+</div>
+</div>
+</div>
+<div class="mt-2 pt-2 border-t border-white/10 flex items-baseline justify-between">
+<span class="text-sm font-bold text-white">$540 <span class="text-[11px] font-normal text-white/70">/ person</span></span>
+<span class="material-symbols-outlined text-xs text-white/70" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Popular Trips Section -->
+<section class="space-y-3 pt-1">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold text-[#F2F6FB] font-headline tracking-tight">Popular trips</h2>
+<button class="text-sm text-[#3B8CF5] font-medium hover:underline transition-all" type="button">See all</button>
+</div>
+<!-- Trip Row Card -->
+<div class="bg-[#1A2B3E] border border-white/[0.08] rounded-2xl p-3 flex items-center gap-3.5 shadow-md hover:border-white/20 transition-all cursor-pointer">
+<!-- Thumbnail -->
+<div class="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+<img alt="Lake Bled Slovenia" class="w-full h-full object-cover" data-alt="Idyllic aerial landscape photograph of Lake Bled Slovenia featuring the fairy-tale medieval pilgrimage church on the tiny island surrounded by calm emerald waters and snowcapped Alpine peaks in the background with morning mist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn7gM7lzTNoH3qn_ZiJpK7ieh_N2laEE4PYzNvJTQd_yjQaubi6XmtBPNJENjcI4KVGszZzGxn4boEhX0DXfVDvmYJzE9d5bWCDhmA9b-ZnX9kqQAtf9oLyETFut24y5HFWIiFnds0AU78teF5L_zbwNghYMxFtyTKfxB2i574MdWJQmfa3d3PmLHjH7Vma-QH-1fqw7cUeNQJQnKonkGLR-lOxnPe4k-et7yv-klZKF5FgN5wvWmLTPXc6YRIUTLDyKolFHNPHQo8"/>
+</div>
+<!-- Trip Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[#F5B223] text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-semibold text-[#F2F6FB]">4.9</span>
+<span class="text-[11px] text-[#8A9BB0] ml-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+                3 days
+              </span>
+</div>
+<h3 class="font-semibold text-sm text-[#F2F6FB] truncate font-headline">Lake Bled, Slovenia</h3>
+<p class="text-xs text-[#8A9BB0] truncate mt-0.5">Alpine scenic boat tour</p>
+</div>
+<!-- Price & CTA -->
+<div class="text-right flex-shrink-0">
+<div class="font-bold text-base text-[#F2F6FB] leading-none">$280</div>
+<span class="text-[11px] text-[#8A9BB0] block mt-1">/ person</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Frosted Bottom Navigation Bar (Implementing Shared Component Anchors) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center px-4 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full mx-auto mb-6 w-[90%] max-w-sm shadow-2xl">
+<!-- Destination 1: Explore / Home (Active destination determined by screen intent) -->
+<button aria-label="Explore" class="flex items-center justify-center rounded-full p-2.5 bg-gradient-to-r from-blue-500 to-sky-400 text-white shadow-md active:scale-90 transition-transform duration-200" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="explore">explore</span>
+</button>
+<!-- Destination 2: Favorite -->
+<button aria-label="Favorites" class="flex items-center justify-center p-2.5 text-white/50 hover:text-white transition-colors active:scale-90 transition-transform duration-200" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="favorite">favorite</span>
+</button>
+<!-- Destination 3: Bookmark / Trips -->
+<button aria-label="Saved trips" class="flex items-center justify-center p-2.5 text-white/50 hover:text-white transition-colors active:scale-90 transition-transform duration-200" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="bookmark">bookmark</span>
+</button>
+<!-- Destination 4: Person / Profile -->
+<button aria-label="Profile" class="flex items-center justify-center p-2.5 text-white/50 hover:text-white transition-colors active:scale-90 transition-transform duration-200" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="person">person</span>
+</button>
+</nav>
+</div>
+</body></html>
