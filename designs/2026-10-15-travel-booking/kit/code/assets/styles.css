@@ -1,0 +1,84 @@
+/* Roam UI Kit · design tokens + glass components. Colours are "R G B" so Tailwind opacity modifiers work. */
+:root {
+  --bg: 255 255 255;      /* #FFFFFF */
+  --wash: 230 242 253;    /* #E6F2FD  top gradient wash */
+  --card: 255 255 255;    /* #FFFFFF */
+  --line: 234 240 247;    /* #EAF0F7 */
+  --ink: 16 28 44;        /* #101C2C */
+  --muted: 138 148 166;   /* #8A94A6 */
+  --soft: 236 245 254;    /* #ECF5FE  icon tiles */
+  --accent: 59 140 245;   /* #3B8CF5 */
+  --accent2: 90 167 255;  /* #5AA7FF */
+  --coral: 232 87 58;     /* #E8573A */
+  --gold: 245 178 35;     /* #F5B223 */
+  --panel: 255 255 255;   /* glass panel tint over photos */
+  --panel-a: .74;
+  color-scheme: light;
+}
+.dark {
+  --bg: 15 30 46;         /* #0F1E2E */
+  --wash: 23 50 74;       /* #17324A */
+  --card: 26 43 62;       /* #1A2B3E */
+  --line: 39 58 80;       /* #273A50 */
+  --ink: 242 246 251;     /* #F2F6FB */
+  --muted: 138 155 176;   /* #8A9BB0 */
+  --soft: 31 51 72;       /* #1F3348 */
+  --panel: 15 30 46;
+  --panel-a: .58;
+  color-scheme: dark;
+}
+html { -webkit-tap-highlight-color: transparent; }
+body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+
+/* frosted pale-sky wash behind the header */
+.wash { position: absolute; inset: 0 0 auto 0; height: 340px; pointer-events: none; z-index: 0;
+  background: linear-gradient(180deg, rgb(var(--wash)) 0%, rgb(var(--wash) / .45) 55%, rgb(var(--bg) / 0) 100%); }
+
+.icon { width: 1.25em; height: 1.25em; flex: none; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.icon.fill { fill: currentColor; }
+
+/* pills + chips */
+.chip { flex: none; display: inline-flex; align-items: center; gap: .4rem; padding: .55rem 1.05rem; border-radius: 999px; font-size: .8rem; font-weight: 600;
+  background: rgb(var(--card)); color: rgb(var(--muted)); border: 1px solid rgb(var(--line)); transition: transform .15s, color .15s; }
+.chip:hover { color: rgb(var(--ink)); }
+.chip:active { transform: scale(.96); }
+.chip[aria-pressed="true"], .grad { background: linear-gradient(90deg, rgb(var(--accent)), rgb(var(--accent2))); color: #fff; border-color: transparent;
+  box-shadow: 0 10px 24px -8px rgb(59 140 245 / .55); }
+
+/* glass over photos */
+.glass { background: rgb(255 255 255 / .25); border: 1px solid rgb(255 255 255 / .4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #fff; }
+.glass-dark { background: rgb(0 0 0 / .28); border: 1px solid rgb(255 255 255 / .3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #fff; }
+.glass-panel { background: rgb(var(--panel) / var(--panel-a)); border: 1px solid rgb(255 255 255 / .55); backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2); }
+.dark .glass-panel { border-color: rgb(255 255 255 / .12); }
+.surface { background: rgb(var(--card) / .85); border: 1px solid rgb(var(--line)); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+
+/* heart */
+.like[aria-pressed="true"] { color: rgb(var(--coral)); }
+.like[aria-pressed="true"] .icon { fill: currentColor; }
+.like:active { transform: scale(.9); }
+
+/* photo cards */
+.dest-card img { transition: transform .5s ease; }
+.dest-card:hover img { transform: scale(1.05); }
+.no-scrollbar::-webkit-scrollbar { display: none; } .no-scrollbar { scrollbar-width: none; }
+
+/* floating frosted tab bar */
+.tabbar { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); width: min(92vw, 380px); z-index: 50; display: flex; justify-content: space-between;
+  padding: .45rem; border-radius: 999px; background: rgb(var(--card) / .82); border: 1px solid rgb(var(--line)); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 18px 40px -16px rgb(16 28 44 / .35); }
+.tabbar a { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: .45rem .95rem; border-radius: 999px; font-size: .7rem; font-weight: 600; color: rgb(var(--muted)); }
+.tabbar a:hover { color: rgb(var(--ink)); }
+.tabbar a[aria-current="page"] { color: #fff; background: linear-gradient(90deg, rgb(var(--accent)), rgb(var(--accent2))); box-shadow: 0 10px 24px -8px rgb(59 140 245 / .55); }
+
+/* toast */
+#toast { position: fixed; left: 50%; bottom: 96px; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; z-index: 70; transition: .25s;
+  background: rgb(var(--ink)); color: rgb(var(--bg)); padding: .7rem 1.1rem; border-radius: 999px; font-size: .82rem; font-weight: 600; white-space: nowrap; }
+#toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* booking sheet */
+dialog.sheet { margin: auto auto 0; width: min(100%, 480px); max-width: 100%; border: 0; padding: 0; border-radius: 28px 28px 0 0; background: rgb(var(--card)); color: rgb(var(--ink)); }
+dialog.sheet::backdrop { background: rgb(8 18 30 / .45); backdrop-filter: blur(4px); }
+@media (min-width: 768px) { dialog.sheet { margin: auto; border-radius: 28px; } }
+.line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+:focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 2px; }
