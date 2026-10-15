@@ -1,0 +1,42 @@
+{
+ "LIGHT": {
+  "designSystem": {
+   "displayName": "Roam Light",
+   "theme": {
+    "bodyFont": "PLUS_JAKARTA_SANS",
+    "colorMode": "LIGHT",
+    "colorVariant": "TONAL_SPOT",
+    "customColor": "#3B8CF5",
+    "designMd": "# Roam travel booking app (code.in.30s)\nDestination explorer + booking mobile app. Soft glassmorphism + clean minimal: frosted translucent pills over photos (backdrop blur, white 20-30% fill, thin white border), 20px radius cards, full-round pill chips and search, soft diffuse shadows, Plus Jakarta Sans, thin rounded line icons, real travel photography (mountains, beaches, lakes, old towns). NO emoji, NO serif fonts, NO illustrations.\n## Light: background white #FFFFFF with a frosted pale-sky gradient wash at the top (#E6F2FD to #F4F9FF to white). Cards white with soft blue-grey shadow. Ink #101C2C, secondary text #8A94A6. ONE azure accent gradient #3B8CF5 to #5AA7FF for the active chip, primary CTA and active nav icon. Tiny accents only: coral #E8573A for heart/like, gold #F5B223 for rating stars.",
+    "headlineFont": "PLUS_JAKARTA_SANS",
+    "overrideNeutralColor": "#F4F9FF",
+    "overridePrimaryColor": "#3B8CF5",
+    "overrideSecondaryColor": "#5AA7FF",
+    "overrideTertiaryColor": "#E8573A",
+    "roundness": "ROUND_TWELVE"
+   }
+  },
+  "name": "assets/17175220052178294164",
+  "version": "1"
+ },
+ "DARK": {
+  "designSystem": {
+   "displayName": "Roam Dark",
+   "theme": {
+    "bodyFont": "PLUS_JAKARTA_SANS",
+    "colorMode": "DARK",
+    "colorVariant": "TONAL_SPOT",
+    "customColor": "#3B8CF5",
+    "designMd": "# Roam travel booking app (code.in.30s)\nDestination explorer + booking mobile app. Soft glassmorphism + clean minimal: frosted translucent pills over photos (backdrop blur, white 20-30% fill, thin white border), 20px radius cards, full-round pill chips and search, soft diffuse shadows, Plus Jakarta Sans, thin rounded line icons, real travel photography (mountains, beaches, lakes, old towns). NO emoji, NO serif fonts, NO illustrations.\n## Dark: deep teal-navy background #0F1E2E with a subtle #17324A wash at the top, cards/surfaces #1A2B3E with 1px rgba(255,255,255,0.08) border, ink #F2F6FB, secondary #8A9BB0. Same azure accent gradient #3B8CF5 to #5AA7FF for active chip, CTA and active nav. Frosted pills over photos stay translucent. Coral #E8573A heart, gold #F5B223 stars. No neon glow.",
+    "headlineFont": "PLUS_JAKARTA_SANS",
+    "overrideNeutralColor": "#0F1E2E",
+    "overridePrimaryColor": "#3B8CF5",
+    "overrideSecondaryColor": "#5AA7FF",
+    "overrideTertiaryColor": "#E8573A",
+    "roundness": "ROUND_TWELVE"
+   }
+  },
+  "name": "assets/10789822067645509968",
+  "version": "1"
+ }
+}

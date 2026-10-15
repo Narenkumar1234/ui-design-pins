@@ -1,0 +1,245 @@
+{
+ "LIGHT-home": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Roam Light",
+         "theme": {
+          "bodyFont": "PLUS_JAKARTA_SANS",
+          "colorMode": "LIGHT",
+          "colorVariant": "TONAL_SPOT",
+          "customColor": "#3B8CF5",
+          "designMd": "# Roam travel booking app (code.in.30s)\nDestination explorer + booking mobile app. Soft glassmorphism + clean minimal: frosted translucent pills over photos (backdrop blur, white 20-30% fill, thin white border), 20px radius cards, full-round pill chips and search, soft diffuse shadows, Plus Jakarta Sans, thin rounded line icons, real travel photography (mountains, beaches, lakes, old towns). NO emoji, NO serif fonts, NO illustrations.\n## Light: background white #FFFFFF with a frosted pale-sky gradient wash at the top (#E6F2FD to #F4F9FF to white). Cards white with soft blue-grey shadow. Ink #101C2C, secondary text #8A94A6. ONE azure accent gradient #3B8CF5 to #5AA7FF for the active chip, primary CTA and active nav icon. Tiny accents only: coral #E8573A for heart/like, gold #F5B223 for rating stars.",
+          "headlineFont": "PLUS_JAKARTA_SANS",
+          "overrideNeutralColor": "#F4F9FF",
+          "overridePrimaryColor": "#3B8CF5",
+          "overrideSecondaryColor": "#5AA7FF",
+          "overrideTertiaryColor": "#E8573A",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/17175220052178294164",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "2092",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzA4ZTBkYzg4NDc1MjRmY2M5MTkwNWFiODE2OGNlNmEzEgsSBxDnsaWX4xEYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTU2NDk2MjE1MDI2NTM3MzY4MA&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/11564962150265373680/files/b103c8986e9c4263946bf4429d10344b"
+       },
+       "id": "f91cc2dbef334441951357dbafeb6aa7",
+       "name": "projects/11564962150265373680/screens/f91cc2dbef334441951357dbafeb6aa7",
+       "prompt": "Mobile travel booking / destination explorer app called \"Roam\".\nLIGHT mode aesthetic:\n- Background: pure #FFFFFF with a soft frosted pale-sky gradient wash at the top (#E6F2FD fading to #F4F9FF then white).\n- Typography: Plus Jakarta Sans rounded geometric sans, clean modern hierarchy, no serif. Ink color #101C2C for headings/primary text, secondary #8A94A6.\n- Accents: ONE primary azure accent gradient from #3B8CF5 to #5AA7FF used for the active chip, primary accents, and active bottom-nav item.\n- Tiny accents only: coral #E8573A heart icon, gold #F5B223 rating star.\n- Frosted translucent glass elements over photos: backdrop blur, white 20-30% fill, thin white border (border-white/40 to border-white/60).\n- Roundedness: full-round pill chips, pill search bar, ~20px radius cards (rounded-2xl to rounded-3xl). Thin rounded line icons (lucide or heroicons style/material symbols). NO emojis.\n- Dimensions/Layout: mobile screen sized for 390x844 viewport, comfortable breathable airy spacing.\n\nScreen Content:\n1. Top Bar / Header:\n   - Left: small round avatar photo (friendly young woman traveler) next to \"Hi, Aria\" (font-semibold text-ink text-base) and muted subtext \"Where to next?\" (#8A94A6 text-xs).\n   - Right: small frosted location pill with map pin icon and text \"Bali, Indonesia\" (subtle frosted glass border, text-xs font-medium text-ink).\n2. Headline:\n   - Big bold headline \"Explore the\\nworld\" (2 lines, font-extrabold text-3xl tracking-tight text-ink mt-4 mb-3).\n3. Search Bar:\n   - Full-round pill search bar \"Search destinations\" with magnifying glass icon on the left and a round filter slider icon button on the right (frosted white bg with soft shadow).\n4. Category Chips Row:\n   - Horizontal scrollable pill chips:\n     * \"All\" (ACTIVE: azure gradient #3B8CF5 to #5AA7FF, white text, soft azure glow/shadow)\n     * \"Popular\" (inactive: white bg, border border-slate-100 text-slate-500 font-medium)\n     * \"Recommended\" (inactive)\n     * \"Most visited\" (inactive)\n5. Featured Destination Cards:\n   - Horizontal row showing 2 TALL vertical destination photo cards (~200px wide, ~280px tall, rounded-[22px] overflow-hidden shadow-lg shadow-sky-950/5 relative):\n     * Card 1: \"Kyoto, Japan\" with real beautiful photograph of Kyoto bamboo forest / pagoda.\n       - Top-left: frosted glass rating pill (gold star #F5B223 + \"4.8\" font-semibold text-white/95 backdrop-blur-md bg-black/25 or white/30 border border-white/40 rounded-full px-2.5 py-1 text-xs).\n       - Top-right: frosted circular heart button with coral #E8573A heart icon (backdrop-blur-md bg-white/30 border border-white/40 rounded-full p-2).\n       - Bottom overlay panel: frosted translucent glass container (backdrop-blur-md bg-white/40 dark:bg-black/40 border-t border-white/40 p-3 rounded-b-[22px]) showing \"Kyoto, Japan\" in bold white/ink, location pin, and \"$420 / person\" in crisp font.\n     * Card 2: \"Santorini, Greece\" with stunning caldera / white cliffside architecture and blue sea photo.\n       - Top-left: frosted glass rating pill (gold star #F5B223 + \"4.9\").\n       - Top-right: frosted circular heart button.\n       - Bottom overlay panel: \"Santorini, Greece\", location, and \"$580 / person\".\n6. Section \"Popular trips\":\n   - Header with section title \"Popular trips\" (font-bold text-lg text-ink) and \"See all\" text link (#3B8CF5 text-xs font-semibold).\n   - One compact list row card (white background, rounded-2xl p-3 border border-slate-100 shadow-sm shadow-slate-200/50 flex items-center gap-3):\n     * Left: rounded-xl image thumbnail (~64x64) of \"Lake Bled, Slovenia\" (emerald lake with island church).\n     * Center: \"Lake Bled, Slovenia\" (font-bold text-sm text-ink), duration \"3 days\" with subtle calendar or clock icon, gold rating star \"4.9 (128 reviews)\".\n     * Right: price \"$340\" (bold text-base text-ink) with small \"/ person\" and arrow button or book prompt.\n7. Bottom Navigation Bar:\n   - Floating frosted pill navigation bar (backdrop-blur-xl bg-white/90 border border-white/80 shadow-2xl shadow-sky-950/10 rounded-full px-4 py-2 flex justify-between items-center fixed bottom-5 inset-x-6 z-50):\n     * \"Home\": Active with azure gradient pill background (#3B8CF5 to #5AA7FF), white icon & small label \"Home\".\n     * \"Explore\": Inactive slate-400 icon and label \"Explore\".\n     * \"Trips\": Inactive slate-400 icon and label \"Trips\".\n     * \"Profile\": Inactive slate-400 icon and label \"Profile\".",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WtFE6E5uUfl4IKIeVIbvGqtqNp7rREcNDtpPOc7dWV4pGJt-ppqdUln6U9zpbsAI2hw3leRWaD5SNCoibH_3D5skjvocO1GL3ZFc8LIs7nG2OARYRBMwJ4xHZFLTl-x07wJQmyb7EfqPkJBxrvxO8RQurK3ooUxGc_0Gdi2LqH6_ZthdjfZy6b9t9NbQdlosICXx6fBoJpHVO5s0TH0y4v5oylJ9dFzt31pylSc8aouMZOk7fc8Ir8ZGOe",
+        "name": "projects/11564962150265373680/files/30a7aeabbdfa43339d315274514d5d24"
+       },
+       "theme": {
+        "bodyFont": "PLUS_JAKARTA_SANS",
+        "colorMode": "LIGHT",
+        "colorVariant": "TONAL_SPOT",
+        "customColor": "#3B8CF5",
+        "headlineFont": "PLUS_JAKARTA_SANS",
+        "overrideNeutralColor": "#F4F9FF",
+        "overridePrimaryColor": "#3B8CF5",
+        "overrideSecondaryColor": "#5AA7FF",
+        "overrideTertiaryColor": "#E8573A",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Roam - Home",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "I've created the **Roam** mobile Home screen in light mode, designed to fit the 390\u00d7844 viewport with clean glassmorphic touches:\n\n### Key Design Highlights\n- **Palette & Atmosphere:** Soft pale-sky gradient wash at the top (`#E6F2FD` fading through `#F4F9FF` to crisp `#FFFFFF`), deep ink headings (`#101C2C`), and muted secondary text (`#8A94A6`).\n- **Signature Glassmorphism:** Translucent frosted glass pills with soft backdrop blurs and subtle white borders over high-quality destination photography for ratings, location indicators, and actions.\n- **Accents:** A single vibrant azure gradient (`#3B8CF5` to `#5AA7FF`) highlighting the active \"All\" chip and active \"Home\" navigation pill, paired with tiny coral (`#E8573A`) and warm gold (`#F5B223`) indicators.\n- **Content Hierarchy:**\n  - **Header:** User profile greetings (\"Hi, Aria\" / \"Where to next?\") alongside a quick location pill (\"Bali, Indonesia\").\n  - **Hero Title & Search:** 2-line bold \"Explore the world\" heading above a full-round pill search bar with filter trigger.\n  - **Horizontal Featured Cards:** Tall cards for Kyoto and Santorini with floating rating badges, save action buttons, and frosted bottom detail panels.\n  - **Popular Trips:** Structured list card showcasing Lake Bled with duration, rating, and transparent pricing.\n  - **Floating Dock:** Soft frosted pill bottom navigation bar with icons and labels for Home, Explore, Trips, and Profile."
+   },
+   {
+    "suggestion": "Design the destination detail screen for Kyoto, Japan"
+   },
+   {
+    "suggestion": "Create the Explore / Map search view"
+   },
+   {
+    "suggestion": "Generate the user's saved Trips & booking itinerary screen"
+   }
+  ],
+  "projectId": "11564962150265373680",
+  "sessionId": "13171597042745746334"
+ },
+ "LIGHT-explore": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Roam Light",
+         "theme": {
+          "bodyFont": "PLUS_JAKARTA_SANS",
+          "colorMode": "LIGHT",
+          "colorVariant": "TONAL_SPOT",
+          "customColor": "#3B8CF5",
+          "designMd": "# Roam travel booking app (code.in.30s)\nDestination explorer + booking mobile app. Soft glassmorphism + clean minimal: frosted translucent pills over photos (backdrop blur, white 20-30% fill, thin white border), 20px radius cards, full-round pill chips and search, soft diffuse shadows, Plus Jakarta Sans, thin rounded line icons, real travel photography (mountains, beaches, lakes, old towns). NO emoji, NO serif fonts, NO illustrations.\n## Light: background white #FFFFFF with a frosted pale-sky gradient wash at the top (#E6F2FD to #F4F9FF to white). Cards white with soft blue-grey shadow. Ink #101C2C, secondary text #8A94A6. ONE azure accent gradient #3B8CF5 to #5AA7FF for the active chip, primary CTA and active nav icon. Tiny accents only: coral #E8573A for heart/like, gold #F5B223 for rating stars.",
+          "headlineFont": "PLUS_JAKARTA_SANS",
+          "overrideNeutralColor": "#F4F9FF",
+          "overridePrimaryColor": "#3B8CF5",
+          "overrideSecondaryColor": "#5AA7FF",
+          "overrideTertiaryColor": "#E8573A",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/17175220052178294164",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "1866",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzRjNWYzMjIyM2JhNzQwZmU5MWNhN2UwZDcxN2UwZTk4EgsSBxDnsaWX4xEYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTU2NDk2MjE1MDI2NTM3MzY4MA&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/11564962150265373680/files/3e0c6acc66404997bca97d03f1700fba"
+       },
+       "id": "8749f6d62537473da645bc6158c20938",
+       "name": "projects/11564962150265373680/screens/8749f6d62537473da645bc6158c20938",
+       "prompt": "Mobile travel booking / destination explorer app called \"Roam\". Explore screen in clean LIGHT mode: white #FFFFFF background with a soft frosted pale-sky gradient wash at the top (#E6F2FD fading to #F4F9FF then white). White cards with soft diffuse blue-grey shadows. Typography in Plus Jakarta Sans everywhere (rounded geometric sans, NO serif). Ink #101C2C, secondary slate #8A94A6. ONE azure accent gradient #3B8CF5 to #5AA7FF used for the active chip, primary actions, and the active bottom-nav item. Accents: coral #E8573A heart icon, gold #F5B223 rating star. NO emoji, use clean line icons (Material Symbols or SVG). Screen fits 390x844 mobile viewport with airy spacing.\n\nLayout & Content:\n1. Header:\n   - Clean top bar with bold title \"Explore\" (font-extrabold text-2xl text-[#101C2C]), and on the right a circular frosted/white glass bell notification button with a subtle dot badge.\n2. Search & Filter:\n   - Pill-shaped search bar: white background with soft shadow or subtle translucent glass border, search icon, placeholder text \"Search places, hotels\u2026\", and on the right an elegant circular azure or soft tinted filter icon button with slider icon.\n3. Category Filter Chips row (horizontal scroll/row):\n   - \"Beaches\" (Active: azure gradient #3B8CF5 to #5AA7FF, white text, pill shape, soft azure glow shadow).\n   - \"Mountains\" (Inactive: clean white pill, thin border, #8A94A6 text).\n   - \"Cities\" (Inactive pill).\n   - \"Lakes\" (Inactive pill).\n   - \"Forests\" (Inactive pill).\n4. Big Featured Card (Full width ~350x330, 24px rounded corners, overflow hidden, relative, high quality travel photography of Maldives tropical turquoise lagoon with overwater bungalows):\n   - Overlaid elements with frosted translucent glass pills (backdrop-blur-md, bg-white/25, border border-white/40, text-white shadow-sm):\n     - Top-left: frosted pill badge \"Trending\" with a small flame/sparkle line icon.\n     - Top-right: circular frosted glass button with coral #E8573A heart icon.\n     - Bottom overlay container: frosted glass panel (backdrop-blur-md bg-white/30 border border-white/40 p-4 rounded-2xl mx-3 mb-3 text-white):\n       - Destination title \"Maafushi Island, Maldives\" with location pin.\n       - Rating row: gold #F5B223 star icon, \"4.9\", \"(2.1k reviews)\" in translucent white text.\n       - Price & Action row: \"$899\" with \"/person\" label, and on the right a round frosted button with arrow forward icon.\n5. \"Nearby escapes\" Section:\n   - Section heading: \"Nearby escapes\" with a subtle \"See all\" text link.\n   - 2-column grid with 2 smaller photo cards (rounded-2xl, overflow hidden, shadow-sm):\n     - Card 1: Swiss Alps dramatic snowy peaks & green valley, destination name \"Zermatt, Swiss Alps\", rating 4.8, price \"$640/person\".\n     - Card 2: Amalfi Coast cliffside pastel village by the sea, destination name \"Positano, Amalfi\", rating 4.9, price \"$720/person\".\n6. Floating Bottom Navigation Bar:\n   - Floating pill navbar (backdrop-blur-xl bg-white/85 border border-white/60 shadow-xl shadow-slate-300/40 rounded-full px-4 py-2 mx-auto):\n     - \"Home\" (icon: home, label: Home, inactive slate-400)\n     - \"Explore\" (Active: azure gradient #3B8CF5 to #5AA7FF rounded-full px-3.5 py-1.5 text-white shadow-md shadow-primary/30 with explore/compass icon + label)\n     - \"Trips\" (icon: luggage / briefcase, label: Trips, inactive slate-400)\n     - \"Profile\" (icon: person, label: Profile, inactive slate-400)",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VzgEJQ1WYycuLFQoFgNou8ckaHFJtQ1zUxNX4cTDzfWuXidlDB21jdBvA_r7rHSabJ28rRikHONaN749IdTvD-3WbSwNud8MrhZPC9gYSPp6UR7_ej8IsFQSvMpOEU9rT4DQfUoepkDfyv8Wu7Zro9VHzBw0eEA_UsgneVQMsklIMrrLgL5U7GI33oXR_ZEglA880cTWsBbA00TNI7L5jQqQAwJ3VC8YSdw8uYDLtyfTxZV4URCxivVpc",
+        "name": "projects/11564962150265373680/files/b58f7bbba4ec4e63b2452fd84a1c06bd"
+       },
+       "theme": {
+        "bodyFont": "PLUS_JAKARTA_SANS",
+        "colorMode": "LIGHT",
+        "colorVariant": "TONAL_SPOT",
+        "customColor": "#3B8CF5",
+        "headlineFont": "PLUS_JAKARTA_SANS",
+        "overrideNeutralColor": "#F4F9FF",
+        "overridePrimaryColor": "#3B8CF5",
+        "overrideSecondaryColor": "#5AA7FF",
+        "overrideTertiaryColor": "#E8573A",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Roam - Explore",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "Here is the **Explore** screen for **Roam**, crafted to match your design system and specifications:\n\n### Design Highlights\n- **Palette & Atmosphere**: Soft frosted pale-sky gradient background (`#E6F2FD` to `#F4F9FF` to pure white) with deep ink typography (`#101C2C`), secondary slate details (`#8A94A6`), and the signature azure gradient (`#3B8CF5` to `#5AA7FF`).\n- **Header & Search**: Minimalist \"Explore\" heading accompanied by a frosted circular notification bell button and a full-round pill search bar (\"Search places, hotels\u2026\") with an azure filter action.\n- **Filter Chips**: Pill filter carousel featuring the active \"Beaches\" chip with the signature azure gradient and subtle glow, followed by clean frosted inactive chips (\"Mountains\", \"Cities\", \"Lakes\").\n- **Featured Maldives Hero Card**: Large 24px rounded card with tropical turquoise lagoon imagery, layered with frosted glass pills (backdrop blur, white ~25% fill, subtle white border) for the \"Trending\" tag, coral heart favorite button, destination details, gold star rating (4.9 with 2.1k reviews), and price badge with frosted arrow CTA.\n- **Nearby Escapes**: Two-column visual grid showcasing Zermatt (Swiss Alps) and Positano (Amalfi Coast) with crisp metadata pills and clean price tags.\n- **Floating Bottom Nav**: Translucent frosted glass floating pill with active azure gradient on \"Explore\" alongside Home, Trips, and Profile destinations."
+   },
+   {
+    "suggestion": "Create the destination detail view for Maafushi Island, Maldives"
+   },
+   {
+    "suggestion": "Design the Trips / Saved bookmarks screen"
+   },
+   {
+    "suggestion": "Add interactive booking date selector modal to Explore"
+   }
+  ],
+  "projectId": "11564962150265373680",
+  "sessionId": "8669992899188817785"
+ },
+ "LIGHT-detail": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Roam Light",
+         "theme": {
+          "bodyFont": "PLUS_JAKARTA_SANS",
+          "colorMode": "LIGHT",
+          "colorVariant": "TONAL_SPOT",
+          "customColor": "#3B8CF5",
+          "designMd": "# Roam travel booking app (code.in.30s)\nDestination explorer + booking mobile app. Soft glassmorphism + clean minimal: frosted translucent pills over photos (backdrop blur, white 20-30% fill, thin white border), 20px radius cards, full-round pill chips and search, soft diffuse shadows, Plus Jakarta Sans, thin rounded line icons, real travel photography (mountains, beaches, lakes, old towns). NO emoji, NO serif fonts, NO illustrations.\n## Light: background white #FFFFFF with a frosted pale-sky gradient wash at the top (#E6F2FD to #F4F9FF to white). Cards white with soft blue-grey shadow. Ink #101C2C, secondary text #8A94A6. ONE azure accent gradient #3B8CF5 to #5AA7FF for the active chip, primary CTA and active nav icon. Tiny accents only: coral #E8573A for heart/like, gold #F5B223 for rating stars.",
+          "headlineFont": "PLUS_JAKARTA_SANS",
+          "overrideNeutralColor": "#F4F9FF",
+          "overridePrimaryColor": "#3B8CF5",
+          "overrideSecondaryColor": "#5AA7FF",
+          "overrideTertiaryColor": "#E8573A",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/17175220052178294164",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "1768",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2Y2M2M3MTkwYjhhYTQ4ZjU4MjI5Y2EzN2M5NGE5M2VlEgsSBxDnsaWX4xEYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTU2NDk2MjE1MDI2NTM3MzY4MA&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/11564962150265373680/files/cef2638eb0534523b8bbae1d6946e8c6"
+       },
+       "id": "ffcacb131b194bdeb6652e0c06f48712",
+       "name": "projects/11564962150265373680/screens/ffcacb131b194bdeb6652e0c06f48712",
+       "prompt": "Create a mobile Destination Detail screen for the travel booking app \"Roam\" (390x844 viewport).\nTheme & Style:\n- LIGHT mode: white (#FFFFFF) background with soft frosted pale-sky gradient wash at top.\n- Typography: Plus Jakarta Sans (rounded geometric sans, clean hierarchy).\n- Colors: Ink #101C2C, secondary muted #8A94A6, azure accent gradient #3B8CF5 to #5AA7FF.\n- Accents: coral #E8573A heart icon, gold #F5B223 rating star.\n- Frosted glassmorphism: frosted translucent glass pills over photos (backdrop-blur-md, white/25% fill, border border-white/40).\n- NO emoji. Thin rounded modern icons (e.g. Material Symbols or Lucide icons). NO bottom nav on this detail screen.\n\nScreen Layout:\n1. Top Hero Section (~45% height):\n   - High-quality scenic photo of Lake Brienz with turquoise water and Swiss Alps mountains, bottom corners rounded 28px (`rounded-b-[28px] overflow-hidden`).\n   - Top floating actions with safe-area spacing: Frosted round back button on the top-left (circular glass pill with chevron-left), and frosted round favorite button on the top-right with coral #E8573A heart icon.\n   - Overlaid at the bottom-right of the hero: a row of 3 small rounded thumbnail previews (scenic angles/chalet/lake) with frosted borders and active indicator.\n   - Overlaid at the bottom-left or bottom pill: clean subtle indicator or subtle glass gradient.\n\n2. Destination Header (Below hero on crisp white):\n   - Destination title: \"Lake Brienz\" in bold font-extrabold text-2xl text-ink.\n   - Location row: location pin icon with \"Interlaken, Switzerland\" in text-secondary font-medium text-sm.\n   - Meta info badge row: Gold star icon with \"4.9\" bold and \"(1.2k reviews)\" in muted text, alongside a soft pale azure pill \"5 days\" or \"All-Inclusive\".\n\n3. \"Top Facilities\" Section:\n   - Section heading: \"Top Facilities\" (semibold, text-ink).\n   - Horizontal row of 4 rounded-2xl icon tiles on soft pale sky backgrounds (#EBF4FF or sky-50), with subtle azure/ink icons and clean labels below:\n     * Wi-Fi (\"Fast Wi-Fi\")\n     * Dinner (\"Breakfast & Dinner\")\n     * Pool (\"Infinity Pool\")\n     * Hiking (\"Guided Hiking\")\n\n4. \"Description\" Section:\n   - Section heading: \"About Destination\" or \"Description\".\n   - 3 lines of elegant, legible muted body text (#5A6679 or secondary): \"Nestled amidst the towering Bernese Oberland peaks, Lake Brienz boasts crystalline turquoise waters fed by alpine glaciers. Experience serene boat excursions, secluded chalet stays, and breathtaking hiking trails.\"\n   - Inline/following azure text button: \"Read more\" with subtle arrow or link styling.\n\n5. Sticky Bottom Booking Bar:\n   - Fixed at the bottom of the screen with a clean frosted blur and soft top border.\n   - Left side: Price display: \"$1,250\" in bold text-2xl text-ink with \"/ person\" in text-xs text-secondary below or beside.\n   - Right side: Eye-catching \"Book Now\" CTA button with the signature azure gradient (from #3B8CF5 to #5AA7FF), rounded-full, smooth shadow, bold white typography with a trailing arrow icon.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1X4-ZS51-V7Q7IwLn6DP_U9HceLs6eBogDwioD-oIJc4gaehUjyIl7y-QZcshJx0C2xNH18Wgere3nz4gtudgDl5e8nTLGLyJO2eYJVPbOtxqg8pfyc-azs-KZmlWfpdFDPAjQgB5wWX9KhDTtSyEvLPLvjtRmzulb7kb_7S-6pLueccCEEXC3pMpNMLBYiJwQcGGXeDnnXtcukjDJSQDVdcwXUKNl5s3BKadcQ2gkc9ONSyrx6DVD9Ihie",
+        "name": "projects/11564962150265373680/files/a4a6738e1c434139a485828c32843034"
+       },
+       "theme": {
+        "bodyFont": "PLUS_JAKARTA_SANS",
+        "colorMode": "LIGHT",
+        "colorVariant": "TONAL_SPOT",
+        "customColor": "#3B8CF5",
+        "headlineFont": "PLUS_JAKARTA_SANS",
+        "overrideNeutralColor": "#F4F9FF",
+        "overridePrimaryColor": "#3B8CF5",
+        "overrideSecondaryColor": "#5AA7FF",
+        "overrideTertiaryColor": "#E8573A",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Roam - Destination Detail",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "Here is the **Destination Detail** screen for **Lake Brienz** in the Roam app:\n\n### Design Highlights\n- **Hero Imagery & Glass Controls**: Scenic high-resolution photography of Lake Brienz with `rounded-b-[28px]` corners. Overlaid with frosted translucent circular actions (back navigation and coral `#E8573A` heart) and 3 rounded thumbnail previews at the bottom right.\n- **Header & Meta Information**: Bold Plus Jakarta Sans typography for \"Lake Brienz\", an Interlaken location row with a pin icon, and pill badges showcasing the 4.9 rating (with gold star) and trip duration (\"5 days\").\n- **Top Facilities**: 4 balanced rounded tiles on pale sky surfaces featuring clean line icons and labels: Fast Wi-Fi, Gourmet dining, Infinity Pool, and Guided Hikes.\n- **Description & Sticky Booking Bar**: Muted, readable 3-line overview with an azure \"Read more\" toggle, anchored by a bottom sticky booking bar displaying the **$1,250 / person** rate and a prominent rounded **Book Now** button with the signature azure gradient (`#3B8CF5` to `#5AA7FF`). Bottom navigation is omitted to focus entirely on the booking conversion flow."
+   },
+   {
+    "suggestion": "Generate the 'Select Dates & Guests' booking step modal"
+   },
+   {
+    "suggestion": "Add a traveler reviews carousel section"
+   },
+   {
+    "suggestion": "Generate a Dark Mode variant of this Destination Detail screen"
+   }
+  ],
+  "projectId": "11564962150265373680",
+  "sessionId": "16173833336156796698"
+ }
+}

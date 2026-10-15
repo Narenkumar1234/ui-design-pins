@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Roam - Lake Brienz Details</title>
+<!-- Plus Jakarta Sans & Public Sans Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            roam: {
+              bg: '#0F1E2E',
+              wash: '#17324A',
+              surface: '#1A2B3E',
+              ink: '#F2F6FB',
+              muted: '#8A9BB0',
+              coral: '#E8573A',
+              gold: '#F5B223',
+              azure: {
+                start: '#3B8CF5',
+                end: '#5AA7FF'
+              }
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          spacing: {},
+          fontFamily: {
+            headline: ["Plus Jakarta Sans", "sans-serif"],
+            display: ["Plus Jakarta Sans", "sans-serif"],
+            body: ["Plus Jakarta Sans", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          },
+          fontSize: {}
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Hide scrollbars smoothly */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    * {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0F1E2E] text-[#F2F6FB] font-headline antialiased min-h-screen flex justify-center selection:bg-[#3B8CF5]/30 selection:text-white">
+<!-- Mobile Device Shell Viewport Container (390px x 844px style canvas) -->
+<div class="relative w-full max-w-[420px] min-h-screen bg-[#0F1E2E] shadow-2xl overflow-x-hidden flex flex-col pb-28">
+<!-- Atmospheric Top Teal Gradient Wash -->
+<div class="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-[#17324A]/60 via-[#17324A]/20 to-transparent pointer-events-none z-0"></div>
+<!-- 1. TOP HERO SECTION -->
+<div class="relative w-full h-[410px] rounded-b-[28px] overflow-hidden z-10 shadow-lg shadow-black/40">
+<!-- Alpine Landscape Hero Photo -->
+<img alt="Lake Brienz" class="w-full h-full object-cover select-none" data-alt="A breathtaking landscape photograph of Lake Brienz in Switzerland featuring pristine turquoise crystal clear glacial water surrounded by towering snow capped Bernese Alps. Soft cinematic morning sunlight illuminates the lush green pine forests and dramatic rugged mountain cliffs. Shot with high clarity in a calm, modern editorial travel aesthetic with deep navy shadows and bright azure reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoqwHuBkcVLH9mciDnBtGMdOe9l87mmD7VYAwwMnGeRY7qPclgROs5dDw-vIiZZWJkpbubSPmvgSKupVpyxvxxeWUeW3r-Zcb8c6D7-9g9q4sSu75-PQuUKKsrgmVTwYUeZrvMIK88CsfDUU3yusyKDonWNS-Dutv6eoTX_eAs23TOciTCXpsveHsRIWn_av__gdwBPefrFF19H_O-npIB9-e6vHDnHzuN9tRTJIGjUuXXEf-FRQMpmMy-oOzKO2z07d4ZCS-3dK8V"/>
+<!-- Subtle Dark Overlay for Pill Readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 pointer-events-none"></div>
+<!-- Floating Controls: Header Actions (Top row) -->
+<div class="absolute top-0 left-0 right-0 pt-12 px-5 flex items-center justify-between z-20">
+<!-- Back Button -->
+<button aria-label="Back" class="w-11 h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white active:scale-95 transition duration-150 shadow-md" onclick="window.history.back()">
+<span class="material-symbols-outlined text-[22px]">chevron_left</span>
+</button>
+<!-- Right Action Cluster: Share + Favorite -->
+<div class="flex items-center gap-2.5">
+<button aria-label="Share destination" class="w-11 h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white active:scale-95 transition duration-150 shadow-md">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button aria-label="Save to favorites" class="w-11 h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center active:scale-95 transition duration-150 shadow-md group" id="favorite-btn" onclick="toggleFavorite(this)">
+<span class="material-symbols-outlined fill-icon text-[#E8573A] text-[22px] transition-transform duration-200 group-hover:scale-110">favorite</span>
+</button>
+</div>
+</div>
+<!-- Floating Thumbnail Gallery Preview (Bottom Right of Hero) -->
+<div class="absolute bottom-4 right-4 z-20">
+<div class="flex items-center gap-2 p-1.5 rounded-2xl bg-[#0F1E2E]/60 backdrop-blur-md border border-white/15 shadow-xl">
+<!-- Thumbnail 1 (Active) -->
+<div class="relative w-12 h-12 rounded-xl overflow-hidden ring-2 ring-[#3B8CF5] cursor-pointer">
+<img alt="Lake view preview" class="w-full h-full object-cover" data-alt="Close up photography of panoramic Lake Brienz with calm cyan waters and wooden dock in foreground against dramatic Swiss mountain slopes. Peaceful mountain morning aesthetic matching deep blue travel tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQi3m76LGzeyfo-nyCSYFeY4vxdgBzVw1L_tAhpFIP2Gyr_Q7EvQij0TOpYUz7wBFxFN7Lollb4RvK-9-PCytW4NjUkw78yct3IkLNl_0AztX1pTI0_g2GeVp-V-QIK7XDy6_eng7oOWuS4hFLwKykh4FBe9vKfam5j0UZV2zalJwdc-KAsQQvPaqznj_cpXC2YNnIQ5z4PLs-cigs9I2mpQSdhp7VRricJ_w-j3UEaMfZXAiuvwMSUj5Xc2JNzLgJ5pWKffqpjjIr"/>
+</div>
+<!-- Thumbnail 2 -->
+<div class="relative w-12 h-12 rounded-xl overflow-hidden opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+<img alt="Boat cruise preview" class="w-full h-full object-cover" data-alt="A vintage Swiss passenger steam boat gently cruising across crystal clear turquoise alpine lake waters leaving gentle ripples with towering forested cliffs in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnVbvIOvzrZjI7C2ICGZ02htG9UxMrAPWXzI2H4Kx9aECo4NS6VInmlimYNU1RFDeYGr0KL2jFvCQgkEu1GY6kbcYlchNYeVrTlZysPJYEgcSw-i8vyJ-YpOoE0GzNj0-FjyCTc4rW4sGg_nlqHgfljzNNK1F43xYQKYz9GBJVGnwAr7bZhP7X7u5ljXDCbPTtfuZirmK_PsMvm3GfIl3k_GKfRvutfiT6SlgjAG05ijVdObYmCpd3ezXFk42Iq3YozrQ08rQuGb-L"/>
+</div>
+<!-- Thumbnail 3 with counter pill -->
+<div class="relative w-12 h-12 rounded-xl overflow-hidden opacity-80 hover:opacity-100 transition-opacity cursor-pointer flex items-center justify-center bg-black/40">
+<img alt="Chalet preview" class="w-full h-full object-cover absolute inset-0 -z-10" data-alt="A traditional Swiss alpine wooden chalet nestled in the emerald pine hills above an azure glacial lake with colorful flower boxes on the balconies." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2FtW6VFn3T8spd4BgR_3VVeSi6tDLQlcgaE6W_P-ArtHJTuuQWre1dvlLCRVMZp4roLuIx0OLAYeoyTwUO4KW-H062xzdw4RlGn9HZ5rMZC1TZogElsUAbTNlyIoCPfL0Azxkfn5_no3fHIKpXP2vcundVFwon6tqHxuOdUP4VVEA5DNf9RBoTpNoGfepoRDGh32WJTySUkO30Hwo64sCx72U4xTPlqiZLD5WVj3G0cYfxxrgDCYa_9pwZ6Csq6gSWhLluxKq7W9o"/>
+<div class="absolute inset-0 bg-black/50 backdrop-blur-[2px] flex items-center justify-center">
+<span class="font-headline font-bold text-xs text-white tracking-wide">+14</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Left Badge on Hero: Verified Destination -->
+<div class="absolute bottom-4 left-5 z-20">
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/25 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-sm">
+<span class="material-symbols-outlined text-sm text-[#5AA7FF]">verified</span>
+<span>Top Pick 2025</span>
+</div>
+</div>
+</div>
+<!-- 2. DESTINATION DETAILS MAIN CONTENT -->
+<main class="relative z-10 px-5 pt-6 pb-6 flex-1 flex flex-col gap-6">
+<!-- Header & Location Section -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-2">
+<h1 class="font-headline font-extrabold text-[28px] leading-tight text-[#F2F6FB] tracking-tight">
+            Lake Brienz
+          </h1>
+<!-- Interactive Map Pill Button -->
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#1A2B3E] border border-white/10 text-xs font-medium text-[#5AA7FF] active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">map</span>
+<span>View Map</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 text-sm text-[#8A9BB0]">
+<span class="material-symbols-outlined text-[#3B8CF5] text-lg">location_on</span>
+<span class="font-medium text-[#8A9BB0]">Interlaken, Bernese Oberland, Switzerland</span>
+</div>
+</div>
+<!-- Meta Info Pills Row (Rating, Reviews & Duration) -->
+<div class="flex items-center gap-2.5 flex-wrap">
+<!-- Rating Pill -->
+<div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#1A2B3E]/90 border border-white/10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[#F5B223] fill-icon text-base">star</span>
+<span class="font-bold text-sm text-[#F2F6FB]">4.9</span>
+<span class="text-xs text-[#8A9BB0] font-normal">(1.2k reviews)</span>
+</div>
+<!-- Duration Pill -->
+<div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#1A2B3E]/90 border border-white/10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[#5AA7FF] text-base">schedule</span>
+<span class="font-medium text-xs text-[#F2F6FB]">5 days / 4 nights</span>
+</div>
+<!-- Weather / Season Tag -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1A2B3E]/90 border border-white/10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[#8A9BB0] text-sm">thermostat</span>
+<span class="font-medium text-xs text-[#8A9BB0]">21°C Mild</span>
+</div>
+</div>
+<!-- Top Facilities Section -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h2 class="font-headline font-semibold text-base text-[#F2F6FB]">Top Facilities</h2>
+<button class="text-xs font-medium text-[#5AA7FF] hover:underline">See all (12)</button>
+</div>
+<!-- Horizontal Grid of 4 Soft Glass Tiles -->
+<div class="grid grid-cols-4 gap-2.5">
+<!-- 1. Wi-Fi -->
+<div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#1A2B3E]/90 border border-white/[0.08] hover:border-white/20 transition-colors duration-200">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#5AA7FF] mb-2">
+<span class="material-symbols-outlined text-xl">wifi</span>
+</div>
+<span class="text-xs font-medium text-[#F2F6FB]">Wi-Fi</span>
+</div>
+<!-- 2. Dinner -->
+<div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#1A2B3E]/90 border border-white/[0.08] hover:border-white/20 transition-colors duration-200">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#5AA7FF] mb-2">
+<span class="material-symbols-outlined text-xl">restaurant</span>
+</div>
+<span class="text-xs font-medium text-[#F2F6FB]">Dinner</span>
+</div>
+<!-- 3. Pool -->
+<div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#1A2B3E]/90 border border-white/[0.08] hover:border-white/20 transition-colors duration-200">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#5AA7FF] mb-2">
+<span class="material-symbols-outlined text-xl">pool</span>
+</div>
+<span class="text-xs font-medium text-[#F2F6FB]">Pool</span>
+</div>
+<!-- 4. Hiking -->
+<div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#1A2B3E]/90 border border-white/[0.08] hover:border-white/20 transition-colors duration-200">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#5AA7FF] mb-2">
+<span class="material-symbols-outlined text-xl">hiking</span>
+</div>
+<span class="text-xs font-medium text-[#F2F6FB]">Hiking</span>
+</div>
+</div>
+</section>
+<!-- Description Section -->
+<section class="flex flex-col gap-2.5">
+<h2 class="font-headline font-semibold text-base text-[#F2F6FB]">Description</h2>
+<p class="text-sm leading-relaxed text-[#8A9BB0] line-clamp-3 font-normal transition-all duration-300" id="desc-text">
+          Nestled among the dramatic Bernese Oberland peaks, Lake Brienz is renowned for its surreal turquoise glacial waters and serene mountain panoramas. Glide across mirror-like waters on historic paddle steamers, discover idyllic wooden chalet hamlets in Iseltwald, and hike picturesque trails beside thundering Giessbach Falls. An unforgettable alpine retreat tailored for both slow travel and mountain adventures.
+        </p>
+<div>
+<button class="text-sm font-semibold text-[#3B8CF5] hover:text-[#5AA7FF] inline-flex items-center gap-0.5 transition-colors" id="read-more-btn" onclick="toggleDescription()">
+<span>Read more</span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Trip Highlights Bento Strip -->
+<section class="flex flex-col gap-2.5 pt-1">
+<h2 class="font-headline font-semibold text-base text-[#F2F6FB]">Trip Highlights</h2>
+<div class="grid grid-cols-2 gap-3">
+<!-- Bento card 1 -->
+<div class="p-3.5 rounded-2xl bg-[#1A2B3E]/80 border border-white/[0.08] flex items-start gap-3">
+<div class="p-2 rounded-xl bg-[#3B8CF5]/10 text-[#3B8CF5]">
+<span class="material-symbols-outlined text-xl">directions_boat</span>
+</div>
+<div>
+<p class="text-xs font-bold text-[#F2F6FB]">Steamer Cruise</p>
+<p class="text-[11px] text-[#8A9BB0] mt-0.5">Giessbach &amp; Iseltwald</p>
+</div>
+</div>
+<!-- Bento card 2 -->
+<div class="p-3.5 rounded-2xl bg-[#1A2B3E]/80 border border-white/[0.08] flex items-start gap-3">
+<div class="p-2 rounded-xl bg-[#3B8CF5]/10 text-[#3B8CF5]">
+<span class="material-symbols-outlined text-xl">hotel</span>
+</div>
+<div>
+<p class="text-xs font-bold text-[#F2F6FB]">Chalet Suites</p>
+<p class="text-[11px] text-[#8A9BB0] mt-0.5">Lakeview balcony</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Included Badges Pill List -->
+<div class="p-4 rounded-2xl bg-[#1A2B3E]/50 border border-white/[0.06] flex items-center justify-between text-xs text-[#8A9BB0]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#5AA7FF] text-base">check_circle</span>
+<span>Free Cancellation up to 48 hrs</span>
+</div>
+<div class="flex items-center gap-1 font-medium text-[#F2F6FB]">
+<span class="material-symbols-outlined text-sm text-[#5AA7FF]">shield</span>
+<span>Insured</span>
+</div>
+</div>
+</main>
+<!-- 3. FIXED BOTTOM STICKY BAR (Pricing & Book Now CTA) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+<div class="w-full max-w-[420px] bg-[#0F1E2E]/92 backdrop-blur-xl border-t border-white/10 px-5 py-3.5 flex items-center justify-between gap-4 pointer-events-auto shadow-2xl shadow-black/80">
+<!-- Left: Price Info -->
+<div class="flex flex-col">
+<span class="text-[11px] font-medium uppercase tracking-wider text-[#8A9BB0]">Total Price</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline font-extrabold text-2xl text-[#F2F6FB] tracking-tight">$1,250</span>
+<span class="text-xs font-medium text-[#8A9BB0]">/ person</span>
+</div>
+</div>
+<!-- Right: Primary Azure Action CTA Button -->
+<button class="flex-1 max-w-[210px] bg-gradient-to-r from-[#3B8CF5] to-[#5AA7FF] hover:from-[#357ee0] hover:to-[#4e9df7] active:scale-[0.98] text-white font-headline font-bold text-sm py-3.5 px-6 rounded-full shadow-lg shadow-[#3B8CF5]/30 flex items-center justify-center gap-2 transition-all duration-200" id="book-btn" onclick="handleBooking()">
+<span>Book Now</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Micro-interactions Javascript -->
+<script>
+    // Expand / Collapse Description logic
+    function toggleDescription() {
+      const desc = document.getElementById('desc-text');
+      const btn = document.getElementById('read-more-btn');
+      const isExpanded = !desc.classList.contains('line-clamp-3');
+
+      if (isExpanded) {
+        desc.classList.add('line-clamp-3');
+        btn.innerHTML = '<span>Read more</span><span class="material-symbols-outlined text-base">expand_more</span>';
+      } else {
+        desc.classList.remove('line-clamp-3');
+        btn.innerHTML = '<span>Show less</span><span class="material-symbols-outlined text-base">expand_less</span>';
+      }
+    }
+
+    // Toggle Favorite Animation
+    function toggleFavorite(btn) {
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon.classList.contains('fill-icon')) {
+        icon.classList.remove('fill-icon');
+        icon.classList.remove('text-[#E8573A]');
+        icon.classList.add('text-white');
+      } else {
+        icon.classList.add('fill-icon');
+        icon.classList.add('text-[#E8573A]');
+        icon.classList.remove('text-white');
+        
+        // Haptic-style subtle pop
+        btn.classList.add('scale-125');
+        setTimeout(() => {
+          btn.classList.remove('scale-125');
+        }, 180);
+      }
+    }
+
+    // Booking CTA Feedback
+    function handleBooking() {
+      const btn = document.getElementById('book-btn');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-base">progress_activity</span><span>Securing...</span>';
+      
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-base">check</span><span>Reserved!</span>';
+        btn.classList.remove('from-[#3B8CF5]', 'to-[#5AA7FF]');
+        btn.classList.add('bg-emerald-600');
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('bg-emerald-600');
+          btn.classList.add('from-[#3B8CF5]', 'to-[#5AA7FF]');
+        }, 2200);
+      }, 700);
+    }
+  </script>
+</body></html>
