@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Roam - Destination Explorer</title>
+<!-- Plus Jakarta Sans & Public Sans Font Family -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          spacing: {},
+          fontFamily: {
+            "headline": [
+              "Plus Jakarta Sans"
+            ],
+            "display": [
+              "Plus Jakarta Sans"
+            ],
+            "body": [
+              "Plus Jakarta Sans"
+            ],
+            "label": [
+              "Public Sans"
+            ]
+          },
+          fontSize: {}
+        },
+      },
+    }
+  </script>
+<style>
+    /* Custom Scrollbar suppression for clean horizontal chip list */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0F1E2E] text-[#F2F6FB] font-body min-h-screen flex justify-center antialiased selection:bg-[#3B8CF5] selection:text-white">
+<!-- Mobile Viewport Shell (390px x 844px context) -->
+<main class="w-full max-w-[390px] min-h-screen bg-[#0F1E2E] relative flex flex-col overflow-x-hidden shadow-2xl">
+<!-- Ambient subtle teal gradient wash at top -->
+<div class="absolute top-0 left-0 right-0 h-80 bg-gradient-to-b from-[#17324A] via-[#122438]/60 to-transparent pointer-events-none z-0"></div>
+
+<!-- App Header & Notification -->
+<section class="relative z-10 px-6 pt-3 pb-3 flex justify-between items-center">
+<div>
+<p class="text-xs uppercase tracking-wider font-semibold text-[#5AA7FF] mb-0.5">Discover World</p>
+<h1 class="font-headline font-bold text-2xl text-[#F2F6FB] tracking-tight">Explore</h1>
+</div>
+<button class="w-10 h-10 rounded-full bg-[#1A2B3E]/80 backdrop-blur-md border border-white/10 flex items-center justify-center text-[#F2F6FB] hover:border-white/20 active:scale-95 transition duration-150 relative">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#3B8CF5] ring-2 ring-[#0F1E2E]"></span>
+</button>
+</section>
+<!-- Scrollable Content Canvas -->
+<div class="relative z-10 flex-1 px-6 space-y-5 pb-28 pt-1">
+<!-- Search Bar -->
+<section>
+<div class="w-full rounded-full bg-[#1A2B3E] border border-white/10 px-4 py-2.5 flex items-center justify-between shadow-lg shadow-black/20 focus-within:border-[#5AA7FF]/50 transition-colors">
+<div class="flex items-center gap-3 flex-1">
+<span class="material-symbols-outlined text-[#8A9BB0] text-xl" data-icon="search">search</span>
+<input class="bg-transparent border-0 p-0 text-sm text-[#F2F6FB] placeholder-[#8A9BB0] focus:ring-0 w-full outline-none font-medium" placeholder="Search places, hotels…" type="text"/>
+</div>
+<button aria-label="Filter Options" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/15 flex items-center justify-center text-[#F2F6FB] active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-lg text-[#5AA7FF]" data-icon="tune">tune</span>
+</button>
+</div>
+</section>
+<!-- Category Filter Chips -->
+<section class="-mx-6 px-6 overflow-x-auto no-scrollbar flex items-center gap-2.5">
+<button class="rounded-full px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-[#3B8CF5] to-[#5AA7FF] shadow-sm flex-shrink-0 active:scale-95 transition-transform">
+          Beaches
+        </button>
+<button class="rounded-full px-5 py-2 text-sm font-medium bg-[#1A2B3E] border border-white/10 text-[#8A9BB0] hover:text-[#F2F6FB] hover:border-white/20 flex-shrink-0 active:scale-95 transition-transform">
+          Mountains
+        </button>
+<button class="rounded-full px-5 py-2 text-sm font-medium bg-[#1A2B3E] border border-white/10 text-[#8A9BB0] hover:text-[#F2F6FB] hover:border-white/20 flex-shrink-0 active:scale-95 transition-transform">
+          Cities
+        </button>
+<button class="rounded-full px-5 py-2 text-sm font-medium bg-[#1A2B3E] border border-white/10 text-[#8A9BB0] hover:text-[#F2F6FB] hover:border-white/20 flex-shrink-0 active:scale-95 transition-transform">
+          Lakes
+        </button>
+<button class="rounded-full px-5 py-2 text-sm font-medium bg-[#1A2B3E] border border-white/10 text-[#8A9BB0] hover:text-[#F2F6FB] hover:border-white/20 flex-shrink-0 active:scale-95 transition-transform">
+          Forests
+        </button>
+</section>
+<!-- Big Featured Photo Card -->
+<section>
+<article class="w-full h-[255px] rounded-3xl overflow-hidden relative border border-white/10 shadow-2xl bg-[#1A2B3E] flex flex-col justify-between p-3.5 group">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"  style="background-image: url('../img/maldives.jpg')"></div>
+<!-- Subtle darkening overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#0F1E2E]/90 via-black/10 to-black/30 pointer-events-none"></div>
+<!-- Top Badge & Favorite Button -->
+<div class="relative z-10 flex justify-between items-center w-full">
+<div class="bg-white/25 backdrop-blur-md border border-white/30 text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-sm text-[#F5B223]" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span>Trending</span>
+</div>
+<button aria-label="Save to favorites" class="w-9 h-9 rounded-full bg-white/25 backdrop-blur-md border border-white/30 flex items-center justify-center text-white active:scale-90 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-lg text-[#E8573A]" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<!-- Bottom Frosted Info Container -->
+<div class="relative z-10 w-full bg-[#0F1E2E]/75 backdrop-blur-xl border border-white/15 rounded-2xl p-4 shadow-lg">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="font-headline font-bold text-lg text-white leading-tight">Maafushi Island</h2>
+<div class="flex items-center gap-1 text-[#8A9BB0] text-xs mt-0.5">
+<span class="material-symbols-outlined text-sm text-[#5AA7FF]" data-icon="location_on">location_on</span>
+<span>Maldives, South Asia</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-white/10 px-2.5 py-1 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-sm text-[#F5B223]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-white">4.9</span>
+<span class="text-[10px] text-white/60 font-medium">(2.1k)</span>
+</div>
+</div>
+<!-- Price & Action Row -->
+<div class="flex justify-between items-center pt-2 border-t border-white/10 mt-2">
+<div class="flex items-baseline gap-1">
+<span class="font-headline font-bold text-xl text-white tracking-tight">$899</span>
+<span class="text-xs text-[#8A9BB0] font-normal">/ person</span>
+</div>
+<button class="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 border border-white/30 flex items-center justify-center text-white active:scale-95 transition-all shadow-sm group-hover:translate-x-0.5">
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- Nearby Escapes Section -->
+<section class="space-y-3.5">
+<div class="flex justify-between items-center">
+<h2 class="font-headline font-bold text-lg text-[#F2F6FB] tracking-tight">Nearby escapes</h2>
+<button class="text-xs font-semibold text-[#5AA7FF] hover:text-[#3B8CF5] transition-colors">See all</button>
+</div>
+<div class="grid grid-cols-2 gap-3.5">
+<!-- Card 1: Swiss Alps -->
+<article class="h-40 rounded-2xl relative overflow-hidden border border-white/10 bg-[#1A2B3E] flex flex-col justify-between p-2.5 group shadow-md">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"  style="background-image: url('../img/zermatt.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0F1E2E]/95 via-[#0F1E2E]/30 to-black/20 pointer-events-none"></div>
+<div class="relative z-10 flex justify-end">
+<button class="w-7 h-7 rounded-full bg-white/25 backdrop-blur-md border border-white/30 flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm text-[#E8573A]" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline font-bold text-sm text-white leading-tight">Zermatt</h3>
+<p class="text-[11px] text-[#8A9BB0] flex items-center gap-0.5 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-[#5AA7FF]" data-icon="pin_drop">pin_drop</span>
+                Switzerland
+              </p>
+<div class="flex justify-between items-baseline mt-1.5 pt-1.5 border-t border-white/10">
+<span class="text-xs font-bold text-[#F2F6FB]">$640</span>
+<span class="text-[10px] text-[#8A9BB0]">/ trip</span>
+</div>
+</div>
+</article>
+<!-- Card 2: Amalfi Coast -->
+<article class="h-40 rounded-2xl relative overflow-hidden border border-white/10 bg-[#1A2B3E] flex flex-col justify-between p-2.5 group shadow-md">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"  style="background-image: url('../img/cinque.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0F1E2E]/95 via-[#0F1E2E]/30 to-black/20 pointer-events-none"></div>
+<div class="relative z-10 flex justify-end">
+<button class="w-7 h-7 rounded-full bg-white/25 backdrop-blur-md border border-white/30 flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm text-[#8A9BB0] hover:text-[#E8573A]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline font-bold text-sm text-white leading-tight">Cinque Terre</h3>
+<p class="text-[11px] text-[#8A9BB0] flex items-center gap-0.5 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-[#5AA7FF]" data-icon="pin_drop">pin_drop</span>
+                Italy
+              </p>
+<div class="flex justify-between items-baseline mt-1.5 pt-1.5 border-t border-white/10">
+<span class="text-xs font-bold text-[#F2F6FB]">$720</span>
+<span class="text-[10px] text-[#8A9BB0]">/ trip</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+</div>
+<!-- Shared Component: BottomNavBar (Execution of Injected Styles) -->
+<!-- Screen intent is 'Explore', which matches the 2nd destination label exactly -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center px-3 py-2 pointer-events-none">
+<div class="w-full max-w-sm mx-auto mb-4 rounded-full bg-[#1A2B3E]/80 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 flex justify-around items-center px-3 py-2 pointer-events-auto">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#8A9BB0] hover:text-white px-3 py-1.5 transition-colors font-headline text-xs font-medium active:scale-95 transition-transform duration-150" href="#home">
+<span class="material-symbols-outlined text-xl mb-0.5" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<!-- Explore (Active Destination) -->
+<a class="flex flex-col items-center justify-center text-white bg-gradient-to-r from-[#3B8CF5] to-[#5AA7FF] rounded-full px-4 py-1.5 shadow-sm font-headline text-xs font-medium active:scale-95 transition-transform duration-150" href="#explore">
+<span class="material-symbols-outlined text-xl mb-0.5" data-icon="explore">explore</span>
+<span>Explore</span>
+</a>
+<!-- Trips (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#8A9BB0] hover:text-white px-3 py-1.5 transition-colors font-headline text-xs font-medium active:scale-95 transition-transform duration-150" href="#trips">
+<span class="material-symbols-outlined text-xl mb-0.5" data-icon="luggage">luggage</span>
+<span>Trips</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#8A9BB0] hover:text-white px-3 py-1.5 transition-colors font-headline text-xs font-medium active:scale-95 transition-transform duration-150" href="#profile">
+<span class="material-symbols-outlined text-xl mb-0.5" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</div>
+</nav>
+</main>
+</body></html>
