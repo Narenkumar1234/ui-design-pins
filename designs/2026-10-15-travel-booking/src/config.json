@@ -1,0 +1,105 @@
+{
+ "app": "Roam",
+ "keyword": "ROAM",
+ "out": "../final",
+ "bg_photo": "../img/dolomites.jpg",
+ "ghost": "ROAM",
+ "light": [
+  "../final/screens/light-home.png",
+  "../final/screens/light-explore.png",
+  "../final/screens/light-detail.png"
+ ],
+ "dark": [
+  "../final/screens/dark-home.png",
+  "../final/screens/dark-explore.png",
+  "../final/screens/dark-detail.png"
+ ],
+ "hook": "If I were designing<br>your <b>travel app</b>",
+ "hook_sub": "Soft glass, big photos, one azure accent. Light + dark.",
+ "cover_chips": [
+  {
+   "pos": "left:40px;top:930px",
+   "html": "<span class=\"st8\">\u2605</span> 4.9 &nbsp;Lago di Braies<small>1.2k reviews \u00b7 Dolomites</small>"
+  },
+  {
+   "pos": "right:52px;top:712px",
+   "cls": "btn",
+   "html": "Book Now &nbsp;\u2192<small style=\"color:#fff\">$1,250 / person</small>"
+  }
+ ],
+ "light_title": "Frosted glass,<br><b>photos first</b>",
+ "light_sub": "Pill chips, 20px cards, glass pills floating over every photo.",
+ "callouts": [
+  {
+   "label": "Pill chips",
+   "lx": 236,
+   "ly": 674,
+   "dx": 402,
+   "dy": 693
+  },
+  {
+   "label": "Glass panel",
+   "lx": 222,
+   "ly": 831,
+   "dx": 405,
+   "dy": 850
+  },
+  {
+   "label": "20px cards",
+   "lx": 232,
+   "ly": 1031,
+   "dx": 402,
+   "dy": 1050
+  },
+  {
+   "label": "Gradient CTA",
+   "lx": 700,
+   "ly": 1222,
+   "dx": 957,
+   "dy": 1190
+  }
+ ],
+ "dark_title": "Deep teal night,<br><b>same azure</b>",
+ "dark_sub": "Navy surfaces, not pure black. Glass still reads on photos.",
+ "dark_callouts": [
+  {
+   "label": "Azure chip",
+   "lx": 232,
+   "ly": 661,
+   "dx": 404,
+   "dy": 680
+  },
+  {
+   "label": "Glass on photo",
+   "lx": 196,
+   "ly": 811,
+   "dx": 414,
+   "dy": 830
+  },
+  {
+   "label": "Navy surfaces",
+   "lx": 196,
+   "ly": 1116,
+   "dx": 398,
+   "dy": 1135
+  },
+  {
+   "label": "Same CTA",
+   "lx": 720,
+   "ly": 1222,
+   "dx": 913,
+   "dy": 1190
+  }
+ ],
+ "cta_sub": "Roam travel app UI \u00b7 light + dark \u00b7 portfolio-ready.",
+ "benefits": [
+  "Home, Explore + Detail screens",
+  "Clean HTML + Tailwind",
+  "Working dark toggle, chips + likes",
+  "$3 kit \u00b7 link in DM"
+ ],
+ "pin_title": "Travel <b>Booking App</b><br>UI Design",
+ "pin_sub": "Soft glassmorphism \u00b7 light + dark screens for your next front-end project.",
+ "cover_top": 520,
+ "cover_ghost_y": 380
+}
