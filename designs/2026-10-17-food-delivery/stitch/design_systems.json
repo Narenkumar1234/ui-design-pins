@@ -1,0 +1,42 @@
+{
+ "LIGHT": {
+  "designSystem": {
+   "displayName": "Ember Light",
+   "theme": {
+    "bodyFont": "DM_SANS",
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#E8622C",
+    "designMd": "# Ember food delivery app (code.in.30s)\nCustomer food ordering mobile app. Warm editorial minimal style: elegant SERIF display headings (Newsreader, with one italic orange accent phrase), clean geometric sans (DM Sans) for all UI text, big real overhead food photography with soft warm shadows, 20px radius cards, full-round pill chips and pill search bar, round icon category chips, soft diffuse warm-brown shadows, thin rounded line icons. NO emoji, NO illustrations, NO neon, NO purple/blue.\n## Light: warm cream background #FBF4EC, cards white #FFFFFF with soft shadow rgba(120,70,40,0.10) and 1px #F0E3D6 border, ink espresso #2B1D14, secondary text #8C7B6E. ONE accent: orange #E8622C to terracotta #C9502A gradient for primary CTA, active chip, active nav, prices highlight. Peach tint #FDE3D2 for icon circles and soft chips. Gold #F2A93B for rating stars, small green #4E9A5B only for 'Free delivery'.",
+    "headlineFont": "NEWSREADER",
+    "overrideNeutralColor": "#FBF4EC",
+    "overridePrimaryColor": "#E8622C",
+    "overrideSecondaryColor": "#C9502A",
+    "overrideTertiaryColor": "#F2A93B",
+    "roundness": "ROUND_TWELVE"
+   }
+  },
+  "name": "assets/18121342965672964704",
+  "version": "1"
+ },
+ "DARK": {
+  "designSystem": {
+   "displayName": "Ember Dark",
+   "theme": {
+    "bodyFont": "DM_SANS",
+    "colorMode": "DARK",
+    "colorVariant": "FIDELITY",
+    "customColor": "#F0703A",
+    "designMd": "# Ember food delivery app (code.in.30s)\nCustomer food ordering mobile app. Warm editorial minimal style: elegant SERIF display headings (Newsreader, with one italic orange accent phrase), clean geometric sans (DM Sans) for all UI text, big real overhead food photography with soft warm shadows, 20px radius cards, full-round pill chips and pill search bar, round icon category chips, soft diffuse warm-brown shadows, thin rounded line icons. NO emoji, NO illustrations, NO neon, NO purple/blue.\n## Dark: warm espresso dark (NOT pure black, NOT blue): background #1B1411, cards/surfaces #2A201B with 1px rgba(255,236,220,0.08) border, ink #F8EDE3, secondary #A8968A. Same orange #F0703A to terracotta #D4572B gradient for CTA, active chip and active nav. Icon circles #3A2A22. Gold #F2A93B stars. No glow.",
+    "headlineFont": "NEWSREADER",
+    "overrideNeutralColor": "#1B1411",
+    "overridePrimaryColor": "#F0703A",
+    "overrideSecondaryColor": "#C9502A",
+    "overrideTertiaryColor": "#F2A93B",
+    "roundness": "ROUND_TWELVE"
+   }
+  },
+  "name": "assets/14887192504804897433",
+  "version": "1"
+ }
+}

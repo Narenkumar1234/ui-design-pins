@@ -1,0 +1,245 @@
+{
+ "DARK-home": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Ember Dark",
+         "theme": {
+          "bodyFont": "DM_SANS",
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#F0703A",
+          "designMd": "# Ember food delivery app (code.in.30s)\nCustomer food ordering mobile app. Warm editorial minimal style: elegant SERIF display headings (Newsreader, with one italic orange accent phrase), clean geometric sans (DM Sans) for all UI text, big real overhead food photography with soft warm shadows, 20px radius cards, full-round pill chips and pill search bar, round icon category chips, soft diffuse warm-brown shadows, thin rounded line icons. NO emoji, NO illustrations, NO neon, NO purple/blue.\n## Dark: warm espresso dark (NOT pure black, NOT blue): background #1B1411, cards/surfaces #2A201B with 1px rgba(255,236,220,0.08) border, ink #F8EDE3, secondary #A8968A. Same orange #F0703A to terracotta #D4572B gradient for CTA, active chip and active nav. Icon circles #3A2A22. Gold #F2A93B stars. No glow.",
+          "headlineFont": "NEWSREADER",
+          "overrideNeutralColor": "#1B1411",
+          "overridePrimaryColor": "#F0703A",
+          "overrideSecondaryColor": "#C9502A",
+          "overrideTertiaryColor": "#F2A93B",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/14887192504804897433",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "2210",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzJkMTYyM2NmMzRiZTQzM2RiYWQyODM1YTMzZjFhMjUxEgsSBxDnsaWX4xEYAZIBIwoKcHJvamVjdF9pZBIVQhM1MTY0MDQ0MDYxMDg5ODcwMjA1&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/5164044061089870205/files/d42e17ce0d6141f9a0fe6f082d3ab432"
+       },
+       "id": "7cfa67fd4a354cdbbf77a7fc79e6cb3e",
+       "name": "projects/5164044061089870205/screens/7cfa67fd4a354cdbbf77a7fc79e6cb3e",
+       "prompt": "Mobile food delivery app called \"Ember\".\nAesthetic: Warm editorial minimal style. DARK mode in warm espresso brown:\n- Background: #1B1411 (warm espresso, NOT black, NOT blue/purple)\n- Cards / surfaces: #2A201B with 1px border border-[rgba(255,236,220,0.08)], rounded-[20px]\n- Ink primary: #F8EDE3\n- Ink secondary / muted: #A8968A\n- Primary brand accent: Orange gradient from #F0703A to #D4572B for CTA, active category, active navigation\n- Icon circles: #3A2A22 background\n- Star rating: Gold #F2A93B\n- Free delivery badge: Green #6FBF7C only\n- Typography: Display headings in elegant SERIF font (Newsreader / serif) with ONE italic orange accent phrase; UI text in DM Sans / clean geometric sans.\n- NO emoji, NO illustrations. Use realistic overhead food photography with soft shadows.\n- Viewport: 390x844 mobile screen, airy spacing, USD prices.\n\nScreen content breakdown:\n1. Top Bar / Header:\n   - Small circular user avatar on the left\n   - Address block: muted text \"Deliver to\", bold text \"24 Park Lane\" with small downward chevron\n   - Right: circular icon button (#3A2A22) with bell notification icon\n\n2. Hero Section:\n   - Big serif headline in 2 lines: \"Fresh & warm,\" on line 1, and on line 2 an italic orange (#F0703A) accent phrase \"at your door\"\n   - To the right and partly overlapping / under the headline: high-quality overhead photo of a colorful food bowl (vibrant poke bowl / buddha bowl with avocado, salmon/tofu, greens) on a round ceramic plate with soft subtle drop shadow\n\n3. Search Bar:\n   - Full pill search bar with search icon and placeholder text \"Search dishes or restaurants\", dark surface background #2A201B, border rgba(255,236,220,0.08)\n   - Integrated orange circular filter button on the right with sliders/filter icon\n\n4. Category Row:\n   - Horizontal row of 5 circular icon chips with labels beneath:\n     1. Burgers (Active: orange filled circle #F0703A with crisp white burger/fastfood icon, label \"Burgers\" in #F8EDE3)\n     2. Pizza (circle #3A2A22 with #A8968A/peach icon, label \"Pizza\")\n     3. Asian (circle #3A2A22, label \"Asian\")\n     4. Healthy (circle #3A2A22, label \"Healthy\")\n     5. More (circle #3A2A22, label \"More\")\n\n5. Promo Card:\n   - Rounded 20px promo card featuring warm orange-to-peach gradient (#E8622C to #F6A77A) with dark ink contrast\n   - Content: Small pill/badge label \"Weekend deal\", serif headline \"30% off your first order\", white pill code chip with text \"EMBER30\", and an appetizing overhead food photography cutout on the right\n\n6. Section \"Popular near you\":\n   - Section header with \"Popular near you\" in serif/clean heading and an orange link \"See all\"\n   - 2-column grid of restaurant cards (cards #2A201B, 1px rgba(255,236,220,0.08) border, 20px card radius):\n     - Card 1: \"Harvest Bowl Co.\" with top overhead photography (16px radius), name in bold #F8EDE3, gold star 4.8, muted secondary line \"20-25 min \u00b7 <span class='text-[#6FBF7C]'>Free delivery</span>\"\n     - Card 2: \"Napoli Wood Fire\" with artisanal pizza photography (16px radius), name in bold #F8EDE3, gold star 4.8, muted secondary line \"25-30 min \u00b7 <span class='text-[#6FBF7C]'>Free delivery</span>\"\n\n7. Bottom Tab Bar:\n   - Fixed docked navigation bar matching the Ember dark theme (#1B1411 / #2A201B surface with subtle top border and soft shadow)\n   - 5 destinations: Home (Active in orange #F0703A), Search, Orders, Saved, Profile with clean thin rounded line icons and small labels.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1XeTAG-9rrl9dKP393XEpb51Lt-GCopv9O4EJNJwmp16Z2CkhPmifpfJX9m8qDb-H7hF0kEn4eUTJbV9LU9yKrGjv9VKM93Bww54zUEC6tzNsMLMuuEufbdptYkcnv2wVdS-iNQrMkPEBl7kmdHJ9HFi5C6aH_dEiMbk-XHuyUUI5FfHXhH3X4HGxzAnmWNDShrK0nJTiFk1acfAvVdr-pdG-O34U7vRB35bZHYXMF1ppBmAKbaGX6Hf0E",
+        "name": "projects/5164044061089870205/files/189d2f48407b4383a368546bfb101a1b"
+       },
+       "theme": {
+        "bodyFont": "DM_SANS",
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#F0703A",
+        "headlineFont": "NEWSREADER",
+        "overrideNeutralColor": "#1B1411",
+        "overridePrimaryColor": "#F0703A",
+        "overrideSecondaryColor": "#C9502A",
+        "overrideTertiaryColor": "#F2A93B",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Ember Home (Dark Mode)",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "I have designed the **Ember Home (Dark Mode)** screen matching all your specifications:\n\n### Key Design Details:\n- **Palette & Atmosphere:** Warm espresso `#1B1411` canvas with `#2A201B` card surfaces, delicate `1px rgba(255,236,220,0.08)` borders, `#F8EDE3` primary ink, `#A8968A` secondary accents, and rich `#F0703A` gradient highlights.\n- **Editorial Typography:** Prominent serif display title *\"Fresh & warm,\"* paired with the signature italic orange phrase *\"at your door\"*, set alongside an overhead poke bowl with soft drop shadow.\n- **Search & Filtering:** Full-round pill search bar with an integrated circular orange filter button.\n- **Category Navigation:** 5 circular icon chips with labels underneath, highlighting the active *Burgers* category in vibrant orange.\n- **Promotional Feature:** Gradient card (`#E8622C` to `#F6A77A`) featuring the \"Weekend deal\" badge, serif *\"30% off your first order\"*, and the crisp white pill coupon code `EMBER30`.\n- **Restaurant Grid:** Two-column cards for *Harvest Bowl Co.* and *Napoli Wood Fire*, complete with high-resolution photography, gold `#F2A93B` star ratings, and the green `#6FBF7C` *\"Free delivery\"* callout.\n- **Bottom Navigation:** Docked 5-tab bar with active orange state on *Home*."
+   },
+   {
+    "suggestion": "Design the restaurant detail / menu page for Harvest Bowl Co."
+   },
+   {
+    "suggestion": "Create the Cart and Checkout screen in dark mode"
+   },
+   {
+    "suggestion": "Design the Search & Filter discovery screen"
+   }
+  ],
+  "projectId": "5164044061089870205",
+  "sessionId": "6724385565948303856"
+ },
+ "DARK-cart": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Ember Dark",
+         "theme": {
+          "bodyFont": "DM_SANS",
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#F0703A",
+          "designMd": "# Ember food delivery app (code.in.30s)\nCustomer food ordering mobile app. Warm editorial minimal style: elegant SERIF display headings (Newsreader, with one italic orange accent phrase), clean geometric sans (DM Sans) for all UI text, big real overhead food photography with soft warm shadows, 20px radius cards, full-round pill chips and pill search bar, round icon category chips, soft diffuse warm-brown shadows, thin rounded line icons. NO emoji, NO illustrations, NO neon, NO purple/blue.\n## Dark: warm espresso dark (NOT pure black, NOT blue): background #1B1411, cards/surfaces #2A201B with 1px rgba(255,236,220,0.08) border, ink #F8EDE3, secondary #A8968A. Same orange #F0703A to terracotta #D4572B gradient for CTA, active chip and active nav. Icon circles #3A2A22. Gold #F2A93B stars. No glow.",
+          "headlineFont": "NEWSREADER",
+          "overrideNeutralColor": "#1B1411",
+          "overridePrimaryColor": "#F0703A",
+          "overrideSecondaryColor": "#C9502A",
+          "overrideTertiaryColor": "#F2A93B",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/14887192504804897433",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "2468",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzdkNDFlYzVmZDlkNTQ0NDdhYTNiNTU3NjQ5MTRkMjhmEgsSBxDnsaWX4xEYAZIBIwoKcHJvamVjdF9pZBIVQhM1MTY0MDQ0MDYxMDg5ODcwMjA1&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/5164044061089870205/files/bf998b24146546deb56be23ff3b7dde6"
+       },
+       "id": "72f7fde6ac7e42d49e709125584946fc",
+       "name": "projects/5164044061089870205/screens/72f7fde6ac7e42d49e709125584946fc",
+       "prompt": "Mobile customer food ordering app \"Ember\". Screen: CART / CHECKOUT in DARK MODE.\nStyle & Theme Specifications:\n- Palette: Background #1B1411 (warm deep espresso, NOT black, NOT blue/navy), cards/surfaces #2A201B with 1px border rgba(255, 236, 220, 0.08), ink #F8EDE3, secondary #A8968A.\n- Accent: Warm orange gradient from #F0703A to #D4572B for CTA button. Icon circles #3A2A22. Gold #F2A93B star, soft green #6FBF7C for 'Free delivery' badge. No neon glow.\n- Typography: Display headings in Newsreader serif font with ONE italic orange accent phrase (e.g., My Cart where Cart is italic orange #F0703A). UI text in clean geometric sans (DM Sans).\n- Geometry: 20px radius cards, full-round pill chips, clean rounded line icons. NO emojis, NO cartoon illustrations.\n- Viewport: Fits clean 390x844 mobile layout with airy padding, high-end editorial minimal feel.\n\nScreen Layout & Content:\n- Header: Round back button (left), centered title \"My Cart\" (with \"Cart\" in italic orange Newsreader serif), right muted text \"Clear\".\n- Delivery card (#2A201B, rounded-2xl, border rgba(255,236,220,0.08)): Map pin icon in #3A2A22 circular container, \"DELIVER TO\" in tiny uppercase muted secondary + \"Home \u00b7 24 Park Lane, Apt 5\" in bright ink, right small orange link \"Change\". Beneath it: soft pill chip with clock icon \"Arrives in 25\u201330 min\" and \"On time\" green indicator pill.\n- Section Header: \"3 ITEMS\" (muted uppercase tracker) with right label \"From Ember Kitchen\" in delicate italic serif.\n- Cart Items List:\n  1. Salmon Poke Bowl: photo {{DATA:IMAGE:IMAGE_46}}, note \"Extra avocado\", bold price \"$16.00\", subtle circular/pill stepper [- 1 +].\n  2. Margherita Pizza: photo {{DATA:IMAGE:IMAGE_31}}, note \"Medium, thin crust\", bold price \"$12.00\", stepper [- 1 +].\n  3. Iced Matcha Latte: photo {{DATA:IMAGE:IMAGE_30}}, note \"Oat milk\", bold price \"$4.50\", stepper [- 1 +].\n- Promo row: Dashed border pill container (#2A201B with dashed orange/warm border), tag icon, text \"EMBER30 applied\" with small note \"30% off your artisanal lunch order\", right highlighted orange \"-$9.75\" with a small dismiss icon.\n- Delivery instructions / note row: Pill card with courier/door icon: \"Leave order at the apartment front door\".\n- Payment row: Card container (#2A201B) with credit card icon in #3A2A22 circle, \"Visa \u2022\u2022\u2022\u2022 4242\" with \"DEFAULT\" badge, \"Expires 08/28\", right chevron arrow.\n- Bill / Order Summary Card (#2A201B):\n  - \"ORDER SUMMARY\" header\n  - Subtotal: $32.50\n  - Delivery fee: Free delivery (in soft green #6FBF7C badge)\n  - Promo (EMBER30): -$9.75 (orange)\n  - Subtle divider line\n  - Total: Bold serif heading \"Total\", price \"$22.75\" in Newsreader serif, muted subtext \"Includes taxes & fees\".\n- Sticky Bottom Action Bar:\n  - Sticky bottom gradient pill button from #F0703A to #D4572B with lock/bag icon: \"Place order \u00b7 $22.75 \u2192\"\n  - Microcopy underneath: \"By placing this order, you agree to Ember's Terms of Service.\"\n  - NO bottom navigation bar on this screen.\n## Available Images\nYou MUST include the following images in this design. You must reference them\nby putting their exact placeholder IDs in `src` attributes or CSS\n`background-image` rules. Do NOT use external URLs or generate new\nplaceholders. Preserve these IDs exactly as written. Read each image's\nDescription to understand its subject, intended section, and visual role.\n\n- {{DATA:IMAGE:IMAGE_30}}\n  Description: Close-up top-down photography of an iced matcha latte in a glass cup with organic oat milk swirls and condensation, minimal aesthetic, warm editorial studio light\n  Dimensions: 1024x1024\n  Aspect Ratio: 1.00\n- {{DATA:IMAGE:IMAGE_31}}\n  Description: Close-up overhead food photography of an artisan Margherita pizza with melted fresh mozzarella, basil leaves, and blistered wood-fired crust on warm ceramic plate, warm diffused editorial lighting, high quality\n  Dimensions: 1024x1024\n  Aspect Ratio: 1.00\n- {{DATA:IMAGE:IMAGE_46}}\n  Description: Overhead top-down flat-lay food photography of fresh salmon poke bowl with vibrant diced raw salmon sashimi, sliced avocado, edamame beans, diced fresh mango, pickled radishes, and nori on seasoned sushi rice in a beautiful dark ceramic bowl, on an immaculate warm cream surface (#FBF4EC) with soft diffused warm studio lighting and subtle natural shadows, high-end editorial food photography, 8k resolution, minimalist presentation\n  Dimensions: 1024x1024\n  Aspect Ratio: 1.00\n",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1V9VhIja8jFAKdGeXUwW8kWCSWIxm-A4KAxO-K3dQk5fQTkCnOMDVJoDmAPAgOltxLfKdD-xVdXBXT8pHIeApBdwbPoQ5vf-sFSPMB5UgpEPYk_pcCg-Z1sTpJNepZG6b_PbwhdFBqZhXi-EJJw5h8OyN0i4ukgbY3cMDbVeYOuC6kuu6Y8IM8RDod2Npr9UBK-_L1f6e9cCER8ok1yuL4ZJLOLjaPEtkK-U1-0Onowb1n7thzvxhj0W6g",
+        "name": "projects/5164044061089870205/files/a3319d6be31249d388ebd5a5cb51db7a"
+       },
+       "theme": {
+        "bodyFont": "DM_SANS",
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#F0703A",
+        "headlineFont": "NEWSREADER",
+        "overrideNeutralColor": "#1B1411",
+        "overridePrimaryColor": "#F0703A",
+        "overrideSecondaryColor": "#C9502A",
+        "overrideTertiaryColor": "#F2A93B",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Ember - Cart & Checkout (Dark Mode)",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "I have crafted the dark-mode **Cart & Checkout** screen for **Ember** (Ember - Cart & Checkout (Dark Mode)), adhering strictly to the warm espresso editorial aesthetic and your exact specifications:\n\n### Key Design Highlights:\n- **Palette & Warm Dark Mode**: Built on a rich warm espresso background (`#1B1411`) with surface cards in `#2A201B` framed by delicate `1px rgba(255, 236, 220, 0.08)` borders, bright warm ink (`#F8EDE3`), and muted taupe secondary text (`#A8968A`).\n- **Editorial Typography**: Styled with *Newsreader* serif for the centered *\"My Cart\"* title (with *\"Cart\"* in italic terracotta orange) and order totals, paired with geometric *DM Sans* for all labels and numbers.\n- **Delivery Card**: Displays delivery destination *\"Home \u00b7 24 Park Lane, Apt 5\"* with a rounded map-pin badge and an orange *\"Change\"* action, plus an *\"Arrives in 25\u201330 min\"* status pill with a green *\"On time\"* pill indicator.\n- **Cart Items (3 items)**: Includes real overhead food photography for the **Salmon Poke Bowl** (`$16.00`), **Margherita Pizza** (`$12.00`), and **Iced Matcha Latte** (`$4.50`), each featuring custom modifiers, bold pricing, and tactile minimal steppers `[- 1 +]`.\n- **Promo & Payment Details**: A dashed promo card highlighting *\"EMBER30 applied\"* (`-$9.75`), drop-off instructions, and a saved default Visa card row.\n- **Order Summary & Sticky Checkout**: Itemized bill breakdown with free delivery in green (`#6FBF7C`), discount subtraction, prominent `$22.75` total, and a full-width sticky CTA button with the signature orange gradient (`#F0703A` to `#D4572B`). Bottom navigation is excluded as requested."
+   },
+   {
+    "suggestion": "Create the Order Confirmation / Tracking screen in dark mode"
+   },
+   {
+    "suggestion": "Design an empty cart state for Ember"
+   },
+   {
+    "suggestion": "Add tip selection and delivery time scheduling options"
+   }
+  ],
+  "projectId": "5164044061089870205",
+  "sessionId": "10896614318717848844"
+ },
+ "DARK-detail": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Ember Dark",
+         "theme": {
+          "bodyFont": "DM_SANS",
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#F0703A",
+          "designMd": "# Ember food delivery app (code.in.30s)\nCustomer food ordering mobile app. Warm editorial minimal style: elegant SERIF display headings (Newsreader, with one italic orange accent phrase), clean geometric sans (DM Sans) for all UI text, big real overhead food photography with soft warm shadows, 20px radius cards, full-round pill chips and pill search bar, round icon category chips, soft diffuse warm-brown shadows, thin rounded line icons. NO emoji, NO illustrations, NO neon, NO purple/blue.\n## Dark: warm espresso dark (NOT pure black, NOT blue): background #1B1411, cards/surfaces #2A201B with 1px rgba(255,236,220,0.08) border, ink #F8EDE3, secondary #A8968A. Same orange #F0703A to terracotta #D4572B gradient for CTA, active chip and active nav. Icon circles #3A2A22. Gold #F2A93B stars. No glow.",
+          "headlineFont": "NEWSREADER",
+          "overrideNeutralColor": "#1B1411",
+          "overridePrimaryColor": "#F0703A",
+          "overrideSecondaryColor": "#C9502A",
+          "overrideTertiaryColor": "#F2A93B",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/14887192504804897433",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "2536",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzU3MTdlY2UzMjNlYzQwZDg4NGE2YTQwODNkMjY3MjM1EgsSBxDnsaWX4xEYAZIBIwoKcHJvamVjdF9pZBIVQhM1MTY0MDQ0MDYxMDg5ODcwMjA1&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/5164044061089870205/files/157f3975de904207bcbe2aeb0349fc7a"
+       },
+       "id": "46e18e9ae9464992b5f8f9ba0a813b28",
+       "name": "projects/5164044061089870205/screens/46e18e9ae9464992b5f8f9ba0a813b28",
+       "prompt": "Mobile food delivery app (customer ordering) called \"Ember\".\nScreen: DISH DETAIL with add to cart.\nDevice: Mobile (390x844 viewport fit, airy spacing).\nTheme & Styling:\n- Strict DARK MODE in warm espresso brown: background #1B1411 (NOT pure black, NOT navy, NOT purple).\n- Card / bottom sheet surfaces: #2A201B with 1px border rgba(255,236,220,0.08) and 20px / 24px border radius.\n- Ink / primary text: #F8EDE3. Secondary / muted text: #A8968A.\n- CTA & highlights: warm orange gradient from #F0703A to #D4572B.\n- Icon circles: #3A2A22 or translucent dark pill surfaces.\n- Rating star: gold #F2A93B. Green #6FBF7C only for 'Free delivery' badge.\n- Headings: elegant SERIF (Newsreader or serif font) with ONE italic orange accent phrase (e.g. \"Sesame Tofu <span class='italic text-[#F0703A]'>Bowl</span>\").\n- UI and body text: clean geometric sans (DM Sans).\n- NO emoji, NO vector illustrations, only crisp minimal line icons.\n- Real food photography: Use the provided overhead tofu grain bowl image {{DATA:IMAGE:IMAGE_10}}.\n\nLayout requirements:\n1. Top ~40%:\n   - A soft warm peach-cream circular backdrop/halo with a large round overhead photo of the colorful Sesame Tofu grain bowl {{DATA:IMAGE:IMAGE_10}} with soft drop shadow.\n   - Fixed or floating top buttons: round back button at top left and round heart (favorite) button at top right on dark circular surfaces (icon circle #3A2A22 or backdrop blur).\n\n2. Below it, rounded content sheet (bg #2A201B, rounded-t-3xl or rounded-3xl with subtle border border-[rgba(255,236,220,0.08)]):\n   - Small restaurant header row: muted restaurant name \"Harvest Bowl Co.\" and a green #6FBF7C 'Free delivery' badge.\n   - Dish title & price row: serif display title \"Sesame Tofu <span class='italic text-[#F0703A]'>Bowl</span>\" with the price \"$14.50\" in warm orange on the right.\n   - Meta pill row (three small rounded pills):\n     * Star 4.8 (1.2k) with gold star #F2A93B\n     * 15\u201320 min with clock icon\n     * 540 kcal with flame icon\n   - Two lines of muted secondary description: \"Crispy sesame tofu, edamame, soft egg, sweet corn, cucumber and red cabbage with miso-ginger dressing.\"\n   - Chef or culinary note pill/card (optional subtle touch, dark espresso surface).\n   - Section heading: \"Add extras\" with \"OPTIONAL\" tag.\n   - Three customized option rows, each with:\n     * A small round photo thumbnail\n     * Item name and description/serving\n     * Price addition\n     * A round checkbox on the right:\n       1) \"Extra avocado\" +$1.50 (CHECKED with orange fill #F0703A and white checkmark)\n       2) \"Edamame\" +$1.00 (unchecked circle)\n       3) \"Add salmon\" +$3.00 (unchecked circle)\n   - Special instructions text area / input field with subtle placeholder: \"Add notes for the kitchen (e.g., dressing on side)...\"\n\n3. Fixed bottom bar (docked at bottom of viewport):\n   - Background #1B1411 with top border rgba(255,236,220,0.08) and backdrop blur.\n   - Quantity stepper pill on the left: rounded pill with minus button, \"1\", plus button in #3A2A22 surface.\n   - Wide orange gradient pill button on the right: \"Add to cart \u00b7 $16.00\" (or bag icon + \"Add to cart \u00b7 $16.00\") with background gradient from #F0703A to #D4572B and crisp text in #FFFFFF or #F8EDE3.\n   - Absolutely NO bottom tab navigation bar on this screen.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WE5DtmfvOJGEQ7iw4_-7MWrMJeAjPfeOr1V8hi_FPtz6gFyZkJD5zsOUiopNSJyyDujsyK7Xs7K31xdodgS-MWtzzkz9Rawd3UFHmE1Kw8XHJSfFMMAyNtTDpH057FgCex5bitdtl0oz9w0PNHjM-EvkBLQdkT2UJxug-0_w3WcAOjpkSxKPcOcSk_D6oYa40gRISun9a1a712YHLBL_kOvRe6Q7W1UKurvREKR7QaFmhveJ5VZCfRW4I",
+        "name": "projects/5164044061089870205/files/f66eb07ecc9446e8b818dd7ff4c4725a"
+       },
+       "theme": {
+        "bodyFont": "DM_SANS",
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#F0703A",
+        "headlineFont": "NEWSREADER",
+        "overrideNeutralColor": "#1B1411",
+        "overridePrimaryColor": "#F0703A",
+        "overrideSecondaryColor": "#C9502A",
+        "overrideTertiaryColor": "#F2A93B",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Ember - Sesame Tofu Bowl (Dark Mode)",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "I have created the dark mode **Dish Detail** screen for **Ember** featuring the Sesame Tofu Bowl:\n\n### Design Details & Execution:\n- **Warm Espresso Palette**: Grounded in deep espresso brown (`#1B1411`) for the page background, with elevated card surfaces in `#2A201B` and hairline borders (`rgba(255, 236, 220, 0.08)`).\n- **Hero Presentation**: Top 40% features a circular hero composition displaying the overhead photography of the colourful Sesame Tofu grain bowl with soft natural shadows, flanked by circular frosted back and favorite actions.\n- **Editorial Typography**: Elegant serif display heading (*Newsreader*) featuring the signature italic warm orange accent phrase (*\"Sesame Tofu Bowl\"*), paired with clean geometric sans (*DM Sans*) for clear utility and price readability (`$14.50`).\n- **Metadata & Details**: Includes the `\"Harvest Bowl Co.\"` provenance with an emerald `\"Free delivery\"` pill badge, followed by quick-glance chips for rating (4.8 with gold star), prep time (15\u201320 min), and calories (540 kcal), plus an artisanal chef's touch note.\n- **Customizable Extras**: Option rows with circular food previews, clear price deltas, and state indicators \u2014 including pre-selected `\"Extra avocado\" (+$1.50)` with active orange fill, alongside `\"Edamame\"` and `\"Add salmon\"`.\n- **Checkout Action Bar**: Fixed bottom bar featuring a tactile quantity stepper pill and the primary warm orange gradient CTA (*\"Add to cart \u00b7 $16.00\"*) calculated with the active add-on. Tab bar intentionally omitted for focused ordering."
+   },
+   {
+    "suggestion": "Create the Order Tracking & Courier Map screen in this dark theme"
+   },
+   {
+    "suggestion": "Design the Cart & Checkout modal sheet matching this selection"
+   },
+   {
+    "suggestion": "Generate the Restaurant Storefront page for Harvest Bowl Co."
+   }
+  ],
+  "projectId": "5164044061089870205",
+  "sessionId": "6662179200485825821"
+ }
+}

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ember — Cart &amp; Checkout</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#1B1411',
+              card: '#2A201B',
+              circle: '#3A2A22',
+              ink: '#F8EDE3',
+              secondary: '#A8968A',
+              orange: '#F0703A',
+              terracotta: '#D4572B',
+              gold: '#F2A93B',
+              green: '#6FBF7C'
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Newsreader", "serif"],
+            display: ["Newsreader", "serif"],
+            body: ["DM Sans", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Subtle warm ambient scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1B1411;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3A2A22;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-[#1B1411] text-[#F8EDE3] font-body min-h-screen antialiased selection:bg-[#F0703A]/20 selection:text-[#F8EDE3] flex justify-center">
+<!-- Mobile Viewport Container (390px centered screen) -->
+<div class="w-full max-w-[390px] min-h-screen relative flex flex-col bg-[#1B1411] shadow-2xl">
+<!-- Top App Bar (Anchored via Shared Components JSON) -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 h-16 max-w-[390px] mx-auto bg-[#1B1411] border-b border-[#FFECDC]/[0.08] backdrop-blur-md">
+<!-- Leading back button -->
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-[#3A2A22] text-[#F8EDE3] flex items-center justify-center hover:text-[#F8EDE3] hover:opacity-90 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<!-- Centered headline with italic phrase -->
+<h1 class="font-headline font-normal text-xl tracking-tight text-[#F8EDE3] text-center">
+        My <span class="italic text-[#F0703A] font-normal">Cart</span>
+</h1>
+<!-- Trailing action -->
+<button class="font-body text-sm font-medium text-[#A8968A] hover:text-[#F8EDE3] active:scale-95 transition-all py-1.5 px-2" type="button">
+        Clear
+      </button>
+</header>
+<!-- Scrollable Content Canvas -->
+<main class="flex-1 px-4 pt-[76px] pb-36 space-y-3">
+<!-- Delivery Details Card -->
+<section class="bg-[#2A201B] rounded-[20px] px-4 py-3.5 border border-[rgba(255,236,220,0.08)] shadow-[0_8px_24px_rgba(10,5,2,0.35)] relative overflow-hidden">
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-[#3A2A22] flex items-center justify-center text-[#F0703A] shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<div>
+<p class="font-label text-[10px] uppercase tracking-wider text-[#A8968A] font-semibold mb-0.5">DELIVER TO</p>
+<h2 class="font-body text-sm font-medium text-[#F8EDE3] leading-snug">Home · 24 Park Lane, Apt 5</h2>
+</div>
+</div>
+<button class="text-xs font-medium text-[#F0703A] hover:opacity-85 transition-opacity pt-0.5 shrink-0" type="button">
+            Change
+          </button>
+</div>
+<!-- Arrival Timing Pill Row -->
+<div class="flex items-center justify-between pt-3 border-t border-[rgba(255,236,220,0.06)]">
+<div class="flex items-center gap-1.5 text-xs text-[#A8968A]">
+<span class="material-symbols-outlined text-[16px] text-[#A8968A]">schedule</span>
+<span>Arrives in <span class="text-[#F8EDE3] font-medium">25–30 min</span></span>
+</div>
+<div class="flex items-center gap-1 bg-[#6FBF7C]/15 border border-[#6FBF7C]/25 text-[#6FBF7C] text-[11px] font-medium px-2.5 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-[#6FBF7C]"></span>
+<span>On time</span>
+</div>
+</div>
+</section>
+<!-- Cart Items Section Header -->
+<div class="flex items-center justify-between px-1 pt-1">
+<span class="font-label text-[11px] tracking-widest text-[#A8968A] uppercase font-semibold">3 ITEMS</span>
+<span class="font-headline italic text-xs text-[#A8968A]">From <span class="text-[#F8EDE3]">2 kitchens</span></span>
+</div>
+<!-- Cart Items List (High-end asymmetric Bento cards) -->
+<section aria-label="Cart Items" class="space-y-2.5">
+<!-- Item 1: Sesame Tofu Bowl -->
+<article class="bg-[#2A201B] rounded-[20px] p-2.5 border border-[rgba(255,236,220,0.08)] flex items-center gap-3 shadow-sm transition hover:border-[rgba(255,236,220,0.15)]">
+<div class="w-[68px] h-[68px] rounded-2xl overflow-hidden shrink-0 relative bg-[#1B1411]">
+<img alt="Sesame Tofu Bowl" class="w-full h-full object-cover" src="../img/tofu-bowl-cut.png"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-body text-sm font-semibold text-[#F8EDE3] truncate">Sesame Tofu Bowl</h3>
+</div>
+<p class="font-body text-xs text-[#A8968A] mt-0.5">Extra avocado</p>
+<div class="flex items-center justify-between mt-1.5">
+<span class="font-headline font-semibold text-base text-[#F8EDE3] tracking-tight">$16.00</span>
+<!-- Stepper -->
+<div class="flex items-center bg-[#3A2A22] rounded-full p-0.5 border border-[rgba(255,236,220,0.06)]">
+<button aria-label="Decrease quantity" class="w-6 h-6 rounded-full flex items-center justify-center text-[#A8968A] hover:text-[#F8EDE3] active:scale-90 transition" type="button">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+</button>
+<span class="w-6 text-center text-xs font-semibold text-[#F8EDE3]">1</span>
+<button aria-label="Increase quantity" class="w-6 h-6 rounded-full bg-[#1B1411] flex items-center justify-center text-[#F8EDE3] hover:text-[#F0703A] active:scale-90 transition" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 2: Margherita Pizza -->
+<article class="bg-[#2A201B] rounded-[20px] p-2.5 border border-[rgba(255,236,220,0.08)] flex items-center gap-3 shadow-sm transition hover:border-[rgba(255,236,220,0.15)]">
+<div class="w-[68px] h-[68px] rounded-2xl overflow-hidden shrink-0 relative bg-[#1B1411]">
+<img alt="Margherita Pizza" class="w-full h-full object-cover" src="../img/margherita.jpg"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-body text-sm font-semibold text-[#F8EDE3] truncate">Margherita Pizza</h3>
+</div>
+<p class="font-body text-xs text-[#A8968A] mt-0.5">Napoli Wood Fire</p>
+<div class="flex items-center justify-between mt-1.5">
+<span class="font-headline font-semibold text-base text-[#F8EDE3] tracking-tight">$12.00</span>
+<!-- Stepper -->
+<div class="flex items-center bg-[#3A2A22] rounded-full p-0.5 border border-[rgba(255,236,220,0.06)]">
+<button aria-label="Decrease quantity" class="w-6 h-6 rounded-full flex items-center justify-center text-[#A8968A] hover:text-[#F8EDE3] active:scale-90 transition" type="button">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+</button>
+<span class="w-6 text-center text-xs font-semibold text-[#F8EDE3]">1</span>
+<button aria-label="Increase quantity" class="w-6 h-6 rounded-full bg-[#1B1411] flex items-center justify-center text-[#F8EDE3] hover:text-[#F0703A] active:scale-90 transition" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 3: Iced Matcha Latte -->
+<article class="bg-[#2A201B] rounded-[20px] p-2.5 border border-[rgba(255,236,220,0.08)] flex items-center gap-3 shadow-sm transition hover:border-[rgba(255,236,220,0.15)]">
+<div class="w-[68px] h-[68px] rounded-2xl overflow-hidden shrink-0 relative bg-[#1B1411]">
+<img alt="Iced Matcha Latte" class="w-full h-full object-cover" src="../img/matcha.jpg"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-body text-sm font-semibold text-[#F8EDE3] truncate">Iced Matcha Latte</h3>
+</div>
+<p class="font-body text-xs text-[#A8968A] mt-0.5">Oat milk</p>
+<div class="flex items-center justify-between mt-1.5">
+<span class="font-headline font-semibold text-base text-[#F8EDE3] tracking-tight">$4.50</span>
+<!-- Stepper -->
+<div class="flex items-center bg-[#3A2A22] rounded-full p-0.5 border border-[rgba(255,236,220,0.06)]">
+<button aria-label="Decrease quantity" class="w-6 h-6 rounded-full flex items-center justify-center text-[#A8968A] hover:text-[#F8EDE3] active:scale-90 transition" type="button">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+</button>
+<span class="w-6 text-center text-xs font-semibold text-[#F8EDE3]">1</span>
+<button aria-label="Increase quantity" class="w-6 h-6 rounded-full bg-[#1B1411] flex items-center justify-center text-[#F8EDE3] hover:text-[#F0703A] active:scale-90 transition" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</section>
+<!-- Promo Code Card (Dashed Border Pill Container) -->
+<div class="bg-[#2A201B] rounded-[20px] p-3.5 border border-dashed border-[#F0703A]/40 flex items-center justify-between gap-3 shadow-inner">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-[#F0703A]/15 text-[#F0703A] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body font-semibold text-xs tracking-wide text-[#F8EDE3]">EMBER30 applied</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#F0703A]"></span>
+</div>
+<p class="text-[11px] text-[#A8968A] truncate">30% off your first order</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="font-body font-semibold text-sm text-[#F0703A]">-$9.75</span>
+<button aria-label="Remove promo code" class="text-[#A8968A] hover:text-[#F8EDE3] p-1 active:scale-90 transition" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Bill / Order Summary Card -->
+<section class="bg-[#2A201B] rounded-[20px] px-4 py-3.5 border border-[rgba(255,236,220,0.08)] space-y-2.5">
+<h4 class="font-label text-[11px] font-semibold uppercase tracking-wider text-[#A8968A]">ORDER SUMMARY</h4>
+<div class="space-y-2 text-xs">
+<!-- Subtotal -->
+<div class="flex justify-between items-center text-[#A8968A]">
+<span>Subtotal</span>
+<span class="text-[#F8EDE3] font-medium">$32.50</span>
+</div>
+<!-- Delivery Fee -->
+<div class="flex justify-between items-center text-[#A8968A]">
+<span>Delivery fee</span>
+<span class="bg-[#6FBF7C]/15 border border-[#6FBF7C]/25 text-[#6FBF7C] text-[11px] font-medium px-2 py-0.5 rounded-full">Free delivery</span>
+</div>
+<!-- Promo Discount -->
+<div class="flex justify-between items-center text-[#A8968A]">
+<span>Promo (EMBER30)</span>
+<span class="text-[#F0703A] font-medium">-$9.75</span>
+</div>
+</div>
+<!-- Subtle Divider -->
+<div class="border-t border-[rgba(255,236,220,0.08)] pt-3">
+<div class="flex justify-between items-baseline">
+<div>
+<span class="font-headline font-semibold text-lg text-[#F8EDE3]">Total</span>
+<p class="text-[11px] text-[#A8968A] mt-0.5">Includes taxes &amp; fees</p>
+</div>
+<div class="text-right">
+<span class="font-headline font-medium text-2xl text-[#F8EDE3] tracking-tight">$22.75</span>
+</div>
+</div>
+</div>
+</section><!-- Payment Method Row -->
+<div class="bg-[#2A201B] rounded-[20px] p-3.5 border border-[rgba(255,236,220,0.08)] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#3A2A22] text-[#F8EDE3] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body text-sm font-medium text-[#F8EDE3]">Visa •••• 4242</span>
+<span class="text-[9px] font-label font-bold uppercase tracking-wider bg-[#3A2A22] text-[#A8968A] px-1.5 py-0.5 rounded-full border border-[rgba(255,236,220,0.06)]">DEFAULT</span>
+</div>
+<p class="text-xs text-[#A8968A] mt-0.5">Expires 08/28</p>
+</div>
+</div>
+<button aria-label="Change payment" class="text-[#A8968A] hover:text-[#F8EDE3] transition" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+
+</main>
+<!-- Sticky Bottom Checkout CTA Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 max-w-[390px] mx-auto bg-gradient-to-t from-[#1B1411] via-[#1B1411]/95 to-transparent pt-5 pb-5 px-4 z-40 backdrop-blur-[2px]">
+<button class="w-full h-14 rounded-full bg-gradient-to-r from-[#F0703A] to-[#D4572B] text-[#F8EDE3] font-body font-semibold text-base flex items-center justify-between px-6 shadow-[0_12px_28px_rgba(240,112,58,0.28)] hover:opacity-95 active:scale-[0.98] transition-all" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<span>Place order</span>
+</div>
+<div class="flex items-center gap-1.5 font-headline font-medium text-lg">
+<span>$22.75</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</button>
+
+</div>
+</div>
+</body></html>

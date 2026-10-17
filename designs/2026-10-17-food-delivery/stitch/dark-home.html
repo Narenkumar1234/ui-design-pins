@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ember — Warm Delivery</title>
+<!-- Google Fonts: Newsreader (Editorial Serif) & DM Sans (Modern Sans) & Public Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=Public+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          spacing: {},
+          fontFamily: {
+            headline: ["Newsreader", "serif"],
+            display: ["Newsreader", "serif"],
+            body: ["DM Sans", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          },
+          fontSize: {}
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: 300;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Custom scrollbar suppression for clean horizontal categories */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#1B1411] text-[#F8EDE3] font-body antialiased min-h-screen flex justify-center selection:bg-[#F0703A]/30">
+<!-- Mobile Container (390px max canvas) -->
+<div class="relative w-full max-w-[390px] min-h-[844px] bg-[#1B1411] flex flex-col pb-24 overflow-x-hidden shadow-2xl">
+<!-- TopAppBar (Anchor Compliant) -->
+<header class="flex justify-between items-center w-full px-5 py-3.5 bg-[#1B1411] border-b border-[rgba(255,236,220,0.08)] sticky top-0 z-40 backdrop-blur-md bg-opacity-95">
+<div class="flex items-center gap-3">
+<!-- User Avatar -->
+<div class="relative w-9 h-9 rounded-full overflow-hidden border border-[rgba(255,236,220,0.12)] shrink-0">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A refined overhead candid close-up of a stylish young adult customer looking down pleasantly, lit by soft warm ambient restaurant lighting. Deep dark espresso and terracotta color tones create an intimate, sophisticated editorial warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfC9cdLllVpWpN1MB-plQphd9HO2UES86nvkzviybuO4Ntb_08JUTPmW_kxBLjSEcC-DFP8La6tT6ynqSAocHC6OYFHXC0rrXOjrEfec0hrs2mppaGramF-CB9HG8R0CaWs1MrU_wT-_aSgd7GO_eFfar42uB_I4FBtfZsQIzlM1iBe9VVDckwge--9EzOmNsXkbRH0OAp5_u3L-8UhY_lomglkz_NUDbV92SplrtWlxXAk-9P6cPoY7KQn2xFPzRB-t60zCHTqAY"/>
+</div>
+<!-- Address Block -->
+<div class="flex flex-col text-left">
+<span class="text-[11px] font-medium tracking-wider text-[#A8968A] uppercase font-label">Deliver to</span>
+<button class="flex items-center gap-1 group active:scale-95 transition-transform duration-150">
+<span class="text-sm font-semibold text-[#F8EDE3] group-hover:text-[#F0703A] transition-colors">24 Park Lane</span>
+<span class="material-symbols-outlined text-[#F0703A] text-[18px]">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Right Notification Action -->
+<button class="w-9 h-9 rounded-full bg-[#3A2A22] border border-[rgba(255,236,220,0.08)] flex items-center justify-center text-[#F8EDE3] hover:text-[#F0703A] transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-5 pt-4 space-y-6">
+<!-- Hero Section: Editorial Headline & Overlapping Overhead Plate -->
+<section class="relative pt-2 pb-2">
+<div class="grid grid-cols-12 items-center">
+<div class="col-span-7 z-10 pr-1">
+<h1 class="font-headline text-[32px] leading-[1.12] text-[#F8EDE3] font-normal tracking-tight">
+              Fresh &amp; warm,<br/>
+<span class="italic text-[#F0703A] font-normal">at your door</span>
+</h1>
+<p class="mt-2 text-xs text-[#A8968A] leading-relaxed font-normal max-w-[170px]">
+              Artisanal recipes prepared fresh from the city's finest kitchens.
+            </p>
+</div>
+<div class="col-span-5 relative -mr-2">
+<!-- Warm diffuse glow under food bowl -->
+<div class="absolute inset-0 bg-[#F0703A]/10 rounded-full blur-xl transform scale-90"></div>
+<div class="relative w-36 h-36 rounded-full overflow-hidden p-1 bg-gradient-to-tr from-[#3A2A22] to-transparent shadow-[0_12px_28px_rgba(0,0,0,0.55)]">
+<img alt="Fresh bowl dish" class="w-full h-full object-cover rounded-full" data-alt="Top-down overhead photography of a vibrant gourmet poke bowl served in a textured earthy ceramic bowl. Fresh sliced salmon, avocado fans, vibrant edamame, and crisp microgreens sit elegantly over steamed sushi rice, captured in soft warm editorial studio lighting with delicate espresso-toned shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEiTFG2Fw_SNGQjubUPBIESruK8ZUzKxBJKXYOoqZZbPfw6puXvOmQGBieGPxe1GQFrnI-e5ZYshdcU2UiPXeYawdxNxsHK4nYkAmK7oWJzDlGDLXjxXEUNjkFn85XJP3a-jj8RlZItZ6FSsJbrOywoT8hb-J1LKAvc6OCj99MoGvt53JyigSVagAEg7K_1H7TffbAp_ho9GsYulVqo56DRPG5e6uAUHM-uepAXMhUfRRV-EFp6tM-DaIAP8giHTuFkqFzP9HFAMo"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Search Bar -->
+<section class="relative">
+<div class="flex items-center w-full h-[50px] bg-[#2A201B] rounded-full border border-[rgba(255,236,220,0.08)] px-4 shadow-[0_4px_16px_rgba(0,0,0,0.2)] focus-within:border-[#F0703A]/60 transition-colors">
+<span class="material-symbols-outlined text-[#A8968A] mr-3">search</span>
+<input class="w-full bg-transparent border-0 p-0 text-sm text-[#F8EDE3] placeholder-[#A8968A] focus:ring-0 focus:outline-none font-body" placeholder="Search dishes or restaurants" type="text"/>
+<button class="w-8 h-8 rounded-full bg-gradient-to-r from-[#F0703A] to-[#D4572B] flex items-center justify-center text-white shrink-0 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[17px]">tune</span>
+</button>
+</div>
+</section>
+<!-- Category Row: Horizontal Icon Chips -->
+<section>
+<div class="flex items-center justify-between gap-2 overflow-x-auto no-scrollbar py-1">
+<!-- Category 1: Burgers (Active) -->
+<div class="flex flex-col items-center gap-1.5 cursor-pointer group active:scale-95 transition-transform shrink-0">
+<div class="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-[#F0703A] to-[#D4572B] flex items-center justify-center text-white shadow-[0_4px_12px_rgba(240,112,58,0.35)]">
+<span class="material-symbols-outlined text-[24px]">lunch_dining</span>
+</div>
+<span class="text-[12px] font-medium text-[#F8EDE3]">Burgers</span>
+</div>
+<!-- Category 2: Pizza -->
+<div class="flex flex-col items-center gap-1.5 cursor-pointer group active:scale-95 transition-transform shrink-0">
+<div class="w-[52px] h-[52px] rounded-full bg-[#3A2A22] border border-[rgba(255,236,220,0.08)] flex items-center justify-center text-[#A8968A] group-hover:text-[#F8EDE3] group-hover:border-[#F0703A]/40 transition-colors">
+<span class="material-symbols-outlined text-[24px]">local_pizza</span>
+</div>
+<span class="text-[12px] font-medium text-[#A8968A] group-hover:text-[#F8EDE3] transition-colors">Pizza</span>
+</div>
+<!-- Category 3: Asian -->
+<div class="flex flex-col items-center gap-1.5 cursor-pointer group active:scale-95 transition-transform shrink-0">
+<div class="w-[52px] h-[52px] rounded-full bg-[#3A2A22] border border-[rgba(255,236,220,0.08)] flex items-center justify-center text-[#A8968A] group-hover:text-[#F8EDE3] group-hover:border-[#F0703A]/40 transition-colors">
+<span class="material-symbols-outlined text-[24px]">ramen_dining</span>
+</div>
+<span class="text-[12px] font-medium text-[#A8968A] group-hover:text-[#F8EDE3] transition-colors">Asian</span>
+</div>
+<!-- Category 4: Healthy -->
+<div class="flex flex-col items-center gap-1.5 cursor-pointer group active:scale-95 transition-transform shrink-0">
+<div class="w-[52px] h-[52px] rounded-full bg-[#3A2A22] border border-[rgba(255,236,220,0.08)] flex items-center justify-center text-[#A8968A] group-hover:text-[#F8EDE3] group-hover:border-[#F0703A]/40 transition-colors">
+<span class="material-symbols-outlined text-[24px]">nutrition</span>
+</div>
+<span class="text-[12px] font-medium text-[#A8968A] group-hover:text-[#F8EDE3] transition-colors">Healthy</span>
+</div>
+<!-- Category 5: More -->
+<div class="flex flex-col items-center gap-1.5 cursor-pointer group active:scale-95 transition-transform shrink-0">
+<div class="w-[52px] h-[52px] rounded-full bg-[#3A2A22] border border-[rgba(255,236,220,0.08)] flex items-center justify-center text-[#A8968A] group-hover:text-[#F8EDE3] group-hover:border-[#F0703A]/40 transition-colors">
+<span class="material-symbols-outlined text-[24px]">more_horiz</span>
+</div>
+<span class="text-[12px] font-medium text-[#A8968A] group-hover:text-[#F8EDE3] transition-colors">More</span>
+</div>
+</div>
+</section>
+<!-- Promo Card -->
+<section>
+<div class="relative overflow-hidden rounded-[20px] bg-gradient-to-r from-[#E8622C] to-[#F6A77A] p-5 shadow-[0_10px_30px_rgba(232,98,44,0.22)] text-[#1B1411]">
+<div class="relative z-10 w-7/12">
+<div class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#1B1411]/15 text-[#1B1411] text-[11px] font-semibold tracking-wider uppercase mb-2">
+              Weekend deal
+            </div>
+<h2 class="font-headline text-[22px] leading-tight font-medium text-[#1B1411] mb-3">
+              30% off your first order
+            </h2>
+<div class="inline-flex items-center gap-1.5 bg-white/95 px-3 py-1 rounded-full shadow-sm">
+<span class="text-[10px] uppercase font-semibold text-[#1B1411]/70 tracking-wider">Code:</span>
+<span class="text-xs font-bold tracking-wider text-[#1B1411] font-mono">EMBER30</span>
+</div>
+</div>
+<!-- Overhead Food Cutout Asset -->
+<div class="absolute -right-5 -bottom-5 w-40 h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-xl">
+<img alt="Promo gourmet dish" class="w-full h-full object-cover" data-alt="An appetizing overhead culinary view of a gourmet artisanal burger loaded with melted aged cheddar, crisp smoked bacon, and fresh heirloom tomato relish on a toasted brioche bun, presented on a dark artisanal ceramic surface with warm golden highlights and deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVN1RUydZrx9AWuJaB7GoMTkTkpwGc3cUPv_P3_wVYbsLZDYZRZ72wSRT0QLrBAnm-UV-QBy_vavyeWNQ1MtD7j6vTRCc1yvHmwEG-ka71VWgGFBewLYe_rEkDUzuUMV0trQzBehu0pF1_4w5T1kq2nYEeSJ4UciTiJTfChgqMqoKrop9Uqbir4WKcI-cELpZVTDF717LQ-20C7TlPUuKI5HTjzPqnMAwQL09Gu1DJ-paS9r1ufiquIqyZmNeGVuRUeAq1EHHcCaQ"/>
+</div>
+</div>
+</section>
+<!-- Popular Near You: 2-Column Bento Grid -->
+<section class="space-y-3.5 pt-1">
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-[20px] font-medium text-[#F8EDE3]">
+            Popular near you
+          </h3>
+<a class="text-xs font-medium text-[#F0703A] hover:text-[#F8EDE3] transition-colors duration-150" href="#">
+            See all
+          </a>
+</div>
+<!-- 2-Column Restaurant Grid -->
+<div class="grid grid-cols-2 gap-3.5">
+<!-- Card 1: Harvest Bowl Co. -->
+<div class="bg-[#2A201B] border border-[rgba(255,236,220,0.08)] rounded-[20px] p-2.5 flex flex-col justify-between group active:scale-[0.98] transition-all">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden mb-2.5">
+<img alt="Harvest Bowl dish" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Overhead flatlay photography of an elegant gourmet healthy grain salad bowl featuring roasted sweet potatoes, organic quinoa, sliced avocado, pomegranate seeds, and fresh micro herbs on a dark matte earthenware plate with warm moody restaurant ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKQvRgOV2Xa63xUXVoOC4rPp1pCcYNTC4EawlkCvo8C4F0-NXv-T5rDAXJZF3E9vBIGGnYNh9UOqv9C4ThEQCOce83OvwZCH_hPsyI-Purtbj7avRmlUDFtlZLnhY8hE2WroxWubcBgNqhqwpeRtLS1vYp5enBvsy0JMKRr6hDctcoj42FftFhfsFdWlzwEq8A8YXo5xsPT7dzJmaRalij2Kv4v5Tpfwpfu-iK3OyEwmN1qPrZh8OuB5rr0HiZLuY488tGn1q1Z-A"/>
+<!-- Quick favorite overlay -->
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-[#1B1411]/60 backdrop-blur-md flex items-center justify-center text-[#F8EDE3] hover:text-[#F0703A] transition-colors">
+<span class="material-symbols-outlined text-[15px]">favorite</span>
+</button>
+</div>
+<div class="px-1">
+<div class="flex items-center justify-between gap-1 mb-1">
+<h4 class="font-body font-semibold text-[13px] text-[#F8EDE3] truncate">
+                    Harvest Bowl Co.
+                  </h4>
+<div class="flex items-center gap-0.5 shrink-0">
+<span class="material-symbols-outlined text-[#F2A93B] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[11px] font-medium text-[#F8EDE3]">4.8</span>
+</div>
+</div>
+<div class="text-[11px] text-[#A8968A] font-normal leading-snug">
+                  20-25 min · <span class="text-[#6FBF7C] font-medium">Free delivery</span>
+</div>
+</div>
+</div>
+<div class="px-1 pt-2.5 mt-2 border-t border-[rgba(255,236,220,0.05)] flex items-center justify-between text-[11px] text-[#A8968A]">
+<span>Healthy · Salads</span>
+<span class="text-[#F8EDE3] font-medium">$12.50</span>
+</div>
+</div>
+<!-- Card 2: Napoli Wood Fire -->
+<div class="bg-[#2A201B] border border-[rgba(255,236,220,0.08)] rounded-[20px] p-2.5 flex flex-col justify-between group active:scale-[0.98] transition-all">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden mb-2.5">
+<img alt="Napoli Wood Fire Pizza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Direct overhead photography of an authentic artisan Neapolitan wood-fired pizza with blistered charred sourdough crust, fresh melted buffalo mozzarella, crushed San Marzano tomato sauce, and aromatic green basil leaves in a warm ambient dark room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv8Y0jDqF8IklCbKy8iF7LxSGjSpCHeOB2Rvkkx_zhjuEW8RwDMPvhH3KputPL1a5VIvwV1d4tC0yjqTT5nN3JgsVCW7KVCSNklecr95SKDPutKuoV_zSXHVzK4WhfmNairq17JRrucRfKGLf5JImrB-ftAlFYHQ-WbmolZ6EzaIxH9Qej7JjnI63886Q-Ej6hQNeNgrw02AUQhk4ZvfJVUaJ4j047z2dMyyM6Z6tJsnZ9jzFzylxymxXQwG1bpWRi9qsm0GAd4vI"/>
+<!-- Quick favorite overlay -->
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-[#1B1411]/60 backdrop-blur-md flex items-center justify-center text-[#F8EDE3] hover:text-[#F0703A] transition-colors">
+<span class="material-symbols-outlined text-[15px]">favorite</span>
+</button>
+</div>
+<div class="px-1">
+<div class="flex items-center justify-between gap-1 mb-1">
+<h4 class="font-body font-semibold text-[13px] text-[#F8EDE3] truncate">
+                    Napoli Wood Fire
+                  </h4>
+<div class="flex items-center gap-0.5 shrink-0">
+<span class="material-symbols-outlined text-[#F2A93B] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[11px] font-medium text-[#F8EDE3]">4.8</span>
+</div>
+</div>
+<div class="text-[11px] text-[#A8968A] font-normal leading-snug">
+                  25-30 min · <span class="text-[#6FBF7C] font-medium">Free delivery</span>
+</div>
+</div>
+</div>
+<div class="px-1 pt-2.5 mt-2 border-t border-[rgba(255,236,220,0.05)] flex items-center justify-between text-[11px] text-[#A8968A]">
+<span>Italian · Pizza</span>
+<span class="text-[#F8EDE3] font-medium">$16.00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Chef Specialty Banner -->
+<section class="pb-2">
+<div class="bg-[#2A201B] border border-[rgba(255,236,220,0.08)] rounded-[20px] p-3.5 flex items-center gap-3">
+<div class="w-12 h-12 rounded-[14px] overflow-hidden shrink-0 border border-[rgba(255,236,220,0.1)]">
+<img alt="Artisan dessert" class="w-full h-full object-cover" data-alt="Overhead detail photo of an artisan matcha green tea and burnt caramel dessert plated meticulously on a handcrafted dark stoneware dish with delicate edible flowers and warm warm-brown bakery ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2yXz9I35IFxb9wK-rJhjdT4ptrX0mXdHwMqyz8kkA-1zBGtuB6uAy1PMK8c9UDMIX3RKDNQ5bPxOwBqWOxt3Memttyz89ksFul7vV2qg92EZ8xgHPC6LDghw8wtYgywWYy-_88pXEvJJ5tP3-Bn4VAc9-zY9Q6YeOCIEhAvuiRze3bM3eMP8tprbExc4xku7K3wSJ9byLt47XYc_Kq-J0KBTzwW_2_oKO4qLFHTrzDkJd25xFKQBm8s_zpKr0sTUTNb6xrkUCPBE"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-[10px] font-bold text-[#F0703A] uppercase tracking-wider font-label">Curator's Pick</span>
+<span class="text-[10px] text-[#A8968A]">· Today only</span>
+</div>
+<p class="text-xs font-medium text-[#F8EDE3] truncate">Smoked Brioche Truffle Bun</p>
+</div>
+<button class="px-3 py-1.5 rounded-full bg-[#3A2A22] text-[#F8EDE3] text-xs font-medium border border-[rgba(255,236,220,0.08)] hover:bg-[#F0703A] hover:text-white transition-colors duration-150 shrink-0">
+            $9.50
+          </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Shared Component Strict Compliance) -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 flex justify-around items-center px-4 py-2.5 max-w-[390px] mx-auto bg-[#1B1411] border-t border-[rgba(255,236,220,0.08)] shadow-[0_-4px_20px_rgba(27,20,17,0.5)]">
+<!-- Home (ACTIVE - Main intent) -->
+<button class="flex flex-col items-center justify-center text-[#F0703A] gap-1 active:scale-95 transition-transform duration-150 group">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-body text-[11px] font-medium tracking-tight">Home</span>
+</button>
+<!-- Search -->
+<button class="flex flex-col items-center justify-center text-[#A8968A] hover:text-[#F8EDE3] gap-1 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[22px]">search</span>
+<span class="font-body text-[11px] font-medium tracking-tight">Search</span>
+</button>
+<!-- Orders -->
+<button class="flex flex-col items-center justify-center text-[#A8968A] hover:text-[#F8EDE3] gap-1 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+<span class="font-body text-[11px] font-medium tracking-tight">Orders</span>
+</button>
+<!-- Saved -->
+<button class="flex flex-col items-center justify-center text-[#A8968A] hover:text-[#F8EDE3] gap-1 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[22px]">favorite</span>
+<span class="font-body text-[11px] font-medium tracking-tight">Saved</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-[#A8968A] hover:text-[#F8EDE3] gap-1 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[22px]">person</span>
+<span class="font-body text-[11px] font-medium tracking-tight">Profile</span>
+</button>
+</nav>
+</div>
+</body></html>

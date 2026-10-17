@@ -1,0 +1,23 @@
+If I were designing your food delivery app… 🍜
+
+Build this → Ember, a warm, editorial food ordering app
+
+1️⃣ Home: delivery address, serif hero with an overhead bowl, search, round category chips (Burgers · Pizza · Asian · Healthy), promo card with code EMBER30, "Popular near you" 2-column cards
+2️⃣ Dish detail: circle-cut food photo, rating / time / kcal pills, extras checklist, qty stepper + live total in the Add to cart button
+3️⃣ Cart: line items with steppers, dashed promo row, order summary, one big Place order pill
+4️⃣ Light (cream #FBF4EC) + warm espresso dark (#1B1411), same terracotta accent
+
+🎓 Student project idea: turn it into a full-stack app with React/Next.js + Node/Express + MongoDB: auth + order history, promo codes, Stripe test-mode checkout and live order tracking with Socket.IO
+
+🎨 Palette
+Light: bg #FBF4EC · card #FFFFFF · ink #2B1D14 · muted #8C7B6E · peach #FDE3D2 · accent #E8622C → #C9502A
+Dark: bg #1B1411 · card #2A201B · ink #F8EDE3 · muted #A8968A · accent #F0703A
+Pops: gold #F2A93B (stars) · green #4E9A5B (free delivery)
+
+🛠 Stack: HTML · Tailwind CSS · vanilla JS · Newsreader + DM Sans · cart, promo + dark mode in localStorage
+
+💬 Comment EMBER to get the HTML/CSS
+
+Save this for your next project ✨
+
+#fooddeliveryapp #uidesign #uiux #mobileui #appdesign #darkmode #frontenddevelopment #webdevelopment #tailwindcss #javascript #codingprojects #studentdeveloper #100daysofcode #codein30s

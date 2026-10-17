@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sesame Tofu Bowl - Ember</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#1B1411',
+              card: '#2A201B',
+              circle: '#3A2A22',
+              ink: '#F8EDE3',
+              secondary: '#A8968A',
+              orange: '#F0703A',
+              terracotta: '#D4572B',
+              gold: '#F2A93B',
+              free: '#6FBF7C'
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Newsreader", "serif"],
+            display: ["Newsreader", "serif"],
+            body: ["DM Sans", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #1B1411;
+      color: #F8EDE3;
+      font-family: 'DM Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Hide scrollbars for clean presentation */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    * {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#1B1411] text-[#F8EDE3] antialiased selection:bg-[#F0703A]/20">
+<div class="mx-auto min-h-screen max-w-[420px] relative pb-28 overflow-x-hidden flex flex-col justify-start">
+<!-- Top Floating Header Bar (Shared Component: TopAppBar style) -->
+<header class="fixed top-0 left-0 w-full z-50 pointer-events-none">
+<div class="max-w-[420px] mx-auto flex justify-between items-center w-full px-5 py-4 pt- safe pointer-events-auto">
+<!-- Back Action Button -->
+<button aria-label="Back" class="w-11 h-11 rounded-full bg-[#1B1411]/70 backdrop-blur-md border border-[rgba(255,236,220,0.12)] flex items-center justify-center text-[#F8EDE3] hover:opacity-80 active:scale-95 transition-all shadow-lg" onclick="history.back()" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<span></span>
+<!-- Favorite Button -->
+<button aria-label="Favorite" class="w-11 h-11 rounded-full bg-[#1B1411]/70 backdrop-blur-md border border-[rgba(255,236,220,0.12)] flex items-center justify-center text-[#F0703A] hover:opacity-80 active:scale-95 transition-all shadow-lg" type="button">
+<span class="material-symbols-outlined text-[20px] fill" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</header>
+<!-- Hero Photography Stage (Top ~40%) -->
+<div class="relative w-full pt-11 pb-6 flex flex-col items-center justify-center overflow-hidden">
+<!-- Soft ambient warm peach-cream circular glow halo -->
+<div class="absolute w-72 h-72 rounded-full bg-gradient-to-tr from-[#F0703A]/15 via-[#F8EDE3]/5 to-transparent blur-3xl -top-6 pointer-events-none"></div>
+<!-- Food Image with layered organic glow and warm ambient drop-shadow -->
+<div class="relative w-[200px] h-[200px] mt-1 flex items-center justify-center">
+<!-- Diffuse ambient drop shadow -->
+<div class="absolute inset-4 rounded-full bg-[#0E0B09] blur-2xl opacity-80 scale-95 translate-y-3 pointer-events-none"></div>
+<div class="relative w-full h-full rounded-full p-1 bg-gradient-to-b from-[rgba(255,236,220,0.12)] to-transparent">
+<img alt="Sesame Tofu Grain Bowl" class="w-full h-full object-cover rounded-full shadow-2xl ring-1 ring-[rgba(255,236,220,0.08)] transform hover:rotate-3 transition-transform duration-700 ease-out" src="../img/tofu-bowl-cut.png"/>
+</div>
+</div>
+</div>
+<!-- Rounded Content Sheet -->
+<main class="relative z-10 -mt-2 bg-[#2A201B] rounded-t-[32px] border-t border-[rgba(255,236,220,0.08)] px-5 pt-3 pb-12 flex-1 shadow-[0_-12px_32px_rgba(0,0,0,0.4)]">
+<!-- Drag handle aesthetic indicator -->
+<div class="w-10 h-1 bg-[rgba(255,236,220,0.15)] rounded-full mx-auto mb-4"></div>
+<!-- Restaurant Header & Tag -->
+<div class="flex items-center justify-between gap-2 mb-2">
+<span class="text-xs uppercase tracking-wider font-semibold text-[#A8968A] ">
+          Harvest Bowl Co.
+        </span>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#6FBF7C]/10 border border-[#6FBF7C]/20">
+<span class="w-1.5 h-1.5 rounded-full bg-[#6FBF7C]"></span>
+<span class="text-[11px] font-medium text-[#6FBF7C] tracking-wide">Free delivery</span>
+</div>
+</div>
+<!-- Dish Title & Price Row -->
+<div class="flex items-baseline justify-between gap-4 mb-3">
+<h1 class="font-headline text-3xl font-medium tracking-tight text-[#F8EDE3] leading-none">
+          Sesame Tofu <span class="italic text-[#F0703A]">Bowl</span>
+</h1>
+<div class="text-2xl font-body font-semibold text-[#F0703A] tracking-tight whitespace-nowrap">
+          $14.50
+        </div>
+</div>
+<!-- Meta Pill Badges Row -->
+<div class="flex items-center gap-2 mb-4 overflow-x-auto py-1">
+<!-- Rating Pill -->
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#3A2A22] border border-[rgba(255,236,220,0.08)] text-xs text-[#F8EDE3]">
+<span class="material-symbols-outlined text-[15px] text-[#F2A93B] fill" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold text-[#F8EDE3]">4.8</span>
+<span class="text-[#A8968A]">(1.2k)</span>
+</div>
+<!-- Prep Time Pill -->
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#3A2A22] border border-[rgba(255,236,220,0.08)] text-xs text-[#F8EDE3]">
+<span class="material-symbols-outlined text-[15px] text-[#A8968A]" data-icon="schedule">schedule</span>
+<span class="font-medium">15–20 min</span>
+</div>
+<!-- Calories Pill -->
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#3A2A22] border border-[rgba(255,236,220,0.08)] text-xs text-[#F8EDE3]">
+<span class="material-symbols-outlined text-[15px] text-[#F0703A]" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-medium">540 kcal</span>
+</div>
+</div>
+<!-- Description Paragraph -->
+<p class="text-[13.5px] leading-relaxed text-[#A8968A] mb-3 font-normal">
+        Crispy sesame tofu, edamame, soft egg, sweet corn, cucumber and red cabbage and cherry tomatoes with miso-ginger dressing.
+      </p>
+<!-- Add Extras Section Heading -->
+<div class="flex items-center justify-between mb-3 pt-1">
+<h2 class="font-headline text-lg font-medium tracking-tight text-[#F8EDE3]">
+          Add extras
+        </h2>
+<span class="text-[10px] uppercase tracking-wider font-semibold text-[#A8968A] bg-[#3A2A22] px-2 py-0.5 rounded-full border border-[rgba(255,236,220,0.05)]">
+          Optional
+        </span>
+</div>
+<!-- Extras Selection List -->
+<div class="space-y-2.5 mb-6">
+<!-- Option 1: Extra avocado (Checked) -->
+<label class="group relative flex items-center justify-between p-3 rounded-2xl bg-[#1B1411]/50 border border-[rgba(255,236,220,0.08)] cursor-pointer hover:border-[rgba(255,236,220,0.16)] transition-all">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-full object-cover ring-1 ring-[rgba(255,236,220,0.1)]"  src="../img/avocado.jpg"/>
+<div>
+<div class="text-sm font-medium text-[#F8EDE3]">Extra avocado</div>
+<div class="text-xs text-[#A8968A]">1/2 sliced ripe Hass avocado</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-semibold text-[#F0703A]">+$1.50</span>
+<div class="w-6 h-6 rounded-full bg-gradient-to-r from-[#F0703A] to-[#D4572B] flex items-center justify-center text-white shadow-sm transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[16px] font-bold" data-icon="check">check</span>
+</div>
+</div>
+</label>
+<!-- Option 2: Edamame (Unchecked) -->
+<label class="group relative flex items-center justify-between p-3 rounded-2xl bg-[#1B1411]/30 border border-[rgba(255,236,220,0.05)] cursor-pointer hover:border-[rgba(255,236,220,0.12)] transition-all">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-full object-cover ring-1 ring-[rgba(255,236,220,0.08)]"  src="../img/edamame.jpg"/>
+<div>
+<div class="text-sm font-medium text-[#F8EDE3]">Edamame</div>
+<div class="text-xs text-[#A8968A]">Extra steamed sweet soybeans</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-[#A8968A]">+$1.00</span>
+<div class="w-6 h-6 rounded-full border border-[rgba(255,236,220,0.2)] bg-[#3A2A22]/40 transition-colors group-hover:border-[#F0703A]/50"></div>
+</div>
+</label>
+<!-- Option 3: Add salmon (Unchecked) -->
+<label class="group relative flex items-center justify-between p-3 rounded-2xl bg-[#1B1411]/30 border border-[rgba(255,236,220,0.05)] cursor-pointer hover:border-[rgba(255,236,220,0.12)] transition-all">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-full object-cover ring-1 ring-[rgba(255,236,220,0.08)]"  src="../img/salmon.jpg"/>
+<div>
+<div class="text-sm font-medium text-[#F8EDE3]">Add salmon</div>
+<div class="text-xs text-[#A8968A]">Marinated fresh sashimi poke</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-[#A8968A]">+$3.00</span>
+<div class="w-6 h-6 rounded-full border border-[rgba(255,236,220,0.2)] bg-[#3A2A22]/40 transition-colors group-hover:border-[#F0703A]/50"></div>
+</div>
+</label>
+</div>
+</main>
+<!-- Fixed Bottom Sticky Bar (Docked at bottom of viewport) -->
+<div class="fixed bottom-0 left-0 w-full z-40 bg-[#1B1411]/90 backdrop-blur-xl border-t border-[rgba(255,236,220,0.08)] py-3 px-5">
+<div class="max-w-[420px] mx-auto flex items-center justify-between gap-3">
+<!-- Quantity Stepper Pill -->
+<div class="flex items-center justify-between bg-[#3A2A22] rounded-full px-2 py-1.5 border border-[rgba(255,236,220,0.08)] w-28 h-12">
+<button aria-label="Decrease quantity" class="w-8 h-8 rounded-full flex items-center justify-center text-[#A8968A] hover:text-[#F8EDE3] active:scale-90 transition-transform" id="decrement-btn" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span>
+</button>
+<span class="font-body font-semibold text-sm text-[#F8EDE3] select-none" id="quantity-display">1</span>
+<button aria-label="Increase quantity" class="w-8 h-8 rounded-full flex items-center justify-center text-[#A8968A] hover:text-[#F8EDE3] active:scale-90 transition-transform" id="increment-btn" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+<!-- Add To Cart Primary Action CTA Button -->
+<button class="flex-1 h-12 rounded-full bg-gradient-to-r from-[#F0703A] to-[#D4572B] hover:opacity-95 active:scale-[0.98] transition-all flex items-center justify-center gap-2 px-5 text-[#F8EDE3] font-body font-semibold text-sm shadow-[0_4px_20px_rgba(240,112,58,0.35)]" id="add-to-cart-btn" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="shopping_bag">shopping_bag</span>
+<span>Add to cart · $16.00</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Inline Vanilla Interactions -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let quantity = 1;
+      const basePrice = 14.50;
+      const avocadoExtra = 1.50;
+      const singleItemPrice = basePrice + avocadoExtra; // Avocado pre-checked
+      
+      const qtyDisplay = document.getElementById('quantity-display');
+      const decrementBtn = document.getElementById('decrement-btn');
+      const incrementBtn = document.getElementById('increment-btn');
+      const ctaBtn = document.getElementById('add-to-cart-btn');
+
+      function updateCartDisplay() {
+        qtyDisplay.textContent = quantity;
+        const total = (singleItemPrice * quantity).toFixed(2);
+        ctaBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[18px]" data-icon="shopping_bag">shopping_bag</span>
+          <span>Add to cart · $${total}</span>
+        `;
+      }
+
+      decrementBtn.addEventListener('click', () => {
+        if (quantity > 1) {
+          quantity--;
+          updateCartDisplay();
+        }
+      });
+
+      incrementBtn.addEventListener('click', () => {
+        quantity++;
+        updateCartDisplay();
+      });
+
+      // Quick visual feedback on add to cart
+      ctaBtn.addEventListener('click', () => {
+        const originalContent = ctaBtn.innerHTML;
+        ctaBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+          <span>Added to Order</span>
+        `;
+        ctaBtn.classList.remove('from-[#F0703A]', 'to-[#D4572B]');
+        ctaBtn.classList.add('bg-[#6FBF7C]');
+        
+        setTimeout(() => {
+          ctaBtn.classList.remove('bg-[#6FBF7C]');
+          ctaBtn.classList.add('from-[#F0703A]', 'to-[#D4572B]');
+          updateCartDisplay();
+        }, 1200);
+      });
+    });
+  </script>
+</body></html>

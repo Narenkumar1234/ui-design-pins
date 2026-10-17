@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2728%27 fill=%27%23E8622C%27/%3E%3Cpath d=%27M50 80c16 0 26-10 26-25 0-14-10-22-14-34-9 7-11 16-11 22-4-4-6-8-7-13-10 8-20 16-20 25 0 15 10 25 26 25Z%27 fill=%27white%27/%3E%3C/svg%3E">
+  <title>Ember · Dish</title>
+</head>
+<body class="bg-bg text-ink antialiased min-h-screen">
+  <div class="max-w-md md:max-w-3xl mx-auto pb-32 md:grid md:grid-cols-2 md:gap-8 md:pt-8 md:px-5">
+    <!-- Overhead hero on cream -->
+    <div class="relative h-[340px] md:h-auto md:aspect-square grid place-items-center bg-soft/50 md:rounded-sheet">
+      <a id="back" href="index.html" class="absolute top-5 left-5 w-10 h-10 rounded-full surface grid place-items-center shadow-soft" aria-label="Back"><svg class="icon text-[20px]"><use href="#i-chevleft"/></svg></a>
+      <span id="like-slot" class="absolute top-5 right-5"></span>
+      <div class="w-[250px] h-[250px] md:w-[78%] md:h-[78%] rounded-full shadow-bowl overflow-hidden">
+        <img id="hero" src="img/tofu-bowl-cut.png" alt="" class="w-full h-full object-cover">
+      </div>
+    </div>
+    <!-- Content sheet -->
+    <main class="relative -mt-7 md:mt-0 bg-bg rounded-t-sheet px-5 pt-6">
+      <a id="rest" href="restaurant.html" class="text-[13px] text-muted hover:text-accent"></a>
+      <div class="flex items-start justify-between gap-3 mt-1">
+        <h1 id="name" class="font-serif text-[30px] leading-[1.08] font-medium"></h1>
+        <p id="price" class="font-serif text-[26px] text-accent font-semibold pt-0.5"></p>
+      </div>
+      <div id="meta" class="mt-3 flex flex-wrap gap-2"></div>
+      <p id="desc" class="mt-4 text-[14px] leading-relaxed text-muted"></p>
+
+      <section id="extras-wrap" class="mt-6">
+        <h2 class="font-serif text-[21px] font-medium">Add <em class="accent">extras</em></h2>
+        <div id="extras" class="mt-3 grid gap-2.5"></div>
+      </section>
+      <label class="block mt-6">
+        <span class="text-sm font-semibold">Note for the kitchen</span>
+        <input id="note" type="text" maxlength="80" placeholder="e.g. no onions, extra spicy" class="mt-2 w-full surface rounded-2xl px-4 py-3 text-sm outline-none placeholder:text-muted focus:ring-2 focus:ring-accent/40">
+      </label>
+    </main>
+  </div>
+  <!-- Sticky add-to-cart bar -->
+  <div class="fixed bottom-0 inset-x-0 z-40 bg-card/95 backdrop-blur border-t border-line">
+    <div class="max-w-md md:max-w-3xl mx-auto px-5 py-3.5 flex items-center gap-3" style="padding-bottom:calc(14px + env(safe-area-inset-bottom))">
+      <div class="stepper"><button type="button" id="minus" aria-label="Decrease">−</button><output id="qty" aria-live="polite">1</output><button type="button" id="plus" aria-label="Increase">+</button></div>
+      <button type="button" id="add" class="grad flex-1 rounded-full py-3.5 font-bold shadow-glow">Add to cart · <span id="btn-total">$0.00</span></button>
+    </div>
+  </div>
+  <script src="assets/icons.js"></script>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/dish.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+{
+ "app": "Ember",
+ "keyword": "EMBER",
+ "out": "../final",
+ "light": [
+  "../final/screens/light-home.png",
+  "../final/screens/light-detail.png",
+  "../final/screens/light-cart.png"
+ ],
+ "dark": [
+  "../final/screens/dark-home.png",
+  "../final/screens/dark-detail.png",
+  "../final/screens/dark-cart.png"
+ ],
+ "hook": "A food app that<br>feels <em>warm</em>",
+ "hook_sub": "Cream, terracotta and serif type. A food delivery UI in light + dark.",
+ "cover": {
+  "fan_top": 575,
+  "sub_top": 352,
+  "sub_right": 470,
+  "bowl": {
+   "src": "../img/tofu-bowl-cut.png",
+   "x": 690,
+   "y": 118,
+   "d": 340
+  }
+ },
+ "cover_chips": [
+  {
+   "pos": "left:44px;top:500px",
+   "cls": "code",
+   "html": "EMBER30<small style=\"letter-spacing:0\">30% off your first order</small>"
+  },
+  {
+   "pos": "right:40px;top:500px",
+   "cls": "btn",
+   "html": "Add to cart &nbsp;\u00b7&nbsp; $16.00<small>Sesame Tofu Bowl</small>"
+  }
+ ],
+ "light_title": "Editorial type,<br><em>appetite first</em>",
+ "light_sub": "Serif headlines, round chips, overhead bowls, one accent.",
+ "callouts": [
+  {
+   "label": "Serif + italic accent",
+   "p": 0,
+   "sx": 115,
+   "sy": 128,
+   "lx": 40,
+   "ly": 420
+  },
+  {
+   "label": "Circle-cut food photo",
+   "p": 1,
+   "sx": 195,
+   "sy": 150,
+   "lx": 405,
+   "ly": 420,
+   "cls": "o"
+  },
+  {
+   "label": "Serif page titles",
+   "p": 2,
+   "sx": 232,
+   "sy": 52,
+   "lx": 800,
+   "ly": 420
+  },
+  {
+   "label": "2-col restaurant cards",
+   "p": 0,
+   "sx": 100,
+   "sy": 690,
+   "lx": 40,
+   "ly": 1205
+  },
+  {
+   "label": "Live total CTA",
+   "p": 1,
+   "sx": 290,
+   "sy": 762,
+   "lx": 440,
+   "ly": 1205,
+   "cls": "o"
+  },
+  {
+   "label": "Dashed promo row",
+   "p": 2,
+   "sx": 360,
+   "sy": 562,
+   "lx": 800,
+   "ly": 1205
+  }
+ ],
+ "dark_title": "Espresso night,<br><em>same terracotta</em>",
+ "dark_sub": "Warm brown surfaces, not pure black. The food photos still glow.",
+ "dark_callouts": [
+  {
+   "label": "Espresso #1B1411",
+   "p": 0,
+   "sx": 245,
+   "sy": 52,
+   "lx": 40,
+   "ly": 420
+  },
+  {
+   "label": "Green = free delivery",
+   "p": 1,
+   "sx": 335,
+   "sy": 302,
+   "lx": 405,
+   "ly": 420
+  },
+  {
+   "label": "Warm #2A201B cards",
+   "p": 2,
+   "sx": 200,
+   "sy": 285,
+   "lx": 790,
+   "ly": 420
+  },
+  {
+   "label": "Photo-first cards",
+   "p": 0,
+   "sx": 130,
+   "sy": 560,
+   "lx": 40,
+   "ly": 1205,
+   "cls": ""
+  },
+  {
+   "label": "Same orange CTA",
+   "p": 1,
+   "sx": 290,
+   "sy": 762,
+   "lx": 440,
+   "ly": 1205,
+   "cls": "o"
+  }
+ ],
+ "cta_sub": "Ember food delivery UI \u00b7 light + dark \u00b7 portfolio-ready.",
+ "benefits": [
+  "Home, Restaurant, Dish, Cart + Tracking",
+  "HTML + Tailwind, no build step",
+  "Working cart, promo code + dark mode",
+  "$3 kit \u00b7 link in DM"
+ ],
+ "pin_title": "Food Delivery<br><em>App UI Design</em>",
+ "pin": {
+  "fan_top": 330,
+  "pal_top": 945,
+  "card_top": 1100,
+  "palette": [
+   [
+    "Cream",
+    "#FBF4EC"
+   ],
+   [
+    "Orange",
+    "#E8622C"
+   ],
+   [
+    "Terracotta",
+    "#C9502A"
+   ],
+   [
+    "Peach",
+    "#FDE3D2"
+   ],
+   [
+    "Gold",
+    "#F2A93B"
+   ],
+   [
+    "Espresso",
+    "#2B1D14"
+   ],
+   [
+    "Night",
+    "#1B1411"
+   ]
+  ],
+  "idea": "Build a full-stack <em>food ordering</em> app",
+  "stack": "React / Next.js \u00b7 Node + Express \u00b7 MongoDB \u00b7 Stripe test mode \u00b7 Socket.IO",
+  "features": [
+   "Cart + promo codes",
+   "Auth + order history",
+   "Live order tracking",
+   "Dark mode"
+  ]
+ }
+}

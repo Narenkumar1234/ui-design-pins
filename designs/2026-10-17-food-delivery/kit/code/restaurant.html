@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2728%27 fill=%27%23E8622C%27/%3E%3Cpath d=%27M50 80c16 0 26-10 26-25 0-14-10-22-14-34-9 7-11 16-11 22-4-4-6-8-7-13-10 8-20 16-20 25 0 15 10 25 26 25Z%27 fill=%27white%27/%3E%3C/svg%3E">
+  <title>Ember · Restaurant</title>
+</head>
+<body class="bg-bg text-ink antialiased min-h-screen">
+  <div class="max-w-md md:max-w-3xl mx-auto pb-40">
+    <!-- Cover photo -->
+    <div class="relative h-[250px] md:h-[320px] md:mt-4 md:rounded-sheet overflow-hidden">
+      <img id="cover" src="img/harvest.jpg" alt="" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/10"></div>
+      <a href="index.html" class="absolute top-5 left-5 w-10 h-10 rounded-full bg-white/95 text-[#2B1D14] grid place-items-center shadow-soft" aria-label="Back"><svg class="icon text-[20px]"><use href="#i-chevleft"/></svg></a>
+      <span id="like-slot" class="absolute top-5 right-5"></span>
+    </div>
+    <!-- Info sheet -->
+    <main class="relative -mt-8 bg-bg rounded-t-sheet px-5 pt-6">
+      <p id="tags" class="text-xs font-semibold tracking-wide uppercase text-accent"></p>
+      <h1 id="name" class="font-serif text-[32px] leading-tight font-medium mt-1"></h1>
+      <div id="meta" class="mt-3 flex flex-wrap gap-2"></div>
+
+      <div class="mt-6 flex items-end justify-between">
+        <h2 class="font-serif text-[22px] font-medium">On the <em class="accent">menu</em></h2>
+        <span id="menu-count" class="text-xs text-muted"></span>
+      </div>
+      <ul id="menu" class="mt-3 grid gap-3 md:grid-cols-2"></ul>
+    </main>
+  </div>
+  <a id="cartbar" href="cart.html" class="cartbar grad rounded-full px-5 py-3.5 flex items-center justify-between shadow-glow">
+    <span class="flex items-center gap-2 font-semibold"><svg class="icon text-[19px]"><use href="#i-bag"/></svg><span id="cartbar-count">0 items</span></span>
+    <span class="font-bold">View cart · <span id="cartbar-total">$0.00</span></span>
+  </a>
+  <nav id="tabbar" data-active="home"></nav>
+  <script src="assets/icons.js"></script>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    /* restaurant.html?id=napoli — header + menu from data.js */
+    (() => {
+      const { D, $, rest, stars, fee, dishRow, likeBtn } = Ember;
+      const id = new URLSearchParams(location.search).get('id');
+      const r = rest(id) || D.restaurants[0];
+      document.title = `Ember · ${r.name}`;
+      $('#cover').src = r.img; $('#cover').alt = r.name;
+      $('#name').textContent = r.name; $('#tags').textContent = r.tags;
+      $('#like-slot').innerHTML = likeBtn(r.id, r.name, 'w-10 h-10 bg-white/95 text-[#2B1D14]');
+      $('#meta').innerHTML = `<span class="pill">${stars(r.rating, r.reviews)}</span><span class="pill">${icon('clock', 'text-accent text-[14px]')}${r.time}</span><span class="pill">${icon('scooter', 'text-accent text-[14px]')}${fee(r)}</span>`;
+      const menu = D.dishes.filter((d) => d.r === r.id);
+      $('#menu-count').textContent = `${menu.length} dishes`;
+      $('#menu').innerHTML = menu.map(dishRow).join('');
+    })();
+  </script>
+</body>
+</html>

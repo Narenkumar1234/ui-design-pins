@@ -1,0 +1,11 @@
+Food Delivery App UI: Ember Cream + Espresso Dark · Front-End Project Idea
+
+Front-end project idea: Ember, a warm, editorial food delivery app. Home with a serif hero, overhead bowl photo, search, round category chips, a promo card and "Popular near you" cards; a dish detail page with an extras checklist and live total; and a cart with promo code, order summary and Place order. Cream light mode (#FBF4EC) and warm espresso dark mode (#1B1411) with one terracotta accent (#E8622C), Newsreader + DM Sans. Build it with HTML, Tailwind CSS and vanilla JavaScript (cart and dark mode in localStorage), then go full-stack with React/Next.js, Node, MongoDB, Stripe test mode and Socket.IO order tracking. From @code.in.30s, comment EMBER on Instagram for the HTML/CSS kit.
+
+#fooddeliveryapp #uidesign #mobileui #darkmode #frontenddevelopment #tailwindcss #studentprojects #appdesign
+
+Alt text: Three mobile screens of the Ember food delivery app on a cream background: light-mode dish detail for a Sesame Tofu Bowl with an extras checklist, light-mode home with a serif "Fresh & warm, at your door" headline, overhead salad bowl, category chips, orange promo card and restaurant cards, and the same home screen in warm espresso dark mode. Below are seven palette swatches with hex codes, a fonts card (Newsreader, DM Sans) and a "Build a full-stack food ordering app" card listing the stack and features.
+
+Board: UI Design / Frontend Projects
+
+Link (once published): https://narenkumar1.gumroad.com/l/food-delivery-ui-kit
