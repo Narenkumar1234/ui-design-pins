@@ -1,0 +1,354 @@
+{
+ "app": "Lumo",
+ "keyword": "LUMO",
+ "out": "../final",
+ "screens": {
+  "light-home": "../final/screens/light-home.png",
+  "light-explore": "../final/screens/light-explore.png",
+  "light-course": "../final/screens/light-course.png",
+  "light-progress": "../final/screens/light-progress.png",
+  "dark-home": "../final/screens/dark-home.png",
+  "dark-explore": "../final/screens/dark-explore.png",
+  "dark-course": "../final/screens/dark-course.png",
+  "dark-progress": "../final/screens/dark-progress.png"
+ },
+ "hook": "Study apps can<br>be this <em>cute</em>",
+ "hook_sub": "Pastel 3D clay, chunky type, soft blue.<br>An e-learning UI in light + dark.",
+ "cover": {
+  "sub_top": 360,
+  "sub_right": 300,
+  "phones": [
+   [
+    "light-home",
+    390,
+    545,
+    330,
+    12
+   ],
+   [
+    "light-explore",
+    735,
+    480,
+    300,
+    10
+   ]
+  ],
+  "clays": [
+   {
+    "src": "../img/bulb.png",
+    "x": 742,
+    "y": 96,
+    "d": 300,
+    "blob": true
+   },
+   {
+    "src": "../img/pencil.png",
+    "x": 900,
+    "y": 640,
+    "d": 150,
+    "r": 10
+   },
+   {
+    "src": "../img/books.png",
+    "x": 44,
+    "y": 575,
+    "d": 160,
+    "r": -6
+   }
+  ],
+  "chips": [
+   {
+    "pos": "left:16px;top:880px;width:200px;padding:14px 16px",
+    "cls": "",
+    "html": "UI Design Basics<small>Lesson 4 of 12 · 25%</small><span class=\"bar\"><i style=\"width:25%\"></i></span>"
+   },
+   {
+    "pos": "right:36px;top:1146px",
+    "cls": "btn",
+    "html": "▶&nbsp; Continue learning"
+   }
+  ]
+ },
+ "light_title": "Soft clay,<br>zero <em>clutter</em>",
+ "light_sub": "Pastel tiles, puffy 3D icons, one periwinkle accent.",
+ "light_phones": [
+  [
+   "light-home",
+   210,
+   520,
+   300,
+   10
+  ],
+  [
+   "light-explore",
+   540,
+   470,
+   316,
+   12
+  ],
+  [
+   "light-course",
+   870,
+   520,
+   300,
+   10
+  ]
+ ],
+ "callouts": [
+  {
+   "label": "3D clay mascot",
+   "p": 0,
+   "sx": 238,
+   "sy": 96,
+   "lx": 40,
+   "ly": 410
+  },
+  {
+   "label": "Big question headline",
+   "p": 1,
+   "sx": 285,
+   "sy": 124,
+   "lx": 420,
+   "ly": 404,
+   "cls": "o"
+  },
+  {
+   "label": "Pastel player card",
+   "p": 2,
+   "sx": 345,
+   "sy": 96,
+   "lx": 830,
+   "ly": 410
+  },
+  {
+   "label": "Pick tiles",
+   "p": 0,
+   "sx": 195,
+   "sy": 668,
+   "lx": 60,
+   "ly": 1205
+  },
+  {
+   "label": "Staggered 2-col grid",
+   "p": 1,
+   "sx": 330,
+   "sy": 470,
+   "lx": 400,
+   "ly": 1205,
+   "cls": "o"
+  },
+  {
+   "label": "Current lesson",
+   "p": 2,
+   "sx": 210,
+   "sy": 712,
+   "lx": 830,
+   "ly": 1205
+  }
+ ],
+ "dark_title": "Night mode,<br>still <em>soft</em>",
+ "dark_sub": "Deep navy #121A2B, not black. The clay stays pastel.",
+ "dark_phones": [
+  [
+   "dark-progress",
+   210,
+   520,
+   300,
+   10
+  ],
+  [
+   "dark-home",
+   540,
+   470,
+   316,
+   12
+  ],
+  [
+   "dark-course",
+   870,
+   520,
+   300,
+   10
+  ]
+ ],
+ "dark_callouts": [
+  {
+   "label": "Navy, not black",
+   "p": 0,
+   "sx": 250,
+   "sy": 28,
+   "lx": 40,
+   "ly": 410
+  },
+  {
+   "label": "Clay stays pastel",
+   "p": 1,
+   "sx": 238,
+   "sy": 96,
+   "lx": 450,
+   "ly": 404,
+   "cls": "o"
+  },
+  {
+   "label": "Saved theme toggle",
+   "p": 2,
+   "sx": 302,
+   "sy": 52,
+   "lx": 800,
+   "ly": 410
+  },
+  {
+   "label": "Goal-line chart",
+   "p": 0,
+   "sx": 200,
+   "sy": 470,
+   "lx": 50,
+   "ly": 1205
+  },
+  {
+   "label": "Muted pastel tiles",
+   "p": 1,
+   "sx": 330,
+   "sy": 660,
+   "lx": 400,
+   "ly": 1205
+  },
+  {
+   "label": "Same periwinkle CTA",
+   "p": 2,
+   "sx": 335,
+   "sy": 776,
+   "lx": 790,
+   "ly": 1205,
+   "cls": "o"
+  }
+ ],
+ "cta": {
+  "sub": "Lumo e-learning UI · light + dark · portfolio-ready.",
+  "steps": [
+   "Design",
+   "HTML",
+   "Tailwind",
+   "JS",
+   "Kit"
+  ],
+  "phones": [
+   [
+    "dark-course",
+    910,
+    650,
+    230,
+    9
+   ],
+   [
+    "light-home",
+    745,
+    700,
+    250,
+    11
+   ]
+  ],
+  "clays": [
+   {
+    "src": "../img/bulb.png",
+    "x": 70,
+    "y": 960,
+    "d": 230,
+    "blob": true
+   },
+   {
+    "src": "../img/gradcap.png",
+    "x": 360,
+    "y": 1050,
+    "d": 170,
+    "r": -8
+   }
+  ]
+ },
+ "benefits": [
+  "Home, Explore, Lesson + Progress",
+  "HTML + Tailwind, no build step",
+  "Working player, quiz, streak + dark mode",
+  "$3 kit · link in DM"
+ ],
+ "pin_title": "E-learning<br><em>App UI Design</em>",
+ "pin": {
+  "phones": [
+   [
+    "light-explore",
+    225,
+    350,
+    270,
+    10
+   ],
+   [
+    "light-home",
+    500,
+    320,
+    290,
+    12
+   ],
+   [
+    "dark-home",
+    775,
+    350,
+    270,
+    10
+   ]
+  ],
+  "clays": [
+   {
+    "src": "../img/bulb.png",
+    "x": 770,
+    "y": 70,
+    "d": 190,
+    "blob": true
+   }
+  ],
+  "pal_top": 990,
+  "card_top": 1150,
+  "card_h": 232,
+  "palette": [
+   [
+    "Sky",
+    "#CFE3FF"
+   ],
+   [
+    "Page",
+    "#F4F8FF"
+   ],
+   [
+    "Periwinkle",
+    "#6FA3F0"
+   ],
+   [
+    "Peach",
+    "#FBD9D6"
+   ],
+   [
+    "Cream",
+    "#FFE9C2"
+   ],
+   [
+    "Lavender",
+    "#E4DBF2"
+   ],
+   [
+    "Navy ink",
+    "#1F2A44"
+   ],
+   [
+    "Night",
+    "#121A2B"
+   ]
+  ],
+  "idea": "Build a full-stack <em>e-learning</em> app",
+  "stack": "React / Next.js · Node + Express · MongoDB · JWT auth · Cloudinary video",
+  "features": [
+   "Course + lesson CRUD",
+   "Progress + streaks",
+   "Quizzes with scores",
+   "Dark mode"
+  ]
+ }
+}
