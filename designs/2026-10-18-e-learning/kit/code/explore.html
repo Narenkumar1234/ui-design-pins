@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="img/bulb.png">
+  <title>Lumo · Explore</title>
+</head>
+<body class="bg-bg text-ink antialiased min-h-screen">
+  <main class="max-w-md md:max-w-3xl mx-auto px-5 pt-4 pb-36">
+    <!-- Top bar: back · search -->
+    <header class="flex items-center justify-between">
+      <a href="index.html" class="btn-round" aria-label="Back"><svg class="icon text-[22px]"><use href="#i-back"/></svg></a>
+      <div class="flex items-center gap-2">
+        <button type="button" data-theme-toggle class="btn-round"></button>
+        <button type="button" id="search-btn" class="btn-round" aria-label="Search" aria-expanded="false"><svg class="icon text-[20px]"><use href="#i-search"/></svg></button>
+      </div>
+    </header>
+
+    <h1 class="font-display font-semibold text-[34px] md:text-[44px] leading-[1.06] mt-4">What do you want<br>to learn <span class="text-deep">today?</span></h1>
+
+    <!-- Search (toggled by the search button) -->
+    <label id="search-wrap" class="hidden mt-4 h-12 rounded-full bg-surface shadow-soft items-center gap-2 px-4">
+      <svg class="icon text-[19px] text-muted"><use href="#i-search"/></svg>
+      <input id="q" type="search" placeholder="Search courses or subjects" class="flex-1 bg-transparent outline-none text-[15px] font-semibold placeholder:text-muted">
+    </label>
+
+    <!-- Filter pills -->
+    <div id="filters" class="flex gap-2 mt-4 overflow-x-auto no-scrollbar -mx-5 px-5 pb-2" role="group" aria-label="Filter subjects">
+      <button type="button" class="chip" data-f="all" aria-pressed="true">All</button>
+      <button type="button" class="chip" data-f="popular" aria-pressed="false">Popular</button>
+      <button type="button" class="chip" data-f="new" aria-pressed="false">New</button>
+      <button type="button" class="chip" data-f="free" aria-pressed="false">Free</button>
+    </div>
+
+    <!-- 2-col staggered grid of pastel subject cards -->
+    <section id="grid" class="stagger mt-3 pb-10" aria-live="polite"></section>
+
+    <!-- Search results (courses) -->
+    <section id="results" class="hidden mt-4">
+      <p class="text-muted text-[13px] font-bold uppercase tracking-wider" id="res-label"></p>
+      <div id="res-list" class="grid gap-3 mt-3"></div>
+    </section>
+  </main>
+
+  <!-- Bottom sheet: courses in a subject -->
+  <div id="scrim" class="scrim fixed inset-0 z-50 bg-[#1F2A44]/30"></div>
+  <section id="sheet" class="sheet fixed z-50 left-0 right-0 bottom-0 max-w-md md:max-w-xl mx-auto bg-bg rounded-t-[32px] p-5 pb-8 shadow-float" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <div class="w-10 h-1.5 rounded-full bg-muted/30 mx-auto"></div>
+    <div class="flex items-center gap-3 mt-4">
+      <span id="sheet-art" class="w-14 h-14 rounded-[18px] grid place-items-center"></span>
+      <div class="flex-1"><h2 id="sheet-title" class="font-display font-semibold text-[22px] leading-tight"></h2><p id="sheet-sub" class="text-muted text-[13px] font-semibold"></p></div>
+      <button type="button" id="sheet-close" class="btn-round" aria-label="Close"><svg class="icon text-[20px]"><use href="#i-close"/></svg></button>
+    </div>
+    <div id="sheet-list" class="grid gap-3 mt-4"></div>
+  </section>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/explore.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="img/bulb.png">
+  <title>Lumo · Learn something new today</title>
+</head>
+<body class="bg-bg text-ink antialiased min-h-screen">
+  <main class="max-w-md md:max-w-3xl mx-auto px-5 pt-4 pb-32">
+    <!-- Header: avatar + greeting · theme toggle + bell -->
+    <header class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="w-11 h-11 rounded-full tone-peach grid place-items-center font-display font-semibold text-[18px] text-ink" id="avatar">A</span>
+        <span><span class="block text-[13px] text-muted font-semibold" id="greet">Good morning</span>
+          <span class="block font-display font-semibold text-[19px] leading-tight" id="uname">Aarav</span></span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button type="button" data-theme-toggle class="btn-round"></button>
+        <button type="button" id="bell" class="btn-round relative" aria-label="Notifications">
+          <svg class="icon text-[20px]"><use href="#i-bell"/></svg><span class="absolute top-[11px] right-[12px] w-2 h-2 rounded-full bg-primary ring-2 ring-surface"></span></button>
+      </div>
+    </header>
+
+    <div class="md:grid md:grid-cols-2 md:gap-10 md:items-center md:mt-6">
+      <!-- Hero: 3D clay mascot on a soft sky blob -->
+      <section class="relative h-[176px] md:h-[300px] grid place-items-center mt-2" aria-hidden="true">
+        <div class="hero-blob absolute w-[204px] h-[204px] md:w-[340px] md:h-[340px] rounded-full"></div>
+        <img src="img/bulb.png" alt="" class="clay float relative w-[156px] md:w-[250px]" draggable="false">
+      </section>
+
+      <div>
+        <h1 class="font-display font-semibold text-[34px] md:text-[44px] leading-[1.05] text-center md:text-left">Learn something<br><span class="text-deep">new today</span></h1>
+        <p class="text-center md:text-left text-muted text-[14px] mt-2" id="tagline">12 min a day keeps your streak alive</p>
+
+        <!-- Primary CTA -->
+        <a id="continue" href="course.html" class="pill-primary mt-4 h-14 rounded-full flex items-center justify-center gap-2.5 font-display font-semibold text-[17px] px-5">
+          <svg class="icon fill text-[18px]"><use href="#i-play"/></svg><span class="truncate" id="continue-label">Continue: UI Design Basics</span></a>
+
+        <!-- Progress card -->
+        <a id="prog-card" href="progress.html" class="block bg-surface rounded-card shadow-card px-4 py-3.5 mt-4">
+          <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-full tone-sky grid place-items-center text-deep"><svg class="icon text-[18px]"><use href="#i-book"/></svg></span>
+            <b class="font-display font-semibold text-[16px] flex-1">Your progress</b>
+            <span class="text-[13px] text-muted font-semibold" id="prog-lesson">Lesson 4 of 12</span>
+          </div>
+          <div class="bar mt-3"><i id="prog-bar" style="width:33%"></i></div>
+          <div class="flex items-center justify-between mt-2.5 text-[13px] font-bold">
+            <span class="flex items-center gap-1.5"><svg class="icon text-[16px] text-[#F5B94A]"><use href="#i-flame"/></svg><span id="streak">6-day streak</span></span>
+            <span class="text-deep" id="prog-pct">33% complete</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Today's picks: small pastel tiles with clay objects -->
+    <section class="mt-5">
+      <div class="flex items-center justify-between">
+        <h2 class="font-display font-semibold text-[20px]">Today's picks</h2>
+        <a href="explore.html" class="text-deep font-bold text-[14px]">See all</a>
+      </div>
+      <div id="picks" class="grid grid-cols-3 md:grid-cols-6 gap-3 mt-3"></div>
+    </section>
+
+    <!-- Popular courses (scroll) -->
+    <section class="mt-8">
+      <div class="flex items-center justify-between">
+        <h2 class="font-display font-semibold text-[20px]">Popular courses</h2>
+        <span class="text-muted text-[13px] font-semibold" id="pop-count"></span>
+      </div>
+      <div id="popular" class="mt-3 grid md:grid-cols-2 gap-3"></div>
+    </section>
+  </main>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/home.js"></script>
+</body>
+</html>

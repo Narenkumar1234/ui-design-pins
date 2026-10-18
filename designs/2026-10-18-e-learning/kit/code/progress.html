@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="img/bulb.png">
+  <title>Lumo · My learning</title>
+</head>
+<body class="bg-bg text-ink antialiased min-h-screen">
+  <main class="max-w-md md:max-w-3xl mx-auto px-5 pt-4 pb-36">
+    <header class="flex items-center justify-between h-11">
+      <h1 class="font-display font-semibold text-[28px]">My learning</h1>
+      <button type="button" data-theme-toggle class="btn-round"></button>
+    </header>
+
+    <div class="md:grid md:grid-cols-2 md:gap-6">
+      <div>
+        <!-- Streak card -->
+        <section class="tone-cream rounded-tile p-4 mt-4 relative overflow-hidden shadow-soft">
+          <img src="img/trophy.png" alt="" class="clay float absolute right-2 top-2 w-[104px]" draggable="false">
+          <p class="text-[13px] font-extrabold text-ink/60 uppercase tracking-wider">Current streak</p>
+          <p class="font-display font-semibold text-[34px] leading-none mt-1"><span id="streak-n">6</span> days</p>
+          <p class="text-[13px] font-semibold text-ink/60 mt-1.5" id="streak-tip">Study today to make it 7</p>
+          <div class="flex gap-1.5 mt-4" id="days"></div>
+        </section>
+
+        <!-- Stats -->
+        <section class="grid grid-cols-3 gap-3 mt-3">
+          <div class="bg-surface rounded-[22px] shadow-soft p-3"><b class="font-display font-semibold text-[24px] block" id="s-lessons">9</b><span class="text-[12px] text-muted font-bold">Lessons done</span></div>
+          <div class="bg-surface rounded-[22px] shadow-soft p-3"><b class="font-display font-semibold text-[24px] block" id="s-mins">123</b><span class="text-[12px] text-muted font-bold">Min this week</span></div>
+          <div class="bg-surface rounded-[22px] shadow-soft p-3"><b class="font-display font-semibold text-[24px] block" id="s-badges">2/4</b><span class="text-[12px] text-muted font-bold">Badges</span></div>
+        </section>
+      </div>
+
+      <div>
+        <!-- Weekly chart -->
+        <section class="bg-surface rounded-card shadow-card p-4 mt-3 md:mt-4">
+          <div class="flex items-center justify-between">
+            <h2 class="font-display font-semibold text-[18px]">This week</h2>
+            <div class="flex gap-1 bg-raised rounded-full p-1" id="goal" role="group" aria-label="Daily goal">
+              <button type="button" data-g="10" class="px-2.5 h-7 rounded-full text-[12px] font-extrabold">10m</button>
+              <button type="button" data-g="20" class="px-2.5 h-7 rounded-full text-[12px] font-extrabold">20m</button>
+              <button type="button" data-g="30" class="px-2.5 h-7 rounded-full text-[12px] font-extrabold">30m</button>
+            </div>
+          </div>
+          <div class="relative mt-4 h-[118px]" id="chart"></div>
+          <p class="text-[12px] text-muted font-bold mt-2" id="goal-note">Daily goal: 20 min</p>
+        </section>
+      </div>
+    </div>
+
+    <!-- In progress -->
+    <section class="mt-6">
+      <h2 class="font-display font-semibold text-[20px]">Keep going</h2>
+      <div id="inprog" class="grid md:grid-cols-2 gap-3 mt-3"></div>
+    </section>
+
+    <!-- Badges -->
+    <section class="mt-6">
+      <h2 class="font-display font-semibold text-[20px]">Badges</h2>
+      <div id="badges" class="grid grid-cols-4 gap-3 mt-3"></div>
+    </section>
+  </main>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/progress.js"></script>
+</body>
+</html>

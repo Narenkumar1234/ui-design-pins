@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="img/bulb.png">
+  <title>Lumo · Lesson</title>
+</head>
+<body class="bg-bg text-ink antialiased min-h-screen">
+  <main class="max-w-md md:max-w-3xl mx-auto px-5 pt-4 pb-36">
+    <!-- Top bar: back · lesson number · bookmark -->
+    <header class="relative flex items-center justify-between">
+      <a href="explore.html" class="btn-round" aria-label="Back"><svg class="icon text-[22px]"><use href="#i-back"/></svg></a>
+      <b class="absolute left-1/2 -translate-x-1/2 font-display font-semibold text-[18px]" id="lesson-no">Lesson 5</b>
+      <div class="flex items-center gap-2">
+        <button type="button" data-theme-toggle class="btn-round"></button>
+        <button type="button" id="save" class="btn-round" aria-label="Save course" aria-pressed="false"><svg class="icon text-[20px]"><use href="#i-bookmark"/></svg></button>
+      </div>
+    </header>
+
+    <div class="md:grid md:grid-cols-[1.1fr_1fr] md:gap-8 md:mt-4">
+      <div>
+        <!-- Player card (simulated video) -->
+        <section id="player" class="tone-lav relative rounded-[28px] h-[200px] md:h-[300px] mt-3 overflow-hidden shadow-soft">
+          <span class="absolute top-3.5 left-4 bg-surface/80 backdrop-blur text-[12px] font-extrabold px-3 py-1 rounded-full" id="now-chip">05 · Objects</span>
+          <img src="img/laptop.png" id="player-art" alt="" class="clay float absolute inset-x-0 mx-auto top-[16px] md:top-[50px] w-[126px] md:w-[200px]" draggable="false">
+          <div class="absolute left-3 right-3 bottom-3 flex items-center gap-3 bg-surface/85 backdrop-blur rounded-full pl-1.5 pr-3 py-1.5">
+            <button type="button" id="play" class="w-9 h-9 rounded-full pill-primary grid place-items-center shrink-0" aria-label="Play"><svg class="icon fill text-[15px]"><use href="#i-play"/></svg></button>
+            <input id="scrub" type="range" min="0" max="690" value="252" class="scrub flex-1" aria-label="Seek">
+            <span class="text-[12px] font-extrabold tabular-nums whitespace-nowrap" id="time">04:12 / 11:30</span>
+            <button type="button" id="speed" class="text-[12px] font-extrabold text-deep w-8" aria-label="Playback speed">1x</button>
+          </div>
+        </section>
+
+        <!-- Course meta -->
+        <div class="flex items-center gap-2 mt-4">
+          <span class="tone-peach text-[12px] font-extrabold px-3 py-1 rounded-full" id="tag">Coding</span>
+          <span class="flex items-center gap-1 text-[13px] font-bold"><svg class="icon fill text-[15px] text-[#F5B94A]"><use href="#i-star"/></svg><span id="rating">4.9</span></span>
+        </div>
+        <h1 class="font-display font-semibold text-[26px] leading-tight mt-1.5" id="title">JavaScript for Beginners</h1>
+        <div class="flex items-center gap-2 mt-1 text-[13px] text-muted font-semibold">
+          <span class="w-6 h-6 rounded-full tone-sky grid place-items-center text-[11px] font-extrabold text-ink" id="t-init">R</span>
+          <span id="teacher">Riya Sharma</span><span>·</span><span id="count">12 lessons</span><span>·</span><span id="done-pct">33% done</span>
+        </div>
+      </div>
+
+      <div>
+        <!-- Tabs -->
+        <div class="mt-4 bg-raised rounded-full p-1 grid grid-cols-3 text-[14px] font-extrabold" role="tablist" id="tabs">
+          <button type="button" role="tab" data-tab="lessons" aria-selected="true" class="h-9 rounded-full">Lessons</button>
+          <button type="button" role="tab" data-tab="notes" aria-selected="false" class="h-9 rounded-full">Notes</button>
+          <button type="button" role="tab" data-tab="quiz" aria-selected="false" class="h-9 rounded-full">Quiz</button>
+        </div>
+
+        <section data-panel="lessons" class="mt-3 grid gap-1.5" id="lessons" role="tabpanel"></section>
+
+        <section data-panel="notes" class="hidden mt-3" role="tabpanel">
+          <textarea id="notes" rows="7" placeholder="Write what you learned in your own words..." class="w-full bg-surface rounded-card shadow-soft p-4 text-[15px] outline-none resize-none placeholder:text-muted"></textarea>
+          <p class="text-[12px] text-muted font-semibold mt-2" id="notes-saved">Notes save automatically on this device.</p>
+        </section>
+
+        <section data-panel="quiz" class="hidden mt-3" role="tabpanel"><div id="quiz" class="grid gap-3"></div></section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Fixed CTA -->
+  <div class="fixed z-40 left-0 right-0 bottom-0 pt-10 pb-4 px-5" style="background:linear-gradient(to bottom, rgb(var(--bg) / 0), rgb(var(--bg)) 45%)">
+    <button type="button" id="next" class="pill-primary max-w-md mx-auto w-full h-14 rounded-full flex items-center justify-center gap-2 font-display font-semibold text-[17px]">
+      <span id="next-label">Next lesson</span><svg class="icon text-[20px]"><use href="#i-arrow"/></svg></button>
+  </div>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>
