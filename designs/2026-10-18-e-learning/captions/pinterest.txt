@@ -1,0 +1,11 @@
+E-learning App UI: Lumo Pastel 3D Clay, Light + Dark · Front-End Project Idea
+
+Front-end project idea: Lumo, a cute pastel 3D clay e-learning / online course app. A home screen with a floating clay lightbulb mascot, Continue pill, progress card and streak; an Explore page with filter pills and a staggered grid of pastel subject cards; a lesson player with play, seek, speed, lessons, notes and a quiz; and a My learning page with a streak tracker, weekly goal chart and badges. Soft sky-blue light mode (#F4F8FF) and deep navy dark mode (#121A2B) with a periwinkle accent (#6FA3F0) and peach, cream and lavender tiles, Fredoka + Nunito. Build it with HTML, Tailwind CSS and vanilla JavaScript (progress, streak and dark mode in localStorage), then go full-stack with React/Next.js, Node, MongoDB, JWT auth and Cloudinary video. From @code.in.30s, comment LUMO on Instagram for the HTML/CSS kit.
+
+#elearningapp #uidesign #mobileui #claymorphism #darkmode #frontenddevelopment #tailwindcss #studentprojects #appdesign
+
+Alt text: Three mobile screens of the Lumo e-learning app on a pale sky-blue background: light-mode Explore with a "What do you want to learn today?" headline and a staggered grid of peach, cream, lavender and blue subject cards with cute 3D clay icons (laptop, pencil, flask, globe), light-mode Home with a clay lightbulb mascot reading a book, a "Learn something new today" headline, a periwinkle Continue pill and a progress card, and the same Home screen in deep navy dark mode. Below are eight palette swatches with hex codes, a fonts card (Fredoka, Nunito) and a "Build a full-stack e-learning app" card listing the stack and features.
+
+Board: UI Design / Frontend Projects
+
+Link (once published): https://narenkumar1.gumroad.com/l/e-learning-ui-kit

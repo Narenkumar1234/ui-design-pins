@@ -1,0 +1,27 @@
+Study apps can be this cute 📚✨
+
+Build this → Lumo, a pastel 3D clay e-learning app
+
+1️⃣ Home: greeting + avatar, a floating clay lightbulb mascot, "Learn something new today", one big Continue pill, progress card with a 6-day streak, pastel "Today's picks" tiles
+2️⃣ Explore: "What do you want to learn today?", filter pills (All · Popular · New · Free), a staggered 2-column grid of pastel subject cards with 3D clay icons, live search
+3️⃣ Lesson player: play / seek / 1.5x speed, Lessons · Notes · Quiz tabs, done ticks on finished lessons, one Next lesson pill
+4️⃣ My learning: streak tracker, weekly minutes chart with a daily-goal line, badges
+5️⃣ Light (sky #F4F8FF) + deep navy dark (#121A2B, not black), same periwinkle accent
+
+🎓 Student project idea: turn it into a full-stack e-learning app with React/Next.js + Node/Express + MongoDB: JWT auth, course + lesson CRUD, video lessons on Cloudinary, saved progress, streaks and quiz scores per user
+
+🎨 Palette
+Light: bg #F4F8FF · card #FFFFFF · ink #1F2A44 · muted #8A94A8 · primary #8FB8F5 → #6FA3F0
+Tiles: peach #FBD9D6 · cream #FFE9C2 · lavender #E4DBF2 · sky #D6E6FF
+Dark: bg #121A2B · card #1C2740 · ink #EEF3FF · primary #7FAEF3
+Pops: mint #6CC8A0 (done) · honey #F5B94A (streak)
+
+🛠 Stack: HTML · Tailwind CSS · vanilla JS · Fredoka + Nunito · progress, streak, notes + dark mode in localStorage
+
+💬 Comment LUMO to get the HTML/CSS
+
+Save this for your next project ✨
+
+Style inspo: @uiux.build
+
+#elearning #elearningapp #uidesign #uiux #mobileui #appdesign #claymorphism #darkmode #frontenddevelopment #webdevelopment #tailwindcss #javascript #codingprojects #studentdeveloper #codein30s
