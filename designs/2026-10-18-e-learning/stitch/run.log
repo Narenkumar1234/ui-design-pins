@@ -1,0 +1,135 @@
+START LIGHT home 0
+EXC 2 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT home 1
+LIGHT home 71 s {"outputComponents": [{"design": {"screens": [{"designSystem": {"designSystem": {"displayName": "Lumo Light", "theme": {"bodyFont": "NUNITO_SANS", "colorMode": "LIGHT", "colorVariant": "FIDELITY", "customColor": "#6FA3F0", "designMd": "# Lumo e-learning app (code.in.30s)\nOnline course / e-learning 
+START ART art 0
+EXC 7 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START ART art 1
+EXC 2 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START ART art 2
+EXC 34 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START ART art 3
+ART art 39 s {"outputComponents": [{"design": {"screens": [{"deviceType": "DESKTOP", "generatedBy": "create_datastore_entry", "height": "3280", "htmlCode": {"downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2NlNjkwMTA1N
+START LIGHT explore 0
+EXC 5 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 1
+EXC 2 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 2
+EXC 6 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 3
+EXC 52 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 4
+EXC 52 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 5
+EXC 15 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 6
+EXC 15 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 7
+EXC 8 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT course 0
+LIGHT course 83 s {"outputComponents": [{"design": {"screens": [{"designSystem": {"designSystem": {"displayName": "Lumo Light", "theme": {"bodyFont": "NUNITO_SANS", "colorMode": "LIGHT", "colorVariant": "FIDELITY", "customColor": "#6FA3F0", "designMd": "# Lumo e-learning app (code.in.30s)\nOnline course / e-learning 
+START DARK home 0
+DARK home 63 s {"outputComponents": [{"design": {"screens": [{"designSystem": {"designSystem": {"displayName": "Lumo Dark", "theme": {"bodyFont": "NUNITO_SANS", "colorMode": "DARK", "colorVariant": "FIDELITY", "customColor": "#7FAEF3", "designMd": "# Lumo e-learning app (code.in.30s)\nOnline course / e-learning mo
+START DARK explore 0
+EXC 68 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK explore 1
+EXC 2 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK explore 2
+EXC 1 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK explore 3
+EXC 19 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK explore 4
+EXC 1 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK explore 5
+DARK explore 76 s {"outputComponents": [{"design": {"screens": [{"designSystem": {"designSystem": {"displayName": "Lumo Dark", "theme": {"bodyFont": "NUNITO_SANS", "colorMode": "DARK", "colorVariant": "FIDELITY", "customColor": "#7FAEF3", "designMd": "# Lumo e-learning app (code.in.30s)\nOnline course / e-learning mo
+START DARK course 0
+EXC 3 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 1
+EXC 6 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 2
+EXC 5 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 3
+EXC 7 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 4
+EXC 2 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 5
+EXC 8 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 6
+EXC 1 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 7
+EXC 0 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+ALL_DONE
+START LIGHT explore 0
+EXC 2 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 1
+EXC 16 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 2
+EXC 24 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 3
+EXC 65 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 4
+EXC 0 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 5
+EXC 9 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 6
+EXC 1 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START LIGHT explore 7
+EXC 2 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 0
+EXC 2 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 1
+EXC 1 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 2
+EXC 4 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 3
+EXC 4 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 4
+EXC 1 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 5
+EXC 6 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 6
+EXC 3 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+START DARK course 7
+EXC 10 s curl 56 curl: (56) OpenSSL SSL_read: OpenSSL/3.5.7: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+
+RETRY_DONE

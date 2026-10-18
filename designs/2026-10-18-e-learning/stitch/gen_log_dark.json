@@ -1,0 +1,160 @@
+{
+ "DARK-home": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Lumo Dark",
+         "theme": {
+          "bodyFont": "NUNITO_SANS",
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#7FAEF3",
+          "designMd": "# Lumo e-learning app (code.in.30s)\nOnline course / e-learning mobile app for students. Soft pastel CLAYMORPHISM style: big glossy puffy 3D clay illustrations (cute objects with tiny smiling faces: lightbulb, book, pencil, laptop, trophy, flask) as heroes and on cards. Rounded chunky geometric headings (Fredoka, bold, large ~3x the body), Nunito body text, small low-contrast grey subtext. 24px radius cards, full-round pill buttons, soft diffuse blue-tinted shadows, NO hard borders, thin rounded outline icons. Airy, friendly, calm. NO emoji, NO photos of people except a small avatar, NO neon, NO harsh black.\n## Dark: deep calm navy (NOT pure black, NOT purple): background #121A2B, surfaces #1C2740, raised #24314F, ink #EEF3FF, muted #8E9BB8. Same periwinkle #7FAEF3 for pill buttons, active tab and progress bars. Card tiles are muted pastels on navy: peach #3A2B35 tint with #FBD9D6 accents, cream #3A3428, lavender #2E2A45, sky #22365A. The 3D clay illustrations stay bright pastel. No glow.",
+          "overrideNeutralColor": "#121A2B",
+          "overridePrimaryColor": "#7FAEF3",
+          "overrideSecondaryColor": "#FBD9D6",
+          "overrideTertiaryColor": "#FFE9C2",
+          "roundness": "ROUND_FULL"
+         }
+        },
+        "name": "assets/14981496128412414961",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "1846",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2QwY2E0ZmI3NGFmMzRlZDViNzkwNDY5MWE0MzcyZWNhEgsSBxDnsaWX4xEYAZIBIwoKcHJvamVjdF9pZBIVQhM2NzU3NDk5MjUxMDI2MjQyODk3&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/6757499251026242897/files/cc0df1473de64eabb452b6508e7cedf5"
+       },
+       "id": "8ca50c59ddd14edf8dd7c473e479cfac",
+       "name": "projects/6757499251026242897/screens/8ca50c59ddd14edf8dd7c473e479cfac",
+       "prompt": "Design the mobile Home screen for \"Lumo\", a student e-learning app in dark claymorphism mode.\n\nColor Palette & Surfaces:\n- Background: deep calm navy #121A2B (NOT pure black, NOT purple)\n- Card surface: #1C2740\n- Raised element/elevated surface: #24314F\n- Primary ink/text: #EEF3FF\n- Muted/subtext: #8E9BB8\n- Primary accent & buttons: Periwinkle blue #7FAEF3\n- Tile muted pastel backgrounds: peach #3A2B35, cream #3A3428, lavender #2E2A45, sky #22365A.\n- Soft diffuse glowing shadows, 24px border radius for cards, pill buttons rounded-full, NO harsh borders, thin rounded outline icons. No emojis.\n\nScreen Layout (390x844 mobile viewport):\n1. Top row:\n   - Left: Small circular avatar of Aarav next to \"Good morning\" (muted #8E9BB8 text-xs) and \"Aarav\" (bold text-base #EEF3FF).\n   - Right: Subtle circular raised button (#24314F) with a bell notification outline icon.\n\n2. Big Hero Section:\n   - Centered: The glossy puffy 3D clay lightbulb mascot with a cute smiling face holding an open book (use image {{DATA:IMAGE:IMAGE_50}} or centered illustration), set inside/floating above a soft radial sky blue luminous glow/blob (#22365A with diffuse periwinkle light) with a gentle diffuse shadow below.\n   - Headline in 2 lines using chunky rounded geometric bold typography:\n     \"Learn something\" (#EEF3FF)\n     \"new today\" (#7FAEF3 periwinkle)\n   - Muted subtext: \"12 min a day keeps your streak alive\" in #8E9BB8.\n   - Primary action CTA: Full-width periwinkle #7FAEF3 rounded-full pill button with white text and play icon: \"Continue: UI Design Basics\".\n\n3. \"Your progress\" Card:\n   - Surface card (#1C2740, rounded-[24px], p-4):\n   - Row with book icon, \"Your progress\" in bold #EEF3FF, and right aligned \"Lesson 4 of 12\" in muted #8E9BB8.\n   - Thin 6px rounded progress track with 35% filled in glowing periwinkle #7FAEF3.\n\n4. \"Today's picks\" Section:\n   - Header with \"Today's picks\" (bold #EEF3FF text-lg) and right-aligned \"See all\" text button in periwinkle #7FAEF3.\n   - Horizontal row of 3 rounded-[20px] square tiles with subtle muted pastel backgrounds:\n     a) Coding: Background #3A2B35 (deep muted peach), containing the cute 3D clay laptop (image {{DATA:IMAGE:IMAGE_46}}), with bold label \"Coding\" below.\n     b) Design: Background #3A3428 (deep muted cream), containing the cute 3D clay pencil character (image {{DATA:IMAGE:IMAGE_47}}), with bold label \"Design\" below.\n     c) Science: Background #2E2A45 (deep muted lavender), containing the cute 3D clay bubbling chemistry flask (image {{DATA:IMAGE:IMAGE_42}}), with bold label \"Science\" below.\n\n5. Bottom Navigation Bar:\n   - Floating rounded-full pill bar docking near bottom with background #1C2740 (or translucent frosted pill with soft navy glow and shadow).\n   - 4 outline icons with labels: Home (active in #7FAEF3 with subtle glow/pill highlight), Explore, My courses, Profile.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UZiJN3Mwb-40OaIGdw6y8nhqrntuNOk9O8RNOPMVR152YWWWBH3g-HJuyP1Ywq6QliM0UnTeay18xFI3nLlpWxunwmaFX3lOLpZtK4VbhhN293uaxQaDYO2oJcAjxFewfrnTjP6ovzVnNqOtBltgfudgly-MX-etWXCynr42JlriD1YtT-erU0h6VEj7V_6q-lrtIMQBd3X8McLWZkGzeiMq6lf5Dow4aS_2nB45hhkG92RK7zfHeAsPk",
+        "name": "projects/6757499251026242897/files/35bbb097a4ae40229509d7f8757bf5ad"
+       },
+       "theme": {
+        "bodyFont": "NUNITO_SANS",
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#7FAEF3",
+        "overrideNeutralColor": "#121A2B",
+        "overridePrimaryColor": "#7FAEF3",
+        "overrideSecondaryColor": "#FBD9D6",
+        "overrideTertiaryColor": "#FFE9C2",
+        "roundness": "ROUND_FULL"
+       },
+       "title": "Lumo - Home Dark",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "Here is the **Lumo Home screen in Dark Mode** (Lumo - Home Dark), crafted to your exact specifications:\n\n### Design & Architecture Highlights:\n- **Calm Dark Navy Palette:** Deep `#121A2B` backdrop paired with `#1C2740` card surfaces and `#24314F` raised elements. No pure blacks or purples.\n- **Hero Mascot:** The glossy 3D clay lightbulb mascot with cute smiling face holding an open book, elevated with a gentle radial sky-blue diffuse glow and soft contact shadow.\n- **Typography & CTA:** Chunky rounded two-line headline (*\"Learn something\"* in `#EEF3FF`, *\"new today\"* in periwinkle `#7FAEF3`), streak reminder in `#8E9BB8`, followed by the full-width periwinkle pill CTA (*\"Continue: UI Design Basics\"*).\n- **Progress Card:** 24px rounded card displaying the active lesson status (*\"Lesson 4 of 12\"*) with a 35% periwinkle progress track.\n- **Today's Picks:** Curated category cards featuring deep muted pastel tones\u2014deep peach (`#3A2B35`), warm cream (`#3A3428`), and muted lavender (`#2E2A45`)\u2014showcasing the bright 3D clay laptop, pencil, and bubbling flask with labels.\n- **Floating Navigation Bar:** Floating pill dock with smooth diffuse shadows and thin outline navigation icons with **Home** highlighted in periwinkle.\n\nLet me know if you would like to explore interactive states, course detail transitions, or other views in this dark palette!"
+   },
+   {
+    "suggestion": "Generate the Explore screen in this dark theme"
+   },
+   {
+    "suggestion": "Design the Lesson Player screen in dark mode"
+   },
+   {
+    "suggestion": "Add micro-interactions or badge achievements to Home"
+   }
+  ],
+  "projectId": "6757499251026242897",
+  "sessionId": "1686658031614985461"
+ },
+ "DARK-explore": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Lumo Dark",
+         "theme": {
+          "bodyFont": "NUNITO_SANS",
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#7FAEF3",
+          "designMd": "# Lumo e-learning app (code.in.30s)\nOnline course / e-learning mobile app for students. Soft pastel CLAYMORPHISM style: big glossy puffy 3D clay illustrations (cute objects with tiny smiling faces: lightbulb, book, pencil, laptop, trophy, flask) as heroes and on cards. Rounded chunky geometric headings (Fredoka, bold, large ~3x the body), Nunito body text, small low-contrast grey subtext. 24px radius cards, full-round pill buttons, soft diffuse blue-tinted shadows, NO hard borders, thin rounded outline icons. Airy, friendly, calm. NO emoji, NO photos of people except a small avatar, NO neon, NO harsh black.\n## Dark: deep calm navy (NOT pure black, NOT purple): background #121A2B, surfaces #1C2740, raised #24314F, ink #EEF3FF, muted #8E9BB8. Same periwinkle #7FAEF3 for pill buttons, active tab and progress bars. Card tiles are muted pastels on navy: peach #3A2B35 tint with #FBD9D6 accents, cream #3A3428, lavender #2E2A45, sky #22365A. The 3D clay illustrations stay bright pastel. No glow.",
+          "overrideNeutralColor": "#121A2B",
+          "overridePrimaryColor": "#7FAEF3",
+          "overrideSecondaryColor": "#FBD9D6",
+          "overrideTertiaryColor": "#FFE9C2",
+          "roundness": "ROUND_FULL"
+         }
+        },
+        "name": "assets/14981496128412414961",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "2314",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzlkOTYwOTE3NTUyOTRmZTc5Nzc1YTJkNzY3ZmEyNmE2EgsSBxDnsaWX4xEYAZIBIwoKcHJvamVjdF9pZBIVQhM2NzU3NDk5MjUxMDI2MjQyODk3&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/6757499251026242897/files/ecfa142df5b345b3bb9177e363ce0dd0"
+       },
+       "id": "4150637443e04538a726e803f9ff14d0",
+       "name": "projects/6757499251026242897/screens/4150637443e04538a726e803f9ff14d0",
+       "prompt": "Create the mobile screen \"Lumo - Explore Categories\" in dark mode.\nDevice: Mobile (390x844 viewport feel, airy spacing, sleek mobile layout).\nTheme & Design System: {{DATA:DESIGN_SYSTEM:DESIGN_SYSTEM_1}} (Lumo Dark).\nBackground: Deep calm navy #121A2B (NOT pure black, NOT purple). Surfaces #1C2740, raised cards #24314F, text ink #EEF3FF, muted text #8E9BB8. Accent periwinkle #7FAEF3.\n\nLayout Specifications:\n1. Top bar:\n- Circular back button on the left (rounded-full, bg-[#1C2740], text-[#EEF3FF], border-none, soft diffuse shadow).\n- Center capsule tag: small periwinkle dot + 'Lumo' or 'Explore Lumo' pill.\n- Circular search button on the right (rounded-full, bg-[#1C2740], text-[#EEF3FF]).\n\n2. Header & Question:\n- A soft pill chip / tag: \"\u2728 EXPLORE\".\n- Big rounded chunky geometric sans headline in 2 distinct lines:\n  \"What do you want\"\n  \"to learn today?\" (with \"to learn today?\" in periwinkle #7FAEF3 or gradient).\n- Subtext: \"Explore bite-sized interactive courses\".\n\n3. Horizontal Filter Pills:\n- Row of pill filters with smooth rounded-full shape:\n  - \"All\" (Active, filled with vibrant periwinkle #7FAEF3, text-[#121A2B] font-bold shadow-md)\n  - \"Popular\" (bg-[#1C2740], text-[#8E9BB8])\n  - \"New\" (bg-[#1C2740], text-[#8E9BB8])\n  - \"Free\" (bg-[#1C2740], text-[#8E9BB8])\n\n4. 2-Column STAGGERED Masonry Grid (right column starts lower with mt-6 or mt-8):\nCards have 24px rounded corners (rounded-[24px]), deep muted versions of pastels for card backgrounds, soft diffuse shadow, no hard borders, airy padding.\nInside each card:\n- A dedicated square preview container displaying the bright glossy 3D clay mascot illustration with a cute smiling face on clean solid isolated soft background, seamlessly integrated.\n- Below the image: category name in bold rounded typography (#EEF3FF), muted course count (#8E9BB8), and a subtle circular periwinkle action arrow button on the right.\n\nCard details & Mascot Images:\n- \"Coding\" | 24 courses | Peach card background #3A2B35 | 3D clay laptop mascot: {{DATA:IMAGE:IMAGE_53}}\n- \"Design\" | 18 courses | Butter cream card background #3A3428 | 3D clay pencil mascot: {{DATA:IMAGE:IMAGE_54}} (starts lower, staggered)\n- \"Science\" | 15 courses | Lavender card background #2E2A45 | 3D clay chemistry flask mascot: {{DATA:IMAGE:IMAGE_49}}\n- \"Languages\" | 20 courses | Sky blue card background #22365A | 3D clay globe mascot: {{DATA:IMAGE:IMAGE_47}}\n- \"Maths\" | 12 courses | Butter cream card background #3A3428 | 3D clay calculator mascot: {{DATA:IMAGE:IMAGE_22}}\n- \"Exams\" | 9 courses | Peach card background #3A2B35 | 3D clay golden trophy mascot: {{DATA:IMAGE:IMAGE_51}}\n\n5. Floating Bottom Navigation Bar:\n- Floating rounded-full pill bar anchored at bottom (bg-[#1C2740]/90 backdrop-blur-lg, diffuse shadow-[0_12px_32px_rgba(18,26,43,0.6)]).\n- 4 navigation items:\n  - Home (icon: cottage / home)\n  - Explore (ACTIVE: pill container filled with periwinkle #7FAEF3, text-[#121A2B], icon: explore / compass)\n  - My courses (icon: menu_book)\n  - Profile (icon: person)\n\nEnsure pristine typography, soft claymorphism tactile feel, clean padding, and exact compliance with color codes and asset placements.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UUC4vrLP6Foe9My0TyuweUV1l2gANIBKlX0S5Btenoolzn_XLKIoSnWdiGpzqN9oajCLfl7URKw3fPEHdN8bwC5e6uLELxbw6iRnGQIalJfEFckvoEyq01-cS7RRdMDkDtx-tXJnC-NmiVhcWZ6DWYKaXkGX6mGpTF381MZgCf9od8LXdAp9dIBrS79sTgoZB2yCSwz5ZrCLxbT5D594X3dCrdtDECA9M_RPW2IViWLGyQ4CWPnuszsw",
+        "name": "projects/6757499251026242897/files/765b9aaf70b948df8a0cd8ae6d9daa0e"
+       },
+       "theme": {
+        "bodyFont": "NUNITO_SANS",
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#7FAEF3",
+        "overrideNeutralColor": "#121A2B",
+        "overridePrimaryColor": "#7FAEF3",
+        "overrideSecondaryColor": "#FBD9D6",
+        "overrideTertiaryColor": "#FFE9C2",
+        "roundness": "ROUND_FULL"
+       },
+       "title": "Lumo - Explore Categories (Dark)",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "I have created the **\"Explore Categories\"** dark mode screen for **Lumo** (Lumo - Explore Categories (Dark)).\n\n### Key Design Highlights:\n- **Palette & Atmosphere:** Built on a calm deep navy background (`#121A2B`) with raised surfaces (`#1C2740` & `#24314F`), ink white text (`#EEF3FF`), and muted labels (`#8E9BB8`).\n- **Tactile Claymorphism Tiles:** Uses deep muted pastel card backgrounds with 24px radius and diffuse soft shadows:\n  - **Coding** (24 courses): Muted peach tile (`#3A2B35`) with 3D cute clay laptop.\n  - **Design** (18 courses): Muted butter cream tile (`#3A3428`) with 3D cute clay pencil.\n  - **Science** (15 courses): Muted lavender tile (`#2E2A45`) with 3D bubbling clay flask.\n  - **Languages** (20 courses): Muted sky blue tile (`#22365A`) with 3D cute clay globe.\n  - **Maths** (12 courses): Muted cream tile (`#3A3428`) with 3D pocket calculator.\n  - **Exams** (9 courses): Muted peach tile (`#3A2B35`) with 3D golden trophy cup.\n- **Staggered Masonry Grid:** Right column offset creates dynamic, playful rhythm.\n- **Header & Navigation:** Includes circular back and search actions, double-line chunky geometric headline (*\"What do you want to learn today?\"*), horizontal pill filter tags with active periwinkle (`#7FAEF3`), and the floating pill bottom navigation bar with *Explore* active."
+   },
+   {
+    "suggestion": "Create the Course Detail screen for Coding (Python & Web)"
+   },
+   {
+    "suggestion": "Generate the interactive quiz/practice screen for one of the categories"
+   },
+   {
+    "suggestion": "Create the light mode version of this Explore screen"
+   }
+  ],
+  "projectId": "6757499251026242897",
+  "sessionId": "10185058944263300060"
+ }
+}

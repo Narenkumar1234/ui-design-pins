@@ -1,0 +1,37 @@
+[
+ {
+  "file": "light-home",
+  "name": "projects/6757499251026242897/screens/eedf42481511411298329718bf0fed03",
+  "title": "Lumo - Home (Light)",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "light-course",
+  "name": "projects/6757499251026242897/screens/fbe9d23b8578478b961f1a346783ae4c",
+  "title": "Lumo - Course Detail & Lesson Player",
+  "width": "780",
+  "height": "2608"
+ },
+ {
+  "file": "dark-home",
+  "name": "projects/6757499251026242897/screens/8ca50c59ddd14edf8dd7c473e479cfac",
+  "title": "Lumo - Home Dark",
+  "width": "780",
+  "height": "1846"
+ },
+ {
+  "file": "dark-explore",
+  "name": "projects/6757499251026242897/screens/4150637443e04538a726e803f9ff14d0",
+  "title": "Lumo - Explore Categories (Dark)",
+  "width": "780",
+  "height": "2314"
+ },
+ {
+  "file": "art-art",
+  "name": "projects/6757499251026242897/screens/5f6c10300ac0485f85af91538b845787",
+  "title": "Lumo - Sticker Set Illustration Sheet",
+  "width": "2560",
+  "height": "3280"
+ }
+]
