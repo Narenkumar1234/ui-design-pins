@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumo - Explore Categories</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,400&amp;family=Public+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#121A2B',
+              surface: '#1C2740',
+              raised: '#24314F',
+              periwinkle: '#7FAEF3',
+              ink: '#EEF3FF',
+              muted: '#8E9BB8'
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Public Sans", "sans-serif"],
+            display: ["Fredoka", "sans-serif"],
+            body: ["Nunito Sans", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Custom diffuse clay-soft shadows & animations */
+    .clay-shadow {
+      box-shadow: 0 16px 36px -10px rgba(18, 26, 43, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.03);
+    }
+    .clay-float {
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+    }
+    .clay-float:active {
+      transform: scale(0.96);
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#121A2B] text-[#EEF3FF] font-body min-h-screen flex justify-center selection:bg-[#7FAEF3] selection:text-[#121A2B]">
+<!-- Mobile Viewport Container -->
+<main class="w-full max-w-md min-h-screen relative flex flex-col pb-28 pt-2 overflow-x-hidden">
+<!-- Top App Bar (Shared Components Schema aligned) -->
+<header class="flex justify-between items-center w-full px-5 py-4 max-w-md mx-auto">
+<!-- Circular Back Button -->
+<button aria-label="Go Back" class="w-11 h-11 rounded-full bg-[#1C2740] text-[#EEF3FF] flex items-center justify-center clay-float hover:opacity-90 shadow-[0_8px_20px_rgba(18,26,43,0.5)]">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<!-- Center Capsule Pill -->
+<div class="flex items-center gap-2 bg-[#1C2740] px-3.5 py-1.5 rounded-full shadow-[0_4px_16px_rgba(18,26,43,0.4)]">
+<span class="w-2 h-2 rounded-full bg-[#7FAEF3] animate-pulse"></span>
+<span class="font-headline font-bold text-xs text-[#EEF3FF] tracking-wide">Explore Lumo</span>
+</div>
+<!-- Circular Search Action -->
+<button aria-label="Search" class="w-11 h-11 rounded-full bg-[#1C2740] text-[#EEF3FF] flex items-center justify-center clay-float hover:opacity-90 shadow-[0_8px_20px_rgba(18,26,43,0.5)]">
+<span class="material-symbols-outlined text-[22px]">search</span>
+</button>
+</header>
+<!-- Header Section -->
+<section class="px-6 pt-2 pb-5">
+<!-- Tag Pill -->
+<div class="inline-flex items-center gap-1.5 bg-[#24314F] px-3 py-1 rounded-full mb-3.5">
+<span class="text-xs">✨</span>
+<span class="font-headline font-bold text-[11px] tracking-wider text-[#7FAEF3]">EXPLORE</span>
+</div>
+<!-- Chunky Geometric Headline -->
+<h1 class="font-display font-bold text-3xl leading-tight text-[#EEF3FF]">
+        What do you want<br/>
+<span class="text-[#7FAEF3]">to learn today?</span>
+</h1>
+<p class="font-body text-sm text-[#8E9BB8] mt-2 font-normal">
+        Explore bite-sized interactive courses
+      </p>
+</section>
+<!-- Horizontal Category Filter Pills -->
+<section class="px-6 pb-6">
+<div class="flex items-center gap-2.5 overflow-x-auto hide-scrollbar py-1">
+<!-- Active Pill "All" -->
+<button class="bg-[#7FAEF3] text-[#121A2B] font-headline font-bold text-xs px-5 py-2.5 rounded-full shadow-[0_6px_20px_rgba(127,174,243,0.35)] clay-float">
+          All
+        </button>
+<!-- Inactive Pills -->
+<button class="bg-[#1C2740] text-[#8E9BB8] hover:text-[#EEF3FF] font-headline font-semibold text-xs px-4 py-2.5 rounded-full clay-float transition-colors">
+          Popular
+        </button>
+<button class="bg-[#1C2740] text-[#8E9BB8] hover:text-[#EEF3FF] font-headline font-semibold text-xs px-4 py-2.5 rounded-full clay-float transition-colors">
+          New
+        </button>
+<button class="bg-[#1C2740] text-[#8E9BB8] hover:text-[#EEF3FF] font-headline font-semibold text-xs px-4 py-2.5 rounded-full clay-float transition-colors">
+          Free
+        </button>
+</div>
+</section>
+<!-- 2-Column Staggered Masonry Grid -->
+<section class="px-5 grid grid-cols-2 gap-4 items-start">
+<!-- Left Column -->
+<div class="flex flex-col gap-4">
+<!-- Card 1: Coding -->
+<div class="bg-[#3A2B35] rounded-[24px] p-3.5 flex flex-col clay-shadow clay-float cursor-pointer">
+<div class="w-full aspect-square rounded-[18px] bg-[#2E202A] overflow-hidden flex items-center justify-center p-2 mb-3">
+<img alt="Coding Laptop Mascot" class="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.25)]" src="https://lh3.googleusercontent.com/aida/AEtjO1WV9zNrcs-7Xfmk-pSHk1ujh_aslhJ8fG6q5i4Rd5sLeB20X3a98dqLl1AMC8k0i0Y1ZtqP38EHggToz6elu5vtigwLuuby93bATq42PpzkjMhsyrFNcUS61xio-08ddXUU0kmfWnqdTYY8Fg4y2M6Qbrzong0E56e2lm6hiX7aI4p5NCsKfo8puxiLW19BchjyPJS3sfcLX0jTzzH7DQv3xJEtz02GRZMHQsu7O-SfO_gGlHsTfVZZchw"/>
+</div>
+<div class="flex items-center justify-between px-1">
+<div>
+<h2 class="font-headline font-bold text-base text-[#EEF3FF]">Coding</h2>
+<p class="font-body text-xs text-[#8E9BB8] mt-0.5">24 courses</p>
+</div>
+<button aria-label="Open Coding Courses" class="w-8 h-8 rounded-full bg-[#7FAEF3]/15 text-[#7FAEF3] flex items-center justify-center clay-float hover:bg-[#7FAEF3] hover:text-[#121A2B] transition-colors">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Science -->
+<div class="bg-[#2E2A45] rounded-[24px] p-3.5 flex flex-col clay-shadow clay-float cursor-pointer">
+<div class="w-full aspect-square rounded-[18px] bg-[#242038] overflow-hidden flex items-center justify-center p-2 mb-3">
+<img alt="Science Flask Mascot" class="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.25)]" src="https://lh3.googleusercontent.com/aida/AEtjO1VtBfApIX2oZcLrzHf0BarJUgTidSFUeQnoFu-qf0gshyMzofUnkS6HxRTOxXbm3rltJ-pyEQnJCuL9Pmm4YJzscObdhgDCpHaX6srUQlxwWbcL1hgA8Dw_zOy5AlSDhvUcJ8AyoLrTfl-SCz30yWJWhlUsw5j0FlFe6T0gu1STRuD8NsFPGQXnrbDGHIoGVGwICfG-dlkqHEZG26WOUHN5lNBa6GEMiCH1d4A9Qf6r-0NPv7JjmpeuhqQ"/>
+</div>
+<div class="flex items-center justify-between px-1">
+<div>
+<h2 class="font-headline font-bold text-base text-[#EEF3FF]">Science</h2>
+<p class="font-body text-xs text-[#8E9BB8] mt-0.5">15 courses</p>
+</div>
+<button aria-label="Open Science Courses" class="w-8 h-8 rounded-full bg-[#7FAEF3]/15 text-[#7FAEF3] flex items-center justify-center clay-float hover:bg-[#7FAEF3] hover:text-[#121A2B] transition-colors">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 5: Maths -->
+<div class="bg-[#3A3428] rounded-[24px] p-3.5 flex flex-col clay-shadow clay-float cursor-pointer">
+<div class="w-full aspect-square rounded-[18px] bg-[#2E291F] overflow-hidden flex items-center justify-center p-2 mb-3">
+<img alt="Maths Calculator Mascot" class="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.25)]" src="https://lh3.googleusercontent.com/aida/AEtjO1VOk3fVPmXL838BYT0K-_BADZrrtJ7A5W_1r-EoWci08TarFusjHD4Mzt7Q7uLtW2hBIwf0yz8q7iTiNWIq3PtTmYozbAICNrkuSsqfM8EGPe72ppKUoEnD7COcLzDUiPUdNQFB8ilXBro63_7SlpjwgUaODN-tWFCi_AHEkbhLS4ih-Aa2gVydvG-x-hSy6sN969OUml1N5-jk6j5ObSzS9pG25alPEHJiEvgOiq4kJiREaSXuAGk8LnU"/>
+</div>
+<div class="flex items-center justify-between px-1">
+<div>
+<h2 class="font-headline font-bold text-base text-[#EEF3FF]">Maths</h2>
+<p class="font-body text-xs text-[#8E9BB8] mt-0.5">12 courses</p>
+</div>
+<button aria-label="Open Maths Courses" class="w-8 h-8 rounded-full bg-[#7FAEF3]/15 text-[#7FAEF3] flex items-center justify-center clay-float hover:bg-[#7FAEF3] hover:text-[#121A2B] transition-colors">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column (Staggered offset with mt-7) -->
+<div class="flex flex-col gap-4 mt-7">
+<!-- Card 2: Design -->
+<div class="bg-[#3A3428] rounded-[24px] p-3.5 flex flex-col clay-shadow clay-float cursor-pointer">
+<div class="w-full aspect-square rounded-[18px] bg-[#2E291F] overflow-hidden flex items-center justify-center p-2 mb-3">
+<img alt="Design Pencil Mascot" class="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.25)]" src="https://lh3.googleusercontent.com/aida/AEtjO1UvzH_MQ0i3lQqjAyfseBZQb7iTHjU2KBy1-jSkZFHZDMOHYHHurStujtCbUV68VPPSNelLALYyIVv8HgkAycX2ptF2EMxRN0-VWrbwQVHoAxZXISivLurrsSf-dXTBCBFeIYB6vJZmpfNvtT9JdxiP0Z_dUz62xhDYTncV9DJlAFiNb0ajOWGBP__Wsy7udvRLkpIcfHQ4O0VPbIaVDWVi1BKE30-O1Z1YjHo121BWm45R1fs8fahZXag"/>
+</div>
+<div class="flex items-center justify-between px-1">
+<div>
+<h2 class="font-headline font-bold text-base text-[#EEF3FF]">Design</h2>
+<p class="font-body text-xs text-[#8E9BB8] mt-0.5">18 courses</p>
+</div>
+<button aria-label="Open Design Courses" class="w-8 h-8 rounded-full bg-[#7FAEF3]/15 text-[#7FAEF3] flex items-center justify-center clay-float hover:bg-[#7FAEF3] hover:text-[#121A2B] transition-colors">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Languages -->
+<div class="bg-[#22365A] rounded-[24px] p-3.5 flex flex-col clay-shadow clay-float cursor-pointer">
+<div class="w-full aspect-square rounded-[18px] bg-[#1A2A47] overflow-hidden flex items-center justify-center p-2 mb-3">
+<img alt="Languages Globe Mascot" class="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.25)]" src="https://lh3.googleusercontent.com/aida/AEtjO1WQizq5zYKzarvZgP44yjPzxDVNHAhEejnoNE20pBZs6xZipYblTI7i6PxrD-jRRqJVXUGt_4xmd1fUYa1Z_wKx6mU2QuRjOY6JACp2MS6ScCCYRnQ6ViMiRmuk9LKcSZVR4dGIAHhWdnQKMG_E1ZhCRULL_rCRfm5XAVDAwWi5G0M1NywQiNHBTGorw-rsYOVgb7yu4Suc0mba7TzXqjGlbyVCGZKTPICgRxIncX07cphXXcYjzjwO6KQ"/>
+</div>
+<div class="flex items-center justify-between px-1">
+<div>
+<h2 class="font-headline font-bold text-base text-[#EEF3FF]">Languages</h2>
+<p class="font-body text-xs text-[#8E9BB8] mt-0.5">20 courses</p>
+</div>
+<button aria-label="Open Languages Courses" class="w-8 h-8 rounded-full bg-[#7FAEF3]/15 text-[#7FAEF3] flex items-center justify-center clay-float hover:bg-[#7FAEF3] hover:text-[#121A2B] transition-colors">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 6: Exams -->
+<div class="bg-[#3A2B35] rounded-[24px] p-3.5 flex flex-col clay-shadow clay-float cursor-pointer">
+<div class="w-full aspect-square rounded-[18px] bg-[#2E202A] overflow-hidden flex items-center justify-center p-2 mb-3">
+<img alt="Exams Trophy Mascot" class="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.25)]" src="https://lh3.googleusercontent.com/aida/AEtjO1WZ7CJHdAu_DrLCoWRpp7ujlh59OFCL1fYaV5oU3SasgzOjIUz8TUAu1GYowJaMscFR135DVQPmVD6NYGKhoV4maCyMxEvQAoo_uc6i5da8jfjl0PDwnMDpjt8xnc5JrTQ2XCZKnjYdn7egWty_W_oi_lUiu9bGMtunPfLcIQPI8zdBJW-jxbolOeXlM22jMFuerqTItDxU5XEYv3LwPsnhQhipFJJVbrYWIaHSnKj8GTlZcT-W4BboJKY"/>
+</div>
+<div class="flex items-center justify-between px-1">
+<div>
+<h2 class="font-headline font-bold text-base text-[#EEF3FF]">Exams</h2>
+<p class="font-body text-xs text-[#8E9BB8] mt-0.5">9 courses</p>
+</div>
+<button aria-label="Open Exams Courses" class="w-8 h-8 rounded-full bg-[#7FAEF3]/15 text-[#7FAEF3] flex items-center justify-center clay-float hover:bg-[#7FAEF3] hover:text-[#121A2B] transition-colors">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Floating Bottom Navigation Bar (Shared Component Execution) -->
+<!-- Schema: BottomNavBar destination_count: 4, active destination: "Explore" -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 max-w-md mx-auto px-4 pb-4 flex justify-between items-center pointer-events-none">
+<div class="w-full bg-[#1C2740]/90 backdrop-blur-lg rounded-full px-3 py-2 flex justify-between items-center shadow-[0_12px_32px_rgba(18,26,43,0.7)] pointer-events-auto">
+<!-- Home Tab -->
+<button class="flex flex-col items-center justify-center text-[#8E9BB8] px-3 py-1 font-medium hover:text-[#EEF3FF] transition-colors duration-200 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[22px]">cottage</span>
+<span class="font-headline font-bold text-[11px] mt-0.5">Home</span>
+</button>
+<!-- Explore Tab (ACTIVE) -->
+<button class="flex flex-col items-center justify-center bg-[#7FAEF3] text-[#121A2B] rounded-full px-5 py-1.5 font-bold shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-headline font-bold text-[11px] mt-0.5">Explore</span>
+</button>
+<!-- My courses Tab -->
+<button class="flex flex-col items-center justify-center text-[#8E9BB8] px-3 py-1 font-medium hover:text-[#EEF3FF] transition-colors duration-200 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[22px]">menu_book</span>
+<span class="font-headline font-bold text-[11px] mt-0.5">My courses</span>
+</button>
+<!-- Profile Tab -->
+<button class="flex flex-col items-center justify-center text-[#8E9BB8] px-3 py-1 font-medium hover:text-[#EEF3FF] transition-colors duration-200 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[22px]">person</span>
+<span class="font-headline font-bold text-[11px] mt-0.5">Profile</span>
+</button>
+</div>
+</nav>
+</main>
+</body></html>

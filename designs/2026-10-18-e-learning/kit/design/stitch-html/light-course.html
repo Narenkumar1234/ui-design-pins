@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumo - Lesson 5: Objects</title>
+<!-- Google Fonts: Fredoka & Nunito Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            clay: {
+              bg: '#F4F8FF',
+              card: '#FFFFFF',
+              navy: '#1F2A44',
+              muted: '#8A94A8',
+              lavender: '#E4DBF2',
+              peach: '#FBD9D6',
+              butter: '#FFE9C2',
+              sky: '#D6E6FF',
+              primaryStart: '#8FB8F5',
+              primaryEnd: '#6FA3F0'
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Fredoka", "sans-serif"],
+            display: ["Fredoka", "sans-serif"],
+            body: ["Nunito Sans", "sans-serif"],
+            label: ["Fredoka", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #F4F8FF;
+      color: #1F2A44;
+      font-family: 'Nunito Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .clay-surface {
+      background: #FFFFFF;
+      box-shadow: 0 10px 25px -4px rgba(111, 163, 240, 0.12), 0 4px 10px -2px rgba(111, 163, 240, 0.06);
+    }
+    .clay-button {
+      background: linear-gradient(135deg, #8FB8F5 0%, #6FA3F0 100%);
+      box-shadow: 0 10px 22px -3px rgba(111, 163, 240, 0.38), inset 0 2px 4px rgba(255, 255, 255, 0.45);
+    }
+    .clay-button-active {
+      box-shadow: 0 4px 10px -2px rgba(111, 163, 240, 0.3), inset 0 2px 3px rgba(0, 0, 0, 0.1);
+      transform: scale(0.98);
+    }
+    .clay-pill-icon {
+      background: #FFFFFF;
+      box-shadow: 0 6px 16px -2px rgba(111, 163, 240, 0.16), inset 0 2px 3px rgba(255, 255, 255, 0.9);
+    }
+    .clay-player-hero {
+      background: linear-gradient(145deg, #EAE4F5 0%, #E0D3F5 100%);
+      box-shadow: 0 14px 30px -6px rgba(162, 137, 219, 0.25), inset 0 3px 6px rgba(255, 255, 255, 0.6);
+    }
+    .clay-floating-play {
+      background: radial-gradient(circle at 35% 35%, #ffffff 0%, #edf3ff 100%);
+      box-shadow: 0 12px 24px -4px rgba(111, 163, 240, 0.35), inset 0 3px 5px rgba(255, 255, 255, 0.9);
+    }
+    .clay-active-card {
+      background: #EDF4FF;
+      box-shadow: 0 8px 20px -3px rgba(111, 163, 240, 0.22), inset 0 2px 3px rgba(255, 255, 255, 0.8);
+    }
+    /* Wave animation for audio/playing */
+    @keyframes bounceWave {
+      0%, 100% { height: 6px; }
+      50% { height: 16px; }
+    }
+    .wave-bar-1 { animation: bounceWave 0.9s infinite ease-in-out; }
+    .wave-bar-2 { animation: bounceWave 0.9s infinite ease-in-out 0.2s; }
+    .wave-bar-3 { animation: bounceWave 0.9s infinite ease-in-out 0.4s; }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex justify-center items-start bg-[#F4F8FF] text-[#1F2A44] select-none antialiased">
+<!-- Mobile Device Screen Container (390px max-width) -->
+<div class="relative w-full max-w-[390px] min-h-screen pb-28 flex flex-col bg-[#F4F8FF] overflow-x-hidden">
+<!-- Subtle Background Ambient Blobs -->
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-[#D6E6FF]/40 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-80 -right-16 w-72 h-72 bg-[#FFE9C2]/35 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-[650px] -left-12 w-64 h-64 bg-[#E4DBF2]/45 rounded-full blur-3xl pointer-events-none"></div>
+<!-- 1. Top App Navigation Bar -->
+<header class="sticky top-0 z-40 px-5 pt-4 pb-3 flex items-center justify-between bg-[#F4F8FF]/85 backdrop-blur-md">
+<!-- Back Button -->
+<button aria-label="Go Back" class="clay-pill-icon w-11 h-11 rounded-full flex items-center justify-center text-[#1F2A44] hover:scale-105 active:scale-95 transition-all duration-200" onclick="window.history.back()">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<!-- Center Headline -->
+<div class="flex flex-col items-center">
+<span class="font-headline font-bold text-lg text-[#1F2A44] tracking-tight">Lesson 5</span>
+<span class="text-[11px] font-semibold text-[#8A94A8] -mt-0.5">Objects &amp; Methods</span>
+</div>
+<!-- Bookmark Action -->
+<button aria-label="Bookmark Lesson" class="clay-pill-icon w-11 h-11 rounded-full flex items-center justify-center text-[#6FA3F0] hover:scale-105 active:scale-95 transition-all duration-200" id="bookmarkBtn">
+<span class="material-symbols-outlined text-[22px]" id="bookmarkIcon" style="font-variation-settings: 'FILL' 0;">bookmark_border</span>
+</button>
+</header>
+<!-- Content Canvas -->
+<main class="px-5 pt-2 flex flex-col gap-5 z-10">
+<!-- 2. Hero Video / Lesson Player Card -->
+<div class="clay-player-hero rounded-[28px] p-4 flex flex-col items-center relative overflow-hidden group">
+<!-- Glossy Corner Specular Highlights -->
+<div class="absolute top-2 left-6 w-32 h-10 bg-white/40 blur-md rounded-full pointer-events-none -rotate-6"></div>
+<div class="absolute -top-10 -right-10 w-28 h-28 bg-[#FFE9C2]/30 rounded-full blur-xl pointer-events-none"></div>
+<!-- Kawaii Character Video Hero Frame -->
+<div class="relative w-full h-52 rounded-[22px] bg-white/40 flex items-center justify-center overflow-hidden mb-3">
+<!-- Ambient Glow behind Laptop -->
+<div class="absolute w-36 h-36 bg-[#8FB8F5]/35 rounded-full blur-2xl"></div>
+<!-- Cute 3D Clay Illustration -->
+<img class="w-48 h-48 object-contain z-10 transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_12px_20px_rgba(111,163,240,0.22)]" data-alt="A cute glossy 3D claymation lavender laptop with a sweet smiling face and blush cheeks, smooth rounded edges, pastel periwinkle keyboard, soft studio rim lighting, isolated on very pale pastel blue background, puffy high-end claymorphism aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIUTThdHERvxjtp_je1yVVMlarPcqA2AoErBesH_FuZZbGa80J9QdCFgH6z6fQrH-r0gDufM4VMTRTwDB9G_Cp9oBpVtQzM91sQdBceETxl6beo__89OFc8xM4-eJweNxS8447Sz9qS3rbFxL1odBAa14EknHNQzC-3JVVYn0O3Tz-bR4CzarlgzBrvc9UGs7-n6lQDg9f49AxfqGaWXvpY7x0GudTycfhIBNb3wJTf6IqN_6oG2R2CqDjKgcGnix5DTzY7bEDqek"/>
+<!-- Floating Glossy Clay Play Button -->
+<button aria-label="Play video" class="clay-floating-play absolute z-20 w-14 h-14 rounded-full flex items-center justify-center text-[#6FA3F0] hover:scale-110 active:scale-90 transition-transform duration-200" id="playToggle">
+<span class="material-symbols-outlined text-[32px] ml-1" id="playIcon" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<!-- Top-Right Chip Indicator -->
+<div class="absolute top-3 right-3 z-20 bg-white/80 backdrop-blur-md px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-[#6FA3F0] animate-pulse"></span>
+<span class="font-headline font-semibold text-[11px] text-[#1F2A44]">HD 1080p</span>
+</div>
+</div>
+<!-- Bottom Scrubber & Timeline Controls -->
+<div class="w-full px-2 flex flex-col gap-2">
+<!-- Interactive Scrubber Bar -->
+<div class="relative w-full h-2.5 bg-white/60 rounded-full overflow-hidden cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.06)]">
+<div class="h-full bg-gradient-to-r from-[#8FB8F5] to-[#6FA3F0] rounded-full w-[36%] relative" id="progressBar">
+<span class="absolute right-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white rounded-full shadow-md"></span>
+</div>
+</div>
+<!-- Timestamps & Fullscreen Icon -->
+<div class="flex items-center justify-between text-[#1F2A44]/80 text-xs font-semibold pt-0.5">
+<span class="font-body text-[#8A94A8] tracking-tight">04:12 <span class="text-[#8A94A8]/60">/ 11:30</span></span>
+<div class="flex items-center gap-3">
+<button aria-label="Playback speed" class="text-xs font-headline font-bold text-[#6FA3F0] hover:scale-105 active:scale-95 transition-transform">1.2x</button>
+<button aria-label="Expand fullscreen" class="text-[#8A94A8] hover:text-[#1F2A44] transition-colors">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Course Header & Meta Info -->
+<section class="clay-surface rounded-[24px] p-5 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#D6E6FF]/80 rounded-full">
+<span class="material-symbols-outlined text-[#6FA3F0] text-[15px]">code</span>
+<span class="font-headline font-bold text-xs text-[#6FA3F0]">JavaScript Core</span>
+</div>
+<div class="flex items-center gap-1 text-[#1F2A44] font-headline font-bold text-xs bg-[#FFE9C2]/60 px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[#F4A261] text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+<span class="text-[#8A94A8] font-normal text-[11px]">(1.2k)</span>
+</div>
+</div>
+<h1 class="font-headline font-bold text-[22px] leading-tight text-[#1F2A44]">
+          JavaScript for Beginners
+        </h1>
+<!-- Instructor & Stats -->
+<div class="flex items-center justify-between pt-1 border-t border-[#F4F8FF]">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-[#FFE9C2] to-[#FBD9D6] p-0.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-full" data-alt="Close up modern stylized profile portrait avatar of a smiling young South Asian female coding instructor with glasses and soft pastel lighting, claymorphism aesthetic friendly appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0OAfK3eNdITbJ_hbAWoGV4q068ZoWLPULOrJ7OFqbvP46VokA-OIpqorSr3MqJnSjNLjLQHvOZhECzDm1xHRqPB5yK7z4jUKkBFN3ysSphJhVApii-BZNYgdsTGNdx0zEIgjtLJCCZA2NcxewvqTiM_7NOFgwyRog_lFuHmz1kwc_AxDXlX1e_kRCIJMtdbc-L3eH7w8GQrhhAg-6YDSLd58xCTqoBSEZ_Zrmy_6eDxsx9jRVzC5EGzYFRtZnD8_W5_IhFmxZi60"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-xs text-[#1F2A44]">Riya Sharma</span>
+<span class="font-body text-[11px] text-[#8A94A8]">Senior Dev Advocate</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-xs text-[#8A94A8] font-semibold bg-[#F4F8FF] px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-[#6FA3F0]">menu_book</span>
+<span>12 lessons</span>
+</div>
+</div>
+</section>
+<!-- 4. Navigation Tabs -->
+<nav class="flex p-1 bg-white/70 rounded-full shadow-[inset_0_2px_4px_rgba(111,163,240,0.06)] backdrop-blur-sm">
+<button class="flex-1 py-2 rounded-full font-headline font-bold text-xs text-white clay-button transition-all">
+          Lessons
+        </button>
+<button class="flex-1 py-2 rounded-full font-headline font-semibold text-xs text-[#8A94A8] hover:text-[#1F2A44] transition-colors">
+          Notes
+        </button>
+<button class="flex-1 py-2 rounded-full font-headline font-semibold text-xs text-[#8A94A8] hover:text-[#1F2A44] transition-colors flex items-center justify-center gap-1">
+<span>Quiz</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#FBD9D6]"></span>
+</button>
+</nav>
+<!-- 5. Lesson Curriculum List -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-headline font-bold text-sm text-[#1F2A44]">Module 1 • Fundamentals</h2>
+<span class="font-body text-xs font-semibold text-[#6FA3F0]">4/12 done</span>
+</div>
+<!-- Lesson Item 1: Completed -->
+<article class="clay-surface rounded-[20px] p-3.5 flex items-center justify-between transition-transform active:scale-[0.99]">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#D6E6FF]/60 flex items-center justify-center text-[#6FA3F0] font-headline font-bold text-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-xs text-[#1F2A44]">1. Hello, JavaScript</span>
+<span class="font-body text-[11px] text-[#8A94A8]">08:20 mins</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#8A94A8]/60 text-[18px]">replay</span>
+</article>
+<!-- Lesson Item 2: Completed -->
+<article class="clay-surface rounded-[20px] p-3.5 flex items-center justify-between transition-transform active:scale-[0.99]">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#D6E6FF]/60 flex items-center justify-center text-[#6FA3F0] font-headline font-bold text-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-xs text-[#1F2A44]">2. Variables and types</span>
+<span class="font-body text-[11px] text-[#8A94A8]">10:05 mins</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#8A94A8]/60 text-[18px]">replay</span>
+</article>
+<!-- Lesson Item 3: Completed -->
+<article class="clay-surface rounded-[20px] p-3.5 flex items-center justify-between transition-transform active:scale-[0.99]">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#D6E6FF]/60 flex items-center justify-center text-[#6FA3F0] font-headline font-bold text-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-xs text-[#1F2A44]">3. Functions</span>
+<span class="font-body text-[11px] text-[#8A94A8]">12:40 mins</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#8A94A8]/60 text-[18px]">replay</span>
+</article>
+<!-- Lesson Item 4: Completed -->
+<article class="clay-surface rounded-[20px] p-3.5 flex items-center justify-between transition-transform active:scale-[0.99]">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#D6E6FF]/60 flex items-center justify-center text-[#6FA3F0] font-headline font-bold text-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-xs text-[#1F2A44]">4. Arrays and loops</span>
+<span class="font-body text-[11px] text-[#8A94A8]">09:55 mins</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#8A94A8]/60 text-[18px]">replay</span>
+</article>
+<!-- Lesson Item 5: CURRENT ACTIVE PLAYING -->
+<article class="clay-active-card rounded-[22px] p-3.5 flex items-center justify-between border border-[#6FA3F0]/30 transition-transform">
+<div class="flex items-center gap-3">
+<!-- Animated Sound Wave Pill -->
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#8FB8F5] to-[#6FA3F0] flex items-center justify-center gap-0.5 text-white shadow-md">
+<span class="w-1 bg-white rounded-full wave-bar-1"></span>
+<span class="w-1 bg-white rounded-full wave-bar-2"></span>
+<span class="w-1 bg-white rounded-full wave-bar-3"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline font-bold text-xs text-[#1F2A44]">5. Objects</span>
+<span class="bg-[#6FA3F0] text-white font-headline font-bold text-[9px] px-2 py-0.5 rounded-full shadow-xs">Playing</span>
+</div>
+<span class="font-body text-[11px] text-[#6FA3F0] font-semibold">11:30 mins</span>
+</div>
+</div>
+<button aria-label="Pause current lesson" class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#6FA3F0] shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+</article>
+<!-- Lesson Item 6: Upcoming -->
+<article class="clay-surface opacity-85 rounded-[20px] p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#F4F8FF] flex items-center justify-center text-[#8A94A8] font-headline font-bold text-xs">
+              6
+            </div>
+<div class="flex flex-col">
+<span class="font-headline font-medium text-xs text-[#1F2A44]/80">6. Prototypes &amp; Classes</span>
+<span class="font-body text-[11px] text-[#8A94A8]">14:15 mins</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#8A94A8] text-[18px]">lock</span>
+</article>
+</section>
+<!-- Soft Companion Recommendation Badge -->
+<section class="clay-surface bg-gradient-to-r from-[#FFE9C2]/40 to-[#FFE9C2]/20 rounded-[22px] p-3.5 flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-[#FFE9C2] flex items-center justify-center text-[#1F2A44] shadow-sm">
+<span class="material-symbols-outlined text-[20px] text-[#E08A00]" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline font-bold text-xs text-[#1F2A44]">Quick Tip from Riya</h4>
+<p class="font-body text-[11px] text-[#8A94A8] leading-tight">Objects store data in key-value pairs. Think of them like toy boxes with labelled stickers!</p>
+</div>
+</section>
+</main>
+<!-- 6. Fixed Bottom Action Bar (Transactional Next Button, No Tab Bar) -->
+<footer class="fixed bottom-0 left-0 right-0 z-40 max-w-[390px] mx-auto px-5 py-4 bg-white/90 backdrop-blur-xl shadow-[0_-10px_25px_-5px_rgba(111,163,240,0.12)]">
+<div class="flex items-center gap-3">
+<!-- Download Notes Button -->
+<button aria-label="Download lesson materials" class="clay-pill-icon w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-[#6FA3F0] active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[22px]">download</span>
+</button>
+<!-- Primary Next Lesson Action -->
+<button class="flex-1 h-12 clay-button rounded-full flex items-center justify-center gap-2 text-white font-headline font-bold text-sm tracking-wide active:scale-95 transition-all" id="nextBtn">
+<span>Next lesson</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</footer>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    // Toggle Bookmark
+    const bookmarkBtn = document.getElementById('bookmarkBtn');
+    const bookmarkIcon = document.getElementById('bookmarkIcon');
+    let isBookmarked = false;
+    bookmarkBtn.addEventListener('click', () => {
+      isBookmarked = !isBookmarked;
+      bookmarkIcon.textContent = isBookmarked ? 'bookmark' : 'bookmark_border';
+      bookmarkIcon.style.fontVariationSettings = isBookmarked ? "'FILL' 1" : "'FILL' 0";
+    });
+
+    // Toggle Play/Pause on video hero
+    const playToggle = document.getElementById('playToggle');
+    const playIcon = document.getElementById('playIcon');
+    let isPlaying = false;
+    playToggle.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      playIcon.textContent = isPlaying ? 'pause' : 'play_arrow';
+    });
+
+    // Next Lesson Button Feedback
+    const nextBtn = document.getElementById('nextBtn');
+    nextBtn.addEventListener('click', () => {
+      nextBtn.classList.add('scale-95');
+      setTimeout(() => {
+        nextBtn.classList.remove('scale-95');
+      }, 150);
+    });
+  </script>
+</body></html>
