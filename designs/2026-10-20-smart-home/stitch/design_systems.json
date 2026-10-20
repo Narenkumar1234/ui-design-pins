@@ -1,0 +1,38 @@
+{
+ "DARK": {
+  "designSystem": {
+   "displayName": "Hearth Dark",
+   "theme": {
+    "colorMode": "DARK",
+    "colorVariant": "FIDELITY",
+    "customColor": "#F2762E",
+    "designMd": "# Hearth smart home app (code.in.30s)\nSmart home control mobile app. Clean modern style: soft rounded cards (20-24px radius), full-round pill search bars and chips, clean geometric sans (Outfit), big bold headings, small muted subtext. ONE vivid orange accent #F2762E used sparingly: pills, active nav icon, toggles ON, the centered + floating action button and ONE highlighted full-orange device card per screen. Floating rounded bottom nav bar with a centered orange round + FAB. Thin rounded line icons. Status chips like 'On', 'Auto', 'Away'. No gradients except a photo scrim, no neon, no emoji.\n## Dark (hero): charcoal near-black page #1A1A1A, cards #2A2A2A, raised #333333, ink #F5F2EE off-white, muted #8C8782. Orange #F2762E accent.",
+    "overrideNeutralColor": "#1A1A1A",
+    "overridePrimaryColor": "#F2762E",
+    "overrideSecondaryColor": "#2A2A2A",
+    "overrideTertiaryColor": "#8C8782",
+    "roundness": "ROUND_FULL"
+   }
+  },
+  "name": "assets/14947798366003324628",
+  "version": "1"
+ },
+ "LIGHT": {
+  "designSystem": {
+   "displayName": "Hearth Light",
+   "theme": {
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#F2762E",
+    "designMd": "# Hearth smart home app (code.in.30s)\nSmart home control mobile app. Clean modern style: soft rounded cards (20-24px radius), full-round pill search bars and chips, clean geometric sans (Outfit), big bold headings, small muted subtext. ONE vivid orange accent #F2762E used sparingly: pills, active nav icon, toggles ON, the centered + floating action button and ONE highlighted full-orange device card per screen. Floating rounded bottom nav bar with a centered orange round + FAB. Thin rounded line icons. Status chips like 'On', 'Auto', 'Away'. No gradients except a photo scrim, no neon, no emoji.\n## Light: warm off-white page #F5F2EE, cards #FFFFFF, raised #ECE7E1, ink charcoal #1A1A1A, muted #8C8782. Same orange #F2762E accent.",
+    "overrideNeutralColor": "#F5F2EE",
+    "overridePrimaryColor": "#F2762E",
+    "overrideSecondaryColor": "#FFFFFF",
+    "overrideTertiaryColor": "#8C8782",
+    "roundness": "ROUND_FULL"
+   }
+  },
+  "name": "assets/2916032249584630825",
+  "version": "1"
+ }
+}

@@ -1,0 +1,347 @@
+{
+ "DARK-onboarding": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Hearth Dark",
+         "theme": {
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#F2762E",
+          "designMd": "# Hearth smart home app (code.in.30s)\nSmart home control mobile app. Clean modern style: soft rounded cards (20-24px radius), full-round pill search bars and chips, clean geometric sans (Outfit), big bold headings, small muted subtext. ONE vivid orange accent #F2762E used sparingly: pills, active nav icon, toggles ON, the centered + floating action button and ONE highlighted full-orange device card per screen. Floating rounded bottom nav bar with a centered orange round + FAB. Thin rounded line icons. Status chips like 'On', 'Auto', 'Away'. No gradients except a photo scrim, no neon, no emoji.\n## Dark (hero): charcoal near-black page #1A1A1A, cards #2A2A2A, raised #333333, ink #F5F2EE off-white, muted #8C8782. Orange #F2762E accent.",
+          "overrideNeutralColor": "#1A1A1A",
+          "overridePrimaryColor": "#F2762E",
+          "overrideSecondaryColor": "#2A2A2A",
+          "overrideTertiaryColor": "#8C8782",
+          "roundness": "ROUND_FULL"
+         }
+        },
+        "name": "assets/14947798366003324628",
+        "version": "1"
+       },
+       "generatedBy": "interactive_ui_controller",
+       "height": "1376",
+       "id": "3e6c1dabdc7e4cc88c362e18185c7341",
+       "name": "projects/11119557533319828808/screens/3e6c1dabdc7e4cc88c362e18185c7341",
+       "prompt": "Cozy modern aesthetic living room interior at dusk, warm ambient lighting with floor lamps and soft accent lights glowing, stylish minimalist sofa with textured pillows, indoor potted plants, warm architectural interior design, atmospheric cinematic evening mood, dark moody background tones suitable for dark UI overlay, high quality architectural photography.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "IMAGE",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WMBUnU-uN8itFIoIRK_KWkmH9aI5IS-zXK61oeEr2Tc1dm63zdbt8f9GYOtGCRub99dcDiT5k3aJH9oxNlfyqC3nSx_rNfeMUjtghxyL89LonL4AhBVuzjcAgO4xGTel-5o5zC--hA-Yebap6jt2qTFP5p6ox0f1wuc91W24cHxKnbEW1yZS-lg3BY-QJbUo0W9NxmXAKTybh2bl6CUJkTsMeV1x3LTwB7hRVPDhk_jSR3AROPBQP1cuXL",
+        "name": "projects/11119557533319828808/files/e428ba3ba4ac48919c6133760e0e0b4e"
+       },
+       "theme": {},
+       "title": "Cozy modern aesthetic living room interior at dusk, warm ambient lighting with floor lamps and soft accent lights glowing, stylish minimalist sofa with textured pillows, indoor potted plants, warm architectural interior design, atmospheric cinematic evening mood, dark moody background tones suitable for dark UI overlay, high quality architectural photography.",
+       "width": "768"
+      },
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Hearth Dark",
+         "theme": {
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#F2762E",
+          "designMd": "# Hearth smart home app (code.in.30s)\nSmart home control mobile app. Clean modern style: soft rounded cards (20-24px radius), full-round pill search bars and chips, clean geometric sans (Outfit), big bold headings, small muted subtext. ONE vivid orange accent #F2762E used sparingly: pills, active nav icon, toggles ON, the centered + floating action button and ONE highlighted full-orange device card per screen. Floating rounded bottom nav bar with a centered orange round + FAB. Thin rounded line icons. Status chips like 'On', 'Auto', 'Away'. No gradients except a photo scrim, no neon, no emoji.\n## Dark (hero): charcoal near-black page #1A1A1A, cards #2A2A2A, raised #333333, ink #F5F2EE off-white, muted #8C8782. Orange #F2762E accent.",
+          "overrideNeutralColor": "#1A1A1A",
+          "overridePrimaryColor": "#F2762E",
+          "overrideSecondaryColor": "#2A2A2A",
+          "overrideTertiaryColor": "#8C8782",
+          "roundness": "ROUND_FULL"
+         }
+        },
+        "name": "assets/14947798366003324628",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "1768",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzY2YzZjMTE3NGJkNDRlMmM4N2QyNjIyMmUwZGU3YTNjEgsSBxDnsaWX4xEYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTExOTU1NzUzMzMxOTgyODgwOA&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/11119557533319828808/files/311c433b3d554237a025e6b8203aabd4"
+       },
+       "id": "ba6cc2e1056d49bcbbb0a8dece83cef1",
+       "name": "projects/11119557533319828808/screens/ba6cc2e1056d49bcbbb0a8dece83cef1",
+       "prompt": "Create the mobile onboarding screen for 'Hearth', a calm smart home control mobile app in DARK mode.\nViewport: 390x844px mobile viewport.\nColor palette:\n- Background: charcoal near-black #1A1A1A\n- Cards: #2A2A2A\n- Controls: #333333\n- Off-white ink text: #F5F2EE\n- Muted grey subtext: #8C8782\n- Vivid orange accent: #F2762E\nTypography: Outfit geometric sans font, clean, modern, high contrast. No gradients on elements (except smooth fade on the hero image to charcoal background), no emoji, thin rounded line icons (lucide or heroicons style SVGs).\n\nLayout composition:\n1. Top 65% of the screen: Full-bleed image {{DATA:IMAGE:IMAGE_3}} featuring the warm cozy living room interior at dusk with ambient glow lamps. At the top, include a minimal status bar and subtle brand mark 'hearth' or skip button if appropriate. The image smoothly fades with a gradient mask or dark gradient overlay into the solid charcoal page background (#1A1A1A) so the transition to the bottom content is seamless and organic.\n2. Content section (bottom 35%):\n- Stepper indicators: 3 small pagination dots; the first one is an active vivid orange pill (#F2762E, elongated rounded pill), followed by two inactive small subtle muted grey dots (#444444 or #333333).\n- Headline: Big off-white (#F5F2EE) 2-line headline in bold Outfit:\n'Your home,'\n'on one tap'\n- Subtitle: Clean muted subtext (#8C8782):\n'Lights, climate and energy, all in one calm app.'\n- Bottom Action Slider Button: A full-width rounded pill slider container (bg #2A2A2A with subtle border #333333) with generous padding (h-16 or h-18):\n  * Left: A circular vivid orange knob (#F2762E) with an off-white power icon (SVG).\n  * Center: Off-white crisp text label 'Get Started' (Outfit font-semibold).\n  * Right: Double chevron icons '>>' in muted grey/orange indicating the slide direction.\n- Strictly NO bottom navigation bar. Clean, spacious, calm, and uncluttered.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1XWbTA13yjGlpBiasmRe9sOMALYp94GJbpB0RQYmeplpFWy3xFjvMIb8UzkPmv_9qFdZtWIFAa3OQf7v3PW_N38zpNFYd6Y-yYmSYpSd6qUFWCBn-yOg3Qk198UCJ3mdIKfzapci-tOpoAAgzUPj6dvbmxKDxqTBWnVVwIctwHN_2v9KHvY0Mti01zDq975_Kj7W5Og-kLdgV_plNG0ZV5PMtnymZV2cDcZK-SbmUGt0leqw_yOFKIlkZ46",
+        "name": "projects/11119557533319828808/files/7bca1b0120a5471d8e2a2ce64d3f1ba7"
+       },
+       "theme": {
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#F2762E",
+        "overrideNeutralColor": "#1A1A1A",
+        "overridePrimaryColor": "#F2762E",
+        "overrideSecondaryColor": "#2A2A2A",
+        "overrideTertiaryColor": "#8C8782",
+        "roundness": "ROUND_FULL"
+       },
+       "title": "Hearth - Onboarding",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "Here is the dark mode **Onboarding** screen for **Hearth**:\n\n### Design Highlights\n- **Atmospheric Visuals**: A warm, ambient photograph of a living room at dusk fills the upper portion of the viewport, with floor lamps glowing softly and fading into the deep charcoal background (`#1A1A1A`).\n- **Typography & Brand**: Clean geometric Outfit typography featuring the bold two-line heading *\"Your home, on one tap\"* in high-contrast off-white (`#F5F2EE`), paired with muted secondary copy (`#8C8782`).\n- **Stepper Dots**: A minimal 3-step carousel indicator positioned above the headline, displaying an active vivid orange pill (`#F2762E`) alongside muted inactive dots.\n- **Interactive Slide-to-Start Button**: A rounded pill slider container (`#2A2A2A`) anchored at the base with an orange power knob on the left, centered *\"Get Started\"* label, and trailing chevrons.\n- **Clean Structure**: Preserves the 390\u00d7844 mobile viewport constraints with no bottom navigation bar, delivering an intentional, calm first impression."
+   },
+   {
+    "suggestion": "Design the Main Dashboard / Home screen in dark mode"
+   },
+   {
+    "suggestion": "Create the Room Detail & Lighting Control screen"
+   },
+   {
+    "suggestion": "Generate the Device Pairing / Setup flow"
+   }
+  ],
+  "projectId": "11119557533319828808",
+  "sessionId": "2839168071578689463"
+ },
+ "DARK-home": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Hearth Dark",
+         "theme": {
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#F2762E",
+          "designMd": "# Hearth smart home app (code.in.30s)\nSmart home control mobile app. Clean modern style: soft rounded cards (20-24px radius), full-round pill search bars and chips, clean geometric sans (Outfit), big bold headings, small muted subtext. ONE vivid orange accent #F2762E used sparingly: pills, active nav icon, toggles ON, the centered + floating action button and ONE highlighted full-orange device card per screen. Floating rounded bottom nav bar with a centered orange round + FAB. Thin rounded line icons. Status chips like 'On', 'Auto', 'Away'. No gradients except a photo scrim, no neon, no emoji.\n## Dark (hero): charcoal near-black page #1A1A1A, cards #2A2A2A, raised #333333, ink #F5F2EE off-white, muted #8C8782. Orange #F2762E accent.",
+          "overrideNeutralColor": "#1A1A1A",
+          "overridePrimaryColor": "#F2762E",
+          "overrideSecondaryColor": "#2A2A2A",
+          "overrideTertiaryColor": "#8C8782",
+          "roundness": "ROUND_FULL"
+         }
+        },
+        "name": "assets/14947798366003324628",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "1992",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzVlOWQ3MzA3NDhjOTQ4NjI4ZjFiZmE5OWZiYzgzMzU0EgsSBxDnsaWX4xEYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTExOTU1NzUzMzMxOTgyODgwOA&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/11119557533319828808/files/9e2358c1d1644985adead5535aa79be1"
+       },
+       "id": "eb14bc1501e747499ce2506c5b53d385",
+       "name": "projects/11119557533319828808/screens/eb14bc1501e747499ce2506c5b53d385",
+       "prompt": "Mobile smart home control app called \"Hearth\". Target viewport 390x844. DARK mode: charcoal near-black page background #1A1A1A, cards #2A2A2A, raised controls #333333, off-white ink #F5F2EE, muted grey #8C8782 small subtext. ONE vivid orange accent #F2762E used for pills, toggles ON, active nav icon, the centered + FAB and one highlighted full-orange card. Soft rounded cards 20-24px radius, full-round pill search bar and chips, clean geometric sans Outfit font (bold large headings, small muted subtext), thin rounded line icons (Material Symbols Outlined or clean SVG), no gradients, no emoji. Content must strictly fit and look premium within mobile bounds.\n\nSCREEN DETAILS - HOME DASHBOARD:\n1. Top row:\n   - Small round user profile avatar photo or stylish silhouette\n   - Text beside avatar: Greeting \"Hi, Aarav\" in crisp off-white #F5F2EE font-medium, and directly below it a small line in vivid orange #F2762E: \"Home, Chennai\"\n   - On the right: a round charcoal button (#2A2A2A or #333333) with a thin clean notification bell icon.\n\n2. Heading & Search:\n   - Big bold clean heading \"My Home\" in #F5F2EE (Outfit, font-bold, text-3xl).\n   - Full-round pill search bar: rounded-full, background #2A2A2A, placeholder text \"Search devices\", search icon on left.\n\n3. Quick Weather & Usage summary line:\n   - Small ambient status line: \"24\u00b0C inside  \u2022  6.2 kWh today\" in muted grey #8C8782 with subtle dot separator and thin clean icons (thermometer / bolt).\n\n4. Room filter chips row:\n   - Horizontal scrolling or wrapped row of full-round pill chips:\n     * \"All\" - Active chip, fully filled orange #F2762E with white text #F5F2EE font-semibold.\n     * \"Living room\" - Inactive chip, dark card bg #2A2A2A, text #8C8782, rounded-full.\n     * \"Bedroom\" - Inactive chip, dark card bg #2A2A2A, text #8C8782, rounded-full.\n     * \"Kitchen\" - Inactive chip, dark card bg #2A2A2A, text #8C8782, rounded-full.\n\n5. 2-Column Grid of Device Cards (rounded-2xl / rounded-3xl ~22px padding 16px):\n   - Card 1 (\"Living lights\"): Highlighted FULL-ORANGE card (#F2762E background). Off-white text (#FFFFFF / #F5F2EE). Icon of lightbulb in a round pill/circle. Title \"Living lights\" (bold), subtitle \"4 lamps\", status pill 'On' (white/semi-transparent white), and an active toggle ON switch.\n   - Card 2 (\"Air conditioner\"): Card background #2A2A2A. AC/cool icon. Title \"Air conditioner\" in #F5F2EE, subtext \"22\u00b0C \u2022 Auto\" in #8C8782. Status pill 'On' with orange accent dot, and toggle ON switch (orange knob/track).\n   - Card 3 (\"Smart TV\"): Card background #2A2A2A. TV screen icon. Title \"Smart TV\" in #F5F2EE, subtext \"Off\" in #8C8782. Status pill 'Off' in muted dark pill, toggle OFF switch.\n   - Card 4 (\"Wi-Fi router\"): Card background #2A2A2A. Wi-Fi router icon. Title \"Wi-Fi router\" in #F5F2EE, subtext \"8 devices\" in #8C8782. Status chip 'Online' / 'On' with subtle green or orange indicator, toggle ON.\n\n6. Floating Rounded Bottom Navigation Bar:\n   - Docked floating pill-shaped bar (bg #2A2A2A, rounded-full, with elevation / dark subtle shadow, slightly lighter than #1A1A1A background).\n   - Contains 4 line icons + 1 centered raised orange FAB:\n     * Home (active, colored #F2762E)\n     * Rooms (inactive line icon, #8C8782)\n     * Centered round floating action button: prominent raised circular orange (#F2762E) button with a white '+' icon.\n     * Energy (inactive line icon, #8C8782)\n     * Settings (inactive line icon, #8C8782)",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WO_KoEXw9yZAne1dnAvAXZnWstDWy20k60qkPrjbVtJoRbNTBWowNUZMkgZsVZiy8aOiuy2KSTTFZum_mz1mS6Nq7JpQCQFx0aVpB53_XQ-X3nANH_j0wxP_fhSFYKrS1ZZuccNku2sWb0sn41H_dYsJvWMA9-zRpRWBOxQWoDkkge8NhRcJD4caUiC1m_L_TU4ALgC829V5sdnrzCV1GvmAN8vEoX_7A5UOhjlw0p9w09yZBe-kC3FBK-",
+        "name": "projects/11119557533319828808/files/5a0369a8404d47a797aeb3e579a9455f"
+       },
+       "theme": {
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#F2762E",
+        "overrideNeutralColor": "#1A1A1A",
+        "overridePrimaryColor": "#F2762E",
+        "overrideSecondaryColor": "#2A2A2A",
+        "overrideTertiaryColor": "#8C8782",
+        "roundness": "ROUND_FULL"
+       },
+       "title": "Hearth - Home Dashboard",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "Here is the **Hearth - Home Dashboard** screen designed for a 390x844 mobile viewport in Dark Mode, matching your exact specifications:\n\n### Design Implementation Details:\n- **Palette & Contrast:** Charcoal near-black page background (`#1A1A1A`), cards in `#2A2A2A`, raised elements in `#333333`, high-contrast off-white ink (`#F5F2EE`), and muted grey (`#8C8782`) for subtle secondary info.\n- **Vivid Orange Accent (`#F2762E`):** Used purposefully on the location label, the active \"All\" room pill, active toggles, the highlighted full-orange \"Living lights\" card, the active Home nav icon, and the centered raised **+** FAB.\n- **Header:** Small profile avatar with \"Hi, Aarav\", orange \"Home, Chennai\" subtext, and a circular notification bell button.\n- **Search & Ambient Stats:** Bold \"My Home\" title, full-round pill \"Search devices\" bar, and an ambient climate/usage indicator (`24\u00b0C inside \u2022 6.2 kWh today`).\n- **Room Filter Chips:** Clean rounded pill row starting with the active orange \"All\" chip followed by \"Living room\", \"Bedroom\", and \"Kitchen\".\n- **2-Column Device Grid:** \n  - **Living lights:** Highlighted in full vivid orange with 4 lamps and an active toggle.\n  - **Air conditioner:** 22\u00b0C \u2022 Auto with active switch and status indicator.\n  - **Smart TV:** Muted inactive state with \"Off\" chip.\n  - **Wi-Fi router:** \"Online\" status badge with 8 connected devices.\n- **Floating Nav Bar:** Floating pill navigation docked at the bottom featuring Home (active), Rooms, Energy, and Settings icons flanking the prominent centered orange **+** action button."
+   },
+   {
+    "suggestion": "Create the Climate / Air Conditioner detail control screen"
+   },
+   {
+    "suggestion": "Design the Rooms & Scenes view"
+   },
+   {
+    "suggestion": "Design the Energy consumption breakdown screen"
+   }
+  ],
+  "projectId": "11119557533319828808",
+  "sessionId": "18194672632629290132"
+ },
+ "DARK-room": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Hearth Dark",
+         "theme": {
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#F2762E",
+          "designMd": "# Hearth smart home app (code.in.30s)\nSmart home control mobile app. Clean modern style: soft rounded cards (20-24px radius), full-round pill search bars and chips, clean geometric sans (Outfit), big bold headings, small muted subtext. ONE vivid orange accent #F2762E used sparingly: pills, active nav icon, toggles ON, the centered + floating action button and ONE highlighted full-orange device card per screen. Floating rounded bottom nav bar with a centered orange round + FAB. Thin rounded line icons. Status chips like 'On', 'Auto', 'Away'. No gradients except a photo scrim, no neon, no emoji.\n## Dark (hero): charcoal near-black page #1A1A1A, cards #2A2A2A, raised #333333, ink #F5F2EE off-white, muted #8C8782. Orange #F2762E accent.",
+          "overrideNeutralColor": "#1A1A1A",
+          "overridePrimaryColor": "#F2762E",
+          "overrideSecondaryColor": "#2A2A2A",
+          "overrideTertiaryColor": "#8C8782",
+          "roundness": "ROUND_FULL"
+         }
+        },
+        "name": "assets/14947798366003324628",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "1768",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzc5MTBmZGJmZTVhMTRkNjFiZDMwMjRhODY4ZjAwODIxEgsSBxDnsaWX4xEYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTExOTU1NzUzMzMxOTgyODgwOA&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/11119557533319828808/files/b96ff645b77047b38f5a38d1fb4da795"
+       },
+       "id": "9ee43afad1744d829b9fec2a4332f7ba",
+       "name": "projects/11119557533319828808/screens/9ee43afad1744d829b9fec2a4332f7ba",
+       "prompt": "Smart home mobile app Hearth: CLIMATE DETAIL screen in DARK mode.\nViewport constraints: 390x844 mobile viewport, fits comfortably without excessive scrolling.\nColors & styling: Charcoal near-black background #1A1A1A, dark rounded cards #2A2A2A with 20-24px border radius, raised interactive controls #333333, crisp off-white text #F5F2EE, muted subtext #8C8782, single vivid orange accent #F2762E. Clean geometric sans font (Outfit). Thin rounded line icons (Material Symbols Outlined), no gradients, no emoji.\n\nScreen composition:\n1. Top bar: Round circular back button (chevron_left/arrow_back) on the left, centered title \"Living room\" with font-bold Outfit, round circular more options button (more_vert/more_horiz) on the right. Both buttons in #2A2A2A or #333333 circular containers.\n2. Status indicator chip: Small centered pill badge with a subtle orange dot and text \"Cooling\" in vivid orange #F2762E (e.g. bg-[#F2762E]/15 text-[#F2762E] font-medium text-xs px-3 py-1 rounded-full).\n3. Thermostat dial section:\n   - A large, beautifully crafted circular thermostat dial SVG/graphic: dark ring track (#2A2A2A/#333333) with a vivid orange #F2762E arc covering approximately 60%, with a circular knob at the active endpoint.\n   - Dial center: subtle \"TARGET\" uppercase caption in #8C8782, a huge prominent \"22\u00b0\" temperature reading in bold #F5F2EE, and below it \"Inside 24\u00b0\" in #8C8782 with small thermometer icon.\n   - Stepper controls on either side of the dial: a circular raised button with minus icon (-) on the left, and a circular raised button with plus icon (+) on the right, both in #2A2A2A/#333333 with off-white icons.\n4. Mode selector: Horizontal row of pill chips:\n   - \"Cool\" active pill: filled vivid orange #F2762E with dark or white text and snowflake icon.\n   - \"Heat\" inactive pill: #2A2A2A bg, #8C8782 text, subtle border or raised style.\n   - \"Dry\" inactive pill: #2A2A2A bg, #8C8782 text.\n   - \"Fan\" inactive pill: #2A2A2A bg, #8C8782 text.\n5. Fan speed card:\n   - Card container (#2A2A2A, rounded-[22px], p-4): Header with fan icon and \"Fan speed\", label showing \"Auto\" or \"Level 2\". A clean 3-step segmented or dot selector showing 3 discrete speed dots/segments (1, 2, 3 / Low, Mid, High) with active step in #F2762E.\n6. Schedule card:\n   - Card container (#2A2A2A, rounded-[22px], p-4): Clock/schedule icon, title \"Schedule\", subtext \"Comfort \u00b7 6:00 PM \u2013 11:00 PM\", and an active iOS-style toggle switch in ON position (orange #F2762E background with white thumb).\n7. Bottom Action:\n   - Full-width vivid orange pill button: background #F2762E, text #F5F2EE or #1A1A1A bold, label \"Apply\", height 52px, rounded-full.\n8. CRITICAL: NO bottom navigation bar on this detail screen. Clean bottom padding.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WfB-YWBi9m7gY6rcNmNtq6YFcZkGojDJWZ2SWNElL6DdSyI3HfKBBlAXpw_KjXAvn__k3wqz8ZjlHGET4rsr1LDYAIzpR2DZCgz3h4V-1bAWOzFHmLcSHETgwGoczohroOfIgbMOpuvDxb8c9kcpyzp6sJJdFYh8N7SIRSFfj0ENo4YOIf7a6LsHKOslzMJ99UaTpJpAry06WSDtmtcSwVrnKBOBRWUgcvZ8RzmwO2qkUYDVkIbRZKsyMw",
+        "name": "projects/11119557533319828808/files/c03124a9e79e4684ba8fb82fdf1437f1"
+       },
+       "theme": {
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#F2762E",
+        "overrideNeutralColor": "#1A1A1A",
+        "overridePrimaryColor": "#F2762E",
+        "overrideSecondaryColor": "#2A2A2A",
+        "overrideTertiaryColor": "#8C8782",
+        "roundness": "ROUND_FULL"
+       },
+       "title": "Hearth - Climate Detail",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "I have designed the **Climate Detail** screen for **Hearth** in Dark Mode, matching the established design tokens and 390\u00d7844 mobile viewport constraints:\n\n### Key Design Highlights\n- **Palette & Atmosphere:** Set against charcoal near-black (`#1A1A1A`) with soft-rounded `#2A2A2A` cards, raised controls (`#333333`), crisp off-white text (`#F5F2EE`), and muted grey subtext (`#8C8782`).\n- **Header & Navigation:** Includes circular back and more-action buttons framing the centered \"Living room\" title, paired with the active \"Cooling\" status badge.\n- **Thermostat Dial:** Features a prominent circular dial with a vivid orange (`#F2762E`) arc tracking 60% of the gauge, complete with an end knob indicator, large \"22\u00b0\" target temperature, \"Inside 24\u00b0\" ambient readout, and flanked circular `\u2013` and `+` adjust buttons.\n- **HVAC Modes:** A horizontal row of mode pills highlighting the active **Cool** state in vivid orange alongside Heat, Dry, and Fan options.\n- **Equipment Controls:**\n  - **Fan Speed Card:** Features step dots/levels to adjust airflow intensity.\n  - **Schedule Card:** Displays active comfort routine (*Comfort \u00b7 6:00 PM \u2013 11:00 PM*) with an orange toggle switch set to ON.\n- **Bottom Action:** A full-width, full-pill **Apply** CTA anchored at the base with bottom navigation omitted as specified."
+   },
+   {
+    "suggestion": "Add an interactive slider or energy usage chart to this detail view"
+   },
+   {
+    "suggestion": "Create the corresponding Light Mode variant of this Climate screen"
+   },
+   {
+    "suggestion": "Design the Room Lighting or Device Settings detail screen"
+   }
+  ],
+  "projectId": "11119557533319828808",
+  "sessionId": "16418651594129248656"
+ },
+ "DARK-energy": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Hearth Dark",
+         "theme": {
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#F2762E",
+          "designMd": "# Hearth smart home app (code.in.30s)\nSmart home control mobile app. Clean modern style: soft rounded cards (20-24px radius), full-round pill search bars and chips, clean geometric sans (Outfit), big bold headings, small muted subtext. ONE vivid orange accent #F2762E used sparingly: pills, active nav icon, toggles ON, the centered + floating action button and ONE highlighted full-orange device card per screen. Floating rounded bottom nav bar with a centered orange round + FAB. Thin rounded line icons. Status chips like 'On', 'Auto', 'Away'. No gradients except a photo scrim, no neon, no emoji.\n## Dark (hero): charcoal near-black page #1A1A1A, cards #2A2A2A, raised #333333, ink #F5F2EE off-white, muted #8C8782. Orange #F2762E accent.",
+          "overrideNeutralColor": "#1A1A1A",
+          "overridePrimaryColor": "#F2762E",
+          "overrideSecondaryColor": "#2A2A2A",
+          "overrideTertiaryColor": "#8C8782",
+          "roundness": "ROUND_FULL"
+         }
+        },
+        "name": "assets/14947798366003324628",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "1768",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzhlNjE4NGI4ODU1YTQyNDRhNjQzNzZlZTA0NmZhNTI3EgsSBxDnsaWX4xEYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTExOTU1NzUzMzMxOTgyODgwOA&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/11119557533319828808/files/ffe5ddaf212b4f0c9f3532eccbf16875"
+       },
+       "id": "4089af611ffe4d6faa04ac7cebe650d4",
+       "name": "projects/11119557533319828808/screens/4089af611ffe4d6faa04ac7cebe650d4",
+       "prompt": "Mobile smart home control app named \"Hearth\". Strict DARK mode palette: Charcoal near-black page background #1A1A1A, card background #2A2A2A, raised controls/chips #333333, text #F5F2EE, muted subtext #8C8782, accent vivid orange #F2762E. Clean geometric sans Outfit font (bold large titles, clean light/regular subtext), soft rounded cards 20-24px radius, thin rounded line icons (Material Symbols Outlined / lucide style), NO gradients, NO emoji. Strictly fit in 390x844 viewport with smooth vertical scrolling if needed, respecting safe areas.\n\nHeader:\n- Small top app bar with title \"Energy\" centered or left aligned with back arrow and subtle more_vert options icon, or clean status bar with notification icon.\n\nContent hierarchy:\n1. Segmented pill tabs: Full-round pill container (#2A2A2A or #333333) with \"Day\", \"Week\", \"Month\". \"Week\" is actively selected with solid vivid orange #F2762E background and bold white/off-white text. \"Day\" and \"Month\" are unselected with muted text #8C8782.\n2. Energy Summary Big Card (rounded-2xl / 20-24px, bg-[#2A2A2A], p-5):\n   - Metric: \"142.6 kWh\" in large bold Outfit font (#F5F2EE), subtext \"this week\" in #8C8782.\n   - Comparison pill: Small pill chip with muted grey/neutral background (#333333) and muted text \"-12% vs last week\" (green-free as requested, strictly muted #8C8782 or #F5F2EE, no green).\n   - 7-bar rounded bar chart for Mon, Tue, Wed, Thu, Fri, Sat, Sun:\n     - Vertical bars with rounded full caps (e.g. w-3 or w-3.5, h-24 or h-28 container).\n     - Thursday (\"Thu\") is highlighted with the vivid orange #F2762E bar (height e.g. 85%).\n     - All other days (Mon, Tue, Wed, Fri, Sat, Sun) are muted grey (#3E3E3E or #4A4A4A).\n     - Labels below each bar: Mon, Tue, Wed, Thu, Fri, Sat, Sun in small #8C8782 font. Thursday label can be bold or orange-tinted.\n3. Top Devices Section:\n   - Section label: \"TOP CONSUMERS\" or \"Top devices\" in font-bold text-sm text-[#8C8782] tracking-wider uppercase.\n   - List in a card or clean stacked rows (bg-[#2A2A2A] rounded-2xl p-4 space-y-3.5):\n     - Air conditioner: AC icon, name \"Air conditioner\", usage \"48 kWh\" (34%), small sleek horizontal progress bar with orange fill.\n     - Water heater: Water/thermostat icon, name \"Water heater\", usage \"31 kWh\" (22%), small sleek horizontal progress bar with muted grey/warm fill.\n     - Lights: Lightbulb icon, name \"Lights\", usage \"14 kWh\" (10%), small sleek horizontal progress bar.\n4. \"Scenes\" Section:\n   - Section title \"Scenes\" (bold #F5F2EE text-lg).\n   - 2-column grid of cards (rounded-2xl / 20-24px):\n     - \"Movie night\": Full vivid orange background (#F2762E), text #FFFFFF or #1A1A1A, movie/theatre icon, toggle switch showing active ON (white knob on dark/contrasting track).\n     - \"Good morning\": bg-[#2A2A2A], text #F5F2EE, sun/wb_sunny icon, toggle switch OFF.\n     - \"Away\": bg-[#2A2A2A], text #F5F2EE, door_open / lock icon, toggle switch OFF.\n     - \"Sleep\": bg-[#2A2A2A], text #F5F2EE, bed / bedtime icon, toggle switch OFF.\n\nBottom Navigation:\n- Floating rounded pill navbar docked near bottom (pill-shaped rounded-full, max-w-xs mx-auto mb-4 bg-[#2A2A2A] border border-white/5 shadow-2xl px-5 py-2.5 flex items-center justify-between).\n- 4 line icons: Home, Rooms (or grid/door), Energy (active with #F2762E color and subtle indicator), Settings.\n- Centered raised circular vivid orange #F2762E floating action button with white \"+\" icon.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VjvcUhKojkCEWpcolOFDnL5XVCs6SHNX9cs7LEO08V-Hnyl825K8nefPnmPhJnmDYqaewkKZrxUV8nmpDweH0W5y4Qpd8Y0Mj8msfOGEPB---HMOSkRILXJX6xHfYb-OSQIAcq_HOdoRZZ1k8FKCswTQ7fdELVR0PIV_PUhxvNku6crGIU-Pmv8qjbIcAPLbGArsvZC-xfDYJpR-HQuMr-Osb1E8ciR_NqgxavYyNu06fENsf2wYZUpUlh",
+        "name": "projects/11119557533319828808/files/f62088ee78b24a508148da966c432621"
+       },
+       "theme": {
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#F2762E",
+        "overrideNeutralColor": "#1A1A1A",
+        "overridePrimaryColor": "#F2762E",
+        "overrideSecondaryColor": "#2A2A2A",
+        "overrideTertiaryColor": "#8C8782",
+        "roundness": "ROUND_FULL"
+       },
+       "title": "Hearth - Energy & Scenes",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "I've created the **Energy & Scenes** screen for the **Hearth** smart home app in dark mode, crafted to match your design system specifications:\n\n### Design Highlights\n- **Palette & Typography**: Set on a dark charcoal background (`#1A1A1A`) with soft-radiused container cards (`#2A2A2A`), subtle raised control elements (`#333333`), crisp off-white text (`#F5F2EE`), and muted grey subtext (`#8C8782`) set in the clean geometric *Outfit* font family.\n- **Header & Timeframe Controls**: Includes an \"Energy\" title bar with back navigation and options, paired with a full-round segmented pill selector (`Day`, `Week`, `Month`) with `Week` highlighted in signature vivid orange (`#F2762E`).\n- **Weekly Consumption Overview**: A feature card highlighting **142.6 kWh**, an unobtrusive neutral `-12% vs last week` pill (avoiding green as requested), and a 7-day Mon\u2013Sun bar chart with Thursday prominently elevated in vivid orange while other days remain muted.\n- **Top Consumers Breakdown**: Sleek device breakdown tracking **Air conditioner** (48 kWh with proportional accent bar), **Water heater** (31 kWh), and **Lights** (14 kWh).\n- **Scenes Grid**: 2-column preset cards including **Movie night** featured in full orange with an active toggle, alongside **Good morning**, **Away**, and **Sleep**.\n- **Floating Pill Navigation**: Floating bottom bar with thin line icons for *Home*, *Rooms*, *Energy* (active orange), and *Settings*, anchored by the centered round orange **+** floating action button."
+   },
+   {
+    "suggestion": "Add a modal sheet for editing scene automation triggers"
+   },
+   {
+    "suggestion": "Create a detailed breakdown view for the Air Conditioner device"
+   },
+   {
+    "suggestion": "Generate a monthly comparison view of energy analytics"
+   }
+  ],
+  "projectId": "11119557533319828808",
+  "sessionId": "13045861661055940079"
+ }
+}

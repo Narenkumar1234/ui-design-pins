@@ -1,0 +1,58 @@
+[
+ {
+  "file": "dark-onboarding",
+  "name": "projects/11119557533319828808/screens/3e6c1dabdc7e4cc88c362e18185c7341",
+  "title": "Cozy modern aesthetic living room interior at dusk, warm ambient lighting with floor lamps and soft accent lights glowing, stylish minimalist sofa with textured pillows, indoor potted plants, warm architectural interior design, atmospheric cinematic evening mood, dark moody background tones suitable for dark UI overlay, high quality architectural photography.",
+  "width": "768",
+  "height": "1376"
+ },
+ {
+  "file": "dark-onboarding",
+  "name": "projects/11119557533319828808/screens/ba6cc2e1056d49bcbbb0a8dece83cef1",
+  "title": "Hearth - Onboarding",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "dark-home",
+  "name": "projects/11119557533319828808/screens/eb14bc1501e747499ce2506c5b53d385",
+  "title": "Hearth - Home Dashboard",
+  "width": "780",
+  "height": "1992"
+ },
+ {
+  "file": "dark-room",
+  "name": "projects/11119557533319828808/screens/9ee43afad1744d829b9fec2a4332f7ba",
+  "title": "Hearth - Climate Detail",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "dark-energy",
+  "name": "projects/11119557533319828808/screens/4089af611ffe4d6faa04ac7cebe650d4",
+  "title": "Hearth - Energy & Scenes",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "light-home",
+  "name": "projects/11119557533319828808/screens/f874d1d0fa2247e2a866835bd0cf289b",
+  "title": "Hearth - Home Dashboard (Light)",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "light-room",
+  "name": "projects/11119557533319828808/screens/5b4e0b98e8de40dab8a0946719f389b4",
+  "title": "Hearth - Climate Detail (Light)",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "light-energy",
+  "name": "projects/11119557533319828808/screens/f32bc00796fb47898778dc23f73755d3",
+  "title": "Hearth - Energy & Scenes (Light)",
+  "width": "780",
+  "height": "2296"
+ }
+]

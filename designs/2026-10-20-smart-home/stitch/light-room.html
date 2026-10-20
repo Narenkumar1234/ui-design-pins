@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hearth - Climate Detail</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {},
+          fontFamily: {
+            headline: ["Public Sans", "sans-serif"],
+            display: ["Public Sans", "sans-serif"],
+            body: ["Public Sans", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          },
+          fontSize: {}
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      background-color: #E8E5DF;
+      font-family: 'Public Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex justify-center items-center min-h-screen p-0 sm:p-4 select-none">
+<!-- Mobile Viewport Container 390x844 -->
+<main class="w-[390px] h-[844px] bg-[#F5F2EE] text-[#1A1A1A] flex flex-col justify-between relative shadow-2xl overflow-hidden rounded-[40px] border border-[#ECE7E1]">
+<!-- Top Fixed Stack (Status Bar + TopAppBar) -->
+<header class="w-full flex-shrink-0 z-20">
+<!-- iOS Status Bar -->
+<div class="w-full px-7 pt-3 flex justify-between items-center text-[#1A1A1A] font-medium text-xs">
+<span class="tracking-tight font-semibold">9:41</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'wght' 500;">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'wght' 500;">wifi</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'wght' 500;">battery_full</span>
+</div>
+</div>
+<!-- TopAppBar from Shared Components JSON -->
+<nav class="flex justify-between items-center w-full px-4 pt-4 pb-2 bg-transparent">
+<!-- Leading Icon Button -->
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-[#FFFFFF] border border-[#ECE7E1] flex items-center justify-center text-[#1A1A1A] hover:bg-[#ECE7E1] transition-colors active:scale-95 duration-150 shadow-sm" type="button">
+<span class="material-symbols-outlined text-xl">arrow_back</span>
+</button>
+<!-- Headline Anchor -->
+<h1 class="font-headline text-lg font-bold text-[#1A1A1A] tracking-tight">Living room</h1>
+<!-- Trailing Icon Button -->
+<button aria-label="More options" class="w-10 h-10 rounded-full bg-[#FFFFFF] border border-[#ECE7E1] flex items-center justify-center text-[#1A1A1A] hover:bg-[#ECE7E1] transition-colors active:scale-95 duration-150 shadow-sm" type="button">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</nav>
+</header>
+<!-- Scrollable Content Canvas (No BottomNav: Dedicated Task Canvas) -->
+<div class="flex-1 flex flex-col px-5 overflow-y-auto overflow-x-hidden pt-1 pb-4 gap-3.5 scrollbar-none">
+<!-- Zone & Active Status Banner -->
+<div class="flex items-center justify-between px-3.5 py-2.5 bg-[#FFFFFF] rounded-2xl border border-[#ECE7E1] shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#8C8782] text-[18px]">meeting_room</span>
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-[#1A1A1A] tracking-tight">Zone 1 · Main Living Area</span>
+<span class="text-[10px] text-[#8C8782]">Ecobee Sensor Attached</span>
+</div>
+</div>
+<!-- Pill Badge -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#F5F2EE] border border-[#ECE7E1]">
+<span class="w-2 h-2 rounded-full bg-[#F2762E] animate-pulse"></span>
+<span class="text-[11px] font-semibold text-[#1A1A1A]">Cooling</span>
+</div>
+</div>
+<!-- Thermostat Dial Section -->
+<section aria-label="Thermostat control dial" class="flex flex-col items-center justify-center relative py-1">
+<div class="relative w-[240px] h-[240px] flex items-center justify-center">
+<!-- Dial SVG Background & Progress Arc -->
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 240 240">
+<!-- Muted Grey Track -->
+<circle cx="120" cy="120" fill="transparent" r="100" stroke="#ECE7E1" stroke-linecap="round" stroke-width="14"></circle>
+<!-- Vivid Orange Active Arc (60% Progress: 2 * PI * 100 = 628.3, 60% = 377) -->
+<circle cx="120" cy="120" fill="transparent" r="100" stroke="#F2762E" stroke-dasharray="628.3" stroke-dashoffset="251.3" stroke-linecap="round" stroke-width="14"></circle>
+</svg>
+<!-- Dial Handle / Knob Indicator (positioned at 60% of circle: 216 deg) -->
+<!-- knob coords: cx=120 + 100*cos(216-90 deg) = 120 + 100*cos(126) = 120 - 58.78 = 61.22; cy = 120 + 100*sin(126) = 120 + 80.9 = 200.9 -->
+<div class="absolute w-7 h-7 bg-[#FFFFFF] rounded-full border-4 border-[#F2762E] shadow-md flex items-center justify-center pointer-events-none" style="left: 47px; top: 187px;">
+<div class="w-1.5 h-1.5 bg-[#F2762E] rounded-full"></div>
+</div>
+<!-- Central Target Readout -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="text-[11px] font-bold text-[#8C8782] tracking-widest uppercase mb-0.5">TARGET</span>
+<div class="flex items-start justify-center leading-none">
+<span class="text-6xl font-extrabold text-[#1A1A1A] tracking-tighter" id="target-temp">22</span>
+<span class="text-2xl font-bold text-[#F2762E] mt-1 ml-0.5">°</span>
+</div>
+<!-- Inside actual readout -->
+<div class="flex items-center gap-1 mt-1.5 px-2.5 py-0.5 rounded-full bg-[#ECE7E1]/70">
+<span class="material-symbols-outlined text-[13px] text-[#8C8782]">thermostat</span>
+<span class="text-[11px] font-medium text-[#1A1A1A]">Inside 24°</span>
+</div>
+</div>
+<!-- Flanking Increment/Decrement Buttons -->
+<button aria-label="Decrease temperature" class="absolute -left-1 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#FFFFFF] border border-[#ECE7E1] text-[#1A1A1A] flex items-center justify-center shadow-sm hover:bg-[#ECE7E1] active:scale-95 transition-transform duration-150" id="temp-decrement" type="button">
+<span class="material-symbols-outlined text-xl">remove</span>
+</button>
+<button aria-label="Increase temperature" class="absolute -right-1 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#FFFFFF] border border-[#ECE7E1] text-[#1A1A1A] flex items-center justify-center shadow-sm hover:bg-[#ECE7E1] active:scale-95 transition-transform duration-150" id="temp-increment" type="button">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</section>
+<!-- Climate Mode Selector (Single Active Orange, Inactive Muted Raised) -->
+<section aria-label="HVAC Modes" class="w-full">
+<div class="grid grid-cols-4 gap-2.5">
+<!-- Cool (Active) -->
+<button class="flex flex-col items-center justify-center py-3 rounded-2xl bg-[#F2762E] text-[#FFFFFF] shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-2xl mb-1">ac_unit</span>
+<span class="text-xs font-semibold">Cool</span>
+</button>
+<!-- Heat -->
+<button class="flex flex-col items-center justify-center py-3 rounded-2xl bg-[#FFFFFF] border border-[#ECE7E1] text-[#8C8782] hover:text-[#1A1A1A] hover:bg-[#ECE7E1]/50 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-2xl mb-1">local_fire_department</span>
+<span class="text-xs font-medium">Heat</span>
+</button>
+<!-- Dry -->
+<button class="flex flex-col items-center justify-center py-3 rounded-2xl bg-[#FFFFFF] border border-[#ECE7E1] text-[#8C8782] hover:text-[#1A1A1A] hover:bg-[#ECE7E1]/50 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-2xl mb-1">water_drop</span>
+<span class="text-xs font-medium">Dry</span>
+</button>
+<!-- Fan -->
+<button class="flex flex-col items-center justify-center py-3 rounded-2xl bg-[#FFFFFF] border border-[#ECE7E1] text-[#8C8782] hover:text-[#1A1A1A] hover:bg-[#ECE7E1]/50 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-2xl mb-1">mode_fan</span>
+<span class="text-xs font-medium">Fan</span>
+</button>
+</div>
+</section>
+<!-- Detail Settings Cards (White Cards, 20-24px rounded) -->
+<section aria-label="Device Configuration" class="flex flex-col gap-2.5">
+<!-- Fan Speed Card -->
+<div class="flex items-center justify-between p-3.5 bg-[#FFFFFF] rounded-2xl border border-[#ECE7E1] shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#ECE7E1] flex items-center justify-center text-[#1A1A1A]">
+<span class="material-symbols-outlined text-xl">air</span>
+</div>
+<div>
+<h2 class="text-sm font-bold text-[#1A1A1A] leading-tight">Fan speed</h2>
+<p class="text-[11px] text-[#8C8782]">Level 2 · Standard</p>
+</div>
+</div>
+<!-- 3-Step Pill Selector (1 & 2 Active Orange, 3 Muted) -->
+<div class="flex items-center p-1 bg-[#F5F2EE] border border-[#ECE7E1] rounded-full gap-1">
+<button class="w-7 h-7 rounded-full bg-[#F2762E] text-[#FFFFFF] text-xs font-bold flex items-center justify-center shadow-xs" type="button">1</button>
+<button class="w-7 h-7 rounded-full bg-[#F2762E] text-[#FFFFFF] text-xs font-bold flex items-center justify-center shadow-xs" type="button">2</button>
+<button class="w-7 h-7 rounded-full bg-transparent text-[#8C8782] text-xs font-semibold flex items-center justify-center hover:bg-[#ECE7E1]" type="button">3</button>
+</div>
+</div>
+<!-- Schedule Card -->
+<div class="flex items-center justify-between p-3.5 bg-[#FFFFFF] rounded-2xl border border-[#ECE7E1] shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#ECE7E1] flex items-center justify-center text-[#1A1A1A]">
+<span class="material-symbols-outlined text-xl">schedule</span>
+</div>
+<div>
+<h2 class="text-sm font-bold text-[#1A1A1A] leading-tight">Schedule</h2>
+<p class="text-[11px] text-[#8C8782]">Comfort · 6:00 PM – 11:00 PM</p>
+</div>
+</div>
+<!-- Active Orange Toggle Switch -->
+<button aria-checked="true" class="relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-[#F2762E] transition-colors duration-200 ease-in-out focus:outline-none" id="schedule-toggle" role="switch" type="button">
+<span class="sr-only">Enable comfort schedule</span>
+<span class="translate-x-5 pointer-events-none inline-block h-6 w-6 transform rounded-full bg-[#FFFFFF] shadow ring-0 transition duration-200 ease-in-out" id="toggle-knob"></span>
+</button>
+</div>
+</section>
+</div>
+<!-- Bottom Action & Mobile Home Indicator -->
+<footer class="w-full px-5 pt-2 pb-2 bg-[#F5F2EE] flex-shrink-0">
+<!-- Primary Vivid Orange CTA Button -->
+<button class="w-full bg-[#F2762E] text-white font-semibold py-3.5 rounded-full shadow-md flex items-center justify-center gap-2 hover:opacity-95 active:scale-[0.98] transition-transform duration-150 text-base" type="button">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'wght' 600;">check</span>
+<span>Apply</span>
+</button>
+<!-- iOS Home Bar Indicator -->
+<div class="w-full flex justify-center pt-3 pb-1">
+<div class="w-32 h-1 bg-[#1A1A1A]/30 rounded-full"></div>
+</div>
+</footer>
+</main>
+<!-- Interactive Logic for Temperature & Switch -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tempDisplay = document.getElementById('target-temp');
+      const incBtn = document.getElementById('temp-increment');
+      const decBtn = document.getElementById('temp-decrement');
+      const toggle = document.getElementById('schedule-toggle');
+      const knob = document.getElementById('toggle-knob');
+      
+      let temp = 22;
+      let isToggled = true;
+
+      incBtn.addEventListener('click', () => {
+        if (temp < 32) {
+          temp++;
+          tempDisplay.textContent = temp;
+        }
+      });
+
+      decBtn.addEventListener('click', () => {
+        if (temp > 16) {
+          temp--;
+          tempDisplay.textContent = temp;
+        }
+      });
+
+      toggle.addEventListener('click', () => {
+        isToggled = !isToggled;
+        toggle.setAttribute('aria-checked', isToggled.toString());
+        if (isToggled) {
+          toggle.classList.remove('bg-[#ECE7E1]');
+          toggle.classList.add('bg-[#F2762E]');
+          knob.classList.remove('translate-x-0');
+          knob.classList.add('translate-x-5');
+        } else {
+          toggle.classList.remove('bg-[#F2762E]');
+          toggle.classList.add('bg-[#ECE7E1]');
+          knob.classList.remove('translate-x-5');
+          knob.classList.add('translate-x-0');
+        }
+      });
+    });
+  </script>
+</body></html>

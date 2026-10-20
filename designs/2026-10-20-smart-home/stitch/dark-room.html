@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hearth - Climate Detail</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              charcoal: '#1A1A1A',
+              card: '#2A2A2A',
+              raised: '#333333',
+              ink: '#F5F2EE',
+              muted: '#8C8782',
+              orange: '#F2762E'
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Outfit", "Public Sans", "sans-serif"],
+            display: ["Outfit", "Public Sans", "sans-serif"],
+            body: ["Outfit", "Public Sans", "sans-serif"],
+            label: ["Outfit", "Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #121212;
+      font-family: 'Outfit', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex items-center justify-center p-0 sm:p-4 bg-neutral-950 text-[#F5F2EE]">
+<!-- Mobile Viewport Container 390x844 standard -->
+<main class="w-full max-w-[390px] min-h-[844px] bg-[#1A1A1A] text-[#F5F2EE] flex flex-col justify-between p-5 relative overflow-hidden shadow-2xl rounded-none sm:rounded-[40px] border border-white/5">
+<!-- Top Section Container -->
+<div class="flex flex-col gap-4">
+<!-- TopAppBar (Mapped from Shared Component JSON) -->
+<header class="flex justify-between items-center w-full px-1 pt-2 pb-1 bg-transparent">
+<button aria-label="Go back" class="w-11 h-11 rounded-full bg-[#2A2A2A] active:bg-[#333333] flex items-center justify-center text-[#F5F2EE] transition-transform active:scale-95 duration-150 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline font-bold text-lg tracking-tight text-[#F5F2EE]">Living room</h1>
+<button aria-label="Options" class="w-11 h-11 rounded-full bg-[#2A2A2A] active:bg-[#333333] flex items-center justify-center text-[#F5F2EE] transition-transform active:scale-95 duration-150 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="more_vert">more_vert</span>
+</button>
+</header>
+<!-- Room Atmosphere Visual Scrim Pill (Context Image from Living room) -->
+<div class="relative w-full h-24 rounded-[22px] overflow-hidden border border-white/5 bg-[#2A2A2A]">
+<img class="w-full h-full object-cover brightness-[0.70] contrast-[1.05]" data-alt="A moody, elegant living room interior at dusk with dark teal painted walls, architectural oak wood beams on the ceiling, illuminated soft linen floor lamps, a modern textured gray fabric couch, dark wood coffee table, and warm cozy ambiance. The shot matches a sophisticated hearth smart home atmosphere with subtle warm orange and amber glow accents against charcoal deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyBhxT1rsT2T_IF2z0iCX_lWYH5gL_OUT4oaNvP82p_3Kb2U1jpeuT88TkY3Q4akeXbFuro77fhd8g6N5VK5AZePFXnEjX63LMLtyivAWfd4DaKHCChZt9M0MPo0cuavnCnNcpfN6kDm3e8RbFsX-mb1-17-_WZpvUMC9djH26vMIP2Gfsd70f_Xgj1-zz1i5QsRqsxPAlRKb1VqsZks3955r6lhZCL3bEqGcUBzpJVQtQbBlsx_0rB0n8F2r0e3wPi2jWkZnjUIXD"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/90 via-[#1A1A1A]/50 to-transparent flex items-center px-4 justify-between">
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-widest text-[#8C8782] font-semibold">Climate Zone 1</span>
+<span class="text-sm font-semibold text-[#F5F2EE] tracking-tight">Main Living Area</span>
+</div>
+<!-- Status indicator badge -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F2762E]/15 border border-[#F2762E]/20 text-[#F2762E] text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#F2762E] animate-pulse"></span>
+<span>Cooling</span>
+</div>
+</div>
+</div>
+<!-- Thermostat Dial Section -->
+<div class="relative flex items-center justify-between px-1 my-1">
+<!-- Decrement Stepper Button -->
+<button aria-label="Decrease temperature" class="w-12 h-12 rounded-full bg-[#2A2A2A] active:bg-[#333333] border border-white/5 flex items-center justify-center text-[#F5F2EE] active:scale-95 transition-all shadow-md z-10" id="temp-minus">
+<span class="material-symbols-outlined text-[22px]" data-icon="remove">remove</span>
+</button>
+<!-- Dial Center Graphic -->
+<div class="relative w-56 h-56 flex items-center justify-center select-none">
+<!-- Dial SVG Arc -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 200 200">
+<!-- Background Track -->
+<circle cx="100" cy="100" fill="none" r="82" stroke="#2A2A2A" stroke-linecap="round" stroke-width="12"></circle>
+<!-- Secondary Inset Accent Line -->
+<circle cx="100" cy="100" fill="none" r="71" stroke="#222222" stroke-dasharray="3 4" stroke-width="1"></circle>
+<!-- Active Orange Arc: 60% coverage (~309 circumference) -->
+<circle class="transition-all duration-300" cx="100" cy="100" fill="none" r="82" stroke="#F2762E" stroke-dasharray="515" stroke-dashoffset="190" stroke-linecap="round" stroke-width="12"></circle>
+<!-- Visual Indicator Pip / Knob at active endpoint -->
+<circle class="shadow-lg" cx="165" cy="147" fill="#FFFFFF" r="9" stroke="#F2762E" stroke-width="3"></circle>
+</svg>
+<!-- Inner Dial Content Display -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+<span class="text-[11px] font-bold tracking-widest uppercase text-[#8C8782] mb-0.5">TARGET</span>
+<div class="flex items-start justify-center leading-none">
+<span class="font-headline font-bold text-5xl tracking-tighter text-[#F5F2EE] pl-2" id="temp-display">22</span>
+<span class="font-headline font-medium text-2xl text-[#F2762E] -mt-0.5">°</span>
+</div>
+<div class="inline-flex items-center gap-1 mt-2 text-xs font-medium text-[#8C8782]">
+<span class="material-symbols-outlined text-[15px] text-[#8C8782]" data-icon="device_thermostat">device_thermostat</span>
+<span>Inside 24°</span>
+</div>
+</div>
+</div>
+<!-- Increment Stepper Button -->
+<button aria-label="Increase temperature" class="w-12 h-12 rounded-full bg-[#2A2A2A] active:bg-[#333333] border border-white/5 flex items-center justify-center text-[#F5F2EE] active:scale-95 transition-all shadow-md z-10" id="temp-plus">
+<span class="material-symbols-outlined text-[22px]" data-icon="add">add</span>
+</button>
+</div>
+<!-- Mode Selector Pills -->
+<div class="grid grid-cols-4 gap-2">
+<!-- Cool (Active) -->
+<button class="flex flex-col items-center justify-center py-2.5 rounded-full bg-[#F2762E] text-[#1A1A1A] active:scale-95 transition-all duration-150 shadow-sm font-semibold" type="button">
+<span class="material-symbols-outlined text-[19px] mb-0.5" data-icon="ac_unit">ac_unit</span>
+<span class="text-xs font-semibold tracking-tight">Cool</span>
+</button>
+<!-- Heat -->
+<button class="flex flex-col items-center justify-center py-2.5 rounded-full bg-[#2A2A2A] text-[#8C8782] hover:text-[#F5F2EE] active:scale-95 transition-all duration-150 border border-transparent" type="button">
+<span class="material-symbols-outlined text-[19px] mb-0.5" data-icon="local_fire_department">local_fire_department</span>
+<span class="text-xs font-medium tracking-tight">Heat</span>
+</button>
+<!-- Dry -->
+<button class="flex flex-col items-center justify-center py-2.5 rounded-full bg-[#2A2A2A] text-[#8C8782] hover:text-[#F5F2EE] active:scale-95 transition-all duration-150 border border-transparent" type="button">
+<span class="material-symbols-outlined text-[19px] mb-0.5" data-icon="water_drop">water_drop</span>
+<span class="text-xs font-medium tracking-tight">Dry</span>
+</button>
+<!-- Fan -->
+<button class="flex flex-col items-center justify-center py-2.5 rounded-full bg-[#2A2A2A] text-[#8C8782] hover:text-[#F5F2EE] active:scale-95 transition-all duration-150 border border-transparent" type="button">
+<span class="material-symbols-outlined text-[19px] mb-0.5" data-icon="mode_fan">mode_fan</span>
+<span class="text-xs font-medium tracking-tight">Fan</span>
+</button>
+</div>
+<!-- Settings Cards Grid/Stack -->
+<div class="flex flex-col gap-2.5 pt-1">
+<!-- Fan Speed Card -->
+<div class="bg-[#2A2A2A] rounded-[22px] p-3.5 flex items-center justify-between border border-white/5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#333333] flex items-center justify-center text-[#F5F2EE]">
+<span class="material-symbols-outlined text-[19px]" data-icon="mode_fan">mode_fan</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-[#F5F2EE] tracking-tight">Fan speed</span>
+<span class="text-[11px] text-[#8C8782]">Level 2 · Standard</span>
+</div>
+</div>
+<!-- 3-Step Segmented Speed Dots -->
+<div class="flex items-center gap-1.5 bg-[#1A1A1A] p-1.5 rounded-full border border-white/5">
+<button class="w-6 h-6 rounded-full bg-[#F2762E] text-[#1A1A1A] text-[10px] font-bold flex items-center justify-center" type="button">1</button>
+<button class="w-6 h-6 rounded-full bg-[#F2762E] text-[#1A1A1A] text-[10px] font-bold flex items-center justify-center" type="button">2</button>
+<button class="w-6 h-6 rounded-full bg-[#333333] text-[#8C8782] text-[10px] font-bold flex items-center justify-center" type="button">3</button>
+</div>
+</div>
+<!-- Schedule Card -->
+<div class="bg-[#2A2A2A] rounded-[22px] p-3.5 flex items-center justify-between border border-white/5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#333333] flex items-center justify-center text-[#F5F2EE]">
+<span class="material-symbols-outlined text-[19px]" data-icon="schedule">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-[#F5F2EE] tracking-tight">Schedule</span>
+<span class="text-[11px] text-[#8C8782]">Comfort · 6:00 PM – 11:00 PM</span>
+</div>
+</div>
+<!-- iOS style toggle switch (ON state) -->
+<button aria-label="Toggle schedule" class="w-12 h-7 bg-[#F2762E] rounded-full p-1 flex items-center justify-end transition-colors duration-200" id="schedule-toggle" type="button">
+<span class="w-5 h-5 bg-white rounded-full shadow-md transform transition-transform"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Action Button (No bottom navigation shell as this is a focused detail journey) -->
+<div class="pt-3 pb-1 w-full">
+<button class="w-full h-[52px] bg-[#F2762E] active:bg-[#e0661f] text-[#1A1A1A] font-headline font-bold text-sm tracking-wide rounded-full flex items-center justify-center gap-2 transition-transform active:scale-[0.98] duration-150 shadow-lg shadow-[#F2762E]/20" type="button">
+<span>Apply</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</button>
+</div>
+</main>
+<script>
+    // Micro-interactions for stepper buttons and toggle
+    const tempDisplay = document.getElementById('temp-display');
+    const tempMinus = document.getElementById('temp-minus');
+    const tempPlus = document.getElementById('temp-plus');
+    let currentTemp = 22;
+
+    if (tempMinus && tempPlus && tempDisplay) {
+      tempMinus.addEventListener('click', () => {
+        if (currentTemp > 16) {
+          currentTemp -= 1;
+          tempDisplay.textContent = currentTemp;
+        }
+      });
+
+      tempPlus.addEventListener('click', () => {
+        if (currentTemp < 30) {
+          currentTemp += 1;
+          tempDisplay.textContent = currentTemp;
+        }
+      });
+    }
+
+    const scheduleToggle = document.getElementById('schedule-toggle');
+    if (scheduleToggle) {
+      let isChecked = true;
+      scheduleToggle.addEventListener('click', () => {
+        isChecked = !isChecked;
+        if (isChecked) {
+          scheduleToggle.classList.remove('bg-[#333333]', 'justify-start');
+          scheduleToggle.classList.add('bg-[#F2762E]', 'justify-end');
+        } else {
+          scheduleToggle.classList.remove('bg-[#F2762E]', 'justify-end');
+          scheduleToggle.classList.add('bg-[#333333]', 'justify-start');
+        }
+      });
+    }
+  </script>
+</body></html>
