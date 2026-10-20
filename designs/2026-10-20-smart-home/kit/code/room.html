@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Ccircle cx=%2212%22 cy=%2212%22 r=%2212%22 fill=%22%23F2762E%22/%3E%3C/svg%3E">
+  <title>Hearth · Room</title>
+</head>
+<body class="bg-bg text-ink antialiased min-h-screen">
+  <main class="max-w-md mx-auto px-5 pt-4 pb-32">
+    <!-- Header: back · room name + device status · theme -->
+    <header class="flex items-center justify-between gap-3">
+      <a href="index.html" class="btn-round" aria-label="Back to home"><svg class="icon text-[20px]"><use href="#i-back"/></svg></a>
+      <div class="text-center min-w-0">
+        <h1 id="room-name" class="text-[19px] font-semibold leading-tight truncate">Living room</h1>
+        <p id="room-sub" class="text-[13px] text-muted truncate">4 devices · 3 on</p>
+      </div>
+      <button type="button" data-theme-toggle class="btn-round"></button>
+    </header>
+
+    <!-- Room switcher -->
+    <div id="rooms" class="flex gap-2 mt-4 overflow-x-auto no-scrollbar -mx-5 px-5" role="group" aria-label="Choose room"></div>
+
+    <!-- Climate | Lights -->
+    <div class="seg mt-4" role="tablist" aria-label="Controls">
+      <button type="button" role="tab" id="tab-climate" data-tab="climate" aria-controls="p-climate">Climate</button>
+      <button type="button" role="tab" id="tab-lights" data-tab="lights" aria-controls="p-lights">Lights</button>
+    </div>
+
+    <!-- ===== Climate panel ===== -->
+    <section id="p-climate" role="tabpanel" aria-labelledby="tab-climate" class="mt-4">
+      <div id="climate-none" class="hidden text-center text-muted py-16 text-[15px]">No AC in this room yet.<br><button type="button" class="text-deep font-medium mt-2" data-add>Add a device</button></div>
+      <div id="climate-box">
+        <div class="flex items-center justify-between">
+          <span class="text-[15px] font-medium" id="ac-name">Air conditioner</span>
+          <span class="status on" id="ac-status">Cooling</span>
+        </div>
+        <div class="relative mt-0">
+          <div class="dial" id="dial" role="slider" tabindex="0" aria-label="Target temperature" aria-valuemin="16" aria-valuemax="30" aria-valuenow="22">
+            <svg viewBox="0 0 268 268" aria-hidden="true">
+              <g id="ticks"></g>
+              <circle class="track" cx="134" cy="134" r="112" fill="none" stroke-width="16" stroke-linecap="round" id="track"/>
+              <circle class="arc" cx="134" cy="134" r="112" fill="none" stroke-width="16" stroke-linecap="round" id="arc"/>
+              <circle class="face" cx="134" cy="134" r="84"/>
+              <circle class="knob" r="13" id="knob"/>
+            </svg>
+            <div class="absolute inset-0 grid place-items-center pointer-events-none">
+              <div class="text-center">
+                <p class="text-[13px] text-muted uppercase tracking-[.18em]">Target</p>
+                <p class="text-[60px] font-semibold leading-none tracking-[-0.04em] mt-1"><span id="temp">22</span><sup class="text-[28px] align-top relative top-2 text-deep">°</sup></p>
+                <p class="text-[13px] text-muted mt-1.5 flex items-center justify-center gap-1"><svg class="icon text-[15px]"><use href="#i-thermo"/></svg>Inside <span id="inside">24°</span></p>
+              </div>
+            </div>
+          </div>
+          <button type="button" id="minus" class="btn-round absolute left-0 top-1/2 -translate-y-1/2" aria-label="Lower temperature"><svg class="icon text-[20px]"><use href="#i-minus"/></svg></button>
+          <button type="button" id="plus" class="btn-round absolute right-0 top-1/2 -translate-y-1/2" aria-label="Raise temperature"><svg class="icon text-[20px]"><use href="#i-plus"/></svg></button>
+        </div>
+        <!-- modes -->
+        <div id="modes" class="grid grid-cols-4 gap-3 -mt-2" role="group" aria-label="Mode"></div>
+        <!-- fan speed -->
+        <div class="bg-surface rounded-card px-4 py-3 mt-4 flex items-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-raised grid place-items-center text-muted"><svg class="icon text-[20px]"><use href="#i-fan"/></svg></span>
+          <div class="flex-1 min-w-0"><b class="block font-medium text-[15px]">Fan speed</b><span class="text-[13px] text-muted" id="fan-label">Medium</span></div>
+          <div id="fan" class="flex gap-1.5" role="group" aria-label="Fan speed"></div>
+        </div>
+        <!-- schedule -->
+        <div class="bg-surface rounded-card px-4 py-3 mt-3 flex items-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-raised grid place-items-center text-muted"><svg class="icon text-[20px]"><use href="#i-clock"/></svg></span>
+          <div class="flex-1 min-w-0"><b class="block font-medium text-[15px]">Comfort schedule</b><span class="text-[13px] text-muted">6:00 PM - 11:00 PM daily</span></div>
+          <button type="button" class="switch" role="switch" id="ac-sched" aria-checked="true" aria-label="Comfort schedule"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Lights panel ===== -->
+    <section id="p-lights" role="tabpanel" aria-labelledby="tab-lights" class="mt-4 hidden">
+      <div id="lights-none" class="hidden text-center text-muted py-16 text-[15px]">No lights in this room yet.<br><button type="button" class="text-deep font-medium mt-2" data-add>Add a device</button></div>
+      <div id="lights-box">
+        <div class="flex items-center gap-5">
+          <div class="relative w-[128px] h-[128px] flex-none grid place-items-center">
+            <div id="glow" class="bulb-glow absolute inset-0 rounded-full"></div>
+            <span id="bulb" class="relative w-[76px] h-[76px] rounded-full bg-surface grid place-items-center text-deep shadow-card"><svg class="icon text-[36px]"><use href="#i-bulb"/></svg></span>
+          </div>
+          <div class="min-w-0">
+            <p class="text-[15px] font-medium truncate" id="light-name">Living lights</p>
+            <p class="text-[56px] font-semibold leading-none tracking-[-0.04em] mt-1"><span id="bri-val">80</span><span class="text-[24px] text-muted">%</span></p>
+            <p class="text-[13px] text-muted mt-1" id="temp-label">Warm · 2700K</p>
+          </div>
+        </div>
+        <label class="block mt-5"><span class="sr-only">Brightness</span>
+          <input id="bri" type="range" min="1" max="100" value="80" class="bright" aria-label="Brightness"></label>
+        <h2 class="text-[15px] font-medium mt-5">Colour temperature</h2>
+        <div id="temps" class="grid grid-cols-4 gap-3 mt-2.5" role="group" aria-label="Colour temperature"></div>
+        <h2 class="text-[15px] font-medium mt-5">Lamps</h2>
+        <div id="lamps" class="grid grid-cols-2 gap-2.5 mt-2.5"></div>
+        <div class="bg-surface rounded-card px-4 py-3 mt-3 flex items-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-raised grid place-items-center text-muted"><svg class="icon text-[20px]"><use href="#i-sun"/></svg></span>
+          <div class="flex-1 min-w-0"><b class="block font-medium text-[15px]">Sunset on</b><span class="text-[13px] text-muted">6:12 PM - 11:30 PM</span></div>
+          <button type="button" class="switch" role="switch" id="light-sched" aria-checked="true" aria-label="Sunset schedule"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Power: slide-to-toggle pill (fixed bottom) -->
+  <div class="fixed z-40 bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[420px]">
+    <div id="power" class="slide-pill solid shadow-float" role="button" tabindex="0" aria-label="Toggle power">
+      <div class="fillbar"></div>
+      <span class="knob"><svg class="icon text-[24px]"><use href="#i-power"/></svg></span>
+      <span class="absolute inset-0 flex items-center justify-center font-medium text-[16px] pl-10" id="power-label">Slide to turn off</span>
+      <span class="absolute right-6 top-1/2 -translate-y-1/2 chev text-muted"><svg class="icon text-[20px]"><use href="#i-chevron"/></svg><svg class="icon text-[20px]"><use href="#i-chevron"/></svg></span>
+    </div>
+  </div>
+  <div class="navfade"></div>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/room.js"></script>
+</body>
+</html>

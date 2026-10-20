@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Ccircle cx=%2212%22 cy=%2212%22 r=%2212%22 fill=%22%23F2762E%22/%3E%3C/svg%3E">
+  <title>Hearth · My Home</title>
+</head>
+<body class="bg-bg text-ink antialiased min-h-screen">
+  <main class="max-w-md md:max-w-3xl mx-auto px-5 pt-4 pb-32">
+    <!-- Header: avatar + greeting + home picker · theme toggle + bell -->
+    <header class="flex items-center justify-between">
+      <div class="flex items-center gap-3 min-w-0">
+        <span class="w-11 h-11 rounded-full bg-primary/15 text-deep grid place-items-center font-semibold text-[18px] flex-none" id="avatar">A</span>
+        <span class="min-w-0"><span class="block font-medium text-[16px] leading-tight" id="greet">Hi, Aarav</span>
+          <button type="button" id="home-pick" class="flex items-center gap-0.5 text-[13px] text-deep font-medium">
+            <span id="home-name">Home, Chennai</span><svg class="icon text-[14px]"><use href="#i-down"/></svg></button></span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button type="button" data-theme-toggle class="btn-round"></button>
+        <button type="button" id="bell" class="btn-round relative" aria-label="Notifications">
+          <svg class="icon text-[20px]"><use href="#i-bell"/></svg><span class="absolute top-[11px] right-[12px] w-2 h-2 rounded-full bg-primary ring-2 ring-surface"></span></button>
+      </div>
+    </header>
+
+    <div class="flex items-end justify-between mt-5">
+      <h1 class="text-[34px] md:text-[44px] font-semibold leading-none tracking-[-0.02em]">My Home</h1>
+      <span class="status !h-7 !px-3"><i class="w-1.5 h-1.5 rounded-full bg-ok mr-1.5"></i><span id="on-count">5 on</span></span>
+    </div>
+
+    <!-- Pill search -->
+    <label class="search mt-4" for="q">
+      <input id="q" type="search" placeholder="Search devices" autocomplete="off" aria-label="Search devices">
+      <span class="w-10 h-10 rounded-full grid place-items-center text-muted"><svg class="icon text-[20px]"><use href="#i-search"/></svg></span>
+    </label>
+
+    <!-- Climate + energy strip -->
+    <div class="flex items-center gap-4 mt-3.5 px-1 text-[13px] text-muted">
+      <span class="flex items-center gap-1"><svg class="icon text-[16px] text-deep"><use href="#i-thermo"/></svg><b class="text-ink font-medium" id="inside">24°</b> inside</span>
+      <span class="flex items-center gap-1"><svg class="icon text-[16px] text-deep"><use href="#i-humid"/></svg><b class="text-ink font-medium">58%</b> humidity</span>
+      <a href="energy.html" class="flex items-center gap-1"><svg class="icon fill text-[15px] text-deep"><use href="#i-bolt"/></svg><b class="text-ink font-medium" id="today-kwh">6.2 kWh</b> today</a>
+    </div>
+
+    <!-- Room filter chips -->
+    <div id="rooms" class="flex gap-2 mt-4 overflow-x-auto no-scrollbar -mx-5 px-5" role="group" aria-label="Filter by room"></div>
+
+    <!-- Device grid -->
+    <section class="mt-4">
+      <div id="grid" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+      <p id="empty" class="hidden text-center text-muted text-[14px] py-10">No devices match. <button type="button" id="clear" class="text-deep font-medium">Clear search</button></p>
+    </section>
+
+    <!-- Quick scenes -->
+    <section class="mt-6">
+      <div class="flex items-center justify-between">
+        <h2 class="text-[20px] font-semibold">Scenes</h2>
+        <a href="energy.html#scenes" class="text-deep font-medium text-[14px]">See all</a>
+      </div>
+      <div id="quick-scenes" class="flex gap-2 mt-3 overflow-x-auto no-scrollbar -mx-5 px-5"></div>
+    </section>
+  </main>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/home.js"></script>
+</body>
+</html>

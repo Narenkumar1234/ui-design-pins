@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Ccircle cx=%2212%22 cy=%2212%22 r=%2212%22 fill=%22%23F2762E%22/%3E%3C/svg%3E">
+  <title>Hearth · Welcome</title>
+</head>
+<body class="bg-bg text-ink antialiased min-h-screen">
+  <!-- Onboarding: full-bleed photo hero fading into the page, stepper dots, big headline, slide-to-start pill.
+       Always dark over the photo so the white headline reads in both themes. -->
+  <main class="relative min-h-screen max-w-md mx-auto overflow-hidden bg-[#141414] text-[#F5F2EE]">
+    <img src="img/living-dusk.jpg" alt="A cozy living room at dusk with warm lamps" class="absolute inset-x-0 top-0 w-full h-[74%] object-cover object-[50%_60%]" draggable="false">
+    <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(20,20,20,.55) 0%,rgba(20,20,20,0) 18%,rgba(20,20,20,0) 38%,rgba(20,20,20,.85) 62%,#141414 74%)"></div>
+    <header class="relative z-10 flex items-center justify-between px-5" style="padding-top:calc(16px + var(--sat, env(safe-area-inset-top, 0px)))">
+      <span class="flex items-center gap-2 font-semibold text-[18px]"><i class="w-2.5 h-2.5 rounded-full bg-primary"></i>hearth</span>
+      <a href="index.html" id="skip" class="h-9 px-4 rounded-full bg-white/10 backdrop-blur grid place-items-center text-[14px]">Skip</a>
+    </header>
+    <div class="absolute z-10 inset-x-0 bottom-0 px-6 pb-8">
+      <span class="inline-flex items-center gap-2 h-8 px-3 rounded-full bg-black/40 backdrop-blur text-[13px]" id="ambient"><i class="w-2 h-2 rounded-full bg-primary"></i>Evening scene · 22°C</span>
+      <div class="dots mt-6" id="dots" role="tablist" aria-label="Intro steps"></div>
+      <h1 id="ob-title" class="text-[40px] font-semibold leading-[1.05] tracking-[-0.02em] mt-4 min-h-[84px]">Your home,<br>on one tap</h1>
+      <p id="ob-text" class="text-[15px] text-[#B7B1AA] mt-3 min-h-[22px]">Lights, climate and energy in one calm app.</p>
+      <div id="start" class="slide-pill mt-7" role="button" tabindex="0" aria-label="Get started">
+        <div class="fillbar"></div>
+        <span class="knob"><svg class="icon text-[24px]"><use href="#i-power"/></svg></span>
+        <span class="absolute inset-0 flex items-center justify-center font-medium text-[16px] pl-8">Get Started</span>
+        <span class="absolute right-6 top-1/2 -translate-y-1/2 chev text-primary"><svg class="icon text-[20px]"><use href="#i-chevron"/></svg><svg class="icon text-[20px]"><use href="#i-chevron"/></svg></span>
+      </div>
+    </div>
+  </main>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/welcome.js"></script>
+</body>
+</html>
