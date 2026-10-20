@@ -1,0 +1,28 @@
+Smart home apps can feel this warm 🏡🧡
+
+Build this → Hearth, a charcoal + orange smart home control app
+
+1️⃣ Welcome: full-bleed cozy living-room photo, "Your home, on one tap", stepper dots and a slide-to-start "Get Started" pill
+2️⃣ Home: "Hi, Aarav", pill search, room chips (All · Living room · Bedroom · Kitchen), device cards with real toggles and ONE full-orange active card
+3️⃣ Room: a 270° thermostat dial you can drag, Cool / Heat / Dry / Fan modes, fan speed, schedule, plus a lights tab with a brightness slider and 4 colour temperatures
+4️⃣ Energy: Day / Week / Month bar chart (tap a bar for kWh), top devices, one-tap scenes like Movie night and Away
+5️⃣ Floating rounded nav with a centred orange + button that adds a new device
+6️⃣ Charcoal dark (#1A1A1A) as the hero + a warm off-white light mode (#F5F2EE), same orange
+
+🎓 Student project idea: make it a full-stack smart home app. Next.js/React front end, Node + Express (or Next API routes), MongoDB or Postgres for homes, rooms, devices and energy readings, WebSockets + MQTT for live device state (simulate an ESP32!), JWT auth with family members, and usage charts
+
+🎨 Palette
+Dark: bg #1A1A1A · card #2A2A2A · raised #333333 · ink #F5F2EE · muted #8C8782
+Light: bg #F5F2EE · card #FFFFFF · raised #ECE7E1 · ink #1A1A1A
+Accent: orange #F2762E (pills, toggles, FAB, active nav, one hero card)
+Slides: warm greige #CFC8C2
+
+🛠 Stack: HTML · Tailwind CSS · vanilla JS · Outfit · device state, scenes + dark mode saved in localStorage
+
+💬 Comment HEARTH to get the HTML/CSS
+
+Save this for your next project ✨
+
+Style inspo: @appuinspiration
+
+#smarthome #smarthomeapp #iot #uidesign #uiux #mobileui #appdesign #darkmode #frontenddevelopment #webdevelopment #tailwindcss #javascript #codingprojects #studentdeveloper #codein30s

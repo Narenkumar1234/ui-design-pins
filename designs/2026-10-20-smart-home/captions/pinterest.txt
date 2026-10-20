@@ -1,0 +1,11 @@
+Smart Home App UI: Hearth Charcoal + Orange, Light + Dark · Front-End Project Idea
+
+Front-end project idea: Hearth, a smart home control mobile app UI. A welcome screen with a cozy living-room photo and a slide-to-start pill; a home dashboard with pill search, room filter chips and device cards with toggles (one full-orange active card); a room screen with a draggable thermostat dial, AC modes, fan speed, a light brightness slider and colour temperatures; and an energy screen with a day / week / month usage chart, top devices and one-tap scenes. Charcoal dark mode (#1A1A1A, cards #2A2A2A) and warm off-white light mode (#F5F2EE) with one orange accent (#F2762E), floating bottom nav with an orange + button, Outfit font. Build it with HTML, Tailwind CSS and vanilla JavaScript (device state, scenes and dark mode in localStorage), then go full-stack with Next.js/React, Node + Express, MongoDB or Postgres, WebSockets/MQTT for live device state, JWT auth and energy charts. A smart home / IoT dashboard UI kit from @code.in.30s, comment HEARTH on Instagram for the HTML/CSS kit.
+
+#smarthomeapp #iotdashboard #uidesign #mobileui #darkmode #frontenddevelopment #tailwindcss #studentprojects #appdesign
+
+Alt text: Four mobile screens of the Hearth smart home app on a warm greige background: a dark welcome screen with a cozy living-room photo, the headline "Your home, on one tap" and an orange Get Started slider; a dark home dashboard with room chips and device cards where the Living lights card is solid orange; the same home screen in warm off-white light mode; and a dark climate screen with an orange thermostat dial set to 22 degrees. Below are eight palette swatches with hex codes, a fonts card (Outfit) and a "Build a full-stack smart home app" card listing the stack and features.
+
+Board: UI Design Inspiration (or UI Design / Frontend Projects)
+
+Link (once published): https://narenkumar1.gumroad.com/l/smart-home-ui-kit
