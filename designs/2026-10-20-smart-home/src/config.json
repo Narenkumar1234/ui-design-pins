@@ -1,0 +1,323 @@
+{
+ "app": "Hearth",
+ "keyword": "HEARTH",
+ "out": "../final",
+ "screens": {
+  "dark-welcome": "../final/screens/dark-welcome.png",
+  "dark-home": "../final/screens/dark-home.png",
+  "dark-climate": "../final/screens/dark-climate.png",
+  "dark-lights": "../final/screens/dark-lights.png",
+  "dark-energy": "../final/screens/dark-energy.png",
+  "dark-scenes": "../final/screens/dark-scenes.png",
+  "light-welcome": "../final/screens/light-welcome.png",
+  "light-home": "../final/screens/light-home.png",
+  "light-climate": "../final/screens/light-climate.png",
+  "light-lights": "../final/screens/light-lights.png",
+  "light-energy": "../final/screens/light-energy.png",
+  "light-scenes": "../final/screens/light-scenes.png"
+ },
+ "hook": "Smart home,<br>made <em>warm</em>",
+ "hook_sub": "Charcoal screens, one orange accent.<br>Light + dark, in HTML + Tailwind.",
+ "cover": {
+  "h1_top": 150,
+  "h1_w": 520,
+  "sub_top": 345,
+  "sub_w": 520,
+  "phones": [
+   [
+    "dark-welcome",
+    290,
+    500,
+    400,
+    3
+   ],
+   [
+    "dark-home",
+    780,
+    -96,
+    400,
+    2
+   ],
+   [
+    "dark-climate",
+    780,
+    800,
+    400,
+    2
+   ]
+  ],
+  "chips": [
+   {
+    "pos": "left:60px;top:438px;padding:9px 18px;font-size:19px",
+    "cls": "",
+    "html": "<i></i>Swipe for light + dark &nbsp;\u2192"
+   }
+  ]
+ },
+ "light_title": "Light mode,<br>still <em>cozy</em>",
+ "light_sub": "Warm off-white #F5F2EE, charcoal ink, one orange.",
+ "light_phones": [
+  [
+   "light-home",
+   210,
+   520,
+   300,
+   10
+  ],
+  [
+   "light-lights",
+   540,
+   470,
+   316,
+   12
+  ],
+  [
+   "light-energy",
+   870,
+   520,
+   300,
+   10
+  ]
+ ],
+ "callouts": [
+  {
+   "label": "Pill search + rooms",
+   "p": 0,
+   "sx": 250,
+   "sy": 156,
+   "lx": 40,
+   "ly": 404
+  },
+  {
+   "label": "Brightness slider",
+   "p": 1,
+   "sx": 318,
+   "sy": 374,
+   "lx": 450,
+   "ly": 404,
+   "cls": "o"
+  },
+  {
+   "label": "Tap a bar for kWh",
+   "p": 2,
+   "sx": 222,
+   "sy": 238,
+   "lx": 820,
+   "ly": 404
+  },
+  {
+   "label": "One orange card",
+   "p": 0,
+   "sx": 152,
+   "sy": 378,
+   "lx": 40,
+   "ly": 1200,
+   "cls": "o"
+  },
+  {
+   "label": "Colour temperature",
+   "p": 1,
+   "sx": 124,
+   "sy": 500,
+   "lx": 420,
+   "ly": 1200
+  },
+  {
+   "label": "Nav + orange FAB",
+   "p": 2,
+   "sx": 195,
+   "sy": 761,
+   "lx": 810,
+   "ly": 1200
+  }
+ ],
+ "dark_title": "Charcoal is<br>the <em>hero</em>",
+ "dark_sub": "#1A1A1A screens, #2A2A2A cards, orange #F2762E.",
+ "dark_phones": [
+  [
+   "dark-climate",
+   210,
+   520,
+   300,
+   10
+  ],
+  [
+   "dark-home",
+   540,
+   470,
+   316,
+   12
+  ],
+  [
+   "dark-scenes",
+   870,
+   520,
+   300,
+   10
+  ]
+ ],
+ "dark_callouts": [
+  {
+   "label": "Drag the dial",
+   "p": 0,
+   "sx": 161,
+   "sy": 247,
+   "lx": 40,
+   "ly": 404,
+   "cls": "o"
+  },
+  {
+   "label": "Live device toggles",
+   "p": 1,
+   "sx": 331,
+   "sy": 318,
+   "lx": 420,
+   "ly": 404
+  },
+  {
+   "label": "Top devices",
+   "p": 2,
+   "sx": 262,
+   "sy": 193,
+   "lx": 850,
+   "ly": 404
+  },
+  {
+   "label": "Slide to power",
+   "p": 0,
+   "sx": 49,
+   "sy": 771,
+   "lx": 40,
+   "ly": 1200
+  },
+  {
+   "label": "Floating nav",
+   "p": 1,
+   "sx": 93,
+   "sy": 776,
+   "lx": 440,
+   "ly": 1200
+  },
+  {
+   "label": "Scenes in one tap",
+   "p": 2,
+   "sx": 352,
+   "sy": 510,
+   "lx": 810,
+   "ly": 1200,
+   "cls": "o"
+  }
+ ],
+ "cta": {
+  "sub": "Hearth smart home UI \u00b7 light + dark \u00b7 portfolio-ready.",
+  "steps": [
+   "Design",
+   "HTML",
+   "Tailwind",
+   "JS",
+   "Kit"
+  ],
+  "phones": [
+   [
+    "light-home",
+    755,
+    700,
+    260,
+    11
+   ],
+   [
+    "dark-climate",
+    935,
+    660,
+    240,
+    9
+   ]
+  ],
+  "chips": []
+ },
+ "benefits": [
+  "Welcome, Home, Room + Energy pages",
+  "HTML + Tailwind, no build step",
+  "Working dial, dimmer + scenes",
+  "$3 kit \u00b7 link in DM"
+ ],
+ "pin_title": "Smart Home<br><em>App UI Design</em>",
+ "pin": {
+  "sub": "Charcoal + one orange accent \u00b7 light and dark",
+  "phones": [
+   [
+    "dark-welcome",
+    155,
+    410,
+    215,
+    10
+   ],
+   [
+    "dark-home",
+    385,
+    460,
+    215,
+    11
+   ],
+   [
+    "light-home",
+    615,
+    410,
+    215,
+    11
+   ],
+   [
+    "dark-climate",
+    845,
+    460,
+    215,
+    10
+   ]
+  ],
+  "pal_top": 1010,
+  "card_top": 1160,
+  "card_h": 250,
+  "palette": [
+   [
+    "Greige",
+    "#CFC8C2"
+   ],
+   [
+    "Charcoal",
+    "#1A1A1A"
+   ],
+   [
+    "Card",
+    "#2A2A2A"
+   ],
+   [
+    "Raised",
+    "#333333"
+   ],
+   [
+    "Orange",
+    "#F2762E"
+   ],
+   [
+    "Off-white",
+    "#F5F2EE"
+   ],
+   [
+    "Sand",
+    "#ECE7E1"
+   ],
+   [
+    "Muted",
+    "#8C8782"
+   ]
+  ],
+  "idea": "Build a full-stack <em>smart home</em> app",
+  "stack": "Next.js / React \u00b7 Node + Express \u00b7 MongoDB \u00b7 MQTT + WebSockets \u00b7 JWT",
+  "features": [
+   "Live device state",
+   "Rooms + scenes",
+   "Energy charts",
+   "Dark mode"
+  ]
+ }
+}

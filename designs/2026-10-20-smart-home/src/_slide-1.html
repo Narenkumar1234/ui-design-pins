@@ -1,0 +1,83 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+/* ---- Hearth smart home variant: warm greige slides + straight phones (ref: @appuinspiration / haiba.webdesign) ---- */
+body{font-family:Outfit,system-ui,sans-serif;color:#1A1A1A;position:relative;overflow:hidden;background:#CFC8C2}
+.glow{position:absolute;left:50%;top:60%;width:1200px;height:1000px;transform:translate(-50%,-50%);border-radius:50%;z-index:0;
+ background:radial-gradient(ellipse at center,rgba(255,255,255,.30) 0,rgba(255,255,255,.10) 40%,rgba(255,255,255,0) 68%)}
+body.stone{background:#E4DED7} body.stone .glow{background:radial-gradient(ellipse at center,rgba(255,255,255,.55) 0,rgba(255,255,255,.18) 40%,rgba(255,255,255,0) 68%)}
+header,footer{position:absolute;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center;z-index:50}
+header{top:52px;font-size:28px} header b{font-weight:600;letter-spacing:-.3px} header span{font-weight:500;color:#5E5852;font-size:26px}
+footer{bottom:48px} footer b{font-size:28px;font-weight:600} footer span{font-size:17px;letter-spacing:3px;color:#5E5852;font-weight:500}
+h1{position:absolute;left:60px;right:60px;top:140px;font-weight:600;font-size:88px;line-height:1.0;letter-spacing:-3px;z-index:20;color:#1A1A1A}
+h1 b,h1 em{font-style:normal;font-weight:600;color:#E0661F}
+h1.m{font-size:76px;letter-spacing:-2.6px} h1.pin{font-size:82px;letter-spacing:-2.8px}
+.sub{position:absolute;left:60px;right:120px;font-size:29px;line-height:1.35;color:#5E5852;top:330px;z-index:20;font-weight:400}
+/* cover: phones fill the slide, no footer; header gets a soft pill so the page count stays readable over a phone */
+.cover footer{display:none}
+.cover header span{display:none}
+.cover .sub{font-size:27px}
+/* straight phones */
+.phone{position:absolute;aspect-ratio:9/19.3;border-radius:52px;background:#F7F4F0;padding:9px;
+ box-shadow:0 0 0 2px #BDB5AD,0 2px 0 3px #fff inset,0 50px 70px -30px rgba(60,44,30,.45),0 16px 30px rgba(60,44,30,.14)}
+.phone.dk{background:#111;box-shadow:0 0 0 2px #3a3a3a,0 0 0 4px #0b0b0b,0 50px 80px -28px rgba(30,20,10,.6),0 18px 34px rgba(30,20,10,.25)}
+.scr{position:relative;width:100%;height:100%;border-radius:43px;overflow:hidden;background:#F5F2EE}
+.dk .scr{background:#1A1A1A} .photo .scr{background:#141414}
+.scr img{position:absolute;top:34px;left:0;width:100%} .photo .scr img{top:0}
+.sb{position:absolute;top:0;left:0;right:0;height:34px;display:flex;justify-content:space-between;align-items:center;padding:0 28px;font-size:12.5px;font-weight:600;z-index:2;color:#1A1A1A}
+.dk .sb{color:#F5F2EE}
+.sb .ic{display:flex;align-items:flex-end;gap:2px;height:10px}
+.sb .ic i{display:block;width:3px;background:currentColor;border-radius:1px}
+.sb .ic i:nth-child(1){height:4px}.sb .ic i:nth-child(2){height:6px}.sb .ic i:nth-child(3){height:9px}
+.sb .ic b{display:block;width:18px;height:9px;border:1.5px solid currentColor;border-radius:3px;margin-left:5px;position:relative}
+.sb .ic b:after{content:'';position:absolute;left:1.5px;top:1.5px;bottom:1.5px;width:65%;background:currentColor;border-radius:1px}
+.notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:31%;height:22px;border-radius:12px;background:#000;z-index:3}
+.home{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:34%;height:4px;border-radius:3px;background:rgba(26,26,26,.55);z-index:3}
+.dk .home{background:rgba(245,242,238,.7)}
+/* chips */
+.gchip{position:absolute;z-index:30;background:#1A1A1A;color:#F5F2EE;border-radius:999px;padding:14px 22px;white-space:nowrap;box-shadow:0 22px 44px -18px rgba(30,20,10,.6);font-size:20px;font-weight:500;display:flex;align-items:center;gap:10px}
+.gchip i{width:10px;height:10px;border-radius:50%;background:#F2762E;display:block}
+.gchip.o{background:#F2762E;color:#fff;box-shadow:0 20px 36px -14px rgba(242,118,46,.8)}
+.gchip.w{background:#F5F2EE;color:#1A1A1A}
+/* callouts: charcoal pill + line + orange-ringed dot */
+.colines{position:absolute;left:0;top:0;z-index:38;pointer-events:none;overflow:visible}
+.colines line{stroke:#1A1A1A;stroke-width:2.4;stroke-linecap:round}
+.co2{position:absolute;z-index:40;height:44px;display:flex;align-items:center;justify-content:center;white-space:nowrap;background:#1A1A1A;color:#F5F2EE;font-size:19.5px;font-weight:500;border-radius:999px;box-shadow:0 12px 24px -10px rgba(26,26,26,.5)}
+.co2.o{background:#F2762E;color:#fff}
+.dot{position:absolute;z-index:41;width:20px;height:20px;border-radius:50%;background:#fff;border:5px solid #F2762E;box-shadow:0 0 0 2px #1A1A1A,0 2px 8px rgba(0,0,0,.35)}
+/* charcoal CTA slide */
+body.night{background:#1A1A1A}
+.night .glow{background:radial-gradient(ellipse at center,rgba(242,118,46,.16) 0,rgba(242,118,46,.05) 40%,rgba(242,118,46,0) 68%);top:78%;left:70%}
+.night header b,.night footer b,.night h1{color:#F5F2EE} .night header span,.night footer span,.night .sub{color:#8C8782}
+.night h1 em{color:#F68C4E}
+.steps{position:absolute;left:60px;right:60px;top:440px;display:flex;align-items:center;justify-content:space-between;z-index:20}
+.st{background:#2A2A2A;color:#F5F2EE;border-radius:22px;padding:16px 14px;font-size:22px;font-weight:500;text-align:center;min-width:150px}
+.st span{display:block;font-size:15px;color:#F68C4E;font-weight:600;margin-bottom:4px}
+.ar{font-style:normal;color:#5E5852;font-size:24px}
+.ben{position:absolute;left:60px;top:620px;list-style:none;width:560px;z-index:20}
+.ben li{font-size:29px;line-height:1.3;margin-bottom:26px;display:flex;gap:16px;color:#F5F2EE;font-weight:400}
+.ben li b{flex:none;width:40px;height:40px;border-radius:50%;background:#F2762E;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}
+.kw{font-weight:600;background:#F2762E;color:#fff;padding:0 24px;border-radius:24px;letter-spacing:1px;font-size:.9em;display:inline-block;line-height:1.14;vertical-align:.06em;box-shadow:0 18px 34px -14px rgba(242,118,46,.8)}
+/* pin */
+.pinsub{top:310px}
+.pal{position:absolute;z-index:20;display:flex;gap:12px}
+.sw{width:96px}
+.sw i{display:block;height:74px;border-radius:20px;box-shadow:inset 0 0 0 2px rgba(26,26,26,.10),0 10px 20px -12px rgba(60,44,30,.45)}
+.sw b{display:block;font-size:15px;font-weight:600;margin-top:8px;color:#1A1A1A}
+.sw small{display:block;font-size:13px;color:#5E5852;font-family:ui-monospace,Menlo,monospace}
+.card{position:absolute;z-index:20;background:#F5F2EE;border-radius:28px;padding:24px 26px;box-shadow:0 24px 50px -24px rgba(60,44,30,.45)}
+.card h3{font-weight:600;font-size:30px;letter-spacing:-.6px;line-height:1.08;color:#1A1A1A}
+.card h3 em{color:#E0661F;font-style:normal}
+.card p,.card li{font-size:17px;line-height:1.45;color:#5E5852} .card .ink{color:#1A1A1A;font-weight:600}
+.tagl{font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E0661F}
+.chipz{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chipz span{font-size:15px;font-weight:500;padding:7px 13px;border-radius:999px;background:#1A1A1A;color:#F5F2EE}
+.chipz span:first-child{background:#F2762E;color:#fff}
+</style></head><body class="cover" style="width:1080px;height:1350px"><div class="glow"></div>
+<header><b>code.in.30s</b><span>1 / 4 &nbsp;→</span></header><h1 style="top:150px;right:auto;width:520px">Smart home,<br>made <em>warm</em></h1>
+<p class="sub" style="top:345px;right:auto;width:520px">Charcoal screens, one orange accent.<br>Light + dark, in HTML + Tailwind.</p>
+<div class="gchip " style="left:60px;top:438px;padding:9px 18px;font-size:19px"><i></i>Swipe for light + dark &nbsp;→</div><div class="phone dk photo" style="width:400px;left:90.0px;top:500px;z-index:3">
+  <div class="scr"><div class="sb"><span>9:41</span><span class="ic"><i></i><i></i><i></i><b></b></span></div><img src="file:///workspace/pins/2026-10-20-smart-home/final/screens/dark-welcome.png"><div class="notch"></div><div class="home"></div></div></div><div class="phone dk" style="width:400px;left:580.0px;top:-96px;z-index:2">
+  <div class="scr"><div class="sb"><span>9:41</span><span class="ic"><i></i><i></i><i></i><b></b></span></div><img src="file:///workspace/pins/2026-10-20-smart-home/final/screens/dark-home.png"><div class="notch"></div><div class="home"></div></div></div><div class="phone dk" style="width:400px;left:580.0px;top:800px;z-index:2">
+  <div class="scr"><div class="sb"><span>9:41</span><span class="ic"><i></i><i></i><i></i><b></b></span></div><img src="file:///workspace/pins/2026-10-20-smart-home/final/screens/dark-climate.png"><div class="notch"></div><div class="home"></div></div></div>
+<footer><b>code.in.30s</b><span>HTML / CSS / TAILWIND / UI</span></footer></body></html>
