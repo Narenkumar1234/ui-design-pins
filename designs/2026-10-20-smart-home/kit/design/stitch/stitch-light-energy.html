@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hearth - Energy</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Public+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              page: '#F5F2EE',
+              card: '#FFFFFF',
+              raised: '#ECE7E1',
+              ink: '#1A1A1A',
+              muted: '#8C8782',
+              accent: '#F2762E'
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Public Sans", "sans-serif"],
+            display: ["Public Sans", "sans-serif"],
+            body: ["Public Sans", "sans-serif"],
+            label: ["Public Sans", "sans-serif"],
+            outfit: ["Outfit", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+    }
+    /* Hide scrollbar for clean UI canvas */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-brand-page text-brand-ink antialiased font-body min-h-screen flex justify-center selection:bg-brand-accent selection:text-white pb-32">
+<!-- Mobile Viewport Container (Target 390px x 844px style canvas) -->
+<main class="w-full max-w-[420px] min-h-screen flex flex-col relative px-4 pt-3 pb-8">
+<!-- Top App Bar (Shared Components standard) -->
+<header class="flex justify-between items-center w-full py-2 z-20">
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-brand-card flex items-center justify-center text-brand-ink shadow-sm border border-brand-raised/50 active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<h1 class="text-xl font-headline font-bold text-brand-ink tracking-tight">Energy</h1>
+<button aria-label="More options" class="w-10 h-10 rounded-full bg-brand-card flex items-center justify-center text-brand-ink shadow-sm border border-brand-raised/50 active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</header>
+<!-- Segmented Timeframe Switcher -->
+<div class="mt-4 w-full bg-brand-raised/80 p-1 rounded-full flex items-center">
+<button class="flex-1 py-1.5 text-xs font-semibold rounded-full text-brand-muted hover:text-brand-ink transition-colors text-center" type="button">
+        Day
+      </button>
+<button class="flex-1 py-1.5 text-xs font-semibold rounded-full bg-brand-accent text-white shadow-sm text-center" type="button">
+        Week
+      </button>
+<button class="flex-1 py-1.5 text-xs font-semibold rounded-full text-brand-muted hover:text-brand-ink transition-colors text-center" type="button">
+        Month
+      </button>
+</div>
+<!-- Energy Consumption Card -->
+<section class="mt-4 bg-brand-card rounded-[22px] p-5 shadow-sm border border-brand-raised/60">
+<!-- Card Top: Metrics & Comparison Badge -->
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-baseline space-x-1.5">
+<span class="text-3xl font-headline font-bold text-brand-ink tracking-tight">142.6</span>
+<span class="text-sm font-semibold text-brand-muted">kWh</span>
+</div>
+<p class="text-xs text-brand-muted font-medium mt-0.5">Total consumption this week</p>
+</div>
+<div class="inline-flex items-center space-x-1 bg-brand-raised px-2.5 py-1 rounded-full text-brand-ink text-xs font-medium">
+<span class="material-symbols-outlined text-sm">trending_down</span>
+<span>-12% vs last week</span>
+</div>
+</div>
+<!-- 7-Day Vertical Bar Chart -->
+<div class="mt-6 pt-2">
+<div class="grid grid-cols-7 gap-2 items-end h-32 px-1">
+<!-- Mon -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="w-full bg-brand-raised rounded-full h-[45%] transition-all duration-300"></div>
+<span class="text-[11px] font-medium text-brand-muted mt-2">Mon</span>
+</div>
+<!-- Tue -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="w-full bg-brand-raised rounded-full h-[62%] transition-all duration-300"></div>
+<span class="text-[11px] font-medium text-brand-muted mt-2">Tue</span>
+</div>
+<!-- Wed -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="w-full bg-brand-raised rounded-full h-[38%] transition-all duration-300"></div>
+<span class="text-[11px] font-medium text-brand-muted mt-2">Wed</span>
+</div>
+<!-- Thu (Active/Highlight) -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="w-full bg-brand-accent rounded-full h-[88%] shadow-sm transition-all duration-300"></div>
+<span class="text-[11px] font-bold text-brand-accent mt-2">Thu</span>
+</div>
+<!-- Fri -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="w-full bg-brand-raised rounded-full h-[70%] transition-all duration-300"></div>
+<span class="text-[11px] font-medium text-brand-muted mt-2">Fri</span>
+</div>
+<!-- Sat -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="w-full bg-brand-raised rounded-full h-[55%] transition-all duration-300"></div>
+<span class="text-[11px] font-medium text-brand-muted mt-2">Sat</span>
+</div>
+<!-- Sun -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="w-full bg-brand-raised rounded-full h-[40%] transition-all duration-300"></div>
+<span class="text-[11px] font-medium text-brand-muted mt-2">Sun</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Top Consumers Section -->
+<section class="mt-6">
+<div class="flex items-center justify-between px-1 mb-2.5">
+<h2 class="text-xs font-bold tracking-wider text-brand-muted uppercase">TOP CONSUMERS</h2>
+<span class="text-xs font-semibold text-brand-muted">78% of total</span>
+</div>
+<div class="bg-brand-card rounded-[22px] p-4 shadow-sm border border-brand-raised/60 space-y-4">
+<!-- Consumer Item 1: Air Conditioner -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full bg-brand-raised/80 flex items-center justify-center text-brand-ink">
+<span class="material-symbols-outlined text-[19px]">mode_fan</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-brand-ink leading-tight">Air conditioner</p>
+<p class="text-xs text-brand-muted">34% of usage</p>
+</div>
+</div>
+<span class="text-sm font-bold text-brand-ink">48 kWh</span>
+</div>
+<div class="w-full h-1.5 bg-brand-raised rounded-full overflow-hidden">
+<div class="bg-brand-accent h-full rounded-full" style="width: 34%;"></div>
+</div>
+</div>
+<!-- Consumer Item 2: Water Heater -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full bg-brand-raised/80 flex items-center justify-center text-brand-ink">
+<span class="material-symbols-outlined text-[19px]">water_heater</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-brand-ink leading-tight">Water heater</p>
+<p class="text-xs text-brand-muted">22% of usage</p>
+</div>
+</div>
+<span class="text-sm font-bold text-brand-ink">31 kWh</span>
+</div>
+<div class="w-full h-1.5 bg-brand-raised rounded-full overflow-hidden">
+<div class="bg-brand-ink h-full rounded-full" style="width: 22%;"></div>
+</div>
+</div>
+<!-- Consumer Item 3: Lights -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full bg-brand-raised/80 flex items-center justify-center text-brand-ink">
+<span class="material-symbols-outlined text-[19px]">lightbulb</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-brand-ink leading-tight">Lights</p>
+<p class="text-xs text-brand-muted">10% of usage</p>
+</div>
+</div>
+<span class="text-sm font-bold text-brand-ink">14 kWh</span>
+</div>
+<div class="w-full h-1.5 bg-brand-raised rounded-full overflow-hidden">
+<div class="bg-brand-muted h-full rounded-full" style="width: 10%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Scenes Section -->
+<section class="mt-6">
+<div class="flex items-center justify-between px-1 mb-2.5">
+<h2 class="text-lg font-bold text-brand-ink tracking-tight">Scenes</h2>
+<span class="text-xs font-semibold text-brand-muted bg-brand-card px-2.5 py-1 rounded-full border border-brand-raised">4 Active presets</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Scene Card 1: Good Morning -->
+<div class="bg-brand-card rounded-[20px] p-4 border border-brand-raised/60 shadow-sm flex flex-col justify-between h-32">
+<div class="flex items-center justify-between">
+<div class="w-8 h-8 rounded-full bg-brand-raised/60 flex items-center justify-center text-brand-ink">
+<span class="material-symbols-outlined text-[18px]">wb_sunny</span>
+</div>
+<!-- Switch (OFF) -->
+<div class="w-9 h-5 bg-brand-raised rounded-full p-0.5 flex items-center">
+<div class="w-4 h-4 bg-brand-card rounded-full shadow-sm"></div>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-bold text-brand-ink">Good morning</h3>
+<p class="text-[11px] font-medium text-brand-muted mt-0.5">7:00 AM</p>
+</div>
+</div>
+<!-- Scene Card 2: Movie Night (VIVID ORANGE ACCENT CARD) -->
+<div class="bg-brand-accent rounded-[20px] p-4 text-white shadow-sm flex flex-col justify-between h-32">
+<div class="flex items-center justify-between">
+<div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">theaters</span>
+</div>
+<!-- Switch (ON) -->
+<div class="w-9 h-5 bg-white/30 rounded-full p-0.5 flex items-center justify-end">
+<div class="w-4 h-4 bg-white rounded-full shadow-sm"></div>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-bold text-white">Movie night</h3>
+<p class="text-[11px] font-medium text-white/80 mt-0.5">Active now</p>
+</div>
+</div>
+<!-- Scene Card 3: Away -->
+<div class="bg-brand-card rounded-[20px] p-4 border border-brand-raised/60 shadow-sm flex flex-col justify-between h-32">
+<div class="flex items-center justify-between">
+<div class="w-8 h-8 rounded-full bg-brand-raised/60 flex items-center justify-center text-brand-ink">
+<span class="material-symbols-outlined text-[18px]">directions_walk</span>
+</div>
+<!-- Switch (OFF) -->
+<div class="w-9 h-5 bg-brand-raised rounded-full p-0.5 flex items-center">
+<div class="w-4 h-4 bg-brand-card rounded-full shadow-sm"></div>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-bold text-brand-ink">Away</h3>
+<p class="text-[11px] font-medium text-brand-muted mt-0.5">Eco mode</p>
+</div>
+</div>
+<!-- Scene Card 4: Sleep -->
+<div class="bg-brand-card rounded-[20px] p-4 border border-brand-raised/60 shadow-sm flex flex-col justify-between h-32">
+<div class="flex items-center justify-between">
+<div class="w-8 h-8 rounded-full bg-brand-raised/60 flex items-center justify-center text-brand-ink">
+<span class="material-symbols-outlined text-[18px]">bed</span>
+</div>
+<!-- Switch (OFF) -->
+<div class="w-9 h-5 bg-brand-raised rounded-full p-0.5 flex items-center">
+<div class="w-4 h-4 bg-brand-card rounded-full shadow-sm"></div>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-bold text-brand-ink">Sleep</h3>
+<p class="text-[11px] font-medium text-brand-muted mt-0.5">11:00 PM</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Bottom Navigation Bar (Blueprint Compliant) -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] max-w-md z-50 flex justify-around items-center px-4 py-2.5 bg-brand-card/95 backdrop-blur-md rounded-full shadow-lg shadow-black/5 border border-brand-raised/70">
+<!-- Tab 1: Home -->
+<a aria-label="Home" class="flex items-center justify-center text-brand-muted hover:text-brand-ink transition-colors p-2" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+</a>
+<!-- Tab 2: Rooms / Devices -->
+<a aria-label="Rooms" class="flex items-center justify-center text-brand-muted hover:text-brand-ink transition-colors p-2" href="#">
+<span class="material-symbols-outlined text-[22px]">meeting_room</span>
+</a>
+<!-- Center Centered Raised Round Orange FAB -->
+<button aria-label="Add device or scene" class="w-12 h-12 -mt-4 bg-brand-accent rounded-full text-white shadow-lg shadow-brand-accent/25 flex items-center justify-center active:scale-95 transition-transform duration-150 border-2 border-brand-page" type="button">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</button>
+<!-- Tab 3: Energy (Active destination mapped to this screen) -->
+<a aria-label="Energy" class="flex items-center justify-center text-brand-accent scale-110 transition-transform p-2 relative" href="#">
+<span class="material-symbols-fill text-[23px]">bolt</span>
+<span class="w-1 h-1 bg-brand-accent rounded-full absolute bottom-0.5 left-1/2 -translate-x-1/2"></span>
+</a>
+<!-- Tab 4: Settings -->
+<a aria-label="Settings" class="flex items-center justify-center text-brand-muted hover:text-brand-ink transition-colors p-2" href="#">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+</a>
+</nav>
+</body></html>
