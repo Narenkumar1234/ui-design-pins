@@ -1,0 +1,28 @@
+Chat apps can feel this friendly 💬💜
+
+Build this → Natter, a lavender + violet chat app
+
+1️⃣ Welcome: full-violet onboarding, floating bubbles + voice note, "Talk more, type less." and a round white arrow button
+2️⃣ Chats: pill search, a stories row with gradient rings, All · Unread · Groups · Pinned chips, rounded chat cards with unread badges and "typing…"
+3️⃣ Conversation: violet header, white + violet bubbles with one tight corner, emoji reactions, swipe to reply, voice notes you can record and play, photo attach and a vertical violet action rail
+4️⃣ Typing indicator + a fake auto-reply, so the chat actually talks back
+5️⃣ Calls + Profile: live group call card, missed calls in pink, status picker, read receipts, chat wallpaper
+6️⃣ Pale lavender light mode (#F1F0FF) as the hero + a deep violet-black dark mode (#120E24)
+
+🎓 Student project idea: make it a full-stack real-time chat app. React/Next.js front end, Node + Express, Socket.IO for live messages, typing and presence, MongoDB or Postgres for users, chats and messages, JWT auth, read receipts, photo + voice uploads to Cloudinary or S3. Stretch: WebRTC calls, push notifications, end-to-end encryption
+
+🎨 Palette
+Light: bg #F1F0FF · card #FFFFFF · raised #E9E6FF · ink #1E1B3A · muted #8A87A6
+Dark: bg #120E24 · card #1C1733 · raised #262042 · text #F1F0FF
+Accent: violet #5B3FD0 (headers, sent bubbles, action rail, buttons)
+Reactions: pink #FF5C8A · orange #FF9F43
+
+🛠 Stack: HTML · Tailwind CSS · vanilla JS · Poppins · chats, reactions, settings + dark mode saved in localStorage
+
+💬 Comment NATTER to get the HTML/CSS
+
+Save this for your next project ✨
+
+Style inspo: @colorhymn
+
+#chatapp #messagingapp #uidesign #uiux #mobileui #appdesign #darkmode #frontenddevelopment #webdevelopment #tailwindcss #javascript #socketio #codingprojects #studentdeveloper #codein30s

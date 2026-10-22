@@ -1,0 +1,11 @@
+Chat App UI: Natter Lavender + Violet, Light + Dark · Front-End Project Idea
+
+Front-end project idea: Natter, a chat / messaging mobile app UI. A full-violet welcome screen with floating chat bubbles and a round white arrow button; a chat list with pill search, a stories row, All / Unread / Groups / Pinned filters and rounded chat cards with unread badges; a conversation screen with a violet header, white and violet message bubbles, emoji reactions, swipe-to-reply quotes, voice notes with a waveform, photo attach, a typing indicator and a vertical violet action rail; plus calls (live group call, missed calls) and a profile with privacy settings. Pale lavender light mode (#F1F0FF, white cards) and deep violet-black dark mode (#120E24, cards #1C1733) with one violet accent (#5B3FD0), small pink and orange reaction accents, Poppins font. Build it with HTML, Tailwind CSS and vanilla JavaScript (messages, reactions and dark mode in localStorage), then go full-stack with React/Next.js, Node + Express, Socket.IO, MongoDB or Postgres, JWT auth, read receipts, presence and Cloudinary uploads. A messaging app UI kit from @code.in.30s, comment NATTER on Instagram for the HTML/CSS kit.
+
+#chatapp #messagingapp #uidesign #mobileui #darkmode #frontenddevelopment #tailwindcss #studentprojects #appdesign #socketio
+
+Alt text: Four tilted mobile screens of the Natter chat app fanned diagonally on a pale lavender background: a violet welcome screen with floating chat bubbles, the headline "Talk more, type less." and a round white arrow button; a light chat list with a search bar, a row of story avatars and chat cards with unread badges; a light conversation with Maya Chen showing white and violet bubbles, a photo with a heart reaction, a voice note, a reply quote and a vertical violet action rail; and the same conversation in deep violet-black dark mode. Below are eight palette swatches with hex codes, a fonts card (Poppins) and a "Build a real-time chat app" card listing the stack and features.
+
+Board: UI Design Inspiration (or UI Design / Frontend Projects)
+
+Link (once published): https://narenkumar1.gumroad.com/l/chat-app-ui-kit
