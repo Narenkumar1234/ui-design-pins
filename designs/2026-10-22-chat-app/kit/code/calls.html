@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Ccircle cx=%2212%22 cy=%2212%22 r=%2212%22 fill=%22%235B3FD0%22/%3E%3C/svg%3E">
+  <title>Natter · Calls</title>
+</head>
+<body class="bg-bg text-ink antialiased min-h-screen">
+  <main class="max-w-md md:max-w-2xl mx-auto px-5 pt-5 pb-32">
+    <header class="flex items-center justify-between">
+      <h1 class="text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-none">Calls</h1>
+      <div class="flex items-center gap-2">
+        <button type="button" data-theme-toggle class="btn-round"></button>
+        <button type="button" id="clear-log" class="btn-round" aria-label="Clear call history"><svg class="icon text-[19px]"><use href="#i-trash"/></svg></button>
+      </div>
+    </header>
+
+    <!-- Live group call card (full violet) -->
+    <section id="live" class="welcome mt-5 rounded-[26px] p-5 relative overflow-hidden shadow-glow">
+      <div class="absolute -right-10 -top-12 w-40 h-40 rounded-full bg-white/[.08]"></div>
+      <div class="flex items-center gap-2 text-[12px] font-semibold tracking-wide"><i class="w-2 h-2 rounded-full bg-[#FF9F43] animate-pulse"></i>LIVE NOW</div>
+      <h2 class="text-[22px] font-semibold mt-2">Design Squad</h2>
+      <p class="text-white/75 text-[13px]"><span id="live-n">3</span> people · <span id="live-t">12:48</span></p>
+      <div class="flex items-center justify-between mt-4">
+        <span id="live-avs" class="flex -space-x-3"></span>
+        <button type="button" id="join" class="h-11 px-5 rounded-full bg-white text-[#5B3FD0] font-semibold text-[14px] flex items-center gap-2">
+          <svg class="icon text-[18px]"><use href="#i-video"/></svg>Join call</button>
+      </div>
+    </section>
+
+    <div class="seg mt-5" role="tablist" aria-label="Call filter">
+      <button type="button" role="tab" data-tab="all" aria-selected="true">All</button>
+      <button type="button" role="tab" data-tab="missed" aria-selected="false">Missed <span id="missed-n"></span></button>
+    </div>
+
+    <h2 class="font-semibold text-[16px] mt-5">Recent</h2>
+    <ul id="log" class="grid gap-2.5 mt-2.5 md:grid-cols-2"></ul>
+    <p id="log-empty" class="hidden text-center text-muted text-[14px] py-10">No calls here yet.</p>
+  </main>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/calls.js"></script>
+</body>
+</html>

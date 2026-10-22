@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Ccircle cx=%2212%22 cy=%2212%22 r=%2212%22 fill=%22%235B3FD0%22/%3E%3C/svg%3E">
+  <title>Natter · Chat</title>
+</head>
+<body class="bg-bg text-ink antialiased min-h-screen">
+  <div class="max-w-md md:max-w-2xl mx-auto min-h-screen flex flex-col relative">
+    <!-- Violet header with rounded bottom -->
+    <header class="chat-head sticky top-0 z-40 px-4 pt-4 pb-5 flex items-center gap-3">
+      <a href="index.html" class="btn-round glass" aria-label="Back to chats"><svg class="icon text-[20px]"><use href="#i-back"/></svg></a>
+      <button type="button" id="info-open" class="flex items-center gap-3 min-w-0 flex-1 text-left" aria-label="Chat info">
+        <span id="h-av"></span>
+        <span class="min-w-0"><b id="h-name" class="block font-semibold text-[16.5px] truncate">Chat</b><small id="h-sub" class="block text-[12px] text-white/80 truncate">online</small></span>
+      </button>
+      <button type="button" id="h-call" class="btn-round glass" aria-label="Voice call"><svg class="icon text-[19px]"><use href="#i-phone"/></svg></button>
+      <button type="button" id="h-video" class="btn-round glass" aria-label="Video call"><svg class="icon text-[20px]"><use href="#i-video"/></svg></button>
+    </header>
+
+    <!-- Messages -->
+    <main id="thread" class="flex-1 flex flex-col gap-3 px-4 pr-[66px] md:pr-[70px] pt-4 pb-[104px]" aria-live="polite"></main>
+
+    <!-- Vertical violet action rail -->
+    <div id="rail" class="rail" role="toolbar" aria-label="Quick actions" aria-orientation="vertical">
+      <button type="button" data-rail="camera" aria-label="Camera"><svg class="icon text-[20px]"><use href="#i-camera"/></svg></button>
+      <button type="button" data-rail="image" aria-label="Send a photo"><svg class="icon text-[20px]"><use href="#i-image"/></svg></button>
+      <button type="button" data-rail="mic" aria-label="Record a voice note"><svg class="icon text-[20px]"><use href="#i-mic"/></svg></button>
+      <button type="button" data-rail="location" aria-label="Share location"><svg class="icon text-[20px]"><use href="#i-location"/></svg></button>
+    </div>
+
+    <!-- Composer -->
+    <div class="fixed z-40 bottom-0 inset-x-0 max-w-md md:max-w-2xl mx-auto px-4 pb-4 pt-6 bg-gradient-to-t from-bg via-bg/95 to-bg/0">
+      <div id="reply-bar" class="hidden mb-2 bg-surface rounded-[18px] px-4 py-2.5 flex items-center gap-3 shadow-soft">
+        <span class="w-1 self-stretch rounded bg-primary"></span>
+        <span class="min-w-0 flex-1"><b id="reply-who" class="block text-[12px] text-deep font-semibold"></b><span id="reply-text" class="block text-[13px] text-muted truncate"></span></span>
+        <button type="button" id="reply-x" class="w-8 h-8 grid place-items-center text-muted" aria-label="Cancel reply"><svg class="icon text-[18px]"><use href="#i-close"/></svg></button>
+      </div>
+      <div id="emoji-row" class="hidden mb-2 bg-surface rounded-full p-1.5 flex justify-between shadow-soft emoji"></div>
+      <form id="composer" class="composer" autocomplete="off">
+        <button type="button" id="emoji-btn" class="ib" aria-label="Emoji" aria-expanded="false"><svg class="icon text-[21px]"><use href="#i-smile"/></svg></button>
+        <input id="msg" placeholder="Message…" aria-label="Message" maxlength="500">
+        <div id="rec" class="rec hidden" aria-live="polite"><i></i><span>Recording <span id="rec-t">0:00</span></span>
+          <button type="button" id="rec-cancel" class="ml-auto text-muted text-[13px] font-medium px-2">Cancel</button></div>
+        <button type="button" id="attach" class="ib" aria-label="Attach a photo"><svg class="icon text-[20px]"><use href="#i-clip"/></svg></button>
+        <button type="submit" id="send" class="send" aria-label="Record voice note"><svg class="icon text-[19px]"><use href="#i-mic"/></svg></button>
+      </form>
+      <input type="file" id="file" accept="image/*" class="hidden">
+    </div>
+  </div>
+
+  <!-- Reaction picker + actions (tap a message) -->
+  <div id="picker" class="picker hidden" role="menu" aria-label="React or reply"></div>
+
+  <!-- Photo preview sheet -->
+  <div id="photo-scrim" class="scrim fixed inset-0 z-50 bg-black/40"></div>
+  <div id="photo" class="sheet fixed z-[60] bottom-0 inset-x-0 max-w-md mx-auto bg-surface rounded-t-[28px] px-5 pt-3 pb-7" role="dialog" aria-modal="true" aria-label="Send a photo" aria-hidden="true">
+    <span class="block w-10 h-1.5 rounded-full bg-line mx-auto"></span>
+    <div class="flex items-center justify-between mt-4"><h2 class="text-[19px] font-semibold">Send a photo</h2>
+      <button type="button" data-close class="btn-round !bg-raised !shadow-none" aria-label="Close"><svg class="icon text-[18px]"><use href="#i-close"/></svg></button></div>
+    <div class="mt-3 rounded-[20px] overflow-hidden bg-raised aspect-[4/3] grid place-items-center"><img id="photo-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Selected photo preview" class="w-full h-full object-cover hidden"><span id="photo-none" class="text-muted text-[13px]">Pick from gallery or upload</span></div>
+    <div id="gallery" class="grid grid-cols-5 gap-2 mt-3"></div>
+    <button type="button" id="upload" class="mt-3 w-full h-11 rounded-full bg-raised text-deep font-medium text-[14px] flex items-center justify-center gap-2"><svg class="icon text-[18px]"><use href="#i-image"/></svg>Upload from device</button>
+    <div class="flex gap-2 mt-3"><input id="caption" class="field !rounded-full" placeholder="Add a caption…" maxlength="80" aria-label="Caption">
+      <button type="button" id="photo-send" class="send !w-[50px] !h-[50px]" aria-label="Send photo"><svg class="icon text-[20px]"><use href="#i-send"/></svg></button></div>
+    <p id="photo-err" class="text-pink text-[13px] mt-2 min-h-[18px]" role="alert"></p>
+  </div>
+
+  <!-- Chat info sheet (group members / shared media / mute) -->
+  <div id="info-scrim" class="scrim fixed inset-0 z-50 bg-black/40"></div>
+  <div id="info" class="sheet fixed z-[60] bottom-0 inset-x-0 max-w-md mx-auto bg-bg rounded-t-[28px] px-5 pt-3 pb-8 max-h-[88vh] overflow-y-auto" role="dialog" aria-modal="true" aria-label="Chat info" aria-hidden="true">
+    <span class="block w-10 h-1.5 rounded-full bg-line mx-auto"></span>
+    <div class="flex items-center justify-between mt-4"><h2 id="i-title" class="text-[20px] font-semibold">Info</h2>
+      <button type="button" data-close class="btn-round" aria-label="Close"><svg class="icon text-[18px]"><use href="#i-close"/></svg></button></div>
+    <div id="i-body"></div>
+  </div>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/chat.js"></script>
+</body>
+</html>
