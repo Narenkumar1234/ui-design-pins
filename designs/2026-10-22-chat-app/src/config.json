@@ -1,0 +1,353 @@
+{
+ "app": "Natter",
+ "keyword": "NATTER",
+ "out": "../final",
+ "screens": {
+  "light-welcome": "../final/screens/light-welcome.png",
+  "light-chats": "../final/screens/light-chats.png",
+  "light-chat": "../final/screens/light-chat.png",
+  "light-calls": "../final/screens/light-calls.png",
+  "light-profile": "../final/screens/light-profile.png",
+  "light-group": "../final/screens/light-group.png",
+  "dark-welcome": "../final/screens/dark-welcome.png",
+  "dark-chats": "../final/screens/dark-chats.png",
+  "dark-chat": "../final/screens/dark-chat.png",
+  "dark-calls": "../final/screens/dark-calls.png",
+  "dark-profile": "../final/screens/dark-profile.png",
+  "dark-group": "../final/screens/dark-group.png"
+ },
+ "hook": "Chat app UI<br>that feels <em>alive</em>",
+ "hook_sub": "Voice notes, reactions, stories + calls.<br>Light + dark, in HTML + Tailwind.",
+ "cover": {
+  "h1_top": 150,
+  "h1_w": 640,
+  "sub_top": 345,
+  "sub_w": 620,
+  "phones": [
+   [
+    "light-welcome",
+    175,
+    975,
+    320,
+    22,
+    1
+   ],
+   [
+    "light-chats",
+    430,
+    915,
+    320,
+    22,
+    2
+   ],
+   [
+    "light-chat",
+    685,
+    855,
+    320,
+    22,
+    3
+   ],
+   [
+    "dark-chat",
+    940,
+    795,
+    320,
+    22,
+    4
+   ]
+  ],
+  "chips": [
+   {
+    "pos": "left:60px;top:470px;padding:10px 18px;font-size:19px",
+    "cls": "",
+    "html": "<i></i>Swipe for light + dark &nbsp;\u2192"
+   }
+  ]
+ },
+ "light_title": "Light mode,<br>soft <em>lavender</em>",
+ "light_sub": "#F1F0FF page, white bubbles, one violet #5B3FD0.",
+ "light_phones": [
+  [
+   "light-chats",
+   232,
+   805,
+   276,
+   20,
+   1
+  ],
+  [
+   "light-chat",
+   540,
+   805,
+   276,
+   20,
+   2
+  ],
+  [
+   "light-calls",
+   848,
+   805,
+   276,
+   20,
+   3
+  ]
+ ],
+ "callouts": [
+  {
+   "label": "Stories row",
+   "p": 0,
+   "sx": 135,
+   "sy": 200,
+   "lx": 40,
+   "ly": 420
+  },
+  {
+   "label": "Voice note playback",
+   "p": 1,
+   "sx": 216,
+   "sy": 480,
+   "lx": 390,
+   "ly": 420,
+   "cls": "v"
+  },
+  {
+   "label": "Live group call",
+   "p": 2,
+   "sx": 150,
+   "sy": 210,
+   "lx": 800,
+   "ly": 420
+  },
+  {
+   "label": "Pill nav",
+   "p": 0,
+   "sx": 86,
+   "sy": 771,
+   "lx": 40,
+   "ly": 1200,
+   "cls": "v"
+  },
+  {
+   "label": "Tap to react",
+   "p": 1,
+   "sx": 43,
+   "sy": 408,
+   "lx": 420,
+   "ly": 1200
+  },
+  {
+   "label": "Missed in pink",
+   "p": 2,
+   "sx": 205,
+   "sy": 580,
+   "lx": 810,
+   "ly": 1200
+  }
+ ],
+ "dark_title": "Dark mode,<br>deep <em>violet</em>",
+ "dark_sub": "#120E24 screens, #1C1733 cards, violet #6A4FE0.",
+ "dark_phones": [
+  [
+   "dark-chats",
+   232,
+   805,
+   276,
+   20,
+   1
+  ],
+  [
+   "dark-chat",
+   540,
+   805,
+   276,
+   20,
+   2
+  ],
+  [
+   "dark-group",
+   848,
+   805,
+   276,
+   20,
+   3
+  ]
+ ],
+ "dark_callouts": [
+  {
+   "label": "Search + filters",
+   "p": 0,
+   "sx": 130,
+   "sy": 285,
+   "lx": 40,
+   "ly": 420
+  },
+  {
+   "label": "Violet action rail",
+   "p": 1,
+   "sx": 354,
+   "sy": 432,
+   "lx": 400,
+   "ly": 420,
+   "cls": "v"
+  },
+  {
+   "label": "Group call card",
+   "p": 2,
+   "sx": 70,
+   "sy": 389,
+   "lx": 800,
+   "ly": 420
+  },
+  {
+   "label": "Typing indicator",
+   "p": 0,
+   "sx": 195,
+   "sy": 702,
+   "lx": 40,
+   "ly": 1200
+  },
+  {
+   "label": "Swipe to reply",
+   "p": 1,
+   "sx": 133,
+   "sy": 593,
+   "lx": 420,
+   "ly": 1200,
+   "cls": "v"
+  },
+  {
+   "label": "Admin roles",
+   "p": 2,
+   "sx": 262,
+   "sy": 571,
+   "lx": 830,
+   "ly": 1200
+  }
+ ],
+ "cta": {
+  "sub": "Natter chat app UI \u00b7 light + dark \u00b7 portfolio-ready.",
+  "steps": [
+   "Design",
+   "HTML",
+   "Tailwind",
+   "JS",
+   "Kit"
+  ],
+  "phones": [
+   [
+    "light-chat",
+    770,
+    950,
+    250,
+    20,
+    1
+   ],
+   [
+    "dark-chats",
+    965,
+    890,
+    250,
+    20,
+    2
+   ]
+  ],
+  "chips": [
+   {
+    "pos": "left:196px;top:1144px;padding:12px 20px;font-size:19px",
+    "cls": "w",
+    "html": "Type <b style='color:#5B3FD0'>&nbsp;NATTER&nbsp;</b> below"
+   }
+  ],
+  "go": "left:60px;top:1110px"
+ },
+ "benefits": [
+  "5 linked pages \u00d7 light + dark",
+  "HTML + Tailwind, no build step",
+  "Reactions, replies, voice notes",
+  "$3 kit \u00b7 link in DM"
+ ],
+ "pin_title": "Chat App<br><em>UI Design</em>",
+ "pin": {
+  "sub": "Pale lavender + one violet accent \u00b7 light and dark",
+  "phones": [
+   [
+    "light-welcome",
+    185,
+    690,
+    205,
+    20,
+    1
+   ],
+   [
+    "light-chats",
+    398,
+    670,
+    205,
+    20,
+    2
+   ],
+   [
+    "light-chat",
+    611,
+    650,
+    205,
+    20,
+    3
+   ],
+   [
+    "dark-chat",
+    824,
+    630,
+    205,
+    20,
+    4
+   ]
+  ],
+  "pal_top": 1010,
+  "card_top": 1150,
+  "card_h": 262,
+  "palette": [
+   [
+    "Lavender",
+    "#F1F0FF"
+   ],
+   [
+    "Violet",
+    "#5B3FD0"
+   ],
+   [
+    "White",
+    "#FFFFFF"
+   ],
+   [
+    "Ink",
+    "#1E1B3A"
+   ],
+   [
+    "Muted",
+    "#8A87A6"
+   ],
+   [
+    "Pink",
+    "#FF5C8A"
+   ],
+   [
+    "Orange",
+    "#FF9F43"
+   ],
+   [
+    "Night",
+    "#120E24"
+   ]
+  ],
+  "idea": "Build a <em>real-time chat</em> app",
+  "stack": "React / Next.js \u00b7 Node + Express \u00b7 Socket.IO \u00b7 MongoDB \u00b7 JWT \u00b7 Cloudinary",
+  "features": [
+   "Live messages",
+   "Presence + receipts",
+   "Voice + photos",
+   "Dark mode"
+  ]
+ }
+}

@@ -1,0 +1,95 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+/* ---- Natter chat app variant: pale lavender slides + phones fanned diagonally (ref: @colorhymn "Ping" chat app) ---- */
+body{font-family:Poppins,system-ui,sans-serif;color:#1E1B3A;position:relative;overflow:hidden;background:#E9E6FF}
+.glow{position:absolute;left:62%;top:62%;width:1300px;height:1100px;transform:translate(-50%,-50%);border-radius:50%;z-index:0;
+ background:radial-gradient(ellipse at center,rgba(255,255,255,.75) 0,rgba(255,255,255,.25) 40%,rgba(255,255,255,0) 68%)}
+.blob{position:absolute;border-radius:50%;z-index:0}
+.b1{width:420px;height:420px;right:-140px;top:-120px;background:radial-gradient(circle,rgba(91,63,208,.16),rgba(91,63,208,0) 70%)}
+.b2{width:380px;height:380px;left:-160px;bottom:-120px;background:radial-gradient(circle,rgba(255,92,138,.12),rgba(255,92,138,0) 70%)}
+body.lav{background:#F1F0FF}
+header,footer{position:absolute;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center;z-index:50}
+header{top:52px;font-size:28px} header b{font-weight:600;letter-spacing:-.3px} header span{font-weight:500;color:#6E6A92;font-size:26px}
+footer{bottom:48px} footer b{font-size:28px;font-weight:600} footer span{font-size:17px;letter-spacing:3px;color:#6E6A92;font-weight:500}
+h1{position:absolute;left:60px;right:60px;top:140px;font-weight:700;font-size:84px;line-height:1.04;letter-spacing:-3px;z-index:20;color:#1E1B3A}
+h1 b,h1 em{font-style:normal;font-weight:700;color:#5B3FD0}
+h1.m{font-size:72px;letter-spacing:-2.6px} h1.pin{font-size:80px;letter-spacing:-2.8px}
+.sub{position:absolute;left:60px;right:120px;font-size:28px;line-height:1.38;color:#5F5B85;top:330px;z-index:20;font-weight:400}
+/* cover: phones fill the slide, no footer */
+.cover footer{display:none} .cover header span{display:none}
+.cover .sub{font-size:27px}
+/* rotated phones */
+.phone{position:absolute;aspect-ratio:9/19.3;border-radius:52px;background:#FFFFFF;padding:9px;transform-origin:50% 50%;
+ box-shadow:0 0 0 2px #D9D4FA,0 2px 0 3px #fff inset,0 60px 80px -30px rgba(60,40,150,.40),0 18px 34px rgba(60,40,150,.14)}
+.phone.dk{background:#0B0817;box-shadow:0 0 0 2px #3A3266,0 0 0 4px #07050F,0 60px 90px -28px rgba(0,0,0,.65),0 18px 34px rgba(0,0,0,.35)}
+.scr{position:relative;width:100%;height:100%;border-radius:43px;overflow:hidden;background:#F1F0FF}
+.scr img{position:absolute;top:34px;left:0;width:100%}
+.sb{position:absolute;top:0;left:0;right:0;height:34px;display:flex;justify-content:space-between;align-items:center;padding:0 28px;font-size:12.5px;font-weight:600;z-index:2;color:#1E1B3A}
+.sb.wt,.dk .sb{color:#F1F0FF}
+.sb .ic{display:flex;align-items:flex-end;gap:2px;height:10px}
+.sb .ic i{display:block;width:3px;background:currentColor;border-radius:1px}
+.sb .ic i:nth-child(1){height:4px}.sb .ic i:nth-child(2){height:6px}.sb .ic i:nth-child(3){height:9px}
+.sb .ic b{display:block;width:18px;height:9px;border:1.5px solid currentColor;border-radius:3px;margin-left:5px;position:relative}
+.sb .ic b:after{content:'';position:absolute;left:1.5px;top:1.5px;bottom:1.5px;width:65%;background:currentColor;border-radius:1px}
+.notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:31%;height:22px;border-radius:12px;background:#000;z-index:3}
+.home{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:34%;height:4px;border-radius:3px;background:rgba(30,27,58,.5);z-index:3}
+.dk .home{background:rgba(241,240,255,.7)}
+/* chips */
+.gchip{position:absolute;z-index:30;background:#1E1B3A;color:#F1F0FF;border-radius:999px;padding:14px 22px;white-space:nowrap;box-shadow:0 22px 44px -18px rgba(30,20,80,.55);font-size:20px;font-weight:500;display:flex;align-items:center;gap:10px}
+.gchip i{width:10px;height:10px;border-radius:50%;background:#FF5C8A;display:block}
+.gchip.v{background:#5B3FD0;color:#fff;box-shadow:0 20px 36px -14px rgba(91,63,208,.8)}
+.gchip.w{background:#fff;color:#1E1B3A}
+.emo{font-family:'Noto Color Emoji',sans-serif}
+/* callouts: ink pill + line + violet-ringed dot */
+.colines{position:absolute;left:0;top:0;z-index:38;pointer-events:none;overflow:visible}
+.colines line{stroke:#1E1B3A;stroke-width:2.4;stroke-linecap:round}
+.co2{position:absolute;z-index:40;height:46px;display:flex;align-items:center;justify-content:center;white-space:nowrap;background:#1E1B3A;color:#F1F0FF;font-size:19.5px;font-weight:500;border-radius:999px;box-shadow:0 12px 24px -10px rgba(30,27,58,.5)}
+.co2.v{background:#5B3FD0;color:#fff}
+.dot{position:absolute;z-index:41;width:22px;height:22px;border-radius:50%;background:#fff;border:5px solid #5B3FD0;box-shadow:0 0 0 2px #1E1B3A,0 2px 8px rgba(0,0,0,.35)}
+/* dark slide */
+body.night{background:#120E24}
+.night .glow{background:radial-gradient(ellipse at center,rgba(106,79,224,.30) 0,rgba(106,79,224,.10) 40%,rgba(106,79,224,0) 68%)}
+.night .b1{background:radial-gradient(circle,rgba(160,139,255,.18),rgba(160,139,255,0) 70%)} .night .b2{background:radial-gradient(circle,rgba(255,92,138,.14),rgba(255,92,138,0) 70%)}
+.night header b,.night footer b,.night h1{color:#F1F0FF} .night header span,.night footer span,.night .sub{color:#9893B8}
+.night h1 em{color:#A08BFF}
+.night .colines line{stroke:#F1F0FF} .night .co2{background:#F1F0FF;color:#1E1B3A} .night .co2.v{background:#6A4FE0;color:#fff}
+.night .dot{border-color:#6A4FE0;box-shadow:0 0 0 2px #F1F0FF,0 2px 8px rgba(0,0,0,.5)}
+/* violet CTA slide */
+body.violet{background:#5B3FD0}
+.violet .glow{background:radial-gradient(ellipse at center,rgba(255,255,255,.16) 0,rgba(255,255,255,.05) 40%,rgba(255,255,255,0) 68%);top:78%;left:72%}
+.violet .b1{background:radial-gradient(circle,rgba(255,255,255,.10),rgba(255,255,255,0) 70%)} .violet .b2{background:radial-gradient(circle,rgba(255,159,67,.18),rgba(255,159,67,0) 70%)}
+.violet header b,.violet footer b,.violet h1{color:#fff} .violet header span,.violet footer span,.violet .sub{color:rgba(255,255,255,.78)}
+.violet h1 em{color:#FFC9A0}
+.steps{position:absolute;left:60px;right:60px;top:440px;display:flex;align-items:center;justify-content:space-between;z-index:20}
+.st{background:rgba(255,255,255,.12);color:#fff;border-radius:22px;padding:16px 14px;font-size:22px;font-weight:500;text-align:center;min-width:150px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.st span{display:block;font-size:15px;color:#FFC9A0;font-weight:600;margin-bottom:4px}
+.ar{font-style:normal;color:rgba(255,255,255,.5);font-size:24px}
+.ben{position:absolute;left:60px;top:620px;list-style:none;width:540px;z-index:20}
+.ben li{font-size:28px;line-height:1.3;margin-bottom:26px;display:flex;gap:16px;color:#fff;font-weight:400}
+.ben li b{flex:none;width:40px;height:40px;border-radius:50%;background:#fff;color:#5B3FD0;font-size:20px;display:flex;align-items:center;justify-content:center}
+.kw{font-weight:700;background:#fff;color:#5B3FD0;padding:0 24px;border-radius:24px 24px 24px 6px;letter-spacing:1px;font-size:.9em;display:inline-block;line-height:1.14;vertical-align:.06em;box-shadow:0 18px 34px -14px rgba(20,10,60,.6)}
+.gobtn{position:absolute;z-index:45;width:112px;height:112px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 24px 44px -14px rgba(20,10,60,.6)}
+.gobtn svg{width:46px;height:46px;fill:none;stroke:#5B3FD0;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.gobtn:after{content:'';position:absolute;inset:-14px;border-radius:50%;border:3px solid rgba(255,255,255,.55);border-left-color:transparent;border-bottom-color:transparent;transform:rotate(-20deg)}
+/* pin */
+.pinsub{top:310px}
+.pal{position:absolute;z-index:20;display:flex;gap:12px}
+.sw{width:96px}
+.sw i{display:block;height:74px;border-radius:20px 20px 20px 6px;box-shadow:inset 0 0 0 2px rgba(30,27,58,.08),0 10px 20px -12px rgba(60,40,150,.45)}
+.sw b{display:block;font-size:15px;font-weight:600;margin-top:8px;color:#1E1B3A}
+.sw small{display:block;font-size:13px;color:#5F5B85;font-family:ui-monospace,Menlo,monospace}
+.card{position:absolute;z-index:20;background:#fff;border-radius:28px;padding:24px 26px;box-shadow:0 24px 50px -24px rgba(60,40,150,.40)}
+.card h3{font-weight:700;font-size:29px;letter-spacing:-.6px;line-height:1.1;color:#1E1B3A}
+.card h3 em{color:#5B3FD0;font-style:normal}
+.card p,.card li{font-size:16.5px;line-height:1.45;color:#5F5B85} .card .ink{color:#1E1B3A;font-weight:600}
+.tagl{font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#5B3FD0}
+.chipz{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chipz span{font-size:15px;font-weight:500;padding:7px 13px;border-radius:999px;background:#1E1B3A;color:#F1F0FF}
+.chipz span:first-child{background:#5B3FD0;color:#fff}
+</style></head><body class="night" style="width:1080px;height:1350px"><div class="glow"></div><div class="blob b1"></div><div class="blob b2"></div>
+<header><b>code.in.30s</b><span>3 / 4 &nbsp;→</span></header><h1 class="m">Dark mode,<br>deep <em>violet</em></h1><p class="sub">#120E24 screens, #1C1733 cards, violet #6A4FE0.</p>
+<div class="phone dk" style="width:276px;left:94.0px;top:509.1px;z-index:1;transform:rotate(20deg)">
+  <div class="scr" style="background:#120e24"><div class="sb wt"><span>9:41</span><span class="ic"><i></i><i></i><i></i><b></b></span></div><img src="file:///workspace/pins/2026-10-22-chat-app/final/screens/dark-chats.png"><div class="notch"></div><div class="home"></div></div></div><div class="phone dk" style="width:276px;left:402.0px;top:509.1px;z-index:2;transform:rotate(20deg)">
+  <div class="scr" style="background:#2b2163"><div class="sb wt"><span>9:41</span><span class="ic"><i></i><i></i><i></i><b></b></span></div><img src="file:///workspace/pins/2026-10-22-chat-app/final/screens/dark-chat.png"><div class="notch"></div><div class="home"></div></div></div><div class="phone dk" style="width:276px;left:710.0px;top:509.1px;z-index:3;transform:rotate(20deg)">
+  <div class="scr" style="background:#19133b"><div class="sb wt"><span>9:41</span><span class="ic"><i></i><i></i><i></i><b></b></span></div><img src="file:///workspace/pins/2026-10-22-chat-app/final/screens/dark-group.png"><div class="notch"></div><div class="home"></div></div></div><svg class="colines" width="1080" height="1350"><line x1="213.6" y1="466.0" x2="213.6" y2="729.8"/><line x1="627.6" y1="466.0" x2="627.6" y2="871.8"/><line x1="800.0" y1="443.0" x2="768.8" y2="780.9"/><line x1="159.7" y1="1200.0" x2="159.7" y2="1003.7"/><line x1="453.8" y1="1200.0" x2="453.8" y2="921.9"/><line x1="847.0" y1="1200.0" x2="847.0" y2="937.4"/></svg><div class="co2 " style="left:40px;top:420px;width:216px">Search + filters</div><em class="dot" style="left:202.6px;top:718.8px"></em><div class="co2 v" style="left:400px;top:420px;width:237px">Violet action rail</div><em class="dot" style="left:616.6px;top:860.8px"></em><div class="co2 " style="left:800px;top:420px;width:205px">Group call card</div><em class="dot" style="left:757.8px;top:769.9px"></em><div class="co2 " style="left:40px;top:1200px;width:216px">Typing indicator</div><em class="dot" style="left:148.7px;top:992.7px"></em><div class="co2 v" style="left:420px;top:1200px;width:194px">Swipe to reply</div><em class="dot" style="left:442.8px;top:910.9px"></em><div class="co2 " style="left:830px;top:1200px;width:163px">Admin roles</div><em class="dot" style="left:836.0px;top:926.4px"></em>
+<footer><b>code.in.30s</b><span>HTML / CSS / TAILWIND / UI</span></footer></body></html>
