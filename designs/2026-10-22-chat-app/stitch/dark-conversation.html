@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Natter - Conversation</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {},
+          fontFamily: {
+            headline: ["Montserrat", "sans-serif"],
+            display: ["Montserrat", "sans-serif"],
+            body: ["Montserrat", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          },
+          fontSize: {}
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Pulsating typing indicator dots */
+    @keyframes pulse-dot {
+      0%, 80%, 100% { transform: scale(0.65); opacity: 0.4; }
+      40% { transform: scale(1.15); opacity: 1; }
+    }
+    .typing-dot:nth-child(1) { animation: pulse-dot 1.4s infinite ease-in-out; }
+    .typing-dot:nth-child(2) { animation: pulse-dot 1.4s infinite ease-in-out 0.2s; }
+    .typing-dot:nth-child(3) { animation: pulse-dot 1.4s infinite ease-in-out 0.4s; }
+
+    /* Custom thin scrollbar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0b0817] text-[#F1F0FF] font-body flex justify-center items-center min-h-screen p-0 md:p-6 antialiased selection:bg-[#6A4FE0] selection:text-white">
+<!-- Mobile Frame Device (390x844 ratio viewport container) -->
+<div class="relative w-full max-w-[390px] h-[844px] bg-[#120E24] overflow-hidden flex flex-col shadow-2xl rounded-none md:rounded-[40px] border-0 md:border-[6px] md:border-[#262042]">
+<!-- Status Bar Emulation -->
+<div class="w-full bg-[#5B3FD0] pt-2 px-6 pb-1 flex justify-between items-center text-xs text-[#F1F0FF]/90 font-medium select-none z-30">
+<span>9:41</span>
+<div class="flex items-center space-x-1.5 text-xs">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">wifi</span>
+<span class="material-symbols-outlined text-[18px]">battery_full</span>
+</div>
+</div>
+<!-- 1. Top Header Bar (Sub-page: BottomNav is suppressed per destination rule) -->
+<header class="relative bg-[#5B3FD0] text-[#F1F0FF] px-4 pt-1.5 pb-4 rounded-b-[28px] shadow-lg shadow-black/25 z-20 shrink-0">
+<div class="flex items-center justify-between">
+<!-- Left: Back Button & Recipient Info -->
+<div class="flex items-center space-x-2.5">
+<button aria-label="Go Back" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 transition-all flex items-center justify-center text-[#F1F0FF]">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex items-center space-x-3 cursor-pointer group">
+<!-- 2-letter Avatar with vibrant gradient & orange online dot -->
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#FF5C8A] via-[#6A4FE0] to-[#FF9F43] flex items-center justify-center font-headline font-bold text-sm text-white shadow-md shadow-[#5B3FD0]/50 tracking-wider">
+                MC
+              </div>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-[#FF9F43] border-2 border-[#5B3FD0] rounded-full ring-1 ring-black/20" title="Online"></span>
+</div>
+<!-- Name and Status -->
+<div class="flex flex-col">
+<h1 class="font-headline font-bold text-base text-[#F1F0FF] leading-tight tracking-tight flex items-center gap-1.5">
+                Maya Chen
+                <span class="material-symbols-outlined text-xs text-[#A08BFF]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</h1>
+<p class="font-headline font-medium text-[11px] text-[#F1F0FF]/85 tracking-wide flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#FF9F43] inline-block animate-pulse"></span>
+                Online
+              </p>
+</div>
+</div>
+</div>
+<!-- Right: Audio and Video Call Icons -->
+<div class="flex items-center space-x-1.5">
+<button aria-label="Start Voice Call" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 transition-all flex items-center justify-center text-[#F1F0FF]">
+<span class="material-symbols-outlined text-[19px]">call</span>
+</button>
+<button aria-label="Start Video Call" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 transition-all flex items-center justify-center text-[#F1F0FF]">
+<span class="material-symbols-outlined text-[19px]">videocam</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Container: Chat Stream + Floating Action Rail -->
+<div class="relative flex-1 overflow-hidden bg-[#120E24]">
+<!-- 2. Chat Conversation Stream -->
+<div class="h-full overflow-y-auto px-4 pt-4 pb-24 space-y-4 no-scrollbar">
+<!-- Timestamp Pill -->
+<div class="flex justify-center my-2">
+<span class="bg-[#1C1733] text-[#9893B8] font-headline font-medium text-[11px] px-3.5 py-1 rounded-full shadow-sm tracking-wider">
+            Today
+          </span>
+</div>
+<!-- Received Message Bubble 1 -->
+<div class="flex flex-col items-start max-w-[78%]">
+<div class="bg-[#1C1733] text-[#F1F0FF] px-4 py-2.5 rounded-[18px] rounded-tl-[4px] shadow-sm text-[13.5px] leading-relaxed font-normal">
+            Hey! Did you see the new design brief?
+          </div>
+<span class="text-[10px] text-[#9893B8] font-medium mt-1 ml-1.5">10:02</span>
+</div>
+<!-- Sent Message Bubble 1 -->
+<div class="flex flex-col items-end max-w-[80%] ml-auto">
+<div class="bg-[#5B3FD0] text-white px-4 py-2.5 rounded-[18px] rounded-tr-[4px] shadow-sm text-[13.5px] leading-relaxed font-normal">
+            Yes! Working on the chat screens now
+          </div>
+<div class="flex items-center space-x-1 mt-1 mr-1.5">
+<span class="text-[10px] text-[#9893B8] font-medium">10:03</span>
+<span class="material-symbols-outlined text-[#A08BFF] text-[14px]">done_all</span>
+</div>
+</div>
+<!-- Received Image / Media Bubble with Pink Heart Reaction -->
+<div class="flex flex-col items-start max-w-[82%] relative group">
+<div class="bg-[#1C1733] p-2.5 rounded-[20px] rounded-tl-[4px] shadow-md border border-[#262042]/70 w-full">
+<!-- Visual Asset Preview -->
+<div class="relative w-full h-32 rounded-[14px] bg-gradient-to-tr from-[#262042] via-[#5B3FD0]/40 to-[#FF5C8A]/30 flex flex-col justify-between p-3 overflow-hidden border border-white/5">
+<div class="flex justify-between items-center">
+<span class="w-7 h-7 rounded-full bg-[#120E24]/60 backdrop-blur-md flex items-center justify-center text-[#A08BFF]">
+<span class="material-symbols-outlined text-[17px]">palette</span>
+</span>
+<span class="text-[10px] font-bold uppercase tracking-wider bg-[#120E24]/80 text-[#F1F0FF] px-2 py-0.5 rounded-full">Figma</span>
+</div>
+<div>
+<p class="font-headline font-bold text-xs text-[#F1F0FF] drop-shadow-sm">Natter Design System 2.0</p>
+<p class="text-[10px] text-[#9893B8]">Airy &amp; Deep Violet Theme</p>
+</div>
+</div>
+<!-- File Meta Info -->
+<div class="mt-2.5 px-1 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="w-8 h-8 rounded-lg bg-[#262042] flex items-center justify-center text-[#A08BFF]">
+<span class="material-symbols-outlined text-[18px]">image</span>
+</div>
+<div>
+<h4 class="text-xs font-semibold text-[#F1F0FF] truncate max-w-[130px]">Natter_V2_Palette.png</h4>
+<p class="text-[10px] text-[#9893B8]">1.4 MB • Color Scheme</p>
+</div>
+</div>
+<button aria-label="Download Attachment" class="w-7 h-7 rounded-full bg-[#262042] hover:bg-[#6A4FE0]/40 text-[#A08BFF] flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+</button>
+</div>
+</div>
+<!-- Timestamp & Reaction Pill -->
+<div class="flex items-center justify-between w-full mt-1 px-1.5">
+<span class="text-[10px] text-[#9893B8] font-medium">10:04</span>
+<!-- Reaction Badge -->
+<div class="bg-[#1C1733] border border-[#262042] text-xs font-semibold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm -mt-2.5 mr-2">
+<span class="text-[#FF5C8A] text-xs">❤️</span>
+<span class="text-[11px] text-[#F1F0FF] font-medium">2</span>
+</div>
+</div>
+</div>
+<!-- Sent Voice Note Bubble -->
+<div class="flex flex-col items-end max-w-[85%] ml-auto">
+<div class="bg-[#5B3FD0] text-white p-3 rounded-[20px] rounded-tr-[4px] shadow-sm w-64">
+<div class="flex items-center space-x-3">
+<!-- Play Button -->
+<button aria-label="Play Voice Note" class="w-9 h-9 rounded-full bg-white text-[#5B3FD0] flex items-center justify-center shadow-md active:scale-95 transition-transform shrink-0">
+<span class="material-symbols-outlined text-[20px] ml-0.5" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<!-- Waveform Audio Bars -->
+<div class="flex-1 flex items-center justify-between space-x-[2px] h-7 px-1">
+<span class="w-[3px] h-3 bg-white/70 rounded-full"></span>
+<span class="w-[3px] h-4 bg-white/90 rounded-full"></span>
+<span class="w-[3px] h-6 bg-white rounded-full"></span>
+<span class="w-[3px] h-3 bg-white/60 rounded-full"></span>
+<span class="w-[3px] h-5 bg-white/80 rounded-full"></span>
+<span class="w-[3px] h-7 bg-white rounded-full animate-pulse"></span>
+<span class="w-[3px] h-4 bg-white/75 rounded-full"></span>
+<span class="w-[3px] h-2 bg-white/50 rounded-full"></span>
+<span class="w-[3px] h-5 bg-white/80 rounded-full"></span>
+<span class="w-[3px] h-6 bg-white rounded-full"></span>
+<span class="w-[3px] h-3 bg-white/70 rounded-full"></span>
+<span class="w-[3px] h-4 bg-white/60 rounded-full"></span>
+<span class="w-[3px] h-2 bg-white/40 rounded-full"></span>
+</div>
+<!-- Audio Duration -->
+<span class="text-xs font-semibold text-[#F1F0FF] tabular-nums shrink-0">0:42</span>
+</div>
+</div>
+<div class="flex items-center space-x-1 mt-1 mr-1.5">
+<span class="text-[10px] text-[#9893B8] font-medium">10:05</span>
+<span class="material-symbols-outlined text-[#A08BFF] text-[14px]">done_all</span>
+</div>
+</div>
+<!-- Received Reply Bubble with Nested Quote Header -->
+<div class="flex flex-col items-start max-w-[80%]">
+<div class="bg-[#1C1733] text-[#F1F0FF] p-2.5 rounded-[18px] rounded-tl-[4px] shadow-sm">
+<!-- Nested Quote Container -->
+<div class="bg-[#262042]/90 border-l-[3px] border-[#6A4FE0] rounded-r-lg px-2.5 py-1.5 mb-2 text-xs">
+<p class="font-headline font-bold text-[#A08BFF] text-[11px] mb-0.5">You</p>
+<p class="text-[#9893B8] truncate text-[11px]">Working on the chat screens now</p>
+</div>
+<!-- Main Reply Text -->
+<p class="text-[13.5px] px-1 text-[#F1F0FF]">Love it, ship it today? 🚀</p>
+</div>
+<span class="text-[10px] text-[#9893B8] font-medium mt-1 ml-1.5">10:06</span>
+</div>
+<!-- Received Typing Indicator Bubble -->
+<div class="flex items-center space-x-2">
+<div class="bg-[#1C1733] px-3.5 py-2.5 rounded-[18px] rounded-tl-[4px] shadow-sm flex items-center space-x-1.5">
+<span class="w-2 h-2 rounded-full bg-[#A08BFF] typing-dot"></span>
+<span class="w-2 h-2 rounded-full bg-[#6A4FE0] typing-dot"></span>
+<span class="w-2 h-2 rounded-full bg-[#FF5C8A] typing-dot"></span>
+</div>
+</div>
+</div>
+<!-- 3. Floating Action Rail (Right edge vertical pill) -->
+<aside aria-label="Quick Actions" class="absolute right-3.5 top-14 z-20 flex flex-col items-center bg-[#5B3FD0] p-1.5 rounded-full shadow-2xl shadow-black/60 border border-white/10 space-y-2">
+<button aria-label="Open Camera" class="w-8 h-8 rounded-full hover:bg-white/20 active:scale-90 transition-all flex items-center justify-center text-white" title="Camera">
+<span class="material-symbols-outlined text-[17px]">photo_camera</span>
+</button>
+<button aria-label="Open Gallery" class="w-8 h-8 rounded-full hover:bg-white/20 active:scale-90 transition-all flex items-center justify-center text-white" title="Photos">
+<span class="material-symbols-outlined text-[17px]">photo_library</span>
+</button>
+<button aria-label="Record Audio" class="w-8 h-8 rounded-full hover:bg-white/20 active:scale-90 transition-all flex items-center justify-center text-white" title="Voice">
+<span class="material-symbols-outlined text-[17px]">mic</span>
+</button>
+<button aria-label="Share Location" class="w-8 h-8 rounded-full hover:bg-white/20 active:scale-90 transition-all flex items-center justify-center text-white" title="Location">
+<span class="material-symbols-outlined text-[17px]">location_on</span>
+</button>
+</aside>
+</div>
+<!-- 4. Bottom Composer Dock -->
+<div class="absolute bottom-0 left-0 right-0 bg-[#120E24] px-3.5 py-3 border-t border-[#1C1733] z-30">
+<div class="flex items-center space-x-2">
+<!-- Input Bar Pill -->
+<div class="flex-1 flex items-center bg-[#1C1733] border border-[#262042] rounded-full px-3 py-1.5 focus-within:border-[#6A4FE0] transition-colors shadow-inner">
+<button aria-label="Emoji Picker" class="text-[#9893B8] hover:text-[#A08BFF] transition-colors p-1 flex items-center">
+<span class="material-symbols-outlined text-[20px]">sentiment_satisfied</span>
+</button>
+<input class="w-full bg-transparent border-0 focus:ring-0 text-[#F1F0FF] placeholder-[#9893B8] text-sm px-2 py-1 font-body focus:outline-none" placeholder="Message..." type="text"/>
+<button aria-label="Attach File" class="text-[#9893B8] hover:text-[#A08BFF] transition-colors p-1 flex items-center">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+</div>
+<!-- Saturated Violet Send Button -->
+<button aria-label="Send Message" class="w-11 h-11 rounded-full bg-[#5B3FD0] hover:bg-[#6A4FE0] active:scale-95 transition-all flex items-center justify-center text-white shadow-lg shadow-[#5B3FD0]/40 shrink-0">
+<span class="material-symbols-outlined text-[20px] ml-0.5" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+<!-- iOS Home Indicator Pill -->
+<div class="w-32 h-1 bg-[#262042] rounded-full mx-auto mt-3"></div>
+</div>
+</div>
+</body></html>

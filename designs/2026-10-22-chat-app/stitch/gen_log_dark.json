@@ -1,0 +1,164 @@
+{
+ "DARK-chats": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Natter Dark",
+         "theme": {
+          "bodyFont": "MONTSERRAT",
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#5B3FD0",
+          "designMd": "# Natter chat app (code.in.30s)\nFriendly messaging mobile app. Airy, clean style with lots of whitespace: white rounded cards (20px radius), fully rounded chat bubbles (18px) with one tight 4px corner, full-round pill search bar and chips, geometric sans (Poppins-like, Montserrat) (bold headings, light grey message previews). ONE saturated violet accent #5B3FD0 used for headers, the active nav icon, sent message bubbles, primary buttons and a vertical violet icon action rail. Small pink #FF5C8A and orange #FF9F43 accents only for reactions, unread badges and online dots. Avatars are initials on soft gradient circles (no photos). Thin rounded line icons. No neon, no emoji except small reaction emoji.\n## Dark: deep violet-black page #120E24, cards #1C1733, raised #262042, ink #F1F0FF, muted #9893B8. Violet #6A4FE0 accent, lighter violet text #A08BFF.",
+          "headlineFont": "MONTSERRAT",
+          "overrideNeutralColor": "#120E24",
+          "overridePrimaryColor": "#5B3FD0",
+          "overrideSecondaryColor": "#1C1733",
+          "overrideTertiaryColor": "#FF5C8A",
+          "roundness": "ROUND_FULL"
+         }
+        },
+        "name": "assets/4255819259862774359",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "2046",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2Q3OWQ1MTg5MzU4ODRhYmZhZDg5MzU2YTYxZmNiNWNkEgsSBxDnsaWX4xEYAZIBJAoKcHJvamVjdF9pZBIWQhQxMzcwMDQ3MDI4NDg4OTU3OTM5MQ&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/13700470284889579391/files/4dfaec28c0ac4d0fa85f6c756ca415d6"
+       },
+       "id": "ba3c9e9c4f94484082520417955032e7",
+       "name": "projects/13700470284889579391/screens/ba3c9e9c4f94484082520417955032e7",
+       "prompt": "Mobile chat / messaging app called \"Natter\" in DARK mode.\nPage background: deep violet-black #120E24. Cards: #1C1733 rounded 20px. Raised controls / inputs: #262042. Lavender-white ink #F1F0FF. Muted small subtext #9893B8. Saturated violet accent #5B3FD0 / #6A4FE0 for primary buttons, active chips, badges, and headers. Light violet text #A08BFF. Tiny pink #FF5C8A and orange #FF9F43 accents only for reactions, unread badges, and online status indicator dots.\nAvatars: 2-letter initials on soft gradient circles (NO photos, NO 3D characters). Geometric sans typography (Montserrat style), thin rounded line icons, airy whitespace. Target viewport fits 390x844.\n\nHeader section:\n- Bold \"Messages\" heading with pink dot accent.\n- Top right actions: round search icon button (subtle background #262042) and round violet #5B3FD0 \"+\" button for new chat.\n- Pill search bar: \"Search chats\" with search icon and microphone icon, styled with #262042 background, text #9893B8.\n\nStories tray row:\n- Horizontal scrolling row of circular gradient initial avatars with violet rings / dashed ring for \"Your story\" with a tiny \"+\" badge.\n- Stories: \"Your story\", \"Maya\" (MC), \"Arjun\" (AR), \"Zoe\" (ZK), \"Dev\" (DP). Soft gradient fills for circles, lavender text labels underneath.\n\nFilter chips:\n- Horizontal pill chips:\n  1. \"All\" (active, filled saturated violet #5B3FD0 with white text)\n  2. \"Unread 3\" (pill with subtle background #262042, text #F1F0FF, and small pink badge \"3\")\n  3. \"Groups\" (pill #262042, text #9893B8)\n  4. \"Calls\" (pill #262042, text #9893B8)\n\nChat List (Cards / Rows):\nList of rounded cards (20px radius, background #1C1733, subtle border or soft dark shadow, with generous spacing between or grouped):\n1. Maya Chen: Initials avatar \"MC\" (gradient coral/pink/violet) with small green/orange online dot. Name: \"Maya Chen\" bold #F1F0FF. Preview: microphone icon + \"Sent a voice note\" #9893B8. Timestamp \"10:24\" #9893B8 on right, unread badge \"2\" in saturated violet #5B3FD0 or pink #FF5C8A.\n2. Design Squad (group): Initials avatar \"DS\" (gradient indigo/violet) with group icon badge. Name: \"Design Squad\" bold #F1F0FF. Preview: \"Zoe: see you at 5! \ud83d\udc4b\" #9893B8. Timestamp \"09:58\", unread badge \"5\" in vibrant pink #FF5C8A.\n3. Arjun Rao: Initials avatar \"AR\" (gradient purple). Name: \"Arjun Rao\" bold #F1F0FF. Preview: double checkmark + \"haha that's perfect\" #9893B8. Timestamp \"09:12\".\n4. Priya Patel: Initials avatar \"PP\" (gradient cyan/lavender). Name: \"Priya\" (or Priya Patel) bold #F1F0FF. Preview: camera icon + \"Photo\" #9893B8. Timestamp \"Yesterday\".\n5. Leo Park: Initials avatar \"LP\" (gradient lilac). Name: \"Leo Park\" bold #F1F0FF. Preview: animated or triple dot \"typing...\" in light violet #A08BFF. Timestamp \"Now\".\n\nBottom navigation bar:\n- Docked/fixed bottom bar (#1C1733 backdrop blur / background with top subtle border), 4 line destinations:\n  - \"Chats\" (active, highlighted with #6A4FE0 / #A08BFF and chat_bubble icon)\n  - \"Calls\" (inactive, call icon, #9893B8)\n  - \"Stories\" (inactive, auto_stories or circle icon, #9893B8)\n  - \"Profile\" (inactive, person icon, #9893B8)",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UdXViBnkeQJyZP4Gv8-0hO4Y6zbsvpk2hQvFx-FW9CriHeQ25B2INC1gnr2RiGyjMLPDl-XyMIIRfYRlba05Pn7bHkKAxpb8vOaN7zFxpdoZGr8B8FF1ikHMN0WpGorWxZi27CHObRCAlTz0lbulwXeYzun6d5dus1p5AVP2nxyj2BzsOtWvxdoJ8eJ0wTKc3e3WQo4aHit3snkpEj92qkywtHaYeSxf8o8L1f2_abwemtxBG6-6Buikg",
+        "name": "projects/13700470284889579391/files/0639325325d34993a94d77c25784d717"
+       },
+       "theme": {
+        "bodyFont": "MONTSERRAT",
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#5B3FD0",
+        "headlineFont": "MONTSERRAT",
+        "overrideNeutralColor": "#120E24",
+        "overridePrimaryColor": "#5B3FD0",
+        "overrideSecondaryColor": "#1C1733",
+        "overrideTertiaryColor": "#FF5C8A",
+        "roundness": "ROUND_FULL"
+       },
+       "title": "Natter - Messages (Dark)",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "I have designed the **Natter - Messages (Dark)** screen (Natter - Messages (Dark)) tailored precisely to your specifications:\n\n### Design Highlights\n- **Dark Mode Palette & Depth**: Implemented the deep violet-black background (`#120E24`), rounded cards (`#1C1733`), elevated control surfaces (`#262042`), high-contrast lavender-white typography (`#F1F0FF`), and muted subtext (`#9893B8`).\n- **Accent Rhythm**: Saturated violet (`#5B3FD0` / `#6A4FE0`) is applied to primary actions, active chips, and the primary nav state. Deliberate micro-accents of pink (`#FF5C8A`) and orange (`#FF9F43`) highlight unread badges, status dots, and notification indicators.\n- **Header & Navigation**: Features the bold \"Messages\" title with subtle brand dot, quick round action buttons (search & violet `+` new chat), and the pill-shaped search bar.\n- **Stories Bar**: Circular gradient initial avatars with violet accent rings for \"Your story\" (`+` badge), Maya (`MC`), Arjun (`AR`), Zoe (`ZK`), and Dev (`DP`).\n- **Filter Pills**: Interactive filter row with \"All\" active in saturated violet, \"Unread 3\" with counter pill badge, followed by \"Groups\" and \"Calls\".\n- **Chat Conversations**: 20px rounded cards featuring 2-letter gradient initial avatars (no photos/3D models), clear typographic hierarchy, right-aligned timestamps, status dots, and unread badges for:\n  - Maya Chen (\"Sent a voice note\", badge `2`)\n  - Design Squad (\"Zoe: see you at 5! \ud83d\udc4b\", badge `5`)\n  - Arjun Rao (\"haha that's perfect\", read receipts)\n  - Priya Patel (\"Photo\", Yesterday)\n  - Leo Park (\"typing...\" styled in light violet `#A08BFF`)\n- **Bottom Navigation**: Docked 4-destination line bar (`Chats`, `Calls`, `Stories`, `Profile`) with active styling on `Chats`."
+   },
+   {
+    "suggestion": "Generate the Dark Mode conversation / chat view for Maya Chen"
+   },
+   {
+    "suggestion": "Design the dark mode Stories or Calls view"
+   },
+   {
+    "suggestion": "Add swipe-action states or contextual menus to the conversation cards"
+   }
+  ],
+  "projectId": "13700470284889579391",
+  "sessionId": "1704997905744373829"
+ },
+ "DARK-conversation": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Natter Dark",
+         "theme": {
+          "bodyFont": "MONTSERRAT",
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#5B3FD0",
+          "designMd": "# Natter chat app (code.in.30s)\nFriendly messaging mobile app. Airy, clean style with lots of whitespace: white rounded cards (20px radius), fully rounded chat bubbles (18px) with one tight 4px corner, full-round pill search bar and chips, geometric sans (Poppins-like, Montserrat) (bold headings, light grey message previews). ONE saturated violet accent #5B3FD0 used for headers, the active nav icon, sent message bubbles, primary buttons and a vertical violet icon action rail. Small pink #FF5C8A and orange #FF9F43 accents only for reactions, unread badges and online dots. Avatars are initials on soft gradient circles (no photos). Thin rounded line icons. No neon, no emoji except small reaction emoji.\n## Dark: deep violet-black page #120E24, cards #1C1733, raised #262042, ink #F1F0FF, muted #9893B8. Violet #6A4FE0 accent, lighter violet text #A08BFF.",
+          "headlineFont": "MONTSERRAT",
+          "overrideNeutralColor": "#120E24",
+          "overridePrimaryColor": "#5B3FD0",
+          "overrideSecondaryColor": "#1C1733",
+          "overrideTertiaryColor": "#FF5C8A",
+          "roundness": "ROUND_FULL"
+         }
+        },
+        "name": "assets/4255819259862774359",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "1768",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2NmMTU2NzY1YTMyODRjYWViMzZmYzgwMTJjZWNmZmE2EgsSBxDnsaWX4xEYAZIBJAoKcHJvamVjdF9pZBIWQhQxMzcwMDQ3MDI4NDg4OTU3OTM5MQ&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/13700470284889579391/files/cf03e8b95b8d427682101844cab3da3b"
+       },
+       "id": "78ee769149274610800b44f0548d75a2",
+       "name": "projects/13700470284889579391/screens/78ee769149274610800b44f0548d75a2",
+       "prompt": "Mobile conversation screen for 'Natter' in DARK mode fitting a 390x844 viewport.\nVisual theme & colors:\n- Deep violet-black background: #120E24\n- Cards / received bubbles: #1C1733 or soft contrast dark cards\n- Raised controls / secondary containers: #262042\n- Lavender-white primary ink: #F1F0FF\n- Muted subtext: #9893B8\n- Violet accent: #6A4FE0, light violet text #A08BFF\n- Saturated violet accent: #5B3FD0 for header, sent bubbles, primary action buttons\n- Tiny pink #FF5C8A (reactions) and orange #FF9F43 (online dot) accents\n- Typography: Montserrat / geometric sans\n- Avatars: 2-letter initials on soft gradient circles (e.g., 'MC'), strictly NO photos or 3D characters.\n\nLayout details:\n1. Top Header Bar:\n- Saturated violet background (#5B3FD0) with rounded bottom corners (e.g. rounded-b-3xl)\n- Back arrow icon button (round semi-transparent button)\n- Initial avatar 'MC' with a vibrant gradient (orange/pink gradient or violet/pink gradient) and an active orange online dot (#FF9F43)\n- 'Maya Chen' in bold #F1F0FF with 'online' indicator in light lavender #F1F0FF/80 or #A08BFF\n- Round call and video call icon buttons on the right\n\n2. Chat conversation stream (background #120E24, airy spacing):\n- Timestamp pill 'Today' in center (#1C1733 text-[#9893B8] text-xs px-3 py-1 rounded-full)\n- Received bubble (#1C1733, rounded-2xl rounded-tl-sm text-[#F1F0FF]): 'Hey! Did you see the new design brief?' with timestamp '10:02' in #9893B8\n- Sent bubble (#5B3FD0, rounded-2xl rounded-tr-sm text-white): 'Yes! Working on the chat screens now' with timestamp '10:03' and lavender double-tick icon\n- Received image bubble: card in #1C1733 with an embedded soft gradient preview card ('Natter_V2_Palette.png', 1.4 MB \u2022 Color Scheme with palette icon) and a small floating pink heart reaction pill '\u2764\ufe0f 2' (#FF5C8A background or white badge with pink text/heart) at 10:04\n- Sent voice note bubble in saturated violet (#5B3FD0, rounded-2xl rounded-tr-sm): circular white play button with violet play triangle, animated/styled vertical waveform audio bars, and time '0:42' with double checkmark at 10:05\n- Received reply bubble (#1C1733, rounded-2xl rounded-tl-sm): contains a small nested quote reply header ('You: Working on the chat screens now' with accent line) and main text 'Love it, ship it today?' at 10:06\n- Received typing indicator bubble (#1C1733, rounded-2xl rounded-tl-sm): 3 pulsating violet/lavender dots '\u2022 \u2022 \u2022'\n\n3. Floating Action Rail:\n- A slim vertical rounded floating pill / rail on the right edge in violet (#5B3FD0 or #6A4FE0 shadow-xl) with 4 white icons: camera, image/gallery, mic, location pin.\n\n4. Bottom Composer (docked at bottom, no bottom nav bar):\n- Floating/docked container on #120E24\n- Pill input bar in #1C1733 border border-[#262042] text-[#F1F0FF] placeholder-[#9893B8] 'Message...' with smiley/emoji icon on left and attachment paperclip icon on right\n- Round saturated violet send button (#5B3FD0 hover:bg-[#6A4FE0]) with white send arrow/paper plane icon.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1W_1GYqxGH8Br-ORf4B0e-9cuBilEa8fGFBEBFVMpjZiKa2YjGYEMYJfDltt386PIa5yPLGsmVxiLVih1wUO84SVwGRoEIxiFBRLxcCbGy1KMH7ek7ZK6_M0lkjBxzVSIAHtAoUCZxJajbB7xjQQQHrwN_7WhoouxESI7RYpvcxaB796s-mfNAs3xFNwaYNQZ4ieGvhSRkAJ2-oGs346ZhsV2QmQ0zRO33Vb1xGTfFNB8-PYfx1_aZv3G6r",
+        "name": "projects/13700470284889579391/files/ac7c9778d09b4eaf80f664e6f88ad166"
+       },
+       "theme": {
+        "bodyFont": "MONTSERRAT",
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#5B3FD0",
+        "headlineFont": "MONTSERRAT",
+        "overrideNeutralColor": "#120E24",
+        "overridePrimaryColor": "#5B3FD0",
+        "overrideSecondaryColor": "#1C1733",
+        "overrideTertiaryColor": "#FF5C8A",
+        "roundness": "ROUND_FULL"
+       },
+       "title": "Natter - Maya Chen (Dark)",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "Here is the dark mode **Conversation screen with Maya Chen** for **Natter**:\n\n### Design Highlights & Specifications:\n- **Palette & Contrast**: Built on deep violet-black (`#120E24`), card/received bubble surfaces (`#1C1733`), and control surfaces (`#262042`) with high-contrast lavender-white text (`#F1F0FF`) and muted timestamp hints (`#9893B8`).\n- **Signature Violet Header**: Saturated `#5B3FD0` bar with rounded bottom geometry, hosting the back button, gradient initial avatar (`MC`) with live orange status pill (`#FF9F43`), Maya's status, and circular call / video actions.\n- **Message Flow & Bubble Shapes**: 18px rounded bubbles with signature tight 4px corners:\n  - *Received text*: `#1C1733` card with tight top-left corner (`\"Hey! Did you see the new design brief?\"`).\n  - *Sent text*: Saturated `#5B3FD0` bubble with tight top-right corner, white text, and double-tick delivery indicator.\n  - *Image / Attachment card*: Soft gradient asset card with a pink reaction badge (`\u2764\ufe0f 2`).\n  - *Voice Note*: Saturated violet audio card featuring a clean play button, waveform visualizer bars, and duration (`0:42`).\n  - *Quoted Reply*: Nested context quote (`\"You: Working on the chat screens now\"`) with the reply `\"Love it, ship it today?\"`.\n  - *Typing Indicator*: Micro-bubble with animated pulsating typing dots.\n- **Floating Action Rail**: Slim vertical pill pinned to the right edge with 4 quick-action icons (camera, gallery, mic, location).\n- **Composer**: Dedicated bottom input with rounded pill styling, emoji & attachment triggers, and a saturated violet circular send button. (No navigation bar as requested)."
+   },
+   {
+    "suggestion": "Create an in-call audio/video overlay for Maya Chen in dark mode"
+   },
+   {
+    "suggestion": "Design the image media viewer modal with reaction options"
+   },
+   {
+    "suggestion": "Add the group chat conversation view for 'Design Squad'"
+   }
+  ],
+  "projectId": "13700470284889579391",
+  "sessionId": "2266736904969149440"
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "LIGHT": {
+  "designSystem": {
+   "displayName": "Natter Light",
+   "theme": {
+    "bodyFont": "MONTSERRAT",
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#5B3FD0",
+    "designMd": "# Natter chat app (code.in.30s)\nFriendly messaging mobile app. Airy, clean style with lots of whitespace: white rounded cards (20px radius), fully rounded chat bubbles (18px) with one tight 4px corner, full-round pill search bar and chips, geometric sans (Poppins-like, Montserrat) (bold headings, light grey message previews). ONE saturated violet accent #5B3FD0 used for headers, the active nav icon, sent message bubbles, primary buttons and a vertical violet icon action rail. Small pink #FF5C8A and orange #FF9F43 accents only for reactions, unread badges and online dots. Avatars are initials on soft gradient circles (no photos). Thin rounded line icons. No neon, no emoji except small reaction emoji.\n## Light (hero): very pale lavender-white page #F1F0FF, cards #FFFFFF, raised #E9E6FF, ink #1E1B3A, muted #8A87A6. Violet #5B3FD0 accent.",
+    "headlineFont": "MONTSERRAT",
+    "overrideNeutralColor": "#F1F0FF",
+    "overridePrimaryColor": "#5B3FD0",
+    "overrideSecondaryColor": "#FFFFFF",
+    "overrideTertiaryColor": "#FF5C8A",
+    "roundness": "ROUND_FULL"
+   }
+  },
+  "name": "assets/7366743755589531489",
+  "version": "1"
+ },
+ "DARK": {
+  "designSystem": {
+   "displayName": "Natter Dark",
+   "theme": {
+    "bodyFont": "MONTSERRAT",
+    "colorMode": "DARK",
+    "colorVariant": "FIDELITY",
+    "customColor": "#5B3FD0",
+    "designMd": "# Natter chat app (code.in.30s)\nFriendly messaging mobile app. Airy, clean style with lots of whitespace: white rounded cards (20px radius), fully rounded chat bubbles (18px) with one tight 4px corner, full-round pill search bar and chips, geometric sans (Poppins-like, Montserrat) (bold headings, light grey message previews). ONE saturated violet accent #5B3FD0 used for headers, the active nav icon, sent message bubbles, primary buttons and a vertical violet icon action rail. Small pink #FF5C8A and orange #FF9F43 accents only for reactions, unread badges and online dots. Avatars are initials on soft gradient circles (no photos). Thin rounded line icons. No neon, no emoji except small reaction emoji.\n## Dark: deep violet-black page #120E24, cards #1C1733, raised #262042, ink #F1F0FF, muted #9893B8. Violet #6A4FE0 accent, lighter violet text #A08BFF.",
+    "headlineFont": "MONTSERRAT",
+    "overrideNeutralColor": "#120E24",
+    "overridePrimaryColor": "#5B3FD0",
+    "overrideSecondaryColor": "#1C1733",
+    "overrideTertiaryColor": "#FF5C8A",
+    "roundness": "ROUND_FULL"
+   }
+  },
+  "name": "assets/4255819259862774359",
+  "version": "1"
+ }
+}
