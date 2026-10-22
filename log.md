@@ -12,3 +12,4 @@
 | 2026-10-17 | Food delivery app | Ember | EMBER | Cream + terracotta editorial serif (@codew_ithshivam "Claude" ref) | Live (IG + Gumroad food-delivery-ui-kit) |
 | 2026-10-18 | E-learning / online course app | Lumo | LUMO | Pastel 3D clay (@uiux.build ref) | Live (IG + Gumroad e-learning-ui-kit) |
 | 2026-10-20 | Smart home control app | Hearth | HEARTH | Charcoal + one orange, greige staggered grid (@appuinspiration ref) | Live Oct 20 (IG DetQYZBG1c5, Gumroad smart-home-ui-kit) |
+| 2026-10-22 | Chat app | Natter | NATTER | Pale lavender + one violet, diagonal fanned cascade (@colorhymn ref) | Live Oct 22 (IG DeyWcjLo05S, Gumroad chat-app-ui-kit) |
