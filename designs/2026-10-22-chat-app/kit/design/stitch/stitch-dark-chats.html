@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Natter - Friendly Mobile Messaging</title>
+<!-- Google Fonts: Montserrat & Public Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            // Configured tokens aligned with Brand Anchors
+            brandDark: "#120E24",
+            cardDark: "#1C1733",
+            raisedDark: "#262042",
+            inkText: "#F1F0FF",
+            mutedText: "#9893B8",
+            primaryViolet: "#5B3FD0",
+            accentViolet: "#6A4FE0",
+            lightViolet: "#A08BFF",
+            accentPink: "#FF5C8A",
+            accentOrange: "#FF9F43",
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px",
+            "card": "20px",
+            "bubble": "18px"
+          },
+          spacing: {},
+          fontFamily: {
+            headline: ["Montserrat", "sans-serif"],
+            display: ["Montserrat", "sans-serif"],
+            body: ["Montserrat", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          },
+          fontSize: {}
+        },
+      },
+    }
+  </script>
+<style>
+    /* Custom subtle scrollbar hiding for horizontal chip and story feeds */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#120E24] text-[#F1F0FF] font-body min-h-screen flex justify-center antialiased select-none selection:bg-[#5B3FD0] selection:text-white pb-24">
+<!-- Mobile Screen Container (390px max canvas) -->
+<div class="w-full max-w-md min-h-screen bg-[#120E24] flex flex-col relative overflow-x-hidden">
+<!-- Top Status / Branding Bar from Shared JSON Specs -->
+<header class="sticky top-0 z-40 bg-[#120E24] px-5 pt-3 pb-2 flex justify-between items-center transition-all">
+<div class="flex items-center gap-2">
+<span class="font-headline font-extrabold text-2xl text-[#F1F0FF] tracking-tight">Natter</span>
+<span class="w-2 h-2 rounded-full bg-[#FF5C8A] inline-block shadow-[0_0_8px_#FF5C8A]"></span>
+</div>
+<div class="flex items-center gap-2.5">
+<button aria-label="Search" class="w-10 h-10 rounded-full bg-[#262042] text-[#F1F0FF] flex items-center justify-center hover:bg-[#1C1733] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+<button aria-label="New chat" class="w-10 h-10 rounded-full bg-[#5B3FD0] text-[#F1F0FF] flex items-center justify-center shadow-lg shadow-[#5B3FD0]/30 hover:opacity-95 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[22px]" data-icon="edit_square">edit_square</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-5 pt-1 space-y-5">
+<!-- Header Title with Pink Dot -->
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-baseline gap-1.5">
+<h1 class="font-headline font-bold text-2xl tracking-tight text-[#F1F0FF]">Messages</h1>
+<span class="w-1.5 h-1.5 rounded-full bg-[#FF5C8A]"></span>
+</div>
+<span class="text-xs font-label text-[#9893B8] font-medium tracking-wide">5 CONVERSATIONS</span>
+</div>
+<!-- Pill Search Bar -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-[#9893B8] text-[20px]" data-icon="search">search</span>
+<input class="w-full h-12 pl-11 pr-11 bg-[#262042] text-sm text-[#F1F0FF] placeholder-[#9893B8] rounded-full border-none focus:ring-2 focus:ring-[#6A4FE0] outline-none font-medium transition-all" placeholder="Search chats" type="text"/>
+<button class="absolute right-3.5 text-[#9893B8] hover:text-[#F1F0FF] active:scale-90 transition-transform p-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="mic">mic</span>
+</button>
+</div>
+<!-- Stories Horizontal Tray -->
+<section class="space-y-2">
+<div class="flex items-center justify-between text-xs font-label px-1">
+<span class="text-[#9893B8] font-medium tracking-wide">RECENT STORIES</span>
+<button class="text-[#A08BFF] text-xs font-semibold hover:underline">View all</button>
+</div>
+<div class="flex items-center gap-4 overflow-x-auto no-scrollbar py-1">
+<!-- "Your story" avatar with dashed ring + add icon -->
+<div class="flex flex-col items-center gap-1.5 flex-shrink-0 cursor-pointer group">
+<div class="relative p-0.5 rounded-full border-2 border-dashed border-[#6A4FE0]/70 group-hover:border-[#A08BFF] transition-colors">
+<div class="w-14 h-14 rounded-full bg-gradient-to-tr from-[#262042] to-[#1C1733] flex items-center justify-center font-headline font-semibold text-sm text-[#A08BFF]">
+                You
+              </div>
+<div class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-[#5B3FD0] text-white flex items-center justify-center ring-2 ring-[#120E24]">
+<span class="material-symbols-outlined text-[13px] leading-none" data-icon="add">add</span>
+</div>
+</div>
+<span class="text-[11px] font-medium text-[#9893B8] group-hover:text-[#F1F0FF] transition-colors">Your story</span>
+</div>
+<!-- Story 1: Maya (MC) -->
+<div class="flex flex-col items-center gap-1.5 flex-shrink-0 cursor-pointer group">
+<div class="p-0.5 rounded-full ring-2 ring-[#6A4FE0] group-hover:ring-[#A08BFF] transition-all">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#FF5C8A] via-[#9B51E0] to-[#5B3FD0] flex items-center justify-center font-headline font-bold text-sm text-white shadow-inner">
+                MC
+              </div>
+</div>
+<span class="text-[11px] font-medium text-[#F1F0FF]">Maya</span>
+</div>
+<!-- Story 2: Arjun (AR) -->
+<div class="flex flex-col items-center gap-1.5 flex-shrink-0 cursor-pointer group">
+<div class="p-0.5 rounded-full ring-2 ring-[#6A4FE0] group-hover:ring-[#A08BFF] transition-all">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#7928CA] to-[#4338CA] flex items-center justify-center font-headline font-bold text-sm text-white">
+                AR
+              </div>
+</div>
+<span class="text-[11px] font-medium text-[#F1F0FF]">Arjun</span>
+</div>
+<!-- Story 3: Zoe (ZK) -->
+<div class="flex flex-col items-center gap-1.5 flex-shrink-0 cursor-pointer group">
+<div class="p-0.5 rounded-full ring-2 ring-[#6A4FE0]/60 group-hover:ring-[#A08BFF] transition-all">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#FF9F43] via-[#FF5C8A] to-[#6A4FE0] flex items-center justify-center font-headline font-bold text-sm text-white">
+                ZK
+              </div>
+</div>
+<span class="text-[11px] font-medium text-[#F1F0FF]">Zoe</span>
+</div>
+<!-- Story 4: Dev (DP) -->
+<div class="flex flex-col items-center gap-1.5 flex-shrink-0 cursor-pointer group">
+<div class="p-0.5 rounded-full ring-2 ring-[#262042] group-hover:ring-[#6A4FE0] transition-all">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#6A4FE0] flex items-center justify-center font-headline font-bold text-sm text-[#F1F0FF]">
+                DP
+              </div>
+</div>
+<span class="text-[11px] font-medium text-[#9893B8]">Dev</span>
+</div>
+</div>
+</section>
+<!-- Horizontal Pill Filter Chips -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-1">
+<!-- 1. All (Active) -->
+<button class="h-8 px-4 rounded-full bg-[#5B3FD0] text-white text-xs font-semibold tracking-wide flex items-center justify-center shadow-sm shadow-[#5B3FD0]/40 transition-transform active:scale-95">
+          All
+        </button>
+<!-- 2. Unread 3 -->
+<button class="h-8 px-3.5 rounded-full bg-[#262042] text-[#F1F0FF] text-xs font-medium flex items-center gap-2 hover:bg-[#2c254c] transition-all active:scale-95">
+<span>Unread</span>
+<span class="w-4 h-4 rounded-full bg-[#FF5C8A] text-white text-[10px] font-bold flex items-center justify-center">3</span>
+</button>
+<!-- 3. Groups -->
+<button class="h-8 px-4 rounded-full bg-[#262042] text-[#9893B8] hover:text-[#F1F0FF] text-xs font-medium flex items-center justify-center hover:bg-[#2c254c] transition-all active:scale-95">
+          Groups
+        </button>
+<!-- 4. Calls -->
+<button class="h-8 px-4 rounded-full bg-[#262042] text-[#9893B8] hover:text-[#F1F0FF] text-xs font-medium flex items-center justify-center hover:bg-[#2c254c] transition-all active:scale-95">
+          Calls
+        </button>
+</div>
+<!-- Chat List (Cards with 20px rounded corners & airy spacing) -->
+<section class="space-y-3 pt-1">
+<!-- Chat 1: Maya Chen -->
+<article class="p-3.5 rounded-[20px] bg-[#1C1733] hover:bg-[#221c3e] active:scale-[0.99] transition-all duration-200 cursor-pointer flex items-center gap-3.5 shadow-sm shadow-black/20">
+<div class="relative flex-shrink-0">
+<div class="w-13 h-13 w-[52px] h-[52px] rounded-full bg-gradient-to-tr from-[#FF5C8A] via-[#9B51E0] to-[#5B3FD0] flex items-center justify-center font-headline font-bold text-white text-base shadow-sm">
+              MC
+            </div>
+<!-- Online status indicator dot (orange/green vibrant) -->
+<span class="absolute bottom-0 right-0.5 w-3.5 h-3.5 rounded-full bg-[#FF9F43] ring-2 ring-[#1C1733] shadow-[0_0_6px_#FF9F43]"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<h2 class="font-headline font-bold text-[15px] text-[#F1F0FF] truncate">Maya Chen</h2>
+<span class="text-[11px] font-label font-medium text-[#9893B8]">10:24</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs text-[#9893B8] truncate">
+<span class="material-symbols-outlined text-[16px] text-[#A08BFF]" data-icon="mic">mic</span>
+<span class="truncate">Sent a voice note</span>
+</div>
+<span class="flex-shrink-0 ml-2 min-w-[18px] h-[18px] px-1.5 rounded-full bg-[#5B3FD0] text-white text-[10px] font-bold flex items-center justify-center">
+                2
+              </span>
+</div>
+</div>
+</article>
+<!-- Chat 2: Design Squad (Group) -->
+<article class="p-3.5 rounded-[20px] bg-[#1C1733] hover:bg-[#221c3e] active:scale-[0.99] transition-all duration-200 cursor-pointer flex items-center gap-3.5 shadow-sm shadow-black/20">
+<div class="relative flex-shrink-0">
+<div class="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-[#4338CA] via-[#6A4FE0] to-[#9333EA] flex items-center justify-center font-headline font-bold text-white text-base shadow-sm">
+              DS
+            </div>
+<!-- Group icon badge -->
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-[#262042] text-[#A08BFF] ring-2 ring-[#1C1733] flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px]" data-icon="groups">groups</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-headline font-bold text-[15px] text-[#F1F0FF] truncate">Design Squad</h2>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-[#262042] text-[#A08BFF] font-medium font-label">Team</span>
+</div>
+<span class="text-[11px] font-label font-medium text-[#9893B8]">09:58</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-xs text-[#9893B8] truncate font-normal">
+<span class="text-[#F1F0FF] font-medium">Zoe:</span> see you at 5! 👋
+              </p>
+<span class="flex-shrink-0 ml-2 min-w-[18px] h-[18px] px-1.5 rounded-full bg-[#FF5C8A] text-white text-[10px] font-bold flex items-center justify-center shadow-[0_0_8px_#FF5C8A]/40">
+                5
+              </span>
+</div>
+</div>
+</article>
+<!-- Chat 3: Arjun Rao -->
+<article class="p-3.5 rounded-[20px] bg-[#1C1733] hover:bg-[#221c3e] active:scale-[0.99] transition-all duration-200 cursor-pointer flex items-center gap-3.5 shadow-sm shadow-black/20">
+<div class="relative flex-shrink-0">
+<div class="w-[52px] h-[52px] rounded-full bg-gradient-to-tr from-[#6366F1] to-[#8B5CF6] flex items-center justify-center font-headline font-bold text-white text-base shadow-sm">
+              AR
+            </div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<h2 class="font-headline font-bold text-[15px] text-[#F1F0FF] truncate">Arjun Rao</h2>
+<span class="text-[11px] font-label font-medium text-[#9893B8]">09:12</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs text-[#9893B8] truncate">
+<span class="material-symbols-outlined text-[15px] text-[#A08BFF]" data-icon="done_all">done_all</span>
+<span class="truncate">haha that's perfect</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Chat 4: Priya Patel -->
+<article class="p-3.5 rounded-[20px] bg-[#1C1733] hover:bg-[#221c3e] active:scale-[0.99] transition-all duration-200 cursor-pointer flex items-center gap-3.5 shadow-sm shadow-black/20">
+<div class="relative flex-shrink-0">
+<div class="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-[#06B6D4] via-[#6366F1] to-[#A855F7] flex items-center justify-center font-headline font-bold text-white text-base shadow-sm">
+              PP
+            </div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<h2 class="font-headline font-bold text-[15px] text-[#F1F0FF] truncate">Priya Patel</h2>
+<span class="text-[11px] font-label font-medium text-[#9893B8]">Yesterday</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs text-[#9893B8] truncate">
+<span class="material-symbols-outlined text-[16px] text-[#9893B8]" data-icon="photo_camera">photo_camera</span>
+<span class="truncate">Photo</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Chat 5: Leo Park (typing micro-interaction) -->
+<article class="p-3.5 rounded-[20px] bg-[#1C1733] hover:bg-[#221c3e] active:scale-[0.99] transition-all duration-200 cursor-pointer flex items-center gap-3.5 shadow-sm shadow-black/20">
+<div class="relative flex-shrink-0">
+<div class="w-[52px] h-[52px] rounded-full bg-gradient-to-tr from-[#A855F7] to-[#EC4899] flex items-center justify-center font-headline font-bold text-white text-base shadow-sm">
+              LP
+            </div>
+<!-- Online status indicator dot -->
+<span class="absolute bottom-0 right-0.5 w-3.5 h-3.5 rounded-full bg-[#FF9F43] ring-2 ring-[#1C1733]"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<h2 class="font-headline font-bold text-[15px] text-[#F1F0FF] truncate">Leo Park</h2>
+<span class="text-[11px] font-label font-semibold text-[#A08BFF]">Now</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-xs text-[#A08BFF] font-medium tracking-wide">
+<span class="truncate">typing</span>
+<span class="flex gap-1 items-center">
+<span class="w-1.5 h-1.5 rounded-full bg-[#A08BFF] animate-pulse"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#A08BFF] animate-pulse [animation-delay:200ms]"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#A08BFF] animate-pulse [animation-delay:400ms]"></span>
+</span>
+</div>
+</div>
+</div>
+</article>
+</section>
+<!-- Minimal Quick Invite Banner (Airy whitespace & high-end design element) -->
+<section class="p-4 rounded-[20px] bg-gradient-to-r from-[#262042] to-[#1C1733] flex items-center justify-between border-0 shadow-lg shadow-black/20 mt-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#5B3FD0]/30 flex items-center justify-center text-[#A08BFF]">
+<span class="material-symbols-outlined text-[22px]" data-icon="person_add">person_add</span>
+</div>
+<div>
+<h3 class="text-xs font-headline font-bold text-[#F1F0FF]">Invite your close circle</h3>
+<p class="text-[11px] font-body text-[#9893B8]">Simple, fast, end-to-end encrypted</p>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-full bg-[#5B3FD0] text-white text-[11px] font-semibold hover:bg-[#6A4FE0] active:scale-95 transition-all">
+          Share
+        </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Executed strictly from Shared Components JSON) -->
+<!-- JSON Blueprint: 
+         destination_count: 4
+         label_texts: ["Chats", "Calls", "Stories", "Profile"]
+         icons: ["chat_bubble", "call", "auto_stories", "person"]
+         style_separation_logic: "bg-[#1C1733] dark:bg-[#1C1733] shadow-lg"
+         Shell Border Ban: PROHIBIT all border-t or border-b
+    -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 flex justify-around items-center px-4 py-2.5 max-w-md mx-auto bg-[#1C1733] dark:bg-[#1C1733] rounded-t-2xl shadow-2xl shadow-black/40">
+<!-- 1. Chats (ACTIVE Destination: Matches Current Page Subject) -->
+<a class="flex flex-col items-center justify-center text-[#6A4FE0] dark:text-[#A08BFF] font-semibold py-1 active:scale-95 transition-transform duration-150" href="#chats">
+<span class="material-symbols-outlined text-[24px] material-symbols-fill" data-icon="chat_bubble" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-headline font-medium text-xs mt-0.5">Chats</span>
+</a>
+<!-- 2. Calls (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#9893B8] dark:text-[#9893B8] py-1 hover:text-[#F1F0FF] transition-colors active:scale-95 duration-150" href="#calls">
+<span class="material-symbols-outlined text-[24px]" data-icon="call">call</span>
+<span class="font-headline font-medium text-xs mt-0.5">Calls</span>
+</a>
+<!-- 3. Stories (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#9893B8] dark:text-[#9893B8] py-1 hover:text-[#F1F0FF] transition-colors active:scale-95 duration-150" href="#stories">
+<span class="material-symbols-outlined text-[24px]" data-icon="auto_stories">auto_stories</span>
+<span class="font-headline font-medium text-xs mt-0.5">Stories</span>
+</a>
+<!-- 4. Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#9893B8] dark:text-[#9893B8] py-1 hover:text-[#F1F0FF] transition-colors active:scale-95 duration-150" href="#profile">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-headline font-medium text-xs mt-0.5">Profile</span>
+</a>
+</nav>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Interactive filter chips toggle state
+      const filterChips = document.querySelectorAll('main div.overflow-x-auto button');
+      filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          filterChips.forEach(c => {
+            c.classList.remove('bg-[#5B3FD0]', 'text-white', 'shadow-[#5B3FD0]/40');
+            c.classList.add('bg-[#262042]', 'text-[#9893B8]');
+          });
+          chip.classList.remove('bg-[#262042]', 'text-[#9893B8]');
+          chip.classList.add('bg-[#5B3FD0]', 'text-white', 'shadow-sm', 'shadow-[#5B3FD0]/40');
+        });
+      });
+    });
+  </script>
+</body></html>

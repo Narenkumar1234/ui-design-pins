@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Natter - Messages</title>
+<!-- Google Fonts: Montserrat & Public Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              page: '#F1F0FF',
+              card: '#FFFFFF',
+              raised: '#E9E6FF',
+              ink: '#1E1B3A',
+              muted: '#8A87A6',
+              violet: '#5B3FD0',
+              pink: '#FF5C8A',
+              orange: '#FF9F43',
+            }
+          },
+          borderRadius: {
+            'card': '20px',
+            'bubble': '18px',
+            DEFAULT: "1rem",
+            lg: "2rem",
+            xl: "3rem",
+            full: "9999px"
+          },
+          fontFamily: {
+            headline: ["Montserrat", "sans-serif"],
+            display: ["Montserrat", "sans-serif"],
+            body: ["Montserrat", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Material symbol helper */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Hide scrollbar for clean horizontal story / chips view */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Pulsing typing animation */
+    @keyframes typingPulse {
+      0%, 100% { opacity: 0.3; transform: scale(0.85); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+    .typing-dot-1 { animation: typingPulse 1.2s infinite ease-in-out; }
+    .typing-dot-2 { animation: typingPulse 1.2s infinite ease-in-out 0.2s; }
+    .typing-dot-3 { animation: typingPulse 1.2s infinite ease-in-out 0.4s; }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-900 min-h-screen flex items-center justify-center font-body antialiased selection:bg-[#5B3FD0] selection:text-white p-0 sm:p-4">
+<!-- Mobile Viewport Canvas (390 x 844 approx frame) -->
+<div class="relative w-full max-w-[390px] h-screen sm:h-[844px] bg-[#F1F0FF] overflow-hidden flex flex-col sm:rounded-[44px] shadow-2xl border border-slate-200/50">
+<!-- Status Bar Simulation -->
+<div class="w-full pt-3 px-7 flex justify-between items-center text-xs font-semibold text-[#1E1B3A] shrink-0 z-30 select-none">
+<span>9:41</span>
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[15px] leading-none" style="font-size: 15px;">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[15px] leading-none" style="font-size: 15px;">wifi</span>
+<span class="material-symbols-outlined text-[18px] leading-none" style="font-size: 18px;">battery_full</span>
+</div>
+</div>
+<!-- Header Section -->
+<header class="px-5 pt-3 pb-2 flex items-center justify-between shrink-0">
+<div class="flex items-center space-x-2">
+<h1 class="text-2xl font-black font-headline tracking-tight text-[#1E1B3A]">Messages</h1>
+<span class="w-2 h-2 rounded-full bg-[#FF5C8A] self-start mt-1 animate-pulse"></span>
+</div>
+<div class="flex items-center space-x-2.5">
+<!-- Circular Search Quick Action -->
+<button aria-label="Search" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#1E1B3A] shadow-sm hover:bg-[#E9E6FF] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-xl">search</span>
+</button>
+<!-- Primary New Chat Button (Vibrant Violet #5B3FD0) -->
+<button aria-label="New chat" class="w-10 h-10 rounded-full bg-[#5B3FD0] text-white flex items-center justify-center shadow-md shadow-[#5B3FD0]/30 hover:bg-[#4d33b8] active:scale-90 transition-all">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<main class="flex-1 overflow-y-auto overflow-x-hidden no-scrollbar px-5 pb-24 pt-1 space-y-4">
+<!-- Pill-Shaped Search Bar -->
+<section class="relative">
+<div class="flex items-center bg-[#E9E6FF]/80 backdrop-blur-sm rounded-full px-4 py-2.5 shadow-[inset_0_1px_2px_rgba(91,63,208,0.06)] border border-[#5B3FD0]/10 focus-within:ring-2 focus-within:ring-[#5B3FD0]/40 transition-all">
+<span class="material-symbols-outlined text-[#8A87A6] mr-2.5 text-[20px]">search</span>
+<input class="bg-transparent text-sm w-full font-medium text-[#1E1B3A] placeholder-[#8A87A6] focus:outline-none border-none p-0 focus:ring-0 leading-tight" placeholder="Search chats" type="text"/>
+<button class="text-[#8A87A6] hover:text-[#5B3FD0] transition-colors p-0.5">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+</div>
+</section>
+<!-- Stories / Status Horizontal Row -->
+<section class="py-1">
+<div class="flex items-center space-x-3.5 overflow-x-auto no-scrollbar py-1">
+<!-- "Your story" with dashed/ring and + icon -->
+<div class="flex flex-col items-center shrink-0 cursor-pointer group">
+<div class="relative p-0.5">
+<div class="w-[58px] h-[58px] rounded-full p-[2px] border-2 border-dashed border-[#5B3FD0] flex items-center justify-center group-hover:rotate-12 transition-transform">
+<div class="w-full h-full rounded-full bg-gradient-to-tr from-[#E9E6FF] to-white flex items-center justify-center text-[#5B3FD0] font-headline font-bold text-sm shadow-inner">
+                  You
+                </div>
+</div>
+<div class="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-[#5B3FD0] text-white flex items-center justify-center border-2 border-[#F1F0FF] shadow-sm">
+<span class="material-symbols-outlined text-[13px] font-bold">add</span>
+</div>
+</div>
+<span class="text-xs font-medium text-[#1E1B3A] mt-1.5 tracking-tight">Your story</span>
+</div>
+<!-- Maya -->
+<div class="flex flex-col items-center shrink-0 cursor-pointer active:scale-95 transition-transform">
+<div class="p-[2.5px] rounded-full bg-gradient-to-tr from-[#5B3FD0] via-[#FF5C8A] to-[#FF9F43] shadow-sm">
+<div class="p-0.5 bg-[#F1F0FF] rounded-full">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFD3A5] to-[#FD6585] flex items-center justify-center text-white font-headline font-bold text-sm shadow-inner">
+                  MC
+                </div>
+</div>
+</div>
+<span class="text-xs font-medium text-[#1E1B3A] mt-1.5 tracking-tight">Maya</span>
+</div>
+<!-- Arjun -->
+<div class="flex flex-col items-center shrink-0 cursor-pointer active:scale-95 transition-transform">
+<div class="p-[2.5px] rounded-full bg-gradient-to-tr from-[#5B3FD0] to-[#5B3FD0] shadow-sm">
+<div class="p-0.5 bg-[#F1F0FF] rounded-full">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#A18CD1] to-[#FBC2EB] flex items-center justify-center text-white font-headline font-bold text-sm shadow-inner">
+                  AR
+                </div>
+</div>
+</div>
+<span class="text-xs font-medium text-[#1E1B3A] mt-1.5 tracking-tight">Arjun</span>
+</div>
+<!-- Zoe -->
+<div class="flex flex-col items-center shrink-0 cursor-pointer active:scale-95 transition-transform">
+<div class="p-[2.5px] rounded-full bg-gradient-to-tr from-[#5B3FD0] via-[#FF5C8A] to-[#8A87A6] shadow-sm">
+<div class="p-0.5 bg-[#F1F0FF] rounded-full">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#84FAB0] to-[#8FD3F4] flex items-center justify-center text-[#1E1B3A] font-headline font-bold text-sm shadow-inner">
+                  ZK
+                </div>
+</div>
+</div>
+<span class="text-xs font-medium text-[#1E1B3A] mt-1.5 tracking-tight">Zoe</span>
+</div>
+<!-- Dev -->
+<div class="flex flex-col items-center shrink-0 cursor-pointer active:scale-95 transition-transform">
+<div class="p-[2px] rounded-full border border-[#8A87A6]/40">
+<div class="p-0.5 bg-[#F1F0FF] rounded-full">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#CFD9DF] to-[#E2EBF0] flex items-center justify-center text-[#1E1B3A] font-headline font-semibold text-sm shadow-inner">
+                  DP
+                </div>
+</div>
+</div>
+<span class="text-xs font-medium text-[#8A87A6] mt-1.5 tracking-tight">Dev</span>
+</div>
+</div>
+</section>
+<!-- Filter Chips Row -->
+<section class="flex items-center space-x-2 overflow-x-auto no-scrollbar pt-1 pb-1">
+<!-- Active: All -->
+<button class="px-4 py-1.5 rounded-full bg-[#5B3FD0] text-white text-xs font-semibold shadow-sm shadow-[#5B3FD0]/25 transition-transform active:scale-95 whitespace-nowrap">
+          All
+        </button>
+<!-- Unread (3) with soft pink highlight -->
+<button class="px-3.5 py-1.5 rounded-full bg-white text-[#1E1B3A] text-xs font-semibold shadow-sm hover:bg-[#E9E6FF] transition-all flex items-center space-x-1.5 border border-slate-100 whitespace-nowrap active:scale-95">
+<span>Unread</span>
+<span class="px-1.5 py-0.2 rounded-full bg-[#FF5C8A] text-white text-[10px] font-bold">3</span>
+</button>
+<!-- Groups -->
+<button class="px-4 py-1.5 rounded-full bg-white text-[#8A87A6] hover:text-[#1E1B3A] text-xs font-medium shadow-sm hover:bg-[#E9E6FF] transition-all border border-slate-100 whitespace-nowrap active:scale-95">
+          Groups
+        </button>
+<!-- Calls -->
+<button class="px-4 py-1.5 rounded-full bg-white text-[#8A87A6] hover:text-[#1E1B3A] text-xs font-medium shadow-sm hover:bg-[#E9E6FF] transition-all border border-slate-100 whitespace-nowrap active:scale-95">
+          Calls
+        </button>
+</section>
+<!-- Chat List (White rounded cards, 20px radius, generous airy spacing) -->
+<section class="space-y-2.5 pt-1">
+<!-- Card Row 1: Maya Chen (Unread voice note + online dot) -->
+<div class="bg-white rounded-[20px] p-3.5 flex items-center justify-between shadow-[0_4px_16px_rgba(91,63,208,0.04)] border border-white hover:border-[#5B3FD0]/15 active:scale-[0.99] transition-all cursor-pointer">
+<div class="flex items-center space-x-3.5 min-w-0">
+<!-- Initial Avatar with online dot -->
+<div class="relative shrink-0">
+<div class="w-13 h-13 w-[52px] h-[52px] rounded-full bg-gradient-to-br from-[#FFD3A5] via-[#FD6585] to-[#A18CD1] flex items-center justify-center text-white font-headline font-bold text-base shadow-sm">
+                MC
+              </div>
+<!-- Online status dot (Orange/Pink accent) -->
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-[#FF9F43] border-2 border-white rounded-full"></span>
+</div>
+<!-- Content preview -->
+<div class="min-w-0 flex-1">
+<div class="flex items-center space-x-1.5">
+<h2 class="text-sm font-bold font-headline text-[#1E1B3A] truncate">Maya Chen</h2>
+</div>
+<div class="flex items-center text-xs text-[#8A87A6] mt-0.5 space-x-1 truncate font-medium">
+<span class="text-[#5B3FD0]">🎙️</span>
+<span class="truncate text-[#1E1B3A] font-medium">Voice note (0:34)</span>
+</div>
+</div>
+</div>
+<!-- Time & Unread Badge -->
+<div class="flex flex-col items-end shrink-0 ml-3 space-y-1.5">
+<span class="text-[11px] font-semibold text-[#5B3FD0]">10:24</span>
+<div class="min-w-[20px] h-5 px-1.5 rounded-full bg-[#5B3FD0] text-white text-[11px] font-bold flex items-center justify-center shadow-sm">
+              2
+            </div>
+</div>
+</div>
+<!-- Card Row 2: Design Squad (Group chat + pink unread badge) -->
+<div class="bg-white rounded-[20px] p-3.5 flex items-center justify-between shadow-[0_4px_16px_rgba(91,63,208,0.04)] border border-white hover:border-[#5B3FD0]/15 active:scale-[0.99] transition-all cursor-pointer">
+<div class="flex items-center space-x-3.5 min-w-0">
+<!-- Group Initial Avatar -->
+<div class="relative shrink-0">
+<div class="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-[#667EEA] to-[#764BA2] flex items-center justify-center text-white font-headline font-bold text-base shadow-sm">
+                DS
+              </div>
+<!-- Group Multi-user Badge indicator -->
+<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-[#E9E6FF] text-[#5B3FD0] border-2 border-white rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] font-bold">group</span>
+</span>
+</div>
+<div class="min-w-0 flex-1">
+<h2 class="text-sm font-bold font-headline text-[#1E1B3A] truncate">Design Squad</h2>
+<p class="text-xs text-[#8A87A6] mt-0.5 truncate font-normal">
+<span class="font-medium text-[#1E1B3A]">Zoe:</span> see you all at 5! 👋
+              </p>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 ml-3 space-y-1.5">
+<span class="text-[11px] font-semibold text-[#FF5C8A]">09:58</span>
+<div class="min-w-[20px] h-5 px-1.5 rounded-full bg-[#FF5C8A] text-white text-[11px] font-bold flex items-center justify-center shadow-sm">
+              5
+            </div>
+</div>
+</div>
+<!-- Card Row 3: Arjun Rao (Read state with double check) -->
+<div class="bg-white rounded-[20px] p-3.5 flex items-center justify-between shadow-[0_4px_16px_rgba(91,63,208,0.04)] border border-white hover:border-[#5B3FD0]/15 active:scale-[0.99] transition-all cursor-pointer">
+<div class="flex items-center space-x-3.5 min-w-0">
+<!-- Initial Avatar -->
+<div class="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-[#FFA07A] to-[#FF6384] flex items-center justify-center text-white font-headline font-bold text-base shadow-sm shrink-0">
+              AR
+            </div>
+<div class="min-w-0 flex-1">
+<h2 class="text-sm font-bold font-headline text-[#1E1B3A] truncate">Arjun Rao</h2>
+<div class="flex items-center space-x-1 text-xs text-[#8A87A6] mt-0.5 truncate">
+<span class="material-symbols-outlined text-[15px] text-[#5B3FD0] leading-none fill-icon">done_all</span>
+<span class="truncate">haha that's totally perfect</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 ml-3">
+<span class="text-[11px] font-medium text-[#8A87A6]">09:12</span>
+</div>
+</div>
+<!-- Card Row 4: Priya Patel (Photo attachment) -->
+<div class="bg-white rounded-[20px] p-3.5 flex items-center justify-between shadow-[0_4px_16px_rgba(91,63,208,0.04)] border border-white hover:border-[#5B3FD0]/15 active:scale-[0.99] transition-all cursor-pointer">
+<div class="flex items-center space-x-3.5 min-w-0">
+<!-- Initial Avatar -->
+<div class="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-[#84FAB0] via-[#8FD3F4] to-[#B19FFF] flex items-center justify-center text-[#1E1B3A] font-headline font-bold text-base shadow-sm shrink-0">
+              PP
+            </div>
+<div class="min-w-0 flex-1">
+<h2 class="text-sm font-bold font-headline text-[#1E1B3A] truncate">Priya Patel</h2>
+<div class="flex items-center space-x-1.5 text-xs text-[#8A87A6] mt-0.5 truncate">
+<span class="material-symbols-outlined text-[15px] text-[#5B3FD0]">photo_camera</span>
+<span class="truncate font-medium text-[#1E1B3A]">Photo</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 ml-3">
+<span class="text-[11px] font-medium text-[#8A87A6]">Yesterday</span>
+</div>
+</div>
+<!-- Card Row 5: Leo Park (Real-time Typing Indicator) -->
+<div class="bg-white rounded-[20px] p-3.5 flex items-center justify-between shadow-[0_4px_16px_rgba(91,63,208,0.04)] border border-white hover:border-[#5B3FD0]/15 active:scale-[0.99] transition-all cursor-pointer">
+<div class="flex items-center space-x-3.5 min-w-0">
+<!-- Initial Avatar -->
+<div class="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-[#A18CD1] to-[#FBC2EB] flex items-center justify-center text-white font-headline font-bold text-base shadow-sm shrink-0">
+              LP
+            </div>
+<div class="min-w-0 flex-1">
+<h2 class="text-sm font-bold font-headline text-[#1E1B3A] truncate">Leo Park</h2>
+<div class="flex items-center space-x-1.5 text-xs mt-0.5 text-[#5B3FD0] font-semibold">
+<div class="flex items-center space-x-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#5B3FD0] typing-dot-1"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#5B3FD0] typing-dot-2"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#5B3FD0] typing-dot-3"></span>
+</div>
+<span class="italic tracking-tight text-[11.5px]">typing...</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 ml-3">
+<span class="text-[11px] font-bold text-[#5B3FD0]">Now</span>
+</div>
+</div>
+</section>
+<!-- Bottom Floating Space Compensator -->
+<div class="h-6"></div>
+</main>
+<!-- Docked Bottom Navigation Bar (Adhering to JSON Blueprint) -->
+<!-- JSON Blueprint: Icons: ["chat_bubble", "call", "groups", "settings"], active: chat_bubble -->
+<nav class="fixed sm:absolute bottom-0 left-0 w-full z-40 bg-white/90 backdrop-blur-lg rounded-t-[28px] shadow-[0_-4px_24px_rgba(91,63,208,0.06)] px-6 py-2.5 flex justify-around items-center border-t border-slate-100/80">
+<!-- Nav Item 1: Chats (ACTIVE) -->
+<button class="flex flex-col items-center justify-center group active:scale-90 transition-transform">
+<div class="flex items-center justify-center text-[#5B3FD0] bg-[#5B3FD0]/10 rounded-full w-12 h-11 transition-all">
+<span class="material-symbols-outlined text-[23px] fill-icon">chat_bubble</span>
+</div>
+<span class="font-headline font-bold text-[10px] text-[#5B3FD0] mt-0.5">Chats</span>
+</button>
+<!-- Nav Item 2: Calls -->
+<button class="flex flex-col items-center justify-center group active:scale-90 transition-transform text-[#8A87A6] hover:text-[#5B3FD0]">
+<div class="flex items-center justify-center rounded-full w-12 h-11 transition-all">
+<span class="material-symbols-outlined text-[23px]">call</span>
+</div>
+<span class="font-label font-medium text-[10px] text-[#8A87A6] group-hover:text-[#5B3FD0] mt-0.5">Calls</span>
+</button>
+<!-- Nav Item 3: Groups / Stories -->
+<button class="flex flex-col items-center justify-center group active:scale-90 transition-transform text-[#8A87A6] hover:text-[#5B3FD0]">
+<div class="flex items-center justify-center rounded-full w-12 h-11 transition-all">
+<span class="material-symbols-outlined text-[23px]">groups</span>
+</div>
+<span class="font-label font-medium text-[10px] text-[#8A87A6] group-hover:text-[#5B3FD0] mt-0.5">Groups</span>
+</button>
+<!-- Nav Item 4: Settings / Profile -->
+<button class="flex flex-col items-center justify-center group active:scale-90 transition-transform text-[#8A87A6] hover:text-[#5B3FD0]">
+<div class="flex items-center justify-center rounded-full w-12 h-11 transition-all">
+<span class="material-symbols-outlined text-[23px]">settings</span>
+</div>
+<span class="font-label font-medium text-[10px] text-[#8A87A6] group-hover:text-[#5B3FD0] mt-0.5">Settings</span>
+</button>
+</nav>
+<!-- iOS Home Indicator Pill -->
+<div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-300/60 rounded-full pointer-events-none z-50 hidden sm:block"></div>
+</div>
+</body></html>
