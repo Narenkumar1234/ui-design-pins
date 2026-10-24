@@ -1,0 +1,11 @@
+Glassmorphism Weather App UI: Nimbus Light + Dark · Front-End Project Idea
+
+Front-end project idea: Nimbus, a glassmorphism weather mobile app UI. A home screen with a big thin temperature (tap for °C/°F), a frosted Highlights card with a rain alert, 24-hour forecast pills with Conditions / Rain / Wind tabs and a next-days list; a forecast screen with an interactive 24-hour temperature, rain and wind chart and a 10-day list; a saved-cities screen with search and reordering; a details screen with an AQI scale, UV index, wind compass, sunrise/sunset arc and pressure gauge; and settings for units, theme and live weather. Day mode is a blue-to-peach sky (#4FA3F7, #8CCBFF, #FFD6A5) with white 26% frosted-glass cards; night mode is a starry navy sky (#071026 to #1D3B78) with a soft moon. Sora font, sun accent #FFB238, rain #2578DE. Build it with HTML, Tailwind CSS and vanilla JavaScript (optional live data from the free Open-Meteo API with localStorage caching), then go full-stack with Next.js, a weather API proxy, Redis caching, auth + saved cities and PWA push alerts. A weather app UI kit from @code.in.30s, comment NIMBUS on Instagram for the HTML/CSS kit.
+
+#weatherapp #glassmorphism #uidesign #mobileui #darkmode #frontenddevelopment #tailwindcss #studentprojects #appdesign #apiproject
+
+Alt text: Three mobile screens of the Nimbus weather app softly fanned on a frosted-glass panel over a blue-to-peach sky: a light forecast screen with a 24-hour temperature chart and a 10-day list; a light home screen for Bengaluru showing a sun-and-cloud icon, 27°, "Partly cloudy", a Highlights card with a rain alert and wind, humidity and rain stats; and a dark night home screen for New York with a crescent moon, 8° and "Clear night". Below are eight palette swatches with hex codes (sky, mist, peach, sun, rain, ink, night, glass), a fonts card (Sora) and a "Build it" card for a weather app with saved cities and rain alerts.
+
+Board: UI Design Inspiration (or UI Design / Frontend Projects)
+
+Link: https://narenkumar1.gumroad.com/l/weather-app-ui-kit

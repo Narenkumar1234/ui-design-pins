@@ -1,0 +1,28 @@
+This weather app is just HTML + a lot of glass ☁️🌤️
+
+Build this → Nimbus, a glassmorphism weather app
+
+1️⃣ Home: big thin 27°, tap it for °F, a Highlights card ("Rain likely around 16:00") and 24-hour pills with Conditions · Rain · Wind tabs
+2️⃣ Forecast: a 24-hour chart you can tap, drag or arrow-key through, plus a 10-day list with expandable rows
+3️⃣ Cities: search, add up to 12 cities, reorder in Edit mode, local time on every card
+4️⃣ Details: AQI scale, UV, wind compass, sunrise/sunset arc and a pressure gauge, each with an info sheet
+5️⃣ Settings: units with live preview, Day · Night · Auto, animated sky and a live weather switch (Open-Meteo, no API key)
+6️⃣ Sky-to-peach day mode + a starry navy night mode with a soft moon
+
+🎓 Student project idea: make it full-stack. Next.js front end, an API route that proxies a weather API (keys stay on the server), Redis caching per location, auth + saved cities in Postgres, and a PWA that sends "rain in 1 hour" push alerts. Stretch: air quality API, radar map, offline last-known forecast
+
+🎨 Palette
+Day sky: #4FA3F7 → #8CCBFF → peach #FFD6A5
+Night sky: #071026 → #0F2350 → #1D3B78
+Glass: white 26% + white 60% border, blur 24px
+Ink #0F2A4A · sun #FFB238 · rain #2578DE
+
+🛠 Stack: HTML · Tailwind CSS · vanilla JS · Sora · cities, units, theme + a 15-min weather cache in localStorage
+
+💬 Comment NIMBUS to get the HTML/CSS
+
+Save this for your next project ✨
+
+Style inspo: @iabout_tech
+
+#weatherapp #glassmorphism #uidesign #uiux #mobileui #appdesign #darkmode #frontenddevelopment #webdevelopment #tailwindcss #javascript #apiproject #codingprojects #studentdeveloper #codein30s
