@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nimbus - Weather Details</title>
+<!-- Google Fonts: Sora & Public Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;600;700&amp;family=Sora:wght@200;300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {},
+          fontFamily: {
+            headline: ["Sora", "sans-serif"],
+            display: ["Sora", "sans-serif"],
+            body: ["Sora", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          },
+          fontSize: {}
+        },
+      },
+    }
+  </script>
+<style>
+    /* Custom glass styling & token constraints */
+    .glass-tile {
+      background: rgba(255, 255, 255, 0.24);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 28px;
+      box-shadow: 0 10px 30px -10px rgba(15, 42, 74, 0.08), 0 4px 12px -2px rgba(255, 255, 255, 0.4) inset;
+    }
+
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+
+    /* Prevent mobile bouncing for exact app container */
+    body {
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-900 flex items-center justify-center min-h-screen p-0 sm:p-4 font-body">
+<!-- Mobile Frame 390 x 844 Viewport -->
+<main class="relative w-[390px] h-[844px] overflow-hidden rounded-none sm:rounded-[48px] shadow-2xl flex flex-col justify-between" style="background: linear-gradient(180deg, #4FA3F7 0%, #8CCBFF 52%, #FFD6A5 100%);">
+<!-- Top App Bar & Status Area -->
+<header class="w-full pt-3 px-5 z-20 flex-shrink-0">
+<!-- iOS Status Bar (9:41) -->
+<div class="flex justify-between items-center h-6 text-[#0F2A4A] px-1 mb-1">
+<span class="text-[14px] font-headline font-semibold tracking-tight">9:41</span>
+<div class="flex items-center gap-1.5 text-xs font-semibold">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'wght' 600;">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'wght' 600;">wifi</span>
+<span class="material-symbols-outlined text-[18px] rotate-90" style="font-variation-settings: 'wght' 600;">battery_full</span>
+</div>
+</div>
+<!-- Navigation Bar (Shared Component Anchors) -->
+<div class="flex items-center justify-between py-2">
+<!-- Back Button -->
+<button aria-label="Go back" class="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-[#0F2A4A] shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<!-- Location Title & Subtitle Badge -->
+<div class="text-center flex flex-col items-center">
+<div class="flex items-center gap-1 text-[#0F2A4A]">
+<h1 class="font-headline font-bold text-[19px] tracking-tight text-[#0F2A4A]">Bengaluru</h1>
+<span class="material-symbols-outlined text-[16px] text-[#0F2A4A]/70" style="font-variation-settings: 'wght' 600;">near_me</span>
+</div>
+<span class="font-label text-[10px] tracking-widest text-[#4D6A8C] font-bold uppercase bg-white/30 px-2 py-0.5 rounded-full mt-0.5 border border-white/40">Details</span>
+</div>
+<!-- Trailing Action -->
+<button aria-label="Search and Share" class="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-[#0F2A4A] shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content Bento Grid (Fit strictly in 390x844) -->
+<div class="px-4 py-2 flex flex-col gap-2.5 flex-1 justify-center max-w-[390px]">
+<!-- ROW 1: Air Quality & UV Index (2-Column) -->
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Air Quality Tile -->
+<div class="glass-tile p-3.5 flex flex-col justify-between h-[134px]">
+<div>
+<div class="flex items-center justify-between text-[#4D6A8C]">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">air</span>
+<span class="font-label text-[10px] tracking-widest font-bold uppercase">AIR QUALITY</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline font-bold text-[28px] text-[#0F2A4A] leading-none">42</span>
+<span class="text-[11px] font-semibold font-headline text-[#10B981] bg-[#10B981]/15 px-2 py-0.5 rounded-full border border-[#10B981]/20">Good</span>
+</div>
+</div>
+<div>
+<!-- AQI Spectrum Bar -->
+<div class="relative w-full h-1.5 rounded-full my-2" style="background: linear-gradient(90deg, #3DD68C 0%, #FFD54A 38%, #FF8A3D 70%, #EF4444 100%);">
+<div class="absolute top-1/2 left-[28%] -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-md border-[1.5px] border-[#0F2A4A]/20"></div>
+</div>
+<p class="font-label text-[9.5px] text-[#4D6A8C] leading-snug line-clamp-1">Ideal for outdoor activities.</p>
+</div>
+</div>
+<!-- UV Index Tile -->
+<div class="glass-tile p-3.5 flex flex-col justify-between h-[134px]">
+<div>
+<div class="flex items-center justify-between text-[#4D6A8C]">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">wb_sunny</span>
+<span class="font-label text-[10px] tracking-widest font-bold uppercase">UV INDEX</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline font-bold text-[28px] text-[#0F2A4A] leading-none">6</span>
+<span class="text-[11px] font-semibold font-headline text-[#0F2A4A] bg-[#FFB238] px-2 py-0.5 rounded-full shadow-sm">High</span>
+</div>
+</div>
+<div>
+<!-- UV Spectrum Bar -->
+<div class="relative w-full h-1.5 rounded-full my-2" style="background: linear-gradient(90deg, #3DD68C 0%, #FFD54A 35%, #FF8A3D 65%, #A855F7 100%);">
+<div class="absolute top-1/2 left-[60%] -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-md border-[1.5px] border-[#0F2A4A]/20"></div>
+</div>
+<p class="font-label text-[9.5px] text-[#4D6A8C] leading-snug line-clamp-1">Protection needed to 17:00.</p>
+</div>
+</div>
+</div>
+<!-- ROW 2: Wind & Humidity (2-Column) -->
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Wind Tile with Compass Dial -->
+<div class="glass-tile p-3.5 flex flex-col justify-between h-[134px]">
+<div class="flex items-center gap-1 text-[#4D6A8C]">
+<span class="material-symbols-outlined text-[15px]">navigation</span>
+<span class="font-label text-[10px] tracking-widest font-bold uppercase">WIND</span>
+</div>
+<div class="flex items-center justify-between gap-1 my-0.5">
+<div>
+<div class="text-[20px] font-headline font-bold text-[#0F2A4A] leading-tight">12 <span class="text-xs font-medium text-[#4D6A8C]">km/h</span></div>
+<div class="text-[12px] font-semibold text-[#0F2A4A]">NE <span class="text-[10px] font-normal text-[#4D6A8C]">(45°)</span></div>
+</div>
+<!-- Vector Compass Visual -->
+<div class="relative w-11 h-11 rounded-full border border-white/60 bg-white/20 flex items-center justify-center shadow-inner flex-shrink-0">
+<span class="absolute top-0.5 text-[8px] font-bold text-[#4D6A8C]">N</span>
+<span class="absolute right-1 text-[8px] font-bold text-[#4D6A8C]/60">E</span>
+<span class="absolute bottom-0.5 text-[8px] font-bold text-[#4D6A8C]/60">S</span>
+<span class="absolute left-1 text-[8px] font-bold text-[#4D6A8C]/60">W</span>
+<!-- Pointer Needle pointing NE (45deg) -->
+<div class="w-full h-full flex items-center justify-center transform rotate-45 pointer-events-none">
+<div class="w-1 h-7 flex flex-col items-center justify-between">
+<div class="w-0 h-0 border-l-[3.5px] border-l-transparent border-r-[3.5px] border-r-transparent border-b-[9px] border-b-[#FFB238]"></div>
+<div class="w-0 h-0 border-l-[3px] border-l-transparent border-r-[3px] border-r-transparent border-t-[7px] border-t-white/80"></div>
+</div>
+</div>
+</div>
+</div>
+<p class="font-label text-[9.5px] text-[#4D6A8C] leading-snug">Gusts up to 18 km/h</p>
+</div>
+<!-- Humidity Tile -->
+<div class="glass-tile p-3.5 flex flex-col justify-between h-[134px]">
+<div class="flex items-center gap-1 text-[#4D6A8C]">
+<span class="material-symbols-outlined text-[15px]">water_drop</span>
+<span class="font-label text-[10px] tracking-widest font-bold uppercase">HUMIDITY</span>
+</div>
+<div class="my-0.5">
+<div class="font-headline font-bold text-[32px] text-[#0F2A4A] leading-none">64%</div>
+</div>
+<div>
+<div class="w-full bg-white/25 rounded-full h-1.5 overflow-hidden mb-1.5 border border-white/30">
+<div class="bg-[#4FA3F7] h-full rounded-full w-[64%]"></div>
+</div>
+<p class="font-label text-[9.5px] text-[#4D6A8C] leading-snug">Dew point is 19° right now.</p>
+</div>
+</div>
+</div>
+<!-- ROW 3: Wide Sunrise & Sunset Arc Tile -->
+<div class="glass-tile p-4 h-[154px] flex flex-col justify-between">
+<div class="flex items-center justify-between text-[#4D6A8C]">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">wb_twilight</span>
+<span class="font-label text-[10px] tracking-widest font-bold uppercase">SUNRISE &amp; SUNSET</span>
+</div>
+<span class="text-[11px] font-semibold text-[#0F2A4A] font-headline bg-white/30 px-2 py-0.5 rounded-full border border-white/40">3h 18m left</span>
+</div>
+<!-- SVG Arc Visualization -->
+<div class="relative w-full h-[62px] flex items-center justify-center">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 320 70">
+<!-- Horizon Base Line -->
+<line stroke="rgba(255,255,255,0.4)" stroke-dasharray="3 3" stroke-width="1.5" x1="10" x2="310" y1="58" y2="58"></line>
+<!-- Arc Trajectory -->
+<path d="M 20 58 A 140 50 0 0 1 300 58" fill="none" stroke="rgba(255, 255, 255, 0.45)" stroke-dasharray="4 4" stroke-width="2"></path>
+<!-- Active Sun Glow & Position along 68% progress -->
+<g transform="translate(230, 26)">
+<circle cx="0" cy="0" fill="#FFB238" opacity="0.25" r="14"></circle>
+<circle cx="0" cy="0" fill="#FFB238" r="7" stroke="#FFFFFF" stroke-width="2"></circle>
+</g>
+</svg>
+</div>
+<!-- Sunrise / Sunset Timestamps -->
+<div class="flex justify-between items-center text-xs pt-0.5">
+<div class="flex flex-col">
+<span class="font-label text-[9.5px] text-[#4D6A8C] uppercase tracking-wider font-semibold">Sunrise</span>
+<span class="font-headline font-bold text-[#0F2A4A] text-[13px]">06:12</span>
+</div>
+<div class="font-label text-[10px] text-[#4D6A8C]/80 font-medium">Solar Noon 12:08</div>
+<div class="flex flex-col text-right">
+<span class="font-label text-[9.5px] text-[#4D6A8C] uppercase tracking-wider font-semibold">Sunset</span>
+<span class="font-headline font-bold text-[#0F2A4A] text-[13px]">18:04</span>
+</div>
+</div>
+</div>
+<!-- ROW 4: Feels Like & Pressure (2-Column) -->
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Feels Like Tile -->
+<div class="glass-tile p-3.5 flex flex-col justify-between h-[134px]">
+<div class="flex items-center gap-1 text-[#4D6A8C]">
+<span class="material-symbols-outlined text-[15px]">thermostat</span>
+<span class="font-label text-[10px] tracking-widest font-bold uppercase">FEELS LIKE</span>
+</div>
+<div class="my-0.5">
+<div class="font-headline font-extralight text-[40px] text-[#0F2A4A] leading-none tracking-tight">29°</div>
+</div>
+<p class="font-label text-[9.5px] text-[#4D6A8C] leading-snug">Humidity makes it feel slightly warmer.</p>
+</div>
+<!-- Pressure Tile -->
+<div class="glass-tile p-3.5 flex flex-col justify-between h-[134px]">
+<div class="flex items-center gap-1 text-[#4D6A8C]">
+<span class="material-symbols-outlined text-[15px]">compress</span>
+<span class="font-label text-[10px] tracking-widest font-bold uppercase">PRESSURE</span>
+</div>
+<div class="my-0.5">
+<div class="font-headline font-bold text-[22px] text-[#0F2A4A] leading-none">1012 <span class="text-xs font-normal text-[#4D6A8C]">hPa</span></div>
+</div>
+<div class="flex items-center justify-between bg-white/20 px-2.5 py-1.5 rounded-full border border-white/30">
+<span class="text-[10px] font-semibold text-[#0F2A4A]">Steady</span>
+<span class="material-symbols-outlined text-[14px] text-[#10B981]">remove</span>
+</div>
+</div>
+</div>
+</div>
+<!-- iOS Home Indicator Notch Bar -->
+<div class="w-full pb-2 pt-1 flex justify-center items-center flex-shrink-0 z-20">
+<div class="w-32 h-1 bg-[#0F2A4A]/25 rounded-full"></div>
+</div>
+</main>
+</body></html>

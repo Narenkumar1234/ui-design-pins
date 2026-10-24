@@ -1,0 +1,51 @@
+[
+ {
+  "file": "light-home",
+  "name": "projects/6546686147262882040/screens/decb25e3dc6e41de9525f1f2f732ab16",
+  "title": "Nimbus - Current Weather",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "light-forecast",
+  "name": "projects/6546686147262882040/screens/a18db2ea96a441de8aa7abcf1c1e4586",
+  "title": "Nimbus - 10-Day Forecast",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "light-cities",
+  "name": "projects/6546686147262882040/screens/24a9db311a9340edb055ca041f880f38",
+  "title": "Nimbus - Cities & Search",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "light-details",
+  "name": "projects/6546686147262882040/screens/59c2dbdc1e8d4137a2087e6016cec308",
+  "title": "Nimbus - Weather Details",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "dark-home",
+  "name": "projects/6546686147262882040/screens/1d5d0d527a3e4722aad45777034a0924",
+  "title": "Nimbus - Current Weather (Night)",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "dark-forecast",
+  "name": "projects/6546686147262882040/screens/ff21c479c22d441aa9afea9628ecb008",
+  "title": "Nimbus - 10-Day Forecast (Night)",
+  "width": "780",
+  "height": "1768"
+ },
+ {
+  "file": "dark-details",
+  "name": "projects/6546686147262882040/screens/e8d1da078ed748f38d84d04bbe76f995",
+  "title": "Nimbus - Weather Details (Night)",
+  "width": "780",
+  "height": "2286"
+ }
+]

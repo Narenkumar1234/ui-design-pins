@@ -1,0 +1,42 @@
+{
+ "LIGHT": {
+  "designSystem": {
+   "displayName": "Nimbus Light",
+   "theme": {
+    "bodyFont": "SORA",
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#4FA3F7",
+    "designMd": "# Nimbus weather app (code.in.30s)\nGlassmorphism weather mobile app. A soft full-bleed gradient sky background, with frosted translucent glass cards on top (white at 18-26% opacity, backdrop blur 24px, 1px white border at 50% opacity, 28px radius, soft shadow). Huge thin temperature numerals (Sora, weight 200), bold Sora headings, small caps labels. Flat soft weather icons (sun, clouds, rain drops) drawn as simple shapes. ONE warm sun accent #FFB238 for highlights (sun icon, UV, active tab dot, primary button). AQI scale uses green #3DD68C, yellow #FFD54A, orange #FF8A3D. No photos, no people, no neon.\n## Light (day, hero): sky gradient from #4FA3F7 (top) through #8CCBFF to warm horizon #FFD6A5 (bottom). Glass cards white 24% with white border. Ink deep navy #0F2A4A, muted #4D6A8C.",
+    "headlineFont": "SORA",
+    "overrideNeutralColor": "#8CCBFF",
+    "overridePrimaryColor": "#4FA3F7",
+    "overrideSecondaryColor": "#FFFFFF",
+    "overrideTertiaryColor": "#FFB238",
+    "roundness": "ROUND_FULL"
+   }
+  },
+  "name": "assets/2811715665149221054",
+  "version": "1"
+ },
+ "DARK": {
+  "designSystem": {
+   "displayName": "Nimbus Dark",
+   "theme": {
+    "bodyFont": "SORA",
+    "colorMode": "DARK",
+    "colorVariant": "FIDELITY",
+    "customColor": "#4FA3F7",
+    "designMd": "# Nimbus weather app (code.in.30s)\nGlassmorphism weather mobile app. A soft full-bleed gradient sky background, with frosted translucent glass cards on top (white at 18-26% opacity, backdrop blur 24px, 1px white border at 50% opacity, 28px radius, soft shadow). Huge thin temperature numerals (Sora, weight 200), bold Sora headings, small caps labels. Flat soft weather icons (sun, clouds, rain drops) drawn as simple shapes. ONE warm sun accent #FFB238 for highlights (sun icon, UV, active tab dot, primary button). AQI scale uses green #3DD68C, yellow #FFD54A, orange #FF8A3D. No photos, no people, no neon.\n## Dark (night): night sky gradient from #071026 (top) through #0F2350 to #1D3B78 (bottom), tiny stars. Glass cards white 8% with white 14% border. Ink #EAF4FF, muted #9FB5D8, accent moon/sun #FFC861.",
+    "headlineFont": "SORA",
+    "overrideNeutralColor": "#0F2350",
+    "overridePrimaryColor": "#4FA3F7",
+    "overrideSecondaryColor": "#1D3B78",
+    "overrideTertiaryColor": "#FFB238",
+    "roundness": "ROUND_FULL"
+   }
+  },
+  "name": "assets/13712065153622114671",
+  "version": "1"
+ }
+}
