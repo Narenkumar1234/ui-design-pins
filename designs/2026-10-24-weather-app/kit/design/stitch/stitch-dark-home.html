@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nimbus Weather</title>
+<!-- Google Fonts: Sora & Public Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=Sora:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            night: {
+              top: "#071026",
+              mid: "#0F2350",
+              bottom: "#1D3B78",
+            },
+            ink: "#EAF4FF",
+            muted: "#9FB5D8",
+            sun: "#FFC861",
+            sunWarm: "#FFB238",
+            aqiGreen: "#3DD68C",
+            aqiYellow: "#FFD54A",
+            aqiOrange: "#FF8A3D",
+          },
+          borderRadius: {
+            "glass": "28px",
+            DEFAULT: "1rem",
+            lg: "2rem",
+            xl: "3rem",
+            full: "9999px"
+          },
+          fontFamily: {
+            headline: ["Sora", "sans-serif"],
+            display: ["Sora", "sans-serif"],
+            body: ["Sora", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Ambient stars generator */
+    .star {
+      position: absolute;
+      background-color: #EAF4FF;
+      border-radius: 9999px;
+      pointer-events: none;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 0.9; transform: scale(1.2); }
+    }
+    .twinkle-fast { animation: twinkle 3s ease-in-out infinite; }
+    .twinkle-mid { animation: twinkle 4.5s ease-in-out infinite; }
+    .twinkle-slow { animation: twinkle 6s ease-in-out infinite; }
+    
+    /* Hide scrollbars for crisp preview */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-950 text-[#EAF4FF] min-h-screen flex items-center justify-center p-0 sm:p-4 font-body antialiased selection:bg-[#FFC861]/30">
+<!-- Mobile Viewport Container: Fixed 390x844 Shell -->
+<main class="relative w-[390px] h-[844px] overflow-hidden rounded-none sm:rounded-[44px] shadow-[0_25px_70px_rgba(0,0,0,0.8)] border border-white/10 flex flex-col justify-between bg-gradient-to-b from-[#071026] via-[#0F2350] to-[#1D3B78]">
+<!-- Starry Night Background Effect -->
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+<div class="star w-1 h-1 top-8 left-14 twinkle-slow opacity-60"></div>
+<div class="star w-0.5 h-0.5 top-16 left-48 twinkle-mid opacity-40"></div>
+<div class="star w-1 h-1 top-24 right-16 twinkle-fast opacity-75"></div>
+<div class="star w-0.5 h-0.5 top-36 left-28 twinkle-slow opacity-50"></div>
+<div class="star w-1 h-1 top-44 right-32 twinkle-mid opacity-70"></div>
+<div class="star w-0.5 h-0.5 top-52 left-10 twinkle-fast opacity-60"></div>
+<div class="star w-1 h-1 top-64 right-10 twinkle-slow opacity-80"></div>
+<div class="star w-0.5 h-0.5 top-80 left-36 twinkle-mid opacity-40"></div>
+<div class="star w-1 h-1 top-[420px] left-8 twinkle-fast opacity-50"></div>
+<div class="star w-0.5 h-0.5 top-[460px] right-20 twinkle-slow opacity-30"></div>
+<div class="star w-1 h-1 top-[560px] left-24 twinkle-mid opacity-40"></div>
+<div class="star w-0.5 h-0.5 top-[620px] right-8 twinkle-fast opacity-50"></div>
+<!-- Soft ambient colored glow orbs -->
+<div class="absolute -top-16 -right-16 w-64 h-64 bg-[#1D3B78]/40 rounded-full blur-3xl"></div>
+<div class="absolute top-44 -left-20 w-56 h-56 bg-[#FFB238]/10 rounded-full blur-3xl"></div>
+</div>
+<!-- Phone Status Bar Mockup -->
+<div class="relative z-20 flex justify-between items-center px-7 pt-3.5 pb-1 select-none">
+<span class="text-xs font-semibold tracking-tight text-[#EAF4FF]">9:41</span>
+<div class="flex items-center gap-1.5 text-[#EAF4FF]">
+<span class="material-symbols-outlined text-[15px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[15px]">wifi</span>
+<span class="material-symbols-outlined text-[18px]">battery_full</span>
+</div>
+</div>
+<!-- SECTION 1: Top Header (Shared Component TopAppBar Anchor) -->
+<header class="relative z-20 flex justify-between items-center px-6 pt-1 pb-2">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/[0.14] flex items-center justify-center text-[#FFC861] shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="near_me">near_me</span>
+</div>
+<div>
+<h1 class="font-headline text-lg font-bold tracking-tight text-[#EAF4FF] leading-none">Bengaluru</h1>
+<p class="font-label text-[11px] font-medium text-[#9FB5D8] tracking-wide mt-0.5">Sat, 24 Oct</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Search" class="w-9 h-9 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/[0.14] flex items-center justify-center text-[#EAF4FF] hover:bg-white/10 active:scale-95 transition-all duration-150 shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+<button aria-label="Menu" class="w-9 h-9 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/[0.14] flex items-center justify-center text-[#EAF4FF] hover:bg-white/10 active:scale-95 transition-all duration-150 shadow-sm">
+<span class="material-symbols-outlined text-[19px]">apps</span>
+</button>
+</div>
+</header>
+<!-- Scrollable/Squeezed Content Canvas -->
+<div class="relative z-10 flex-1 flex flex-col justify-between px-5 pt-1 pb-20 select-none overflow-y-auto no-scrollbar">
+<!-- SECTION 2: Hero Current Weather (Soft Flat Glass 3D-esque Elements) -->
+<section class="flex flex-col items-center justify-center text-center my-auto">
+<!-- Flat Soft Weather Graphic: Warm Sun nested behind smooth translucent cloud -->
+<div class="relative w-36 h-28 flex items-center justify-center">
+<!-- Ambient Sun Glow -->
+<div class="absolute -top-1 right-5 w-16 h-16 bg-[#FFB238] rounded-full blur-xl opacity-60"></div>
+<!-- Golden Sun Shape -->
+<div class="absolute top-1 right-7 w-16 h-16 rounded-full bg-gradient-to-tr from-[#FFB238] to-[#FFD54A] shadow-[0_0_24px_rgba(255,178,56,0.65)] flex items-center justify-center border border-[#FFE7A3]/50">
+<span class="material-symbols-outlined text-[#071026]/80 text-[26px] opacity-75 material-symbols-fill">wb_sunny</span>
+</div>
+<!-- Puffy Frosted Glass Front Cloud -->
+<div class="absolute bottom-1 left-4 w-28 h-16 rounded-full bg-white/20 backdrop-blur-xl border border-white/40 shadow-lg flex items-center justify-center">
+<!-- Cloud puff bumps -->
+<div class="absolute -top-4 left-4 w-12 h-12 rounded-full bg-white/25 backdrop-blur-md border-t border-l border-white/50"></div>
+<div class="absolute -top-7 right-5 w-14 h-14 rounded-full bg-white/25 backdrop-blur-md border-t border-r border-white/50"></div>
+</div>
+</div>
+<!-- Huge Ultra-thin Temperature Numeral (Sora, weight 200, 84px) -->
+<div class="relative flex items-start justify-center leading-none mt-2">
+<span class="font-headline font-[200] text-[84px] tracking-tighter text-[#EAF4FF] drop-shadow-sm pl-4">27</span>
+<span class="font-headline font-[200] text-[38px] text-[#FFC861] pt-1">°</span>
+</div>
+<!-- Weather Condition & Hi/Lo Metrics -->
+<div class="flex flex-col items-center gap-1 -mt-1">
+<h2 class="font-headline text-[19px] font-semibold tracking-tight text-[#EAF4FF]">Partly cloudy</h2>
+<div class="flex items-center gap-2 text-xs font-label font-medium text-[#9FB5D8]">
+<span>H: <strong class="text-[#EAF4FF] font-semibold">30°</strong></span>
+<span class="w-1 h-1 rounded-full bg-[#9FB5D8]/50"></span>
+<span>L: <strong class="text-[#EAF4FF] font-semibold">21°</strong></span>
+<span class="w-1 h-1 rounded-full bg-[#9FB5D8]/50"></span>
+<span class="flex items-center gap-1 text-[#3DD68C] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#3DD68C]"></span> AQI 42
+            </span>
+</div>
+</div>
+</section>
+<!-- SECTION 3: 3-Stat Weather Metric Row Card -->
+<section class="w-full bg-white/[0.08] backdrop-blur-[24px] border border-white/[0.14] rounded-[28px] p-3.5 shadow-lg shadow-black/20 my-2">
+<div class="grid grid-cols-3 divide-x divide-white/[0.12]">
+<!-- Wind -->
+<div class="flex flex-col items-center justify-center px-2 py-1 text-center">
+<div class="flex items-center gap-1 text-[#9FB5D8] mb-1">
+<span class="material-symbols-outlined text-[17px] text-[#FFC861]">air</span>
+<span class="font-label text-[10px] font-semibold uppercase tracking-wider">WIND</span>
+</div>
+<span class="font-headline text-base font-semibold text-[#EAF4FF] tracking-tight">12 <span class="text-xs font-normal text-[#9FB5D8]">km/h</span></span>
+</div>
+<!-- Humidity -->
+<div class="flex flex-col items-center justify-center px-2 py-1 text-center">
+<div class="flex items-center gap-1 text-[#9FB5D8] mb-1">
+<span class="material-symbols-outlined text-[17px] text-[#FFC861] material-symbols-fill">humidity_mid</span>
+<span class="font-label text-[10px] font-semibold uppercase tracking-wider">HUMIDITY</span>
+</div>
+<span class="font-headline text-base font-semibold text-[#EAF4FF] tracking-tight">64<span class="text-xs font-normal text-[#9FB5D8]">%</span></span>
+</div>
+<!-- Rain / Precip -->
+<div class="flex flex-col items-center justify-center px-2 py-1 text-center">
+<div class="flex items-center gap-1 text-[#9FB5D8] mb-1">
+<span class="material-symbols-outlined text-[17px] text-[#FFC861]">umbrella</span>
+<span class="font-label text-[10px] font-semibold uppercase tracking-wider">RAIN</span>
+</div>
+<span class="font-headline text-base font-semibold text-[#EAF4FF] tracking-tight">20<span class="text-xs font-normal text-[#9FB5D8]">%</span></span>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Hourly Forecast Section Card -->
+<section class="w-full bg-white/[0.08] backdrop-blur-[24px] border border-white/[0.14] rounded-[28px] p-4 shadow-lg shadow-black/20 mt-1 mb-2">
+<!-- Header -->
+<div class="flex justify-between items-center mb-3 px-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#FFC861]">schedule</span>
+<span class="font-label text-[11px] font-bold text-[#9FB5D8] tracking-widest uppercase">HOURLY FORECAST</span>
+</div>
+<span class="font-label text-[10px] font-semibold text-[#FFC861] bg-[#FFC861]/10 px-2.5 py-0.5 rounded-full border border-[#FFC861]/30">Today</span>
+</div>
+<!-- Horizontal Row of 5 Forecast Pills -->
+<div class="grid grid-cols-5 gap-2">
+<!-- Pill 1: Now (Highlighted Active State) -->
+<div class="flex flex-col items-center py-2.5 px-1 rounded-2xl bg-white/20 border border-white/40 shadow-inner text-center">
+<span class="font-label text-[11px] font-bold text-[#EAF4FF] tracking-tight">Now</span>
+<div class="my-1.5 w-6 h-6 flex items-center justify-center text-[#FFC861]">
+<span class="material-symbols-outlined text-[20px] material-symbols-fill">wb_sunny</span>
+</div>
+<span class="font-headline text-sm font-bold text-[#EAF4FF]">27°</span>
+</div>
+<!-- Pill 2: 13:00 -->
+<div class="flex flex-col items-center py-2.5 px-1 rounded-2xl bg-white/[0.04] hover:bg-white/[0.09] transition-all border border-white/[0.08] text-center">
+<span class="font-label text-[11px] font-medium text-[#9FB5D8]">13:00</span>
+<div class="my-1.5 w-6 h-6 flex items-center justify-center text-[#FFC861]">
+<span class="material-symbols-outlined text-[20px] material-symbols-fill">wb_sunny</span>
+</div>
+<span class="font-headline text-sm font-semibold text-[#EAF4FF]">28°</span>
+</div>
+<!-- Pill 3: 14:00 -->
+<div class="flex flex-col items-center py-2.5 px-1 rounded-2xl bg-white/[0.04] hover:bg-white/[0.09] transition-all border border-white/[0.08] text-center">
+<span class="font-label text-[11px] font-medium text-[#9FB5D8]">14:00</span>
+<div class="my-1.5 w-6 h-6 flex items-center justify-center text-[#FFC861]">
+<span class="material-symbols-outlined text-[20px]">partly_cloudy_day</span>
+</div>
+<span class="font-headline text-sm font-semibold text-[#EAF4FF]">29°</span>
+</div>
+<!-- Pill 4: 15:00 -->
+<div class="flex flex-col items-center py-2.5 px-1 rounded-2xl bg-white/[0.04] hover:bg-white/[0.09] transition-all border border-white/[0.08] text-center">
+<span class="font-label text-[11px] font-medium text-[#9FB5D8]">15:00</span>
+<div class="my-1.5 w-6 h-6 flex items-center justify-center text-[#9FB5D8]">
+<span class="material-symbols-outlined text-[20px]">cloud</span>
+</div>
+<span class="font-headline text-sm font-semibold text-[#EAF4FF]">28°</span>
+</div>
+<!-- Pill 5: 16:00 -->
+<div class="flex flex-col items-center py-2.5 px-1 rounded-2xl bg-white/[0.04] hover:bg-white/[0.09] transition-all border border-white/[0.08] text-center">
+<span class="font-label text-[11px] font-medium text-[#9FB5D8]">16:00</span>
+<div class="my-1.5 w-6 h-6 flex items-center justify-center text-[#9FB5D8]">
+<span class="material-symbols-outlined text-[20px]">rainy</span>
+</div>
+<span class="font-headline text-sm font-semibold text-[#EAF4FF]">26°</span>
+</div>
+</div>
+</section>
+</div>
+<!-- SECTION 5: Floating Bottom Navigation Bar (Shared Component BottomNavBar Anchor) -->
+<!-- Destination count: 4, icons: ["home", "calendar_month", "location_city", "settings"] -->
+<!-- Home is active with warm sun accent #FFC861 and bottom dot indicator -->
+<nav class="fixed bottom-6 left-0 right-0 mx-auto z-50 flex justify-around items-center px-6 py-3.5 max-w-xs bg-white/[0.08] backdrop-blur-[24px] rounded-full border border-white/[0.14] shadow-2xl shadow-black/40" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: calc(100% - 48px); max-width: 330px;">
+<!-- Nav Item 1: Home (Active destination matching Home intent) -->
+<button aria-label="Home" class="flex items-center justify-center text-[#FFC861] relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-[#FFC861] after:rounded-full active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined text-[23px] material-symbols-fill" data-icon="home">home</span>
+</button>
+<!-- Nav Item 2: Calendar / Forecast -->
+<button aria-label="Forecast" class="flex items-center justify-center text-[#9FB5D8] hover:text-[#EAF4FF] transition-all duration-200 active:scale-90">
+<span class="material-symbols-outlined text-[22px]" data-icon="calendar_month">calendar_month</span>
+</button>
+<!-- Nav Item 3: Cities / Locations -->
+<button aria-label="Locations" class="flex items-center justify-center text-[#9FB5D8] hover:text-[#EAF4FF] transition-all duration-200 active:scale-90">
+<span class="material-symbols-outlined text-[22px]" data-icon="location_city">location_city</span>
+</button>
+<!-- Nav Item 4: Settings -->
+<button aria-label="Settings" class="flex items-center justify-center text-[#9FB5D8] hover:text-[#EAF4FF] transition-all duration-200 active:scale-90">
+<span class="material-symbols-outlined text-[22px]" data-icon="settings">settings</span>
+</button>
+</nav>
+<!-- Bottom Indicator Bar (iOS Handle Mockup) -->
+<div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full pointer-events-none z-30"></div>
+</main>
+</body></html>

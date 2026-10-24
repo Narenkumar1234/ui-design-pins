@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nimbus - Weather Forecast</title>
+<!-- Google Fonts: Sora & Public Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=Sora:wght@200;300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            night: {
+              top: "#071026",
+              mid: "#0F2350",
+              bottom: "#1D3B78",
+            },
+            accent: {
+              sun: "#FFC861",
+              warm: "#FFB238",
+            },
+            ink: {
+              primary: "#EAF4FF",
+              muted: "#9FB5D8",
+            },
+            aqi: {
+              green: "#3DD68C",
+              yellow: "#FFD54A",
+              orange: "#FF8A3D",
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "28": "1.75rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Sora", "sans-serif"],
+            display: ["Sora", "sans-serif"],
+            body: ["Sora", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Custom star twinkling & layout isolation */
+    .star {
+      position: absolute;
+      background-color: #EAF4FF;
+      border-radius: 9999px;
+      pointer-events: none;
+    }
+    /* Hide scrollbar for seamless mobile look */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    * {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#071026] text-[#EAF4FF] min-h-screen flex justify-center items-center p-0 md:p-6 font-body select-none">
+<!-- Mobile Viewport Container: 390x844 Frame -->
+<div class="relative w-full max-w-[390px] h-[844px] bg-gradient-to-b from-[#071026] via-[#0F2350] to-[#1D3B78] overflow-hidden rounded-[40px] shadow-2xl border border-white/10 flex flex-col justify-between">
+<!-- Subtle Ambient Starfield Layer -->
+<div class="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-60">
+<div class="star w-[2px] h-[2px] top-12 left-16 animate-pulse"></div>
+<div class="star w-[1.5px] h-[1.5px] top-28 left-64 opacity-50"></div>
+<div class="star w-[2px] h-[2px] top-40 left-10 opacity-75"></div>
+<div class="star w-[1px] h-[1px] top-64 left-80 opacity-40"></div>
+<div class="star w-[2.5px] h-[2.5px] top-80 left-44 animate-pulse opacity-90" style="animation-duration: 3s;"></div>
+<div class="star w-[1.5px] h-[1.5px] top-[420px] left-8 opacity-60"></div>
+<div class="star w-[2px] h-[2px] top-[500px] left-72 opacity-50"></div>
+<div class="star w-[1px] h-[1px] top-[620px] left-24 opacity-30"></div>
+<div class="star w-[2px] h-[2px] top-[710px] left-60 opacity-80 animate-pulse" style="animation-duration: 4s;"></div>
+<div class="star w-[1.5px] h-[1.5px] top-[780px] left-14 opacity-50"></div>
+<!-- Soft ambient nebulous glow -->
+<div class="absolute -top-24 -left-20 w-72 h-72 rounded-full bg-[#1D3B78]/40 blur-3xl"></div>
+<div class="absolute top-1/3 -right-20 w-80 h-80 rounded-full bg-[#FFC861]/10 blur-3xl"></div>
+</div>
+<!-- Scrollable Content Canvas -->
+<div class="relative z-10 w-full h-full overflow-y-auto pb-28 pt-3 px-4">
+<!-- TopAppBar (from Shared Components JSON) -->
+<header class="flex justify-between items-center w-full px-5 py-4 max-w-md mx-auto bg-transparent backdrop-blur-md bg-white/5 border-b border-white/10 rounded-2xl shadow-sm mb-4">
+<button class="flex items-center justify-center p-2 rounded-xl text-[#9FB5D8] hover:bg-white/10 hover:text-[#EAF4FF] transition-colors duration-200 active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="near_me">near_me</span>
+</button>
+<div class="text-center">
+<h2 class="font-headline text-lg font-bold tracking-tight text-[#EAF4FF]">San Francisco, CA</h2>
+<p class="font-label text-[10px] uppercase tracking-wider text-[#9FB5D8]">Updated Just Now</p>
+</div>
+<button class="flex items-center justify-center p-2 rounded-xl text-[#9FB5D8] hover:bg-white/10 hover:text-[#EAF4FF] transition-colors duration-200 active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+</header>
+<!-- Forecast Title & Segmented Pill Switcher -->
+<section class="flex items-center justify-between px-1 mb-4">
+<div>
+<h1 class="font-headline text-2xl font-bold tracking-tight text-[#EAF4FF]">Forecast</h1>
+<p class="text-xs text-[#9FB5D8] font-body mt-0.5">Scattered clouds at night</p>
+</div>
+<!-- Segmented Glass Control -->
+<div class="flex items-center bg-white/[0.06] p-1 rounded-full border border-white/10 backdrop-blur-md shadow-inner">
+<button class="px-3.5 py-1 text-xs font-label font-medium text-[#9FB5D8] hover:text-[#EAF4FF] transition-colors rounded-full">
+            Today
+          </button>
+<button class="px-3.5 py-1 text-xs font-label font-bold text-[#071026] bg-[#FFC861] rounded-full shadow-md shadow-[#FFC861]/25 transition-all">
+            10 days
+          </button>
+</div>
+</section>
+<!-- CARD 1: 24-Hour Outlook / Temperature Curve -->
+<section class="w-full bg-white/[0.08] backdrop-blur-[24px] border border-white/[0.14] rounded-28 p-4 mb-4 shadow-xl">
+<div class="flex justify-between items-center mb-3">
+<span class="font-label text-[11px] font-semibold uppercase tracking-wider text-[#9FB5D8]">24-HOUR OUTLOOK</span>
+<span class="font-label text-xs text-[#FFC861] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_upward">arrow_upward</span>
+            Peak 22° at 14:00
+          </span>
+</div>
+<!-- Temperature Curve SVG & Interactive timeline -->
+<div class="relative w-full pt-1 pb-1">
+<svg class="w-full h-24 overflow-visible" fill="none" viewbox="0 0 320 85" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="curveGradient" x1="0" x2="0" y1="0" y2="85">
+<stop offset="0%" stop-color="#FFC861" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#FFC861" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Area under curve -->
+<path d="M 0,55 C 30,58 50,65 80,62 C 120,58 140,40 180,20 C 210,5 240,15 270,35 C 290,48 305,52 320,54 L 320,85 L 0,85 Z" fill="url(#curveGradient)"></path>
+<!-- Stroke line -->
+<path d="M 0,55 C 30,58 50,65 80,62 C 120,58 140,40 180,20 C 210,5 240,15 270,35 C 290,48 305,52 320,54" stroke="#FFC861" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Key temperature dots with ambient glow -->
+<!-- Point 1 (Now: 14°) -->
+<circle cx="20" cy="56" fill="#FFC861" r="3.5"></circle>
+<circle cx="20" cy="56" r="7" stroke="#FFC861" stroke-opacity="0.3" stroke-width="1.5"></circle>
+<!-- Point 2 (06:00: 12°) -->
+<circle cx="80" cy="62" fill="#9FB5D8" r="3"></circle>
+<!-- Point 3 (10:00: 17°) -->
+<circle cx="135" cy="40" fill="#9FB5D8" r="3"></circle>
+<!-- Point 4 (14:00: 22° - Peak) -->
+<circle cx="185" cy="18" fill="#FFC861" r="4.5"></circle>
+<circle cx="185" cy="18" r="9" stroke="#FFC861" stroke-opacity="0.5" stroke-width="1.5"></circle>
+<!-- Point 5 (18:00: 19°) -->
+<circle cx="240" cy="28" fill="#9FB5D8" r="3"></circle>
+<!-- Point 6 (22:00: 15°) -->
+<circle cx="300" cy="52" fill="#9FB5D8" r="3"></circle>
+</svg>
+<!-- Timeline Metrics Row -->
+<div class="flex justify-between items-center text-center mt-1 px-1">
+<div class="flex flex-col items-center">
+<span class="font-headline text-xs font-semibold text-[#FFC861]">14°</span>
+<span class="material-symbols-outlined text-sm text-[#FFC861] my-1" data-icon="bedtime">bedtime</span>
+<span class="font-label text-[10px] text-[#9FB5D8]">Now</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline text-xs text-[#EAF4FF]/80">12°</span>
+<span class="material-symbols-outlined text-sm text-[#9FB5D8] my-1" data-icon="cloud">cloud</span>
+<span class="font-label text-[10px] text-[#9FB5D8]">06:00</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline text-xs text-[#EAF4FF]">17°</span>
+<span class="material-symbols-outlined text-sm text-[#FFC861] my-1" data-icon="partly_cloudy_day">partly_cloudy_day</span>
+<span class="font-label text-[10px] text-[#9FB5D8]">10:00</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline text-xs font-bold text-[#FFC861]">22°</span>
+<span class="material-symbols-outlined text-sm text-[#FFC861] my-1" data-icon="wb_sunny">wb_sunny</span>
+<span class="font-label text-[10px] text-[#FFC861] font-semibold">14:00</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline text-xs text-[#EAF4FF]">19°</span>
+<span class="material-symbols-outlined text-sm text-[#FFC861] my-1" data-icon="wb_sunny">wb_sunny</span>
+<span class="font-label text-[10px] text-[#9FB5D8]">18:00</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline text-xs text-[#EAF4FF]/80">15°</span>
+<span class="material-symbols-outlined text-sm text-[#9FB5D8] my-1" data-icon="bedtime">bedtime</span>
+<span class="font-label text-[10px] text-[#9FB5D8]">22:00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CARD 2: 10-Day Forecast List -->
+<section class="w-full bg-white/[0.08] backdrop-blur-[24px] border border-white/[0.14] rounded-28 p-4 shadow-xl">
+<div class="flex justify-between items-center mb-3">
+<span class="font-label text-[11px] font-semibold uppercase tracking-wider text-[#9FB5D8]">10-DAY FORECAST</span>
+<span class="font-label text-xs text-[#9FB5D8] font-medium">Min 11° · Max 23°</span>
+</div>
+<div class="divide-y divide-white/5 space-y-2">
+<!-- Row 1: Today -->
+<div class="flex items-center justify-between pt-2">
+<div class="w-20">
+<p class="font-headline text-xs font-semibold text-[#EAF4FF]">Today</p>
+<p class="font-label text-[10px] text-[#9FB5D8]">Clear night</p>
+</div>
+<div class="flex items-center gap-1 w-12 justify-center">
+<span class="material-symbols-outlined text-base text-[#FFC861]" data-icon="bedtime">bedtime</span>
+<span class="text-[10px] font-medium text-sky-400">0%</span>
+</div>
+<div class="flex items-center gap-2 flex-1 justify-end pl-2">
+<span class="font-headline text-xs text-[#9FB5D8] w-6 text-right font-light">13°</span>
+<!-- Temperature Range Bar -->
+<div class="relative w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="absolute left-2 right-4 top-0 bottom-0 bg-gradient-to-r from-sky-400 to-[#FFC861] rounded-full"></div>
+<!-- Current point -->
+<div class="absolute left-4 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white border border-[#071026] shadow"></div>
+</div>
+<span class="font-headline text-xs text-[#EAF4FF] w-6 text-left font-semibold">22°</span>
+</div>
+</div>
+<!-- Row 2: Sun, 25 -->
+<div class="flex items-center justify-between pt-2">
+<div class="w-20">
+<p class="font-headline text-xs font-semibold text-[#EAF4FF]">Sun, 25</p>
+<p class="font-label text-[10px] text-[#9FB5D8]">Sunny</p>
+</div>
+<div class="flex items-center gap-1 w-12 justify-center">
+<span class="material-symbols-outlined text-base text-[#FFC861]" data-icon="wb_sunny">wb_sunny</span>
+<span class="text-[10px] font-medium text-sky-400">5%</span>
+</div>
+<div class="flex items-center gap-2 flex-1 justify-end pl-2">
+<span class="font-headline text-xs text-[#9FB5D8] w-6 text-right font-light">14°</span>
+<div class="relative w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="absolute left-3 right-2 top-0 bottom-0 bg-gradient-to-r from-sky-400 to-[#FFC861] rounded-full"></div>
+</div>
+<span class="font-headline text-xs text-[#EAF4FF] w-6 text-left font-semibold">23°</span>
+</div>
+</div>
+<!-- Row 3: Mon, 26 -->
+<div class="flex items-center justify-between pt-2">
+<div class="w-20">
+<p class="font-headline text-xs font-semibold text-[#EAF4FF]">Mon, 26</p>
+<p class="font-label text-[10px] text-[#9FB5D8]">Rain showers</p>
+</div>
+<div class="flex items-center gap-1 w-12 justify-center">
+<span class="material-symbols-outlined text-base text-sky-300" data-icon="rainy">rainy</span>
+<span class="text-[10px] font-semibold text-sky-300">75%</span>
+</div>
+<div class="flex items-center gap-2 flex-1 justify-end pl-2">
+<span class="font-headline text-xs text-[#9FB5D8] w-6 text-right font-light">11°</span>
+<div class="relative w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="absolute left-0 right-10 top-0 bottom-0 bg-gradient-to-r from-sky-400 to-[#FFD54A] rounded-full"></div>
+</div>
+<span class="font-headline text-xs text-[#EAF4FF] w-6 text-left font-semibold">17°</span>
+</div>
+</div>
+<!-- Row 4: Tue, 27 -->
+<div class="flex items-center justify-between pt-2">
+<div class="w-20">
+<p class="font-headline text-xs font-semibold text-[#EAF4FF]">Tue, 27</p>
+<p class="font-label text-[10px] text-[#9FB5D8]">Scattered rain</p>
+</div>
+<div class="flex items-center gap-1 w-12 justify-center">
+<span class="material-symbols-outlined text-base text-sky-300" data-icon="water_drop">water_drop</span>
+<span class="text-[10px] font-medium text-sky-300">40%</span>
+</div>
+<div class="flex items-center gap-2 flex-1 justify-end pl-2">
+<span class="font-headline text-xs text-[#9FB5D8] w-6 text-right font-light">12°</span>
+<div class="relative w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="absolute left-1 right-7 top-0 bottom-0 bg-gradient-to-r from-sky-400 to-[#FFC861] rounded-full"></div>
+</div>
+<span class="font-headline text-xs text-[#EAF4FF] w-6 text-left font-semibold">19°</span>
+</div>
+</div>
+<!-- Row 5: Wed, 28 -->
+<div class="flex items-center justify-between pt-2">
+<div class="w-20">
+<p class="font-headline text-xs font-semibold text-[#EAF4FF]">Wed, 28</p>
+<p class="font-label text-[10px] text-[#9FB5D8]">Cloudy</p>
+</div>
+<div class="flex items-center gap-1 w-12 justify-center">
+<span class="material-symbols-outlined text-base text-[#9FB5D8]" data-icon="cloud">cloud</span>
+<span class="text-[10px] font-medium text-sky-400">15%</span>
+</div>
+<div class="flex items-center gap-2 flex-1 justify-end pl-2">
+<span class="font-headline text-xs text-[#9FB5D8] w-6 text-right font-light">13°</span>
+<div class="relative w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="absolute left-2 right-6 top-0 bottom-0 bg-gradient-to-r from-sky-400 to-[#FFC861] rounded-full"></div>
+</div>
+<span class="font-headline text-xs text-[#EAF4FF] w-6 text-left font-semibold">20°</span>
+</div>
+</div>
+<!-- Row 6: Thu, 29 -->
+<div class="flex items-center justify-between pt-2">
+<div class="w-20">
+<p class="font-headline text-xs font-semibold text-[#EAF4FF]">Thu, 29</p>
+<p class="font-label text-[10px] text-[#9FB5D8]">Partly cloudy</p>
+</div>
+<div class="flex items-center gap-1 w-12 justify-center">
+<span class="material-symbols-outlined text-base text-[#FFC861]" data-icon="partly_cloudy_day">partly_cloudy_day</span>
+<span class="text-[10px] font-medium text-sky-400">10%</span>
+</div>
+<div class="flex items-center gap-2 flex-1 justify-end pl-2">
+<span class="font-headline text-xs text-[#9FB5D8] w-6 text-right font-light">14°</span>
+<div class="relative w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="absolute left-3 right-4 top-0 bottom-0 bg-gradient-to-r from-sky-400 to-[#FFC861] rounded-full"></div>
+</div>
+<span class="font-headline text-xs text-[#EAF4FF] w-6 text-left font-semibold">21°</span>
+</div>
+</div>
+<!-- Row 7: Fri, 30 -->
+<div class="flex items-center justify-between pt-2">
+<div class="w-20">
+<p class="font-headline text-xs font-semibold text-[#EAF4FF]">Fri, 30</p>
+<p class="font-label text-[10px] text-[#9FB5D8]">Clear night</p>
+</div>
+<div class="flex items-center gap-1 w-12 justify-center">
+<span class="material-symbols-outlined text-base text-[#FFC861]" data-icon="bedtime">bedtime</span>
+<span class="text-[10px] font-medium text-sky-400">0%</span>
+</div>
+<div class="flex items-center gap-2 flex-1 justify-end pl-2">
+<span class="font-headline text-xs text-[#9FB5D8] w-6 text-right font-light">13°</span>
+<div class="relative w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="absolute left-2 right-3 top-0 bottom-0 bg-gradient-to-r from-sky-400 to-[#FFC861] rounded-full"></div>
+</div>
+<span class="font-headline text-xs text-[#EAF4FF] w-6 text-left font-semibold">22°</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Additional Micro Widget: Air Quality Index (AQI) Glass Row -->
+<section class="mt-4 w-full bg-white/[0.08] backdrop-blur-[24px] border border-white/[0.14] rounded-28 p-4 shadow-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-[#3DD68C]" data-icon="air">air</span>
+</div>
+<div>
+<span class="font-label text-[10px] uppercase tracking-wider text-[#9FB5D8]">Air Quality Index</span>
+<p class="font-headline text-sm font-semibold text-[#EAF4FF]">32 · Good</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#3DD68C] animate-ping"></span>
+<span class="font-label text-xs text-[#3DD68C] font-semibold">Healthy</span>
+</div>
+</section>
+</div>
+<!-- BottomNavBar (from Shared Components JSON with semantic active tab mapping) -->
+<!-- Screen is FORECAST -> maps to calendar_month tab with style_active_navigation -->
+<nav class="fixed bottom-6 left-0 right-0 mx-auto z-50 flex justify-around items-center px-6 py-3.5 max-w-xs bg-white/[0.08] backdrop-blur-[24px] rounded-full border border-white/[0.14] shadow-2xl shadow-black/40">
+<!-- Icon 1: Home (Inactive) -->
+<button class="flex items-center justify-center text-[#9FB5D8] hover:text-[#EAF4FF] transition-all duration-200 active:scale-90" title="Home">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+</button>
+<!-- Icon 2: Forecast / Calendar (Active Tab) -->
+<button class="flex items-center justify-center text-[#FFC861] relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-[#FFC861] after:rounded-full active:scale-90 transition-transform duration-150" title="Forecast">
+<span class="material-symbols-outlined text-2xl" data-icon="calendar_month" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</button>
+<!-- Icon 3: Cities (Inactive) -->
+<button class="flex items-center justify-center text-[#9FB5D8] hover:text-[#EAF4FF] transition-all duration-200 active:scale-90" title="Cities">
+<span class="material-symbols-outlined text-2xl" data-icon="location_city">location_city</span>
+</button>
+<!-- Icon 4: Settings (Inactive) -->
+<button class="flex items-center justify-center text-[#9FB5D8] hover:text-[#EAF4FF] transition-all duration-200 active:scale-90" title="Settings">
+<span class="material-symbols-outlined text-2xl" data-icon="settings">settings</span>
+</button>
+</nav>
+</div>
+</body></html>
