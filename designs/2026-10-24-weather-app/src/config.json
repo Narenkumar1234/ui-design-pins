@@ -1,0 +1,314 @@
+{
+ "out": "../final",
+ "handle": "code.in.30s",
+ "keyword": "NIMBUS",
+ "tags": [
+  "HTML",
+  "TAILWIND",
+  "JS",
+  "UI"
+ ],
+ "screens": {
+  "light-home": "../final/screens/light-home.png",
+  "light-home2": "../final/screens/light-home2.png",
+  "light-forecast": "../final/screens/light-forecast.png",
+  "light-cities": "../final/screens/light-cities.png",
+  "light-details": "../final/screens/light-details.png",
+  "light-settings": "../final/screens/light-settings.png",
+  "light-sheet": "../final/screens/light-sheet.png",
+  "dark-home": "../final/screens/dark-home.png",
+  "dark-home2": "../final/screens/dark-home2.png",
+  "dark-forecast": "../final/screens/dark-forecast.png",
+  "dark-cities": "../final/screens/dark-cities.png",
+  "dark-details": "../final/screens/dark-details.png",
+  "dark-settings": "../final/screens/dark-settings.png"
+ },
+ "hook": "A <em>glass</em> weather app,<br>in plain HTML",
+ "hook_sub": "5 screens · light + dark · live forecast data",
+ "cover": {
+  "h1_top": 128,
+  "sub_top": 330,
+  "stage": "left:60px;right:60px;top:470px;height:980px",
+  "phones": [
+   [
+    "light-forecast",
+    290,
+    955,
+    320,
+    -9,
+    2
+   ],
+   [
+    "dark-home",
+    790,
+    955,
+    320,
+    9,
+    2
+   ],
+   [
+    "light-home",
+    540,
+    895,
+    350,
+    0,
+    3
+   ]
+  ],
+  "chips": [
+   {
+    "pos": "left:200px;top:400px",
+    "html": "<i></i>Open-Meteo, no key"
+   },
+   {
+    "pos": "left:560px;top:400px",
+    "cls": "v",
+    "html": "<i></i>Tap 27° → °F"
+   }
+  ]
+ },
+ "light_title": "Frosted <em>glass</em>, real data",
+ "light_sub": "Hourly toggle, rain highlights and an AQI scale.",
+ "light_stage": "left:60px;right:60px;top:370px;height:870px",
+ "light_phones": [
+  [
+   "light-home",
+   366,
+   815,
+   330,
+   0,
+   10
+  ],
+  [
+   "light-details",
+   714,
+   815,
+   330,
+   0,
+   10
+  ]
+ ],
+ "callouts": [
+  {
+   "p": 0,
+   "sx": 195,
+   "sy": 292,
+   "lx": 52,
+   "ly": 540,
+   "w": 140,
+   "label": "Tap °C/°F"
+  },
+  {
+   "p": 0,
+   "sx": 42,
+   "sy": 430,
+   "lx": 52,
+   "ly": 740,
+   "w": 140,
+   "label": "Highlights",
+   "cls": "v"
+  },
+  {
+   "p": 0,
+   "sx": 191,
+   "sy": 712,
+   "lx": 52,
+   "ly": 1060,
+   "w": 140,
+   "label": "Hourly tabs"
+  },
+  {
+   "p": 1,
+   "sx": 330,
+   "sy": 200,
+   "lx": 888,
+   "ly": 500,
+   "w": 140,
+   "label": "AQI scale",
+   "cls": "v"
+  },
+  {
+   "p": 1,
+   "sx": 286,
+   "sy": 340,
+   "lx": 888,
+   "ly": 740,
+   "w": 140,
+   "label": "Compass"
+  },
+  {
+   "p": 1,
+   "sx": 330,
+   "sy": 560,
+   "lx": 888,
+   "ly": 980,
+   "w": 140,
+   "label": "Sun arc"
+  }
+ ],
+ "dark_title": "Night mode with <em>moonlight</em>",
+ "dark_sub": "Stars, a soft moon and glass that still reads at 3 AM.",
+ "dark_stage": "left:60px;right:60px;top:380px;height:880px",
+ "dark_phones": [
+  [
+   "dark-details",
+   226,
+   890,
+   280,
+   0,
+   8
+  ],
+  [
+   "dark-forecast",
+   854,
+   890,
+   280,
+   0,
+   8
+  ],
+  [
+   "dark-home",
+   540,
+   850,
+   330,
+   0,
+   10
+  ]
+ ],
+ "dark_callouts": [
+  {
+   "p": 2,
+   "sx": 232,
+   "sy": 206,
+   "lx": 400,
+   "ly": 400,
+   "w": 280,
+   "label": "Moon + stars at night",
+   "cls": "v"
+  },
+  {
+   "p": 0,
+   "sx": 286,
+   "sy": 340,
+   "lx": 96,
+   "ly": 470,
+   "w": 170,
+   "label": "Wind compass"
+  },
+  {
+   "p": 1,
+   "sx": 300,
+   "sy": 360,
+   "lx": 814,
+   "ly": 470,
+   "w": 170,
+   "label": "Rain chart"
+  }
+ ],
+ "cta": {
+  "sub": "I’ll DM you the full kit link. Five pages, ready to open in a browser.",
+  "steps": [
+   "Comment",
+   "Get the DM",
+   "Open + build"
+  ],
+  "phones": [
+   [
+    "light-home2",
+    845,
+    890,
+    330,
+    7,
+    10,
+    "or"
+   ]
+  ],
+  "chips": [],
+  "go": "left:60px;top:1110px",
+  "sub_top": 335
+ },
+ "benefits": [
+  "5 pages: Home, Forecast, Cities, Details, Settings",
+  "Light + dark glass themes",
+  "Live Open-Meteo toggle with caching",
+  "Tailwind CDN + vanilla JS, no build"
+ ],
+ "pin_title": "Nimbus <em>glass</em><br>weather app UI",
+ "pin": {
+  "sub": "Light + dark · HTML, Tailwind, vanilla JS",
+  "stage": "left:50px;right:50px;top:400px;height:580px",
+  "phones": [
+   [
+    "light-forecast",
+    265,
+    700,
+    250,
+    -8,
+    2
+   ],
+   [
+    "dark-home",
+    735,
+    700,
+    250,
+    8,
+    2
+   ],
+   [
+    "light-home",
+    500,
+    672,
+    270,
+    0,
+    3
+   ]
+  ],
+  "pal_top": 1010,
+  "pal_left": 56,
+  "palette": [
+   [
+    "Sky",
+    "#4FA3F7"
+   ],
+   [
+    "Mist",
+    "#8CCBFF"
+   ],
+   [
+    "Peach",
+    "#FFD6A5"
+   ],
+   [
+    "Sun",
+    "#FFB238"
+   ],
+   [
+    "Rain",
+    "#2578DE"
+   ],
+   [
+    "Ink",
+    "#0F2A4A"
+   ],
+   [
+    "Night",
+    "#071026"
+   ],
+   [
+    "Glass",
+    "#FFFFFF 26%"
+   ]
+  ],
+  "card_top": 1150,
+  "card_h": 250,
+  "idea": "A weather app with <em>saved cities</em> and rain alerts",
+  "stack": "Next.js API route proxying a weather API, Redis/edge cache, auth + saved cities, PWA push alerts.",
+  "features": [
+   "Weather API proxy",
+   "Caching",
+   "Saved cities",
+   "Push alerts",
+   "PWA"
+  ]
+ }
+}
