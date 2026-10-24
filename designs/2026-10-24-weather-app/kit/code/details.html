@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4FA3F7">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Ccircle cx=%2212%22 cy=%2212%22 r=%2210%22 fill=%22%23FFB238%22/%3E%3C/svg%3E">
+  <title>Nimbus · Details</title>
+</head>
+<body data-page="details" class="antialiased">
+  <main class="max-w-md md:max-w-3xl mx-auto px-5 pt-5 pb-32">
+    <header class="flex items-center justify-between gap-3">
+      <a href="index.html" class="btn-round" aria-label="Back to home" id="back"></a>
+      <div class="text-center min-w-0"><h1 id="title" class="text-[19px] font-semibold truncate">Bengaluru</h1><p id="sub" class="text-[12px] text-muted">Details · 13:00</p></div>
+      <button type="button" data-theme-toggle class="btn-round"></button>
+    </header>
+    <section id="tiles" class="grid grid-cols-2 md:grid-cols-4 gap-3.5 mt-5" aria-label="Weather details"></section>
+    <p class="text-center text-[11px] text-muted mt-5">Tap any tile for what it means</p>
+  </main>
+  <nav id="nav"></nav>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/details.js"></script>
+</body>
+</html>
