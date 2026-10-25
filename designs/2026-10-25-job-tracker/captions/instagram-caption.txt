@@ -1,0 +1,27 @@
+Your job hunt deserves better than a messy spreadsheet 📋🚀
+
+Build this → Orbit, a job application tracker dashboard
+
+1️⃣ Dashboard: bento stats (applied, interviews, offers, response rate), a weekly applications chart (4 / 8 weeks) with a goal line and tooltips, upcoming interviews and a pipeline bar
+2️⃣ Board: drag and drop cards across Wishlist → Applied → Interview → Offer → Rejected, undo, keyboard moves, filters, search and sort
+3️⃣ Application page: status timeline, autosaving notes, contacts, and an "add to calendar" .ics button
+4️⃣ Interviews: a month calendar with arrow-key navigation, a schedule form and .ics invites
+5️⃣ Settings: weekly goal, ₹/$ currency, interview reminders, CSV import/export and reset
+6️⃣ Responsive mobile view with stage tabs + a forest/lime dark mode
+
+🎓 Student project idea: make it full-stack. Next.js/React front end, Node/Express or Next API routes, Postgres + Prisma for applications and stages, auth (NextAuth / Clerk), cron jobs that email interview and follow-up reminders, resume uploads to S3, and an analytics page (response rate, time to first reply, funnel by stage). Stretch: a Chrome extension that saves a job post in one click
+
+🎨 Palette
+Off-white #F6F5F0 · Forest #1F4D3A · Lime #C6F35E · Ink #14181A
+Dark mode: #0E1512 + lime accent · Rejected: coral #E07A5F
+20px card radius
+
+🛠 Stack: HTML · Tailwind CSS · vanilla JS · Space Grotesk + Geist · drag and drop · everything saved in localStorage
+
+💬 Comment ORBIT to get the HTML/CSS
+
+Save this for your next project ✨
+
+Style inspo: @code.xr
+
+#jobtracker #dashboarddesign #uidesign #uiux #webdesign #bentogrid #darkmode #frontenddevelopment #webdevelopment #tailwindcss #javascript #fullstackproject #studentdeveloper #codingprojects #codein30s

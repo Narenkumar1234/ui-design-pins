@@ -1,0 +1,11 @@
+Job Tracker Dashboard UI: Orbit Light + Dark · Full-Stack Project Idea for Students
+
+Front-end project idea: Orbit, a job application tracker web dashboard for students and new grads. A bento dashboard with stats (applied, interviews, offers, response rate), a weekly applications chart with a goal line (4 or 8 weeks), upcoming interviews and a pipeline bar; a Kanban board where you drag application cards from Wishlist to Applied, Interview, Offer or Rejected, with filters, search, sort and undo; an application page with a status timeline, autosaving notes, contacts and calendar (.ics) export; an interviews calendar with a schedule form; and settings with a weekly goal, interview reminders and CSV import/export. Fully responsive, with a mobile board that uses stage tabs. Light mode is calm off-white #F6F5F0 with deep forest green #1F4D3A, one lime accent #C6F35E and ink #14181A on 20px rounded cards; dark mode is #0E1512 with lime highlights. Space Grotesk headings, Geist UI text. Build it with HTML, Tailwind CSS and vanilla JavaScript (localStorage), then go full-stack with Next.js, Node/Express or Next API routes, Postgres + Prisma, auth, cron email reminders, S3 resume uploads and analytics. A dashboard UI kit from @code.in.30s, comment ORBIT on Instagram for the HTML/CSS kit.
+
+#jobtracker #dashboarddesign #uidesign #webdesign #kanban #darkmode #frontenddevelopment #tailwindcss #studentprojects #fullstackproject
+
+Alt text: A desktop browser window and a phone showing the Orbit job tracker on an off-white dotted background. The browser shows a light bento dashboard with a "Good morning" greeting, stat cards for applications, interviews, offers and response rate, an applications chart and a list of upcoming interviews; the phone shows the dark-mode mobile Kanban board with stage tabs and application cards. Below are six palette swatches with hex codes (off-white #F6F5F0, forest #1F4D3A, lime #C6F35E, ink #14181A, night #0E1512, coral #E07A5F), a fonts card (Space Grotesk + Geist) and a "Build it" card with a full-stack version of the project.
+
+Board: UI Design Inspiration (or Dashboard UI / Frontend Projects)
+
+Link (once published): https://narenkumar1.gumroad.com/l/job-tracker-ui-kit
