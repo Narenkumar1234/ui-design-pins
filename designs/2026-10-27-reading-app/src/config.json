@@ -1,0 +1,394 @@
+{
+ "out": "../final",
+ "handle": "code.in.30s",
+ "keyword": "FOLIO",
+ "tags": [
+  "HTML",
+  "TAILWIND",
+  "JS",
+  "UI"
+ ],
+ "screens": {
+  "light-home": "../final/screens/light-home.png",
+  "light-detail": "../final/screens/light-detail.png",
+  "light-profile": "../final/screens/light-profile.png",
+  "light-reader": "../final/screens/light-reader.png",
+  "light-shelf": "../final/screens/light-shelf.png",
+  "dark-home": "../final/screens/dark-home.png",
+  "dark-detail": "../final/screens/dark-detail.png",
+  "dark-profile": "../final/screens/dark-profile.png",
+  "dark-reader": "../final/screens/dark-reader.png",
+  "dark-shelf": "../final/screens/dark-shelf.png"
+ },
+ "hook": "A <em>reading tracker</em><br>that feels like<br>a good book",
+ "hook_sub": "",
+ "cover": {
+  "h1_top": 130,
+  "phones": [
+   [
+    "light-detail",
+    300,
+    990,
+    330,
+    -7,
+    1
+   ],
+   [
+    "dark-home",
+    790,
+    990,
+    330,
+    7,
+    1
+   ],
+   [
+    "light-home",
+    545,
+    930,
+    370,
+    0,
+    3
+   ]
+  ],
+  "chips": [
+   {
+    "pos": "left:60px;top:470px",
+    "cls": "o",
+    "html": "<i></i>12-day streak"
+   },
+   {
+    "pos": "right:60px;top:420px",
+    "cls": "k",
+    "html": "<span style='color:#F5C518'>\u2605</span> Rate + shelf"
+   },
+   {
+    "pos": "right:60px;top:500px",
+    "html": "<i></i>Light + dark"
+   }
+  ]
+ },
+ "light": {
+  "title": "Monochrome, <em>one</em> accent",
+  "sub": "Black, off-white and grey. Orange only where your eye should go.",
+  "phones": [
+   [
+    "light-home",
+    345,
+    810,
+    400,
+    0,
+    3
+   ],
+   [
+    "light-detail",
+    745,
+    850,
+    330,
+    0,
+    2
+   ]
+  ],
+  "callouts": [
+   {
+    "p": 0,
+    "sx": 62,
+    "sy": 149,
+    "lx": 20,
+    "ly": 470,
+    "w": 120,
+    "label": "Streak"
+   },
+   {
+    "p": 0,
+    "sx": 300,
+    "sy": 499,
+    "lx": 20,
+    "ly": 790,
+    "w": 120,
+    "label": "Progress",
+    "cls": "v"
+   },
+   {
+    "p": 0,
+    "sx": 68,
+    "sy": 640,
+    "lx": 20,
+    "ly": 1060,
+    "w": 120,
+    "label": "Daily goal"
+   },
+   {
+    "p": 1,
+    "sx": 300,
+    "sy": 160,
+    "lx": 925,
+    "ly": 420,
+    "w": 135,
+    "label": "CSS cover",
+    "cls": "v"
+   },
+   {
+    "p": 1,
+    "sx": 290,
+    "sy": 561,
+    "lx": 925,
+    "ly": 1020,
+    "w": 135,
+    "label": "Shelf pill"
+   },
+   {
+    "p": 1,
+    "sx": 285,
+    "sy": 494,
+    "lx": 925,
+    "ly": 880,
+    "w": 135,
+    "label": "Facts"
+   }
+  ]
+ },
+ "light2": {
+  "title": "Stats that <em>keep you</em> reading",
+  "sub": "Stat tiles, a yearly goal and a calm reader with highlights.",
+  "phones": [
+   [
+    "light-profile",
+    345,
+    810,
+    400,
+    0,
+    3
+   ],
+   [
+    "light-reader",
+    745,
+    850,
+    330,
+    0,
+    2
+   ]
+  ],
+  "callouts": [
+   {
+    "p": 0,
+    "sx": 152,
+    "sy": 112,
+    "lx": 20,
+    "ly": 440,
+    "w": 120,
+    "label": "Avatar"
+   },
+   {
+    "p": 0,
+    "sx": 286,
+    "sy": 455,
+    "lx": 20,
+    "ly": 760,
+    "w": 120,
+    "label": "Stat tiles",
+    "cls": "v"
+   },
+   {
+    "p": 0,
+    "sx": 60,
+    "sy": 572,
+    "lx": 20,
+    "ly": 990,
+    "w": 120,
+    "label": "Year goal"
+   },
+   {
+    "p": 1,
+    "sx": 350,
+    "sy": 300,
+    "lx": 925,
+    "ly": 560,
+    "w": 135,
+    "label": "Highlight",
+    "cls": "v"
+   },
+   {
+    "p": 1,
+    "sx": 349,
+    "sy": 32,
+    "lx": 925,
+    "ly": 420,
+    "w": 135,
+    "label": "Aa text"
+   },
+   {
+    "p": 1,
+    "sx": 337,
+    "sy": 719,
+    "lx": 925,
+    "ly": 1120,
+    "w": 135,
+    "label": "Page turn"
+   }
+  ]
+ },
+ "dark": {
+  "title": "Dark mode, <em>same accent</em>",
+  "sub": "Near-black surfaces, off-white buttons, orange stays orange.",
+  "phones": [
+   [
+    "dark-home",
+    345,
+    810,
+    400,
+    0,
+    3
+   ],
+   [
+    "dark-shelf",
+    745,
+    850,
+    330,
+    0,
+    2
+   ]
+  ],
+  "callouts": [
+   {
+    "p": 0,
+    "sx": 330,
+    "sy": 245,
+    "lx": 20,
+    "ly": 560,
+    "w": 120,
+    "label": "Today",
+    "cls": "v"
+   },
+   {
+    "p": 0,
+    "sx": 345,
+    "sy": 532,
+    "lx": 20,
+    "ly": 900,
+    "w": 120,
+    "label": "Button"
+   },
+   {
+    "p": 1,
+    "sx": 21,
+    "sy": 210,
+    "lx": 925,
+    "ly": 470,
+    "w": 135,
+    "label": "Genre chips",
+    "cls": "v"
+   },
+   {
+    "p": 1,
+    "sx": 258,
+    "sy": 163,
+    "lx": 925,
+    "ly": 380,
+    "w": 135,
+    "label": "Status tabs"
+   }
+  ]
+ },
+ "cta": {
+  "sub": "I\u2019ll DM you the full kit link. Five pages, open in any browser, no build step.",
+  "steps": [
+   "Comment",
+   "Get the DM",
+   "Build it"
+  ],
+  "phones": [
+   [
+    "light-shelf",
+    860,
+    860,
+    330,
+    0,
+    3
+   ]
+  ],
+  "chips": [
+   {
+    "pos": "left:200px;top:1085px",
+    "cls": "k",
+    "html": "<i></i>$3 kit \u00b7 link in DM"
+   }
+  ],
+  "go": "left:60px;top:1060px",
+  "sub_top": 340,
+  "steps_top": 450,
+  "ben_top": 580
+ },
+ "benefits": [
+  "5 pages: Home, Book, Library, Reader, Profile",
+  "Light + dark themes",
+  "Streaks, progress + highlights in localStorage",
+  "Tailwind CDN + vanilla JS, no build"
+ ],
+ "pin_title": "Folio <em>reading</em><br>tracker app UI",
+ "pin": {
+  "sub": "Light + dark \u00b7 HTML, Tailwind, vanilla JS",
+  "h1_top": 110,
+  "sub_top": 290,
+  "phones": [
+   [
+    "light-home",
+    360,
+    700,
+    300,
+    0,
+    3
+   ],
+   [
+    "dark-detail",
+    660,
+    730,
+    260,
+    0,
+    2
+   ]
+  ],
+  "pal_top": 1060,
+  "palette": [
+   [
+    "Ink",
+    "#141414"
+   ],
+   [
+    "Paper",
+    "#F5F4F0"
+   ],
+   [
+    "Grey",
+    "#8A8A8A"
+   ],
+   [
+    "Orange",
+    "#E8742A"
+   ],
+   [
+    "Star",
+    "#F5C518"
+   ],
+   [
+    "Night",
+    "#1E1E1E"
+   ],
+   [
+    "Backdrop",
+    "#E6E6E6"
+   ]
+  ],
+  "card_top": 1185,
+  "card_h": 236,
+  "idea": "A reading tracker with <em>streaks</em> and social shelves",
+  "stack": "Next.js + Postgres (Prisma), auth, Open Library API search, streak cron.",
+  "features": [
+   "Book search API",
+   "Streaks",
+   "Auth",
+   "Shelves",
+   "PWA"
+  ],
+  "pal_left": 72
+ }
+}
