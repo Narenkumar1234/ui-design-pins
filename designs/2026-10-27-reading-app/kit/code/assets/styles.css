@@ -1,0 +1,127 @@
+/* Folio UI Kit · design tokens + components.
+   Monochrome chrome (near-black / off-white / grey) with ONE accent: orange #E8742A. Yellow #F5C518 is only for rating stars.
+   Colours are "R G B" so Tailwind opacity modifiers work (bg-accent/15, text-ink/70). */
+:root {
+  --bg: 245 244 240;      /* #F5F4F0 off-white page */
+  --card: 255 255 255;    /* #FFFFFF cards */
+  --line: 231 229 223;    /* #E7E5DF hairlines */
+  --soft: 236 234 228;    /* #ECEAE4 chips, tracks */
+  --ink: 20 20 20;        /* #141414 near-black text */
+  --muted: 138 138 138;   /* #8A8A8A secondary text */
+  --accent: 232 116 42;   /* #E8742A the one bold accent */
+  --star: 245 197 24;     /* #F5C518 rating stars only */
+  --inv: 20 20 20;        /* inverse surface (streak card, primary buttons) */
+  --oninv: 245 244 240;
+  --hero: 20 20 20;       /* streak card + nav: black in light mode */
+  --onhero: 245 244 240;
+  color-scheme: light;
+}
+.dark {
+  --bg: 20 20 20;         /* #141414 */
+  --card: 30 30 30;       /* #1E1E1E */
+  --line: 42 42 42;       /* #2A2A2A */
+  --soft: 38 38 38;       /* #262626 */
+  --ink: 245 244 240;     /* #F5F4F0 */
+  --muted: 138 138 138;   /* #8A8A8A */
+  --accent: 232 116 42;   /* #E8742A */
+  --star: 245 197 24;
+  --inv: 245 244 240;     /* off-white buttons on black */
+  --oninv: 20 20 20;
+  --hero: 34 34 34;       /* #222222 raised black in dark mode */
+  --onhero: 245 244 240;
+  color-scheme: dark;
+}
+html { -webkit-tap-highlight-color: transparent; }
+body { font-family: Urbanist, system-ui, sans-serif; background: rgb(var(--bg)); color: rgb(var(--ink)); min-height: 100vh; overflow-x: hidden; }
+.num { font-variant-numeric: tabular-nums; }
+.h-title { font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
+.label { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--muted)); }
+
+/* surfaces */
+.card { background: rgb(var(--card)); border: 1px solid rgb(var(--line)); border-radius: 20px; }
+.tile { background: rgb(var(--card)); border: 1px solid rgb(var(--line)); border-radius: 10px; }
+
+/* pills + chips (fully rounded) */
+.pill { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 999px;
+  font-weight: 700; font-size: 15px; white-space: nowrap; transition: transform .12s, background .2s, color .2s, border-color .2s; }
+.pill:active { transform: scale(.97); }
+.pill-ink { background: rgb(var(--inv)); color: rgb(var(--oninv)); }
+.pill-accent { background: rgb(var(--accent)); color: #141414; }
+.pill-line { border: 1.5px solid rgb(var(--ink) / .9); color: rgb(var(--ink)); }
+.pill-line.on { background: rgb(var(--accent)); border-color: rgb(var(--accent)); color: #141414; }
+.pill-sm { height: 36px; padding: 0 14px; font-size: 14px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px; border-radius: 999px; font-size: 14px; font-weight: 600;
+  background: rgb(var(--soft)); color: rgb(var(--ink)); white-space: nowrap; border: 1px solid transparent; transition: background .2s, color .2s; }
+.chip[aria-pressed="true"], .chip.on { background: rgb(var(--inv)); color: rgb(var(--oninv)); }
+.chip .ct { font-size: 12px; opacity: .6; }
+.btn-round { width: 42px; height: 42px; border-radius: 999px; display: grid; place-items: center; border: 1px solid rgb(var(--line)); background: rgb(var(--card)); color: rgb(var(--ink)); flex: none; }
+.btn-round svg, .ico { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+:focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 2px; border-radius: 12px; }
+
+/* progress */
+.track { height: 6px; border-radius: 999px; background: rgb(var(--soft)); overflow: hidden; }
+.track > i { display: block; height: 100%; border-radius: inherit; background: rgb(var(--accent)); transition: width .5s cubic-bezier(.2,.8,.2,1); }
+
+/* book covers: designed in CSS, scale with their width (container query units) */
+.cover { position: relative; aspect-ratio: 2 / 3; border-radius: 10px; overflow: hidden; container-type: inline-size; flex: none;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / .06); }
+.dark .cover { box-shadow: inset 0 0 0 1px rgb(255 255 255 / .06); }
+.cover > * { position: absolute; }
+.cover .t { left: 9cqw; right: 9cqw; font-weight: 900; line-height: .92; letter-spacing: -0.03em; text-transform: uppercase; }
+.cover .a { left: 9cqw; right: 9cqw; font-size: 6.5cqw; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.cover .s { border-radius: 999px; }
+
+/* bottom nav (floating pill) */
+.nav { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); width: min(calc(100% - 32px), 420px); z-index: 40;
+  display: flex; justify-content: space-around; align-items: center; height: 66px; border-radius: 999px;
+  background: rgb(var(--hero)); color: rgb(var(--onhero) / .5); }
+.dark .nav { box-shadow: inset 0 0 0 1px rgb(255 255 255 / .06); }
+.nav a { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 999px; position: relative; }
+.nav a[aria-current="page"] { color: rgb(var(--accent)); }
+.nav a[aria-current="page"]::after { content: ''; position: absolute; bottom: 5px; width: 5px; height: 5px; border-radius: 50%; background: rgb(var(--accent)); }
+.nav svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+
+/* horizontal scroller */
+.hscroll { display: flex; gap: 14px; overflow-x: auto; scrollbar-width: none; scroll-snap-type: x mandatory; padding-bottom: 2px; }
+.hscroll::-webkit-scrollbar { display: none; }
+.hscroll > * { scroll-snap-align: start; }
+
+/* stars */
+.stars { display: inline-flex; gap: 4px; }
+.stars button { width: 30px; height: 30px; display: grid; place-items: center; color: rgb(var(--line)); }
+.stars button.on { color: rgb(var(--star)); }
+.stars svg { width: 24px; height: 24px; fill: currentColor; }
+
+/* bottom sheet + toast */
+.scrim { position: fixed; inset: 0; background: rgb(0 0 0 / .4); z-index: 60; opacity: 0; transition: opacity .2s; }
+.scrim.open { opacity: 1; }
+.sheet { position: fixed; left: 50%; bottom: 0; width: min(100%, 480px); transform: translate(-50%, 100%); z-index: 61; background: rgb(var(--card));
+  border-radius: 28px 28px 0 0; padding: 12px 22px 28px; transition: transform .28s cubic-bezier(.2,.8,.2,1); border: 1px solid rgb(var(--line)); }
+.sheet.open { transform: translate(-50%, 0); }
+.sheet .grab { width: 44px; height: 5px; border-radius: 9px; background: rgb(var(--line)); margin: 0 auto 14px; }
+.stepper { display: flex; align-items: center; gap: 10px; }
+.stepper button { width: 40px; height: 40px; border-radius: 999px; background: rgb(var(--soft)); font-size: 20px; font-weight: 700; }
+.stepper output { min-width: 56px; text-align: center; font-size: 22px; font-weight: 800; }
+.toast { position: fixed; left: 50%; bottom: 96px; transform: translate(-50%, 20px); opacity: 0; z-index: 70; pointer-events: none;
+  background: rgb(var(--inv)); color: rgb(var(--oninv)); padding: 12px 18px; border-radius: 999px; font-weight: 600; font-size: 14px; transition: .25s; white-space: nowrap; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* reader */
+.prose-r p { margin-bottom: 1.1em; }
+.prose-r mark { background: rgb(var(--accent) / .22); color: inherit; border-radius: 4px; padding: 1px 2px; }
+.prose-r p { cursor: pointer; }
+.seg { display: inline-flex; padding: 4px; border-radius: 999px; background: rgb(var(--soft)); }
+.seg button { height: 34px; padding: 0 14px; border-radius: 999px; font-weight: 700; font-size: 14px; color: rgb(var(--muted)); }
+.seg button[aria-pressed="true"] { background: rgb(var(--card)); color: rgb(var(--ink)); box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
+
+/* bars */
+.bars { display: flex; align-items: flex-end; justify-content: space-between; }
+.bars i { flex: none; width: 22px; border-radius: 7px; background: rgb(var(--soft)); min-height: 6px; transition: height .4s; }
+.bars.thin i { width: 14px; border-radius: 5px; }
+.barl { display: flex; justify-content: space-between; } .barl span { width: 22px; text-align: center; } .barl.thin span { width: 14px; }
+/* fade behind sticky bottom actions so text never peeks between them */
+.bottom-fade { position: fixed; left: 0; right: 0; bottom: 0; height: 190px; z-index: 25; pointer-events: none;
+  background: linear-gradient(180deg, rgb(var(--bg) / 0) 0%, rgb(var(--bg)) 38%); }
+.bars i.hi { background: rgb(var(--accent)); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
