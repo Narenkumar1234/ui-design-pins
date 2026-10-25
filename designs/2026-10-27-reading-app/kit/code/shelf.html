@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F5F4F0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Crect x=%224%22 y=%222%22 width=%2216%22 height=%2220%22 rx=%223%22 fill=%22%23141414%22/%3E%3Ccircle cx=%2212%22 cy=%2211%22 r=%224%22 fill=%22%23E8742A%22/%3E%3C/svg%3E">
+  <title>Folio · Shelf</title>
+</head>
+<body data-page="shelf" data-nav="shelf" class="antialiased">
+  <main class="max-w-md md:max-w-4xl mx-auto px-5 pt-6 pb-32">
+    <header class="flex items-center justify-between">
+      <h1 class="h-title text-[32px]">Library</h1>
+      <button type="button" data-theme-toggle class="btn-round"></button>
+    </header>
+    <label class="mt-4 flex items-center gap-2 h-12 px-4 rounded-full bg-card border border-line">
+      <span class="text-muted" id="s-ico"></span><span class="sr-only">Search</span>
+      <input id="q" type="search" placeholder="Search title or author" class="bg-transparent flex-1 outline-none text-[15px] placeholder:text-muted" autocomplete="off">
+    </label>
+    <div class="flex gap-2 mt-4 overflow-x-auto" id="tabs" role="tablist" aria-label="Status" style="scrollbar-width:none"></div>
+    <div class="flex gap-2 mt-3 overflow-x-auto pb-1" id="genres" aria-label="Genre" style="scrollbar-width:none"></div>
+    <p class="text-muted text-[13px] mt-4" id="count" aria-live="polite"></p>
+    <div class="grid grid-cols-3 md:grid-cols-6 gap-x-3 gap-y-5 mt-3" id="grid"></div>
+  </main>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/shelf.js"></script>
+</body>
+</html>

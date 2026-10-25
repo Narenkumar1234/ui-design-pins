@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F5F4F0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Crect x=%224%22 y=%222%22 width=%2216%22 height=%2220%22 rx=%223%22 fill=%22%23141414%22/%3E%3Ccircle cx=%2212%22 cy=%2211%22 r=%224%22 fill=%22%23E8742A%22/%3E%3C/svg%3E">
+  <title>Folio · Book</title>
+</head>
+<body data-page="book" data-nav="shelf" class="antialiased">
+  <main class="max-w-md md:max-w-4xl mx-auto px-5 pt-5 pb-48">
+    <header class="flex items-center justify-between">
+      <a href="index.html" class="btn-round" aria-label="Back" id="back"></a>
+      <p class="font-extrabold text-[17px] flex items-center gap-1.5">Folio<i class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></i></p>
+      <button type="button" class="btn-round" id="bm" aria-pressed="false" aria-label="Bookmark"></button>
+    </header>
+
+    <div class="md:grid md:grid-cols-[300px_1fr] md:gap-10 md:mt-6">
+      <div>
+        <div class="mx-auto w-[190px] md:w-[260px] mt-5 md:mt-0" id="cover"></div>
+        <h1 class="h-title text-[30px] text-center mt-5" id="title">Salt &amp; Signal</h1>
+        <p class="text-muted text-center text-[15px] mt-1" id="author">Dev Rao</p>
+      </div>
+      <div>
+        <!-- stat pills -->
+        <div class="grid grid-cols-4 gap-2 mt-5 md:mt-0" id="facts"></div>
+        <!-- actions -->
+        <div class="flex items-center gap-2 mt-4">
+          <button type="button" class="pill pill-line flex-1" id="shelf-btn" aria-pressed="false"></button>
+          <button type="button" class="btn-round !w-11 !h-11" id="share" aria-label="Share"></button>
+        </div>
+        <!-- progress -->
+        <section class="card p-4 mt-4" id="prog"></section>
+        <!-- your rating -->
+        <section class="flex items-center justify-between mt-5"><h2 class="font-extrabold text-[16px]">Your rating</h2><div id="mine"></div></section>
+        <!-- about -->
+        <section class="mt-5"><h2 class="label">About the book</h2>
+          <p class="text-[15px] leading-relaxed text-ink/75 mt-2 line-clamp-3" id="about"></p>
+          <button type="button" class="text-[14px] font-bold text-accent mt-1" id="more" aria-expanded="false">Read more</button></section>
+        <!-- also liked -->
+        <section class="mt-6"><div class="flex items-baseline justify-between"><h2 class="h-title text-[18px]">Readers also liked</h2><a href="shelf.html" class="text-[14px] font-semibold text-muted">See all</a></div>
+          <div class="hscroll mt-3" id="liked"></div></section>
+      </div>
+    </div>
+  </main>
+  <!-- sticky primary action (above the nav) -->
+  <div class="fixed left-1/2 -translate-x-1/2 bottom-[94px] w-[min(calc(100%-32px),420px)] z-30">
+    <a id="cta" href="reader.html" class="pill pill-accent w-full h-[54px] text-[16px]">Continue reading</a>
+  </div>
+  <div class="bottom-fade" aria-hidden="true"></div>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/book.js"></script>
+</body>
+</html>
