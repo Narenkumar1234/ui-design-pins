@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1F4D3A">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%231F4D3A%22/%3E%3Ccircle cx=%2225%22 cy=%2211%22 r=%223%22 fill=%22%23C6F35E%22/%3E%3C/svg%3E">
+  <title>Orbit · Dashboard</title>
+</head>
+<body data-page="dashboard" class="antialiased">
+  <div class="shell">
+    <aside id="sidebar" class="sidebar" aria-label="Sidebar"></aside>
+    <div class="min-w-0">
+      <header id="topbar" class="sticky top-0 z-30 flex items-center gap-3 px-4 sm:px-6 lg:px-8 h-[72px] bg-bg/90 backdrop-blur border-b border-line lg:border-b-0"></header>
+      <main id="main" class="px-4 sm:px-6 lg:px-8 pt-4 lg:pt-2 pb-32 lg:pb-12 max-w-[1440px]">
+        <!-- Dashboard: greeting, 4 stat cards, applications-per-week chart, upcoming interviews, pipeline, recent activity, next-up card -->
+        <div class="flex flex-wrap items-end gap-3 mb-5">
+          <div class="min-w-0 flex-1">
+            <p id="today" class="label">Sunday, 25 Oct</p>
+            <h1 id="greet" class="font-display text-[30px] sm:text-[34px] font-bold tracking-tight leading-tight">Good morning, Aarav</h1>
+          </div>
+          <button type="button" class="btn btn-ghost" id="export">Export CSV</button>
+        </div>
+        <section id="stats" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" aria-label="Key numbers"></section>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 mt-3 sm:mt-4">
+          <section class="card p-5 lg:col-span-8 min-w-0" aria-labelledby="chart-h">
+            <div class="flex flex-wrap items-center gap-3">
+              <div class="flex-1 min-w-0"><h2 id="chart-h" class="font-display text-[18px] font-bold">Applications per week</h2><p id="chart-sub" class="label">Goal 5 / week</p></div>
+              <div class="seg" id="range" role="group" aria-label="Range"><button type="button" data-w="4">4 weeks</button><button type="button" data-w="8" aria-pressed="true">8 weeks</button></div>
+            </div>
+            <div id="chart" class="relative mt-4"></div>
+          </section>
+          <section class="card p-5 lg:col-span-4 min-w-0" aria-labelledby="up-h">
+            <div class="flex items-center"><h2 id="up-h" class="font-display text-[18px] font-bold flex-1">Upcoming interviews</h2><a href="interviews.html" class="text-[13px] font-semibold text-muted hover:text-ink">See all</a></div>
+            <ul id="upcoming" class="mt-3 flex flex-col gap-2"></ul>
+          </section>
+          <section class="card p-5 lg:col-span-5 min-w-0" aria-labelledby="pipe-h">
+            <div class="flex items-center"><h2 id="pipe-h" class="font-display text-[18px] font-bold flex-1">Pipeline</h2><a href="board.html" class="text-[13px] font-semibold text-muted hover:text-ink">Open board</a></div>
+            <div id="pipe" class="mt-4"></div>
+          </section>
+          <section class="card p-5 lg:col-span-4 min-w-0" aria-labelledby="act-h">
+            <h2 id="act-h" class="font-display text-[18px] font-bold">Recent activity</h2>
+            <ul id="activity" class="tl mt-4 flex flex-col gap-3.5"></ul>
+          </section>
+          <section id="nextup" class="card card-brand p-5 lg:col-span-3 min-w-0 flex flex-col" aria-label="Next up"></section>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div id="live" class="sr-only" aria-live="polite"></div>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/dashboard.js"></script>
+</body>
+</html>

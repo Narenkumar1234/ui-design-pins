@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1F4D3A">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%231F4D3A%22/%3E%3Ccircle cx=%2225%22 cy=%2211%22 r=%223%22 fill=%22%23C6F35E%22/%3E%3C/svg%3E">
+  <title>Orbit · Settings</title>
+</head>
+<body data-page="settings" class="antialiased">
+  <div class="shell">
+    <aside id="sidebar" class="sidebar" aria-label="Sidebar"></aside>
+    <div class="min-w-0">
+      <header id="topbar" class="sticky top-0 z-30 flex items-center gap-3 px-4 sm:px-6 lg:px-8 h-[72px] bg-bg/90 backdrop-blur border-b border-line lg:border-b-0"></header>
+      <main id="main" class="px-4 sm:px-6 lg:px-8 pt-4 lg:pt-2 pb-32 lg:pb-12 max-w-[1440px]">
+        <!-- Settings: profile, weekly goal, theme, currency, reminders, data (export / import CSV, reset demo, clear), shortcuts -->
+        <h1 class="font-display text-[30px] font-bold tracking-tight leading-tight mb-5">Settings</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-[1100px]">
+          <section class="card p-5" aria-labelledby="pf-h">
+            <h2 id="pf-h" class="font-display text-[18px] font-bold">Profile</h2>
+            <div class="flex items-center gap-4 mt-4"><span id="pf-av" class="w-14 h-14 rounded-full grid place-items-center bg-lime text-[#14181A] font-display font-bold text-[20px]">AM</span>
+            <div class="field flex-1 min-w-0"><label for="s-name">Your name</label><input id="s-name" class="input" autocomplete="name"></div></div>
+            <div class="field mt-4"><label for="s-goal">Weekly application goal</label>
+              <div class="flex items-center gap-2"><button type="button" class="btn-icon" id="goal-dec" aria-label="Decrease goal">−</button><input id="s-goal" class="input !w-[90px] text-center num font-display font-bold" inputmode="numeric"><button type="button" class="btn-icon" id="goal-inc" aria-label="Increase goal">+</button><span class="text-[13px] text-muted ml-1">applications / week</span></div></div>
+          </section>
+          <section class="card p-5" aria-labelledby="ap-h">
+            <h2 id="ap-h" class="font-display text-[18px] font-bold">Appearance</h2>
+            <p class="label mt-4 mb-2">Theme</p>
+            <div class="seg" id="theme-seg" role="group" aria-label="Theme"><button type="button" data-t="light">Light</button><button type="button" data-t="dark">Dark</button><button type="button" data-t="system">System</button></div>
+            <p class="label mt-5 mb-2">Currency</p>
+            <div class="seg" id="cur-seg" role="group" aria-label="Currency"><button type="button" data-c="INR">₹ INR</button><button type="button" data-c="USD">$ USD</button></div>
+            <p class="text-[13px] text-muted mt-2">Preview: <b id="cur-prev" class="text-ink">₹45k/mo · ₹14 LPA</b></p>
+          </section>
+          <section class="card p-5" aria-labelledby="rm-h">
+            <h2 id="rm-h" class="font-display text-[18px] font-bold">Reminders</h2>
+            <div class="flex items-center gap-4 mt-4"><div class="flex-1"><p class="font-medium">Interview reminders</p><p class="text-[13px] text-muted">Shows a banner on the dashboard before each interview.</p></div><button type="button" class="switch" id="s-rem" role="switch" aria-checked="true" aria-label="Interview reminders"></button></div>
+            <div class="field mt-4"><label for="s-hours">Remind me</label><select id="s-hours" class="select"><option value="2">2 hours before</option><option value="24">1 day before</option><option value="48">2 days before</option><option value="72">3 days before</option></select></div>
+            <p class="text-[12.5px] text-muted mt-3">Email reminders need a backend: see “Make it full-stack” in the README (cron + Resend / Nodemailer).</p>
+          </section>
+          <section class="card p-5" aria-labelledby="dt-h">
+            <h2 id="dt-h" class="font-display text-[18px] font-bold">Your data</h2>
+            <p class="text-[13px] text-muted mt-1">Everything is stored in this browser (localStorage). <span id="data-count">17 applications</span>.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <button type="button" class="btn btn-primary" id="export">Export CSV</button>
+              <label class="btn btn-ghost cursor-pointer" for="import">Import CSV</label><input type="file" id="import" accept=".csv,text/csv" class="sr-only">
+              <button type="button" class="btn btn-ghost" id="reset">Reset demo data</button>
+              <button type="button" class="btn btn-danger" id="clear">Clear all</button>
+            </div>
+          </section>
+          <section class="card p-5 lg:col-span-2" aria-labelledby="kb-h">
+            <h2 id="kb-h" class="font-display text-[18px] font-bold">Keyboard shortcuts</h2>
+            <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-4 text-[13.5px]">
+              <li class="flex items-center gap-2"><kbd class="tag !h-7 !px-2.5 font-semibold text-ink">/</kbd>Search</li>
+              <li class="flex items-center gap-2"><kbd class="tag !h-7 !px-2.5 font-semibold text-ink">N</kbd>New application</li>
+              <li class="flex items-center gap-2"><kbd class="tag !h-7 !px-2.5 font-semibold text-ink">Shift ← →</kbd>Move card</li>
+              <li class="flex items-center gap-2"><kbd class="tag !h-7 !px-2.5 font-semibold text-ink">Esc</kbd>Close dialogs</li>
+            </ul>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div id="live" class="sr-only" aria-live="polite"></div>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/settings.js"></script>
+</body>
+</html>
