@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Orbit — Application Tracker Dashboard</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Public+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: "#0E1512",
+              surface: "#16211C",
+              border: "#24332B",
+              text: "#EEF3EC",
+              muted: "#9AA89F",
+              accent: "#C6F35E",
+              darkgreen: "#1F4D3A",
+              emeraldDeep: "#133124"
+            },
+            status: {
+              wishlist: "#8A948E",
+              applied: "#5B7C99",
+              interview: "#C6F35E",
+              offer: "#2E6B50",
+              rejected: "#E07A5F"
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px",
+            "bento": "20px"
+          },
+          fontFamily: {
+            headline: ["Space Grotesk", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"],
+            body: ["Geist", "-apple-system", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+    }
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0E1512;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #24332B;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #32473D;
+    }
+  </style>
+</head>
+<body class="bg-[#0E1512] text-[#EEF3EC] font-body selection:bg-[#C6F35E] selection:text-[#0E1512] min-h-screen antialiased flex">
+<!-- ===============================
+       1. LEFT SIDEBAR (w-60 / 240px)
+       =============================== -->
+<aside class="fixed top-0 left-0 h-screen w-60 flex flex-col justify-between bg-[#16211C] border-r border-[#24332B] z-50 p-4 shrink-0">
+<!-- Brand Anchor & Main Nav -->
+<div class="flex flex-col">
+<!-- Orbit Brand Header -->
+<div class="flex items-center gap-3 px-2 py-3 mb-5">
+<div class="w-8 h-8 rounded-lg bg-[#24332B] flex items-center justify-center border border-[#32473D] text-[#C6F35E]">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">trip_origin</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-lg tracking-tight text-[#EEF3EC]">Orbit</span>
+<span class="font-label text-[11px] text-[#9AA89F] tracking-wide">Application Tracker</span>
+</div>
+</div>
+<!-- Quick Action: CTA in SideNavBar -->
+<button class="w-full mb-6 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-[#1F4D3A] text-[#C6F35E] hover:bg-[#28634b] active:scale-[0.98] transition-all font-headline font-medium text-xs tracking-wide border border-[#2E6B50]/40">
+<span class="material-symbols-outlined text-base">add</span>
+<span>+ Add application</span>
+</button>
+<!-- Navigation Tabs -->
+<nav class="space-y-1">
+<!-- Dashboard (Active) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#24332B] text-[#C6F35E] font-medium text-sm transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#C6F35E]">dashboard</span>
+<span class="font-body text-sm font-medium">Dashboard</span>
+</a>
+<!-- Board -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9AA89F] hover:text-[#EEF3EC] hover:bg-[#1F4D3A]/20 transition-colors font-medium text-sm group" href="#">
+<span class="material-symbols-outlined text-[20px]">view_kanban</span>
+<span class="font-body text-sm">Board</span>
+</a>
+<!-- Interviews (with badge '3') -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg text-[#9AA89F] hover:text-[#EEF3EC] hover:bg-[#1F4D3A]/20 transition-colors font-medium text-sm group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">event_available</span>
+<span class="font-body text-sm">Interviews</span>
+</div>
+<span class="px-1.5 py-0.5 rounded-full text-[10px] font-bold font-headline bg-[#24332B] text-[#C6F35E] border border-[#32473D]">3</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9AA89F] hover:text-[#EEF3EC] hover:bg-[#1F4D3A]/20 transition-colors font-medium text-sm group" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-body text-sm">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom: Weekly Goal Card & Support -->
+<div class="space-y-3 pt-3 border-t border-[#24332B]">
+<!-- Weekly Goal Card -->
+<div class="p-3.5 rounded-xl bg-[#0E1512] border border-[#24332B] relative overflow-hidden">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label text-[11px] font-semibold tracking-wider text-[#9AA89F] uppercase">Weekly Goal</span>
+<span class="font-headline font-bold text-xs text-[#C6F35E]">7/10</span>
+</div>
+<div class="w-full bg-[#16211C] h-1.5 rounded-full overflow-hidden mb-2 border border-[#24332B]">
+<div class="bg-[#C6F35E] h-full rounded-full transition-all duration-500" style="width: 70%"></div>
+</div>
+<p class="text-[11px] text-[#9AA89F] leading-tight flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#C6F35E] animate-pulse"></span>
+          3 more applications to hit your weekly target!
+        </p>
+</div>
+<!-- Support & Help Link -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-[#9AA89F] hover:text-[#EEF3EC] hover:bg-[#24332B] transition-colors text-xs font-medium" href="#">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">help_outline</span>
+<span>Support</span>
+</div>
+<span class="text-[10px] bg-[#24332B] text-[#9AA89F] px-1.5 py-0.5 rounded">v1.4</span>
+</a>
+</div>
+</aside>
+<!-- ===============================
+       2. MAIN APPLICATION WRAPPER
+       =============================== -->
+<div class="ml-60 flex-1 flex flex-col min-h-screen bg-[#0E1512]">
+<!-- TOP NAVBAR (Sticky) -->
+<header class="sticky top-0 z-40 flex items-center justify-between px-8 py-3.5 bg-[#0E1512]/90 backdrop-blur-md border-b border-[#24332B]">
+<!-- Search Input Container -->
+<div class="w-96 relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#9AA89F]">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</div>
+<input class="w-full pl-10 pr-12 py-1.5 bg-[#16211C] border border-[#24332B] rounded-lg text-xs text-[#EEF3EC] placeholder-[#9AA89F] focus:outline-none focus:border-[#C6F35E] focus:ring-1 focus:ring-[#C6F35E] transition-all" placeholder="Search companies, roles, tags... (Cmd+K)" type="text"/>
+<div class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none">
+<kbd class="text-[10px] font-mono bg-[#24332B] text-[#9AA89F] px-1.5 py-0.5 rounded border border-[#32473D]">⌘K</kbd>
+</div>
+</div>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-4">
+<!-- Notification Button with Indicator Dot -->
+<button aria-label="Notifications" class="relative p-2 rounded-lg text-[#9AA89F] hover:text-[#EEF3EC] hover:bg-[#16211C] transition-colors border border-transparent hover:border-[#24332B]">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#C6F35E] ring-2 ring-[#0E1512]"></span>
+</button>
+<!-- Primary Add Application Button -->
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-[#1F4D3A] text-[#C6F35E] hover:bg-[#28634b] active:scale-[0.98] transition-all border border-[#2E6B50]/60 font-headline font-semibold text-xs tracking-wide">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Add application</span>
+</button>
+<div class="h-5 w-[1px] bg-[#24332B]"></div>
+<!-- User Profile Avatar Monogram -->
+<div class="flex items-center gap-2.5 pl-1">
+<div class="w-8 h-8 rounded-lg bg-[#24332B] text-[#C6F35E] border border-[#32473D] flex items-center justify-center font-headline font-bold text-xs" title="Aarav profile avatar monogram">
+            A
+          </div>
+<div class="flex flex-col text-left">
+<span class="text-xs font-medium text-[#EEF3EC] leading-tight">Aarav</span>
+<span class="text-[10px] text-[#9AA89F] leading-tight">BITS Pilani '26</span>
+</div>
+</div>
+</div>
+</header>
+<!-- ===============================
+         3. BENTO DASHBOARD MAIN VIEW
+         =============================== -->
+<main class="flex-1 p-8 max-w-[1400px] w-full mx-auto space-y-6">
+<!-- Header Greeting & Context Banner -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-headline font-bold text-2xl text-[#EEF3EC] tracking-tight">Good morning, Aarav</h1>
+<p class="text-sm text-[#9AA89F] mt-0.5 font-body">Here is your recruiting progress for Fall 2025.</p>
+</div>
+<div class="flex items-center gap-2.5">
+<!-- Live Cycle Chip -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#16211C] border border-[#24332B] text-xs font-label text-[#EEF3EC]">
+<span class="w-2 h-2 rounded-full bg-[#C6F35E] animate-ping"></span>
+<span class="w-2 h-2 rounded-full bg-[#C6F35E] -ml-4"></span>
+<span>Sun, 25 Oct • Active Cycle</span>
+</div>
+<!-- Secondary Filter Pill -->
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#16211C] border border-[#24332B] text-xs font-medium text-[#9AA89F] hover:text-[#EEF3EC] hover:border-[#32473D] transition-colors">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Customize</span>
+</button>
+</div>
+</div>
+<!-- BENTO TOP ROW: 4 STAT CARDS -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Card 1: Total Applied -->
+<div class="bg-[#16211C] border border-[#24332B] rounded-[20px] p-5 flex flex-col justify-between transition-all duration-200 hover:border-[#32473D]">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs uppercase tracking-wider text-[#9AA89F] font-semibold">Total applied</span>
+<div class="w-8 h-8 rounded-lg bg-[#0E1512] border border-[#24332B] flex items-center justify-center text-[#9AA89F]">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-headline font-bold text-4xl text-[#EEF3EC] tracking-tight">48</div>
+<div class="mt-2.5 flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#1F4D3A]/40 text-[#C6F35E] text-[11px] font-medium border border-[#2E6B50]/30">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>
+                +6 this week
+              </span>
+<span class="text-[11px] text-[#9AA89F]">across 38 companies</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Interviews -->
+<div class="bg-[#16211C] border border-[#24332B] rounded-[20px] p-5 flex flex-col justify-between transition-all duration-200 hover:border-[#32473D]">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs uppercase tracking-wider text-[#9AA89F] font-semibold">Interviews</span>
+<div class="w-8 h-8 rounded-lg bg-[#0E1512] border border-[#24332B] flex items-center justify-center text-[#C6F35E]">
+<span class="material-symbols-outlined text-[18px]">videocam</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-headline font-bold text-4xl text-[#EEF3EC] tracking-tight">9</div>
+<div class="mt-2.5 flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#24332B] text-[#C6F35E] text-[11px] font-medium border border-[#32473D]">
+<span class="material-symbols-outlined text-[12px]">calendar_month</span>
+                2 this week
+              </span>
+<span class="text-[11px] text-[#9AA89F]">3 rounds upcoming</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Offers -->
+<div class="bg-[#16211C] border border-[#24332B] rounded-[20px] p-5 flex flex-col justify-between transition-all duration-200 hover:border-[#32473D]">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs uppercase tracking-wider text-[#9AA89F] font-semibold">Offers</span>
+<div class="w-8 h-8 rounded-lg bg-[#0E1512] border border-[#24332B] flex items-center justify-center text-[#2E6B50]">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-headline font-bold text-4xl text-[#EEF3EC] tracking-tight">2</div>
+<div class="mt-2.5 flex items-center gap-1.5 flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#133124] text-[#EEF3EC] text-[11px] font-medium border border-[#1F4D3A]">
+                Northwind
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#133124] text-[#EEF3EC] text-[11px] font-medium border border-[#1F4D3A]">
+                Quanta
+              </span>
+</div>
+</div>
+</div>
+<!-- Card 4: Response Rate (HERO LIME CARD) -->
+<div class="bg-[#C6F35E] rounded-[20px] p-5 flex flex-col justify-between text-[#0E1512] shadow-sm relative overflow-hidden transition-all duration-200 hover:brightness-105">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs uppercase tracking-wider text-[#16211C]/80 font-bold">RESPONSE RATE</span>
+<span class="inline-flex items-center gap-0.5 text-[11px] font-bold text-[#16211C] bg-white/40 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">arrow_upward</span>
+              +4.2%
+            </span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<div>
+<div class="font-headline font-bold text-4xl text-[#0E1512] tracking-tight">31%</div>
+<p class="text-[11px] font-medium text-[#16211C]/80 mt-1">vs 18% avg peer benchmark</p>
+</div>
+<!-- Integrated Radial Gauge for 31% -->
+<div class="relative w-14 h-14 flex items-center justify-center">
+<svg class="w-14 h-14 transform -rotate-90" viewbox="0 0 36 36">
+<!-- Background ring -->
+<path class="text-[#16211C]/15" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<!-- Progress ring (31% dasharray) -->
+<path class="text-[#16211C]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="31, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-headline font-bold text-xs text-[#0E1512]">31%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BENTO MIDDLE ROW: APPLICATION VOLUME BAR CHART & PIPELINE STATUS -->
+<section class="grid grid-cols-12 gap-5">
+<!-- Applications Per Week Bar Chart (col-span-7) -->
+<div class="col-span-12 lg:col-span-7 bg-[#16211C] border border-[#24332B] rounded-[20px] p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-6">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline font-bold text-base text-[#EEF3EC]">Applications per week</h2>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-headline bg-[#24332B] text-[#9AA89F] border border-[#32473D]">Last 8 weeks</span>
+</div>
+<p class="text-xs text-[#9AA89F] mt-0.5">Sustained application momentum over recruitment cycle</p>
+</div>
+<!-- Role filter dropdown simulation -->
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#0E1512] border border-[#24332B] text-xs text-[#EEF3EC] cursor-pointer hover:border-[#32473D] transition-colors">
+<span>All roles</span>
+<span class="material-symbols-outlined text-[14px] text-[#9AA89F]">expand_more</span>
+</div>
+</div>
+<!-- Bar Chart Container -->
+<div class="h-44 w-full flex items-end justify-between gap-3 px-2 pt-6 pb-2">
+<!-- W1 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<span class="text-[10px] text-[#9AA89F] opacity-0 group-hover:opacity-100 transition-opacity font-mono">2</span>
+<div class="w-full bg-[#24332B] rounded-t-md hover:bg-[#32473D] transition-colors" style="height: 28px;"></div>
+<span class="text-[11px] font-label text-[#9AA89F]">W1</span>
+</div>
+<!-- W2 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<span class="text-[10px] text-[#9AA89F] opacity-0 group-hover:opacity-100 transition-opacity font-mono">4</span>
+<div class="w-full bg-[#24332B] rounded-t-md hover:bg-[#32473D] transition-colors" style="height: 48px;"></div>
+<span class="text-[11px] font-label text-[#9AA89F]">W2</span>
+</div>
+<!-- W3 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<span class="text-[10px] text-[#9AA89F] opacity-0 group-hover:opacity-100 transition-opacity font-mono">3</span>
+<div class="w-full bg-[#24332B] rounded-t-md hover:bg-[#32473D] transition-colors" style="height: 38px;"></div>
+<span class="text-[11px] font-label text-[#9AA89F]">W3</span>
+</div>
+<!-- W4 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<span class="text-[10px] text-[#9AA89F] opacity-0 group-hover:opacity-100 transition-opacity font-mono">6</span>
+<div class="w-full bg-[#2E6B50]/50 rounded-t-md hover:bg-[#2E6B50] transition-colors" style="height: 72px;"></div>
+<span class="text-[11px] font-label text-[#9AA89F]">W4</span>
+</div>
+<!-- W5 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<span class="text-[10px] text-[#9AA89F] opacity-0 group-hover:opacity-100 transition-opacity font-mono">5</span>
+<div class="w-full bg-[#2E6B50]/50 rounded-t-md hover:bg-[#2E6B50] transition-colors" style="height: 62px;"></div>
+<span class="text-[11px] font-label text-[#9AA89F]">W5</span>
+</div>
+<!-- W6 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<span class="text-[10px] text-[#9AA89F] opacity-0 group-hover:opacity-100 transition-opacity font-mono">8</span>
+<div class="w-full bg-[#2E6B50]/70 rounded-t-md hover:bg-[#2E6B50] transition-colors" style="height: 98px;"></div>
+<span class="text-[11px] font-label text-[#9AA89F]">W6</span>
+</div>
+<!-- W7 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<span class="text-[10px] text-[#9AA89F] opacity-0 group-hover:opacity-100 transition-opacity font-mono">10</span>
+<div class="w-full bg-[#2E6B50] rounded-t-md hover:brightness-110 transition-colors" style="height: 118px;"></div>
+<span class="text-[11px] font-label text-[#9AA89F]">W7</span>
+</div>
+<!-- W8 (Current Week - LIME HIGHLIGHT) -->
+<div class="flex-1 flex flex-col items-center gap-2 relative group">
+<!-- Active Highlight Callout -->
+<span class="absolute -top-7 px-1.5 py-0.5 rounded bg-[#C6F35E] text-[#0E1512] font-headline font-bold text-[10px] shadow-sm">10 apps</span>
+<div class="w-full bg-[#C6F35E] rounded-t-md shadow-sm" style="height: 124px;"></div>
+<span class="text-[11px] font-headline font-bold text-[#C6F35E]">W8 (Now)</span>
+</div>
+</div>
+<!-- Bottom subtle legend & avg note -->
+<div class="mt-4 pt-3 border-t border-[#24332B] flex items-center justify-between text-xs text-[#9AA89F]">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-[#C6F35E]"></span>
+<span>Current week</span>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-[#2E6B50]"></span>
+<span>Prior active weeks</span>
+</span>
+</div>
+<span class="font-mono text-[11px] text-[#EEF3EC]">Avg: 6.0 / week</span>
+</div>
+</div>
+<!-- Pipeline Breakdown Card (col-span-5) -->
+<div class="col-span-12 lg:col-span-5 bg-[#16211C] border border-[#24332B] rounded-[20px] p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="font-headline font-bold text-base text-[#EEF3EC]">Pipeline</h2>
+<p class="text-xs text-[#9AA89F] mt-0.5">Distribution across stages</p>
+</div>
+<span class="px-2.5 py-1 rounded-full text-xs font-headline font-semibold bg-[#0E1512] text-[#EEF3EC] border border-[#24332B]">
+                58 tracked roles
+              </span>
+</div>
+<!-- Stacked Multi-segmented Progress Bar -->
+<div class="w-full h-3 rounded-full overflow-hidden flex bg-[#0E1512] border border-[#24332B] mb-5">
+<!-- Wishlist: 21% -->
+<div class="bg-[#8A948E]" style="width: 21%;" title="Wishlist: 21%"></div>
+<!-- Applied: 41% -->
+<div class="bg-[#5B7C99]" style="width: 41%;" title="Applied: 41%"></div>
+<!-- Interview: 16% -->
+<div class="bg-[#C6F35E]" style="width: 16%;" title="Interview: 16%"></div>
+<!-- Offer: 3% -->
+<div class="bg-[#1F4D3A]" style="width: 5%;" title="Offer: 3%"></div>
+<!-- Rejected: 19% -->
+<div class="bg-[#E07A5F]" style="width: 17%;" title="Rejected: 19%"></div>
+</div>
+<!-- Breakdown List -->
+<div class="space-y-2.5">
+<!-- Wishlist -->
+<div class="flex items-center justify-between py-1 px-2 rounded-lg hover:bg-[#0E1512]/60 transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#8A948E]"></span>
+<span class="text-xs font-medium text-[#EEF3EC]">Wishlist</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold font-headline text-[#EEF3EC]">12 roles</span>
+<span class="text-[11px] text-[#9AA89F] w-9 text-right font-mono">21%</span>
+</div>
+</div>
+<!-- Applied -->
+<div class="flex items-center justify-between py-1 px-2 rounded-lg hover:bg-[#0E1512]/60 transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#5B7C99]"></span>
+<span class="text-xs font-medium text-[#EEF3EC]">Applied</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold font-headline text-[#EEF3EC]">24 roles</span>
+<span class="text-[11px] text-[#9AA89F] w-9 text-right font-mono">41%</span>
+</div>
+</div>
+<!-- Interview -->
+<div class="flex items-center justify-between py-1 px-2 rounded-lg hover:bg-[#0E1512]/60 transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#C6F35E]"></span>
+<span class="text-xs font-medium text-[#EEF3EC]">Interview</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold font-headline text-[#C6F35E]">9 roles</span>
+<span class="text-[11px] text-[#9AA89F] w-9 text-right font-mono">16%</span>
+</div>
+</div>
+<!-- Offer -->
+<div class="flex items-center justify-between py-1 px-2 rounded-lg hover:bg-[#0E1512]/60 transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#1F4D3A] ring-1 ring-[#C6F35E]/40"></span>
+<span class="text-xs font-medium text-[#EEF3EC]">Offer</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold font-headline text-[#EEF3EC]">2 roles</span>
+<span class="text-[11px] text-[#9AA89F] w-9 text-right font-mono">3%</span>
+</div>
+</div>
+<!-- Rejected -->
+<div class="flex items-center justify-between py-1 px-2 rounded-lg hover:bg-[#0E1512]/60 transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#E07A5F]"></span>
+<span class="text-xs font-medium text-[#EEF3EC]">Rejected</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold font-headline text-[#EEF3EC]">11 roles</span>
+<span class="text-[11px] text-[#9AA89F] w-9 text-right font-mono">19%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Conversion footer -->
+<div class="mt-3 pt-3 border-t border-[#24332B] flex items-center justify-between text-[11px] text-[#9AA89F]">
+<span>Applied-to-interview: <strong class="text-[#C6F35E] font-headline">37.5%</strong></span>
+<span>Interview-to-offer: <strong class="text-[#EEF3EC] font-headline">22.2%</strong></span>
+</div>
+</div>
+</section>
+<!-- BENTO BOTTOM ROW: UPCOMING INTERVIEWS & RECENT ACTIVITY -->
+<section class="grid grid-cols-12 gap-5">
+<!-- Upcoming Interviews (col-span-7) -->
+<div class="col-span-12 lg:col-span-7 bg-[#16211C] border border-[#24332B] rounded-[20px] p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2.5">
+<h2 class="font-headline font-bold text-base text-[#EEF3EC]">Upcoming interviews</h2>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-headline font-semibold bg-[#1F4D3A] text-[#C6F35E] border border-[#2E6B50]">
+                  3 scheduled
+                </span>
+</div>
+<a class="text-xs font-medium text-[#9AA89F] hover:text-[#C6F35E] transition-colors flex items-center gap-1 group" href="#">
+<span>View calendar</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- List of upcoming interviews -->
+<div class="space-y-3">
+<!-- Interview Item 1: Northwind -->
+<div class="p-4 rounded-xl bg-[#0E1512] border border-[#24332B] hover:border-[#32473D] transition-colors flex items-start justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<!-- Company Letter Monogram -->
+<div class="w-10 h-10 rounded-lg bg-[#1F4D3A] text-[#C6F35E] border border-[#2E6B50] flex items-center justify-center font-headline font-bold text-sm shrink-0">
+                    NW
+                  </div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline font-bold text-sm text-[#EEF3EC]">Northwind</span>
+<span class="text-xs text-[#9AA89F]">• Frontend Intern</span>
+</div>
+<div class="text-xs text-[#9AA89F] mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-[#C6F35E]">video_camera_front</span>
+<span>Round 2: System &amp; UI Deep Dive</span>
+</div>
+</div>
+</div>
+<!-- Trailing Date & Prep Notes CTA -->
+<div class="flex flex-col items-end gap-2 shrink-0">
+<span class="px-2.5 py-1 rounded-md text-[11px] font-headline font-bold bg-[#24332B] text-[#C6F35E] border border-[#32473D]">
+                    Tue 27 Oct · 10:30 AM
+                  </span>
+<button class="inline-flex items-center gap-1 text-[11px] font-medium text-[#9AA89F] hover:text-[#EEF3EC] px-2 py-0.5 rounded bg-[#16211C] hover:bg-[#24332B] transition-colors border border-[#24332B]">
+<span class="material-symbols-outlined text-[12px]">edit_note</span>
+<span>Prep notes</span>
+</button>
+</div>
+</div>
+<!-- Interview Item 2: Quanta -->
+<div class="p-4 rounded-xl bg-[#0E1512] border border-[#24332B] hover:border-[#32473D] transition-colors flex items-start justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<!-- Company Letter Monogram -->
+<div class="w-10 h-10 rounded-lg bg-[#24332B] text-[#EEF3EC] border border-[#32473D] flex items-center justify-center font-headline font-bold text-sm shrink-0">
+                    Q
+                  </div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline font-bold text-sm text-[#EEF3EC]">Quanta</span>
+<span class="text-xs text-[#9AA89F]">• Software Engineer I</span>
+</div>
+<div class="text-xs text-[#9AA89F] mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-[#9AA89F]">groups</span>
+<span>Behavioral &amp; Culture Fit</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2 shrink-0">
+<span class="px-2.5 py-1 rounded-md text-[11px] font-headline font-medium bg-[#16211C] text-[#EEF3EC] border border-[#24332B]">
+                    Thu 29 Oct · 15:00
+                  </span>
+<button class="inline-flex items-center gap-1 text-[11px] font-medium text-[#9AA89F] hover:text-[#EEF3EC] px-2 py-0.5 rounded bg-[#16211C] hover:bg-[#24332B] transition-colors border border-[#24332B]">
+<span class="material-symbols-outlined text-[12px]">edit_note</span>
+<span>Prep notes</span>
+</button>
+</div>
+</div>
+<!-- Interview Item 3: Lumen -->
+<div class="p-4 rounded-xl bg-[#0E1512] border border-[#24332B] hover:border-[#32473D] transition-colors flex items-start justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<!-- Company Letter Monogram -->
+<div class="w-10 h-10 rounded-lg bg-[#1F332A] text-[#8BE495] border border-[#2E6B50]/50 flex items-center justify-center font-headline font-bold text-sm shrink-0">
+                    L
+                  </div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline font-bold text-sm text-[#EEF3EC]">Lumen</span>
+<span class="text-xs text-[#9AA89F]">• Product Designer</span>
+</div>
+<div class="text-xs text-[#9AA89F] mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-[#9AA89F]">draw</span>
+<span>Portfolio Deep Dive &amp; Design Sprint</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2 shrink-0">
+<span class="px-2.5 py-1 rounded-md text-[11px] font-headline font-medium bg-[#16211C] text-[#EEF3EC] border border-[#24332B]">
+                    Mon 2 Nov · 14:00
+                  </span>
+<button class="inline-flex items-center gap-1 text-[11px] font-medium text-[#9AA89F] hover:text-[#EEF3EC] px-2 py-0.5 rounded bg-[#16211C] hover:bg-[#24332B] transition-colors border border-[#24332B]">
+<span class="material-symbols-outlined text-[12px]">edit_note</span>
+<span>Prep notes</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#24332B] flex items-center justify-between text-xs text-[#9AA89F]">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">sync</span>
+<span>Synced with Google Calendar</span>
+</span>
+<button class="text-[11px] text-[#C6F35E] hover:underline font-medium">+ Schedule interview</button>
+</div>
+</div>
+<!-- Recent Activity Feed (col-span-5) -->
+<div class="col-span-12 lg:col-span-5 bg-[#16211C] border border-[#24332B] rounded-[20px] p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<h2 class="font-headline font-bold text-base text-[#EEF3EC]">Recent activity</h2>
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6F35E] opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-[#C6F35E]"></span>
+</span>
+</div>
+<span class="text-xs text-[#9AA89F]">Live updates</span>
+</div>
+<!-- Vertical Timeline Feed -->
+<div class="relative pl-6 space-y-4 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[1px] before:bg-[#24332B]">
+<!-- Milestone 1: Northwind (Interview) -->
+<div class="relative group">
+<div class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-[#0E1512] border-2 border-[#C6F35E]"></div>
+<div class="flex items-baseline justify-between gap-2">
+<span class="text-xs font-semibold text-[#EEF3EC]">Interview stage unlocked</span>
+<span class="text-[10px] text-[#9AA89F] font-mono">09:15</span>
+</div>
+<p class="text-xs text-[#9AA89F] mt-0.5">Northwind moved application to Round 2</p>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[9px] font-bold font-headline bg-[#24332B] text-[#C6F35E]">Interview</span>
+<span class="text-[11px] text-[#9AA89F]">Frontend Intern</span>
+</div>
+</div>
+<!-- Milestone 2: Pixelcraft (Applied) -->
+<div class="relative group">
+<div class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-[#0E1512] border-2 border-[#5B7C99]"></div>
+<div class="flex items-baseline justify-between gap-2">
+<span class="text-xs font-semibold text-[#EEF3EC]">Applied to Pixelcraft</span>
+<span class="text-[10px] text-[#9AA89F] font-mono">Yesterday</span>
+</div>
+<p class="text-xs text-[#9AA89F] mt-0.5">Junior Fullstack role via employee referral</p>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[9px] font-bold font-headline bg-[#0E1512] text-[#5B7C99] border border-[#24332B]">Applied</span>
+<span class="text-[11px] text-[#9AA89F]">Referral: M. Sharma</span>
+</div>
+</div>
+<!-- Milestone 3: Brightpath (Offer) -->
+<div class="relative group">
+<div class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-[#0E1512] border-2 border-[#2E6B50]"></div>
+<div class="flex items-baseline justify-between gap-2">
+<span class="text-xs font-semibold text-[#EEF3EC]">Offer received from Brightpath</span>
+<span class="text-[10px] text-[#9AA89F] font-mono">23 Oct</span>
+</div>
+<p class="text-xs text-[#9AA89F] mt-0.5">$45/hr • Spring/Summer 2026 Co-op</p>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[9px] font-bold font-headline bg-[#1F4D3A] text-[#EEF3EC]">Offer</span>
+<span class="text-[11px] text-[#9AA89F]">Expires in 12 days</span>
+</div>
+</div>
+<!-- Milestone 4: Fernwood (Wishlist) -->
+<div class="relative group">
+<div class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-[#0E1512] border-2 border-[#8A948E]"></div>
+<div class="flex items-baseline justify-between gap-2">
+<span class="text-xs font-semibold text-[#EEF3EC]">Added Fernwood</span>
+<span class="text-[10px] text-[#9AA89F] font-mono">22 Oct</span>
+</div>
+<p class="text-xs text-[#9AA89F] mt-0.5">Bookmarked Backend Systems vacancy</p>
+<div class="mt-1">
+<span class="px-1.5 py-0.5 rounded text-[9px] font-bold font-headline bg-[#0E1512] text-[#8A948E] border border-[#24332B]">Wishlist</span>
+</div>
+</div>
+<!-- Milestone 5: Kite Labs (Rejected) -->
+<div class="relative group">
+<div class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-[#0E1512] border-2 border-[#E07A5F]"></div>
+<div class="flex items-baseline justify-between gap-2">
+<span class="text-xs font-semibold text-[#EEF3EC]">Decision: Kite Labs</span>
+<span class="text-[10px] text-[#9AA89F] font-mono">20 Oct</span>
+</div>
+<p class="text-xs text-[#9AA89F] mt-0.5">Application rejected post initial screening</p>
+<div class="mt-1">
+<span class="px-1.5 py-0.5 rounded text-[9px] font-bold font-headline bg-[#0E1512] text-[#E07A5F] border border-[#24332B]">Rejected</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#24332B] flex items-center justify-between text-xs">
+<span class="text-[#9AA89F]">Showing last 5 events</span>
+<a class="text-[#C6F35E] hover:underline font-medium" href="#">View full log →</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Minimal Clean Footer -->
+<footer class="px-8 py-4 border-t border-[#24332B] text-xs text-[#9AA89F] flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline font-bold text-[#EEF3EC]">Orbit</span>
+<span>— Minimal Application Tracker for Students and New Grads</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="hover:text-[#EEF3EC] transition-colors" href="#">Privacy</a>
+<a class="hover:text-[#EEF3EC] transition-colors" href="#">Documentation</a>
+<span class="text-[#24332B]">|</span>
+<span class="text-[11px] font-mono text-[#9AA89F]">1440px Dark Mode Canvas</span>
+</div>
+</footer>
+</div>
+</body></html>

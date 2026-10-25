@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Orbit — Application Board</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Space Grotesk & Geist / Public Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            forest: "#1F4D3A",
+            lime: "#C6F35E",
+            ink: "#14181A",
+            muted: "#5E6660",
+            subtle: "#F6F5F0",
+            border: "#E6E4DC",
+            coral: "#E07A5F",
+            slateblue: "#5B7C99",
+            slategrey: "#8A948E"
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            full: "9999px"
+          },
+          fontFamily: {
+            headline: ["Space Grotesk", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"],
+            body: ["Public Sans", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Custom scrollbar for horizontal columns */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F6F5F0;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #E6E4DC;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #8A948E;
+    }
+  </style>
+</head>
+<body class="bg-[#F6F5F0] text-ink font-body antialiased min-h-screen selection:bg-lime selection:text-forest overflow-x-hidden">
+<!-- ================= SIDEBAR ================= -->
+<aside class="fixed top-0 left-0 h-screen w-60 z-30 bg-white border-r border-border flex flex-col justify-between p-4 shadow-none">
+<!-- Top Area: Brand & Navigation -->
+<div class="flex flex-col gap-6">
+<!-- Brand Logo / Wordmark -->
+<div class="px-2 pt-2 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<!-- Orbit Logo Ring Mark Icon -->
+<div class="w-8 h-8 rounded-lg bg-forest flex items-center justify-center text-lime shadow-inner">
+<span class="material-symbols-outlined text-[20px]" data-icon="all_inclusive" style="font-variation-settings: 'FILL' 1;">all_inclusive</span>
+</div>
+<div>
+<span class="font-headline font-bold text-lg tracking-tight text-ink block leading-none">Orbit</span>
+<span class="text-[11px] text-muted font-body mt-0.5 block leading-none">Application Tracker</span>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1">
+<!-- 1. Dashboard (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-normal text-sm text-muted hover:text-ink hover:bg-subtle transition-colors" href="#">
+<span class="material-symbols-outlined text-[19px]" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- 2. Board (ACTIVE) - strictly mapped to style_active_navigation -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg font-medium text-sm text-forest bg-lime transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px]" data-icon="view_kanban" style="font-variation-settings: 'FILL' 1;">view_kanban</span>
+<span>Board</span>
+</div>
+<span class="text-[11px] font-headline font-bold bg-forest text-white px-1.5 py-0.5 rounded-full">14</span>
+</a>
+<!-- 3. Interviews (Inactive with badge) -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg font-normal text-sm text-muted hover:text-ink hover:bg-subtle transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px]" data-icon="calendar_today">calendar_today</span>
+<span>Interviews</span>
+</div>
+<span class="text-[10px] font-semibold bg-subtle text-forest border border-border px-1.5 py-0.5 rounded-full">3</span>
+</a>
+<!-- 4. Settings (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-normal text-sm text-muted hover:text-ink hover:bg-subtle transition-colors" href="#">
+<span class="material-symbols-outlined text-[19px]" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Area: Weekly Target Card & Footer Actions -->
+<div class="flex flex-col gap-4">
+<!-- Weekly Goal Bento Card -->
+<div class="bg-subtle border border-border rounded-[16px] p-3.5 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-headline font-bold text-xs text-ink tracking-tight">Weekly Goal: 7/10</span>
+<span class="text-[11px] font-headline font-bold text-forest">70%</span>
+</div>
+<!-- Hairline Progress Bar -->
+<div class="w-full bg-[#E6E4DC] h-1.5 rounded-full overflow-hidden">
+<div class="bg-forest h-full rounded-full transition-all duration-500" style="width: 70%;"></div>
+</div>
+<p class="text-[11px] text-muted leading-tight mt-0.5">3 more to hit your weekly target</p>
+</div>
+<!-- Footer Tab Links (Help & Support, Log Out) -->
+<div class="pt-2 border-t border-border flex flex-col gap-0.5">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-normal text-xs text-muted hover:text-ink hover:bg-subtle transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="help">help</span>
+<span>Help &amp; Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-normal text-xs text-muted hover:text-coral hover:bg-subtle transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="logout">logout</span>
+<span>Log Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ================= TOP APP BAR ================= -->
+<header class="sticky top-0 right-0 z-20 w-full pl-60 bg-white border-b border-border shadow-none">
+<div class="flex justify-between items-center px-8 py-3.5">
+<!-- Search Bar on Left -->
+<div class="relative w-80 max-w-sm">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-muted">
+<span class="material-symbols-outlined text-[18px]" data-icon="search">search</span>
+</div>
+<input class="block w-full pl-9 pr-12 py-1.5 text-xs bg-subtle border border-border rounded-xl placeholder-muted text-ink focus:outline-none focus:ring-1 focus:ring-forest focus:border-forest transition-colors font-body" placeholder="Search companies, roles, tags..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none">
+<kbd class="text-[10px] font-mono font-medium text-muted bg-white border border-border px-1.5 py-0.5 rounded shadow-2xs">⌘K</kbd>
+</div>
+</div>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3.5">
+<!-- Notifications button -->
+<button aria-label="Notifications" class="relative w-9 h-9 rounded-xl border border-border bg-white flex items-center justify-center text-muted hover:text-ink hover:bg-subtle transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-forest"></span>
+</button>
+<!-- Divider line -->
+<div class="h-6 w-px bg-border"></div>
+<!-- Trailing Primary Action CTA -->
+<button class="bg-forest text-white hover:opacity-95 font-body font-medium text-xs rounded-xl px-4 py-2 flex items-center gap-1.5 shadow-none transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+<span>+ Add application</span>
+</button>
+<!-- User Profile Avatar Pill -->
+<div class="flex items-center gap-2 pl-2 cursor-pointer group">
+<div class="w-8 h-8 rounded-full bg-[#2E4035] text-white flex items-center justify-center font-headline font-bold text-xs border border-border">
+            A
+          </div>
+<div class="hidden xl:block text-left">
+<p class="text-xs font-medium text-ink leading-tight group-hover:text-forest transition-colors">Aarav</p>
+<p class="text-[10px] text-muted leading-tight">aarav@orbit.app</p>
+</div>
+<span class="material-symbols-outlined text-[16px] text-muted group-hover:text-ink transition-colors" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</header>
+<!-- ================= MAIN VIEW CANVAS ================= -->
+<main class="pl-60 min-h-[calc(100vh-61px)] p-8">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-6">
+<!-- Board Header & Filter Row -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2">
+<div>
+<div class="flex items-center gap-3">
+<h1 class="font-headline font-bold text-2xl lg:text-3xl text-ink tracking-tight">Board</h1>
+<span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-white border border-border text-muted">14 Active</span>
+</div>
+<p class="text-xs lg:text-sm text-muted mt-1 font-body">Manage and track application stages across active recruiting cycles.</p>
+</div>
+<!-- Board Toolbar Controls -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Category Filter Chips -->
+<div class="flex items-center bg-white p-1 rounded-full border border-border gap-1">
+<button class="bg-forest text-white text-xs font-medium px-3 py-1 rounded-full transition-colors">All</button>
+<button class="text-muted hover:text-ink text-xs font-medium px-3 py-1 rounded-full transition-colors">Internship</button>
+<button class="text-muted hover:text-ink text-xs font-medium px-3 py-1 rounded-full transition-colors">Full-time</button>
+<button class="text-muted hover:text-ink text-xs font-medium px-3 py-1 rounded-full transition-colors">Remote</button>
+</div>
+<!-- Secondary Toolbar: View Toggles & Sort Dropdown -->
+<div class="flex items-center gap-2">
+<!-- View Mode Switch -->
+<div class="flex items-center bg-white border border-border rounded-xl p-0.5">
+<button class="w-7 h-7 rounded-lg bg-subtle text-forest flex items-center justify-center transition-colors" title="Kanban Board view">
+<span class="material-symbols-outlined text-[18px]" data-icon="view_kanban">view_kanban</span>
+</button>
+<button class="w-7 h-7 rounded-lg text-muted hover:text-ink flex items-center justify-center transition-colors" title="Table List view">
+<span class="material-symbols-outlined text-[18px]" data-icon="view_list">view_list</span>
+</button>
+</div>
+<!-- Sort By Selector -->
+<button class="flex items-center gap-1.5 bg-white border border-border hover:border-ink/30 px-3 py-1.5 rounded-xl text-xs font-medium text-ink transition-colors">
+<span class="text-muted">Sort:</span>
+<span>Last updated</span>
+<span class="material-symbols-outlined text-[16px] text-muted" data-icon="unfold_more">unfold_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ================= KANBAN 5-COLUMN GRID ================= -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 items-start pb-12">
+<!-- ================= COLUMN 1: WISHLIST ================= -->
+<div class="flex flex-col gap-3">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-slategrey"></span>
+<span class="font-headline font-bold text-sm text-ink tracking-tight">Wishlist</span>
+<span class="font-headline font-semibold text-xs text-muted bg-white border border-border px-1.5 py-0.2 rounded-md">3</span>
+</div>
+<button aria-label="Column actions" class="text-muted hover:text-ink transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Cards Container -->
+<div class="flex flex-col gap-3">
+<!-- Card 1: Fernwood -->
+<div class="rounded-[18px] bg-white border border-border p-4 flex flex-col gap-2.5 transition-all hover:border-ink/30 hover:shadow-xs cursor-pointer group">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-[#EEF2F0] text-[#2C483F] flex items-center justify-center font-headline font-bold text-xs border border-border/60">
+                  FW
+                </div>
+<button class="opacity-0 group-hover:opacity-100 text-muted hover:text-ink transition-opacity">
+<span class="material-symbols-outlined text-[16px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Backend Systems Intern</h4>
+<p class="text-xs text-muted mt-0.5">Fernwood</p>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="location_on">location_on</span>
+                  Bangalore / Hybrid
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹50k/mo</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span>
+                  Added 2d ago
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2: Arcadia -->
+<div class="rounded-[18px] bg-white border border-border p-4 flex flex-col gap-2.5 transition-all hover:border-ink/30 hover:shadow-xs cursor-pointer group">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-[#EDE8F5] text-[#4A3B69] flex items-center justify-center font-headline font-bold text-xs border border-border/60">
+                  AR
+                </div>
+<button class="opacity-0 group-hover:opacity-100 text-muted hover:text-ink transition-opacity">
+<span class="material-symbols-outlined text-[16px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">AI Research Intern</h4>
+<p class="text-xs text-muted mt-0.5">Arcadia</p>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="public">public</span>
+                  Remote
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹75k/mo</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span>
+                  Added 4d ago
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3: Stripe -->
+<div class="rounded-[18px] bg-white border border-border p-4 flex flex-col gap-2.5 transition-all hover:border-ink/30 hover:shadow-xs cursor-pointer group">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-[#E6F0FA] text-[#204969] flex items-center justify-center font-headline font-bold text-xs border border-border/60">
+                  ST
+                </div>
+<button class="opacity-0 group-hover:opacity-100 text-muted hover:text-ink transition-opacity">
+<span class="material-symbols-outlined text-[16px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Product Operations Intern</h4>
+<p class="text-xs text-muted mt-0.5">Stripe</p>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="location_on">location_on</span>
+                  Bengaluru
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹40k/mo</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span>
+                  Added 1w ago
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Dashed Add Role Button -->
+<button class="rounded-[16px] border border-dashed border-border hover:border-forest/50 hover:bg-white text-muted hover:text-forest py-2.5 px-3 flex items-center justify-center gap-1.5 text-xs font-medium transition-all group">
+<span class="material-symbols-outlined text-[16px] text-muted group-hover:text-forest" data-icon="add">add</span>
+<span>Add role</span>
+</button>
+</div>
+</div>
+<!-- ================= COLUMN 2: APPLIED ================= -->
+<div class="flex flex-col gap-3">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-slateblue"></span>
+<span class="font-headline font-bold text-sm text-ink tracking-tight">Applied</span>
+<span class="font-headline font-semibold text-xs text-muted bg-white border border-border px-1.5 py-0.2 rounded-md">5</span>
+</div>
+<button aria-label="Column actions" class="text-muted hover:text-ink transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Cards Container -->
+<div class="flex flex-col gap-3">
+<!-- Card 1: Pixelcraft -->
+<div class="rounded-[18px] bg-white border border-border p-4 flex flex-col gap-2.5 transition-all hover:border-ink/30 hover:shadow-xs cursor-pointer group">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-[#E8F3EE] text-[#1E523A] flex items-center justify-center font-headline font-bold text-xs border border-border/60">
+                  PC
+                </div>
+<span class="text-[10px] font-medium bg-[#EEF2F6] text-slateblue px-2 py-0.5 rounded-full">Portal</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Junior Fullstack Developer</h4>
+<p class="text-xs text-muted mt-0.5">Pixelcraft</p>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="public">public</span>
+                  Remote
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹45k/mo</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="done">done</span>
+                  Applied yesterday
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2: Kite Labs -->
+<div class="rounded-[18px] bg-white border border-border p-4 flex flex-col gap-2.5 transition-all hover:border-ink/30 hover:shadow-xs cursor-pointer group">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-[#FFF1E6] text-[#A2481A] flex items-center justify-center font-headline font-bold text-xs border border-border/60">
+                  KL
+                </div>
+<span class="text-[10px] font-medium bg-subtle text-muted px-2 py-0.5 rounded-full">Referral</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Frontend Engineer (New Grad)</h4>
+<p class="text-xs text-muted mt-0.5">Kite Labs</p>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="location_on">location_on</span>
+                  Gurgaon
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹18-22 LPA</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="done">done</span>
+                  Applied 3d ago
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3: Databricks -->
+<div class="rounded-[18px] bg-white border border-border p-4 flex flex-col gap-2.5 transition-all hover:border-ink/30 hover:shadow-xs cursor-pointer group">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-[#FEECEC] text-[#9A2D2D] flex items-center justify-center font-headline font-bold text-xs border border-border/60">
+                  DB
+                </div>
+<button class="opacity-0 group-hover:opacity-100 text-muted hover:text-ink transition-opacity">
+<span class="material-symbols-outlined text-[16px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Platform Engineer Intern</h4>
+<p class="text-xs text-muted mt-0.5">Databricks</p>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="location_on">location_on</span>
+                  Bengaluru
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹90k/mo</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="done">done</span>
+                  Applied 5d ago
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 4: Razorpay -->
+<div class="rounded-[18px] bg-white border border-border p-4 flex flex-col gap-2.5 transition-all hover:border-ink/30 hover:shadow-xs cursor-pointer group">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-[#EAF0F6] text-[#234D7A] flex items-center justify-center font-headline font-bold text-xs border border-border/60">
+                  RZ
+                </div>
+<button class="opacity-0 group-hover:opacity-100 text-muted hover:text-ink transition-opacity">
+<span class="material-symbols-outlined text-[16px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Associate Product Designer</h4>
+<p class="text-xs text-muted mt-0.5">Razorpay</p>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="location_on">location_on</span>
+                  Bengaluru
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹40k/mo</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="done">done</span>
+                  Applied 1w ago
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 5: Postman -->
+<div class="rounded-[18px] bg-white border border-border p-4 flex flex-col gap-2.5 transition-all hover:border-ink/30 hover:shadow-xs cursor-pointer group">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-[#FFF4ED] text-[#B85324] flex items-center justify-center font-headline font-bold text-xs border border-border/60">
+                  PM
+                </div>
+<button class="opacity-0 group-hover:opacity-100 text-muted hover:text-ink transition-opacity">
+<span class="material-symbols-outlined text-[16px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Developer Relations Intern</h4>
+<p class="text-xs text-muted mt-0.5">Postman</p>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="public">public</span>
+                  Remote
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹35k/mo</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="done">done</span>
+                  Applied 1w ago
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Dashed Add Role Button -->
+<button class="rounded-[16px] border border-dashed border-border hover:border-forest/50 hover:bg-white text-muted hover:text-forest py-2.5 px-3 flex items-center justify-center gap-1.5 text-xs font-medium transition-all group">
+<span class="material-symbols-outlined text-[16px] text-muted group-hover:text-forest" data-icon="add">add</span>
+<span>Add role</span>
+</button>
+</div>
+</div>
+<!-- ================= COLUMN 3: INTERVIEW ================= -->
+<div class="flex flex-col gap-3">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-lime border border-forest/30"></span>
+<span class="font-headline font-bold text-sm text-ink tracking-tight">Interview</span>
+<span class="font-headline font-semibold text-xs text-forest bg-lime px-1.5 py-0.2 rounded-md">3</span>
+</div>
+<button aria-label="Column actions" class="text-muted hover:text-ink transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Cards Container -->
+<div class="flex flex-col gap-3">
+<!-- Card 1: Northwind -->
+<div class="rounded-[18px] bg-white border-2 border-lime/70 p-4 flex flex-col gap-2.5 transition-all hover:border-forest/40 hover:shadow-xs cursor-pointer group relative">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-forest text-lime flex items-center justify-center font-headline font-bold text-xs">
+                  NW
+                </div>
+<!-- Lime Badge Tag with Dark Ink Text -->
+<span class="inline-flex items-center gap-1 bg-lime text-forest text-[11px] font-headline font-bold px-2 py-0.5 rounded-md border border-[#B3E44B]">
+<span class="material-symbols-outlined text-[13px]" data-icon="videocam">videocam</span>
+                  Tue 10:30 AM
+                </span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Frontend Intern</h4>
+<p class="text-xs text-muted mt-0.5">Northwind</p>
+</div>
+<!-- Round detail pill -->
+<div class="bg-[#F3F7EB] text-forest text-[11px] font-medium px-2 py-1 rounded-md border border-[#E0ECC9] flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-forest"></span>
+<span>Round 2: System &amp; UI</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="apartment">apartment</span>
+                  Remote / Hybrid
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹45k/mo</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1 text-forest font-medium">
+<span class="material-symbols-outlined text-[13px] text-forest" data-icon="schedule">schedule</span>
+                  In 2 days
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2: Quanta -->
+<div class="rounded-[18px] bg-white border border-border p-4 flex flex-col gap-2.5 transition-all hover:border-ink/30 hover:shadow-xs cursor-pointer group">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-[#F0F2F5] text-[#2F3E46] flex items-center justify-center font-headline font-bold text-xs border border-border/60">
+                  Q
+                </div>
+<span class="inline-flex items-center gap-1 bg-subtle text-ink font-medium text-[11px] px-2 py-0.5 rounded-md border border-border">
+                  Thu 3 PM
+                </span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Software Engineer I</h4>
+<p class="text-xs text-muted mt-0.5">Quanta</p>
+</div>
+<!-- Round detail pill -->
+<div class="bg-subtle text-muted text-[11px] px-2 py-1 rounded-md border border-border/50">
+                Behavioral · Culture Fit
+              </div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="location_on">location_on</span>
+                  Bangalore
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹20 LPA</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="event">event</span>
+                  In 4 days
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3: Lumen -->
+<div class="rounded-[18px] bg-white border border-border p-4 flex flex-col gap-2.5 transition-all hover:border-ink/30 hover:shadow-xs cursor-pointer group">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-[#FEF9E7] text-[#9A7D0A] flex items-center justify-center font-headline font-bold text-xs border border-border/60">
+                  L
+                </div>
+<span class="inline-flex items-center gap-1 bg-subtle text-ink font-medium text-[11px] px-2 py-0.5 rounded-md border border-border">
+                  Mon 2 PM
+                </span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Product Designer</h4>
+<p class="text-xs text-muted mt-0.5">Lumen</p>
+</div>
+<!-- Round detail pill -->
+<div class="bg-subtle text-muted text-[11px] px-2 py-1 rounded-md border border-border/50">
+                Portfolio Review · Design Sprint
+              </div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="public">public</span>
+                  Remote
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹55k/mo</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="event">event</span>
+                  Next week
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Dashed Add Role Button -->
+<button class="rounded-[16px] border border-dashed border-border hover:border-forest/50 hover:bg-white text-muted hover:text-forest py-2.5 px-3 flex items-center justify-center gap-1.5 text-xs font-medium transition-all group">
+<span class="material-symbols-outlined text-[16px] text-muted group-hover:text-forest" data-icon="add">add</span>
+<span>Add role</span>
+</button>
+</div>
+</div>
+<!-- ================= COLUMN 4: OFFER ================= -->
+<div class="flex flex-col gap-3">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-forest"></span>
+<span class="font-headline font-bold text-sm text-ink tracking-tight">Offer</span>
+<span class="font-headline font-semibold text-xs text-white bg-forest px-1.5 py-0.2 rounded-md">1</span>
+</div>
+<button aria-label="Column actions" class="text-muted hover:text-ink transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Cards Container -->
+<div class="flex flex-col gap-3">
+<!-- Card 1: Brightpath -->
+<div class="rounded-[18px] bg-white border border-forest/30 p-4 flex flex-col gap-2.5 transition-all hover:border-forest hover:shadow-xs cursor-pointer group ring-1 ring-forest/10">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-forest text-lime flex items-center justify-center font-headline font-bold text-xs">
+                  BP
+                </div>
+<!-- Status tag -->
+<span class="inline-flex items-center gap-1 bg-forest text-white text-[11px] font-headline font-bold px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[13px] text-lime" data-icon="celebration">celebration</span>
+                  Offer Received
+                </span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Software Engineering Co-op</h4>
+<p class="text-xs text-muted mt-0.5">Brightpath</p>
+</div>
+<!-- Offer compensation pill -->
+<div class="bg-subtle text-ink font-medium text-[11px] px-2.5 py-1.5 rounded-lg border border-border flex items-center justify-between">
+<span>₹45/hr · Spring 2026</span>
+<span class="text-[10px] text-muted">Oct 23</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="location_on">location_on</span>
+                  Bengaluru / Hybrid
+                </span>
+</div>
+<!-- Decision deadline countdown badge -->
+<div class="mt-1 bg-[#FFF9E6] border border-[#F3E5AB] text-[#8C6D1F] px-2.5 py-1.5 rounded-xl text-[11px] font-medium flex items-center justify-between">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="alarm">alarm</span>
+                  Decision deadline
+                </span>
+<span class="font-headline font-bold">in 8d</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span>Sign letter review</span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Dashed Add Role Button -->
+<button class="rounded-[16px] border border-dashed border-border hover:border-forest/50 hover:bg-white text-muted hover:text-forest py-2.5 px-3 flex items-center justify-center gap-1.5 text-xs font-medium transition-all group">
+<span class="material-symbols-outlined text-[16px] text-muted group-hover:text-forest" data-icon="add">add</span>
+<span>Add role</span>
+</button>
+</div>
+</div>
+<!-- ================= COLUMN 5: REJECTED ================= -->
+<div class="flex flex-col gap-3">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-coral"></span>
+<span class="font-headline font-bold text-sm text-ink tracking-tight">Rejected</span>
+<span class="font-headline font-semibold text-xs text-muted bg-white border border-border px-1.5 py-0.2 rounded-md">2</span>
+</div>
+<button aria-label="Column actions" class="text-muted hover:text-ink transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Cards Container -->
+<div class="flex flex-col gap-3">
+<!-- Card 1: Kite Labs (Rejected) -->
+<div class="rounded-[18px] bg-white border border-border p-4 flex flex-col gap-2.5 transition-all hover:border-ink/30 hover:shadow-xs cursor-pointer group opacity-85 hover:opacity-100">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-subtle text-muted flex items-center justify-center font-headline font-bold text-xs border border-border/60">
+                  KL
+                </div>
+<span class="text-[10px] font-medium bg-[#FCEFEB] text-coral px-2 py-0.5 rounded-full border border-coral/20">
+                  Screening
+                </span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Product Specialist Intern</h4>
+<p class="text-xs text-muted mt-0.5">Kite Labs</p>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="public">public</span>
+                  Remote
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹30k/mo</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1 text-coral">
+<span class="material-symbols-outlined text-[13px]" data-icon="close">close</span>
+                  Rejected post screening
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2: Vercel (Rejected) -->
+<div class="rounded-[18px] bg-white border border-border p-4 flex flex-col gap-2.5 transition-all hover:border-ink/30 hover:shadow-xs cursor-pointer group opacity-85 hover:opacity-100">
+<div class="flex items-start justify-between gap-2">
+<div class="w-8 h-8 rounded-xl bg-subtle text-muted flex items-center justify-center font-headline font-bold text-xs border border-border/60">
+                  V
+                </div>
+<span class="text-[10px] font-medium bg-subtle text-muted px-2 py-0.5 rounded-full border border-border">
+                  Closed
+                </span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-ink leading-tight group-hover:text-forest transition-colors">Ecosystem Intern</h4>
+<p class="text-xs text-muted mt-0.5">Vercel</p>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">
+<span class="material-symbols-outlined text-[12px]" data-icon="public">public</span>
+                  Remote
+                </span>
+<span class="bg-subtle text-muted text-[11px] px-2 py-0.5 rounded-md border border-border/50">₹60k/mo</span>
+</div>
+<div class="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted">
+<span class="flex items-center gap-1 text-muted">
+<span class="material-symbols-outlined text-[13px]" data-icon="info">info</span>
+                  Position closed
+                </span>
+<span class="material-symbols-outlined text-[15px] opacity-0 group-hover:opacity-100 text-forest transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Dashed Add Role Button -->
+<button class="rounded-[16px] border border-dashed border-border hover:border-forest/50 hover:bg-white text-muted hover:text-forest py-2.5 px-3 flex items-center justify-center gap-1.5 text-xs font-medium transition-all group">
+<span class="material-symbols-outlined text-[16px] text-muted group-hover:text-forest" data-icon="add">add</span>
+<span>Add role</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Orbit — Application Tracker</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Public+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            forest: "#1F4D3A",
+            lime: "#C6F35E",
+            ink: "#14181A",
+            muted: "#5E6660",
+            subtle: "#F0EFEA",
+            border: "#E6E4DC",
+            canvas: "#F6F5F0",
+            status: {
+              wishlist: "#8A948E",
+              applied: "#5B7C99",
+              interview: "#C6F35E",
+              offer: "#1F4D3A",
+              rejected: "#E07A5F"
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.25rem",
+            "2xl": "1.25rem", /* 20px spec */
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Space Grotesk", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"],
+            body: ["Geist", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+    body {
+      background-color: #F6F5F0;
+      color: #14181A;
+      font-family: 'Geist', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hairline border definition */
+    .bento-card {
+      background-color: #FFFFFF;
+      border: 1px solid #E6E4DC;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body class="bg-canvas text-ink antialiased selection:bg-lime selection:text-forest min-h-screen">
+<!-- ================= SIDEBAR COMPONENT ================= -->
+<aside class="fixed top-0 left-0 h-screen w-60 z-30 bg-white border-r border-border flex flex-col justify-between p-4 shadow-none">
+<!-- Top Branding & Navigation -->
+<div class="space-y-6">
+<!-- Orbit Brand Header -->
+<div class="flex items-center gap-3 px-2 pt-1">
+<div class="w-8 h-8 rounded-full border-2 border-forest flex items-center justify-center relative">
+<div class="w-3 h-3 rounded-full bg-forest"></div>
+<div class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-lime border border-white"></div>
+</div>
+<div>
+<span class="font-headline font-bold text-lg tracking-tight text-ink block leading-none">Orbit</span>
+<span class="text-[11px] font-body text-muted leading-tight block mt-0.5">Application Tracker</span>
+</div>
+</div>
+<!-- Nav Items -->
+<nav class="space-y-1">
+<!-- Dashboard (Active) -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-medium text-sm text-forest bg-lime transition-colors" href="#dashboard">
+<span class="material-symbols-outlined text-[20px] text-forest">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Board -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-normal text-sm text-muted hover:text-ink hover:bg-subtle transition-colors" href="#board">
+<span class="material-symbols-outlined text-[20px]">view_kanban</span>
+<span>Board</span>
+</a>
+<!-- Interviews -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-normal text-sm text-muted hover:text-ink hover:bg-subtle transition-colors" href="#interviews">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span>Interviews</span>
+<span class="ml-auto text-[11px] font-semibold bg-forest/10 text-forest px-1.5 py-0.5 rounded">3</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-normal text-sm text-muted hover:text-ink hover:bg-subtle transition-colors" href="#settings">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Widget & Utility Footers -->
+<div class="space-y-3">
+<!-- Weekly Goal Card -->
+<div class="bg-canvas rounded-xl p-3.5 border border-border">
+<div class="flex items-center justify-between text-xs mb-1.5">
+<span class="font-semibold text-ink font-headline">Weekly Goal</span>
+<span class="text-muted font-mono font-medium">7/10</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-[#E6E4DC] h-2 rounded-full overflow-hidden flex">
+<div class="bg-forest h-full" style="width: 60%"></div>
+<div class="bg-lime h-full" style="width: 10%"></div>
+</div>
+<p class="text-[11px] text-muted mt-2 leading-tight">3 more to hit your weekly target</p>
+</div>
+<!-- Footer Sublinks -->
+<div class="pt-2 border-t border-border/60 space-y-1">
+<a class="flex items-center gap-3 px-3 py-1.5 rounded-lg font-normal text-xs text-muted hover:text-ink hover:bg-subtle transition-colors" href="#help">
+<span class="material-symbols-outlined text-[18px]">help</span>
+<span>Help &amp; Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-1.5 rounded-lg font-normal text-xs text-muted hover:text-ink hover:bg-subtle transition-colors" href="#logout">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>Log Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ================= TOP NAVIGATION BAR ================= -->
+<header class="sticky top-0 z-20 bg-[#F6F5F0]/90 backdrop-blur-md border-b border-border pl-64 pr-8 py-3.5 transition-all">
+<div class="flex items-center justify-between max-w-7xl mx-auto">
+<!-- Search Input -->
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-muted text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-white border border-border rounded-xl text-sm placeholder:text-muted/70 text-ink focus:outline-none focus:ring-1 focus:ring-forest focus:border-forest transition" placeholder="Search companies, roles, tags…" type="text"/>
+<span class="absolute right-3 top-2 text-[10px] font-mono text-muted bg-canvas px-1.5 py-0.5 rounded border border-border">⌘K</span>
+</div>
+<!-- Right Action Cluster -->
+<div class="flex items-center gap-4">
+<!-- Notification Bell -->
+<button class="relative w-9 h-9 flex items-center justify-center rounded-xl bg-white border border-border hover:bg-subtle text-ink transition">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-status-rejected ring-2 ring-white"></span>
+</button>
+<!-- CTA Button -->
+<button class="bg-forest text-white hover:bg-[#16382a] px-4 py-2 rounded-xl font-medium text-sm flex items-center gap-1.5 transition shadow-none cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add application</span>
+</button>
+<div class="h-6 w-px bg-border mx-1"></div>
+<!-- User Profile Pill -->
+<div class="flex items-center gap-2.5 pl-1">
+<div class="w-8 h-8 rounded-full bg-[#E6E4DC] border border-border flex items-center justify-center text-forest font-headline font-bold text-xs">
+            A
+          </div>
+<div class="hidden sm:block text-left">
+<span class="text-xs font-semibold text-ink block leading-none">Aarav</span>
+<span class="text-[10px] text-muted block mt-0.5 leading-none">aarav@orbit.app</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- ================= MAIN CONTENT CANVAS ================= -->
+<main class="ml-60 p-8 max-w-7xl">
+<!-- Welcome Header Section -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
+<div>
+<h1 class="font-headline font-bold text-[28px] leading-tight text-ink">Good morning, Aarav</h1>
+<p class="text-muted text-sm mt-1">Here is your recruiting progress for Fall 2025.</p>
+</div>
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-border rounded-full text-xs font-medium text-muted">
+<span class="material-symbols-outlined text-[16px] text-muted">calendar_today</span>
+<span>Sun, 25 Oct</span>
+<span class="w-1 h-1 rounded-full bg-lime"></span>
+<span class="text-forest font-semibold">Active Cycle</span>
+</div>
+</div>
+<!-- ================= BENTO GRID CONTAINER ================= -->
+<div class="space-y-6">
+<!-- ROW 1: 4 STAT KPI CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Stat 1: Total applied -->
+<div class="bento-card p-5 flex flex-col justify-between">
+<div class="flex items-center justify-between text-muted mb-3">
+<span class="text-xs font-medium text-muted">Total applied</span>
+<span class="w-7 h-7 rounded-lg bg-canvas flex items-center justify-center text-muted">
+<span class="material-symbols-outlined text-[16px]">send</span>
+</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline font-bold text-[32px] text-ink">48</span>
+<span class="inline-flex items-center gap-0.5 text-xs font-medium px-2 py-0.5 rounded-full bg-subtle text-forest border border-border">
+              +6 this week
+            </span>
+</div>
+</div>
+<!-- Stat 2: Interviews -->
+<div class="bento-card p-5 flex flex-col justify-between">
+<div class="flex items-center justify-between text-muted mb-3">
+<span class="text-xs font-medium text-muted">Interviews</span>
+<span class="w-7 h-7 rounded-lg bg-canvas flex items-center justify-center text-muted">
+<span class="material-symbols-outlined text-[16px]">videocam</span>
+</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline font-bold text-[32px] text-ink">9</span>
+<span class="inline-flex items-center gap-0.5 text-xs font-medium px-2 py-0.5 rounded-full bg-[#EBF4E0] text-forest border border-[#D5E8BF]">
+              2 this week
+            </span>
+</div>
+</div>
+<!-- Stat 3: Offers -->
+<div class="bento-card p-5 flex flex-col justify-between">
+<div class="flex items-center justify-between text-muted mb-3">
+<span class="text-xs font-medium text-muted">Offers</span>
+<span class="w-7 h-7 rounded-lg bg-forest/10 flex items-center justify-center text-forest">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline font-bold text-[32px] text-forest">2</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-forest text-white">
+              Northwind, Quanta
+            </span>
+</div>
+</div>
+<!-- Stat 4: Feature Accent Card (Response Rate) -->
+<div class="bg-lime rounded-2xl p-5 border border-[#BCEB4B] flex items-center justify-between relative overflow-hidden">
+<div class="space-y-1 z-10">
+<span class="text-xs font-semibold text-forest uppercase tracking-wider block">Response rate</span>
+<div class="font-headline font-bold text-[32px] text-forest leading-none pt-1">31%</div>
+<div class="text-[11px] font-semibold text-forest/80 pt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+              +4.2% vs last month
+            </div>
+</div>
+<!-- Circular Progress Gauge in Forest Green -->
+<div class="relative w-16 h-16 flex items-center justify-center z-10">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-forest/20" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-forest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="31, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute text-[11px] font-bold text-forest font-headline">31%</span>
+</div>
+</div>
+</div>
+<!-- ROW 2: APPLICATIONS PER WEEK & PIPELINE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+<!-- Left: Applications per week (col-span-7) -->
+<div class="lg:col-span-7 bento-card p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="font-headline font-bold text-base text-ink">Applications per week</h2>
+<p class="text-xs text-muted mt-0.5">Last 8 weeks volume</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-muted">Filter:</span>
+<button class="inline-flex items-center gap-1 text-xs font-medium text-ink bg-canvas px-3 py-1.5 rounded-lg border border-border hover:bg-subtle transition">
+<span>All roles</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Bar Chart Visualization -->
+<div class="pt-4 pb-2">
+<!-- Guidelines & Bars Container -->
+<div class="relative h-44 flex items-end justify-between px-3 border-b border-border">
+<!-- Horizontal background guidelines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-40">
+<div class="border-b border-dashed border-border w-full"></div>
+<div class="border-b border-dashed border-border w-full"></div>
+<div class="border-b border-dashed border-border w-full"></div>
+<div class="border-b border-dashed border-border w-full"></div>
+</div>
+<!-- Bar 1: W1 (3 apps) -->
+<div class="flex flex-col items-center gap-2 z-10 w-8 group">
+<span class="text-[10px] font-mono text-muted opacity-0 group-hover:opacity-100 transition-opacity">3</span>
+<div class="w-5 bg-border rounded-t-sm transition-all group-hover:bg-[#d8d5cb]" style="height: 36px"></div>
+</div>
+<!-- Bar 2: W2 (5 apps) -->
+<div class="flex flex-col items-center gap-2 z-10 w-8 group">
+<span class="text-[10px] font-mono text-muted opacity-0 group-hover:opacity-100 transition-opacity">5</span>
+<div class="w-5 bg-border rounded-t-sm transition-all group-hover:bg-[#d8d5cb]" style="height: 60px"></div>
+</div>
+<!-- Bar 3: W3 (4 apps) -->
+<div class="flex flex-col items-center gap-2 z-10 w-8 group">
+<span class="text-[10px] font-mono text-muted opacity-0 group-hover:opacity-100 transition-opacity">4</span>
+<div class="w-5 bg-border rounded-t-sm transition-all group-hover:bg-[#d8d5cb]" style="height: 48px"></div>
+</div>
+<!-- Bar 4: W4 (7 apps) -->
+<div class="flex flex-col items-center gap-2 z-10 w-8 group">
+<span class="text-[10px] font-mono text-muted opacity-0 group-hover:opacity-100 transition-opacity">7</span>
+<div class="w-5 bg-[#A3BCAC] rounded-t-sm transition-all group-hover:bg-forest" style="height: 84px"></div>
+</div>
+<!-- Bar 5: W5 (6 apps) -->
+<div class="flex flex-col items-center gap-2 z-10 w-8 group">
+<span class="text-[10px] font-mono text-muted opacity-0 group-hover:opacity-100 transition-opacity">6</span>
+<div class="w-5 bg-[#A3BCAC] rounded-t-sm transition-all group-hover:bg-forest" style="height: 72px"></div>
+</div>
+<!-- Bar 6: W6 (8 apps) -->
+<div class="flex flex-col items-center gap-2 z-10 w-8 group">
+<span class="text-[10px] font-mono text-muted opacity-0 group-hover:opacity-100 transition-opacity">8</span>
+<div class="w-5 bg-forest rounded-t-sm transition-all opacity-85 hover:opacity-100" style="height: 98px"></div>
+</div>
+<!-- Bar 7: W7 (5 apps) -->
+<div class="flex flex-col items-center gap-2 z-10 w-8 group">
+<span class="text-[10px] font-mono text-muted opacity-0 group-hover:opacity-100 transition-opacity">5</span>
+<div class="w-5 bg-[#A3BCAC] rounded-t-sm transition-all group-hover:bg-forest" style="height: 60px"></div>
+</div>
+<!-- Bar 8: W8 (10 apps) - HIGHLIGHT CURRENT WEEK -->
+<div class="flex flex-col items-center gap-1 z-10 w-10 relative">
+<span class="text-[10px] font-bold text-forest bg-lime px-1.5 py-0.5 rounded shadow-sm">10 apps</span>
+<div class="w-6 bg-lime border border-[#aedd3b] rounded-t-md transition-all shadow-sm" style="height: 122px"></div>
+</div>
+</div>
+<!-- X-Axis Labels -->
+<div class="flex justify-between px-3 pt-2 text-[11px] font-mono text-muted">
+<span class="w-8 text-center">W1</span>
+<span class="w-8 text-center">W2</span>
+<span class="w-8 text-center">W3</span>
+<span class="w-8 text-center">W4</span>
+<span class="w-8 text-center">W5</span>
+<span class="w-8 text-center">W6</span>
+<span class="w-8 text-center">W7</span>
+<span class="w-10 text-center font-bold text-forest">W8 (Now)</span>
+</div>
+</div>
+</div>
+<!-- Right: Pipeline breakdown (col-span-5) -->
+<div class="lg:col-span-5 bento-card p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="font-headline font-bold text-base text-ink">Pipeline</h2>
+<p class="text-xs text-muted mt-0.5">Application conversion funnel</p>
+</div>
+<span class="text-xs font-semibold text-muted bg-canvas border border-border px-2.5 py-1 rounded-full">
+              58 tracked roles
+            </span>
+</div>
+<!-- Segmented Progress Bar -->
+<div class="my-4">
+<div class="h-4 w-full rounded-full overflow-hidden flex gap-1 p-0.5 bg-canvas border border-border">
+<!-- Wishlist 12 (21%) -->
+<div class="h-full bg-status-wishlist rounded-sm" style="width: 21%" title="Wishlist: 12"></div>
+<!-- Applied 24 (41%) -->
+<div class="h-full bg-status-applied rounded-sm" style="width: 41%" title="Applied: 24"></div>
+<!-- Interview 9 (16%) -->
+<div class="h-full bg-lime rounded-sm" style="width: 16%" title="Interview: 9"></div>
+<!-- Offer 2 (3%) -->
+<div class="h-full bg-forest rounded-sm" style="width: 4%" title="Offer: 2"></div>
+<!-- Rejected 11 (19%) -->
+<div class="h-full bg-status-rejected rounded-sm" style="width: 18%" title="Rejected: 11"></div>
+</div>
+</div>
+<!-- Legend Rows -->
+<div class="space-y-2.5 pt-1">
+<div class="flex items-center justify-between text-xs py-1 border-b border-border/40">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-wishlist"></span>
+<span class="font-medium text-ink">Wishlist</span>
+</div>
+<span class="font-mono text-muted text-[11px]">12 roles · 21%</span>
+</div>
+<div class="flex items-center justify-between text-xs py-1 border-b border-border/40">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-applied"></span>
+<span class="font-medium text-ink">Applied</span>
+</div>
+<span class="font-mono text-muted text-[11px]">24 roles · 41%</span>
+</div>
+<div class="flex items-center justify-between text-xs py-1 border-b border-border/40">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-lime border border-[#9fc438]"></span>
+<span class="font-medium text-ink">Interview</span>
+</div>
+<span class="font-mono text-muted text-[11px]">9 roles · 16%</span>
+</div>
+<div class="flex items-center justify-between text-xs py-1 border-b border-border/40">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-forest"></span>
+<span class="font-medium text-ink">Offer</span>
+</div>
+<span class="font-mono text-forest font-bold text-[11px]">2 roles · 3%</span>
+</div>
+<div class="flex items-center justify-between text-xs py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-rejected"></span>
+<span class="font-medium text-ink">Rejected</span>
+</div>
+<span class="font-mono text-muted text-[11px]">11 roles · 19%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ROW 3: UPCOMING INTERVIEWS & RECENT ACTIVITY -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+<!-- Left: Upcoming interviews (col-span-7) -->
+<div class="lg:col-span-7 bento-card p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<h2 class="font-headline font-bold text-base text-ink">Upcoming interviews</h2>
+<span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-lime text-forest">3 scheduled</span>
+</div>
+<a class="text-xs font-medium text-forest hover:underline flex items-center gap-0.5" href="#interviews">
+              View calendar
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Interview Cards List -->
+<div class="space-y-3">
+<!-- Interview Card 1: Northwind -->
+<div class="p-3.5 rounded-xl border border-border bg-canvas/60 hover:bg-canvas transition flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<!-- Monogram [NW] -->
+<div class="w-10 h-10 rounded-xl bg-status-applied/15 text-status-applied border border-status-applied/20 flex items-center justify-center font-headline font-bold text-xs tracking-wider shrink-0">
+                  NW
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-semibold text-sm text-ink leading-tight">Frontend Intern</h3>
+<span class="text-xs text-muted">· Northwind</span>
+</div>
+<p class="text-xs text-muted mt-0.5">Technical Round 2 (System Design)</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start sm:self-center">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold bg-lime text-forest px-2.5 py-1 rounded-md border border-[#BCEB4B]">
+<span class="material-symbols-outlined text-[13px]">event</span>
+                  Tue 27 Oct · 10:30 AM
+                </span>
+<button class="px-2.5 py-1 bg-white border border-border hover:bg-subtle text-ink rounded-md text-xs font-medium transition cursor-pointer">
+                  Prep notes
+                </button>
+</div>
+</div>
+<!-- Interview Card 2: Quanta -->
+<div class="p-3.5 rounded-xl border border-border bg-canvas/60 hover:bg-canvas transition flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<!-- Monogram [Q] -->
+<div class="w-10 h-10 rounded-xl bg-forest/15 text-forest border border-forest/20 flex items-center justify-center font-headline font-bold text-xs shrink-0">
+                  Q
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-semibold text-sm text-ink leading-tight">Software Engineer I</h3>
+<span class="text-xs text-muted">· Quanta</span>
+</div>
+<p class="text-xs text-muted mt-0.5">Final Behavioral &amp; Values</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start sm:self-center">
+<span class="inline-flex items-center gap-1 text-[11px] font-medium bg-white text-muted px-2.5 py-1 rounded-md border border-border">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+                  Thu 29 Oct · 15:00
+                </span>
+<button class="px-2.5 py-1 bg-white border border-border hover:bg-subtle text-ink rounded-md text-xs font-medium transition cursor-pointer">
+                  Prep notes
+                </button>
+</div>
+</div>
+<!-- Interview Card 3: Lumen -->
+<div class="p-3.5 rounded-xl border border-border bg-canvas/60 hover:bg-canvas transition flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<!-- Monogram [L] -->
+<div class="w-10 h-10 rounded-xl bg-[#F0E6D8] text-[#8C6239] border border-[#E0D2BE] flex items-center justify-center font-headline font-bold text-xs shrink-0">
+                  L
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-semibold text-sm text-ink leading-tight">Product Designer</h3>
+<span class="text-xs text-muted">· Lumen</span>
+</div>
+<p class="text-xs text-muted mt-0.5">Portfolio Deep Dive</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start sm:self-center">
+<span class="inline-flex items-center gap-1 text-[11px] font-medium bg-white text-muted px-2.5 py-1 rounded-md border border-border">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+                  Mon 2 Nov · 14:00
+                </span>
+<button class="px-2.5 py-1 bg-white border border-border hover:bg-subtle text-ink rounded-md text-xs font-medium transition cursor-pointer">
+                  Prep notes
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Recent activity timeline (col-span-5) -->
+<div class="lg:col-span-5 bento-card p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline font-bold text-base text-ink">Recent activity</h2>
+<div class="flex items-center gap-1.5 text-xs text-forest font-medium">
+<span class="w-2 h-2 rounded-full bg-forest animate-pulse"></span>
+              Live updates
+            </div>
+</div>
+<!-- Vertical Timeline with connected rail -->
+<div class="relative pl-6 space-y-4 border-l border-border ml-2 my-2">
+<!-- Event 1: Today 09:15 -->
+<div class="relative group">
+<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-lime border-2 border-white ring-1 ring-border"></div>
+<div class="flex items-baseline justify-between">
+<span class="text-xs font-semibold text-ink">Interview stage unlocked</span>
+<span class="text-[10px] font-mono text-muted">Today 09:15</span>
+</div>
+<p class="text-xs text-muted mt-0.5">Northwind moved to Round 2.</p>
+<span class="inline-block mt-1 text-[10px] font-semibold bg-lime text-forest px-2 py-0.2 rounded">
+                Interview
+              </span>
+</div>
+<!-- Event 2: Yesterday -->
+<div class="relative group">
+<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-status-applied border-2 border-white ring-1 ring-border"></div>
+<div class="flex items-baseline justify-between">
+<span class="text-xs font-semibold text-ink">Applied to Pixelcraft</span>
+<span class="text-[10px] font-mono text-muted">Yesterday</span>
+</div>
+<p class="text-xs text-muted mt-0.5">Junior Fullstack role via referral link.</p>
+<span class="inline-block mt-1 text-[10px] font-semibold bg-status-applied/15 text-status-applied px-2 py-0.2 rounded">
+                Applied
+              </span>
+</div>
+<!-- Event 3: 23 Oct -->
+<div class="relative group">
+<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-forest border-2 border-white ring-1 ring-border"></div>
+<div class="flex items-baseline justify-between">
+<span class="text-xs font-semibold text-forest">Offer received from Brightpath</span>
+<span class="text-[10px] font-mono text-muted">23 Oct</span>
+</div>
+<p class="text-xs text-ink mt-0.5 font-medium">$45/hr · Spring/Summer Co-op</p>
+<span class="inline-block mt-1 text-[10px] font-semibold bg-forest text-white px-2 py-0.2 rounded">
+                Offer
+              </span>
+</div>
+<!-- Event 4: 22 Oct -->
+<div class="relative group">
+<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-status-wishlist border-2 border-white ring-1 ring-border"></div>
+<div class="flex items-baseline justify-between">
+<span class="text-xs font-semibold text-ink">Added Fernwood</span>
+<span class="text-[10px] font-mono text-muted">22 Oct</span>
+</div>
+<p class="text-xs text-muted mt-0.5">Bookmarked Backend Systems vacancy.</p>
+<span class="inline-block mt-1 text-[10px] font-semibold bg-status-wishlist/15 text-status-wishlist px-2 py-0.2 rounded">
+                Wishlist
+              </span>
+</div>
+<!-- Event 5: 20 Oct -->
+<div class="relative group">
+<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-status-rejected border-2 border-white ring-1 ring-border"></div>
+<div class="flex items-baseline justify-between">
+<span class="text-xs font-semibold text-ink">Decision: Kite Labs</span>
+<span class="text-[10px] font-mono text-muted">20 Oct</span>
+</div>
+<p class="text-xs text-muted mt-0.5">Application rejected post screening.</p>
+<span class="inline-block mt-1 text-[10px] font-semibold bg-status-rejected/15 text-status-rejected px-2 py-0.2 rounded">
+                Rejected
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
