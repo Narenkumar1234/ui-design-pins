@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Folio — Reading Tracker</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Lexend", "sans-serif"],
+            display: ["Lexend", "sans-serif"],
+            body: ["Lexend", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #141414;
+      color: #F5F4F0;
+      font-family: 'Lexend', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#141414] text-[#F5F4F0] min-h-screen flex justify-center selection:bg-[#E8742A] selection:text-white">
+<!-- Mobile Viewport Container (390px spec) -->
+<div class="w-full max-w-[390px] min-h-screen bg-[#141414] flex flex-col relative pb-24 shadow-2xl">
+<!-- Top Bar Navigation (Shared Component compliant) -->
+<header class="bg-[#141414] dark:bg-[#141414] border-b border-[#2A2A2A] dark:border-[#2A2A2A] sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-5 py-3.5">
+<!-- Brand / Identity -->
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-[#1E1E1E] border border-[#2A2A2A] flex items-center justify-center text-xs font-headline font-extrabold text-[#F5F4F0]">
+            JD
+          </div>
+<span class="font-headline font-extrabold text-xl tracking-tight text-[#F5F4F0]">Folio</span>
+</div>
+<!-- Trailing actions -->
+<div class="flex items-center gap-1.5">
+<button aria-label="Notifications" class="w-9 h-9 rounded-full flex items-center justify-center text-[#8A8A8A] hover:text-[#E8742A] active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Flow -->
+<main class="flex-1 px-4 pt-4 pb-6 space-y-5">
+<!-- Greeting Header -->
+<section class="flex items-center justify-between pt-1">
+<div>
+<h1 class="font-headline font-extrabold text-2xl tracking-tight text-[#F5F4F0]">Good evening, Riya</h1>
+<p class="font-label text-xs text-[#8A8A8A] mt-0.5">Keep your streak alive today</p>
+</div>
+<div class="relative">
+<div class="w-9 h-9 rounded-full bg-[#1E1E1E] border border-[#2A2A2A] flex items-center justify-center font-headline font-extrabold text-xs text-[#E8742A]">
+            R
+          </div>
+<span class="absolute top-0 right-0 w-2 h-2 rounded-full bg-[#E8742A] ring-2 ring-[#141414]"></span>
+</div>
+</section>
+<!-- 2. Reading Streak Card -->
+<section class="bg-[#1E1E1E] border border-[#2A2A2A] rounded-2xl p-4 space-y-3.5">
+<div class="flex items-start justify-between">
+<div class="space-y-0.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[#E8742A] text-xl" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-headline font-extrabold text-lg text-[#F5F4F0] tracking-tight">12-day streak</span>
+</div>
+<p class="font-label text-xs text-[#8A8A8A]">Personal best! 2 days to 2-week badge</p>
+</div>
+<span class="font-label text-[11px] font-semibold text-[#E8742A] bg-[#2A2A2A]/60 px-2 py-0.5 rounded-full border border-[#2A2A2A]">
+            Level 3
+          </span>
+</div>
+<!-- 7-day indicators -->
+<div class="grid grid-cols-7 gap-1.5 pt-1">
+<!-- Mon -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label text-[10px] text-[#8A8A8A] font-medium">M</span>
+<div class="w-7 h-7 rounded-full bg-[#E8742A] flex items-center justify-center text-[#141414]">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- Tue -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label text-[10px] text-[#8A8A8A] font-medium">T</span>
+<div class="w-7 h-7 rounded-full bg-[#E8742A] flex items-center justify-center text-[#141414]">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- Wed -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label text-[10px] text-[#8A8A8A] font-medium">W</span>
+<div class="w-7 h-7 rounded-full bg-[#E8742A] flex items-center justify-center text-[#141414]">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- Thu -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label text-[10px] text-[#8A8A8A] font-medium">T</span>
+<div class="w-7 h-7 rounded-full bg-[#E8742A] flex items-center justify-center text-[#141414]">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- Fri -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label text-[10px] text-[#8A8A8A] font-medium">F</span>
+<div class="w-7 h-7 rounded-full bg-[#E8742A] flex items-center justify-center text-[#141414]">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- Sat (Today - highlighted with orange ring) -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label text-[10px] text-[#E8742A] font-bold">S</span>
+<div class="w-7 h-7 rounded-full border-2 border-[#E8742A] bg-[#141414] flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-[#E8742A]"></div>
+</div>
+</div>
+<!-- Sun (Upcoming) -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label text-[10px] text-[#8A8A8A] font-medium">S</span>
+<div class="w-7 h-7 rounded-full border border-[#2A2A2A] bg-[#141414] flex items-center justify-center text-[#8A8A8A]">
+<div class="w-1.5 h-1.5 rounded-full bg-[#2A2A2A]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Currently Reading Section -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs tracking-wider uppercase font-bold text-[#8A8A8A]">Currently reading</span>
+<span class="font-label text-xs text-[#8A8A8A]">Session 4 of 6</span>
+</div>
+<div class="bg-[#1E1E1E] border border-[#2A2A2A] rounded-2xl p-4 flex gap-4">
+<!-- Flat Graphic Typographic Book Cover -->
+<div class="w-24 h-36 rounded-[10px] flex-shrink-0 bg-[#141414] border border-[#2A2A2A] p-2 flex flex-col justify-between relative overflow-hidden select-none">
+<!-- Geometric Orbit Artwork -->
+<div class="absolute -right-4 -top-4 w-20 h-20 rounded-full border-2 border-[#E8742A]/30 pointer-events-none"></div>
+<div class="absolute -right-2 top-2 w-12 h-12 rounded-full bg-[#E8742A] pointer-events-none"></div>
+<div class="absolute left-2 bottom-6 w-5 h-0.5 bg-[#8A8A8A]/50"></div>
+<div class="relative z-10 pt-1">
+<span class="text-[9px] font-label font-bold text-[#8A8A8A] tracking-widest block uppercase">VOL. 01</span>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline font-extrabold text-[12px] leading-3 text-[#F5F4F0] uppercase tracking-tight">QUIET<br/>ORBIT</h2>
+<p class="font-label text-[8px] text-[#8A8A8A] mt-1 font-medium">Mira Sol</p>
+</div>
+</div>
+<!-- Book Meta & Progress -->
+<div class="flex-1 flex flex-col justify-between py-0.5">
+<div>
+<h3 class="font-headline font-extrabold text-base leading-tight text-[#F5F4F0]">Quiet Orbit</h3>
+<p class="font-label text-xs text-[#8A8A8A] mt-0.5">Mira Sol</p>
+<div class="mt-2.5 flex items-center justify-between font-label text-xs">
+<span class="text-[#F5F4F0] font-medium">Page 184 <span class="text-[#8A8A8A] font-normal">of 312</span></span>
+<span class="text-[#E8742A] font-bold">59%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-1.5 bg-[#2A2A2A] rounded-full overflow-hidden mt-1.5">
+<div class="h-full bg-[#E8742A] rounded-full" style="width: 59%;"></div>
+</div>
+</div>
+<!-- Action Pill Button -->
+<div class="pt-3">
+<button class="w-full bg-[#141414] hover:bg-[#2A2A2A] border border-[#2A2A2A] text-[#F5F4F0] hover:text-[#E8742A] text-xs font-label font-semibold py-2 px-3 rounded-full flex items-center justify-center gap-1.5 active:scale-95 transition-all" type="button">
+<span>Continue</span>
+<span class="material-symbols-outlined text-sm" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Daily Goal Widget -->
+<section class="bg-[#1E1E1E] border border-[#2A2A2A] rounded-2xl p-4 flex items-center justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#E8742A] text-base" data-icon="timer">timer</span>
+<span class="font-headline font-bold text-sm text-[#F5F4F0]">Daily goal</span>
+</div>
+<p class="font-label text-xs text-[#8A8A8A]">22 / 30 min completed</p>
+<div class="pt-0.5">
+<span class="inline-flex items-center font-label text-[11px] font-medium text-[#E8742A]">
+              8 min left to reach target
+            </span>
+</div>
+</div>
+<!-- Clean Circular Progress Ring (73%) -->
+<div class="relative w-14 h-14 flex items-center justify-center flex-shrink-0">
+<svg class="w-14 h-14 -rotate-90" viewbox="0 0 48 48">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#2A2A2A" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#E8742A" stroke-dasharray="125.6" stroke-dashoffset="33.9" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<span class="absolute font-headline font-extrabold text-xs text-[#F5F4F0]">73%</span>
+</div>
+</section>
+<!-- 5. Up Next Section -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs tracking-wider uppercase font-bold text-[#8A8A8A]">Up next</span>
+<button class="font-label text-xs font-semibold text-[#8A8A8A] hover:text-[#E8742A] bg-[#1E1E1E] border border-[#2A2A2A] px-2.5 py-1 rounded-full active:scale-95 transition-all" type="button">
+            See all (4)
+          </button>
+</div>
+<!-- Horizontal Scroll Row -->
+<div class="flex gap-3 overflow-x-auto hide-scrollbar pb-1 -mx-4 px-4">
+<!-- Book 1: Salt & Signal -->
+<div class="w-[108px] flex-shrink-0 group cursor-pointer">
+<div class="w-[108px] h-36 rounded-[10px] bg-[#141414] border border-[#2A2A2A] p-2.5 flex flex-col justify-between relative overflow-hidden transition-transform duration-150 group-active:scale-95">
+<!-- Geometric wave graphic lines -->
+<div class="space-y-1 mt-2">
+<div class="w-full h-1 bg-[#F5F4F0]/80 rounded-full"></div>
+<div class="w-3/4 h-1 bg-[#8A8A8A]/50 rounded-full"></div>
+<div class="w-full h-1 bg-[#F5F4F0]/80 rounded-full"></div>
+<div class="w-1/2 h-1 bg-[#8A8A8A]/50 rounded-full"></div>
+</div>
+<div>
+<h4 class="font-headline font-extrabold text-[11px] leading-tight text-[#F5F4F0] uppercase">SALT &amp;<br/>SIGNAL</h4>
+<p class="font-label text-[8px] text-[#8A8A8A] mt-0.5 truncate">Dev Rao</p>
+</div>
+</div>
+<div class="mt-2 space-y-0.5">
+<h5 class="font-headline font-bold text-xs text-[#F5F4F0] truncate">Salt &amp; Signal</h5>
+<p class="font-label text-[11px] text-[#8A8A8A] truncate">Dev Rao</p>
+<div class="flex items-center gap-1 font-label text-[10px] text-[#8A8A8A] pt-0.5">
+<span class="text-[#F5C518]">★</span>
+<span class="font-medium text-[#F5F4F0]">4.8</span>
+</div>
+</div>
+</div>
+<!-- Book 2: The Long Noon -->
+<div class="w-[108px] flex-shrink-0 group cursor-pointer">
+<div class="w-[108px] h-36 rounded-[10px] bg-[#141414] border border-[#2A2A2A] p-2.5 flex flex-col justify-between relative overflow-hidden transition-transform duration-150 group-active:scale-95">
+<!-- Geometric Half Sun Graphic -->
+<div class="w-12 h-6 bg-[#E8742A] rounded-t-full mt-3 self-center"></div>
+<div>
+<h4 class="font-headline font-extrabold text-[11px] leading-tight text-[#F5F4F0] uppercase">THE LONG<br/>NOON</h4>
+<p class="font-label text-[8px] text-[#8A8A8A] mt-0.5 truncate">Ana Kade</p>
+</div>
+</div>
+<div class="mt-2 space-y-0.5">
+<h5 class="font-headline font-bold text-xs text-[#F5F4F0] truncate">The Long Noon</h5>
+<p class="font-label text-[11px] text-[#8A8A8A] truncate">Ana Kade</p>
+<div class="flex items-center gap-1 font-label text-[10px] text-[#8A8A8A] pt-0.5">
+<span class="text-[#F5C518]">★</span>
+<span class="font-medium text-[#F5F4F0]">4.9</span>
+</div>
+</div>
+</div>
+<!-- Book 3: Paper Tigers -->
+<div class="w-[108px] flex-shrink-0 group cursor-pointer">
+<div class="w-[108px] h-36 rounded-[10px] bg-[#141414] border border-[#2A2A2A] p-2.5 flex flex-col justify-between relative overflow-hidden transition-transform duration-150 group-active:scale-95">
+<!-- Folded angular geometric lines -->
+<div class="relative w-10 h-10 mt-1 opacity-75">
+<div class="absolute inset-0 border border-[#8A8A8A] rotate-12"></div>
+<div class="absolute inset-0 border border-[#E8742A] -rotate-6"></div>
+</div>
+<div>
+<h4 class="font-headline font-extrabold text-[11px] leading-tight text-[#F5F4F0] uppercase">PAPER<br/>TIGERS</h4>
+<p class="font-label text-[8px] text-[#8A8A8A] mt-0.5 truncate">Leo Marsh</p>
+</div>
+</div>
+<div class="mt-2 space-y-0.5">
+<h5 class="font-headline font-bold text-xs text-[#F5F4F0] truncate">Paper Tigers</h5>
+<p class="font-label text-[11px] text-[#8A8A8A] truncate">Leo Marsh</p>
+<div class="flex items-center gap-1 font-label text-[10px] text-[#8A8A8A] pt-0.5">
+<span class="text-[#F5C518]">★</span>
+<span class="font-medium text-[#F5F4F0]">4.6</span>
+</div>
+</div>
+</div>
+<!-- Book 4: Minimal Spacer / Discovery preview -->
+<div class="w-[108px] flex-shrink-0 group cursor-pointer">
+<div class="w-[108px] h-36 rounded-[10px] bg-[#1E1E1E] border border-dashed border-[#2A2A2A] p-2.5 flex flex-col items-center justify-center text-center gap-2 group-hover:border-[#8A8A8A] transition-colors">
+<span class="material-symbols-outlined text-[#8A8A8A] text-2xl" data-icon="add">add</span>
+<span class="font-label text-[10px] text-[#8A8A8A] font-medium leading-tight">Add to queue</span>
+</div>
+<div class="mt-2 space-y-0.5">
+<h5 class="font-headline font-bold text-xs text-transparent select-none">-</h5>
+<p class="font-label text-[11px] text-transparent select-none">-</p>
+<div class="font-label text-[10px] text-transparent select-none">★ 0.0</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- 6. Bottom Navigation Bar (Shared Component exact implementation) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 max-w-md mx-auto bg-[#141414] dark:bg-[#141414] border-t border-[#2A2A2A] dark:border-[#2A2A2A]">
+<!-- Home (Active Destination) -->
+<button class="flex flex-col items-center justify-center text-[#E8742A] dark:text-[#E8742A] py-1.5 transition-colors active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label text-xs font-medium mt-0.5">Home</span>
+</button>
+<!-- Search (Inactive) -->
+<button class="flex flex-col items-center justify-center text-[#8A8A8A] dark:text-[#8A8A8A] py-1.5 transition-colors hover:text-[#F5F4F0] dark:hover:text-[#F5F4F0] active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="search">search</span>
+<span class="font-label text-xs font-medium mt-0.5">Search</span>
+</button>
+<!-- Shelf (Inactive) -->
+<button class="flex flex-col items-center justify-center text-[#8A8A8A] dark:text-[#8A8A8A] py-1.5 transition-colors hover:text-[#F5F4F0] dark:hover:text-[#F5F4F0] active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="local_library">local_library</span>
+<span class="font-label text-xs font-medium mt-0.5">Shelf</span>
+</button>
+<!-- Profile (Inactive) -->
+<button class="flex flex-col items-center justify-center text-[#8A8A8A] dark:text-[#8A8A8A] py-1.5 transition-colors hover:text-[#F5F4F0] dark:hover:text-[#F5F4F0] active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="font-label text-xs font-medium mt-0.5">Profile</span>
+</button>
+</nav>
+</div>
+</body></html>

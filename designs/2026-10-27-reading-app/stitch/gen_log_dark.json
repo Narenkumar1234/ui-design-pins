@@ -1,0 +1,164 @@
+{
+ "DARK-home": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Folio Dark",
+         "theme": {
+          "bodyFont": "LEXEND",
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#E8742A",
+          "designMd": "# Folio reading tracker (code.in.30s)\nMinimal monochrome book reading tracker mobile app for students. Near-black ink #141414, off-white #F5F4F0, grey #8A8A8A secondary text, ONE bold accent orange #E8742A (progress bars, streak flame, active nav, primary button). Tiny yellow #F5C518 stars only for ratings. Geometric sans: heavy 800 titles, small regular body. Fully rounded pill buttons and chips, 10px radius book covers and tiles, hairline borders, NO heavy shadows, no gradients. Book covers are flat graphic/typographic designs (big type, simple shapes) with invented titles. No photos of people except simple initials avatars.\n## Dark: background #141414, cards #1E1E1E with #2A2A2A border, ink #F5F4F0, muted #8A8A8A, accent #E8742A.",
+          "headlineFont": "LEXEND",
+          "overrideNeutralColor": "#141414",
+          "overridePrimaryColor": "#E8742A",
+          "overrideSecondaryColor": "#141414",
+          "overrideTertiaryColor": "#F5C518",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/17170237114526942315",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "2084",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzllMjAzZDAxZGI4ZTRmYWZiZjBmZDc4NTBkODg1YzcwEgsSBxDnsaWX4xEYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTI3MjQzMTkyMTQ5ODY3NTk2OQ&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/11272431921498675969/files/abdaa01875fa451b81512a35378cfd25"
+       },
+       "id": "39fd7336eed34b71b9df69b334698311",
+       "name": "projects/11272431921498675969/screens/39fd7336eed34b71b9df69b334698311",
+       "prompt": "Mobile app Home screen for \"Folio\", a minimal book reading tracker for students.\nScreen width: 390px mobile layout.\nColor palette & theme strictly enforced:\n- Dark background: #141414\n- Cards: #1E1E1E with 1px hairline border in #2A2A2A\n- Main text / ink: #F5F4F0\n- Muted secondary text: #8A8A8A\n- ONE bold accent orange: #E8742A\n- Tiny yellow star #F5C518 only for ratings if needed\n- Typography: Clean geometric sans font, heavy 800 weight headings/titles, small regular body text.\n- Fully rounded pill buttons and chips, book covers and tiles with 10px border radius, hairline borders (#2A2A2A), no heavy shadows, no gradients.\n- Strictly NO real photos and NO photographic book covers. Book covers MUST be flat graphic typographic minimalist covers featuring huge bold title type, simple geometric shapes (circles, arcs, clean rectangles, abstract lines), and solid color blocks drawn strictly from black (#141414), off-white (#F5F4F0), orange (#E8742A), and slate grey (#2A2A2A / #8A8A8A).\n\nScreen Structure:\n1. Header:\n- Top bar with greeting: \"Good evening, Riya\" (heavy 800 title, off-white #F5F4F0) with small subtitle \"Keep your streak alive today\".\n- Right side or leading: small avatar circle with initial 'R' (minimal badge) and an outlined bell icon with a subtle unread dot or clean state.\n\n2. Reading Streak Card:\n- Background #1E1E1E, border 1px #2A2A2A, rounded-2xl p-4.\n- Left/Top: \"12-day streak\" with an energetic orange flame icon (Lucide or Material 'local_fire_department' / flame).\n- Secondary note: \"Personal best! 2 days to 2-week badge\".\n- A row of 7 day dots / indicators for Monday to Sunday (M, T, W, T, F, S, S): 5 filled solid orange #E8742A with checkmarks or solid dots, today highlighted with an orange ring, and 2 future days outlined/dim grey.\n\n3. \"Currently Reading\" Section:\n- Section headline: \"Currently reading\" (text-xs tracking-wider uppercase font-bold text-[#8A8A8A]).\n- Big featured card (bg #1E1E1E, border 1px #2A2A2A, rounded-2xl p-4 flex gap-4):\n  - Left: Flat graphic typographic book cover for 'Quiet Orbit' by Mira Sol (w-24 h-36 rounded-[10px] overflow-hidden flex flex-col justify-between p-2.5 bg-[#141414] border border-[#2A2A2A] relative): A minimalist bold graphic cover with a large geometric orange circle (#E8742A) or arc representing an orbit, bold condensed off-white typography 'QUIET ORBIT', author 'Mira Sol'.\n  - Right: Title \"Quiet Orbit\" (font-extrabold text-lg text-[#F5F4F0]), author \"Mira Sol\" (text-sm text-[#8A8A8A]), reading status \"Page 184 of 312\" (text-xs text-[#F5F4F0] font-medium).\n  - Progress bar: 59% filled with bold accent orange #E8742A on a dark track (#2A2A2A), showing \"59%\".\n  - Action: fully rounded black/dark pill button \"Continue\" with a small play or arrow icon (or button with orange accent text/border).\n\n4. Daily Goal Widget:\n- Card or inline companion banner: \"Daily goal: 22 / 30 min\".\n- A clean circular progress ring showing ~73% completion in orange #E8742A, with \"8 min left\" prompt.\n\n5. \"Up Next\" Section:\n- Section headline: \"Up next\" (text-xs tracking-wider uppercase font-bold text-[#8A8A8A]) with a \"See all (4)\" pill button.\n- Horizontal scroll row of 3 small graphic typographic covers with 10px radius:\n  1. 'Salt & Signal' by Dev Rao: Graphic typographic cover in off-white / dark contrast with horizontal geometric signal waves, title in bold type.\n  2. 'The Long Noon' by Ana Kade: Graphic typographic cover with a warm orange geometric half-sun/block and bold sans typography.\n  3. 'Paper Tigers' by Leo Marsh: Graphic typographic cover with geometric folded angular lines and bold type.\n  - Below each cover: Title (font-bold text-sm text-[#F5F4F0] truncate), Author (text-xs text-[#8A8A8A]), and a tiny rating badge with tiny yellow star #F5C518 (e.g., \"\u2605 4.8\").\n\n6. Bottom Navigation Bar:\n- Fixed at bottom: 4 line icons with labels: Home (active, #E8742A), Search (#8A8A8A), Shelf (#8A8A8A), Profile (#8A8A8A). Background #141414, 1px top border #2A2A2A. Hairline aesthetic, docked cleanly.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VYtGoPT7oYAVpgNW-sZBo_7GslgXhWNqyQfHE8DVTh5NXLbMpiEyP4MOxZJjdYk-RGv2U2YZonpJhJaTtyD5D-GdKz6IK5gIQNqB-LVAuuMkk-nKkmNWi-g0vxa_h5wz3vJkvrHY75gIpvzDGwFektaJPaWOiURZ5nQitORmOKeD1Oev90PbAK7Yc_xhkYAut_6tHNt-VbmqFvTaPwkD2hxABlQqBGkgCS30vPqHmtlff5tJEQPRPLWT4",
+        "name": "projects/11272431921498675969/files/9e2ca2467b6b48d7b4d32307fc5873a9"
+       },
+       "theme": {
+        "bodyFont": "LEXEND",
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#E8742A",
+        "headlineFont": "LEXEND",
+        "overrideNeutralColor": "#141414",
+        "overridePrimaryColor": "#E8742A",
+        "overrideSecondaryColor": "#141414",
+        "overrideTertiaryColor": "#F5C518",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Folio - Home",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "Here is the **Folio** mobile Home screen crafted according to your exact specifications:\n\n### Design & Architectural Decisions\n- **Palette & Contrast**: Built on a deep `#141414` foundation with `#1E1E1E` card surfaces bounded by crisp `1px #2A2A2A` hairline borders. Primary typography uses crisp off-white `#F5F4F0`, supporting labels use muted grey `#8A8A8A`, and the primary accent is a vibrant punch of `#E8742A`.\n- **Typographic & Layout Hierarchy**: \n  - **Header**: \"Good evening, Riya\" in heavy weight sans with an initial avatar badge `'R'` and notification bell.\n  - **12-Day Streak Card**: Prominent flame icon with week-dot progression (Mon\u2013Sun) showing 5 completed days, active day highlight, and encouragement toward the 2-week badge.\n  - **Currently Reading**: Featured presentation of *'Quiet Orbit'* by Mira Sol with a geometric flat vector cover (geometric orbit arc and bold typography), page counter (184 of 312), 59% orange accent progress bar, and a rounded \"Continue\" pill action.\n  - **Daily Goal Widget**: Integrated 22 / 30 min tracker with a 73% circular ring indicator.\n  - **Up Next Carousel**: Flat typographic covers for *'Salt & Signal'* by Dev Rao, *'The Long Noon'* by Ana Kade, and *'Paper Tigers'* by Leo Marsh with ratings featuring tiny `#F5C518` stars and 10px rounded corners.\n  - **Bottom Navigation**: 4-tab docked hairline navigation (Home, Search, Shelf, Profile) with the active state in `#E8742A`."
+   },
+   {
+    "suggestion": "Design the 'Shelf' screen with reading lists and tags"
+   },
+   {
+    "suggestion": "Design the book detail & reading session timer for 'Quiet Orbit'"
+   },
+   {
+    "suggestion": "Create the 'Search' explore screen with student reading genres"
+   }
+  ],
+  "projectId": "11272431921498675969",
+  "sessionId": "8721550520465774554"
+ },
+ "DARK-detail": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Folio Dark",
+         "theme": {
+          "bodyFont": "LEXEND",
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#E8742A",
+          "designMd": "# Folio reading tracker (code.in.30s)\nMinimal monochrome book reading tracker mobile app for students. Near-black ink #141414, off-white #F5F4F0, grey #8A8A8A secondary text, ONE bold accent orange #E8742A (progress bars, streak flame, active nav, primary button). Tiny yellow #F5C518 stars only for ratings. Geometric sans: heavy 800 titles, small regular body. Fully rounded pill buttons and chips, 10px radius book covers and tiles, hairline borders, NO heavy shadows, no gradients. Book covers are flat graphic/typographic designs (big type, simple shapes) with invented titles. No photos of people except simple initials avatars.\n## Dark: background #141414, cards #1E1E1E with #2A2A2A border, ink #F5F4F0, muted #8A8A8A, accent #E8742A.",
+          "headlineFont": "LEXEND",
+          "overrideNeutralColor": "#141414",
+          "overridePrimaryColor": "#E8742A",
+          "overrideSecondaryColor": "#141414",
+          "overrideTertiaryColor": "#F5C518",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/17170237114526942315",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "2656",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2I0YzAyYmZmZWY0MTRlODk5YTMwN2I1YThiZTliMWExEgsSBxDnsaWX4xEYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTI3MjQzMTkyMTQ5ODY3NTk2OQ&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/11272431921498675969/files/830645c5f7cf4269a8035be4546063b4"
+       },
+       "id": "7ab26a2994e44ee68740b9ddd5db12dd",
+       "name": "projects/11272431921498675969/screens/7ab26a2994e44ee68740b9ddd5db12dd",
+       "prompt": "Create the BOOK DETAIL mobile screen for 'Folio' (reading tracker for students), featuring 'Salt & Signal' by Dev Rao.\n\nLayout specifications:\n- Mobile 390px width layout, Dark mode palette: background #141414, card surfaces #1E1E1E with 1px border #2A2A2A, text ink #F5F4F0, muted grey #8A8A8A, ONE bold accent orange #E8742A, star rating accent #F5C518. Flat minimal aesthetic, no gradients, hairline borders.\n- Top navigation bar: Back arrow icon on the left, action bookmark icon on the right, transparent or docked background.\n- Hero Book Presentation:\n  * Centered large graphic typographic book cover (10px rounded corners, flat geometric design: stark contrast black, bold orange #E8742A, off-white #F5F4F0 with clean geometric lines/shapes and title 'SALT & SIGNAL', author 'Dev Rao', volume/issue markers).\n  * Below cover: Book title 'Salt & Signal' in heavy 800 geometric typography (text-2xl or text-3xl, #F5F4F0), author 'Dev Rao' in muted grey (#8A8A8A, font-medium).\n- Stats row / Badges:\n  * Clean horizontal stats row or chip grid: Rating 4.6 with tiny yellow star (#F5C518), 286 pages, Genre 'Sci-fi', 7h read time.\n- Action row:\n  * Outlined pill button: '+ Add to shelf' (border border-[#2A2A2A] or border-[#8A8A8A]/40, rounded-full, text-sm, text-[#F5F4F0]) alongside an icon button for share.\n- 'About the book' section:\n  * Section header 'About the book' in bold uppercase or clear headline styling.\n  * Concise synopsis paragraph in small regular grey text (#8A8A8A) about orbital signals, desert relay towers, and deep frequency transmissions.\n- 'Readers also liked' horizontal row:\n  * Section heading 'Readers also liked' with 3 small flat typographic book covers (10px radius):\n    1. 'Quiet Orbit' by Mira Sol (black and orange geometric arc)\n    2. 'The Long Noon' by Ana Kade (minimalist setting sun / orange half-circle)\n    3. 'Paper Tigers' by Leo Marsh (overlapping minimal wireframe squares)\n- Bottom Sticky Action Bar:\n  * Full-width prominent pill button: 'Continue reading \u00b7 p. 92' (styled in solid high-contrast dark card/pill with orange accent highlight or solid orange/black pill, fully rounded).\n- Retain Folio's 4-destination bottom navigation bar (Home, Search, Shelf, Profile) or seamless bottom bar integration consistent with the app design system.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WUEamM2qS0kfXhw8FMWPdqFEWEcaeVr6M5t4vcZSBAhc56rFxPGl1h-9aJF2uXvOzDsXn7-p9e7gCZLrVPPPrU0oh1Lw4vdpgDbaN7IAONL9Gl3PlJOz6pc1n5z4oNnwaf9yI_HEWgFT2Q7L0qL4kOExCBZiqdHFF1xgtApyTUkZK5JKzZjULgq-Ht397GVCA44vMuFiUbO7XQtezkR2QUbiKOMobmPdyy3LhlVAjPXsklKX_Sx9cmR58",
+        "name": "projects/11272431921498675969/files/a7fb9d00d10741a79470965ac63fa744"
+       },
+       "theme": {
+        "bodyFont": "LEXEND",
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#E8742A",
+        "headlineFont": "LEXEND",
+        "overrideNeutralColor": "#141414",
+        "overridePrimaryColor": "#E8742A",
+        "overrideSecondaryColor": "#141414",
+        "overrideTertiaryColor": "#F5C518",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Folio - Book Detail",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "Here is the **Book Detail** screen for **'Salt & Signal' by Dev Rao** in Folio's signature dark monochrome aesthetic.\n\n### Key Design Highlights\n- **Palette & Contrast**: Built on `#141414` deep canvas with `#1E1E1E` surface cards and hairline `#2A2A2A` borders, punctuated strictly by `#E8742A` accent orange and `#F5C518` for the rating star.\n- **Graphic Typographic Cover**: Features a custom flat geometric cover with orbital telemetry concentric circles and signal marks, 10px corner radius, bold title, and volume tags.\n- **Hierarchy & Stats Row**: Prominent heavy 800 title with author in muted grey `#8A8A8A`, followed by a 4-part modular stats row (4.6 rating with star, 286 pages, Sci-Fi genre, and 7.2h reading pace).\n- **Secondary Actions & Context**: Includes an outlined '+ Add to shelf' pill, a reading progress card tracking Page 92 with time remaining, and an 'About the book' synopsis.\n- **Discovery**: 'Readers also liked' horizontal row highlighting flat typographic mini-covers for *Quiet Orbit*, *The Long Noon*, and *Paper Tigers*.\n- **Primary CTA & Navigation**: Sticky high-contrast orange CTA button for 'Continue reading \u00b7 P. 92' paired with Folio's persistent 4-icon bottom navigation bar."
+   },
+   {
+    "suggestion": "Create the 'Shelf' reading library screen"
+   },
+   {
+    "suggestion": "Design the active reading mode / e-reader view for page 92"
+   },
+   {
+    "suggestion": "Generate the Search & Explore screen"
+   }
+  ],
+  "projectId": "11272431921498675969",
+  "sessionId": "3900757539638382017"
+ }
+}

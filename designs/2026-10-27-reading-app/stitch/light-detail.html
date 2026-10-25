@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Folio — Salt &amp; Signal</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            folio: {
+              ink: "#141414",
+              bg: "#F5F4F0",
+              card: "#FFFFFF",
+              border: "#E7E5DF",
+              muted: "#8A8A8A",
+              orange: "#E8742A",
+              star: "#F5C518",
+              subtle: "#ECEAE3"
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "book": "10px",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Lexend", "sans-serif"],
+            display: ["Lexend", "sans-serif"],
+            body: ["Lexend", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #ECEAE3;
+      color: #141414;
+      font-family: 'Lexend', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hide scrollbar for chrome, safari and opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex justify-center items-start p-0 sm:py-6 selection:bg-[#E8742A] selection:text-white">
+<!-- Mobile Frame (390px width emulation) -->
+<main class="w-full max-w-[390px] min-h-screen bg-[#F5F4F0] flex flex-col relative shadow-sm border-x border-[#E7E5DF] pb-36">
+<!-- Top Navigation Bar (Header) -->
+<header class="sticky top-0 z-40 bg-[#F5F4F0]/95 backdrop-blur-sm px-5 py-3.5 flex items-center justify-between border-b border-[#E7E5DF]">
+<button aria-label="Go back" class="w-9 h-9 rounded-full flex items-center justify-center bg-white border border-[#E7E5DF] text-[#141414] hover:text-[#E8742A] active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="font-headline font-extrabold text-sm tracking-tight text-[#141414]">Folio</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#E8742A]"></span>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Bookmark this book" class="w-9 h-9 rounded-full flex items-center justify-center bg-white border border-[#E7E5DF] text-[#141414] hover:text-[#E8742A] active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[19px] material-symbols-fill text-[#E8742A]" data-icon="bookmark">bookmark</span>
+</button>
+<button aria-label="More options" class="w-9 h-9 rounded-full flex items-center justify-center bg-white border border-[#E7E5DF] text-[#141414] hover:text-[#E8742A] active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[19px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="px-5 pt-6 flex flex-col items-center">
+<!-- Graphic Typographic Book Cover (Hero) -->
+<section aria-label="Book Cover" class="w-full flex justify-center mb-6">
+<div class="relative w-[164px] h-[236px] rounded-[10px] bg-[#141414] border border-[#141414] p-4 flex flex-col justify-between overflow-hidden select-none shadow-none">
+<!-- Graphic Signal Lines / Waves Accent -->
+<div class="absolute inset-0 pointer-events-none opacity-90 overflow-hidden">
+<div class="absolute top-[42%] left-0 right-0 flex flex-col gap-1.5 px-3">
+<div class="h-[3px] w-full bg-[#E8742A] rounded-full"></div>
+<div class="h-[2px] w-3/4 bg-[#E8742A] rounded-full"></div>
+<div class="h-[3px] w-5/6 bg-[#E8742A] rounded-full"></div>
+<div class="h-[1.5px] w-1/2 bg-[#E8742A] rounded-full"></div>
+<div class="h-[4px] w-full bg-[#E8742A] rounded-full"></div>
+</div>
+<!-- Geometric ring detail -->
+<div class="absolute -right-6 top-8 w-20 h-20 rounded-full border border-dashed border-[#8A8A8A]/30"></div>
+</div>
+<!-- Cover Header Typography -->
+<div class="z-10 flex flex-col gap-0.5">
+<span class="font-label text-[9px] uppercase tracking-widest text-[#8A8A8A] font-semibold">A Novel</span>
+<h1 class="font-headline font-extrabold text-[17px] leading-[1.15] tracking-tight text-[#F5F4F0] uppercase">
+              Salt &amp;<br/>Signal
+            </h1>
+</div>
+<!-- Cover Footer Typography -->
+<div class="z-10 pt-4 border-t border-[#2A2A2A] flex justify-between items-end">
+<span class="font-headline font-bold text-[11px] tracking-wide text-[#F5F4F0] uppercase">
+              Dev Rao
+            </span>
+<span class="font-label text-[8px] text-[#E8742A] font-bold tracking-tighter">VOL. 01</span>
+</div>
+</div>
+</section>
+<!-- Book Title & Author Section -->
+<div class="w-full text-center mb-5">
+<h2 class="font-headline font-extrabold text-2xl tracking-tight text-[#141414]">Salt &amp; Signal</h2>
+<p class="font-label text-sm text-[#8A8A8A] mt-1 font-normal">Dev Rao</p>
+</div>
+<!-- Stats Pill Bar (Bento-style Minimal Badges) -->
+<section aria-label="Book metadata" class="w-full grid grid-cols-4 gap-2 mb-5">
+<!-- Stat: Rating -->
+<div class="bg-white border border-[#E7E5DF] rounded-xl py-2 px-1 flex flex-col items-center justify-center text-center">
+<div class="flex items-center gap-0.5 mb-0.5">
+<span class="font-headline font-bold text-xs text-[#141414]">4.6</span>
+<span class="material-symbols-outlined text-[13px] text-[#F5C518] material-symbols-fill" data-icon="star" data-weight="fill">star</span>
+</div>
+<span class="font-label text-[10px] tracking-wider text-[#8A8A8A] uppercase">Rating</span>
+</div>
+<!-- Stat: Pages -->
+<div class="bg-white border border-[#E7E5DF] rounded-xl py-2 px-1 flex flex-col items-center justify-center text-center">
+<span class="font-headline font-bold text-xs text-[#141414] mb-0.5">286</span>
+<span class="font-label text-[10px] tracking-wider text-[#8A8A8A] uppercase">Pages</span>
+</div>
+<!-- Stat: Genre -->
+<div class="bg-white border border-[#E7E5DF] rounded-xl py-2 px-1 flex flex-col items-center justify-center text-center">
+<span class="font-headline font-bold text-xs text-[#141414] mb-0.5">Sci-Fi</span>
+<span class="font-label text-[10px] tracking-wider text-[#8A8A8A] uppercase">Genre</span>
+</div>
+<!-- Stat: Reading Time -->
+<div class="bg-white border border-[#E7E5DF] rounded-xl py-2 px-1 flex flex-col items-center justify-center text-center">
+<div class="flex items-center gap-0.5 mb-0.5">
+<span class="font-headline font-bold text-xs text-[#141414]">7h</span>
+</div>
+<span class="font-label text-[10px] tracking-wider text-[#8A8A8A] uppercase">Paced</span>
+</div>
+</section>
+<!-- Quick Actions Row -->
+<section aria-label="Quick Actions" class="w-full flex items-center gap-2.5 mb-7">
+<button class="flex-1 h-10 px-4 bg-white border border-[#E7E5DF] hover:border-[#141414] rounded-full flex items-center justify-center gap-2 text-xs font-headline font-bold text-[#141414] active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-[#141414]" data-icon="add">add</span>
+<span>Add to shelf</span>
+</button>
+<button aria-label="Share novel" class="w-10 h-10 bg-white border border-[#E7E5DF] hover:border-[#141414] rounded-full flex items-center justify-center text-[#141414] active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="share">share</span>
+</button>
+<button aria-label="Audio sample" class="w-10 h-10 bg-white border border-[#E7E5DF] hover:border-[#141414] rounded-full flex items-center justify-center text-[#141414] active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="headphones">headphones</span>
+</button>
+</section>
+<!-- Reading Progress Highlight Card -->
+<section aria-label="Current progress" class="w-full bg-white border border-[#E7E5DF] rounded-2xl p-4 mb-7">
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#E8742A] text-[18px] material-symbols-fill" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-headline font-bold text-xs text-[#141414]">Reading streak: 12 days</span>
+</div>
+<span class="font-label text-[11px] font-semibold text-[#E8742A]">32% completed</span>
+</div>
+<!-- Hairline Track Progress Bar -->
+<div class="w-full h-1.5 bg-[#F5F4F0] rounded-full overflow-hidden border border-[#E7E5DF]">
+<div class="h-full bg-[#E8742A] rounded-full" style="width: 32%"></div>
+</div>
+<div class="flex justify-between items-center mt-2.5 text-[11px] text-[#8A8A8A] font-label">
+<span>Started Oct 14</span>
+<span>Target: 25 pages today</span>
+</div>
+</section>
+<!-- About the Book Section -->
+<section aria-label="About the book" class="w-full mb-7">
+<div class="flex items-center justify-between mb-2.5">
+<h3 class="font-headline font-extrabold text-xs uppercase tracking-wider text-[#141414]">About the book</h3>
+<span class="font-label text-[11px] font-medium text-[#8A8A8A]">1st Edition</span>
+</div>
+<div class="bg-white border border-[#E7E5DF] rounded-2xl p-4">
+<p class="font-label text-[13px] leading-relaxed text-[#141414]/90 mb-3">
+            In an inundated archipelago off the continental ridge, deep-water hydrographer Kaelen intercepts an anomaly: an acoustic rhythm oscillating in salt gradients. As oceanic relay outposts go silent one by one, he must decipher whether the resonance is a seismic fault or an invitation from something buried centuries beneath the trenches.
+          </p>
+<div class="flex flex-wrap gap-1.5 pt-2 border-t border-[#F5F4F0]">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-medium font-label bg-[#F5F4F0] text-[#141414] border border-[#E7E5DF]">Atmospheric</span>
+<span class="px-2.5 py-1 rounded-full text-[10px] font-medium font-label bg-[#F5F4F0] text-[#141414] border border-[#E7E5DF]">Oceanic Hard Sci-Fi</span>
+<span class="px-2.5 py-1 rounded-full text-[10px] font-medium font-label bg-[#F5F4F0] text-[#141414] border border-[#E7E5DF]">Solitude</span>
+</div>
+</div>
+</section>
+<!-- Readers Also Liked Section -->
+<section aria-label="Readers also liked" class="w-full mb-6">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-headline font-extrabold text-xs uppercase tracking-wider text-[#141414]">Readers also liked</h3>
+<button class="font-label text-[11px] text-[#8A8A8A] hover:text-[#141414] transition-colors" type="button">See all</button>
+</div>
+<div class="grid grid-cols-3 gap-2.5 w-full">
+<!-- Recommendation 1: The Long Noon -->
+<article class="flex flex-col group cursor-pointer">
+<div class="w-full aspect-[2/3] rounded-[10px] bg-[#F5F4F0] border border-[#E7E5DF] p-2.5 flex flex-col justify-between relative overflow-hidden group-hover:border-[#141414] transition-colors">
+<!-- Geometric Accent: Half-Sun -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-[#E8742A]"></div>
+<div class="z-10 mt-6 text-center">
+<span class="block font-headline font-extrabold text-[10px] leading-tight uppercase text-[#141414]">The Long<br/>Noon</span>
+</div>
+<div class="z-10 text-center border-t border-[#E7E5DF] pt-1">
+<span class="block font-label text-[7.5px] uppercase font-bold text-[#8A8A8A]">A. Kade</span>
+</div>
+</div>
+<h4 class="font-headline font-bold text-[11px] text-[#141414] mt-1.5 truncate">The Long Noon</h4>
+<p class="font-label text-[10px] text-[#8A8A8A] truncate">Ana Kade</p>
+</article>
+<!-- Recommendation 2: Paper Tigers -->
+<article class="flex flex-col group cursor-pointer">
+<div class="w-full aspect-[2/3] rounded-[10px] bg-[#141414] border border-[#141414] p-2.5 flex flex-col justify-between relative overflow-hidden group-hover:border-[#E8742A] transition-colors">
+<!-- Overlapping squares graphic -->
+<div class="absolute inset-0 flex items-center justify-center opacity-60">
+<div class="w-9 h-9 border border-[#8A8A8A] rotate-12"></div>
+<div class="w-9 h-9 border border-[#E8742A] -rotate-12 absolute"></div>
+</div>
+<div class="z-10">
+<span class="block font-headline font-extrabold text-[10px] leading-tight uppercase text-[#F5F4F0]">Paper<br/>Tigers</span>
+</div>
+<div class="z-10 text-right">
+<span class="block font-label text-[7.5px] uppercase font-bold text-[#8A8A8A]">L. Marsh</span>
+</div>
+</div>
+<h4 class="font-headline font-bold text-[11px] text-[#141414] mt-1.5 truncate">Paper Tigers</h4>
+<p class="font-label text-[10px] text-[#8A8A8A] truncate">Leo Marsh</p>
+</article>
+<!-- Recommendation 3: Quiet Orbit -->
+<article class="flex flex-col group cursor-pointer">
+<div class="w-full aspect-[2/3] rounded-[10px] bg-[#222222] border border-[#2A2A2A] p-2.5 flex flex-col justify-between relative overflow-hidden group-hover:border-[#141414] transition-colors">
+<!-- Sphere / Orbit Arc graphic -->
+<div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full border-2 border-[#E8742A]"></div>
+<div class="absolute top-4 left-3 w-3 h-3 rounded-full bg-[#E8742A]"></div>
+<div class="z-10">
+<span class="block font-headline font-extrabold text-[10px] leading-tight uppercase text-[#F5F4F0]">Quiet<br/>Orbit</span>
+</div>
+<div class="z-10 border-t border-[#333333] pt-1">
+<span class="block font-label text-[7.5px] uppercase font-bold text-[#8A8A8A]">M. Sol</span>
+</div>
+</div>
+<h4 class="font-headline font-bold text-[11px] text-[#141414] mt-1.5 truncate">Quiet Orbit</h4>
+<p class="font-label text-[10px] text-[#8A8A8A] truncate">Mira Sol</p>
+</article>
+</div>
+</section>
+</div>
+<!-- Fixed Floating Action Footer (CTA + BottomNavBar) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+<div class="w-full max-w-[390px] pointer-events-auto flex flex-col items-center">
+<!-- Floating Primary Reading Action Button -->
+<div class="w-full px-5 pb-2.5">
+<button class="w-full h-12 bg-[#141414] hover:bg-black text-white rounded-full flex items-center justify-between px-5 font-headline font-bold text-xs active:scale-[0.98] transition-transform" type="button">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#E8742A]"></span>
+<span>Continue reading</span>
+</div>
+<div class="flex items-center gap-1.5 font-label font-normal text-[#8A8A8A] text-xs">
+<span class="text-white font-medium">p. 92</span>
+<span class="material-symbols-outlined text-[18px] text-white" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</button>
+</div>
+<!-- Shared Component: BottomNavBar (Exact JSON Specs executed) -->
+<nav aria-label="Main Navigation" class="bg-[#141414] dark:bg-[#141414] border-t border-[#2A2A2A] dark:border-[#2A2A2A] w-full flex justify-around items-center px-4 py-2">
+<!-- Item 1: Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#8A8A8A] dark:text-[#8A8A8A] py-1.5 transition-colors hover:text-[#F5F4F0] dark:hover:text-[#F5F4F0] active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="home">home</span>
+<span class="font-label text-xs font-medium">Home</span>
+</a>
+<!-- Item 2: Search (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#8A8A8A] dark:text-[#8A8A8A] py-1.5 transition-colors hover:text-[#F5F4F0] dark:hover:text-[#F5F4F0] active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+<span class="font-label text-xs font-medium">Search</span>
+</a>
+<!-- Item 3: Shelf (Active - Current Book context in reading journey) -->
+<a class="flex flex-col items-center justify-center text-[#E8742A] dark:text-[#E8742A] py-1.5 transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px] material-symbols-fill" data-icon="local_library">local_library</span>
+<span class="font-label text-xs font-medium">Shelf</span>
+</a>
+<!-- Item 4: Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#8A8A8A] dark:text-[#8A8A8A] py-1.5 transition-colors hover:text-[#F5F4F0] dark:hover:text-[#F5F4F0] active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="person">person</span>
+<span class="font-label text-xs font-medium">Profile</span>
+</a>
+</nav>
+</div>
+</div>
+</main>
+</body></html>

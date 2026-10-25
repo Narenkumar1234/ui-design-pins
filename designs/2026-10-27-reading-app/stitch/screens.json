@@ -1,0 +1,44 @@
+[
+ {
+  "file": "light-home",
+  "name": "projects/11272431921498675969/screens/277682f9331f4bb4a7fc877ee4992ed3",
+  "title": "Folio - Home (Light Mode)",
+  "width": "2560",
+  "height": "2048"
+ },
+ {
+  "file": "light-detail",
+  "name": "projects/11272431921498675969/screens/c5a1d0a3cbea40808e3b6689f323ec91",
+  "title": "Folio - Book Detail",
+  "width": "780",
+  "height": "2730"
+ },
+ {
+  "file": "light-profile",
+  "name": "projects/11272431921498675969/screens/ced915ac2e81405b8e0d776aa34a94a4",
+  "title": "Folio - Profile & Stats",
+  "width": "780",
+  "height": "2804"
+ },
+ {
+  "file": "light-reader",
+  "name": "projects/11272431921498675969/screens/9f357ff6d1774816bc0d109a49fa26fa",
+  "title": "Folio - Reader View",
+  "width": "780",
+  "height": "3652"
+ },
+ {
+  "file": "dark-home",
+  "name": "projects/11272431921498675969/screens/39fd7336eed34b71b9df69b334698311",
+  "title": "Folio - Home",
+  "width": "780",
+  "height": "2084"
+ },
+ {
+  "file": "dark-detail",
+  "name": "projects/11272431921498675969/screens/7ab26a2994e44ee68740b9ddd5db12dd",
+  "title": "Folio - Book Detail",
+  "width": "780",
+  "height": "2656"
+ }
+]

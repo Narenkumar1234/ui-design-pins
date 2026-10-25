@@ -1,0 +1,42 @@
+{
+ "LIGHT": {
+  "designSystem": {
+   "displayName": "Folio Light",
+   "theme": {
+    "bodyFont": "LEXEND",
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#E8742A",
+    "designMd": "# Folio reading tracker (code.in.30s)\nMinimal monochrome book reading tracker mobile app for students. Near-black ink #141414, off-white #F5F4F0, grey #8A8A8A secondary text, ONE bold accent orange #E8742A (progress bars, streak flame, active nav, primary button). Tiny yellow #F5C518 stars only for ratings. Geometric sans: heavy 800 titles, small regular body. Fully rounded pill buttons and chips, 10px radius book covers and tiles, hairline borders, NO heavy shadows, no gradients. Book covers are flat graphic/typographic designs (big type, simple shapes) with invented titles. No photos of people except simple initials avatars.\n## Light: background off-white #F5F4F0, cards white #FFFFFF with #E7E5DF border, ink #141414, muted #8A8A8A, accent #E8742A.",
+    "headlineFont": "LEXEND",
+    "overrideNeutralColor": "#F5F4F0",
+    "overridePrimaryColor": "#E8742A",
+    "overrideSecondaryColor": "#141414",
+    "overrideTertiaryColor": "#F5C518",
+    "roundness": "ROUND_TWELVE"
+   }
+  },
+  "name": "assets/3872367097134657854",
+  "version": "1"
+ },
+ "DARK": {
+  "designSystem": {
+   "displayName": "Folio Dark",
+   "theme": {
+    "bodyFont": "LEXEND",
+    "colorMode": "DARK",
+    "colorVariant": "FIDELITY",
+    "customColor": "#E8742A",
+    "designMd": "# Folio reading tracker (code.in.30s)\nMinimal monochrome book reading tracker mobile app for students. Near-black ink #141414, off-white #F5F4F0, grey #8A8A8A secondary text, ONE bold accent orange #E8742A (progress bars, streak flame, active nav, primary button). Tiny yellow #F5C518 stars only for ratings. Geometric sans: heavy 800 titles, small regular body. Fully rounded pill buttons and chips, 10px radius book covers and tiles, hairline borders, NO heavy shadows, no gradients. Book covers are flat graphic/typographic designs (big type, simple shapes) with invented titles. No photos of people except simple initials avatars.\n## Dark: background #141414, cards #1E1E1E with #2A2A2A border, ink #F5F4F0, muted #8A8A8A, accent #E8742A.",
+    "headlineFont": "LEXEND",
+    "overrideNeutralColor": "#141414",
+    "overridePrimaryColor": "#E8742A",
+    "overrideSecondaryColor": "#141414",
+    "overrideTertiaryColor": "#F5C518",
+    "roundness": "ROUND_TWELVE"
+   }
+  },
+  "name": "assets/17170237114526942315",
+  "version": "1"
+ }
+}

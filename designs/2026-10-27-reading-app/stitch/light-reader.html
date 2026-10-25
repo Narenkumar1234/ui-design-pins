@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Folio — Reader View</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          spacing: {},
+          fontFamily: {
+            headline: ["Lexend"],
+            display: ["Lexend"],
+            body: ["Lexend"],
+            label: ["Public Sans"]
+          },
+          fontSize: {}
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 22px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    /* Smooth reader transitions */
+    .prose-reader p {
+      font-family: 'Public Sans', sans-serif;
+      font-size: 1.0625rem; /* ~17px */
+      line-height: 1.72;
+      color: #141414;
+      margin-bottom: 1.35rem;
+      letter-spacing: -0.01em;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 3px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #E7E5DF;
+      border-radius: 9999px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F5F4F0] text-[#141414] font-body antialiased min-h-screen selection:bg-[#E8742A]/20 selection:text-[#141414] flex justify-center">
+<!-- Mobile Wrapper Container (Max Width 448px) -->
+<div class="w-full max-w-md min-h-screen flex flex-col bg-[#F5F4F0] relative border-x border-[#E7E5DF] shadow-sm pb-36">
+<!-- Sticky Header / Top Nav (Editorial Minimalist) -->
+<header class="sticky top-0 z-40 bg-[#F5F4F0]/95 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#E7E5DF]">
+<!-- Back Action -->
+<a aria-label="Back to Shelf" class="w-9 h-9 rounded-full bg-white border border-[#E7E5DF] flex items-center justify-center text-[#141414] hover:text-[#E8742A] hover:border-[#E8742A]/40 transition-colors active:scale-95" href="#back">
+<span class="material-symbols-outlined text-[19px]">arrow_back</span>
+</a>
+<!-- Book & Chapter Title Hierarchy -->
+<div class="flex-1 text-center px-2 min-w-0">
+<div class="text-[10px] tracking-wider uppercase font-semibold text-[#8A8A8A] truncate font-label">
+          Ana Kade · The Long Noon
+        </div>
+<h1 class="text-sm font-extrabold text-[#141414] tracking-tight truncate font-headline">
+          Chapter 7 · The Long Noon
+        </h1>
+</div>
+<!-- Action Cluster: Quick Font & Bookmark -->
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-full bg-white border border-[#E7E5DF] flex items-center justify-center text-[#141414] hover:text-[#E8742A] hover:border-[#E8742A]/40 transition-all active:scale-95 font-headline font-bold text-xs" id="fontMenuBtn" title="Font Settings">
+          Aa
+        </button>
+<button class="w-9 h-9 rounded-full bg-white border border-[#E7E5DF] flex items-center justify-center text-[#141414] hover:text-[#E8742A] transition-colors active:scale-95" title="Bookmark">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+</header>
+<!-- Reading Progress Bar (Sub-header Micro Indicator) -->
+<div class="w-full bg-[#E7E5DF] h-[2px]">
+<div class="bg-[#E8742A] h-full w-[55%] transition-all duration-300"></div>
+</div>
+<!-- Main Editorial Reading Content Canvas -->
+<main class="flex-1 px-5 pt-8 pb-10 prose-reader">
+<!-- Chapter Header Plaque -->
+<div class="mb-7 pb-4 border-b border-[#E7E5DF]">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-white border border-[#E7E5DF] text-[11px] font-label font-medium text-[#8A8A8A] mb-3">
+<span class="w-1.5 h-1.5 rounded-full bg-[#E8742A]"></span>
+          Solar Station Echo-9 · Year 2184
+        </div>
+<h2 class="text-2xl font-extrabold text-[#141414] tracking-tight font-headline">
+          The Long Noon
+        </h2>
+<p class="text-xs text-[#8A8A8A] font-label mt-1">Section 2 · Orbital Decay Sequence</p>
+</div>
+<!-- Paragraph 1 -->
+<p>
+        The thermal horizon refused to subside. Above the titanium truss of Station Echo-9, the twin suns hung pinned at an unyielding zenith, casting shadows that were no longer silhouettes but razor-thin gouges along the dust-white deck plates. For thirty planetary cycles, day had forgotten how to end.
+      </p>
+<!-- Paragraph 2 -->
+<p>
+        Kade adjusted her ocular shade, hearing the servo hum through the bone of her temple. In the lower atmospheric bay, the coolant reservoirs were wheezing under atmospheric turbulence. She touched the cold bronze regulator, wondering how many liters remained before the solar flares stripped their primary shielding down to pure carbon.
+      </p>
+<!-- Highlighted Sentence Block (Design System Compliant: Pale Translucent Orange with Interactive Annotation Badge) -->
+<div class="my-6 relative pl-3.5 border-l-2 border-[#E8742A] bg-[#E8742A]/10 py-2.5 pr-3 rounded-r-lg group">
+<p class="!text-[#141414] !font-medium !mb-0 font-label !text-[1.05rem] leading-relaxed">
+          "Memory is simply the lingering light of stars that have already burned through their own fuel," she murmured into the log console, unwilling to turn around.
+        </p>
+<!-- Interactive Annotation Badge Floating on Edge -->
+<div class="mt-2.5 pt-2 border-t border-[#E8742A]/20 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs text-[#E8742A] font-label font-semibold">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">comment</span>
+<span>Student Note: Existential anchor point for Ch. 8</span>
+</div>
+<span class="text-[10px] font-label text-[#8A8A8A] bg-white px-2 py-0.5 rounded-full border border-[#E7E5DF]">
+            Highlight #4
+          </span>
+</div>
+</div>
+<!-- Paragraph 3 -->
+<p>
+        A synthetic raven wheeled through the exhaust vents high above, its carbon-fiber wings ticking against the heat grids. In the academy textbooks back on Ceres, they called this phenomenon the Solstice Stasis—a harmonic alignment occurring once every four decades. But textbooks never accounted for the dry metallic taste of recycled oxygen or the quiet panic of three engineers realizing the beacon array had desynchronized.
+      </p>
+<!-- Paragraph 4 -->
+<p>
+        She tapped the terminal membrane twice. The frequency waveform flickered in faint amber, stuttering against interference from the outer corona. Every calculation pointed toward the same conclusion: if the orbital tether didn’t release before perihelion, the station would not drift into darkness; it would simply dissolve into the glare.
+      </p>
+<!-- Page Flip Micro Marker -->
+<div class="pt-6 pb-2 flex items-center justify-center">
+<div class="flex items-center gap-2 text-xs text-[#8A8A8A] font-label">
+<span class="h-px w-8 bg-[#E7E5DF]"></span>
+<span>End of Section 2</span>
+<span class="h-px w-8 bg-[#E7E5DF]"></span>
+</div>
+</div>
+</main>
+<!-- Reading Scrubber & Quick Controls Floating Deck (Docked Above Bottom Bar) -->
+<section class="fixed bottom-[65px] left-0 right-0 z-30 flex justify-center px-4 pointer-events-none">
+<div class="w-full max-w-md bg-white border border-[#E7E5DF] rounded-xl px-4 py-3 shadow-[0_4px_16px_rgba(20,20,20,0.06)] pointer-events-auto transition-transform">
+<!-- Scrubber Progress Bar and Chapter Scrub Track -->
+<div class="space-y-1.5 mb-2.5">
+<div class="flex items-center justify-between text-[11px] font-label font-medium text-[#8A8A8A]">
+<span class="text-[#141414] font-semibold">p. 143 / 260</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-[#E8742A]">schedule</span>
+<span>18 min left in chapter</span>
+</div>
+</div>
+<div class="relative w-full h-2 bg-[#F5F4F0] rounded-full overflow-hidden cursor-pointer flex items-center">
+<div class="h-full bg-[#E8742A] rounded-full w-[55%]"></div>
+</div>
+</div>
+<!-- Quick Reader Controls Bar: Pills, Font Stepper, Theme Switcher -->
+<div class="flex items-center justify-between pt-2 border-t border-[#E7E5DF] gap-1.5">
+<!-- Font Size Stepper (A- / A+) -->
+<div class="flex items-center bg-[#F5F4F0] rounded-full p-0.5 border border-[#E7E5DF]">
+<button class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-headline font-semibold text-[#141414] hover:bg-white active:scale-90 transition-all" title="Smaller font">
+              A-
+            </button>
+<span class="text-[11px] font-label font-medium text-[#8A8A8A] px-1.5">17px</span>
+<button class="w-7 h-7 rounded-full flex items-center justify-center text-sm font-headline font-bold text-[#141414] hover:bg-white active:scale-90 transition-all" title="Larger font">
+              A+
+            </button>
+</div>
+<!-- Format / Layout Buttons -->
+<div class="flex items-center gap-1">
+<button class="h-8 px-2.5 rounded-full bg-[#F5F4F0] border border-[#E7E5DF] text-[#141414] hover:border-[#E8742A] flex items-center justify-center gap-1 active:scale-95 transition-all text-xs font-label font-medium" title="Line Spacing">
+<span class="material-symbols-outlined text-[16px]">format_line_spacing</span>
+</button>
+<button class="h-8 px-2.5 rounded-full bg-[#F5F4F0] border border-[#E7E5DF] text-[#141414] hover:border-[#E8742A] flex items-center justify-center gap-1 active:scale-95 transition-all text-xs font-label font-medium" title="Brightness">
+<span class="material-symbols-outlined text-[16px]">brightness_medium</span>
+</button>
+</div>
+<!-- Theme Mode Switcher Pill Group -->
+<div class="flex items-center bg-[#F5F4F0] rounded-full p-0.5 border border-[#E7E5DF]">
+<button class="px-2.5 py-1 rounded-full text-[11px] font-label font-bold bg-[#141414] text-[#F5F4F0] shadow-xs transition-colors" title="Light Off-White">
+              Light
+            </button>
+<button class="px-2 py-1 rounded-full text-[11px] font-label font-medium text-[#8A8A8A] hover:text-[#141414] transition-colors" title="Sepia Paper">
+              Sepia
+            </button>
+<button class="px-2 py-1 rounded-full text-[11px] font-label font-medium text-[#8A8A8A] hover:text-[#141414] transition-colors" title="Dark Ink">
+              Dark
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- BottomNavBar Component (Strictly mapped from Shared Components JSON) -->
+<!-- Destination 4 items: Home, Search, Shelf (Active), Profile. Docked bottom-0, max-w-md mx-auto. -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 max-w-md mx-auto bg-[#141414] text-[#E8742A] border-t border-[#2A2A2A]">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#8A8A8A] py-1.5 transition-colors hover:text-[#F5F4F0] active:scale-95" href="#home">
+<span class="material-symbols-outlined text-[20px]">home</span>
+<span class="font-label text-xs font-medium">Home</span>
+</a>
+<!-- Search (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#8A8A8A] py-1.5 transition-colors hover:text-[#F5F4F0] active:scale-95" href="#search">
+<span class="material-symbols-outlined text-[20px]">search</span>
+<span class="font-label text-xs font-medium">Search</span>
+</a>
+<!-- Shelf (Active: matches Reader / Bookshelf journey) -->
+<a class="flex flex-col items-center justify-center text-[#E8742A] py-1.5 transition-colors hover:text-[#F5F4F0] active:scale-95" href="#shelf">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">local_library</span>
+<span class="font-label text-xs font-medium">Shelf</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#8A8A8A] py-1.5 transition-colors hover:text-[#F5F4F0] active:scale-95" href="#profile">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span class="font-label text-xs font-medium">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>
