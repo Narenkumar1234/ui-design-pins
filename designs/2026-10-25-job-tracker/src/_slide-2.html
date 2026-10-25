@@ -1,0 +1,99 @@
+<!doctype html><html><head><meta charset="utf-8"><style>@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#F6F5F0;--ink:#14181A;--muted:#5E6660;--brand:#1F4D3A;--lime:#C6F35E;--line:#E6E4DC;--card:#fff;--night:#0E1512}
+body{position:relative;overflow:hidden;font-family:Geist,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+body.dk{--bg:#0E1512;--ink:#EEF3EC;--muted:#9AA89F;--line:#24332B;--card:#16211C}
+/* ref-inspired backdrop: soft dot grid + one lime glow */
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(20,24,26,.09) 1.2px,transparent 1.3px);background-size:28px 28px;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.25) 70%,transparent);z-index:0}
+.dk .dots{background-image:radial-gradient(rgba(238,243,236,.08) 1.2px,transparent 1.3px)}
+.glow{position:absolute;width:900px;height:900px;border-radius:50%;left:50%;top:560px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(198,243,94,.20),rgba(198,243,94,0));z-index:0}
+.lt .glow{background:radial-gradient(closest-side,rgba(198,243,94,.38),rgba(198,243,94,0))}
+header,footer{position:absolute;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center;font-size:24px;z-index:50;color:var(--muted)}
+header{top:44px}footer{bottom:38px;font-size:20px;letter-spacing:.08em}
+header b,footer b{color:var(--ink);font-weight:600;letter-spacing:0;display:flex;align-items:center;gap:10px}
+header b i{width:26px;height:26px;border-radius:50%;background:var(--brand);box-shadow:inset 0 0 0 6px var(--lime)}
+.dk header b i{background:var(--night)}
+footer span{font-family:'JetBrains Mono',monospace;font-size:17px}
+h1{position:absolute;left:60px;right:60px;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.035em;line-height:1.02;z-index:40}
+h1.c,.sub.c{text-align:center}
+h1.xl{font-size:112px}
+h1.m{font-size:76px;top:118px}
+h1 .acc{color:var(--lime);display:block}
+.lt h1 .acc{color:var(--brand)}
+h1 em{font-style:normal;background:var(--lime);color:#14181A;padding:0 .14em;border-radius:.18em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.dk h1 em{background:none;color:var(--lime);padding:0}
+.sub{position:absolute;left:90px;right:90px;font-size:30px;line-height:1.35;color:var(--muted);z-index:40}
+.sub b{color:var(--ink);font-weight:600}
+/* browser window */
+.win{position:absolute;border-radius:20px;overflow:hidden;background:var(--card);border:1.5px solid rgba(20,24,26,.10);box-shadow:0 50px 90px -40px rgba(20,24,26,.45),0 12px 30px -18px rgba(20,24,26,.25)}
+.win.dkw{background:#16211C;border-color:#2B3B33;box-shadow:0 50px 100px -40px rgba(0,0,0,.8)}
+.dk .win{box-shadow:0 50px 100px -40px rgba(0,0,0,.85),0 0 0 1px rgba(238,243,236,.05)}
+.bar{height:40px;display:flex;align-items:center;gap:8px;padding:0 16px;background:#EFEEE7;border-bottom:1px solid #E6E4DC}
+.dkw .bar{background:#121B17;border-bottom-color:#24332B}
+.bar i{width:12px;height:12px;border-radius:50%;display:block}
+.bar i:nth-child(1){background:#E07A5F}.bar i:nth-child(2){background:#D9C9A3}.bar i:nth-child(3){background:#C6F35E}
+.bar span{margin:0 auto;transform:translateX(-26px);font:500 14px Geist,sans-serif;color:#5E6660;background:#fff;border-radius:999px;padding:4px 18px;min-width:240px;text-align:center}
+.dkw .bar span{background:#1C2923;color:#9AA89F}
+.vp{position:relative;overflow:hidden}
+.vp img{position:absolute;display:block}
+/* phone */
+.ph{position:absolute;border-radius:46px;background:#14181A;padding:10px;box-shadow:0 50px 80px -34px rgba(20,24,26,.6),inset 0 0 0 1.5px #2a3230}
+.ph.dkp{background:#050807;box-shadow:0 50px 90px -30px rgba(0,0,0,.9),inset 0 0 0 1.5px #2B3B33}
+.ph .vp{border-radius:37px}
+.ph .vp img{width:100%;left:0;top:0}
+/* code window (ref: editor card with traffic lights) */
+.code{position:absolute;border-radius:18px;background:#0A100D;border:1.5px solid #24332B;box-shadow:0 40px 80px -30px rgba(0,0,0,.75);overflow:hidden;z-index:30}
+.lt .code{box-shadow:0 40px 80px -30px rgba(20,24,26,.55)}
+.code .bar{background:#0F1713;border-bottom:1px solid #1C2923;height:38px}
+.code .bar span{background:none;color:#9AA89F;font:500 14px 'JetBrains Mono',monospace;min-width:0}
+.code pre{font:400 17px/1.6 'JetBrains Mono',monospace;font-variant-ligatures:none;color:#EEF3EC;padding:16px 22px 20px;white-space:pre}
+.code .k{color:#C6F35E}.code .s{color:#D9C9A3}.code .f{color:#9FC3DE}.code .c{color:#6F7D75}.code .n{color:#EA8C72}
+/* callouts */
+.colines{position:absolute;left:0;top:0;z-index:44;pointer-events:none}
+.colines polyline{stroke:#14181A;stroke-width:2.5;stroke-dasharray:2 6;stroke-linecap:round}
+.dk .colines polyline{stroke:#C6F35E}
+.co{position:absolute;z-index:46;height:52px;display:flex;align-items:center;gap:10px;padding:0 20px 0 14px;border-radius:999px;background:#14181A;color:#fff;font:600 22px Geist,sans-serif;white-space:nowrap;box-shadow:0 14px 30px -12px rgba(20,24,26,.55)}
+.co i{width:24px;height:24px;border-radius:50%;background:#C6F35E;display:grid;place-items:center;font:700 13px 'Space Grotesk';color:#14181A;font-style:normal;flex:none}
+.dk .co{background:#C6F35E;color:#14181A}
+.dk .co i{background:#14181A;color:#C6F35E}
+.dot{position:absolute;z-index:45;width:22px;height:22px;border-radius:50%;background:#C6F35E;border:4px solid #14181A;box-shadow:0 0 0 6px rgba(198,243,94,.35)}
+.dk .dot{border-color:#0E1512}
+/* chips */
+.chip{position:absolute;z-index:42;display:flex;align-items:center;gap:10px;height:50px;padding:0 20px;border-radius:999px;font:600 21px Geist;background:#16211C;color:#EEF3EC;border:1.5px solid #2B3B33}
+.chip i{width:12px;height:12px;border-radius:50%;background:#C6F35E}
+.lt .chip{background:#fff;color:#14181A;border-color:#E6E4DC;box-shadow:0 12px 24px -16px rgba(20,24,26,.35)}
+.lt .chip i{background:#1F4D3A}
+/* CTA */
+.kw{display:inline-block;background:#14181A;color:#C6F35E;padding:0 .2em;border-radius:.2em;letter-spacing:.02em}
+.steps{position:absolute;left:60px;right:60px;display:flex;align-items:center;gap:14px;z-index:40}
+.st{flex:1;background:#fff;border:1.5px solid #E6E4DC;border-radius:22px;padding:18px 20px;font:600 23px/1.25 Geist;color:#14181A;min-height:118px}
+.st span{display:block;font:700 18px 'Space Grotesk';color:#1F4D3A;margin-bottom:8px;letter-spacing:.06em}
+.st.on{background:#C6F35E;border-color:#C6F35E}
+.ar{font-style:normal;font:700 30px 'Space Grotesk';color:#1F4D3A}
+.ben{position:absolute;list-style:none;z-index:40}
+.ben li{display:flex;align-items:center;gap:16px;font:500 27px/1.2 Geist;color:#14181A;margin-bottom:22px}
+.ben li b{width:38px;height:38px;border-radius:12px;background:#1F4D3A;color:#C6F35E;display:grid;place-items:center;font-size:20px;flex:none}
+.gobtn{position:absolute;width:104px;height:104px;border-radius:50%;background:#1F4D3A;display:grid;place-items:center;z-index:48;box-shadow:0 20px 40px -18px rgba(31,77,58,.8)}
+.gobtn svg{width:48px;height:48px;fill:none;stroke:#C6F35E;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+/* pin */
+.pal{position:absolute;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;z-index:40}
+.sw{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid #E6E4DC;border-radius:18px;padding:12px}
+.sw i{width:46px;height:46px;border-radius:12px;flex:none;box-shadow:inset 0 0 0 1px rgba(20,24,26,.12)}
+.sw b{display:block;font:600 18px Geist;color:#14181A}
+.sw small{display:block;font:500 15px 'JetBrains Mono',monospace;color:#5E6660;margin-top:2px}
+.card{position:absolute;background:#fff;border:1.5px solid #E6E4DC;border-radius:24px;padding:24px;z-index:40}
+.card.fr{background:#1F4D3A;border-color:#1F4D3A;color:#fff}
+.tagl{display:inline-block;font:700 14px 'Space Grotesk';letter-spacing:.12em;text-transform:uppercase;color:#1F4D3A;background:#C6F35E;border-radius:999px;padding:5px 12px}
+.card h3{font:700 30px/1.1 'Space Grotesk';letter-spacing:-.02em}
+.card p{font:400 18px/1.4 Geist;color:#5E6660}
+.card.fr p{color:rgba(255,255,255,.78)}
+.card .ink{color:#14181A;font-weight:600}
+.card.fr .ink{color:#C6F35E}
+.chipz{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chipz span{font:600 15px Geist;border-radius:999px;padding:6px 12px;background:rgba(255,255,255,.12);color:#fff}
+</style></head><body class="lt" style="width:1080px;height:1350px">
+<div class="dots"></div><div class="glow"></div>
+<header><b><i></i>code.in.30s</b><span>2 / 4 &nbsp;→</span></header><h1 class="m c">Drag. Drop. <em>Get hired.</em></h1><p class="sub c" style="top:215px">A kanban board for every application, from wishlist to offer.</p>
+<div class="win" style="left:60px;top:300px;width:960px;z-index:11;transform:rotate(0deg)"><div class="bar"><i></i><i></i><i></i><span>orbit.app/board</span></div>
+<div class="vp" style="height:692.6px"><img src="file:///workspace/pins/2026-10-25-job-tracker/final/screens/light-board.png" style="width:1159.7px;left:-199.7px;top:0.0px"></div></div><div class="ph" style="left:810px;top:830px;width:210px;z-index:13;transform:rotate(0deg)"><div class="vp" style="height:411.2px"><img src="file:///workspace/pins/2026-10-25-job-tracker/final/screens/light-mboard.png"></div></div><svg class="colines" width="1080" height="1350"><polyline fill="none" points="198.5,1065.0 198.5,476.1"/><polyline fill="none" points="408.4,1161.0 416.0,1161.0 416.0,605.8"/><polyline fill="none" points="420.0,1231.0 482.0,1231.0 482.0,683.9"/><polyline fill="none" points="757.6,1231.0 961.3,977.9"/></svg><div class="co" style="left:60px;top:1065px;width:314px"><i>1</i>Filters + live search</div><em class="dot" style="left:187.5px;top:465.1px"></em><div class="co" style="left:60px;top:1135px;width:348px"><i>2</i>Drag &amp; drop or Shift + →</div><em class="dot" style="left:405.0px;top:594.8px"></em><div class="co" style="left:60px;top:1205px;width:360px"><i>3</i>Lime tag = interview soon</div><em class="dot" style="left:471.0px;top:672.9px"></em><div class="co" style="left:560px;top:1205px;width:198px"><i>4</i>Mobile tabs</div><em class="dot" style="left:950.3px;top:966.9px"></em>
+<footer><b>code.in.30s</b><span>HTML / TAILWIND / JS / UI</span></footer></body></html>

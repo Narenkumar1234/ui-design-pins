@@ -1,0 +1,244 @@
+{
+ "board.html|light|1440": {
+  ".kcard[data-id=northwind]": [
+   750,
+   253,
+   188,
+   200
+  ],
+  ".kcard[data-id=northwind] .tag-lime": [
+   763,
+   415,
+   93,
+   24
+  ],
+  "#filters": [
+   280,
+   152,
+   1128,
+   34
+  ],
+  "#sort": [
+   1110,
+   87,
+   175,
+   42
+  ],
+  "#export": [
+   1297,
+   87,
+   111,
+   42
+  ],
+  "[data-col=interview] .col-h": [
+   750,
+   215,
+   188,
+   28
+  ],
+  ".kcard[data-id=fernwood]": [
+   521,
+   253,
+   188,
+   164
+  ],
+  "#search": [
+   280,
+   15,
+   460,
+   42
+  ],
+  "#sidebar [data-nav=interviews] .badge": [
+   196,
+   194,
+   22,
+   22
+  ],
+  "#goal-card": [
+   16,
+   743,
+   216,
+   135
+  ]
+ },
+ "index.html|dark|1440": {
+  "[data-stat=rate]": [
+   1138,
+   161,
+   270,
+   161
+  ],
+  "#chart": [
+   301,
+   419,
+   705,
+   230
+  ],
+  "#chart .wk:last-of-type rect": [
+   938,
+   525,
+   51,
+   96
+  ],
+  "#upcoming li:first-child": [
+   1064,
+   397,
+   323,
+   72
+  ],
+  "#nextup": [
+   1138,
+   686,
+   270,
+   324
+  ],
+  "#range": [
+   838,
+   360,
+   167,
+   42
+  ],
+  "#pipe": [
+   301,
+   750,
+   419,
+   151
+  ],
+  "[data-stat=total]": [
+   280,
+   161,
+   270,
+   161
+  ]
+ },
+ "index.html|light|1440": {
+  "[data-stat=rate]": [
+   1138,
+   161,
+   270,
+   161
+  ],
+  "#chart": [
+   301,
+   419,
+   705,
+   230
+  ],
+  "#upcoming": [
+   1064,
+   397,
+   323,
+   233
+  ],
+  "#nextup": [
+   1138,
+   686,
+   270,
+   324
+  ]
+ },
+ "application.html?id=northwind|light|1440": {
+  "#timeline": [
+   301,
+   306,
+   609,
+   269
+  ],
+  "#nextstep": [
+   947,
+   242,
+   461,
+   204
+  ],
+  "#advance": [
+   1235,
+   148,
+   148,
+   42
+  ],
+  "#d-salary": [
+   968,
+   517,
+   419,
+   45
+  ],
+  "#ics": [
+   968,
+   382,
+   163,
+   42
+  ]
+ },
+ "board.html|light|390": {
+  "#tabs": [
+   16,
+   264,
+   358,
+   40
+  ],
+  "#tabs [aria-pressed=true]": [
+   224,
+   264,
+   132,
+   38
+  ],
+  ".kcard[data-id=northwind]": [
+   16,
+   316,
+   358,
+   170
+  ],
+  "#fab": [
+   314,
+   698,
+   56,
+   56
+  ],
+  "#mnav": [
+   12,
+   768,
+   366,
+   64
+  ]
+ },
+ "index.html|dark|390": {
+  "[data-stat=rate]": [
+   201,
+   360,
+   173,
+   147
+  ],
+  "#mnav": [
+   12,
+   768,
+   366,
+   64
+  ],
+  "#stats": [
+   16,
+   201,
+   358,
+   306
+  ]
+ },
+ "board.html|dark|390": {
+  "#tabs [aria-pressed=true]": [
+   224,
+   264,
+   132,
+   38
+  ],
+  ".kcard[data-id=northwind] .tag-lime": [
+   29,
+   448,
+   93,
+   24
+  ],
+  "#fab": [
+   314,
+   698,
+   56,
+   56
+  ]
+ }
+}

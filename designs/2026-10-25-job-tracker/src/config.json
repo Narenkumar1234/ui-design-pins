@@ -1,0 +1,300 @@
+{
+ "out": "../final",
+ "handle": "code.in.30s",
+ "keyword": "ORBIT",
+ "tags": [
+  "HTML",
+  "TAILWIND",
+  "JS",
+  "UI"
+ ],
+ "screens": {
+  "light-dashboard": "../final/screens/light-dashboard.png",
+  "light-board": "../final/screens/light-board.png",
+  "light-detail": "../final/screens/light-detail.png",
+  "light-interviews": "../final/screens/light-interviews.png",
+  "light-settings": "../final/screens/light-settings.png",
+  "light-mboard": "../final/screens/light-mboard.png",
+  "light-mdash": "../final/screens/light-mdash.png",
+  "light-mdetail": "../final/screens/light-mdetail.png",
+  "dark-dashboard": "../final/screens/dark-dashboard.png",
+  "dark-board": "../final/screens/dark-board.png",
+  "dark-detail": "../final/screens/dark-detail.png",
+  "dark-interviews": "../final/screens/dark-interviews.png",
+  "dark-settings": "../final/screens/dark-settings.png",
+  "dark-mboard": "../final/screens/dark-mboard.png",
+  "dark-mdash": "../final/screens/dark-mdash.png",
+  "dark-mdetail": "../final/screens/dark-mdetail.png"
+ },
+ "hook": "Job Tracker<span class=\"acc\">Dashboard UI</span>",
+ "hook_sub": "Kanban board · interview calendar · light + dark",
+ "cover": {
+  "h1_top": 118,
+  "sub_top": 378,
+  "frames": [
+   {
+    "k": "win",
+    "s": "dark-board",
+    "x": 20,
+    "y": 540,
+    "w": 640,
+    "rot": -7,
+    "z": 1,
+    "crop": [
+     248,
+     0,
+     1192,
+     900
+    ],
+    "url": "orbit.app/board"
+   },
+   {
+    "k": "win",
+    "s": "light-dashboard",
+    "x": 150,
+    "y": 470,
+    "w": 780,
+    "rot": 0,
+    "z": 2,
+    "url": "orbit.app/dashboard"
+   },
+   {
+    "k": "ph",
+    "s": "light-mboard",
+    "x": 800,
+    "y": 610,
+    "w": 240,
+    "rot": 7,
+    "z": 3
+   }
+  ],
+  "code": {
+   "pos": "left:50px;top:950px;width:640px;transform:rotate(-2deg)",
+   "file": "assets/board.js",
+   "html": "<span class=\"c\">// board.js · drop a card on a column</span>\ncol.<span class=\"f\">addEventListener</span>(<span class=\"s\">'drop'</span>, (e) =&gt; {\n  <span class=\"k\">const</span> id = e.dataTransfer.<span class=\"f\">getData</span>(<span class=\"s\">'text/plain'</span>);\n  <span class=\"k\">const</span> status = col.dataset.col;\n  Orbit.<span class=\"f\">move</span>(id, status, index); <span class=\"c\">// saves to localStorage</span>\n  Orbit.<span class=\"f\">toast</span>(<span class=\"s\">`Moved → ${status}`</span>, undo);\n});"
+  }
+ },
+ "light": {
+  "title": "Drag. Drop. <em>Get hired.</em>",
+  "sub": "A kanban board for every application, from wishlist to offer.",
+  "sub_top": 215,
+  "frames": [
+   {
+    "k": "win",
+    "s": "light-board",
+    "x": 60,
+    "y": 300,
+    "w": 960,
+    "z": 1,
+    "crop": [
+     248,
+     0,
+     1192,
+     860
+    ],
+    "url": "orbit.app/board"
+   },
+   {
+    "k": "ph",
+    "s": "light-mboard",
+    "x": 810,
+    "y": 830,
+    "w": 210,
+    "rot": 0,
+    "z": 3
+   }
+  ],
+  "callouts": [
+   {
+    "p": 0,
+    "sx": 420,
+    "sy": 169,
+    "lx": 60,
+    "ly": 1065,
+    "label": "Filters + live search"
+   },
+   {
+    "p": 0,
+    "sx": 690,
+    "sy": 330,
+    "lx": 60,
+    "ly": 1135,
+    "label": "Drag & drop or Shift + →"
+   },
+   {
+    "p": 0,
+    "sx": 772,
+    "sy": 427,
+    "lx": 60,
+    "ly": 1205,
+    "label": "Lime tag = interview soon"
+   },
+   {
+    "p": 1,
+    "sx": 290,
+    "sy": 283,
+    "lx": 560,
+    "ly": 1205,
+    "label": "Mobile tabs",
+    "elbow": false
+   }
+  ]
+ },
+ "dark": {
+  "title": "Looks sharp in <em>dark mode</em>",
+  "sub": "Goal chart, response rate and your next interviews.",
+  "sub_top": 215,
+  "frames": [
+   {
+    "k": "win",
+    "s": "dark-dashboard",
+    "x": 60,
+    "y": 300,
+    "w": 960,
+    "z": 1,
+    "crop": [
+     248,
+     0,
+     1192,
+     860
+    ],
+    "url": "orbit.app/dashboard"
+   },
+   {
+    "k": "ph",
+    "s": "dark-mdash",
+    "x": 830,
+    "y": 830,
+    "w": 200,
+    "rot": 0,
+    "z": 3
+   }
+  ],
+  "callouts": [
+   {
+    "p": 0,
+    "sx": 963,
+    "sy": 560,
+    "lx": 60,
+    "ly": 1065,
+    "label": "This week vs. goal line"
+   },
+   {
+    "p": 0,
+    "sx": 1058,
+    "sy": 433,
+    "lx": 60,
+    "ly": 1135,
+    "label": "Upcoming interviews"
+   },
+   {
+    "p": 0,
+    "sx": 1160,
+    "sy": 182,
+    "lx": 60,
+    "ly": 1205,
+    "label": "Response rate at a glance"
+   }
+  ]
+ },
+ "cta": {
+  "h1_top": 118,
+  "sub_top": 318,
+  "steps_top": 420,
+  "sub": "The full kit: 5 pages you can open, edit and ship today.",
+  "steps": [
+   "Comment <b>ORBIT</b> below",
+   "Get the link in your DMs",
+   "Unzip, open, build"
+  ],
+  "ben": "left:60px;top:600px",
+  "frames": [
+   {
+    "k": "ph",
+    "s": "light-mdetail",
+    "x": 745,
+    "y": 570,
+    "w": 260,
+    "rot": 6,
+    "z": 2
+   }
+  ],
+  "code": {
+   "pos": "left:60px;top:930px;width:620px",
+   "file": "what you get",
+   "html": "<span class=\"k\">job-tracker-ui-kit/</span>\n├─ index.html        <span class=\"c\">dashboard</span>\n├─ board.html        <span class=\"c\">kanban</span>\n├─ application.html  <span class=\"c\">detail</span>\n├─ interviews.html   <span class=\"c\">calendar</span>\n├─ settings.html\n└─ assets/ <span class=\"s\">app.js</span> <span class=\"s\">board.js</span> <span class=\"s\">styles.css</span> …"
+  },
+  "go": "left:916px;top:1170px"
+ },
+ "benefits": [
+  "5 pages · light + dark mode",
+  "Drag & drop + keyboard moves",
+  "Search, filters, CSV export",
+  "Responsive down to 360px",
+  "Full-stack roadmap in README"
+ ],
+ "pin_title": "Orbit job tracker<span class=\"acc\">dashboard UI</span>",
+ "pin": {
+  "h1_top": 100,
+  "sub_top": 262,
+  "sub": "HTML · Tailwind · vanilla JS · light + dark · 5 pages",
+  "frames": [
+   {
+    "k": "win",
+    "s": "light-dashboard",
+    "x": 50,
+    "y": 330,
+    "w": 900,
+    "z": 1,
+    "url": "orbit.app/dashboard"
+   },
+   {
+    "k": "ph",
+    "s": "dark-mboard",
+    "x": 770,
+    "y": 560,
+    "w": 190,
+    "rot": 5,
+    "z": 3
+   }
+  ],
+  "pal_top": 985,
+  "card_top": 1160,
+  "card_h": 262,
+  "palette": [
+   [
+    "Off-white",
+    "#F6F5F0"
+   ],
+   [
+    "Forest",
+    "#1F4D3A"
+   ],
+   [
+    "Lime",
+    "#C6F35E"
+   ],
+   [
+    "Ink",
+    "#14181A"
+   ],
+   [
+    "Night",
+    "#0E1512"
+   ],
+   [
+    "Coral",
+    "#E07A5F"
+   ]
+  ],
+  "idea": "Make it full-stack",
+  "stack": "Next.js or React + Node/Express · Postgres + Prisma · auth · S3",
+  "features": [
+   "Auth",
+   "Kanban API",
+   "Cron reminders",
+   "Resume upload",
+   "Analytics"
+  ]
+ }
+}
