@@ -1,0 +1,11 @@
+Minimal Reading Tracker App UI: Folio Light + Dark · Front-End Project Idea
+
+Front-end project idea: Folio, a minimal book reading tracker mobile app UI. A home screen with a reading streak card and last-7-days bars, the book you're currently reading with a progress bar, a daily reading goal ring and a log-a-session sheet; a book detail screen with a large cover, rating, pages and genre pills, an Add to shelf pill, a 5-star rating and a Continue reading button; a library with search, status tabs and genre chips; a reader with tap-to-highlight and text settings; and a profile with stat tiles, a yearly reading goal, a shelf and favourite genres. Monochrome palette (ink #141414, paper #F5F4F0, grey #8A8A8A) with one orange accent #E8742A and yellow rating stars, Urbanist font, full-round pills, CSS-drawn book covers, plus a near-black dark mode. Build it with HTML, Tailwind CSS and vanilla JavaScript with localStorage, then go full-stack with Next.js, Postgres + Prisma, auth, Open Library API book search and streak reminder emails. A reading app UI kit from @code.in.30s, comment FOLIO on Instagram for the HTML/CSS kit.
+
+#readingapp #booktracker #uidesign #mobileui #minimalui #darkmode #frontenddevelopment #tailwindcss #studentprojects #appdesign
+
+Alt text: Two phone screens of the Folio reading tracker app on a light grey background. On the left, a light home screen for "Riya" shows a black 12-day streak card with grey weekly bars and today's bar in orange, a currently reading card for "Quiet Orbit" with an orange-and-black cover and a 59% progress bar, and a 73% daily goal ring. On the right, a dark book detail screen for "Salt & Signal" shows a black-and-orange striped cover, pills for rating 4.6, 286 pages, Sci-fi and 7h, an Add to shelf pill and an orange Continue reading button. Below are seven palette swatches with hex codes (ink, paper, grey, orange, star, night, backdrop), a fonts card (Urbanist) and a "Build it" card for a reading tracker with streaks and social shelves.
+
+Board: UI Design Inspiration (or UI Design / Frontend Projects)
+
+Link (once published): https://narenkumar1.gumroad.com/l/reading-app-ui-kit

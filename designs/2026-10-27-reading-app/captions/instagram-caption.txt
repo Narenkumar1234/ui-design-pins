@@ -1,0 +1,27 @@
+A reading tracker that feels like a good book 📚🟠
+
+Build this → Folio, a minimal book reading tracker
+
+1️⃣ Home: a 12-day reading streak with last-7-days bars, the book you're on with progress, a daily goal ring and a + Log sheet (pages + minutes)
+2️⃣ Book detail: big cover, rating · pages · genre pills, an Add to shelf pill, your 5-star rating and a sticky orange Continue reading button
+3️⃣ Library: search, status tabs (Reading · Want · Finished · On shelf) and genre chips
+4️⃣ Reader: paged text, tap a paragraph to highlight it, Aa sheet for size + line height, swipe or arrow keys to turn pages
+5️⃣ Profile: stat tiles (books, pages, hours, longest streak), a yearly goal, your shelf and favourite genres
+6️⃣ Monochrome light mode + a near-black dark mode, same orange accent
+
+🎓 Student project idea: make it full-stack. Next.js front end, book search through the free Open Library API, Postgres + Prisma for books, reading sessions and highlights, auth, streaks calculated from your sessions and a nightly cron that sends "keep your streak" reminders. Stretch: follow friends, public shelves, Goodreads CSV import, a yearly "wrapped" page
+
+🎨 Palette
+Ink #141414 · Paper #F5F4F0 · Grey #8A8A8A
+Accent orange #E8742A · Star #F5C518
+Dark: #141414 background · #1E1E1E cards
+
+🛠 Stack: HTML · Tailwind CSS · vanilla JS · Urbanist · CSS-drawn covers, streak, progress + highlights in localStorage
+
+💬 Comment FOLIO to get the HTML/CSS
+
+Save this for your next project ✨
+
+Style inspo: @uxpected.abhi
+
+#readingapp #booktracker #uidesign #uiux #mobileui #appdesign #minimalui #darkmode #frontenddevelopment #webdevelopment #tailwindcss #javascript #codingprojects #studentdeveloper #codein30s
