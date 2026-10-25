@@ -14,3 +14,4 @@
 | 2026-10-20 | Smart home control app | Hearth | HEARTH | Charcoal + one orange, greige staggered grid (@appuinspiration ref) | Live Oct 20 (IG DetQYZBG1c5, Gumroad smart-home-ui-kit) |
 | 2026-10-22 | Chat app | Natter | NATTER | Pale lavender + one violet, diagonal fanned cascade (@colorhymn ref) | Live Oct 22 (IG DeyWcjLo05S, Gumroad chat-app-ui-kit) |
 | 2026-10-24 | Weather app | Nimbus | NIMBUS | Glassmorphism, sky-to-peach day + starry navy night (@iabout_tech ref) | Live Oct 24 (IG De3gGYXDdpS, Gumroad weather-app-ui-kit) |
+| 2026-10-25 | Job application tracker (web dashboard) | Orbit | ORBIT | Minimal bento, off-white + forest + one lime, green-black dark mode (@code.xr ref) | Live Oct 25 (IG De6GZ6wjbEn, Gumroad job-tracker-ui-kit, [repo](https://github.com/Narenkumar1234/ui-design-pins/tree/main/designs/2026-10-25-job-tracker)) |
