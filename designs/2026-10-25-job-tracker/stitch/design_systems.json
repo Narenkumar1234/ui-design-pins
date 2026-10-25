@@ -1,0 +1,42 @@
+{
+ "LIGHT": {
+  "designSystem": {
+   "displayName": "Orbit Light",
+   "theme": {
+    "bodyFont": "GEIST",
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#1F4D3A",
+    "designMd": "# Orbit job-application tracker (code.in.30s)\nClean minimal BENTO dashboard web app for students and new grads tracking internship / job applications. Rounded 20px cards on a calm background, generous whitespace, thin 1px hairline borders, no heavy shadows. Space Grotesk bold headings and big numerals, Geist for UI text. Deep forest green #1F4D3A primary, ONE lime accent #C6F35E for highlights (active nav pill, key stat, chart bar of current week, primary CTA text on green). Status colours: Wishlist slate, Applied blue-grey, Interview lime, Offer forest green, Rejected muted coral #E07A5F. Company logos are simple coloured letter monograms. No photos, no people, no neon, no gradients-heavy glassmorphism.\n## Light: background off-white #F6F5F0, cards white #FFFFFF with #E6E4DC border, ink #14181A, muted #5E6660.",
+    "headlineFont": "SPACE_GROTESK",
+    "overrideNeutralColor": "#F6F5F0",
+    "overridePrimaryColor": "#1F4D3A",
+    "overrideSecondaryColor": "#C6F35E",
+    "overrideTertiaryColor": "#E07A5F",
+    "roundness": "ROUND_TWELVE"
+   }
+  },
+  "name": "assets/10599984407030352954",
+  "version": "1"
+ },
+ "DARK": {
+  "designSystem": {
+   "displayName": "Orbit Dark",
+   "theme": {
+    "bodyFont": "GEIST",
+    "colorMode": "DARK",
+    "colorVariant": "FIDELITY",
+    "customColor": "#1F4D3A",
+    "designMd": "# Orbit job-application tracker (code.in.30s)\nClean minimal BENTO dashboard web app for students and new grads tracking internship / job applications. Rounded 20px cards on a calm background, generous whitespace, thin 1px hairline borders, no heavy shadows. Space Grotesk bold headings and big numerals, Geist for UI text. Deep forest green #1F4D3A primary, ONE lime accent #C6F35E for highlights (active nav pill, key stat, chart bar of current week, primary CTA text on green). Status colours: Wishlist slate, Applied blue-grey, Interview lime, Offer forest green, Rejected muted coral #E07A5F. Company logos are simple coloured letter monograms. No photos, no people, no neon, no gradients-heavy glassmorphism.\n## Dark: background near-black green #0E1512, cards #16211C with #24332B border, ink #EEF3EC, muted #9AA89F, accent lime #C6F35E.",
+    "headlineFont": "SPACE_GROTESK",
+    "overrideNeutralColor": "#0E1512",
+    "overridePrimaryColor": "#1F4D3A",
+    "overrideSecondaryColor": "#C6F35E",
+    "overrideTertiaryColor": "#E07A5F",
+    "roundness": "ROUND_TWELVE"
+   }
+  },
+  "name": "assets/16290128366616987685",
+  "version": "1"
+ }
+}

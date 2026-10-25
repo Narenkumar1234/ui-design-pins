@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Orbit - Job Application Tracker (Board)</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            forest: "#1F4D3A",
+            lime: "#C6F35E",
+            ink: "#14181A",
+            muted: "#5E6660",
+            subtle: "#F0EFE9",
+            canvas: "#F6F5F0",
+            border: "#E6E4DC",
+            status: {
+              wishlist: "#8A948E",
+              applied: "#5B7C99",
+              interview: "#C6F35E",
+              offer: "#1F4D3A",
+              rejected: "#E07A5F"
+            }
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            "card": "20px",
+            "lg": "1rem",
+            "xl": "1.25rem",
+            "2xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Space Grotesk", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"],
+            body: ["Geist", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    body {
+      background-color: #F6F5F0;
+      color: #14181A;
+      font-family: 'Geist', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-canvas min-h-screen flex justify-center text-ink selection:bg-lime selection:text-ink">
+<!-- Mobile Screen Container (390px canvas wrapper) -->
+<div class="w-full max-w-[390px] min-h-screen bg-canvas flex flex-col relative pb-28">
+<!-- 1. Mobile Top Header -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md px-4 py-3 border-b border-border flex items-center justify-between">
+<!-- Wordmark & Logo Mark -->
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full border-2 border-forest flex items-center justify-center relative">
+<span class="w-2 h-2 rounded-full bg-forest block"></span>
+<span class="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-lime border border-white"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-lg leading-none tracking-tight text-ink">Orbit</span>
+<span class="text-[10px] text-muted font-body tracking-wider uppercase leading-tight mt-0.5">Tracker</span>
+</div>
+</div>
+<!-- Header Trailing Icons -->
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-muted hover:text-ink hover:bg-subtle transition-colors">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-muted hover:text-ink hover:bg-subtle transition-colors relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-lime rounded-full ring-2 ring-white"></span>
+</button>
+<!-- User Avatar Monogram -->
+<div class="w-8 h-8 rounded-full bg-forest text-lime flex items-center justify-center font-headline font-bold text-xs ml-1 shadow-sm">
+          A
+        </div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-4 pt-4 flex flex-col gap-4">
+<!-- 2. Board Title & Quick Filters -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<h1 class="font-headline font-bold text-2xl tracking-tight text-ink">Board</h1>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold font-headline bg-subtle text-muted border border-border">
+              14 Active
+            </span>
+</div>
+<button class="flex items-center gap-1 text-xs font-medium text-forest hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Filter</span>
+</button>
+</div>
+<!-- Compact Search & Pill Filter Bar -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-muted absolute left-3 text-[18px]">search</span>
+<input class="w-full bg-white border border-border rounded-xl pl-9 pr-4 py-2 text-xs font-body text-ink placeholder:text-muted focus:outline-none focus:ring-1 focus:ring-forest focus:border-forest" placeholder="Search roles, companies..." type="text"/>
+</div>
+<div class="flex items-center gap-1.5 text-xs">
+<span class="text-muted text-[11px] font-medium mr-1">Types:</span>
+<button class="px-2.5 py-1 rounded-lg bg-forest text-white text-[11px] font-medium transition-colors">Internship (9)</button>
+<button class="px-2.5 py-1 rounded-lg bg-white border border-border text-muted hover:text-ink text-[11px] font-medium transition-colors">Full-time (5)</button>
+</div>
+</div>
+<!-- 3. Horizontal Scrollable Status Pipeline Tabs -->
+<section class="mt-1">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-4 px-4">
+<!-- Wishlist -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-border text-muted text-xs font-medium hover:text-ink transition-colors">
+<span class="w-2 h-2 rounded-full bg-status-wishlist"></span>
+<span>Wishlist</span>
+<span class="ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] bg-subtle text-muted font-bold font-headline">3</span>
+</button>
+<!-- Applied -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-border text-muted text-xs font-medium hover:text-ink transition-colors">
+<span class="w-2 h-2 rounded-full bg-status-applied"></span>
+<span>Applied</span>
+<span class="ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] bg-subtle text-muted font-bold font-headline">5</span>
+</button>
+<!-- Interview (ACTIVE STAGE) -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-lime text-ink border border-lime text-xs font-bold shadow-sm ring-1 ring-lime/40">
+<span class="w-2 h-2 rounded-full bg-forest"></span>
+<span>Interview</span>
+<span class="ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] bg-ink text-lime font-bold font-headline">3</span>
+</button>
+<!-- Offer -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-border text-muted text-xs font-medium hover:text-ink transition-colors">
+<span class="w-2 h-2 rounded-full bg-status-offer"></span>
+<span>Offer</span>
+<span class="ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] bg-subtle text-muted font-bold font-headline">1</span>
+</button>
+<!-- Rejected -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-border text-muted text-xs font-medium hover:text-ink transition-colors">
+<span class="w-2 h-2 rounded-full bg-status-rejected"></span>
+<span>Rejected</span>
+<span class="ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] bg-subtle text-muted font-bold font-headline">2</span>
+</button>
+</div>
+</section>
+<!-- 4. Vertical List of Active Stage Cards (Interview Column) -->
+<section class="flex flex-col gap-3 mt-1">
+<!-- Card 1: Northwind -->
+<article class="bg-white border border-border rounded-card p-4 transition-all hover:border-forest/40">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<!-- Monogram -->
+<div class="w-10 h-10 rounded-xl bg-forest/10 border border-forest/15 flex items-center justify-center font-headline font-bold text-forest text-sm">
+                NW
+              </div>
+<div>
+<h3 class="font-headline font-bold text-base text-ink leading-tight">Frontend Intern</h3>
+<p class="text-xs text-muted font-body mt-0.5 flex items-center gap-1">
+<span>Northwind Labs</span>
+<span class="text-muted/40">•</span>
+<span>Summer '25</span>
+</p>
+</div>
+</div>
+<button class="text-muted hover:text-ink p-1">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Metadata chips -->
+<div class="flex flex-wrap items-center gap-1.5 mt-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-medium bg-subtle text-muted">
+              Hybrid (Bangalore)
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-medium bg-subtle text-ink font-headline">
+              ₹45k/mo
+            </span>
+</div>
+<!-- Interview Schedule Callout -->
+<div class="mt-3.5 pt-3 border-t border-border flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 bg-lime px-2.5 py-1 rounded-full text-[11px] font-bold text-ink">
+<span class="material-symbols-outlined text-[13px]">calendar_today</span>
+<span>Tue, 10:30 AM</span>
+</div>
+<span class="text-[11px] font-medium text-forest font-headline">In 2 days</span>
+</div>
+<p class="text-[11px] text-muted flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-forest"></span>
+<span>Round 2: System Architecture &amp; UI Live Code</span>
+</p>
+</div>
+</article>
+<!-- Card 2: Quanta -->
+<article class="bg-white border border-border rounded-card p-4 transition-all hover:border-forest/40">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<!-- Monogram -->
+<div class="w-10 h-10 rounded-xl bg-[#5B7C99]/15 border border-[#5B7C99]/25 flex items-center justify-center font-headline font-bold text-[#2C4860] text-sm">
+                Q
+              </div>
+<div>
+<h3 class="font-headline font-bold text-base text-ink leading-tight">Software Engineer I</h3>
+<p class="text-xs text-muted font-body mt-0.5 flex items-center gap-1">
+<span>Quanta AI</span>
+<span class="text-muted/40">•</span>
+<span>Early Career</span>
+</p>
+</div>
+</div>
+<button class="text-muted hover:text-ink p-1">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Metadata chips -->
+<div class="flex flex-wrap items-center gap-1.5 mt-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-medium bg-subtle text-muted">
+              Bangalore
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-medium bg-subtle text-ink font-headline">
+              ₹20 LPA
+            </span>
+</div>
+<!-- Interview Schedule Callout -->
+<div class="mt-3.5 pt-3 border-t border-border flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 bg-subtle px-2.5 py-1 rounded-full text-[11px] font-semibold text-ink border border-border">
+<span class="material-symbols-outlined text-[13px] text-forest">event</span>
+<span>Thu, 3:00 PM</span>
+</div>
+<span class="text-[11px] font-medium text-muted font-headline">In 4 days</span>
+</div>
+<p class="text-[11px] text-muted flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-applied"></span>
+<span>Behavioral &amp; Culture Fit with VP Eng</span>
+</p>
+</div>
+</article>
+<!-- Card 3: Lumen -->
+<article class="bg-white border border-border rounded-card p-4 transition-all hover:border-forest/40">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<!-- Monogram -->
+<div class="w-10 h-10 rounded-xl bg-[#E07A5F]/15 border border-[#E07A5F]/25 flex items-center justify-center font-headline font-bold text-[#9E3E26] text-sm">
+                L
+              </div>
+<div>
+<h3 class="font-headline font-bold text-base text-ink leading-tight">Product Designer</h3>
+<p class="text-xs text-muted font-body mt-0.5 flex items-center gap-1">
+<span>Lumen Design</span>
+<span class="text-muted/40">•</span>
+<span>Design Systems</span>
+</p>
+</div>
+</div>
+<button class="text-muted hover:text-ink p-1">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Metadata chips -->
+<div class="flex flex-wrap items-center gap-1.5 mt-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-medium bg-subtle text-muted">
+              Remote
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-medium bg-subtle text-ink font-headline">
+              ₹55k/mo
+            </span>
+</div>
+<!-- Interview Schedule Callout -->
+<div class="mt-3.5 pt-3 border-t border-border flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 bg-subtle px-2.5 py-1 rounded-full text-[11px] font-semibold text-ink border border-border">
+<span class="material-symbols-outlined text-[13px] text-muted">calendar_today</span>
+<span>Mon, 2:00 PM</span>
+</div>
+<span class="text-[11px] font-medium text-muted font-headline">Next week</span>
+</div>
+<p class="text-[11px] text-muted flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-muted"></span>
+<span>Portfolio Review &amp; Design Sprint Walkthrough</span>
+</p>
+</div>
+</article>
+</section>
+</main>
+<!-- 5. Floating Action Button (FAB) -->
+<aside class="fixed bottom-20 right-4 z-30 max-w-[390px]">
+<button class="w-13 h-13 p-3.5 rounded-full bg-forest text-lime shadow-lg hover:scale-105 active:scale-95 transition-transform flex items-center justify-center border border-forest/20">
+<span class="material-symbols-outlined text-[26px]">add</span>
+</button>
+</aside>
+<!-- 6. Mobile Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-30 flex justify-center bg-white/95 backdrop-blur-md border-t border-border">
+<div class="w-full max-w-[390px] px-3 py-2 flex items-center justify-around">
+<!-- Tab 1: Dashboard -->
+<a class="flex flex-col items-center gap-1 text-muted hover:text-ink transition-colors py-1 px-3" href="#dashboard">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-[10px] font-body">Dashboard</span>
+</a>
+<!-- Tab 2: Board (ACTIVE STATE) -->
+<a class="flex flex-col items-center gap-1 text-forest font-semibold transition-colors py-1 px-3 relative" href="#board">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">view_kanban</span>
+<span class="text-[10px] font-headline font-bold">Board</span>
+<!-- Active Lime Indicator Dot -->
+<span class="w-1.5 h-1.5 rounded-full bg-lime border border-forest absolute -bottom-0.5"></span>
+</a>
+<!-- Tab 3: Interviews -->
+<a class="flex flex-col items-center gap-1 text-muted hover:text-ink transition-colors py-1 px-3 relative" href="#interviews">
+<div class="relative">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="absolute -top-1 -right-2 px-1 py-0.2 rounded-full bg-forest text-lime text-[9px] font-bold font-headline">3</span>
+</div>
+<span class="text-[10px] font-body">Interviews</span>
+</a>
+<!-- Tab 4: Settings -->
+<a class="flex flex-col items-center gap-1 text-muted hover:text-ink transition-colors py-1 px-3" href="#settings">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-[10px] font-body">Settings</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

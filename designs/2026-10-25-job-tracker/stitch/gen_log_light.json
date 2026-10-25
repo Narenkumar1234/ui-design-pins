@@ -1,0 +1,326 @@
+{
+ "LIGHT-dashboard": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Orbit Light",
+         "theme": {
+          "bodyFont": "GEIST",
+          "colorMode": "LIGHT",
+          "colorVariant": "FIDELITY",
+          "customColor": "#1F4D3A",
+          "designMd": "# Orbit job-application tracker (code.in.30s)\nClean minimal BENTO dashboard web app for students and new grads tracking internship / job applications. Rounded 20px cards on a calm background, generous whitespace, thin 1px hairline borders, no heavy shadows. Space Grotesk bold headings and big numerals, Geist for UI text. Deep forest green #1F4D3A primary, ONE lime accent #C6F35E for highlights (active nav pill, key stat, chart bar of current week, primary CTA text on green). Status colours: Wishlist slate, Applied blue-grey, Interview lime, Offer forest green, Rejected muted coral #E07A5F. Company logos are simple coloured letter monograms. No photos, no people, no neon, no gradients-heavy glassmorphism.\n## Light: background off-white #F6F5F0, cards white #FFFFFF with #E6E4DC border, ink #14181A, muted #5E6660.",
+          "headlineFont": "SPACE_GROTESK",
+          "overrideNeutralColor": "#F6F5F0",
+          "overridePrimaryColor": "#1F4D3A",
+          "overrideSecondaryColor": "#C6F35E",
+          "overrideTertiaryColor": "#E07A5F",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/10599984407030352954",
+        "version": "1"
+       },
+       "deviceType": "DESKTOP",
+       "generatedBy": "figaro_agent",
+       "height": "2454",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzYyYzVmNDAzYTEwNDRhMWE5ZWZiM2RhOWY5YTlmNGEyEgsSBxDnsaWX4xEYAZIBIwoKcHJvamVjdF9pZBIVQhMyMjcwNjYwMjk0NTk2MzU1MTM4&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/2270660294596355138/files/f32ca021abe1417aa86bf74fb942f1bb"
+       },
+       "id": "c4953531482648bfa3cc27a64b7c4b46",
+       "name": "projects/2270660294596355138/screens/c4953531482648bfa3cc27a64b7c4b46",
+       "prompt": "Desktop 1440px wide clean minimal BENTO dashboard for Orbit, a job & internship application tracker for students and new grads. Light mode aesthetic: background off-white #F6F5F0, cards white with 1px #E6E4DC hairline border, 20px rounded corners, crisp spacing, no heavy drop shadows.\n\nColor Palette:\n- Background: #F6F5F0\n- Card Surface: #FFFFFF, border 1px solid #E6E4DC, border-radius 20px\n- Primary: Deep forest green #1F4D3A (buttons, active badges, accents)\n- Accent: Lime #C6F35E (highlight cards, active bars, interview badges)\n- Ink / Text: #14181A\n- Muted Text: #5E6660\n- Status Colors: Wishlist slate #8A948E, Applied #5B7C99, Interview lime #C6F35E (with dark forest text for contrast), Offer forest green #1F4D3A (with white text), Rejected coral #E07A5F\n\nTypography:\n- Headings & key metrics: Space Grotesk bold\n- Body & interface labels: Geist / Inter sans-serif\n\nLayout Structure:\n1. Left Sidebar (w-60 / 240px fixed left, border-r border-[#E6E4DC] bg-white h-screen p-5 flex flex-col justify-between):\n   - Header: Orbit ring mark logo (minimal concentric rings or orbital circle in #1F4D3A) + 'Orbit' wordmark in Space Grotesk bold, subtext 'Application Tracker'.\n   - Nav list: Dashboard (active pill in #1F4D3A text-white or lime #C6F35E pill with #1F4D3A text), Board (kanban icon), Interviews (calendar icon), Settings (gear icon).\n   - Bottom widget: 'Weekly goal' card (bg-[#F6F5F0] rounded-xl p-3.5 border border-[#E6E4DC]), showing '7/10 applications', progress bar filled 70% in #1F4D3A with lime tip, motivational subtext '3 more to hit your weekly target'.\n\n2. Top Bar (sticky top-0 bg-[#F6F5F0]/80 backdrop-blur border-b border-[#E6E4DC] px-8 py-4 flex items-center justify-between ml-60):\n   - Search input: Clean pill search box with search icon, placeholder 'Search companies, roles, tags\u2026' (bg-white border border-[#E6E4DC] rounded-xl px-4 py-2 text-sm w-96).\n   - Right actions: Notification bell icon with subtle unread dot, primary CTA button '+ Add application' (bg-[#1F4D3A] text-white px-4 py-2 rounded-xl font-medium hover:bg-[#16382a] flex items-center gap-2 shadow-sm), user avatar chip 'Aarav' with monogram 'A' in #1F4D3A bg-[#E6E4DC] rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs.\n\n3. Main Content Area (ml-60 p-8 max-w-7xl):\n   - Welcome Header:\n     - Left: 'Good morning, Aarav' in Space Grotesk bold 28px text-[#14181A], subtext 'Here is your recruiting progress for Fall 2025.'\n     - Right: Date pill 'Sun, 25 Oct' in bg-white border border-[#E6E4DC] px-3.5 py-1.5 rounded-full text-sm font-medium text-[#5E6660] flex items-center gap-2.\n\n   - Bento Grid Layout:\n     Row 1: Four Stat KPI Cards (grid-cols-4 gap-5 mb-6):\n       * Card 1: 'Total applied' -> 48 (Space Grotesk bold 32px), '+6 this week' badge in slate/green. White card, 20px radius.\n       * Card 2: 'Interviews' -> 9 (Space Grotesk bold 32px), '2 scheduled this week' badge. White card.\n       * Card 3: 'Offers' -> 2 (Space Grotesk bold 32px), 'Northwind, Quanta' badge in soft forest green pill. White card.\n       * Card 4 (FEATURE ACCENT CARD): 'Response rate' -> 31% (Space Grotesk bold 32px), stylized lime #C6F35E background card with #1F4D3A text, clean circular progress ring chart showing 31% filled in forest green with sleek track, '+4.2% vs last month'.\n\n     Row 2: Two Bento Cards (grid-cols-12 gap-5 mb-6):\n       * Left (col-span-7): 'Applications per week' wide card (white bg, 20px radius, p-6 border border-[#E6E4DC]):\n         - Header with title, subtitle 'Last 8 weeks volume', filter dropdown 'All roles'.\n         - Sleek vertical bar chart for 8 weeks (W1 through W8) with application counts (e.g. 3, 5, 4, 7, 6, 8, 5, 10). The current week (W8) bar is highlighted in vibrant Lime #C6F35E with a badge '10 apps', while preceding weeks are muted slate/green bars. Clean horizontal guideline axes.\n       * Right (col-span-5): 'Pipeline' breakdown card (white bg, 20px radius, p-6 border border-[#E6E4DC]):\n         - Header 'Pipeline' with total '58 tracked roles'.\n         - Horizontal segmented / stacked bar chart with precise proportions: Wishlist (12 - #8A948E slate), Applied (24 - #5B7C99 steel blue), Interview (9 - #C6F35E lime), Offer (2 - #1F4D3A forest green), Rejected (11 - #E07A5F coral).\n         - Legend list below with color dots, stage names, counts, and percentages (e.g. Wishlist 12 \u00b7 21%, Applied 24 \u00b7 41%, Interview 9 \u00b7 16%, Offer 2 \u00b7 3%, Rejected 11 \u00b7 19%).\n\n     Row 3: Two Bento Cards (grid-cols-12 gap-5):\n       * Left (col-span-7): 'Upcoming interviews' (white bg, 20px radius, p-6 border border-[#E6E4DC]):\n         - Header with 'Upcoming interviews' (3 scheduled) and 'View calendar' text link.\n         - List of 3 rich interview cards:\n           1. Northwind \u00b7 Frontend Intern: company monogram [NW] (slate rounded square 40x40), title 'Frontend Intern', company 'Northwind', round 'Technical Round 2 (System Design)', date chip 'Tue 27 Oct \u00b7 10:30 AM' in lime badge with calendar icon, 'Prep notes' button.\n           2. Quanta \u00b7 SDE I: company monogram [Q] (emerald rounded square), title 'Software Engineer I', company 'Quanta', round 'Final Behavioral & Values', date chip 'Thu 29 Oct \u00b7 15:00' with date chip, 'Prep notes' button.\n           3. Lumen \u00b7 Product Designer: company monogram [L] (coral/ochre rounded square), title 'Product Designer (Design Systems)', company 'Lumen', round 'Portfolio Deep Dive', date chip 'Mon 2 Nov \u00b7 14:00', 'Prep notes' button.\n       * Right (col-span-5): 'Recent activity' timeline card (white bg, 20px radius, p-6 border border-[#E6E4DC]):\n         - Header 'Recent activity' with 'Live updates'.\n         - Vertical timeline with connected dot rail:\n           - Today 09:15: Status updated to 'Interview' for Northwind (Lime badge).\n           - Yesterday: Applied to Pixelcraft \u00b7 Junior Fullstack (Applied #5B7C99 badge).\n           - 23 Oct: Offer letter received from Brightpath ($45/hr)! (Offer #1F4D3A badge).\n           - 22 Oct: Added Fernwood to Wishlist (Wishlist #8A948E badge).\n           - 20 Oct: Rejection received from Kite Labs (Rejected #E07A5F badge).\n\nDesign details:\n- Monograms are simple crisp colored letter badges in rounded squares (e.g., [NW], [Q], [L], [P], [F], [BP]).\n- Strictly no stock photos, no human faces, no placeholders that look like images.\n- Pure elegant UI with exact color hexes and Space Grotesk / Geist styling.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1XxHlYWyyT0vnwQUotzHt0R2TocXK83ZnZIoDDVzRWr2y6trM7GSv4M77MYhW4LmJQXX1-m1-XWSVwV17xx7IZ-CW5X9ABxBk4ELfThNp7Jasn5nEHdZgHb8qctok8Q6cWroWSKjRBUCTPzVSRYqEBNlj5BD4IbG-Zah3FCWswS4-jQv50Q858CPQERnj7dQIDLzcDWIkU6VUauKruGX_8OjdbUb0-zwn_HtEUdYE0laBvL4IxzSLC28uY",
+        "name": "projects/2270660294596355138/files/4b9552d50bc74afcbf5e35f29c2a1ebe"
+       },
+       "theme": {
+        "bodyFont": "GEIST",
+        "colorMode": "LIGHT",
+        "colorVariant": "FIDELITY",
+        "customColor": "#1F4D3A",
+        "headlineFont": "SPACE_GROTESK",
+        "overrideNeutralColor": "#F6F5F0",
+        "overridePrimaryColor": "#1F4D3A",
+        "overrideSecondaryColor": "#C6F35E",
+        "overrideTertiaryColor": "#E07A5F",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Orbit - Bento Dashboard",
+       "width": "2560"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "Here is the desktop **Bento Dashboard** for **Orbit**, an internship and job application tracker designed specifically for students and new grads.\n\n### What was crafted:\n1. **Light Minimal Bento Aesthetic**:\n   - Built on a soft off-white canvas (`#F6F5F0`) with 20px rounded white cards encased in 1px hairline borders (`#E6E4DC`) and zero drop shadows.\n   - Distinctive typography using Space Grotesk for bold metrics and section headlines, paired with Geist for clean, scannable interface typography.\n\n2. **Left Navigation Sidebar (240px)**:\n   - Minimal orbital ring brandmark with the **Orbit** wordmark.\n   - Clean navigation links (*Dashboard*, *Board*, *Interviews*, *Settings*), with *Dashboard* highlighted in the active pill treatment.\n   - Bottom widget featuring the user's **Weekly Goal (7/10 applications)** with an interactive visual progress bar and motivational feedback.\n\n3. **Top Utility Bar**:\n   - Universal search input with keyboard shortcut hint (`\u2318K`), quick notification badge, primary deep forest green CTA (`+ Add application`), and Aarav's profile avatar.\n\n4. **Bento Grid Layout**:\n   - **4 Stat Cards**: *Total applied (48)*, *Interviews (9)*, *Offers (2)*, and the vibrant hero accent card for *Response rate (31%)* highlighted in lime (`#C6F35E`) with an integrated radial ring gauge.\n   - **Applications per Week**: An 8-week volume bar chart with filter controls, spotlighting the current week (W8) in bright lime with a 10-app callout badge.\n   - **Pipeline Breakdown**: Horizontal segmented bar paired with an itemized breakdown for each stage (*Wishlist (12)*, *Applied (24)*, *Interview (9)*, *Offer (2)*, and *Rejected (11)*).\n   - **Upcoming Interviews**: Dedicated interview schedule cards for *Northwind*, *Quanta*, and *Lumen*, complete with custom letter monograms, time chips, and quick-action \"Prep notes\" triggers.\n   - **Recent Activity Timeline**: Chronological event feed with stage badge accents mapping application state changes."
+   },
+   {
+    "suggestion": "Design the Kanban Board view with drag-and-drop stages"
+   },
+   {
+    "suggestion": "Create the Interview Preparation & Questions detail screen"
+   },
+   {
+    "suggestion": "Generate the dark mode variant of this dashboard"
+   }
+  ],
+  "projectId": "2270660294596355138",
+  "sessionId": "14195749043319114879"
+ },
+ "LIGHT-board": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Orbit Light",
+         "theme": {
+          "bodyFont": "GEIST",
+          "colorMode": "LIGHT",
+          "colorVariant": "FIDELITY",
+          "customColor": "#1F4D3A",
+          "designMd": "# Orbit job-application tracker (code.in.30s)\nClean minimal BENTO dashboard web app for students and new grads tracking internship / job applications. Rounded 20px cards on a calm background, generous whitespace, thin 1px hairline borders, no heavy shadows. Space Grotesk bold headings and big numerals, Geist for UI text. Deep forest green #1F4D3A primary, ONE lime accent #C6F35E for highlights (active nav pill, key stat, chart bar of current week, primary CTA text on green). Status colours: Wishlist slate, Applied blue-grey, Interview lime, Offer forest green, Rejected muted coral #E07A5F. Company logos are simple coloured letter monograms. No photos, no people, no neon, no gradients-heavy glassmorphism.\n## Light: background off-white #F6F5F0, cards white #FFFFFF with #E6E4DC border, ink #14181A, muted #5E6660.",
+          "headlineFont": "SPACE_GROTESK",
+          "overrideNeutralColor": "#F6F5F0",
+          "overridePrimaryColor": "#1F4D3A",
+          "overrideSecondaryColor": "#C6F35E",
+          "overrideTertiaryColor": "#E07A5F",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/10599984407030352954",
+        "version": "1"
+       },
+       "deviceType": "DESKTOP",
+       "generatedBy": "figaro_agent",
+       "height": "2966",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzA4NDExMjlkNTU1NjQyYWJiZGUxYjcxNGEyNzQzMTU3EgsSBxDnsaWX4xEYAZIBIwoKcHJvamVjdF9pZBIVQhMyMjcwNjYwMjk0NTk2MzU1MTM4&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/2270660294596355138/files/dca864a7a6bd44ccb82d6d32afa923b3"
+       },
+       "id": "9c6497f4b0c94b53be7244bfb0cb31c5",
+       "name": "projects/2270660294596355138/screens/9c6497f4b0c94b53be7244bfb0cb31c5",
+       "prompt": "Design the \"Board\" (Kanban) screen for \"Orbit\", a student & new grad job & internship application tracker. Desktop 1440px wide layout.\n\nVisual styling strictly adhering to the design specifications:\n- Light mode: background off-white #F6F5F0, cards clean white with 1px border #E6E4DC, ink #14181A, muted text #5E6660, deep forest green #1F4D3A primary, lime accent #C6F35E.\n- Cards have 20px radius (rounded-[20px]), hairline borders (1px solid #E6E4DC), generous whitespace, shadow-none or very soft minimal hover elevation.\n- Typography: Space Grotesk for headings and counts, Geist or clean sans for UI body text.\n- Status colors: Wishlist slate #8A948E, Applied slate blue #5B7C99, Interview lime #C6F35E (with dark ink text), Offer deep forest green #1F4D3A (with white text), Rejected coral #E07A5F.\n- No photos, no people, no stock photography.\n\nLayout & Structure:\n1. Left Sidebar (w-60 / 240px fixed, white background, right border #E6E4DC):\n   - Orbit ring logo + 'Orbit' wordmark, 'Application Tracker' subtext.\n   - Nav items: 'Dashboard' (inactive), 'Board' (ACTIVE with lime pill bg-lime text-forest font-medium rounded-lg), 'Interviews' (badge 3), 'Settings'.\n   - Bottom card: \"Weekly Goal: 7/10 applications\" with rounded progress bar (70% filled in forest green), \"3 more to hit your weekly target\", and Help & Support / Log Out links.\n\n2. Top Bar (sticky, white, bottom border #E6E4DC):\n   - Search bar \"Search companies, roles, tags...\" with shortcut badge '\u2318K'.\n   - Notification bell icon button.\n   - Primary button \"+ Add application\" (bg-[#1F4D3A] text-white rounded-xl px-4 py-2 hover:opacity-95).\n   - Profile avatar monogram \"A\" Aarav (aarav@orbit.app).\n\n3. Main Content Area (Kanban Board):\n   - Header:\n     - Title \"Board\" in Space Grotesk bold text-2xl/3xl, subtitle \"Manage and track application stages across active recruiting cycles.\"\n     - Controls row:\n       - Filter chips: 'All' (active dark/forest pill), 'Internship', 'Full-time', 'Remote' (pill chips with subtle border, rounded-full, px-3 py-1.5 text-xs font-medium).\n       - Right controls: View toggle (Kanban Board icon active, List icon inactive), Sort dropdown (\"Last updated\"), and Search/Filter inline.\n   - 5 Kanban Columns side by side (horizontal scroll or clean 5-column grid `grid grid-cols-5 gap-4`):\n     1. Wishlist (3 roles) - Status dot #8A948E, title \"Wishlist\", count badge \"3\".\n        - Card 1: Fernwood - Backend Systems Intern, \"Fernwood\", Bangalore / Hybrid, \"\u20b950k/mo\", \"Added 2d ago\". Monogram 'FW' in soft neutral square.\n        - Card 2: Arcadia - AI Research Intern, \"Arcadia\", Remote, \"\u20b975k/mo\", \"Added 4d ago\". Monogram 'AR'.\n        - Card 3: Stripe / FinTech lab - Product Operations Intern, \"Stripe\", Bengaluru, \"\u20b940k/mo\", \"Added 1w ago\".\n        - Dashed \"+ Add role\" slot at bottom.\n     2. Applied (5 roles) - Status dot #5B7C99, title \"Applied\", count badge \"5\".\n        - Card 1: Pixelcraft - Junior Fullstack Developer, \"Pixelcraft\", Remote, \"\u20b945k/mo\", \"Applied yesterday\". Monogram 'PC'.\n        - Card 2: Kite Labs - Frontend Engineer (New Grad), \"Kite Labs\", Gurgaon, \"\u20b918-22 LPA\", \"Applied 3d ago\". Monogram 'KL'.\n        - Card 3: Databricks - Platform Engineer Intern, \"Databricks\", Bengaluru, \"\u20b990k/mo\", \"Applied 5d ago\".\n        - Card 4: Razorpay - Associate Product Designer, \"Razorpay\", Bengaluru, \"\u20b940k/mo\", \"Applied 1w ago\".\n        - Card 5: Postman - Developer Relations Intern, \"Postman\", Remote, \"\u20b935k/mo\", \"Applied 1w ago\".\n        - Dashed \"+ Add role\" slot at bottom.\n     3. Interview (3 roles) - Status dot #C6F35E, title \"Interview\", count badge \"3\".\n        - Card 1: Northwind - Frontend Intern, \"Northwind\", Remote / Hybrid, \"\u20b945k/mo\", tag highlight: Lime pill badge \"Interview Tue 10:30 AM\" (bold, icon, lime #C6F35E bg with dark ink text), \"Round 2: System & UI\". Monogram 'NW'.\n        - Card 2: Quanta - Software Engineer I, \"Quanta\", Bangalore, \"\u20b920 LPA\", tag \"Behavioral \u00b7 Thu 3 PM\". Monogram 'Q'.\n        - Card 3: Lumen - Product Designer, \"Lumen\", Remote, \"\u20b955k/mo\", tag \"Portfolio Review \u00b7 Mon 2 PM\". Monogram 'L'.\n        - Dashed \"+ Add role\" slot at bottom.\n     4. Offer (1 role) - Status dot #1F4D3A, title \"Offer\", count badge \"1\".\n        - Card 1: Brightpath - Software Engineering Co-op, \"Brightpath\", Bengaluru / Hybrid, \"\u20b945/hr \u00b7 Spring 2026\", \"Offer received Oct 23\", badge \"Decision deadline in 8d\". Monogram 'BP'.\n        - Dashed \"+ Add role\" slot at bottom.\n     5. Rejected (2 roles) - Status dot #E07A5F, title \"Rejected\", count badge \"2\".\n        - Card 1: Kite Labs - Product Specialist Intern, \"Kite Labs\", Remote, \"\u20b930k/mo\", \"Rejected post screening\". Monogram 'KL'.\n        - Card 2: Vercel - Ecosystem Intern, \"Vercel\", Remote, \"\u20b960k/mo\", \"Position closed\". Monogram 'V'.\n        - Dashed \"+ Add role\" slot at bottom.\n\nCard styling details:\n- Each card: rounded-[18px] bg-white border border-[#E6E4DC] p-4 flex flex-col gap-2.5 transition-all hover:border-[#14181A]/30 cursor-pointer.\n- Monogram logos: rounded-xl w-8 h-8 flex items-center justify-center font-bold text-xs with muted distinct background tint (e.g. slate, teal, amber, neutral).\n- Clear typography hierarchy: Role title (font-bold text-sm text-[#14181A]), company name (text-xs text-[#5E6660]), tags/chips row (location chip, salary chip in subtle pill badges bg-[#F6F5F0] text-[#5E6660] text-[11px] px-2 py-0.5 rounded-md), bottom timestamp or status highlight.\n- Consistent with {{DATA:SCREEN:SCREEN_3}} theme, colors, and layout structure.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1XgnzwXWjGt7FrXw44JIKeAOaL_iC5S65rbAR9hULNNzrCiRHnJDYpI8ZDj0l3pHGE1_YUPtkGa85suhRlZJ7C2DwfM35Fw4Kmd6E3Y8z0zQZcqzNUUHaQjFAJYFrbw7ZQZ2aLm7BD0H1u9G8soh1k7G8FoUS6daERk0y2XoB6qbe887LD_zKKN66Yl3Y3Xj0-Few2Rru3Z9jCYXFtvLIXNHgjEx7IzNZeB6Tbn6KHqdPaDks0ph_OQgaE",
+        "name": "projects/2270660294596355138/files/f9851908c9b94912b5a5d453653aed48"
+       },
+       "theme": {
+        "bodyFont": "GEIST",
+        "colorMode": "LIGHT",
+        "colorVariant": "FIDELITY",
+        "customColor": "#1F4D3A",
+        "headlineFont": "SPACE_GROTESK",
+        "overrideNeutralColor": "#F6F5F0",
+        "overridePrimaryColor": "#1F4D3A",
+        "overrideSecondaryColor": "#C6F35E",
+        "overrideTertiaryColor": "#E07A5F",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Orbit - Applications Board (Kanban)",
+       "width": "2560"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "Here is the **Board (Kanban)** view for **Orbit**, built to seamlessly match your established bento aesthetic and design tokens:\n\n### What was built:\n1. **Header & Navigation**:\n   - Sidebar with `Board` highlighted as active (`bg-lime` pill badge with active application count indicator `14`).\n   - Persistent `Weekly Goal: 7/10 applications` progress tracker in the sidebar footer.\n   - Clean top navigation bar with quick search (`\u2318K`), notifications, and `+ Add application` action.\n   - Filter chips for quick pipeline slicing (**All**, **Internship**, **Full-time**, **Remote**) alongside a board/list view toggle and sort options.\n\n2. **5-Stage Kanban Pipeline**:\n   - **Wishlist (3)**: Status slate dot `#8A948E`, featuring Fernwood, Arcadia, and Stripe with location chips, stipends, and age indicators.\n   - **Applied (5)**: Status blue dot `#5B7C99`, tracking Pixelcraft, Kite Labs, Databricks, Razorpay, and Postman with portal/referral origin badges.\n   - **Interview (3)**: Status lime dot `#C6F35E`, featuring the highlighted upcoming interview badge (**`Tue 10:30 AM`**) for Northwind (`Round 2: System & UI`), along with Quanta and Lumen cards with scheduled time tags.\n   - **Offer (1)**: Status forest green dot `#1F4D3A`, highlighting Brightpath Co-op with decision deadline tracking (`in 8d`).\n   - **Rejected (2)**: Status coral dot `#E07A5F`, tracking Kite Labs and closed listings cleanly with muted feedback.\n\n3. **Bento Card Details & Tokens**:\n   - Clean rounded 20px corners, hairline `#E6E4DC` borders, off-white `#F6F5F0` backdrop, and zero heavy shadows.\n   - Fictional company letter monograms in rounded containers (no photos or stock graphics).\n   - Dashed `+ Add role` quick-action button anchored at the foot of each column."
+   },
+   {
+    "suggestion": "Add an application detail slide-over modal for Northwind"
+   },
+   {
+    "suggestion": "Design the 'Interviews' calendar schedule screen"
+   },
+   {
+    "suggestion": "Add drag-and-drop hover states and card movement animations"
+   }
+  ],
+  "projectId": "2270660294596355138",
+  "sessionId": "5558890917715995820"
+ },
+ "LIGHT-detail": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Orbit Light",
+         "theme": {
+          "bodyFont": "GEIST",
+          "colorMode": "LIGHT",
+          "colorVariant": "FIDELITY",
+          "customColor": "#1F4D3A",
+          "designMd": "# Orbit job-application tracker (code.in.30s)\nClean minimal BENTO dashboard web app for students and new grads tracking internship / job applications. Rounded 20px cards on a calm background, generous whitespace, thin 1px hairline borders, no heavy shadows. Space Grotesk bold headings and big numerals, Geist for UI text. Deep forest green #1F4D3A primary, ONE lime accent #C6F35E for highlights (active nav pill, key stat, chart bar of current week, primary CTA text on green). Status colours: Wishlist slate, Applied blue-grey, Interview lime, Offer forest green, Rejected muted coral #E07A5F. Company logos are simple coloured letter monograms. No photos, no people, no neon, no gradients-heavy glassmorphism.\n## Light: background off-white #F6F5F0, cards white #FFFFFF with #E6E4DC border, ink #14181A, muted #5E6660.",
+          "headlineFont": "SPACE_GROTESK",
+          "overrideNeutralColor": "#F6F5F0",
+          "overridePrimaryColor": "#1F4D3A",
+          "overrideSecondaryColor": "#C6F35E",
+          "overrideTertiaryColor": "#E07A5F",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/10599984407030352954",
+        "version": "1"
+       },
+       "deviceType": "DESKTOP",
+       "generatedBy": "figaro_agent",
+       "height": "3194",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzc3ZWE0MDI1MGMwNTQwZjZiMjY0NzRkYTYyNzllZTBhEgsSBxDnsaWX4xEYAZIBIwoKcHJvamVjdF9pZBIVQhMyMjcwNjYwMjk0NTk2MzU1MTM4&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/2270660294596355138/files/1cd9b0375e514e5487a6630841e750cb"
+       },
+       "id": "5e91d02729c041d29a418d6d84565095",
+       "name": "projects/2270660294596355138/screens/5e91d02729c041d29a418d6d84565095",
+       "prompt": "Web app \"Orbit\" - Job & internship application tracker for students and new grads. Light mode bento dashboard. Background #F6F5F0, cards pure white #FFFFFF with 1px #E6E4DC border and rounded-[20px] corners, text color #14181A, muted text #5E6660, deep forest green #1F4D3A primary, vibrant lime #C6F35E accent. Space Grotesk bold font for titles and big numbers, Geist for clean UI body text.\n\nScreen: APPLICATION DETAIL for \"Frontend Intern at Northwind\" (Desktop 1440px width).\n\nNavigation & Shell:\n- Left Sidebar (240px width): Orbit logo (ring mark) + \"Orbit\" \"Application Tracker\", navigation tabs: Dashboard, Board (with active pill or link back), Interviews (badge 3), Settings. Bottom widget: Weekly Goal 7/10 (70% progress bar, lime indicator), Help & Support, Log Out.\n- Top bar: Breadcrumb link \"\u2190 Back to Board / Northwind\", Search bar (\"Search companies, roles... \u2318K\"), Notification bell with dot, \"+ Add application\" primary forest green button (#1F4D3A with white text), User avatar 'A' \"Aarav\".\n\nMain Header Banner (within content area):\n- Back link: \"\u2190 Back to Board\"\n- Top row: Company monogram \"NW\" (in a stylish rounded-2xl square with soft slate/forest tint), Role Title \"Frontend Intern\", Company \"Northwind\", Status pill with lime background #C6F35E, dark text, dot indicator: \"\u25cf Interview (Round 2)\". Tag: \"Engineering \u00b7 Summer 2026\".\n- Top right action buttons: \"Share\", \"Edit details\" (secondary outline button with icon), and primary action button \"Move to Offer \u2192\" (forest green #1F4D3A, white text, pill rounded-xl).\n\nBento Grid Layout:\n1. Card 1: \"Next Step\" Callout Hero Card (accent highlighted with lime border/subtle gradient or lime accent block):\n   - Big callout badge: \"Round 2: System & UI Deep Dive\"\n   - Countdown timer badge: \"\ud83d\uddd3 In 2 days \u00b7 Tue 27 Oct, 10:30 AM IST\"\n   - Video call link button: \"Join Google Meet (meet.google.com/xyz-abc)\" with copy icon\n   - Quick preparation checklist or interviewer note.\n\n2. Card 2: \"Timeline\" Card (Left wide column):\n   - Vertical interactive stepper with clean status nodes:\n     * Saved / Wishlisted: 12 Oct 2025 (Completed checkmark)\n     * Applied: 14 Oct 2025 \u00b7 via Referral link by Rohan S. (Completed checkmark)\n     * Recruiter Screen: 20 Oct 2025 \u00b7 30m phone screen with Maya Lin (Completed checkmark)\n     * Technical Round 2: Tue 27 Oct 2025 \u00b7 10:30 AM (Active glowing lime node / \"Upcoming\")\n     * Executive / Partner Round: Expected early Nov (Pending muted node)\n     * Offer / Decision: Pending\n   - Quick action: \"+ Add milestone or update stage\"\n\n3. Card 3: \"Salary & Details\" Bento Card:\n   - Big numeral stipend: \"\u20b945,000\" / month\n   - Role type: Internship (6 months \u00b7 Full-time)\n   - Location: Bengaluru \u00b7 Hybrid (2 days in-office)\n   - Source: LinkedIn Job Post (external link icon)\n   - Job Description preview / link: \"View full JD (Frontend Intern - Core Platform)\"\n   - Applied with: \"Resume_Aarav_SDE_2025.pdf\"\n\n4. Card 4: \"Contacts & Interviewers\" Bento Card:\n   - 2 people cards:\n     * Maya Lin \u00b7 Talent Acquisition Lead \u00b7 Monogram \"ML\" in soft sage circle \u00b7 \"maya.lin@northwind.io\" \u00b7 LinkedIn link icon \u00b7 Note: \"Sent prep doc\"\n     * Devashish Roy \u00b7 Staff Frontend Engineer / Panel Lead \u00b7 Monogram \"DR\" in soft warm beige circle \u00b7 \"d.roy@northwind.tech\" \u00b7 Note: \"Expect React concurrency & CSS architecture questions\"\n   - \"+ Add interviewer contact\"\n\n5. Card 5: \"Interview Notes & Prep\" Bento Card:\n   - Key highlights bullet points:\n     * \"Mention open source contribution to Tailwind UI & canvas rendering experience.\"\n     * \"Reviewed Northwind design system documentation and component library.\"\n     * \"Clarify hybrid policy and PPO conversion criteria at the end of the round.\"\n   - Quick note input textarea with \"Save note\" button.\n\nStrict aesthetic rules:\n- Clean minimal BENTO cards with hairline 1px #E6E4DC border, rounded-[20px], generous padding (p-6).\n- Light background #F6F5F0.\n- Monogram badges for companies and people (no external photos/people images).\n- Clean Space Grotesk headings, Geist UI text. Everything polished, harmonious, and highly functional.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UfV4d6EEedcWR0ORVVFL-G3IulL6Cwgv5nGqlARo0uaDYBoPKcGisbnh_kYll6CGtaOdZJjaaxXO-KhKpTtT7Y3arDsBQZG3qcJNiohF7UKVB6HAuaKpr1rshyiLumJ-JdqOOHRp9GA_uXSmLMJ5tykcE2W1zw8wBikmI3kqGm3u57NsmrQFSqyrd8vZccGSPBcTaJknmaa9U4DS7AC9i2Ym--HNn4l_eaIddBSWoJCMIkYdKQvDgKxzI",
+        "name": "projects/2270660294596355138/files/2f1a6987eadf4fba85952300994fbe67"
+       },
+       "theme": {
+        "bodyFont": "GEIST",
+        "colorMode": "LIGHT",
+        "colorVariant": "FIDELITY",
+        "customColor": "#1F4D3A",
+        "headlineFont": "SPACE_GROTESK",
+        "overrideNeutralColor": "#F6F5F0",
+        "overridePrimaryColor": "#1F4D3A",
+        "overrideSecondaryColor": "#C6F35E",
+        "overrideTertiaryColor": "#E07A5F",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Orbit - Application Detail (Frontend Intern)",
+       "width": "2560"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "Here is the **Application Detail** screen for **Frontend Intern at Northwind** in Orbit's light bento aesthetic:\n\n### Highlights & Design Implementation\n- **Orbit Design System Alignment**:\n  - Off-white canvas background (`#F6F5F0`) with white cards, 20px border radius, and hairline borders (`1px #E6E4DC`).\n  - Deep forest green (`#1F4D3A`) for primary actions (`Move to Offer \u2192`, active indicators), paired with high-contrast vibrant lime (`#C6F35E`) for the active interview status and urgency callouts.\n  - Consistent navigation sidebar (240px) with the weekly goal progress meter (7/10 applications tracked).\n- **Header & Primary Actions**:\n  - Company monogram square (`NW`) alongside the role title, company metadata, and a live status badge (`\u25cf Interview (Round 2)`).\n  - Quick action controls: `Back to Board`, `Share`, `Edit details`, and `Move to Offer`.\n- **Bento Grid Architecture**:\n  1. **Next Step Hero Card**: Highlighted with an active lime border accent, featuring countdown badge (`In 2 days \u00b7 Tue 27 Oct, 10:30 AM IST`), topic breakdown (`Round 2: System & UI Deep Dive`), and direct Google Meet video call shortcut with one-click copy.\n  2. **Application Timeline Stepper**: Chronological vertical milestones tracking progression from *Saved (12 Oct)*, *Applied (14 Oct)*, and *Recruiter Screen (20 Oct)* through to the active upcoming *Technical Round 2* and upcoming stages.\n  3. **Compensation & Details Card**: Displaying stipend (`\u20b945,000 / month`), PPO eligibility note, location (`Bengaluru \u00b7 Hybrid`), verified LinkedIn source, and attached resume badge.\n  4. **Contacts & Interviewers Card**: Monogram-based contact cards for Maya Lin (Talent Acquisition) and Devashish Roy (Staff Engineer / Panel Lead) with email links and interviewer focus notes.\n  5. **Interview Notes & Prep Card**: Checklist of prep talking points plus an autosaved quick-entry note box with a `Save note` button."
+   },
+   {
+    "suggestion": "Create an \"Add/Edit Application\" modal dialog"
+   },
+   {
+    "suggestion": "Design the \"Interviews\" calendar schedule view"
+   },
+   {
+    "suggestion": "Show the \"Offer Received\" state for this role"
+   }
+  ],
+  "projectId": "2270660294596355138",
+  "sessionId": "10008313065727159264"
+ },
+ "LIGHT-mobile-board": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Orbit Light",
+         "theme": {
+          "bodyFont": "GEIST",
+          "colorMode": "LIGHT",
+          "colorVariant": "FIDELITY",
+          "customColor": "#1F4D3A",
+          "designMd": "# Orbit job-application tracker (code.in.30s)\nClean minimal BENTO dashboard web app for students and new grads tracking internship / job applications. Rounded 20px cards on a calm background, generous whitespace, thin 1px hairline borders, no heavy shadows. Space Grotesk bold headings and big numerals, Geist for UI text. Deep forest green #1F4D3A primary, ONE lime accent #C6F35E for highlights (active nav pill, key stat, chart bar of current week, primary CTA text on green). Status colours: Wishlist slate, Applied blue-grey, Interview lime, Offer forest green, Rejected muted coral #E07A5F. Company logos are simple coloured letter monograms. No photos, no people, no neon, no gradients-heavy glassmorphism.\n## Light: background off-white #F6F5F0, cards white #FFFFFF with #E6E4DC border, ink #14181A, muted #5E6660.",
+          "headlineFont": "SPACE_GROTESK",
+          "overrideNeutralColor": "#F6F5F0",
+          "overridePrimaryColor": "#1F4D3A",
+          "overrideSecondaryColor": "#C6F35E",
+          "overrideTertiaryColor": "#E07A5F",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/10599984407030352954",
+        "version": "1"
+       },
+       "deviceType": "MOBILE",
+       "generatedBy": "figaro_agent",
+       "height": "1906",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzRkZmRhOGU2OGI1MzQ1OTc5Yjg3YjlmNzdiN2JhMzQ5EgsSBxDnsaWX4xEYAZIBIwoKcHJvamVjdF9pZBIVQhMyMjcwNjYwMjk0NTk2MzU1MTM4&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/2270660294596355138/files/ed88cd24477549b6bd1b53aab5845e3c"
+       },
+       "id": "bbb717e66bec426fb3a10dea245aacaf",
+       "name": "projects/2270660294596355138/screens/bbb717e66bec426fb3a10dea245aacaf",
+       "prompt": "Mobile version (390px width) of Orbit job application tracker Board screen.\n\nVisual Style & Tokens:\n- Light mode: background off-white #F6F5F0, cards clean white (#FFFFFF) with 1px border (#E6E4DC), 20px card border radius, no heavy shadows.\n- Text & Accent: ink #14181A, muted #5E6660, deep forest green #1F4D3A primary, vibrant lime #C6F35E accent highlight.\n- Typography: Space Grotesk bold for titles, section headers, badges, and numerals; Geist / clean sans for UI body copy and chips.\n- Status colors: Wishlist slate #8A948E, Applied #5B7C99, Interview lime #C6F35E (with dark ink text), Offer forest green #1F4D3A, Rejected coral #E07A5F.\n\nLayout & Components:\n1. Mobile Header (sticky top, clean white/glass bg with bottom border #E6E4DC):\n   - Left: 'Orbit' wordmark with minimalist green ring mark / monogram.\n   - Right: Quick Search icon button, notification bell icon, and circular user avatar ('A' for Aarav, deep forest green background).\n2. Board Title & Search/Filter row:\n   - \"Board\" heading in Space Grotesk bold with total badge \"14 Active\".\n   - Search bar input with placeholder \"Search roles, companies...\" or quick filter chips (Internship, Full-time).\n3. Horizontal Scrollable Status Pipeline Tabs:\n   - Pills with count badges:\n     - Wishlist (3)\n     - Applied (5)\n     - Interview (3) - ACTIVE STATE: highlighted pill in bright lime #C6F35E with bold ink text #14181A and subtle active glow/border.\n     - Offer (1)\n     - Rejected (2)\n4. Vertical List of Active Stage Cards (for Interview status):\n   - Card 1: Frontend Intern at Northwind\n     - Monogram: NW in rounded square.\n     - Role: Frontend Intern. Company: Northwind.\n     - Chips: Remote / Hybrid, \u20b945k/mo stipend.\n     - Urgent interview highlight badge: Lime pill with calendar icon \"Tue 10:30 AM\" and \"Round 2: System & UI\".\n     - Subtle \"In 2 days\" timeline indicator.\n   - Card 2: Software Engineer I at Quanta\n     - Monogram: Q in rounded square.\n     - Role: Software Engineer I. Company: Quanta.\n     - Chips: Bangalore, \u20b920 LPA.\n     - Interview tag: \"Thu 3:00 PM\" \u2022 \"Behavioral & Culture Fit\".\n     - Indicator: \"In 4 days\".\n   - Card 3: Product Designer at Lumen\n     - Monogram: L in rounded square.\n     - Role: Product Designer. Company: Lumen.\n     - Chips: Remote, \u20b955k/mo.\n     - Interview tag: \"Mon 2:00 PM\" \u2022 \"Portfolio Review & Design Sprint\".\n     - Indicator: \"Next week\".\n5. Floating Action Button (FAB):\n   - Floating round deep forest-green (#1F4D3A) '+' button with white plus icon at bottom right above the bottom nav, with subtle elevation.\n6. Bottom Navigation Bar (fixed bottom, white background, border-t border-[#E6E4DC]):\n   - 4 tabs with icons and clean labels:\n     - Dashboard (grid_view / dashboard)\n     - Board (view_kanban, ACTIVE with forest green icon/text and lime dot indicator)\n     - Interviews (calendar_today, with small badge '3')\n     - Settings (settings)\n\nStrictly adhere to the 390px mobile viewport specifications, light mode palette, clean hairline borders, and zero stock photos.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1V3iPB7BMAsHLFa44O5tKtgw8r5DWn8F2AcuzcMEPdT1vvBrLV2GvLNvArW2IU_Hj1GNGKTHTPVIiFb2PHys8u_CAe2eYlqr5SnToLinWT-90ZMlZoF3Oc9RPm2ZXPMOZ0eNH5TwXz2VwAE8l9nXpfgY_yLihbTMvgfyiRsBVKS5-ok8W4TlWflCmZRZyqJvEpLIwovqMyGnHWzR6OPrhvrdn0E8joEqUfHaIzI_b7bHcD01N2A0aTLUuk",
+        "name": "projects/2270660294596355138/files/60d89b472531444f845cf4301255f77f"
+       },
+       "theme": {
+        "bodyFont": "GEIST",
+        "colorMode": "LIGHT",
+        "colorVariant": "FIDELITY",
+        "customColor": "#1F4D3A",
+        "headlineFont": "SPACE_GROTESK",
+        "overrideNeutralColor": "#F6F5F0",
+        "overridePrimaryColor": "#1F4D3A",
+        "overrideSecondaryColor": "#C6F35E",
+        "overrideTertiaryColor": "#E07A5F",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Orbit - Mobile Applications Board",
+       "width": "780"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "Here is the mobile adaptation of the **Orbit Applications Board** screen (390px viewport), tailored to the Orbit Light design system:\n\n### Key Design & Layout Highlights:\n1. **Top Bar**:\n   - Clean header with the Orbit ring mark, wordmark, search trigger, notification bell, and user avatar initials (`A`).\n2. **Search & Quick Filters**:\n   - Integrated search input for quick lookup across roles and companies, complemented by type tags (`Internship (9)`, `Full-time (5)`).\n3. **Horizontal Status Pipeline Tabs**:\n   - Scrollable stage filter with live counters: **Wishlist (3)**, **Applied (5)**, **Interview (3)** (active highlight in signature lime `#C6F35E`), **Offer (1)**, and **Rejected (2)**.\n4. **Interview Pipeline Cards**:\n   - Rounded 20px cards with 1px hairline border (`#E6E4DC`) on calm off-white background (`#F6F5F0`).\n   - Clean company letter monograms in rounded squares (`NW` for Northwind, `Q` for Quanta, `L` for Lumen).\n   - Role title, company name, compensation, location chips, and scheduled interview time tags with upcoming countdown badges (e.g., *Tue, 10:30 AM* & *In 2 days*).\n5. **Floating Action Button & Bottom Navigation**:\n   - Deep forest green (`#1F4D3A`) circular `+` FAB anchored above the bottom bar.\n   - 4-item bottom navigation bar: **Dashboard**, **Board** (active state with green indicator dot), **Interviews** (with counter badge `3`), and **Settings**."
+   },
+   {
+    "suggestion": "Design the Mobile Application Detail view for Northwind"
+   },
+   {
+    "suggestion": "Create the Mobile Bento Dashboard overview"
+   },
+   {
+    "suggestion": "Switch the active filter to Offer or Applied stage"
+   }
+  ],
+  "projectId": "2270660294596355138",
+  "sessionId": "15348979148652469756"
+ }
+}

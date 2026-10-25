@@ -1,0 +1,83 @@
+{
+ "DARK-dashboard": {
+  "outputComponents": [
+   {
+    "design": {
+     "screens": [
+      {
+       "designSystem": {
+        "designSystem": {
+         "displayName": "Orbit Dark",
+         "theme": {
+          "bodyFont": "GEIST",
+          "colorMode": "DARK",
+          "colorVariant": "FIDELITY",
+          "customColor": "#1F4D3A",
+          "designMd": "# Orbit job-application tracker (code.in.30s)\nClean minimal BENTO dashboard web app for students and new grads tracking internship / job applications. Rounded 20px cards on a calm background, generous whitespace, thin 1px hairline borders, no heavy shadows. Space Grotesk bold headings and big numerals, Geist for UI text. Deep forest green #1F4D3A primary, ONE lime accent #C6F35E for highlights (active nav pill, key stat, chart bar of current week, primary CTA text on green). Status colours: Wishlist slate, Applied blue-grey, Interview lime, Offer forest green, Rejected muted coral #E07A5F. Company logos are simple coloured letter monograms. No photos, no people, no neon, no gradients-heavy glassmorphism.\n## Dark: background near-black green #0E1512, cards #16211C with #24332B border, ink #EEF3EC, muted #9AA89F, accent lime #C6F35E.",
+          "headlineFont": "SPACE_GROTESK",
+          "overrideNeutralColor": "#0E1512",
+          "overridePrimaryColor": "#1F4D3A",
+          "overrideSecondaryColor": "#C6F35E",
+          "overrideTertiaryColor": "#E07A5F",
+          "roundness": "ROUND_TWELVE"
+         }
+        },
+        "name": "assets/16290128366616987685",
+        "version": "1"
+       },
+       "deviceType": "DESKTOP",
+       "generatedBy": "figaro_agent",
+       "height": "2666",
+       "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzI5ODZkMjZkZjEwODQzY2ViOWY4MTk4NjI3NmY4M2NhEgsSBxDnsaWX4xEYAZIBIwoKcHJvamVjdF9pZBIVQhMyMjcwNjYwMjk0NTk2MzU1MTM4&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/2270660294596355138/files/e3ec005b284046ae90cf20b90931e436"
+       },
+       "id": "d95f4856c6eb4664b3207cbebaa42b6b",
+       "name": "projects/2270660294596355138/screens/d95f4856c6eb4664b3207cbebaa42b6b",
+       "prompt": "Generate the complete Orbit Desktop Bento Dashboard (1440px) in DARK mode.\nStyling & Theme:\n- Background: deep near-black green #0E1512\n- Card surfaces: #16211C with 1px border #24332B, 20px border radius (rounded-[20px]), generous padding and whitespace, hairline borders, no heavy drop shadows.\n- Typography: Headings, big metrics/numerals in Space Grotesk bold. UI labels, body, and dates in Geist / clean sans-serif.\n- Colors: Main text #EEF3EC, muted text #9AA89F, lime accent #C6F35E for active states and the key response stat card, secondary forest green #2E6B50.\n- Status badge colors: Wishlist slate #8A948E, Applied steel blue #5B7C99, Interview lime #C6F35E, Offer forest green #1F4D3A (or deep emerald), Rejected coral #E07A5F.\n- Company logos: simple colored letter monograms in rounded square badges (Northwind NW, Quanta Q, Lumen L, Brightpath BP, Pixelcraft PC, etc.) with clean subtle backgrounds. Absolutely no photos, no people, no stock imagery.\n\nLayout Structure:\n1. Left Sidebar (w-60 / 240px, bg #16211C, border-r #24332B, h-screen fixed):\n   - Orbit ring mark logo + 'Orbit' wordmark, with subtext 'Application Tracker'.\n   - Nav links: Dashboard (active pill state with lime accent / subtle dark highlight), Board, Interviews (with counter badge '3'), Settings. Line icons with clean styling.\n   - Bottom section: Help & Support, Log Out links, and a card 'Weekly Goal: 7/10 applications' with a 70% progress bar and motivational note.\n2. Top Bar (sticky/docked, bg #0E1512/90 backdrop-blur, border-b #24332B):\n   - Search bar: 'Search companies, roles, tags... (Cmd+K)' with search icon.\n   - Trailing items: Notifications bell icon with indicator dot, primary button '+ Add application' (forest green #1F4D3A or deep dark pill with lime accent/white text), and user avatar badge 'A' for Aarav (with 'Aarav \u00b7 BITS Pilani '26' or 'aarav@orbit.app').\n3. Main Content Area (Bento Dashboard):\n   - Header greeting: 'Good morning, Aarav', subtext 'Here is your recruiting progress for Fall 2025.' Right side has date chip 'Sun, 25 Oct \u2022 Active Cycle'.\n   - Bento Top Row - 4 Stat Cards (grid grid-cols-4 gap-5):\n     1. Total applied: '48' big numeral, '+6 this week' badge, clean icon.\n     2. Interviews: '9' big numeral, '2 this week' badge, video/calendar icon.\n     3. Offers: '2' big numeral, chips for 'Northwind, Quanta', verified check icon.\n     4. Response rate (HERO LIME CARD): Styled in vibrant lime #C6F35E background with dark ink text (#0E1512 / #16211C), label 'RESPONSE RATE', big bold stat '31%', upward trend '+4.2% vs last month', and an integrated circular radial progress ring showing 31%.\n   - Bento Middle Row (2 columns, grid grid-cols-12 gap-5):\n     - Left (col-span-7 or 8): 'Applications per week' wide card with filter dropdown ('All roles'). Bar chart for 8 weeks (W1 to W8), showing rising application volume, with week 8 (current week 'W8 (Now)') highlighted in lime #C6F35E with a callout '10 apps' badge, and past weeks in subtle muted green/slate bars.\n     - Right (col-span-5 or 4): 'Pipeline' card with '58 tracked roles' badge, horizontal multi-segmented stacked progress bar showing distribution, followed by detailed list with colored status dots and counts: Wishlist 12 roles (21%), Applied 24 roles (41%), Interview 9 roles (16%), Offer 2 roles (3%), Rejected 11 roles (19%).\n   - Bento Bottom Row (2 columns, grid grid-cols-12 gap-5):\n     - Left (col-span-7): 'Upcoming interviews' card with '3 scheduled' lime pill and 'View calendar ->' link. 3 interview item rows:\n       1. Northwind \u00b7 Frontend Intern \u00b7 'Tue 27 Oct \u00b7 10:30 AM' in lime highlighted chip \u00b7 'Round 2: System & UI Deep Dive' \u00b7 'Prep notes' button.\n       2. Quanta \u00b7 Software Engineer I \u00b7 'Thu 29 Oct \u00b7 15:00' chip \u00b7 'Behavioral & Culture Fit' \u00b7 'Prep notes' button.\n       3. Lumen \u00b7 Product Designer \u00b7 'Mon 2 Nov \u00b7 14:00' chip \u00b7 'Portfolio Deep Dive & Design Sprint' \u00b7 'Prep notes' button.\n     - Right (col-span-5): 'Recent activity' card with 'Live updates' pulse indicator. Vertical timeline with colored milestone nodes:\n       - Today 09:15: 'Interview stage unlocked' - Northwind moved to Round 2 (Interview lime tag).\n       - Yesterday: 'Applied to Pixelcraft' - Junior Fullstack role via referral (Applied blue tag).\n       - 23 Oct: 'Offer received from Brightpath' - $45/hr Spring/Summer Co-op (Offer green tag).\n       - 22 Oct: 'Added Fernwood' - Bookmarked Backend Systems vacancy (Wishlist tag).\n       - 20 Oct: 'Decision: Kite Labs' - Application rejected post screening (Rejected coral tag).\n\nEnsure precise pixel-perfect Dark Mode aesthetics (#0E1512 background, #16211C bento cards, #24332B borders, #C6F35E lime highlights, Space Grotesk fonts), immaculate layout spacing, and matching existing design system {{DATA:DESIGN_SYSTEM:DESIGN_SYSTEM_1}}.",
+       "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+       },
+       "screenType": "DESIGN",
+       "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VhePw7Ow7c5b5kEHAAy85JCdvrE-mjQYtpkda6Ha-d8ZuQyHDHYzAuqjdi4h2JDN4fYvJ1Uf0nZH0LrDLq0C3qNx7D69709eHmJNV0sXCBDcOCYQooARjo5no3dYMAltKPHREhRYBdrG7NqGaUnfdk7BXmFWenjOCcppqExpkn_MiXzfKFJt6Rbg9uNyxv-ayo5YgYGUZImS9hWAFWOb6nlMNfK24_Shvt30OLUSD8DaYr8rlADTKykA",
+        "name": "projects/2270660294596355138/files/0db34a1e23994fb8a7f775800b4509f4"
+       },
+       "theme": {
+        "bodyFont": "GEIST",
+        "colorMode": "DARK",
+        "colorVariant": "FIDELITY",
+        "customColor": "#1F4D3A",
+        "headlineFont": "SPACE_GROTESK",
+        "overrideNeutralColor": "#0E1512",
+        "overridePrimaryColor": "#1F4D3A",
+        "overrideSecondaryColor": "#C6F35E",
+        "overrideTertiaryColor": "#E07A5F",
+        "roundness": "ROUND_TWELVE"
+       },
+       "title": "Orbit - Bento Dashboard (Dark)",
+       "width": "2560"
+      }
+     ],
+     "theme": {}
+    }
+   },
+   {
+    "text": "I've created the **Orbit Dark Bento Dashboard** (`Orbit - Bento Dashboard (Dark)`) tailored to your exact specifications:\n\n### Key Highlights & Design Decisions:\n- **Dark Mode Palette**: Deep near-black background (`#0E1512`), container cards (`#16211C`) with hairline 1px borders (`#24332B`), ink typography (`#EEF3EC`), and muted secondary text (`#9AA89F`).\n- **Accent & Highlight Hierarchy**: The standout **31% Response Rate** card features the vibrant lime (`#C6F35E`) surface with dark ink text, trend indicators, and a clean radial ring progress gauge.\n- **Bento Grid Architecture**:\n  - **4 Stat Cards**: Total applied (48), Interviews (9), Offers (2 with company tags for Northwind & Quanta), and the highlighted Response Rate card (31%).\n  - **Applications per Week**: 8-week volume bar chart with subtle historical bars and week 8 highlighted in lime with an indicator pill.\n  - **Recruiting Pipeline**: Multi-segmented horizontal stacked distribution bar with categorical breakdown (Wishlist 12, Applied 24, Interview 9, Offer 2, Rejected 11).\n  - **Upcoming Interviews**: Detailed cards for Northwind (*Frontend Intern*), Quanta (*Software Engineer I*), and Lumen (*Product Designer*) complete with date chips, interview focus details, and prep note actions.\n  - **Recent Activity Timeline**: Vertical live-feed milestone list with custom status badge chips (Lime Interview, Blue Applied, Forest Offer, Slate Wishlist, Coral Rejected).\n- **Navigation & Brand**: 240px persistent sidebar with the Orbit ring icon, active navigation pill, and a `7/10` weekly goal progress meter, alongside a top search bar with keyboard shortcut prompt and user profile."
+   },
+   {
+    "suggestion": "Create the dark mode Kanban Board view"
+   },
+   {
+    "suggestion": "Design an interview preparation modal or drawer"
+   },
+   {
+    "suggestion": "Generate a dark mode mobile version of this dashboard"
+   }
+  ],
+  "projectId": "2270660294596355138",
+  "sessionId": "6555178141176486380"
+ }
+}
